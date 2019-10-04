@@ -2,7 +2,7 @@
 
 Neste projeto você construirá uma rede social, cuja temática deixaremos ao seu critério.
 
-Aqui estão algumas ideias: 
+Aqui estão algumas ideias:
 
 - Alimentação
 - Feminismo
@@ -10,7 +10,7 @@ Aqui estão algumas ideias:
 - Saúde
 - Energias Renováveis
 
-As **caraterísticas técnicas** de sua aplicação serão: 
+As **caraterísticas técnicas** de sua aplicação serão:
 - Deve ser uma Single-Page Application [SPA](https://dzone.com/articles/how-single-page-web-applications-actually-work)
 - Deve ser desenhada com enfoque [mobile first](https://darwindigital.com/mobile-first-versus-responsive-web-design/)
 - Deve permitir a persistência de dados
@@ -88,7 +88,7 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 
 * Já te demos o layout das telas mobile e desktop. Queremos que repliquem estas telas. O conteúdo, paleta de cores e fontes, depende da temática que vão eleger como equipe. A implementação deste layout deverá ser parte da definição de pronto de suas histórias de usuário.
 
-* Os testes são **fundamentais** e deverão ser parte de sua definição de pronto. Te recomendamos que comecem a implementar desde o começo. 
+* Os testes são **fundamentais** e deverão ser parte de sua definição de pronto. Te recomendamos que comecem a implementar desde o começo.
 
 ## Histórias de Usuário
 
@@ -100,7 +100,7 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 
 * Como usuário logado devo poder ver todos os posts públicos e privados que criei até o momento, do mais recente para o mais antigo, assim como a opção de trocar a configuração de privacidade dos meus posts.
 
-* Eu como usuário logado, posso dar like e ver a contagem de likes em minhas publicações 
+* Eu como usuário logado, posso dar like e ver a contagem de likes em minhas publicações
 
 * Eu como usuário logado, posso escrever, salvar, editar ou deletar um comentário em minhas publicações.
 
@@ -109,7 +109,7 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 * Te deixamos um exemplo de como definir critérios de aceitação e definições de pronto para uma H.U.
 
     > Como usuário novo devo poder criar uma conta com email e senha para poder
-    > iniciar sessão. 
+    > iniciar sessão.
     > **Critérios de aceitação**
     > - Se o email ou senha não forem válidos, ao momento de logar, devo ver uma
     >   mensagem de erro.
@@ -167,9 +167,9 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 
 ### Mobile first
 
-O conceito de [_mobile first_](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/) faz referência a um processo de desenho e desenvolvimento que parte de como se vê e como funciona uma aplicação primeiro em um dispositivo móvel e mais adiante se analisa como adaptar a aplicação à telas progressivamente maiores. Esta é uma contraposição ao modelo tradicional, no qual primeiro se desenha os websites (ou webapps) para desktops e depois os adaptam para telas menores. 
+O conceito de [_mobile first_](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/) faz referência a um processo de desenho e desenvolvimento que parte de como se vê e como funciona uma aplicação primeiro em um dispositivo móvel e mais adiante se analisa como adaptar a aplicação à telas progressivamente maiores. Esta é uma contraposição ao modelo tradicional, no qual primeiro se desenha os websites (ou webapps) para desktops e depois os adaptam para telas menores.
 
-A motivação aqui é se assegurar que desde o começo sejam desenhadas telas _responsivas_. 
+A motivação aqui é se assegurar que desde o começo sejam desenhadas telas _responsivas_.
 
 ### Múltiplas telas
 
@@ -190,9 +190,9 @@ Recorde que não poderá usar frameworks CSS, somente *css* ou [*sass*](https://
 #### Primeiros passos
 
 1. Escolham alguém da equipe para fazer um :fork_and_knife:
-   [fork](https://help.github.com/articles/fork-a-repo/) do repositório. 
-2. :arrow_down: [Clone](https://help.github.com/articles/cloning-a-repository/)
-   o _fork_ para seu computador (cópia local).
+   [fork](https://help.github.com/articles/fork-a-repo/) do repositório.
+2. :arrow_down: Depois faça o [clone](https://help.github.com/articles/cloning-a-repository/)
+   para o seu computador (cópia local).
 3. 📦 Instale as dependências do projeto rodando o comando `npm install`. Mas
    antes disso tenha certeza de ter instalado o [Node.js](https://nodejs.org/)
    (que inclui o [npm](https://docs.npmjs.com/)).
