@@ -88,8 +88,6 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 
 * Já te demos o layout das telas mobile e desktop. Queremos que repliquem estas telas. O conteúdo, paleta de cores e fontes, depende da temática que vão eleger como equipe. A implementação deste layout deverá ser parte da definição de pronto de suas histórias de usuário.
 
-* Os testes são **fundamentais** e deverão ser parte de sua definição de pronto. Te recomendamos que comecem a implementar desde o começo. 
-
 ## Histórias de Usuário
 
 * Como usuário novo, devo poder criar uma conta com email e senha válidos para poder iniciar uma sessão e ingressar na Rede Social.
@@ -119,7 +117,6 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
     >
     > **Definição de pronto**
     > - A funcionalidade cumpre e satisfaz os critérios de aceitação.
-    > - Para a funcionalidade existem _testes unitários_.
     > - O layout está de acordo com o protótipo.
     > - O código desta funcionalidade recebeu code review.
     > - A funcionalidade está publicada para ser testada.
@@ -146,11 +143,6 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 ### Firebase
 - [ ] Firestore
 - [ ] Firebase Auth
-
-### Testing
-- [ ] Testes com suas funções
-- [ ] Testes assíncronos
-- [ ] Mocking
 
 ### Git e Github
 - [ ] Colaboração no Github
