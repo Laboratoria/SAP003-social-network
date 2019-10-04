@@ -10,13 +10,22 @@ describe('Button', () => {
   });
 
   it('should call handleClick on button is clicked', () => {
-    global.handleClick = jest.fn();
+    const temp = global.button.handleClick;
+    global.button.handleClick = jest.fn();
+
     const element = document.createElement('div');
     element.innerHTML = Button({ title: 'Text', id: 1 });
 
     const button = element.querySelector('button');
     button.click();
 
-    expect(global.handleClick.mock.calls).toHaveLength(1);
+    expect(global.button.handleClick.mock.calls).toHaveLength(1);
+    global.button.handleClick = temp;
+  });
+
+  describe('handleClick', () => {
+    it('should return a text with the id', () => {
+      expect(global.button.handleClick('🍌')).toBe('Esse é o meu botão 🍌');
+    });
   });
 });
