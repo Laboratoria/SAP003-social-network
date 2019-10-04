@@ -58,7 +58,6 @@ A seguir, te passaremos o layout da tela mobile e desktop que você deverá repl
 * Reforçar seu conhecimento sobre o uso de Template strings.
 * Reforçar seu conhecimento da manipulação de DOM através do JavaSript.
 * Implementar um sistema de rotas (sem uso de bibliotecas externas) para trocar de uma tela para outra de maneira dinâmica (SPA).
-* Testar a lógica de sua aplicação, com Jest cuidando para que a cobertura passe de 90% de _statements_, _functions_, _lines_ e _branches_.
 
 ### Persistência de dados
 
@@ -143,6 +142,8 @@ O objetivo de usar Firebase neste projeto é que, com ele, você aprederá a man
 ### Firebase
 - [ ] Firestore
 - [ ] Firebase Auth
+- [ ] Firebase Hosting
+
 
 ### Git e Github
 - [ ] Colaboração no Github
