@@ -14,8 +14,9 @@
     "eslint": "eslint --ext .js src/ test/",
     "stylelint": "stylelint --aei src/**/*.css",
     "lint": "npm run eslint && npm run htmlhint && npm run stylelint",
-    "test": "jest --coverage",
-    "pretest": "npm run lint"
+    "test": "jest --coverage --watch",
+    "pretest": "npm run lint",
+    "start": "serve src/"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -31,5 +32,8 @@
     "regenerator-runtime": "^0.13.1",
     "stylelint": "^10.1.0",
     "stylelint-config-recommended": "^2.2.0"
+  },
+  "dependencies": {
+    "serve": "^11.2.0"
   }
 }
