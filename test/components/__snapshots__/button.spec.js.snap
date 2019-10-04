@@ -1,9 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should have the correct structure 1`] = `
-<button
-  class="primary-button"
->
-  Text
-</button>
+<div>
+  
+  
+  <button
+    class="primary-button"
+    onclick="handleClick('1')"
+  >
+    Text
+  </button>
+  
+  
+</div>
 `;

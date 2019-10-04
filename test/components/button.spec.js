@@ -3,14 +3,20 @@ import Button from '../../src/components/button.js';
 
 describe('Button', () => {
   it('should have the correct structure', () => {
-    expect(Button({ title: 'Text' })).toMatchSnapshot();
+    const element = document.createElement('div');
+    element.innerHTML = Button({ title: 'Text', id: 1 });
+
+    expect(element).toMatchSnapshot();
   });
 
   it('should call handleClick on button is clicked', () => {
-    const onClick = jest.fn();
-    const button = Button({ title: 'Text', onClick });
+    global.handleClick = jest.fn();
+    const element = document.createElement('div');
+    element.innerHTML = Button({ title: 'Text', id: 1 });
+
+    const button = element.querySelector('button');
     button.click();
 
-    expect(onClick.mock.calls).toHaveLength(1);
+    expect(global.handleClick.mock.calls).toHaveLength(1);
   });
 });
