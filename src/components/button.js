@@ -12,7 +12,6 @@ window.button = {
     return `Esse é o meu botão ${button}`;
   },
 };
-
 export default Button;
 
 // function Button(props) {

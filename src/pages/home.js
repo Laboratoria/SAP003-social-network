@@ -15,9 +15,7 @@ function ButtonRegister() {
   const buttons = `
   <h2> Seja bem-vindo! </h2>
   ${Button({ id: 'button' title: 'Botão')}
-   `;
+
 return buttons;
 }
-
 export default ButtonRegister;
-  
