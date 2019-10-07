@@ -1,14 +1,17 @@
 import Button from '../components/button.js';
+import Input from '../components/input.js';
 
 function Home() {
   const template = `
-    <h1>Home Page</h1>
-    ${Button({ id: '🐠', title: 'Botão 🐠' })}
-    ${Button({ id: '🎉', title: 'Botão 🎉' })}
-    <p>Esse é um exemplo 🍌</p>
+    <section class="container">
+    ${Input({id:'email'})}
+    ${Input({id:'password'})}
+    ${Button({ id: 'submit', title: 'Login in' })}
+    </section>
   `;
 
   return template;
 }
+
 
 export default Home;

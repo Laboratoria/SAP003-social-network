@@ -1,9 +1,19 @@
 .primary-button {
-  background-color: #ffe521;
+  background-color: gray;
   padding: 10px;
   font-size: 1.5rem;
-  border-radius: 5px;
+  border-radius: 30px;
   font-weight: bold;
   border: none;
   cursor: pointer;
+  
+  
+}
+.container{
+  display: flex;
+ align-items: center;
+  flex-direction: column;
+  width: 50%;
+  border: 1px solid black;
+
 }
