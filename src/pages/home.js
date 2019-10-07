@@ -20,3 +20,4 @@ return buttons;
 }
 
 export default ButtonRegister;
+  

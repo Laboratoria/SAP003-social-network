@@ -5,7 +5,7 @@ function Button(props) {
 
   return buttons;
 }
-
+//oioio
 window.button = {
   handleClick: (button) => {
     console.log(`Esse é o meu botão ${button}`);
