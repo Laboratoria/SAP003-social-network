@@ -7,3 +7,11 @@
   border: none;
   cursor: pointer;
 }
+@media screen {
+  body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+
+  @media (max-width: 600px) {
+    body, #message { margin-top: 0; background: white; box-shadow: none; }
+    body { border-top: 16px solid #ffa100; }
+  }
+}
