@@ -6,9 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Social Network</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+
 </head>
 <body>
   <main></main>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <!--<script src="/__/firebase/6.2.0/firebase-firestore.js"></script>-->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+
+  <!--
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script> -->
+
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyCCl4repm0C8xdsEDmz4EO5uq8l5hgMZOE",
+    authDomain: "sap003-social-network-squad1g2.firebaseapp.com",
+    databaseURL: "https://sap003-social-network-squad1g2.firebaseio.com",
+    projectId: "sap003-social-network-squad1g2",
+    storageBucket: "sap003-social-network-squad1g2.appspot.com",
+    messagingSenderId: "349921528515",
+    appId: "1:349921528515:web:52547f1195bd689517f076",
+    measurementId: "G-WZDBSSSYE9"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  
+  </script>
+
   <script type="module" src="./main.js"></script>
+  
 </body>
 </html>
