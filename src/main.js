@@ -5,3 +5,11 @@ function init() {
 }
 
 window.addEventListener('load', init);
+
+function uiConfig() {
+  return {
+    signInFlow: 'popup',
+    signInSuccessUrl: '#',
+    signInOptions: 'banana',
+  };
+}
