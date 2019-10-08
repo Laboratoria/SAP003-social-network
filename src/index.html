@@ -9,6 +9,35 @@
 </head>
 <body>
   <main></main>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCcUpa90-p_YirQGjgM7ma5kxPU7Yyg6Ac",
+    authDomain: "my-social-network-c4cf3.firebaseapp.com",
+    databaseURL: "https://my-social-network-c4cf3.firebaseio.com",
+    projectId: "my-social-network-c4cf3",
+    storageBucket: "my-social-network-c4cf3.appspot.com",
+    messagingSenderId: "369187920511",
+    appId: "1:369187920511:web:f8819f471c7e77f8907d4a",
+    measurementId: "G-GTT4SKXJ0Q"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <script type="module" src="./main.js"></script>
 </body>
 </html>
