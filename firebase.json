@@ -1,7 +1,4 @@
 {
-  "storage": {
-    "rules": "storage.rules"
-  },
   "hosting": {
     "public": "src",
     "ignore": [

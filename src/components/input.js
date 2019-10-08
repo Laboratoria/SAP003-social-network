@@ -1,8 +1,9 @@
 function Input(props) {
     const template = `
     <form>
-    <input type=${props.id} name="email"><br>
-    `;
+    <input class=${props.class} type=${props.type} placeholder= ${props.placeholder}><br>
+    </form> `;
+    
 
 
 
@@ -10,10 +11,5 @@ function Input(props) {
     return template;
 }
 
-window.input = {
-    handleClick: (id) => {
-        return `Esse é o meu botão ${id}`;
-    },
-};
 
 export default Input;

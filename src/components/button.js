@@ -7,9 +7,11 @@ function Button(props) {
 }
 
 window.button = {
-  handleClick: (id) => {
-    console.log(`Esse é o meu botão ${id}`);
+  handleClick: (event, id) => {
+    event.preventDefault();
+   
     return `Esse é o meu botão ${id}`;
+    //firebase.auth(email, senha)
   },
 };
 
