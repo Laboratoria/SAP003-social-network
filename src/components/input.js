@@ -1,12 +1,7 @@
 function Input(props) {
-    const template = `
-    <form>
-    <input class=${props.class} type=${props.type} placeholder= ${props.placeholder}><br>
-    </form> `;
-    
-
-
-
+    const template =`
+    <input type=${props.type} placeholder="${props.placeholder}" class="${props.class}"><br>
+    `;
 
     return template;
 }

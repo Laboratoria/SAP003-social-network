@@ -7,12 +7,12 @@ function Button(props) {
 }
 
 window.button = {
-  handleClick: (event, id) => {
+  handleClick: (event, callBack) => {
     event.preventDefault();
+   callBack();
    
-    return `Esse é o meu botão ${id}`;
-    //firebase.auth(email, senha)
   },
 };
 
 export default Button;
+

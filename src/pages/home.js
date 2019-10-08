@@ -1,21 +1,18 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-function Home() {
-  const template = `
-  
-    <section class="container">
-    <h1>Login</h1>
-    <form>
-    ${Input({type:'email', class:'js-email',placeholder:'Email'})}
-    ${Input({type:'password', class:'js-password', placeholder:'Senha'})}
-    ${Button({ type: 'submit', title: 'Login in' })}
-    </form>
-    </section>
-  `;
-
-  return template;
-}
-
-
-export default Home;
+// function Home() {
+//   const template = `
+//     <form class="container">
+//     ${Input({type:'email', placeholder: 'email', class: 'js-email-input'})}
+//     ${Input({type:'password', placeholder: 'password', class: 'js-password-input'})}
+//     ${Button({ type: 'submit', title: 'Login in' })}
+//     </form>
+//   `;
+// 
+//   return template;
+// }
+//
+// //firebase.auth(email, senha);
+//
+// export default Home;
