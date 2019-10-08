@@ -1,17 +1,32 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+}
+.header {
+  padding: 0 40%;
+  height: 150px;
+}
 .primary-button {
   background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
+  padding: 5px;
+  font-size: 1rem;
   border-radius: 5px;
   font-weight: bold;
   border: none;
   cursor: pointer;
 }
-@media screen {
-  body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+.primary-button:hover {
+  color: #ffa100;
+}
+.primary-input  {
+  border-radius: 15px;
+  padding: 5px;
+}
+/* @media screen {
+  body { background: #ECEFF1; color:#FF); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 
-  @media (max-width: 600px) {
+  @media (screen max-width: 600px) {
     body, #message { margin-top: 0; background: white; box-shadow: none; }
     body { border-top: 16px solid #ffa100; }
   }
-}
+ */
