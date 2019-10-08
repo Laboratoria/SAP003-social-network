@@ -2,46 +2,55 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 const send = () => {
-    const email = document.querySelector('.js-input-email').value;
-    const password = document.querySelector('.js-input-password').value;
-
-    alert(`${email}, ${password}`);
-} 
+  const email = document.querySelector('.js-input-email').value;
+  const password = document.querySelector('.js-input-password').value;
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(result => console.log(result))
+    .catch(err => alert(err.message));
+};
 
 const register = () => {
-  return alert("registrado")
-}
+  const email = document.querySelector('.js-input-email').value;
+  const password = document.querySelector('.js-input-password').value;
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(result => console.log(result))
+    .catch(err => alert(err.message));
+};
 
 const login = () => {
-    const template = `
+  const template = `
       <img class="img" src="images/img.png">
       <h1 id="text-low" class="text">Low Carb Style</h1>
       <h2 id="text-boas-vindas" class="text">Boas vindas...</h2>
     <form>
     ${Input({
-      class: 'js-input-email',
-      placeholder: 'Email',
-      type: 'text',
-    })}
+    class: 'js-input-email',
+    placeholder: 'Email',
+    type: 'text',
+  })}
     ${Input({
-      class: 'js-input-password',
-      placeholder: 'Senha',
-      type: 'password',
-    })}
-    ${Button({ 
-        title: 'Entrar',
-        onClick: send,
-    })}
-    ${Button({ 
-      title: 'Registrar',
-      onClick: register, 
-    })}
+    class: 'js-input-password',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
+    ${Button({
+    title: 'Entrar',
+    onClick: send,
+  })}
+    ${Button({
+    title: 'Registrar',
+    onClick: register,
+  })}
     </form>
       <p id="text-p" class="text">ou entrar com...</p>
   `;
-  
-    return template;
-  }
-  
-  
+
+  return template;
+};
+
+
 export default login;

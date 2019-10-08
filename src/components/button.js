@@ -5,7 +5,7 @@ const Button = (props) => {
   `;
 
   return template;
-}
+};
 
 window.button = {
   handleClick: (event, callback) => {
