@@ -50,7 +50,7 @@ function Login() {
     ${Button(
     { id: 'google', title: 'Google', class: 'btn-google', onClick: loginSocial },
   )}
-  `;
+  
   
     </form>
   `;
