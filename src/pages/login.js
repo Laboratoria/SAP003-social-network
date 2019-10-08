@@ -8,6 +8,7 @@ function sendLogin() {
 }
 function Login() {
   const template = `
+    <header><img class="header"  src="./Imagens/header.png"></header>
     <h1>Heroínas</h1>
     <h3>Bem vinda, programadora!</h3>
     <form>
@@ -22,10 +23,11 @@ function Login() {
       type: 'password',
     })}
       ${Button({
-      id: '🎉',
-      title: 'Enviar',
+      id: 'btn',
+      title: 'Login',
       onClick: sendLogin,
     })}
+    <button><i class="fab fa-google fa-2x"></i></button>
   </form>
   <p>Não tem uma conta?<a href="">Registre-se</a></p>
   `;
