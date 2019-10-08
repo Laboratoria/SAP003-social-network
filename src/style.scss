@@ -1,60 +1,72 @@
+$cor: #FEF19F;
+$cor2: #ffd45e;
+
 * {
   margin: 0;
   padding: 0;
   font-size: 100%;
   border: none;
   outline: none;
-  font-weight: 300; }
+  font-weight: 300;
+}
 
 body {
-  background-color: #FEF19F; }
+  background-color: $cor;
+
+}
 
 .logo {
   margin-left: auto;
   margin-right: auto;
   width: 80px;
   height: 80px;
-  background: url(./img/logo.png) center center/80px no-repeat;
-  display: block; }
+  background: url(./img/logo.png) center center/ 80px no-repeat;
+  display: block;  
+}
 
 .name {
-  text-align: center; }
+  text-align: center;
+}
 
 .form {
-  padding: 5px; }
+  padding: 5px;
+}
 
-.js-email-input {
+.js-email-input {  
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  padding: 5px;
-  display: block; }
+  padding: 5px;  
+  display: block;
+}
 
 .js-password-input {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  padding: 5px;
-  display: block; }
+  padding: 5px;  
+  display: block;
+}
 
-.primary-button {
+.primary-button {  
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
   border-radius: 10px;
   cursor: pointer;
   padding: 5px;
   text-align: center;
   display: block;
-  background-color: #ffd45e; }
+  background-color: $cor2
+}
 
 p {
   padding-top: 30px;
   text-align: center;
-  display: block; }
+  display: block;  
+}
 
 section {
   padding-top: 180px;
   text-align: center;
-  display: block; }
-
-/*# sourceMappingURL=style.css.map */
+  display: block;
+}
