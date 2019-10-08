@@ -1,6 +1,12 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+function btnRegister() {
+  const email = document.querySelector('.js-email-regisster').value;
+  const password = document.querySelector('.js-password-register').value;
+  auth.createUserWithEmailAndPassword(email, password);
+}
+
 function Register() {
   const template = `
     <h1>Registre-se!</h1>
@@ -10,8 +16,10 @@ function Register() {
     ${Input({ type: 'email', class: 'js-email-register', placeholder: 'Digite seu e-mail' })}
     ${Input({ type: 'password', class: 'js-password-register', placeholder: 'Digite a senha' })}
 
-    ${Button({ class: 'js-btn-register', title: 'Registrar', id: 'btn-register' })}
-    
+    ${Button({
+    class: 'js-btn-register', title: 'Registrar', id: 'btnRegister', onClick: btnRegister,
+  })}
+
     </form>
   `;
   return template;
