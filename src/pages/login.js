@@ -33,30 +33,26 @@ function loginSocial (){
 function Login() {
   const template = `
     <h1>InstaHealth</h1>
-    <form>
-      ${Input({
-        class: 'input-email',
-        placeholder: 'email',
-        type: 'email'
-      })}
+      <form class="login-card">
+        ${Input({
+          class: 'input-email',
+          placeholder: 'email',
+          type: 'email'
+        })}
 
-      ${Input({
-        class: 'input-password',
-        placeholder: 'password',
-        type: 'password'
-      })}
+        ${Input({
+          class: 'input-password',
+          placeholder: 'password',
+          type: 'password'
+        })}
 
-    ${Button({ id: '🎉', title: 'Entrar 🎉', onClick: buttonLogin })}
-    ${Button(
-    { id: 'google', title: 'Google', class: 'btn-google', onClick: loginSocial },
-  )}
-  
-  
-    </form>
+        ${Button({ id: '🎉', title: 'Entrar 🎉', onClick: buttonLogin })}
+        ${Button( { id: 'google', title: 'Entrar com sua conta do Google', class: 'btn-google', onClick: loginSocial })}
+      </form>
+      <h3>Criar conta</h3>
   `;
 
   return template;
 }
 
 export default Login;
-

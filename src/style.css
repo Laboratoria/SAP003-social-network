@@ -1,17 +1,30 @@
 .primary-button {
   background-color: #ffe521;
   padding: 10px;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   border-radius: 5px;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: none;
   cursor: pointer;
 }
-
+.login-card{
+  display: flex;
+  flex-direction: column;
+  border: solid 2px;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+.login-card :nth-child(n){
+  margin: 10px;
+}
 .btn-google {
   color: #fff;
   padding: 15px;
-  font-size: 1.2rem;
   border-radius: 5px;
-  background-color: #1466ff;
+  background-color: #4686fd;
 }
+.btn-google:hover{
+  background-color: #074cce;
+}
+
