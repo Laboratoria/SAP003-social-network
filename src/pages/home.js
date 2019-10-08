@@ -6,6 +6,7 @@ function Home() {
     ${Button({ id: '🐠', title: 'Botão 🐠' })}
     ${Button({ id: '🎉', title: 'Botão 🎉' })}
     <p>Esse é um exemplo 🍌</p>
+    
   `;
 
   return template;
