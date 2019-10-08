@@ -1,8 +1,8 @@
-import Login from './pages/login.js';
+import Register from './pages/register.js';
 import uiConfig from '../loginConfig.js';
 
 function init() {
-  document.querySelector('main').innerHTML = Login();
+  document.querySelector('main').innerHTML = Register();
   uiConfig();
 }
 

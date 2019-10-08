@@ -1,20 +1,28 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import loginConfig from '../loginConfig.js'
 
-function sendLogin(){
+function createUser(){
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
-  console.log(email, password);
-  firebase.auth().createUserWithEmailAndPassword(email, password);
-}
 
-function Login() {
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error){
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    if (errorCode === 'auth/weak-password') {
+      alert('The password is too weak.')
+    } else {
+      alert(errorMessage);
+    };
+  });
+};
+
+function Register() {
   const template = `
     <form class="container">
     ${Input({type:'email', placeholder: 'email', class: 'js-email-input'})}
     ${Input({type:'password', placeholder: 'password', class: 'js-password-input'})}
-    ${Button({ type: 'submit', title: 'Login in', onClick: sendLogin})}
+    ${Button({ type: 'submit', title: 'Cadastrar', onClick: createUser})}
     </form>
   `;
 
@@ -22,6 +30,4 @@ function Login() {
   return template;
 }
 
-//firebase.auth(email, senha);
-
-export default Login;
+export default Register;
