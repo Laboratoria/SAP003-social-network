@@ -19,12 +19,16 @@
   margin: 10px;
 }
 .btn-google {
-  color: #fff;
-  padding: 15px;
-  border-radius: 5px;
+  color: #fff;;
   background-color: #4686fd;
 }
 .btn-google:hover{
   background-color: #074cce;
+}
+
+@media (min-width: 540px) {
+  .login-card{
+    width: 50%;
+  }
 }
 
