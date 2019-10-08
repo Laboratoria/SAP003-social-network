@@ -1,4 +1,3 @@
-// import Login from './components/login.js';
 import Home from './pages/home.js';
 
 function init() {
