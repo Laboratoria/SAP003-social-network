@@ -1,10 +1,10 @@
 function Button(props) {
   const template = `
-    <button class="primary-button" onclick="button.handleClick('${props.id}')" >${props.title}</button>
+    <button class="${props.class}" onclick="button.handleClick('${props.id}')" >${props.title}</button>
   `;
-
   return template;
 }
+
 
 window.button = {
   handleClick: (id) => {
@@ -13,4 +13,20 @@ window.button = {
   },
 };
 
+
+function Input(props) {
+  const template = `
+    <input class="${props.class}" placeholder="${props.placeholder}" type="${props.type}"></input>`
+  ;
+  return template; 
+}
+
+window.button = {
+
+};
+
+
+
+export default Input;
 export default Button;
+// coisas menores (botão input cartão botão de like etc)
