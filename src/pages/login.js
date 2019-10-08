@@ -1,6 +1,19 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+function buttonLogin(){
+  const email = document.querySelector('.input-email').value
+    const password = document.querySelector('.input-password').value
+    console.log(email);
+    console.log(password);
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function() {
+      // Handle Errors here.
+      //var errorCode = error.code;
+      //var errorMessage = error.message;
+      // ...
+    });
+}
+
 function Login() {
   const template = `
     <h1>InstaHealth</h1>
@@ -17,7 +30,7 @@ function Login() {
         type: 'password'
       })}
 
-    ${Button({ id: '🎉', title: 'Entrar 🎉' })}
+    ${Button({ id: '🎉', title: 'Entrar 🎉', onClick: buttonLogin })}
     </form>
   `;
 
