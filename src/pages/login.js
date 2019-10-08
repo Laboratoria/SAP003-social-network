@@ -1,24 +1,27 @@
-function uiConfig() {
-  return{
-    signInFlow: "popup",
-    signInSuccessUrl: "#",
-    signInOptions:[
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID
-    ]
-  };
-};
+import Button from '../components/button.js';
+import Input from '../components/input.js';
+import loginConfig from '../loginConfig.js'
 
-function configureLogin() {
-  document.querySelector('main').innerHTML += "<div id=\"firebaseui-auth-container\"></div>"
-  const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth())
-  ui.start("#firebaseui-auth-container", uiConfig());
-};
-
-const login = {
-  uiConfig,
-  configureLogin
+function sendLogin(){
+  const email = document.querySelector('.js-email-input').value;
+  const password = document.querySelector('.js-password-input').value;
+  console.log(email, password);
+  firebase.auth().createUserWithEmailAndPassword(email, password);
 }
 
-export default login;
+function Login() {
+  const template = `
+    <form class="container">
+    ${Input({type:'email', placeholder: 'email', class: 'js-email-input'})}
+    ${Input({type:'password', placeholder: 'password', class: 'js-password-input'})}
+    ${Button({ type: 'submit', title: 'Login in', onClick: sendLogin})}
+    </form>
+  `;
+
+
+  return template;
+}
+
+//firebase.auth(email, senha);
+
+export default Login;

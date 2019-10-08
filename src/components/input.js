@@ -1,11 +1,7 @@
 function Input(props) {
-    const template = `
-    <form>
-    <input type=${props.id} name="email"><br>
+    const template =`
+    <input type=${props.type} placeholder="${props.placeholder}" class="${props.class}"><br>
     `;
-
-
-
 
     return template;
 }
