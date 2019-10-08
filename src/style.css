@@ -7,3 +7,11 @@
   border: none;
   cursor: pointer;
 }
+
+.btn-google {
+  color: #fff;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: #1466ff;
+}
