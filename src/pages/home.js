@@ -9,7 +9,7 @@ function Home() {
     <form>
     ${Input({type:'email', class:'js-email',placeholder:'Email'})}
     ${Input({type:'password', class:'js-password', placeholder:'Senha'})}
-    ${Button({ id: 'submit', title: 'Login in' })}
+    ${Button({ type: 'submit', title: 'Login in' })}
     </form>
     </section>
   `;
