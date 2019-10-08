@@ -1,7 +1,7 @@
-import Home from './pages/home.js';
+import login from './pages/login.js';
 
 function init() {
-  document.querySelector('main').innerHTML = Home();
+  document.querySelector('main').innerHTML = login();
 }
 
 window.addEventListener('load', init);
