@@ -16,4 +16,5 @@ window.button = {
     callback();
   },
 };
+
 export default Button;
