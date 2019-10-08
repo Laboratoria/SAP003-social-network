@@ -1,7 +1,7 @@
 var firebaseConfig = {
-  apiKey: 'AIzaSyCS0istzXX1d01HIlwVmNa_ej67Op-eTgk',
-  authDomain: 'social-media-b0400.firebaseapp.com',
-  databaseURL: 'https://social-media-b0400.firebaseapp.com',
+  apiKey: 'AIzaSyBukqPNCaum68DGhsq-exRXVrG3YQBo56U',
+  authDomain: 'social-network-b6633.firebaseapp.com',
+  databaseURL: 'https://social-network-b6633.firebaseapp.com',
   storageBucket: '<your-storage-bucket-url>'
 };
 firebase.initializeApp(firebaseConfig);
