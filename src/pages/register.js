@@ -20,8 +20,8 @@ function createUser(){
 function Register() {
   const template = `
     <form class="container">
-    ${Input({type:'email', placeholder: 'email', class: 'js-email-input'})}
-    ${Input({type:'password', placeholder: 'password', class: 'js-password-input'})}
+    ${Input({type:'email', placeholder: 'Email', class: 'js-email-input primary-input'})}
+    ${Input({type:'password', placeholder: 'Password', class: 'js-password-input primary-input'})}
     ${Button({ type: 'submit', title: 'Cadastrar', onClick: createUser})}
     </form>
   `;
