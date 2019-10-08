@@ -1,3 +1,4 @@
+// import Login from './components/login.js';
 import Home from './pages/home.js';
 
 function init() {
@@ -5,11 +6,3 @@ function init() {
 }
 
 window.addEventListener('load', init);
-
-function uiConfig() {
-  return {
-    signInFlow: 'popup',
-    signInSuccessUrl: '#',
-    signInOptions: 'banana',
-  };
-}
