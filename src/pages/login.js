@@ -8,7 +8,8 @@ function sendLogin() {
 }
 function Login() {
   const template = `
-    <h1>Login</h1>
+    <h1>Heroínas</h1>
+    <h3>Bem vinda, programadora!</h3>
     <form>
     ${Input({
       class: 'js-email-input',
@@ -26,6 +27,7 @@ function Login() {
       onClick: sendLogin,
     })}
   </form>
+  <p>Não tem uma conta?<a href="">Registre-se</a></p>
   `;
   return template;
 }
