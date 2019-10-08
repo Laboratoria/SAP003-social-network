@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
+=======
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+>>>>>>> 6ec4b4e1b4658290044aede149b604835c2585f0
   "hosting": {
     "public": "src",
     "ignore": [
