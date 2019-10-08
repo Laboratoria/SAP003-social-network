@@ -6,7 +6,26 @@ function init() {
 
 window.addEventListener('load', init);
 
-const loginCadastro = "geni";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const loginCadastro = "geni";
 const senhaCadastrada = "geni123";
 
 const loginInformado = prompt("Coloque seu login");
@@ -19,7 +38,7 @@ while(tentativaAtual <= maximoDeTentativas){
   const loginInformado = prompt("Informa seu login");
   const senhaInformada = prompt("Informe sua senha");
 
-  if(loginCadastro == loginInformado && senhaCadastrada == senhaCadastro){
+  if(loginCadastro == loginInformado && senhaCadastrada == senhaInformada){
     alert("Bem vindo");
     tentativaAtual = maximoDeTentativas;
   }else {
@@ -29,4 +48,4 @@ while(tentativaAtual <= maximoDeTentativas){
       alert("Login invalido. Tente novamente");
     }
     tentativaAtual++ }
-}
+} */

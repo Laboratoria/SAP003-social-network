@@ -1,0 +1,26 @@
+<<<<<<< HEAD
+=======
+.primary-button {
+  background-color: #ffe521;
+  padding: 6px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.input {
+  /* border: solid 1px; */
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+}
+
+.card {
+  border: solid 1px;
+  border-radius: 30px;
+  padding: 8px;
+}
+
+>>>>>>> 50817c69b4ad203ae0e10633b853cad4d32c5529
