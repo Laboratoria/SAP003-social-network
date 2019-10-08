@@ -1,7 +1,7 @@
-import Home from './pages/home.js';
+import Feed from './pages/home.js';
 
 function init() {
-  document.querySelector('main').innerHTML = Home();
+  document.querySelector('main').innerHTML = Feed();
 }
 
 window.addEventListener('load', init);
