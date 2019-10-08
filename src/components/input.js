@@ -6,10 +6,5 @@ function Input(props) {
     return template;
 }
 
-window.input = {
-    handleClick: (id) => {
-        return `Esse é o meu botão ${id}`;
-    },
-};
 
 export default Input;
