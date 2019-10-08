@@ -1,21 +1,43 @@
 import Button from '../components/button.js';
+import Input from '../components/input.js';
+import Label from '../components/label.js';
 
-// function Home(){
-//   const template = `
-//   S{ ${Button({ id: '🐠', title: 'Botão 🐠' })}
-//      ${Button({ id: '🎉', title: 'Botão 🎉' })}
-//     <p>Esse é um exemplo 🍌</p>}
-//     `;
-//     return template;
-// }
-//
-// export default Home;
+function Home(){
+  const template = `
+      <h2> Crie a sua conta </h2>
+<form> 
+     ${Input(
+       { placeholder: 'Nome completo',
+       type: 'text'}
+     )}
+     ${Input(
+       { placeholder: 'E-mail',
+       type: 'email'}
+     )}
+     ${Input(
+       { placeholder: 'Senha',
+       type: 'password'}
+     )}
+     ${Input(
+       { placeholder: 'Data de Nascimento',
+       type: 'number'}
+     )}
+     ${Label(
+       { message: 'Gênero'}
+     )}
+     ${Input(
+       { type: 'radio'}
+     )}
 
-function ButtonRegister() {
-  const buttons = `
-  <h2> Seja bem-vindo! </h2>
-  ${Button({ id: 'button' title: 'Botão')}
-
-return buttons;
+     ${Button(
+       { id: 'button',
+       title: 'Cadastrar' }
+     )}
+</form>
+     `;
+    return template;
 }
-export default ButtonRegister;
+
+export default Home;
+
+//${Button({ id: '🎉', title: 'Botão 🎉' })}
