@@ -7,13 +7,25 @@
   border: none;
   cursor: pointer;
 }
-
+/* 
 .title, .subtitle {
   text-align: center;
   color: yellow;
 
-}
+} */
 
 .box-login {
-  background-color: blueviolet
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.testeee {
+ background-color: blue;
+}
+
+.logo {
+  height: 30%;
 }
