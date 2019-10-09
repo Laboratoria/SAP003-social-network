@@ -1,22 +1,31 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+import Google from '../components/google-button.js';
 
-const send = () => {
-  const email = document.querySelector('.js-input-email').value;
-  const password = document.querySelector('.js-input-password').value;
+const email = document.querySelector('.js-input-email');
+const password = document.querySelector('.js-input-password');
+
+const signIn = () => {
   firebase
     .auth()
-    .signInWithEmailAndPassword(email, password)
+    .signInWithEmailAndPassword(email.value, password.value)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
 };
 
 const register = () => {
-  const email = document.querySelector('.js-input-email').value;
-  const password = document.querySelector('.js-input-password').value;
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email, password)
+    .createUserWithEmailAndPassword(email.value, password.value)
+    .then(result => console.log(result))
+    .catch(err => alert(err.message));
+};
+
+const googleLogin = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
 };
@@ -39,18 +48,24 @@ const login = () => {
   })}
     ${Button({
     title: 'Entrar',
-    onClick: send,
+    onClick: signIn,
   })}
     ${Button({
     title: 'Registrar',
     onClick: register,
+  })} 
+  <p id="text-p" class="text">ou entrar com...</p>
+  ${Google({
+    class: 'img-google',
+    type: 'image',
+    src: 'images/google.png',
+    onClick: googleLogin,
   })}
     </form>
-      <p id="text-p" class="text">ou entrar com...</p>
+     
   `;
 
   return template;
 };
-
 
 export default login;
