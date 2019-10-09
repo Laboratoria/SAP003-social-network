@@ -7,6 +7,7 @@ function teste() {
 function changePage () {
   window.location.href = '#register';
 }
+
 function Home() { 
   //location.hash = 'home';
   const template = `

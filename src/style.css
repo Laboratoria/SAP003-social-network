@@ -7,3 +7,13 @@
   border: none;
   cursor: pointer;
 }
+
+.title, .subtitle {
+  text-align: center;
+  color: yellow;
+
+}
+
+.box-login {
+  background-color: blueviolet
+}
