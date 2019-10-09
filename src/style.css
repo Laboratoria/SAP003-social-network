@@ -3,17 +3,49 @@
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 30px;
-  font-weight: bold;
   border: none;
-  cursor: pointer;
-  
-  
+  cursor: pointer;  
 }
-.container{
+/* .container{
   display: flex;
  align-items: center;
   flex-direction: column;
   width: 50%;
   border: 1px solid black;
 
-}
+} */
+
+@media only screen and (max-device-width: 900px){
+
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px;
+    margin: 0;
+    height: 500px;
+  }
+
+  .form{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    
+  }
+
+  .primary-input{
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+    border: solid 1px #aaaaaa;
+  }
+
+  .primary-button{
+    background-color:  #e1bee7;
+    color: #000000;
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    align-self: center;
+  }
+} 
