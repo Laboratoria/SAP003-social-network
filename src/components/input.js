@@ -1,15 +1,13 @@
 function Input(props) {
-    const template =`
+  const template = `
     <input type=${props.type} placeholder="${props.placeholder}" class="${props.class}"><br>
     `;
 
-    return template;
+  return template;
 }
 
 window.input = {
-    handleClick: (id) => {
-        return `Esse é o meu botão ${id}`;
-    },
+  handleClick: id => `Esse é o meu botão ${id}`,
 };
 
 export default Input;
