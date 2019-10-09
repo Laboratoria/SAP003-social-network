@@ -1,5 +1,4 @@
 import Button from '../components/button.js';
-// import Card from '../components/card.js';
 import Input from '../components/input.js';
 
 
@@ -7,6 +6,7 @@ import Input from '../components/input.js';
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
+
   localStorage.setItem("input-email", email);
   localStorage.setItem("input-senha", senha);
 
@@ -30,6 +30,7 @@ function pegarInput() {
   }
 }
 
+
 function Login() {
   const template = `
     <h1>Home Page</h1>
@@ -44,7 +45,10 @@ function Login() {
 
 // ${Card({ texto: 'banana e peixinho' })}
 
+
+
 export default Login;
+
 
 //onhashchange rotas por #
 
