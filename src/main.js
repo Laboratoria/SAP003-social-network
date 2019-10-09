@@ -17,10 +17,3 @@ window.addEventListener('load', init);
 window.addEventListener('hashchange', () => {
   document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
 }, false);
-
-/* function clickRegister() {
-  document.querySelector('main').innerHTML = Register();
-}
-
-document.querySelector('a').addEventListener = ('click',clickRegister);  */
-
