@@ -1,21 +1,23 @@
-import Button from '../components/button.js';
-import Input from '../components/button.js';
+import Button from "../components/button.js";
 
-function Home() {
-  const template = `
-    <h1>Home Page</h1>
-    ${Input({class: email, placeholder: email, type: email})}
-    ${Button({ id: '🐠', title: 'Botão 🐠' })}
-    ${Button({ id: '🎉', title: 'Botão 🎉' })}
-    <p>Esse é um exemplo 🍌</p>
-    
-  `;
+export function Home() {
+	const template = `<h1 class="homepage-title">Livreiras</h1>
+	<form class="login-form">
+	<input type="text" id="login-input" class="js-login" placeholder="Livreira">
+	<input type="password" id="password-input" class="js-senha" placeholder="Senha">
+	${Button({ id:"login", title: "Login", onclick: login})}
+	</form>
+	${Button({ id:"sign", title: "Sign Up", type:"submit", onclick: signUp})}`;
 
-  return template;
+	return template;
 }
-//oi
 
+const login = (id) => {
+	window.location.hash = id;
+}
 
+const signUp = (id) => {
+	window.location.hash = id;
+}
 
 export default Home;
-// mudança de pagina

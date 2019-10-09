@@ -1,32 +1,22 @@
-function Button(props) {
-  const template = `
-    <button class="${props.class}" onclick="button.handleClick('${props.id}')" >${props.title}</button>
-  `;
-  return template;
+const Button = (props) => {
+	const template = `
+	<button class="login-btn"
+	id="${props.id}" type="${props.type}"
+	onclick="button.handleClick(event, id, ${props.onclick})">${props.title}</button>`;
+
+	return template;
 }
 
+//mandar com o form value
 
 window.button = {
-  handleClick: (id) => {
-    console.log(`Esse é o meu botão ${id}`);
-    return `Esse é o meu botão ${id}`;
-  },
-};
+	handleClick: (event, id, onclick) => {	
+		// firebase.auth(email, senha);
+		event.preventDefault();
 
-
-function Input(props) {
-  const template = `
-    <input class="${props.class}" placeholder="${props.placeholder}" type="${props.type}"></input>`
-  ;
-  return template; 
+		onclick(id, event);
+	}
 }
 
-window.button = {
-
-};
-
-
-
-export default Input;
 export default Button;
-// coisas menores (botão input cartão botão de like etc)
+
