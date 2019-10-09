@@ -1,6 +1,7 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 import Register from './register.js';
+import Home from './home.js'
 
 function buttonLogin() {
   const email = document.querySelector('.input-email').value;
@@ -13,10 +14,19 @@ function buttonLogin() {
     //var errorMessage = error.message;
     // ...
   });
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location = '#/home';
+      // User is signed in.
+    } else {
+      // No user is signed in.
+    }
+  });  
+
 }
 
-function loginSocial(event) {
-  event.preventDefault();
+function loginSocial() {
+  // event.preventDefault();
   // var config = {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -28,6 +38,14 @@ function loginSocial(event) {
     //   var email = error.email;
     //   var credential = error.credential;
   });
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location = '#/home';
+      // User is signed in.
+    } else {
+      // No user is signed in.
+    }
+  });  
 }
 
 
@@ -59,6 +77,8 @@ export default Login;
 function locationHashChanged() {
   if (location.hash === '#/register') {
     document.querySelector('main').innerHTML = Register();
+  } else if (location.hash === '#/home'){
+    document.querySelector('main').innerHTML = Home()
   }
 }
 
