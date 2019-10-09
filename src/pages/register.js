@@ -8,6 +8,7 @@ function Register() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then((certo) => {
       console.log('certo')
+      window.location.href = '#feed';
     },(error) => {
     // Handle Errors here.  
       const errorCode = error.code;
