@@ -11,4 +11,4 @@ window.addEventListener('load', init);
   document.querySelector('main').innerHTML = Register();
 }
 
-document.querySelector('a').addEventListener('click',clickRegister);  */
+document.querySelector('a').addEventListener('click',clickRegister);  *
