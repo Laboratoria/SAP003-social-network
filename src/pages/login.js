@@ -1,20 +1,23 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+import Register from './register.js'
+import Post from './post.js';
 
 function sendLogin() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
-  firebase.auth().errorCode ="usuário não cadastrado";
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
     let errorCode = error.code;
-    let errorMessage = error.message;
-      if (errorCode === 'auth/wrong-password') {
-        alert('Senha errada!');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
+    if (errorCode === 'auth/wrong-password') {
+      alert('Senha errada!');
+    } else {
+      alert('Usuário não cadastrado');
+    }
   })
+}
+
+function HashRegister() {
+  window.location.href = '#register';
 }
 
 function Login() {
@@ -40,8 +43,18 @@ function Login() {
     })}
     <button><i class="fab fa-google fa-2x"></i></button>
   </form>
-  <p>Não tem uma conta? <a href="">Registre-se</a></p>
+  <p>Não tem uma conta? ${Button({id:'register', title:'Registre-se', onClick:HashRegister})}</p>
   `;
   return template;
 }
 export default Login;
+
+/* function HashChange() {
+  if(location.hash === '/#register') {
+    document.querySelector('main').innerHTML = Register();
+  }
+  else {
+    location.hash ="/#login";
+}
+window.onhashchange = HashChange;
+ */
