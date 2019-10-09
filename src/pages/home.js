@@ -1,5 +1,4 @@
 import Button from '../components/button.js';
-// import Card from '../components/card.js';
 import Input from '../components/input.js';
 
 
@@ -7,9 +6,10 @@ import Input from '../components/input.js';
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
-  console.log(email,senha);
-  
-}
+
+  console.log(email, senha);
+};
+
 
 function Login() {
   const template = `
@@ -25,6 +25,9 @@ function Login() {
 
 // ${Card({ texto: 'banana e peixinho' })}
 
+
+
 export default Login;
+
 
 //onhashchange rotas por #
