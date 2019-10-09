@@ -4,7 +4,7 @@ import Input from '../components/input.js';
 function btnRegister() {
   const email = document.querySelector('.js-email-register').value;
   const password = document.querySelector('.js-password-register').value;
-  auth.createUserWithEmailAndPassword(email, password);
+  firebase.auth().createUserWithEmailAndPassword(email, password);
 }
 
 function Register() {
