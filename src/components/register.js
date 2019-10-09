@@ -20,7 +20,6 @@ function Register() {
     class: 'primary-button',
     title: 'Registre-se',
   })}
-
     </form>`;
 }
 
