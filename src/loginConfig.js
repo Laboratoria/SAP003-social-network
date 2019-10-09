@@ -5,6 +5,7 @@ function uiConfig() {
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     ],
+
   };
 }
 
