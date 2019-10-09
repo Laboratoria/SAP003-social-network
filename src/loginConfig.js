@@ -1,8 +1,8 @@
-function uiConfig() {
-  return{
+const uiConfig = () => {
+  return {
     signInFlow: "popup",
     signInSuccessUrl: "#",
-    signInOptions:[
+    signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ]
   };
