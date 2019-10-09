@@ -6,7 +6,6 @@ function Button(props) {
   return template;
 }
 
-
 window.button = {
   handleClick: (event, callback) => {
     event.preventDefault();
