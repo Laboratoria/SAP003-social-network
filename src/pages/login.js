@@ -8,6 +8,7 @@ function createLogin() {
   firebase.auth().createUserWithEmailAndPassword(email.value, password)
     .then(function (email){
       alert(`Bem vindo ` + email.value);
+      
     })
       .cath(function (error){
         console.error(error.code);
