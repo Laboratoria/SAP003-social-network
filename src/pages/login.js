@@ -9,6 +9,8 @@ const send = () => {
     .signInWithEmailAndPassword(email, password)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
+
+  return alert('Entrou na timeline')
 };
 
 const register = () => {
@@ -19,6 +21,7 @@ const register = () => {
     .createUserWithEmailAndPassword(email, password)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
+  return alert('Conta criada com sucesso!')
 };
 
 const login = () => {
