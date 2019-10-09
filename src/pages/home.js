@@ -1,7 +1,6 @@
 import Button from "../components/button.js";
 
 export function Home() {
-
 	const template = `<h1 class="homepage-title">Livreiras</h1>
 	<form class="login-form">
 	<input type="text" id="login-input" class="js-login" placeholder="Livreira">
@@ -20,3 +19,5 @@ const login = (id) => {
 const signUp = (id) => {
 	window.location.hash = id;
 }
+
+export default Home;

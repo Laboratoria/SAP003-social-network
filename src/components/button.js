@@ -8,6 +8,7 @@ const Button = (props) => {
 }
 
 //mandar com o form value
+
 window.button = {
 	handleClick: (event, id, onclick) => {	
 		// firebase.auth(email, senha);
@@ -18,3 +19,4 @@ window.button = {
 }
 
 export default Button;
+
