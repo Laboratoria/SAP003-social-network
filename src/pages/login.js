@@ -2,23 +2,22 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 import Google from '../components/google-button.js';
 
-const email = document.querySelector('.js-input-email');
-const password = document.querySelector('.js-input-password');
-
 const signIn = () => {
+  const email = document.querySelector('.js-input-email').value;
+  const password = document.querySelector('.js-input-password').value;
   firebase
     .auth()
-    .signInWithEmailAndPassword(email.value, password.value)
+    .signInWithEmailAndPassword(email, password)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
-
-  return alert('Entrou na timeline')
 };
 
 const register = () => {
+  const email = document.querySelector('.js-input-email').value;
+  const password = document.querySelector('.js-input-password').value;
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email.value, password.value)
+    .createUserWithEmailAndPassword(email, password)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
 };
@@ -30,7 +29,6 @@ const googleLogin = () => {
     .signInWithPopup(provider)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
-  return alert('Conta criada com sucesso!')
 };
 
 const login = () => {
@@ -42,7 +40,7 @@ const login = () => {
     ${Input({
     class: 'js-input-email',
     placeholder: 'Email',
-    type: 'text',
+    type: 'email',
   })}
     ${Input({
     class: 'js-input-password',
@@ -58,7 +56,7 @@ const login = () => {
     onClick: register,
   })} 
   <p id="text-p" class="text">ou entrar com...</p>
-  ${Google({
+    ${Google({
     class: 'img-google',
     type: 'image',
     src: 'images/google.png',
