@@ -2,7 +2,7 @@ function Button(props) {
   const template = `
     <button 
       class="primary-button" 
-      onclick="button.handleClick(event, '${props.onClick}' '${props.id}')" >
+      onclick="button.handleClick(${props.onClick})" >
       ${props.title}
     </button>
   `;
@@ -11,8 +11,7 @@ function Button(props) {
 }
 
 window.button = {
-  handleClick: (event, callback) => {
-    event.preventDefault();
+  handleClick: (callback) => {
     callback();
   },
 };
