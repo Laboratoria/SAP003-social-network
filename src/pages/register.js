@@ -6,10 +6,13 @@ function Register() {
     const email = document.querySelector('.js-email-input').value;
     const password = document.querySelector('.js-password-input').value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((certo) => {
+      console.log('certo')
+    },(error) => {
     // Handle Errors here.  
-    var errorCode = error.code;
-    var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('errooooo')
     // if (errorCode == 'auth/weak-password') {
     //   alert('A senha é muito fraca');
     // } else {
