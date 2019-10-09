@@ -1,3 +1,9 @@
+header img{
+  width: 305px;
+  height: 200px;
+  margin: 0px 0px;
+}
+
 input{
 display: block;
 border-radius:4px;
