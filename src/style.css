@@ -7,3 +7,19 @@
   border: none;
   cursor: pointer;
 }
+
+.primary-input {
+  border: 2px solid black;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.bordinha-redonda {
+  border-radius: 5px;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #009944;
+}
