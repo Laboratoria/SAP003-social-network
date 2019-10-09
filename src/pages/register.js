@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function btnRegister() {
-  const email = document.querySelector('.js-email-regisster').value;
+  const email = document.querySelector('.js-email-register').value;
   const password = document.querySelector('.js-password-register').value;
   auth.createUserWithEmailAndPassword(email, password);
 }

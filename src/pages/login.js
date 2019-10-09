@@ -1,24 +1,24 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-function buttonLogin(){
+function buttonLogin() {
   const email = document.querySelector('.input-email').value
-    const password = document.querySelector('.input-password').value
-    console.log(email);
-    console.log(password);
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function() {
-      // Handle Errors here.
-      //var errorCode = error.code;
-      //var errorMessage = error.message;
-      // ...
-    });
+  const password = document.querySelector('.input-password').value
+  console.log(email);
+  console.log(password);
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function () {
+    // Handle Errors here.
+    //var errorCode = error.code;
+    //var errorMessage = error.message;
+    // ...
+  });
 }
 
-function loginSocial (){
+function loginSocial() {
   event.preventDefault();
-    // var config = {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+  // var config = {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function (result) {
     //   var token = result.credential.accessToken;
     //   var user = result.user;
     // }).catch(function(error) {
@@ -26,8 +26,8 @@ function loginSocial (){
     //   var errorMessage = error.message;
     //   var email = error.email;
     //   var credential = error.credential;
-    });
-  }
+  });
+}
 
 
 function Login() {
@@ -48,11 +48,9 @@ function Login() {
 
         ${Button({ id: '🎉', title: 'Entrar 🎉', onClick: buttonLogin })}
         ${Button( { id: 'google', title: 'Entrar com sua conta do Google', class: 'btn-google', onClick: loginSocial })}
-      </form>
-      <h3>Criar conta</h3>
+    </form>
+    <h3>Criar conta</h3>
   `;
-
   return template;
 }
-
 export default Login;
