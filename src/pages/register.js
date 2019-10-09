@@ -1,16 +1,7 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-// const sendEmailVerification = () => {
-//   // [START sendemailverification]
-//   firebase.auth().currentUser.sendEmailVerification().then(function () {
-//     // Email Verification sent!
-//     // [START_EXCLUDE]
-//     alert('Email Verification Sent!');
-//     // [END_EXCLUDE]
-//   });
-//   // [END sendemailverification]
-// }
+
 const createUser = () => {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
@@ -20,9 +11,10 @@ const createUser = () => {
     const errorMessage = error.message;
 
     if (errorCode === 'auth/weak-password') {
-      alert('The password is too weak.')
+      alert('The password is too weak.');
     } else {
       alert(errorMessage);
+
     };
 
 
@@ -40,13 +32,15 @@ const createUser = () => {
 };
 
 
+
 const Register = () => {
   const template = `
   <section>
     <form class="container">
-    ${Input({ type: 'email', placeholder: 'email', class: 'js-email-input' })}
-    ${Input({ type: 'password', placeholder: 'password', class: 'js-password-input' })}
-    ${Button({ type: 'submit', title: 'Cadastrar', onClick: createUser })}
+    ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
+    ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
+    ${Button({type: 'submit', title: 'Cadastrar', onClick: createUser})}
+
     </form>
     </section>
   `;

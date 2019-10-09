@@ -1,12 +1,13 @@
-const uiConfig = () => {
+function uiConfig() {
   return {
-    signInFlow: "popup",
-    signInSuccessUrl: "#",
+    signInFlow: 'popup',
+    signInSuccessUrl: '#',
     signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    ]
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ],
+
   };
-};
+}
 
 // function configureLogin() {
 //   document.querySelector('main').innerHTML += "<div id=\"firebaseui-auth-container\"></div>"
