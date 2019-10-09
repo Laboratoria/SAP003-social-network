@@ -1,31 +1,61 @@
 .primary-button {
-  background-color: green;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
+  background-color: rgb(162, 170, 162);
+  /* padding: 10px; */
+  font-size: 0.8rem;
+  color: white;
+  border-radius: 25px;
+  /* font-weight: bold; */
   border: none;
   cursor: pointer;
+  height: 25px;
+  width: 100px;
+  margin-top: 5px;
+  
 }
-/* 
-.title, .subtitle {
-  text-align: center;
-  color: yellow;
-
-} */
+.subtitle {
+ font-size: 0.8rem;
+}
 
 .box-login {
   background-color: blueviolet;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   text-align: center;
 }
 
-.testeee {
- background-color: blue;
+.entrada {
+ background-color: rgb(190, 190, 221);
+ border-radius: 20px;
+ height: 25px;
+ margin: 5px 5px 5px 5px;
 }
 
 .logo {
-  height: 30%;
+  height: 50%;
+  width: 50%;
+}
+
+
+@media (min-width: 500px) {
+.logo {
+  /* display: inline-block; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* margin-right: 60%; */
+  text-align: center;
+  
+}
+  .box-login {
+    /* display: inline-block; */
+    /* flex-direction: row; */
+    /* justify-content: flex-end; */
+    /* margin-left: 60%; */
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 }
