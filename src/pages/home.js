@@ -1,5 +1,4 @@
-import Register from '../components/register.js';
-import Login from '../components/login.js';
+import Login from './login.js';
 
 
 function Home() {
