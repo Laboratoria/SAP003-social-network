@@ -6,11 +6,13 @@ import Input from '../components/input.js';
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
-  // localStorage.setItem('input-email', email);
-  // localStorage.setItem('input-senha', senha);
   console.log(email, senha);
+  
 }
 
+/* function validarEmailESenha (){
+  if (localStorage.setItem )
+} */
   // const maximoDeTentativas = 3;
   // const tentativaAtual = 1;
 
