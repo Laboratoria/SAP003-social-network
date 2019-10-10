@@ -2,18 +2,14 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function newUser() {
-  if(name == ""|| email == "" || password == "") {
-    alert("Insira os dados solicitados...");
-  }
 
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;  
   const name = document.querySelector('.js-name-input').value;
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    // ...
+    alert(errorCode, errorMessage);
   });
 }
 
@@ -33,6 +29,8 @@ function newUserTemplate() {
   ${inNewUser}
   </form>   
   `;
+
+
 
   return template;
 }

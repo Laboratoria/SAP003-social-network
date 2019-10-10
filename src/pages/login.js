@@ -1,17 +1,21 @@
+import locationHasChange from './pages/main.js';
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function login() {
-  // window.location.hash
+
   // criar hash para ir para a timeline.
   const email = document.querySelector('.js-email-input').value;
-  console.log(email);
-  // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  //   // Handle Errors here.
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   // ...
-  // });
+  const password = document.querySelector('.js-password-input').value;
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorCode, errorMessage);
+  });
+
+  window.addEventListener("hashchange", locationHasChange, false);
+  location.hash = "#Feed";
 
 }
 
@@ -26,7 +30,7 @@ function TemplateLogin() {
     </form>
     <p>Pode acessar também com...</p>
 
-    <p>Não tem uma conta? <p>
+    <p><a href="#createAccount">Não tem uma conta?</a></p>
   `;
 
 
