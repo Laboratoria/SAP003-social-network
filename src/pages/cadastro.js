@@ -8,7 +8,6 @@ const cadastrar = (id, event) => {
 	console.log(email);
 	const password = document.getElementById('pass').value;
 	console.log(password);
-
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;

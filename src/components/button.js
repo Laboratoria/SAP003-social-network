@@ -7,8 +7,6 @@ const Button = (props) => {
 	return template;
 }
 
-//mandar com o form value
-
 window.button = {
 	handleClick: (event, id, onclick) => {	
 		// firebase.auth(email, senha);
