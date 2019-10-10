@@ -15,7 +15,7 @@
 .secondary-button{
   border-radius: 50%;
   background-color: blue;
-  padding: 10px;
+  padding: 8px;
 }
 .subtitle {
   font-size: 0.8rem;
@@ -26,7 +26,7 @@
 }
 
 .box-login {
-  background-color: blueviolet;
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,12 +66,12 @@ main{
   /* margin-right: 60%; */
   /* text-align: center;   */
 }
-  .box-login {
+  /* .box-login { */
     /* display: inline-block; */
     /* flex-direction: row; */
     /* justify-content: flex-end; */
     /* margin-left: 60%; */
-}
+/* } */
 
 main{
   display: flex;

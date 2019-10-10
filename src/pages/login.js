@@ -15,6 +15,18 @@ function signIn() {
     console.log(errorMessage);
     console.log(errorCode);
     document.querySelector('.error').textContent = errorMessage;
+    if (errorCode === 'auth/invalid-email') {
+      document.querySelector('.error').textContent = 'Email inválido';
+    }
+    if (errorCode === 'auth/user-disabled') {
+      document.querySelector('.error').textContent = 'Usuário desabilitado';
+    }
+    if (errorCode === 'auth/user-not-found') {
+      document.querySelector('.error').textContent = 'Usuário não encontrado';
+    }
+    if (errorCode === 'auth/wrong-password') {
+      document.querySelector('.error').textContent = 'Senha incorreta';
+    }
   });
 }
 
@@ -22,20 +34,20 @@ function google() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    const token = result.credential.accessToken;
+    // const token = result.credential.accessToken;
     // The signed-in user info.
-    const user = result.user;
+    // const user = result.user;
     // document.querySelector('.greetings').innerHTML = `Olá ${user.displayName}`;
     // const test = document.querySelector('.greetings');
     // console.log(test)
   }).catch((error) => {
     // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
     // The email of the user's account used.
-    const email = error.email;
+    // const email = error.email;
     // The firebase.auth.AuthCredential type that was used.
-    const credential = error.credential;
+    // const credential = error.credential;
     // ...
   });
 }
@@ -65,10 +77,9 @@ function Login() {
        </form>
       <section class="error"></section><br>
       <section>Entrar com a conta do Google<br>
-      
-      ${RoundButton({icone:"fab fa-google", class:'google', title:"google", onclick: google })}
+        ${RoundButton({ icone: 'fab fa-google', class: 'google', title: 'google', onclick: google })}
       </section>
-    <p>Ainda não tem uma conta? <a href="#register">Create an Account</a></p>
+    <p>Ainda não tem uma conta? <a href="#register">Registre-se</a></p>
     </section>
     `;
   window.location = '#login';
