@@ -31,12 +31,13 @@ function validarEmailESenha (){
 //     }
 
 //   }
-// }
+// 
 
 
 function Login() {
   const template = `
     <h1>Home Page</h1>
+    <p><a href= "#cadastro">Cadastre-se</a></p> 
     <form>
       ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
       ${Input({ class: 'js-senha', placeholder: 'Senha', type: 'password' })}
