@@ -1,8 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-
-
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
@@ -35,6 +33,7 @@ function pegarInput() {
 function Login() {
   const template = `
     <h1>Home Page</h1>
+    <p><a href="#cadastro">Cadastre-se</a></p>
     <form>
       ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
       ${Input({ class: 'js-senha', placeholder: 'Senha', type: 'password' })}
@@ -45,5 +44,3 @@ function Login() {
 }
 
 export default Login;
-
- 

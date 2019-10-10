@@ -12,7 +12,7 @@ function pegarInput() {
 
 function Cadastro() {
   const template = `
-    <p>Cadastre-se</p>
+  <p><a href="#login">Login</a></p>
     ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
     ${Input({ class: 'js-nome', placeholder: 'Nome completo', type: 'text' })}
     ${Input({ class: 'js-senha', placeholder: 'senha', type: 'password' })}
@@ -21,5 +21,14 @@ function Cadastro() {
   `;
   return template;
 }
+
+function locationHashChanged() {
+  if (location.hash === '#cadastro') {
+    document.querySelector('main').innerHTML = Cadastro();
+  } else if (location.hash === '#login') {
+    document.querySelector('main').innerHTML = Login();
+  }
+}
+window.addEventListener('hashchange', locationHashChanged, false);
 
 export default Cadastro;
