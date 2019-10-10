@@ -37,7 +37,6 @@ body{
 
   body{
     background-color: #f3e5f5;
-    border: solid 1px;
     margin: 0;
     height: 732px;
   }
@@ -62,6 +61,11 @@ body{
     font-size: 16px;
     align-self: center;
     margin-top: 20px;
+    box-shadow: 2px 2px 5px grey;
+  }
+
+  .primary-button:hover{
+    background-color: #ffffff;
   }
 
   .login-container{
@@ -79,7 +83,7 @@ body{
     border: none;
     height: 50px;
     width: 50px;
-    /* box-shadow: 20px 20px 20px black; */
+    box-shadow: 2px 2px 5px grey;
   }
 
   .google-button:hover{

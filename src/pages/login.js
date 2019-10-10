@@ -32,48 +32,31 @@ const userLogin = () => {
 }
 
 // export const banana = () => {
-const loginGoogle = () =>{
+const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(result => console.log(result)).catch(erro => alert(erro.message));
+  firebase.auth().signInWithPopup(provider).then().catch(erro => alert(erro.message));
 }
-//   console.log("oi");
-  // let db = firebase.firestore();
-  // databases.connect();
-  //var provider = new firebase.auth.GoogleAuthProvider();
-  // firebase
-  //   .auth()
-  //   .signInWithPopup(provider)
-  //   .then(res => {
-  //     const user = res.user;
-  //     let userName = user.displayName;
-  //     db.collection("socialMedia")
-  //       .doc(user.uid)
-  //       .get()
-  //
-  //       .then(function (doc) {
-  //
-  //         if (doc.exists) {
-  //           alert('Sessão iniciada');
-  //           window.location.hash = "#/feed";
-  //         } else {
-  //           //si no existe lo vamos a crear con uid de usuario
-  //           saveUserToDatabaseAfterLogin(user, userName);
-  //           alert('Sessão iniciada');
-  //           window.location.hash = "#/feed";
-  //         }
-  //       });
-  //   })
-  //   .catch(err => {
-  //     alert("Ocorreu um erro", err);
-  //     window.location.hash = "#/login";
-  //   });
-//};
 
-// document.querySelector('.google-button').addEventListener('onClick', googleLogin)
-//
-// const googleLogin= ()=>{
-//   console.log('funfou')
-// }
+const loginGoogleInacabado = () =>{
+  //   res =>{
+  //   const user = res.user;
+  //   let userName = user.displayName;
+  //   let db = firebase.firestore();
+  //   //databases.connect();
+  //   db.collection("socialMedia")
+  //     .doc(user.uid)
+  //     .get()
+  //     .then(doc => {
+  //       if (doc.exists) {
+  //         //window.location.hash = "#/feed";
+  //       } else {
+  //         //si no existe lo vamos a crear con uid de usuario
+  //         saveUserToDatabaseAfterLogin(user, userName);
+  //         //window.location.hash = "#/feed";
+  //       }
+  //     });
+  // }
+}
 
 const Login = () => {
   const template = `
