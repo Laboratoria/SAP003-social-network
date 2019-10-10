@@ -7,11 +7,8 @@ function buttonLogin() {
   const email = document.querySelector('.input-email').value;
   const password = document.querySelector('.input-password').value;
   firebase.auth().signInWithEmailAndPassword(email, password).catch(function () {
-    // Handle Errors here.
-    //var errorCode = error.code;
-    //var errorMessage = error.message;
-    // ...
   });
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       window.location = '#home';
@@ -23,17 +20,8 @@ function buttonLogin() {
 }
 
 function loginSocial() {
-  // event.preventDefault();
-  // var config = {
   var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function (result) {
-    //   var token = result.credential.accessToken;
-    //   var user = result.user;
-    // }).catch(function(error) {
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   var email = error.email;
-    //   var credential = error.credential;
+  firebase.auth().signInWithPopup(provider).then(function () {
   });
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {

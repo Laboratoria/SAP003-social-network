@@ -1,11 +1,17 @@
 import Button from '../components/button.js';
 
+function btnSignOut() {
+  firebase.auth().signOut().then(function() { 
+    console.log('já sai')
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
 function Home() {
   const template = `
-    <h1>Home Page</h1>
-    ${Button({ id: '🐠', title: 'Botão 🐠' })}
-    ${Button({ id: '🎉', title: 'Botão 🎉' })}
-    <p>Esse é um exemplo 🍌</p>
+    <h1>ESSA É A HOMEEEEE 🎉 🎉 🎉</h1>
+    ${Button({ id: '🍌', title: 'SAIR', onClick: btnSignOut })}
   `;
 
   return template;
