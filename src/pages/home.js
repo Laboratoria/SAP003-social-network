@@ -1,8 +1,8 @@
 import Button from '../components/button.js';
 
 function btnSignOut() {
-  firebase.auth().signOut().then(function() {
-      console.log('já sai')    
+  firebase.auth().signOut().then(function() { 
+    window.location = '#login';  
   }).catch(function(error) {
     // An error happened.
   });

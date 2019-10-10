@@ -8,11 +8,21 @@ function init() {
 window.addEventListener('load', init);
 
 function locationHashChanged() {
-  if (location.hash === '#register') {
+  switch (location.hash) {
+    case '#register':
     document.querySelector('main').innerHTML = Register();
-  } else if (location.hash === '#home'){
+    break;
+    case  '#home':
     document.querySelector('main').innerHTML = Home()
+    break;
+    case '#login':
+    document.querySelector('main').innerHTML = Login()
+    break;  
+    case '#profile':
+    document.querySelector('main').innerHTML = Profile()
+    break;
   }
 }
 
-window.addEventListener("hashchange", locationHashChanged, false);
+
+window.addEventListener('hashchange', locationHashChanged, false)
