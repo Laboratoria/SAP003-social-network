@@ -1,13 +1,11 @@
 import Login from './pages/login.js';
 import Register from './pages/register.js';
-import Home from './pages/home.js'
+import Home from './pages/home.js';
 
 function init() {
   document.querySelector('main').innerHTML = Login();
 }
-
 window.addEventListener('load', init);
-
 
 function locationHashChanged() {
   switch (location.hash) {

@@ -1,0 +1,26 @@
+[debug] [2019-10-10T18:02:50.372Z] ----------------------------------------------------------------------
+[debug] [2019-10-10T18:02:50.374Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-10T18:02:50.374Z] CLI Version:   7.4.0
+[debug] [2019-10-10T18:02:50.374Z] Platform:      linux
+[debug] [2019-10-10T18:02:50.374Z] Node Version:  v10.16.3
+[debug] [2019-10-10T18:02:50.375Z] Time:          Thu Oct 10 2019 15:02:50 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-10T18:02:50.375Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-10T18:02:50.380Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-10T18:02:50.381Z] > authorizing via signed-in user
+[debug] [2019-10-10T18:02:50.381Z] [iam] checking project social-network-squad3 for permissions ["firebase.projects.get"]
+[debug] [2019-10-10T18:02:50.382Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-squad3:testIamPermissions  
+
+[debug] [2019-10-10T18:02:51.820Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T18:02:51.825Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-squad3  
+ 
+[debug] [2019-10-10T18:02:53.599Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/SAP003-social-network'...
+[info] 
+[debug] [2019-10-10T18:02:53.605Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-squad3/webApps/-/config  
+ 
+[debug] [2019-10-10T18:02:55.174Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5005

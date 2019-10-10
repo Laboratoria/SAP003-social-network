@@ -11,10 +11,12 @@ function btnSignOut() {
 function Home() {
   const template = `
     <h1>ESSA É A HOMEEEEE 🎉 🎉 🎉</h1>
-    ${Button({ id: '🍌', title: 'SAIR', onClick: btnSignOut })}
+    ${Button({ id: 'btn-exit', title: 'SAIR', onClick: btnSignOut })}
   `;
 
   return template;
 }
+
+
 
 export default Home;
