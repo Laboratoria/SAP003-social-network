@@ -28,8 +28,6 @@ function Register() {
     placeholder: 'Senha',
   })}
   ${Button({
-    id: 'send',
-    class: 'primary-button',
     title: 'Registre-se',
     onClick: createUser,
   })}
