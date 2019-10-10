@@ -1,5 +1,5 @@
 import Button from "../components/button.js";
-import Input from "../components/cad-button.js";
+import Input from "../components/input.js";
 
 const cadastrar = (id, event) => {
 
@@ -14,10 +14,8 @@ const cadastrar = (id, event) => {
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-	alert(errorMessage);
-	})
-
-	window.location.hash = 'mural';
+  alert(errorMessage);
+	})	
 }
 
 export const Cadastro = () => {

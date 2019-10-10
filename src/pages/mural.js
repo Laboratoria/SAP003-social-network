@@ -1,7 +1,31 @@
+import Button from "../components/button.js";
+
 export const Mural = () => {
-	const template = `<p>teste<p>`;
+	const template = `
+	<header>
+		<nav>
+			<li>Dropdown</li>
+			<li>Logo</li>
+			<li>Logout</li>
+		</nav>
+	</header>
+	<section>
+		<form>
+			<input>textarea</input><button>post</button>
+			<button>adicionar fotinha</button>	
+	</section>
+	${Button({ id:"logout", type:"button", title:"Logout", onclick: logout})}
+	`;
 
 	return template;
+}
+
+const logout = () => {
+
+	firebase.auth().signOut().then(function() {
+		window.location.hash = 'home';
+	}).catch(function(error) {
+	});
 }
 
 

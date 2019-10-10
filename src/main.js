@@ -11,21 +11,17 @@ const cad = () => {
   document.querySelector("main").innerHTML = Cadastro();
 }
 
-const pagInicial = () => {
-	document.querySelector("main").innerHTML = PaginaInicial();
-}
-
 const mural = () => {
 	document.querySelector("main").innerHTML = Mural();
 }
 
 const hash = () => {
-	if (location.hash === "#login") {
-		return pagInicial();
-	} else if (location.hash === "#sign") {
+	if (location.hash === "#sign") {
 		return cad();
 	} else if (location.hash === "#mural") {
 		return mural();
+	} else if (location.hash === "#home") {
+		return init();
 	}
 }
 
