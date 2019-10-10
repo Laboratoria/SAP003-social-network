@@ -4,29 +4,30 @@ import Input from '../components/input.js';
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
-
-  localStorage.setItem("input-email", email);
-  localStorage.setItem("input-senha", senha);
-
-  const maximoDeTentativas = 3;
-  const tentativaAtual = 1;
-
-  while (tentativaAtual <= maximoDeTentativas) {
-
-    if (email == localStorage.email && senha == localStorage.senha) {
-      alert("Bem vindo");
-      tentativaAtual = maximoDeTentativas;
-    } else {
-      if (tentativaAtual == 3) {
-        alert("Nº de tentativas utrapassado");
-      } else {
-        alert("Login invalido. Tente novamente");
-      }
-      tentativaAtual++
-    }
-
-  }
+  // localStorage.setItem('input-email', email);
+  // localStorage.setItem('input-senha', senha);
+  console.log(email, senha);
 }
+
+  // const maximoDeTentativas = 3;
+  // const tentativaAtual = 1;
+
+//   while (tentativaAtual <= maximoDeTentativas) {
+
+//     if (email == localStorage.email && senha == localStorage.senha) {
+//       alert("Bem vindo");
+//       tentativaAtual = maximoDeTentativas;
+//     } else {
+//       if (tentativaAtual == 3) {
+//         alert("Nº de tentativas utrapassado");
+//       } else {
+//         alert("Login invalido. Tente novamente");
+//       }
+//       tentativaAtual++
+//     }
+
+//   }
+// }
 
 
 function Login() {
@@ -41,15 +42,4 @@ function Login() {
   return template;
 }
 
-// ${Card({ texto: 'banana e peixinho' })}
-
-
-
 export default Login;
-
-
-//onhashchange rotas por #
-
-
-
-
