@@ -6,7 +6,7 @@ import logo from '../components/logo.js'
 const userLogin = () => {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
- 
+
   firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -70,10 +70,15 @@ const Login = () => {
       <form class="container">
       ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
       ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
-      ${Button({type: 'submit', title: 'Login', onClick: loginUser})}
+      ${Button({type: 'submit', title: 'Login', class: 'primary-button', onClick: userLogin})}
       </form>
      </section>
-    `;
+     <section class="login-container">
+       <p class="login-text">Ou entre com...</p>
+       <img src="./google.png" class="google-button">
+       <p class="login-text">Não tem uma conta? <a href="#register" class="oi">Registre-se</a></p>
+     </section>
+      `;
 
 
   return template;
