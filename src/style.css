@@ -29,6 +29,17 @@
   text-align: center;
 }
 
+img {
+  max-width:100%;
+	height:auto;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .entrada {
   background-color: rgb(190, 190, 221);
   border-radius: 20px;
@@ -36,16 +47,9 @@
   margin: 5px 5px 5px 5px;
 }
 
-/* .logo {
-  height: 50%;
-  width: 50%;
-} */
 
-main{
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
-}
+
+
 
 
 @media (min-width: 500px) {

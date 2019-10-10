@@ -1,5 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+import RoundButton from '../components/round-button.js';
 
 
 function signIn() {
@@ -65,7 +66,7 @@ function Login() {
       <section class="error"></section><br>
       <section>Entrar com a conta do Google<br>
       
-      ${Button({icone:"fab fa-google", class:'google', title:"google", onclick: google })}
+      ${RoundButton({icone:"fab fa-google", class:'google', title:"google", onclick: google })}
       </section>
     <p>Ainda não tem uma conta? <a href="#register">Create an Account</a></p>
     </section>
