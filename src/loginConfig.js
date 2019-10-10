@@ -1,12 +1,13 @@
 function uiConfig() {
-  return{
-    signInFlow: "popup",
-    signInSuccessUrl: "#",
-    signInOptions:[
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    ]
+  return {
+    signInFlow: 'popup',
+    signInSuccessUrl: '#',
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ],
+
   };
-};
+}
 
 // function configureLogin() {
 //   document.querySelector('main').innerHTML += "<div id=\"firebaseui-auth-container\"></div>"

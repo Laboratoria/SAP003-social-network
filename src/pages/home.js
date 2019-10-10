@@ -1,5 +1,5 @@
-import Button from '../components/button.js';
-import Input from '../components/input.js';
+// import Button from '../components/button.js';
+// import Input from '../components/input.js';
 
 // function Home() {
 //   const template = `
@@ -9,10 +9,11 @@ import Input from '../components/input.js';
 //     ${Button({ type: 'submit', title: 'Login in' })}
 //     </form>
 //   `;
-// 
+//
 //   return template;
 // }
 //
 // //firebase.auth(email, senha);
 //
 // export default Home;
+

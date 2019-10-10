@@ -1,9 +1,9 @@
 import Register from './pages/register.js';
-import uiConfig from '../loginConfig.js';
+// import uiConfig from '../loginConfig.js';
 
-function init() {
+const init = () => {
   document.querySelector('main').innerHTML = Register();
-  uiConfig();
+  // uiConfig();
 }
 
 window.addEventListener('load', init);

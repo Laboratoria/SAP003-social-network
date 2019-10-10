@@ -1,19 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+@media (max-width: 1280px) {
+.primary-input{
+    border-radius: 18px;
+    width: 238px;
+    height: 31px;
+    border: 1px solid gray;
+    margin-bottom: 16px;
+    padding-left: 12px;
+  }
 .primary-button {
   background-color: gray;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 30px;
   border: none;
-  cursor: pointer;  
+  cursor: pointer;
 }
-/* .container{
-  display: flex;
- align-items: center;
-  flex-direction: column;
-  width: 50%;
-  border: 1px solid black;
 
-} */
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 500px;
+}
+}
 
 @media only screen and (max-device-width: 900px){
 
@@ -24,13 +44,6 @@
     border: solid 1px;
     margin: 0;
     height: 500px;
-  }
-
-  .form{
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
-    
   }
 
   .primary-input{
@@ -45,7 +58,25 @@
     color: #000000;
     width: 50%;
     height: 40px;
+    font-family: 'Righteous', cursive;
     font-size: 16px;
     align-self: center;
+  }
+
+  .logo{
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-bottom: -10%;
+  }
+
+  .text-logo{
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+    color: rgb(59, 59, 59);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: -5px;
   }
 } 
