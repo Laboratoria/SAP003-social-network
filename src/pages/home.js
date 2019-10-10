@@ -1,6 +1,8 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+
+
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
@@ -43,3 +45,5 @@ function Login() {
 }
 
 export default Login;
+
+ 
