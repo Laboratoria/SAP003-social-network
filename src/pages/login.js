@@ -1,24 +1,5 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Register from './register.js'
-import Post from './post.js';
-
-function sendLogin() {
-  const email = document.querySelector('.js-email-input').value;
-  const password = document.querySelector('.js-password-input').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-    let errorCode = error.code;
-    if (errorCode === 'auth/wrong-password') {
-      alert('Senha errada!');
-    } else {
-      alert('Usuário não cadastrado');
-    }
-  })
-}
-
-function HashRegister() {
-  window.location.href = '#register';
-}
 
 function Login() {
   const template = `
@@ -29,7 +10,7 @@ function Login() {
     ${Input({
       class: 'js-email-input',
       placeholder: 'email',
-      type: 'text',
+      type: 'email',
     })}
       ${Input({
       class: 'js-password-input ',
@@ -37,24 +18,44 @@ function Login() {
       type: 'password',
     })}
       ${Button({
-      id: 'btn',
+      id: 'btnLogin',
       title: 'Login',
       onClick: sendLogin,
     })}
-    <button><i class="fab fa-google fa-2x"></i></button>
+      ${Button({
+      id: "iGoogle",
+      title:'<i class="fab fa-google "></i>',
+      onClick: sendLogin,
+      })}
   </form>
-  <p>Não tem uma conta? ${Button({id:'register', title:'Registre-se', onClick:HashRegister})}</p>
+  <p>Não tem uma conta? 
+    ${Button({
+      id:'register', 
+      title:'Registre-se', 
+      onClick:HashRegister})}
+  </p>
   `;
+  location.hash = 'login'
   return template;
 }
-export default Login;
 
-/* function HashChange() {
-  if(location.hash === '/#register') {
-    document.querySelector('main').innerHTML = Register();
-  }
-  else {
-    location.hash ="/#login";
+function sendLogin() {
+  const email = document.querySelector('.js-email-input').value;
+  const password = document.querySelector('.js-password-input').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => { location.hash = 'post' })
+    .catch(function (error) {
+      let errorCode = error.code;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Senha errada!');
+      } else {
+        alert('Usuário não cadastrado');
+      }
+    })
 }
-window.onhashchange = HashChange;
- */
+
+function HashRegister() {
+  location.hash = 'register';
+}
+
+export default Login;

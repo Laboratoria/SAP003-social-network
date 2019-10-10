@@ -4,7 +4,12 @@ import Input from '../components/input.js';
 function createCount() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  const name = document.querySelector('.js-name-input').value;
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then(() => { 
+    location.hash = 'login';
+   })
+  .catch(function(error) {
     let errorCode = error.code;
     let errorMessage = error.message;
     if (errorCode == 'auth/weak-password') {
@@ -14,8 +19,6 @@ function createCount() {
     }
     console.log(error);
     });
-    
-  
 }
 
 function Register() {
