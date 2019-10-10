@@ -49,7 +49,10 @@ function Login() {
 
   window.location.href = '#login';
 
-  const login = `<form>
+  const login = `
+  <title class="logo">AMS - Rede de ensino</title>
+  <div class="sub-title">bem vindas!</div>
+  <form>
     ${Input({
     id: 'email',
     class: 'primary-input',
@@ -68,7 +71,7 @@ function Login() {
   })}
 
   ${Button({
-    title: 'Login pelo Google',
+    title: '<img src="../img/google.jpg">',
     onClick: googleLogin,
   })}
     </form>

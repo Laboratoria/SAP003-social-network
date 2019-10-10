@@ -1,9 +1,18 @@
 .primary-button {
   background-color: #ffe521;
   padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
+  font-size: 1.3rem;
+  border-radius: 200px;
   font-weight: bold;
   border: none;
   cursor: pointer;
+}
+
+.primary-button img {
+  width: 3rem;
+}
+
+.primary-input {
+  background-color: red;
+  display: inline-block;
 }
