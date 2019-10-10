@@ -6,7 +6,7 @@ function createCount() {
   const password = document.querySelector('.js-password-input').value;
   const name = document.querySelector('.js-name-input').value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then(() => { 
+  .then(() => {
     location.hash = 'login';
    })
   .catch(function(error) {
@@ -23,10 +23,10 @@ function createCount() {
 
 function Register() {
   const template = `
-    <header><img class="header"  src="./Imagens/header.png"></header>
-    <h1>Heroínas</h1>
-    <h3>Para fazer seu cadastro na rede Heroínas preencha os campos abaixo!</h3>
-    <form>
+    <header class="header"><img src="./Imagens/header-logo.png"></header>
+    <h1 class="name-network">Heroínas</h1>
+    <h3 class="text-simple">Para fazer seu cadastro na rede Heroínas preencha os campos abaixo!</h3>
+    <form class="primary-box">
     ${Input({
         class: 'js-name-input',
         placeholder: 'name',
@@ -43,7 +43,7 @@ function Register() {
       type: 'password',
     })}
       ${Button({
-      id: 'btn',
+      id: 'create-account',
       title: 'Criar Conta',
       onClick: createCount,
     })}
