@@ -1,7 +1,5 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Register from './register.js';
-import Home from './home.js'
 
 function buttonLogin() {
   const email = document.querySelector('.input-email').value;
@@ -57,14 +55,3 @@ function Login() {
   return template;
 }
 export default Login;
-
-function locationHashChanged() {
-  if (location.hash === '#register') {
-    document.querySelector('main').innerHTML = Register();
-  } else if (location.hash === '#home'){
-    document.querySelector('main').innerHTML = Home()
-  }
-}
-
-
-window.onhashchange = locationHashChanged;
