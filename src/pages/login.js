@@ -7,10 +7,14 @@ import Input from '../components/input.js';
 function loginUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
-  console.log('Entrou!!!!!!' + name + password);
+  // console.log('Entrou!!!!!!' + name);
   auth.signInWithEmailAndPassword(email, password)
     .then((cred) => {
       console.log(cred.user);
+    })
+    .catch((error) => {
+      errorMessage = error.message;
+      alert(errorMessage);
     });
 }
 
@@ -18,12 +22,16 @@ function signIn(provider) {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      console.log(result);
-      const token = result.credential.accessToken;
-      displayName.innerText = 'Bem vindx, ' + result.user.displayName;
+      if (result.credential) {
+        const token = result.credential.accessToken;
+      }
+      const user = result.user;
+      console.log(user);
     }).catch((error) => {
-      console.log(error);
-      alert('Falha na autenticação');
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.email;
+      alert(errorCode + errorMessage + email);
     });
 }
 

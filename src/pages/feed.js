@@ -4,7 +4,7 @@ function logOut() {
   auth
     .signOut()
     .then(() => {
-      console.log('adeus');
+      console.log('Adeus');
     });
 }
 
