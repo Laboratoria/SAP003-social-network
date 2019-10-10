@@ -12,6 +12,7 @@ export function Home() {
 	return template;
 }
 
+
 const login = (id) => {
 	window.location.hash = id;
 }
