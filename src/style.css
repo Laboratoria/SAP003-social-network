@@ -37,6 +37,11 @@ img {
 .primary-input  {
   border-radius: 15px;
   padding: 5px;
+  margin: 0 50px;
+}
+.js-post {
+  height: 150px;
+  width: 300px
 }
 /* @media screen {
   body { background: #ECEFF1; color:#FF); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
