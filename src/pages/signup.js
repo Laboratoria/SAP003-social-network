@@ -5,6 +5,7 @@ import Input from '../components/input.js';
 function newUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
+  const name = document.querySelector('.name-input').value;
   console.log('tada' + name + password);
   auth.createUserWithEmailAndPassword(email, password)
     .then((cred) => {
@@ -13,8 +14,36 @@ function newUser() {
 }
 
 function Signup() {
-  const template = "<h1>Bem vindo(a)!</h1><p>Para realizar o cadastro, preencha as informações abaixo:</p><form>" + Input({ type: 'text', class: 'name-input', placeholder: 'Nome' }) + Input({ type: 'email', class: 'email-input', placeholder: 'Email' }) + Input({ type: 'password', class: 'password-input', placeholder: 'Senha' }) + "<p class='error'></p>" + Button({ id: 'btn-new-user', onclick: newUser, title: 'Cadastrar' }) + "</form>";
-
+  // const template = "<h1>Bem vindo(a)!</h1><p>Para realizar o cadastro, preencha as informações abaixo:</p><form>" + Input({ type: 'text', class: 'name-input', placeholder: 'Nome' }) + Input({ type: 'email', class: 'email-input', placeholder: 'Email' }) + Input({ type: 'password', class: 'password-input', placeholder: 'Senha' }) + "<p class='error'></p>" + Button({ id: 'btn-new-user', onclick: newUser, title: 'Cadastrar' }) + "</form>";
+  const userInfo = `
+    ${Input({
+    type: 'text',
+    class: 'name-input',
+    placeholder: 'Nome',
+  })}
+    ${Input({
+    type: 'email',
+    class: 'email-input',
+    placeholder: 'Email',
+  })}
+      ${Input({
+    type: 'password',
+    class: 'password-input',
+    placeholder: 'Senha',
+  })}
+      ${Button({
+    id: 'btn-new-user',
+    onclick: newUser,
+    title: 'Cadastrar',
+  })}
+  `;
+  const template = `
+  <h1>Bem vindo(a)!</h1>
+  <p>Para realizar o cadastro, preencha as informações abaixo:</h1>
+  <form>
+  ${userInfo}
+  </form>
+  `;
   return template;
 }
 

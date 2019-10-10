@@ -2,7 +2,6 @@ function Button(props) {
   const template = `
     <button class="primary-button" onclick="button.handleClick(event, ${props.onclick})">${props.title}</button>
     `;
-
   return template;
 }
 
