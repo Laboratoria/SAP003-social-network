@@ -51,8 +51,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 function Login() {
   const template = `
-  <figure class="logo">
-    <img src="imagens/figure2.jpg"/> 
+  <figure>
+    <img class="logo" src="imagens/figure2.jpg"/> 
   </figure>
 
     <section class="box-login">

@@ -10,9 +10,13 @@
   height: 25px;
   width: 100px;
   margin-top: 5px;
-  
 }
 
+.secondary-button{
+  border-radius: 50%;
+  background-color: blue;
+  padding: 10px;
+}
 .subtitle {
   font-size: 0.8rem;
 }
@@ -29,7 +33,7 @@
   text-align: center;
 }
 
-img {
+.logo {
   max-width:100%;
 	height:auto;
 }
