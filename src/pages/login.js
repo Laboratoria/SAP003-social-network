@@ -1,6 +1,7 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 import createLogin from './register.js';
+import Google from './google.js';
 
 function AuthEmailPassButton() {
   const email = document.querySelector('.js-email-input').value;
@@ -25,7 +26,7 @@ function Login() {
     ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
     ${Button({ id: 'doing-login', title: 'Log In', onClick: AuthEmailPassButton})}
     ${Button({ id: 'create-user-button', title: 'Criar Usuario', onClick: createLogin})}
-    ${Button({ id: 'google', title: 'Google', onClick: createLogin})}
+    ${Button({ id: 'google', title: 'Google', onClick: Google})}
     </form>`;
 
   return template;
