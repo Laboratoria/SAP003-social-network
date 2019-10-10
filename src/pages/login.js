@@ -2,6 +2,7 @@ import databases from "../database.js";
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 import logo from '../components/logo.js'
+import Google from '../components/google-login.js'
 
 const userLogin = () => {
   const email = document.querySelector('.js-email-input').value;
@@ -15,7 +16,6 @@ const userLogin = () => {
     } else {
       alert(errorMessage);
     }
-    console.log(error);
 
   }).then(user => {
     console.log(user.isEmailVerified)
@@ -29,40 +29,52 @@ const userLogin = () => {
       alert('login com sucesso')
     }
   });
-
 }
-export const loginGoogle = () => {
-  let db = firebase.firestore();
-  databases.connect();
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase
-    .auth()
-    .signInWithPopup(provider)
-    .then(res => {
-      const user = res.user;
-      let userName = user.displayName;
-      db.collection("socialMedia")
-        .doc(user.uid)
-        .get()
 
-        .then(function (doc) {
+// export const banana = () => {
+const loginGoogle = () =>{
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(result => console.log(result)).catch(erro => alert(erro.message));
+}
+//   console.log("oi");
+  // let db = firebase.firestore();
+  // databases.connect();
+  //var provider = new firebase.auth.GoogleAuthProvider();
+  // firebase
+  //   .auth()
+  //   .signInWithPopup(provider)
+  //   .then(res => {
+  //     const user = res.user;
+  //     let userName = user.displayName;
+  //     db.collection("socialMedia")
+  //       .doc(user.uid)
+  //       .get()
+  //
+  //       .then(function (doc) {
+  //
+  //         if (doc.exists) {
+  //           alert('Sessão iniciada');
+  //           window.location.hash = "#/feed";
+  //         } else {
+  //           //si no existe lo vamos a crear con uid de usuario
+  //           saveUserToDatabaseAfterLogin(user, userName);
+  //           alert('Sessão iniciada');
+  //           window.location.hash = "#/feed";
+  //         }
+  //       });
+  //   })
+  //   .catch(err => {
+  //     alert("Ocorreu um erro", err);
+  //     window.location.hash = "#/login";
+  //   });
+//};
 
-          if (doc.exists) {
-            alert('Sessão iniciada');
-            window.location.hash = "#/feed";
-          } else {
-            //si no existe lo vamos a crear con uid de usuario
-            saveUserToDatabaseAfterLogin(user, userName);
-            alert('Sessão iniciada');
-            window.location.hash = "#/feed";
-          }
-        });
-    })
-    .catch(err => {
-      alert("Ocorreu um erro", err);
-      window.location.hash = "#/login";
-    });
-};
+// document.querySelector('.google-button').addEventListener('onClick', googleLogin)
+//
+// const googleLogin= ()=>{
+//   console.log('funfou')
+// }
+
 const Login = () => {
   const template = `
      <section>
@@ -75,8 +87,8 @@ const Login = () => {
      </section>
      <section class="login-container">
        <p class="login-text">Ou entre com...</p>
-       <img src="./google.png" class="google-button">
-       <p class="login-text">Não tem uma conta? <a href="#register" class="oi">Registre-se</a></p>
+       ${Google({src:'image/google.png', class: 'google-button', onClick: loginGoogle, type: 'image'})}
+       <p class="login-text">Não tem uma conta? <a href="#register" class="link">Registre-se</a></p>
      </section>
       `;
 

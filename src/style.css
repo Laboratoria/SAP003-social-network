@@ -79,9 +79,14 @@ body{
     border: none;
     height: 50px;
     width: 50px;
+    /* box-shadow: 20px 20px 20px black; */
   }
 
-  .oi{
+  .google-button:hover{
+    cursor: pointer;
+  }
+
+  .link{
     text-decoration: none;
     color: #863895;
   }
