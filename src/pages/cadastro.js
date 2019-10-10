@@ -2,17 +2,19 @@ import Button from "../components/button.js";
 import Cad from "../components/cad-button.js";
 
 const cadastrar = (id, event) => {
+
 	event.preventDefault();
 	const email = document.getElementById('mail').value;
-	console.log(email)
+	console.log(email);
 	const password = document.getElementById('pass').value;
-	console.log(password)
+	console.log(password);
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
 	})
+
 }
 
 export const Cadastro = () => {
@@ -26,5 +28,6 @@ export const Cadastro = () => {
 
 	return template;
 }
+
 
 
