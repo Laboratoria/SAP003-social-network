@@ -40,10 +40,11 @@ function Login() {
   })}
   `;
   const template = `
+  
   <h1>Horta Urbana</h1> 
   <form>
   ${userLogin}
-  <p>Ainda é membro? <a href='#'>Cadastre-se</a></p>
+  <p>Ainda não é membro? <a href='#signup'>Cadastre-se</a></p>
   </form>
   `;
   return template;
@@ -51,3 +52,11 @@ function Login() {
 
 export default Login;
 
+
+function locationHashChanged(){
+  if (location.hash ==='#signup') {
+    document.querySelector('main').innerHTML = Signup();
+  } 
+}
+
+window.addEventListener("hashchange", locationHashChanged, false);
