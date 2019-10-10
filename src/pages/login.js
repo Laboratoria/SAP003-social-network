@@ -15,8 +15,13 @@ function Login() {
       const errorMessage = error.message;
       console.log(errorMessage);
       console.log(errorCode);
-    });
+      document.querySelector('.error').textContent = errorMessage;
+    });    
   }
+
+  function google (){
+  }
+  
   const template = `
   
   <figure>
@@ -31,7 +36,9 @@ function Login() {
         ${Input({ type: 'password', class: 'js-password-input', placeholder: ' Password' })}<br>
         ${Button({ class: 'signIn', title: 'Log in', onclick: changePage })}
       </form>
-    <p>Entrar com a conta do Google</p>
+      <p class="error"></p><br>
+    <p>Entrar com a conta do Google</p><br>
+    ${Button({ class: 'google', title: 'google', onclick: google })}<br>
     <p>Ainda não tem uma conta? <a href="#register">Create an Account</a></p>
     </section>
     `;

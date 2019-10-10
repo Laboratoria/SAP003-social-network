@@ -1,10 +1,17 @@
+import Button from '../components/button.js';
+
 function Feed() { 
-  const template = `
-    <h1>Olá</h1>
-    <p>Esse é feed 🍌</p>
-    `;
-  
-    return template;
+
+  function changePage () {
+    window.location.href = '#login';
   }
 
+  const template = `
+      <h1>Olá</h1>
+      <p>Esse é o feed 🍌</p>
+      ${Button({ class: 'signIn', title: 'Logout', onclick: changePage })}
+      `;
+      return template;
+
+}
 export default Feed;

@@ -14,6 +14,7 @@ function Register() {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log('errooooo')
+      document.querySelector('.error').textContent = errorMessage;
     // if (errorCode == 'auth/weak-password') {
     //   alert('A senha é muito fraca');
     // } else {
@@ -47,6 +48,7 @@ function Register() {
       ${Input({ type: 'password', class: 'js-password-input', placeholder: 'password' })}<br>
       ${Button({ class: 'create', title: 'Criar conta', onclick: create})}<br>
     </form>
+    <p class="error"</p><br>
     <p>Já tem uma conta? <a href="#login">Login</a></p>
     </section>
   `;
