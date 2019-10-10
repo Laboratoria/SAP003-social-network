@@ -40,7 +40,6 @@ export function Home() {
 	return template;
 }
 
-
 const signUp = (id) => {
 	window.location.hash = id;
 }
