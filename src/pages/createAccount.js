@@ -2,15 +2,16 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function newUser() {
+  
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
   console.log(email);
   // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  //   // Handle Errors here.
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   // ...
-  // });
+  // //   // Handle Errors here.
+  // //   var errorCode = error.code;
+  // //   var errorMessage = error.message;
+  // //   // ...
+  // // });
 }
 
 function newUserTemplate() {
