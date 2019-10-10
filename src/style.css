@@ -1,9 +1,17 @@
+body{
+  display: flex;
+}
 .primary-button {
-  background-color: #dac2c2;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 15px;
+  background-color: #014034;
+  padding: 3px;
+  font-size: 0.7rem;
   font-weight: bold;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
+}
+.textarea-local{
+  margin-top: 10px;
+  align-items: center;
+  
 }
