@@ -25,4 +25,4 @@ function locationHashChanged() {
 }
 
 
-window.onhashchange = locationHashChanged;
+window.addEventListener('hashchange', locationHashChanged, false)

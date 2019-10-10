@@ -4,9 +4,18 @@ import Input from '../components/input.js';
 function buttonLogin() {
   const email = document.querySelector('.input-email').value;
   const password = document.querySelector('.input-password').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function () {
-  });
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    var errorCode = error.code;
+    // var errorMessage = error.message;
 
+    if (errorCode === 'auth/user-not-found') {
+      alert('Usuário não encontrado!')
+    } else if(errorCode === 'auth/invalid-email') {
+      alert('Digite um e-mail válido!')
+    } else if(errorCode === 'auth/wrong-password') {
+      alert('Email ou senha inválido!')
+    }
+  });
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       window.location = '#home';
