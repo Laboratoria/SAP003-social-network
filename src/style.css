@@ -1,9 +1,86 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+@media (max-width: 700px){
+
+   body {
+     display: flex;
+   }
+  .email{
+    position: absolute;
+    width: 249px;
+    height: 43px;
+    left: 58px;
+    top: 292px;
+
+    background: #FDF9F9;
+    border: 1px solid #E8A645;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .password {
+    position: absolute;
+    width: 249px;
+    height: 43px;
+    left: 56px;
+    top: 374px;
+
+    background: #FDF9F9;
+    border: 1px solid #E8A645;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .primary-button {
+    position: absolute;
+    width: 168px;
+    height: 50px;
+    left: 96px;
+    top: 456px;
+    background: #F3B562;
+    border: none;
+  }
+
+   .btn-register {
+    position: absolute;
+    width: 168px;
+    height: 50px;
+    left: 97px;
+    top: 515px;
+    background: #F3B562;
+  }
+
+  .password-re {
+    position: absolute;
+    width: 249px;
+    height: 43px;
+    left: 58px;
+    top: 416px;
+    background: #FDF9F9;
+    border: 1px solid #E8A645;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .email-re {
+    position: absolute;
+    width: 249px;
+    height: 43px;
+    left: 58px;
+    top: 342px;
+    background: #FDF9F9;
+    border: 1px solid #E8A645;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .name {
+    position: absolute;
+    width: 249px;
+    height: 43px;
+    left: 58px;
+    top: 268px;
+    background: #FDF9F9;
+    border: 1px solid #E8A645;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }
