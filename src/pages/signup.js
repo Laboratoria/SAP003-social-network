@@ -14,7 +14,6 @@ function newUser() {
 }
 
 function Signup() {
-  // const template = "<h1>Bem vindo(a)!</h1><p>Para realizar o cadastro, preencha as informações abaixo:</p><form>" + Input({ type: 'text', class: 'name-input', placeholder: 'Nome' }) + Input({ type: 'email', class: 'email-input', placeholder: 'Email' }) + Input({ type: 'password', class: 'password-input', placeholder: 'Senha' }) + "<p class='error'></p>" + Button({ id: 'btn-new-user', onclick: newUser, title: 'Cadastrar' }) + "</form>";
   const userInfo = `
     ${Input({
     type: 'text',
