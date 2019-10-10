@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "htmlhint": "htmlhint dist/*.html ",
-    "eslint": "eslint --ext .js src/ test/",
+    "eslint": "eslint --ext .js src/ test/ --fix",
     "stylelint": "stylelint --aei src/**/*.css",
     "lint": "npm run eslint && npm run htmlhint && npm run stylelint",
     "test": "jest --coverage --watch",
