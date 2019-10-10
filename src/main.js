@@ -19,4 +19,4 @@ window.addEventListener('hashchange', () => {
   // const pageHash = location.hash.substring(1);
   // console.log(pageHash);
   document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
-}, false); 
+}, false);

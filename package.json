@@ -34,6 +34,7 @@
     "stylelint-config-recommended": "^2.2.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "firebaseui": "^4.2.0",
     "serve": "^11.2.0"
   }

@@ -8,33 +8,25 @@ function Register() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then((certo) => {
       console.log('certo')
-      window.location.href = '#feed';
+      window.location = '#feed';
     },(error) => {
     // Handle Errors here.  
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log('errooooo')
+      console.log('errooooo');
       document.querySelector('.error').textContent = errorMessage;
-    // if (errorCode == 'auth/weak-password') {
-    //   alert('A senha é muito fraca');
-    // } else {
-    //   alert(errorMessage);
-    // }
-    // if (errorCode == 'auth/email-already-in-use') {
-    //   alert('O e-mail informado já está em uso');
-    // } else {
-    //   alert(errorMessage);
-    // }
-    // if (errorCode == 'auth/operation-not-allowed') {
-    //   alert('Conta não ativada.');
-    // } else {
-    //   alert(errorMessage);
-    // }
-    // if (errorCode == 'auth/invalid-email') {
-    //   alert('Email inválido');
-    // } else {
-    //   alert(errorMessage);
-    //  }
+    if (errorCode === 'auth/weak-password') {
+      document.querySelector('.error').textContent = 'A senha é muito fraca';
+    }
+    if (errorCode == 'auth/email-already-in-use') {
+      document.querySelector('.error').textContent = 'O e-mail informado já está em uso';
+    }
+    if (errorCode == 'auth/operation-not-allowed') {
+      document.querySelector('.error').textContent = 'Conta não ativada';
+    }
+    if (errorCode == 'auth/invalid-email') {
+      document.querySelector('.error').textContent = 'Email inválido';
+    }
     });
   }
 
