@@ -4,10 +4,11 @@
   padding: 0;
 }
 .header {
-  background-color: #FF1C14;
+  background-image: radial-gradient(#ffbb36 5%, #E85531);
 }
 img {
-  height: 100px;
+  height: 120px;
+  display: flex;
   margin: auto;
 }
 .name-network {
@@ -15,17 +16,44 @@ img {
   font-size: 200%;
   margin: auto;
   text-align: center;
+  padding: 5%;
+}
+.text-simple {
+  text-align: center;
+  padding: 3%;
+}
+.alertMessage{
+  text-align: center;
+  padding: 3%;
+  color: #FF1C14;
+  font-weight: bold;
 }
 .primary-box{
   display: flex;
-  width: 50%;
-  flex-direction: column
-  
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+#iGoogle.primary-button{
+  background-color: #DB4437;
+  border-radius: 100%;
+  height: auto;
+}
+.fa-google{
+  color: white;
+}
+#register.primary-button{
+  display: block;
+  margin: auto
+}
+#create-account.primary-button{
+  margin: 5%;
 }
 .primary-button {
-  background-color: #FFBB36;
-  padding: 5px;
-  font-size: 1rem; 
+  background-color: #FFC44F;
+  padding: 2%;
+  margin: 1%;
+  font-size: 1rem;
   border-radius: 5px;
   font-weight: bold;
   border: none;
@@ -34,15 +62,18 @@ img {
 .primary-button:hover {
   color: #E85531;
 }
+
 .primary-input  {
   border-radius: 15px;
+  display: flex;
   padding: 5px;
-  margin: 0 50px;
+  margin: 2%;
 }
 .js-post {
   height: 150px;
   width: 300px
 }
+
 /* @media screen {
   body { background: #ECEFF1; color:#FF); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 

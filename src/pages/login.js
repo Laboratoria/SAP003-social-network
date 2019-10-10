@@ -3,7 +3,7 @@ import Input from '../components/input.js';
 
 function Login() {
   const template = `
-    <header class="header"><img src="./Imagens/header.png"></header>
+    <header class="header"><img src="./Imagens/header-logo.png"></header>
     <h1 class="name-network">Heroínas</h1>
     <h3 class="text-simple">Bem vinda, programadora!</h3>
     <form class="primary-box">
@@ -22,18 +22,19 @@ function Login() {
       title: 'Login',
       onClick: sendLogin,
     })}
+    <p class="text-simple">Ou entre com:</p>
       ${Button({
       id: "iGoogle",
-      title:'<i class="fab fa-google "></i>',
-      onClick: sendLogin,
+      title:'<i class="fab fa-google"></i>',
+      onClick: loginGoogle,
       })}
   </form>
-  <p>Não tem uma conta? 
+  <p class="alertMessage"></p>
+  <p class="text-simple">Não tem uma conta?</p>
     ${Button({
-      id:'register', 
-      title:'Registre-se', 
+      id:'register',
+      title:'Registre-se',
       onClick:HashRegister})}
-  </p>
   `;
   location.hash = 'login'
   return template;
@@ -47,11 +48,34 @@ function sendLogin() {
     .catch(function (error) {
       let errorCode = error.code;
       if (errorCode === 'auth/wrong-password') {
-        alert('Senha errada!');
+        document.querySelector('.alertMessage').textContent='Senha errada!';
       } else {
-        alert('Usuário não cadastrado');
+        document.querySelector('.alertMessage').textContent='Usuário não cadastrado';
       }
     })
+}
+
+function loginGoogle(){
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithRedirect(provider);
+  firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
 }
 
 function HashRegister() {
