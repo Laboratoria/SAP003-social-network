@@ -2,6 +2,7 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 import Google from '../components/google-button.js';
 
+
 const signIn = () => {
   const email = document.querySelector('.js-input-email').value;
   const password = document.querySelector('.js-input-password').value;
@@ -9,8 +10,16 @@ const signIn = () => {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(result => console.log(result))
-    .catch(err => alert(err.message));
+    .catch((error) => {
+      const errorMessage = error.message;
+      if (errorMessage === 'The password is invalid or the user does not have a password.') {
+        document.querySelector('.error-password').textContent = 'Senha Incorreta';
+      } else if (errorMessage === 'There is no user record corresponding to this identifier. The user may have been deleted.') {
+        document.querySelector('.error-email').textContent = 'Email não registrado!';
+      }
+    });
 };
+
 
 const register = () => {
   const email = document.querySelector('.js-input-email').value;
@@ -19,7 +28,16 @@ const register = () => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(result => console.log(result))
-    .catch(err => alert(err.message));
+    .catch((error) => {
+      const errorMessage = error.message;
+      if (errorMessage === 'The email address is already in use by another account.') {
+        document.querySelector('.error-email').textContent = 'Email já possui uma conta';
+      } else if (errorMessage === 'The email address is badly formatted.') {
+        document.querySelector('.error-email').textContent = 'Formato de email inválido';
+      } else if (errorMessage === 'Password should be at least 6 characters') {
+        document.querySelector('.error-password').textContent = 'Senha deve possuir no mínimo 6 caracteres';
+      }
+    });
 };
 
 const googleLogin = () => {
@@ -42,11 +60,13 @@ const login = () => {
     placeholder: 'Email',
     type: 'email',
   })}
+  <p class="error-email"></p>
     ${Input({
     class: 'js-input-password',
     placeholder: 'Senha',
     type: 'password',
   })}
+  <p class="error-password"></p>
     ${Button({
     title: 'Entrar',
     onClick: signIn,
