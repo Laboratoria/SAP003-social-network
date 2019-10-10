@@ -4,10 +4,10 @@ import Button from '../components/button.js';
 function Post() {
   const template = `
   ${Input({
-      class: 'js-post',
-      placeholder: 'O que quer compartilhar?',
-      type: 'text',
-    })}
+    class: 'js-post',
+    placeholder: 'O que quer compartilhar?',
+    type: 'text',
+  })}
   ${Button({
     id: 'share',
     title: 'Compartilhar',
@@ -22,9 +22,9 @@ function SharePost() {
   const contPost = document.querySelector('.js-post').value;
   docRef.add({
     post: contPost
-  }).then(function() {
+  }).then(function () {
     console.log('Post Salvo');
-  }).catch(function(error) {
+  }).catch(function (error) {
     console.log('O erro é: ', error);
   })
 }
