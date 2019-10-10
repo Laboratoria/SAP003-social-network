@@ -48,7 +48,8 @@ body {
   display: block;
 }
 
-.primary-button {  
+.primary-button {
+  margin-top: 10px;  
   margin-left: auto;
   margin-right: auto;  
   border-radius: 10px;
@@ -56,7 +57,23 @@ body {
   padding: 5px;
   text-align: center;
   display: block;
-  background-color: $cor2
+  background-color: $cor2;
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+}
+
+.auth-button {
+  border: none;
+  margin-top: 10px;  
+  margin-left: auto;
+  margin-right: auto;  
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;  
+  display: block;
+  background-color: $cor;
+  font-size: 30px;
+  
+  
 }
 
 p {
@@ -66,7 +83,8 @@ p {
 }
 
 section {
-  padding-top: 180px;
+  padding-top: 100px;
   text-align: center;
   display: block;
 }
+

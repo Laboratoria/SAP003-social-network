@@ -1,19 +1,24 @@
-import Button from '../components/button.js';
-import Logo from '../components/logo.js';
-import Input from '../components/input.js';
+import Button from '../components/button';
+import Logo from '../components/logo';
+
+
+function sair() {  
+  firebase.auth().signOut();
+}
+
 
 function Home() {
-  const template = `
+  const template = `   
     ${Logo()}
     <br>
-    ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
-    ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}    
+
+    <p>OiOiOi</p>  
+      
     <br>
-    ${Button({ id: 'enviar', title: 'Enviar' })}
-    
-    <p>Ou acesse com...</p>
+
+    ${Button({ title: 'Sair', onClick: sair })}   
    
-    <section>Não tem uma conta? <a>REGISTRE-SE</a></section>
+    
   `;
 
   return template;
