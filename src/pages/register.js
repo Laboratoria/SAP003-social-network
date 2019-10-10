@@ -1,5 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+import logo from '../components/logo.js'
 
 
 const createUser = () => {
@@ -14,41 +15,30 @@ const createUser = () => {
       alert('The password is too weak.');
     } else {
       alert(errorMessage);
-
     };
-
-
   }
+
   ).then(cred => {
     if (cred.additionalUserInfo.isNewUser) {
       firebase.auth().currentUser.sendEmailVerification().then( ()=> {
         alert('Email cadastrado com sucesso! Verifique sua caixa de entrada!');
-
       });
     }
-
   });
-
 };
-
-
 
 const Register = () => {
   const template = `
   <section>
+    ${logo({ img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace'})}
     <form class="container">
     ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
     ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
     ${Button({type: 'submit', title: 'Cadastrar', onClick: createUser})}
-
     </form>
-    </section>
+  </section>
   `;
-
-
   return template;
 }
-
-
 
 export default Register;

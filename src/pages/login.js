@@ -1,10 +1,11 @@
 import databases from "../database.js";
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+import logo from '../components/logo.js'
 
 const userLogin = () => {
-  const email = document.querySelector('.js-email-login').value;
-  const password = document.querySelector('.js-password-login').value;
+  const email = document.querySelector('.js-email-input').value;
+  const password = document.querySelector('.js-password-input').value;
  
   firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
     var errorCode = error.code;
@@ -64,14 +65,14 @@ export const loginGoogle = () => {
 };
 const Login = () => {
   const template = `
-    <section>
+     <section>
+      ${logo({ img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace'})}
       <form class="container">
-      ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-login primary-input' })}
-      ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-login primary-input' })}
-      ${Button({ type: 'submit', title: 'Login', onClick: userLogin })}
-  
+      ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
+      ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
+      ${Button({type: 'submit', title: 'Login', onClick: loginUser})}
       </form>
-      </section>
+     </section>
     `;
 
 
