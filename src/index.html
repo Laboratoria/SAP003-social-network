@@ -43,5 +43,30 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+
+<h1>Autenticação</h1>
+<div>
+  <h3 id="displayName">Você não está autenticado</h3>
+  <form action="">
+    <div>
+      <label for="emailInput" >E-mail</label>
+      <input type="email" placeholder="E-mail" id="emailInput">
+    </div>
+    <div>
+        <label for="passwordInput">Senha</label>
+        <input type="password"placeholder="Senha" id="passwordInput">
+      </div>
+  </form>
+  <button id="authEmailPassButton">Autenticar</button>
+  <button id="createUserButton">Criar nova conta</button>
+</div>
+<p>-- ou --</p>
+<button id="authGoogleButton">Google</button>
+<button id="authFacebookButton">facebook</button>
+<p>
+  <button id="logOutButton">Sair</button>
+</p>
+<a href="#">Voltar para Home</a>
+
 </body>
 </html>
