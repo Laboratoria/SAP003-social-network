@@ -1,10 +1,11 @@
 import Button from "../components/button.js";
+import Input from "../components/cad-button.js";
 
 export function Home() {
-	const template = `<h1 class="homepage-title">Livreiras</h1>
+	const template = `<h1 class="homepage-title">Witchy</h1>
 	<form class="login-form">
-	<input type="text" id="login-input" class="js-login" placeholder="Livreira">
-	<input type="password" id="password-input" class="js-senha" placeholder="Senha">
+	${Input({ id:"email-login", placeholder:"Login", type:"email"})}
+	${Input({ id:"pass-login", placeholder:"Senha", type:"password"})}
 	${Button({ id:"login", title: "Login", onclick: login})}
 	</form>
 	${Button({ id:"sign", title: "Sign Up", type:"submit", onclick: signUp})}`;

@@ -1,31 +1,32 @@
 import Button from "../components/button.js";
-import Cad from "../components/cad-button.js";
+import Input from "../components/cad-button.js";
 
 const cadastrar = (id, event) => {
 
 	event.preventDefault();
 
 	const email = document.getElementById('mail').value;
-	console.log(email);
+
 	const password = document.getElementById('pass').value;
-	console.log(password);
+
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
+	alert(errorMessage);
 	})
 
-	// window.location.hash = 'mural';
+	window.location.hash = 'mural';
 }
 
 export const Cadastro = () => {
 	const template = `
 	<h1>Cadastre-se</h1>
 	<form>
-		${Cad({ id:"name",  placeholder:"Nome", type:"text"})}
-		${Cad({ id:"mail", placeholder:"Email", type:"email"})}
-		${Cad({ id:"pass", placeholder:"Senha", type:"password"})}
+		${Input({ id:"name",  placeholder:"Nome", type:"text"})}
+		${Input({ id:"mail", placeholder:"Email", type:"email"})}
+		${Input({ id:"pass", placeholder:"Senha", type:"password"})}
 		${Button({ id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form>`;
 
 	return template;

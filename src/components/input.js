@@ -1,5 +1,5 @@
 
-const Cad = (props) => {
+const Input = (props) => {
 	const template = `
 	<input 
 	id=${props.id}
@@ -18,4 +18,4 @@ const Cad = (props) => {
 // 	}
 // }
 
-export default Cad;
+export default Input;
