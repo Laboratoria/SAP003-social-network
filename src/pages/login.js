@@ -27,7 +27,6 @@ const userLogin = () => {
     } else {
       alert('login com sucesso')
     }
-
   });
 
 }
