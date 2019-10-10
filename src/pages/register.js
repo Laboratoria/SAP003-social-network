@@ -6,10 +6,15 @@ function Register() {
     const email = document.querySelector('.js-email-input').value;
     const password = document.querySelector('.js-password-input').value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((certo) => {
+      console.log('certo')
+      window.location.href = '#feed';
+    },(error) => {
     // Handle Errors here.  
-    var errorCode = error.code;
-    var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('errooooo')
+      document.querySelector('.error').textContent = errorMessage;
     // if (errorCode == 'auth/weak-password') {
     //   alert('A senha é muito fraca');
     // } else {
@@ -34,14 +39,18 @@ function Register() {
   }
 
   const template = `
+    <section class="box-login">
+    <h1>Create a New Account</h1>
     <form>
-      ${Input({ type: 'email', class: 'js-email-input', placeholder: 'email' })}
-      ${Input({ type: 'password', class: 'js-password-input', placeholder: 'password' })}
-      ${Input({ type: 'text', class: 'js-text-input', placeholder: 'nome' })}
-      ${Input({ type: 'date', class: 'js-date-input' })}
-      ${Button({ class: 'create', title: 'Criar conta', onclick: create})}
+      ${Input({ type: 'text', class: 'js-text-input', placeholder: 'name' })}<br>
+      ${Input({ type: 'date', class: 'js-date-input' })}<br>
+      ${Input({ type: 'email', class: 'js-email-input', placeholder: 'email' })}<br>
+      ${Input({ type: 'password', class: 'js-password-input', placeholder: 'password' })}<br>
+      ${Button({ class: 'create', title: 'Criar conta', onclick: create})}<br>
     </form>
-    
+    <p class="error"</p><br>
+    <p>Já tem uma conta? <a href="#login">Login</a></p>
+    </section>
   `;
   return template;
 }
