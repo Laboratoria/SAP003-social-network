@@ -5,7 +5,7 @@ function Input(props) {
       placeholder = "${props.placeholder}"
       type = "${props.type}"/>
   `;
-return input;
+  return input;
 }
 
 export default Input;
