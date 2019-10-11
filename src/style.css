@@ -4,11 +4,6 @@
 }
 
 @media (max-width: 700px){
- 
-  body {
-    display: block;
-    justify-content: space-between;
-  }
     
   .welcome{
     position: absolute;
@@ -127,7 +122,8 @@
     right: 54.93%;
     top: 82.16%;
     bottom: 11.24%;
-    background: #3A559F;
+    border: none;
+    background-color: #FFFFFF;
   }
 
   .register-link {
@@ -143,5 +139,17 @@
     line-height: 19px;
     letter-spacing: -0.03em;
     color: #263238;
+  }
+
+  .logo{
+    position: absolute;
+    width: 230px;
+    height: auto;
+    left: 15px;
+    top: 32px;
+  }
+
+  a{
+    color:#FF007A;
   }
 }

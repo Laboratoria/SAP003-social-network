@@ -1,9 +1,13 @@
 import Login from './pages/login.js';
 import Register from './pages/register.js';
 
-function init() {
+function pagesChange() {
+  if (location.hash === '#login') {
+    document.querySelector('main').innerHTML = Login();
+  } else if (location.hash === '#register') {
+    document.querySelector('main').innerHTML = Register();
+  }
+};
 
-  document.querySelector('main').innerHTML = Login();
-}
-
-window.addEventListener('load', init);
+window.addEventListener('hashchange', pagesChange);
+window.addEventListener('load', pagesChange);
