@@ -6,10 +6,12 @@ function enviarLogin(){
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
   console.log(email, password)
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .catch(function(error) {
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
+    console.log(errorCode)
     // ...
   });
 };
@@ -18,6 +20,13 @@ function cadastrarUser(){
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
   console.log(email, password)
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode)
+    // ...
+  });
 };
 
 function Login() {
@@ -37,7 +46,7 @@ function Login() {
   })} <br>
     ${Button({
     id: 'enviar',
-    title: 'Enviar',
+    title: 'Login',
     onClick: enviarLogin,
   })}
     ${Button({
@@ -53,4 +62,9 @@ export default Login;
 
 
 
-
+//Para desconectar um usuário, chame signOut:
+/*firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});*/
