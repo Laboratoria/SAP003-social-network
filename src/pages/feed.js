@@ -1,5 +1,5 @@
 import Button from '../components/button.js';
-import Input from '../components/input.js';
+//import Input from '../components/input.js';
 
 const location = () => {
     location.hash = '';
