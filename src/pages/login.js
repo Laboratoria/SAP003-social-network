@@ -6,6 +6,7 @@ import Home from './home.js';
 function userLogin() {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
+  
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
