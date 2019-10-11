@@ -1,6 +1,13 @@
+::before
+::after{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
 header img{
-  width: 305px;
-  height: 200px;
+  width: 190px;
+  height: 130px;
   margin: 1px 0px;
 }
 
@@ -51,6 +58,7 @@ margin: 10px auto;
 margin-top: center;
 }
 
+
 button{
   display: block;
   border-radius:4px;
@@ -67,6 +75,26 @@ button{
   left: 50%;
   margin-left: -120px;
 }
+footer{
+  width:26px;
+  display: flex;
+  text-align: center;
+  background-color: transparent;
+  font-size: 20px;
+  color: antiquewhite;
+  margin-left: 600px;
+  padding-top: 20px;  
+}
+
+
+@media screen and (min-width:769px){
+  header,
+.header img{
+  background-attachment: fixed;
+}
+
+
+}
 
 /*.primary-button {
   background-color: #ffe521;
@@ -76,4 +104,5 @@ button{
   font-weight: bold;
   border: none;
   cursor: pointer;
+
 }*/
