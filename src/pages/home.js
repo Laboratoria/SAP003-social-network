@@ -36,14 +36,21 @@ import Input from '../components/input.js';
 
 function Login() {
   const template = `
-    <h1>Home Page</h1>
-    <p><a href= "#cadastro">Cadastre-se</a></p> 
+  <nav><img src="fotos/Logo-Base_Caixa_Baixa_V4.png" alt=""></nav>
+  <div class="container-login">
+    <h1>Base Sustentabilidade</h1>
+    <h3>Bem vindo<h3>
+    <div class="form">
     <form>
-      ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
-      ${Input({ class: 'js-senha', placeholder: 'Senha', type: 'password' })}
+    ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
+    ${Input({ class: 'js-senha', placeholder: 'Senha', type: 'password' })}
+    ${Button({ title: 'Login'  })}
     </form>
+    <p><a href= "#cadastro">Cadastre-se</a></p>
+    </div>
+    </div> 
     `;
-  return template;
+    return template;
 }
 
 export default Login;

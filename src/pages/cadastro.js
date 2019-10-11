@@ -10,9 +10,7 @@ function pegarInput() {
   localStorage.setItem('nomeSalvo', nome);
   localStorage.setItem('senhaSalvo', senha);
 }
-function voltar(){
-  window.location.hash = '#home';
-}
+
 
 function Cadastro() {
   const template = `
@@ -20,9 +18,8 @@ function Cadastro() {
     ${Input({ class: 'js-nome', placeholder: 'Nome completo', type: 'text' })}
     ${Input({ class: 'js-senha', placeholder: 'senha', type: 'password' })}
     ${Button({ title: 'Cadastre-se', onClick: pegarInput })}
-    ${Button({ title: 'Voltar', onClick: voltar })}
-
-  `;
+ 
+`;
   return template;
 }
 
@@ -37,3 +34,8 @@ function locationHashChanged() {
 window.addEventListener("hashchange",locationHashChanged,false);
 
 export default Cadastro;
+
+/* function voltar(){
+  window.location.hash = '#home';
+} */
+/* ${Button({ title: 'Voltar', onClick: voltar })} */
