@@ -6,7 +6,7 @@ function btnRegister() {
   const password = document.querySelector('.js-password-register').value;
   // let birthday = document.querySelector('.js-birthday-register').value;
   firebase.auth().createUserWithEmailAndPassword(email, password);
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     firebase.auth().currentUser;
     if (user != null) {
       // let name = document.querySelector('.js-name-register').value;
@@ -14,7 +14,7 @@ function btnRegister() {
       name = user.displayName;
       // birthday = user.birthday;
       window.location = '#home';
-      console.log(email, name)
+      //console.log(email, name)
     } else {
       // No user is signed in.
     }

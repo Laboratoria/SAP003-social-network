@@ -1,9 +1,9 @@
 import Button from '../components/button.js';
 
 function btnSignOut() {
-  firebase.auth().signOut().then(function() { 
-    window.location = '#login';  
-  }).catch(function(error) {
+  firebase.auth().signOut().then(function () {
+    window.location = '#login';
+  }).catch(function (error) {
     // An error happened.
   });
 }
@@ -16,7 +16,5 @@ function Home() {
 
   return template;
 }
-
-
 
 export default Home;
