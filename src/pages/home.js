@@ -26,13 +26,19 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 export function Home() {
-	const template = `<h1 class="homepage-title">Witchy</h1>
-	<form class="login-form">
-	${Input({ id:'email-login', placeholder:'Login', type:'email'})}
-	${Input({ id:'pass-login', placeholder:'Senha', type:'password'})}
-	${Button({ id:'login', title: 'Login', onclick: login})}
-	</form>
-	${Button({ id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})}`;
+	const template = `
+	<container class="home">
+	 <img src = images/Witchy-logo.png class="logo"/>
+	 <section class="login">
+	  <h1 class="homepage-title">Share your spells...</h1>
+	  <form class="login-form">
+	   ${Input({ id:'email-login', placeholder:'Login', type:'email'})}
+	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})}
+	   ${Button({ id:'login', title: 'Login', onclick: login})}
+	  </form>
+	  ${Button({ id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})}
+	 </section>
+	</container>`;
 
 
 	window.location.hash = "home";

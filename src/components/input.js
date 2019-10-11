@@ -10,12 +10,4 @@ const Input = (props) => {
 	return template;
 }
 
-// window.b = {
-// 	handleClick: (event, id) => {
-// 		event.preventDefault();
-// 		const email = document.getElementById('id').value;
-// 		console.log(email);
-// 	}
-// }
-
 export default Input;
