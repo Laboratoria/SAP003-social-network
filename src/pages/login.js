@@ -14,12 +14,12 @@ const userLogin = () => {
       console.log('Email is verified');
       location.hash = '#home';
     } else {
-      alert('Email não verificado, vá até sua caixa de entrada')
+      document.querySelector('.erro').textContent = 'Email não verificado, vá até sua caixa de entrada';
     }
   }).catch(function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
-    alert(errorMessage)
+    document.querySelector('.erro').textContent = errorMessage;
   });
 }
 
@@ -44,6 +44,7 @@ const Login = () => {
     </section>
       <section class="container">
         <form class="container">
+        <p class="erro"></p>
           ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
           ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
           ${Button({ type: 'submit', title: 'Login', class: 'primary-button', onClick: userLogin })}

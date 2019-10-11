@@ -10,18 +10,18 @@ const createUser = () => {
   firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-
     if (errorCode === 'auth/weak-password') {
-      alert('The password is too weak.');
+      document.querySelector('.erro').textContent = 'A senha é muito fraca.';
     } else {
-      alert(errorMessage);
+      document.querySelector('.erro').textContent = errorMessage;
     };
   }
 
   ).then(cred => {
     if (cred.additionalUserInfo.isNewUser) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
-        alert('Email cadastrado com sucesso! Verifique sua caixa de entrada!');
+        document.querySelector('.erro').textContent = 'Email cadastrado com sucesso! Verifique sua caixa de entrada!';
+
       });
     }
   });
@@ -39,6 +39,7 @@ const Register = () => {
     </section>
     <section class="container">
       <form class="container">
+      <p class="erro"></p>
         ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
         ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
         ${Button({ type: 'submit', title: 'Cadastrar', class: 'primary-button', onClick: createUser })}

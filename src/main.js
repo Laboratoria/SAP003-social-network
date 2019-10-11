@@ -12,8 +12,5 @@ const routes = () => {
   }
 }
 
-// const init = () => {
-//   firebase.auth().onAuthStateChanged(e => initRouter());
-// };
 window.addEventListener('load', routes);
 window.addEventListener('hashchange', routes);
