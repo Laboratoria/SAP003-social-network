@@ -11,14 +11,14 @@ function Home() {
   ${Button({id: 'button', title: 'Entrar', onClick: buttonLogin})}
   </form><br>
   
-  ${Button({id: 'cadastro', title: 'Cadasiashds', onClick: banana })}
+  ${Button({id: 'cadastro', title: 'Cadastrar', onClick: goToRegister })}
 
   `
     return template;
 };
 export default Home;
 
-function banana () {
+function goToRegister () {
   window.location.hash='register';
 }
 
