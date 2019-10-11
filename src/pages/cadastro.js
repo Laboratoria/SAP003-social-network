@@ -3,12 +3,23 @@ import Button from '../components/button.js';
 
 
 function pegarInput() {
-  const email = document.querySelector('.js-email').value;
-  const nome = document.querySelector('.js-nome').value;
-  const senha = document.querySelector('.js-senha').value;
-  localStorage.setItem('emailSalvo', email);
-  localStorage.setItem('nomeSalvo', nome);
-  localStorage.setItem('senhaSalvo', senha);
+  const dados = {
+    email: document.querySelector('.js-email').value,
+    nome: document.querySelector('.js-nome').value,
+    senha: document.querySelector('.js-senha').value,
+  };
+
+  // window.localStorage.setItem('usuario', JSON.stringify(dados));
+  // arrayUsuarios.push(dados);
+  let usuarios = localStorage.getItem('arrayUsuarios');
+  usuarios = JSON.parse(usuarios);
+  if (!Array.isArray(usuarios)) {
+    usuarios = [usuarios];
+  }
+  usuarios.push(dados);
+  localStorage.setItem('arrayUsuarios', JSON.stringify(usuarios));
+  localStorage.setItem('usuarioLogado', JSON.stringify(dados));
+  window.location.hash = '#Login';
 }
 
 
@@ -24,14 +35,16 @@ function Cadastro() {
 }
 
 function locationHashChanged() {
-  if (location.hash === "#cadastro") {
+  if (location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = Cadastro();
-  }else if (location.hash === '#home'){
-    document.querySelector('main').innerHTML = Login();
+  }else if (location.hash === '#home')/* {
+  } else if (location.hash === '#login') {
+    document.querySelector('main').innerHTML = Login(); */
   }
 }
 
-window.addEventListener("hashchange",locationHashChanged,false);
+window.addEventListener('hashchange', locationHashChanged, false);
+
 
 export default Cadastro;
 
