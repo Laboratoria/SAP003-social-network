@@ -162,3 +162,30 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
+[debug] [2019-10-11T16:40:19.903Z] ----------------------------------------------------------------------
+[debug] [2019-10-11T16:40:19.906Z] Command:       /home/laboratoria/.nvm/versions/node/v12.8.1/bin/node /home/laboratoria/.nvm/versions/node/v12.8.1/bin/firebase serve
+[debug] [2019-10-11T16:40:19.906Z] CLI Version:   7.5.0
+[debug] [2019-10-11T16:40:19.906Z] Platform:      linux
+[debug] [2019-10-11T16:40:19.907Z] Node Version:  v12.8.1
+[debug] [2019-10-11T16:40:19.907Z] Time:          Fri Oct 11 2019 13:40:19 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-11T16:40:19.907Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-11T16:40:19.914Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-11T16:40:19.914Z] > authorizing via signed-in user
+[debug] [2019-10-11T16:40:19.914Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-11T16:40:19.916Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-11T16:40:21.994Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-11T16:40:21.998Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-11T16:40:29.234Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-11T16:40:29.237Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-11T16:40:44.021Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5010
