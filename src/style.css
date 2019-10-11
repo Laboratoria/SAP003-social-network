@@ -23,6 +23,10 @@ body {
   box-shadow: 2px 2px 5px grey
 }
 
+.primary-button:hover{
+ background-color: #af8eb5;
+}
+
 .main-container{
   display: flex;
   flex-direction: row;
@@ -51,10 +55,6 @@ body {
   .login-text{
     font: 'Roboto', sans-serif;
   }
-
-.primary-button:hover{
-  background-color: #ffffff;
-}
 
 .login-container{
   display: flex;
@@ -117,10 +117,6 @@ body {
     justify-content: space-around;
   }
 
-  .primary-button:hover{
-   background-color: #af8eb5;
-  }
-
   .login-container{
     display: flex;
     flex-direction: column;
@@ -133,10 +129,6 @@ body {
     height: 50px;
     width: 50px;
     box-shadow: 2px 2px 5px grey;
-  }
-
-  .google-button:hover{
-    cursor: pointer;
   }
 
   .link{
