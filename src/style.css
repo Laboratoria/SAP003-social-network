@@ -87,19 +87,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -10%;
-  width: 150px;
-  height: auto;
+  height: 280px;
+  margin-bottom: -37px;
 }
 
 .text-logo{
   font-family: 'Righteous', cursive;
-  font-size: 30px;
+  font-size: 45px;
   color: rgb(59, 59, 59);
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 3px;
 }
 
 @media only screen and (max-width: 900px){
@@ -144,6 +142,9 @@ body {
   .logo{
     display: flex;
     justify-content: center;
+    height: 150px;
+    width: 150px;
+    margin-bottom: -20px;
   }
 
   .text-logo{
