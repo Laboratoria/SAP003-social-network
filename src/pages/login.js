@@ -10,6 +10,13 @@ const signIn = () => {
     .signInWithEmailAndPassword(email, password)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
+    
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location = '#timeline';
+    }
+  })
+  
 };
 
 const register = () => {
@@ -20,6 +27,14 @@ const register = () => {
     .createUserWithEmailAndPassword(email, password)
     .then(result => console.log(result))
     .catch(err => alert(err.message));
+  
+     
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location = '#timeline';
+    }
+  })
+  
 };
 
 const googleLogin = () => {
@@ -33,6 +48,7 @@ const googleLogin = () => {
 
 const login = () => {
   const template = `
+  
       <img class="img" src="images/img.png">
       <h1 id="text-low" class="text">Low Carb Style</h1>
       <h2 id="text-boas-vindas" class="text">Boas vindas...</h2>
@@ -63,10 +79,17 @@ const login = () => {
     onClick: googleLogin,
   })}
     </form>
-     
   `;
 
   return template;
 };
 
 export default login;
+
+// function locationHashChanged() {
+//   if (location.hash === '#timeline') {
+//     document.querySelector('main').innerHTML = timeline();
+//   }
+// }
+
+// window.addEventListener("hashchange", locationHashChanged, false);
