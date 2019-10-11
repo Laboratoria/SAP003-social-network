@@ -86,3 +86,32 @@
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
 
+[debug] [2019-10-11T16:55:20.919Z] ----------------------------------------------------------------------
+[debug] [2019-10-11T16:55:20.923Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nathy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-11T16:55:20.923Z] CLI Version:   7.5.0
+[debug] [2019-10-11T16:55:20.923Z] Platform:      win32
+[debug] [2019-10-11T16:55:20.923Z] Node Version:  v10.16.3
+[debug] [2019-10-11T16:55:20.933Z] Time:          Fri Oct 11 2019 13:55:20 GMT-0300 (GMT-03:00)
+[debug] [2019-10-11T16:55:20.933Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-11T16:55:20.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-11T16:55:20.945Z] > authorizing via signed-in user
+[debug] [2019-10-11T16:55:20.945Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
+[debug] [2019-10-11T16:55:20.948Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-11T16:55:20.948Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-11T16:55:21.498Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-11T16:55:21.506Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
+
+[debug] [2019-10-11T16:55:22.760Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-11T16:55:22.762Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
+ 
+[debug] [2019-10-11T16:55:23.989Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
+[info] 
+[debug] [2019-10-11T16:55:23.993Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
+ 
+[debug] [2019-10-11T16:55:25.321Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000

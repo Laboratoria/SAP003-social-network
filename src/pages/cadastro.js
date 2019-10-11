@@ -1,17 +1,18 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-function enviarCadastro() {
+function cadastrarUser() {
   const nome = document.querySelector('.nome-input').value;
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
   // eslint-disable-next-line no-console
   console.log(nome, email, password);
   window.location.href = '#feed';
-  firebase.auth().signInWithEmailAndPassword(nome, email, password).catch(() => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
     // Handle Errors here.
-    // let errorCode = error.code;
-  // let errorMessage = error.message;
+    const errorCode = error.code;
+    // const errorMessage = error.message;
+    console.log(errorCode);
     // ...
   });
 }
@@ -26,9 +27,9 @@ function Cadastro() {
     <h2> Cadastro</h2>
   
     ${Input({ class: 'nome-input', placeholder: 'Nome', type: 'text' })}<br>
-    ${Input({ class: 'email-input', placeholder: 'email', type: 'text' })}<br>
-    ${Input({ class: 'senha-input', placeholder: 'password', type: 'password' })}<br>
-    ${Button({ id: 'cadastro', title: 'Cadastrar', onClick: enviarCadastro })}
+    ${Input({ class: 'email-input', placeholder: 'E-mail', type: 'text' })}<br>
+    ${Input({ class: 'senha-input', placeholder: 'Senha', type: 'password' })}<br>
+    ${Button({ id: 'cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
     ${Button({ id: 'voltar', title: 'voltar', onClick: voltarPg })}
 `;
   return template;
