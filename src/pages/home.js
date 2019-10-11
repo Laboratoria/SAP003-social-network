@@ -1,6 +1,20 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+
+
+
+/* function pegarInput() {
+  const email = document.querySelector('.js-email').value;
+  const senha = document.querySelector('.js-senha').value;
+  console.log(email, senha);
+  
+} */
+
+/* function validarEmailESenha (){
+  if (localStorage.setItem )
+} */
+   // const maximoDeTentativas = 3;
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
@@ -17,6 +31,7 @@ function pegarInput() {
 //   if (localStorage.setItem )
 // }
   // const maximoDeTentativas = 3;
+
   // const tentativaAtual = 1;
 
 //   while (tentativaAtual <= maximoDeTentativas) {
@@ -44,7 +59,6 @@ function Login() {
     <form>
       ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
       ${Input({ class: 'js-senha', placeholder: 'Senha', type: 'password' })}
-      ${Button({ id: '🎉', title: 'Login', onClick: pegarInput })}
     </form>
     `;
   return template;
