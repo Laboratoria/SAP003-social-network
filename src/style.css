@@ -1,9 +1,22 @@
 .primary-button {
-  background-color: #ffe521;
+  background-color: #ff8c21;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 5px;
   font-weight: bold;
   border: none;
   cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.primary-button {
+  margin: 5px;
 }

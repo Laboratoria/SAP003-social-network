@@ -38,15 +38,16 @@ function Google (){
 
 function Login() {
   const template = `
-    <h1>Login</h1>
-    <form>
+    <h1 class='content'>RedeTech</h1>
+    <h2 class='content'>Seja bem-vinda(o)!</h2>
+    <form class='content'>
     ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
     ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
     ${Button({ id: 'doing-login', title: 'Log In', onClick: AuthEmailPassButton})}
     ${Button({ id: 'google', title: 'Google', onClick: Google})}
     <a href='#register'>Registre-se</a>
     </form>`;
-  
+
   return template;
 }
   
