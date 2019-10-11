@@ -2,17 +2,17 @@ import Button from '../components/button.js';
 import Logo from '../components/logo.js';
 import Input from '../components/input.js';
 
-
 function criarLogin() {
   const email = document.querySelector('.js-email-input').value;
   const senha = document.querySelector('.js-password-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, senha).catch(function () {
-    
-  });
-
+  firebase.auth().createUserWithEmailAndPassword(email, senha);
   firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('oioioioi')
+    firebase.auth().currentUser;
+    if (user != null) {
+      email = user.email;
+      senha = user.senha;      
+      window.location = '#home.js';
+      
       // User is signed in.
       // let displayName = user.displayName;
       // let email = user.email;

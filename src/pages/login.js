@@ -2,33 +2,33 @@ import Button from '../components/button.js';
 import Logo from '../components/logo.js';
 import Input from '../components/input.js';
 import ButtonAuth from '../components/button-auth.js';
-import Cadastro from './cadastro.js';
 import buttonGoogle from './google.js';
 
 
 function enviarLogin() {
   const email = document.querySelector('.js-email-input').value;
   const senha = document.querySelector('.js-password-input').value;
-  firebase.auth().signInWithEmailAndPassword(email, senha).catch(function() {});
-  
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('oioioioi')
-      // User is signed in.
-      // let displayName = user.displayName;
-      // let email = user.email;
-      // let emailVerified = user.emailVerified;
-      // let photoURL = user.photoURL;
-      // let isAnonymous = user.isAnonymous;
-      // let uid = user.uid;
-      // let providerData = user.providerData;
-      // ...
-    } else {
-      console.log('Mano do céu no registro')
-      // User is signed out.
-      // ...
+  firebase.auth().signInWithEmailAndPassword(email, senha).catch(function(error) {
+    let errorCode = error.code;
+
+    if (errorCode === 'auth/user-not-found') {
+      alert('Usuário não encontrado!')
+    } else if (errorCode === 'auth/invalid-email') {
+      alert('Digite um e-mail válido!')
+    } else if (errorCode === 'auth/wrong-password') {
+      alert('Email ou senha inválido!')
     }
   });
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      window.location = '#home.js';
+      //console.log('conecta')
+      // User is signed in.
+    } else {
+      // No user is signed in.
+    }
+  });
+    
 }
 
 function Login() {
@@ -51,11 +51,3 @@ function Login() {
 }
 
 export default Login;
-
-function locationHashChanged() {
-  if (location.hash === '#cadastro.js') {
-    document.querySelector('main').innerHTML = Cadastro();
-  }   
-}
-
-window.onhashchange = locationHashChanged;

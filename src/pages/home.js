@@ -1,9 +1,14 @@
-import Button from '../components/button';
-import Logo from '../components/logo';
+import Button from '..//components/button.js';
+import Logo from '../components/logo.js';
 
 
 function sair() {  
-  firebase.auth().signOut();
+  firebase.auth().signOut().then(function () {
+    window.location = '#login.js';
+    
+  }).catch(function (error) {
+    
+  });
 }
 
 
