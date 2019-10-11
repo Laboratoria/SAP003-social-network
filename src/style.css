@@ -3,11 +3,7 @@
 body {
   background-color: #f3e5f5;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
-  height: 500px;
 }
 
 .primary-button {
@@ -27,11 +23,20 @@ body {
   box-shadow: 2px 2px 5px grey
 }
 
+.main-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
 .container{
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 10px;
+  margin: 20px;
 }
 
 .primary-input{
@@ -80,9 +85,11 @@ body {
 
 .logo{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-left: 23%;
   margin-bottom: -10%;
+  width: 150px;
+  height: auto;
 }
 
 .text-logo{
@@ -98,17 +105,17 @@ body {
 @media only screen and (max-width: 900px){
 
   body{
-    background-color: #f3e5f5;
-    margin: 0;
     height: 600px;
   }
-  main{
+
+  .main-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
 
   .primary-button:hover{
-   background-color: #af8eb5; 
+   background-color: #af8eb5;
   }
 
   .login-container{
@@ -137,8 +144,6 @@ body {
   .logo{
     display: flex;
     justify-content: center;
-    margin-left: 23%;
-    margin-bottom: -10%;
   }
 
   .text-logo{
