@@ -1,18 +1,57 @@
+.logo {
+  font-family: 'Rubik', sans-serif;
+  color: #6595A3;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
 .primary-button {
-  background-color: #ffe521;
+  font-family: 'Rubik', sans-serif;
+  width: 5rem;
+  height: 3rem;
+  background-color: #C8E3E8;
+  color: #324143;
+  box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
   padding: 10px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border-radius: 200px;
   font-weight: bold;
   border: none;
   cursor: pointer;
 }
 
-.primary-button img {
+.google-login img {
+  width: 2rem;
+}
+
+.google-login {
+  box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
   width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 100px;
+  display: block;
 }
 
 .primary-input {
-  background-color: red;
-  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #C8E3E8;
+  border-radius: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  display: block;
+  box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
+  margin: 10px;
+}
+
+.text {
+  font-family: 'Montserrat', sans-serif;
+  color: #324143;
+}
+
+.primary-link {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #6595A3;
 }

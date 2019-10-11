@@ -50,8 +50,8 @@ function Login() {
   window.location.href = '#login';
 
   const login = `
-  <title class="logo">AMS - Rede de ensino</title>
-  <div class="sub-title">bem vindas!</div>
+  <div class="logo">AMS - Rede de ensino</div>
+  <div class="text">Bem vindo à maior rede social de educação do Brasil!</div>
   <form>
     ${Input({
     id: 'email',
@@ -66,12 +66,13 @@ function Login() {
     placeholder: 'Senha',
   })}
   ${Button({
+    class: 'primary-button',
     title: 'Entrar',
     onClick: userLogin,
   })}
-
   ${Button({
-    title: '<img src="../img/google.jpg">',
+    class: 'google-login',
+    title: '<img src="../img/google.png">',
     onClick: googleLogin,
   })}
     </form>
