@@ -27,10 +27,10 @@ function Login() {
     ${Button({ id: 'doing-login', title: 'Log In', onClick: AuthEmailPassButton})}
     ${Button({ id: 'create-user-button', title: 'Criar Usuario', onClick: createLogin})}
     ${Button({ id: 'google', title: 'Google', onClick: Google})}
+    <a href='#home'></a>
     </form>`;
   
   return template;
 }
-window.location.href = '#Login';
-
+  
 export default Login;
