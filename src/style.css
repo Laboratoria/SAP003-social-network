@@ -7,8 +7,8 @@ h1{
   color: whitesmoke;
 }
 
-container{
-  display: flex;
+container {
+	display: flex;
 }
 
 .login{
