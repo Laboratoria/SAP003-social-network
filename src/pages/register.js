@@ -1,4 +1,4 @@
-import ButtonRegister from '../components/buttonre.js';
+import Button from '../components/button.js';
 import input from '../components/input.js';
 
 function Register() {
@@ -9,58 +9,30 @@ function Register() {
       ${input({class: 'name', placeholder: 'name', type: 'text'})}
       ${input({class: 'email-re', placeholder: 'email', type: 'email'})}
       ${input({class: 'password-re', placeholder: 'password', type: 'password'})}
+      ${Button({class:'btn-register', onclick: emailAndPass, title: 'REGISTRAR' })}
       </form>
-      ${ButtonRegister({ class:'btn-register', title: 'REGISTRAR' })}
     `;
-  
     return template;
   }
 
-/* const userEmail = document.querySelector(".email-re");
-const userName = document.querySelector(".name");
-const userPass = document.querySelector("password-re");
-const registerBtn = document.querySelector(".btn-register");
 
-firebase.auth().onAuthStateChanged(firebaseUser =>{
-    if (firebaseUser){
-        console.log(firebaseUser)
-    } else {
-        console.log("not loggin in");
-    }
-});
+function emailAndPass () {
 
-
- registerBtn.addEventListener("click", () =>{
-    const email = userEmail.value;
-    const name = userName.value;
-    const pass = userPass.value;
-    const auth = firebase.auth();
-    
-    const promise = auth.createUserWithEmailAndPassword(email, pass, name);  
-    promise.catch(e => console.log(e.message));
-
-  
-})
- */
-
-const userEmail = document.querySelector(".email-re");
-const userName = document.querySelector(".name");
-const userPass = document.querySelector("password-re");
-const registerBtn = document.querySelector(".btn-register");
-
-registerBtn.addEventListener('click', () =>{
+    const userEmail = document.querySelector('.email-re').value;
+    const userName = document.querySelector('.name').value;
+    const userPass = document.querySelector('.password-re').value;
     firebase
     .auth()
-    .createUserWithEmailAndPassword(userEmail.value, userPass.value)
+    .createUserWithEmailAndPassword(userEmail, userPass)
     .then(() => {
-        alert("valeu" + userName.value);
+        alert('valeu' + userName);
     })
     .catch((error) => {
         console.error(error.code);
         console.error(error.message);
-        alert("falha ai");
+        alert('falha ai');
     } )
-})
+}
 
 
-  export default Register;
+  export default Register

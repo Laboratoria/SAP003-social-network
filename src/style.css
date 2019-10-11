@@ -1,86 +1,154 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+
 @media (max-width: 700px){
 
    body {
-     display: flex;
-   }
-  .email{
-    position: absolute;
-    width: 249px;
-    height: 43px;
-    left: 58px;
-    top: 292px;
+     display: inline-block;}
 
-    background: #FDF9F9;
-    border: 1px solid #E8A645;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  .welcome{
+    position: absolute;
+    width: 112px;
+    height: 29px;
+    left: 23px;
+    top: 120px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.03em;
+    color: #263238;
+  }
+
+  .login{
+    position: absolute;
+    width: 300px;
+    height: 29px;
+    left: 23px;
+    top: 157px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.03em;
+    color: #B0BEC5;
+
+  }
+
+  .email-info {
+    position: absolute;
+    width: 33px;
+    height: 17px;
+    left: 23px;
+    top: 234px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.03em;
+    color: #263238;
+      }
+
+  .email {
+    position: absolute;
+    width: 329px;
+    height: 40px;
+    left: 23px;
+    top: 259px;
+    border: 1px solid #B0BEC5;
+    border-radius: 3px;
+  }
+
+  .pass-info {
+    position: absolute;
+    width: 37px;
+    height: 17px;
+    left: 23px;
+    top: 331px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.03em;
+
+    color: #263238;
+
   }
 
   .password {
     position: absolute;
-    width: 249px;
-    height: 43px;
-    left: 56px;
-    top: 374px;
+width: 329px;
+height: 40px;
+left: 23px;
+top: 356px;
 
-    background: #FDF9F9;
-    border: 1px solid #E8A645;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border: 1px solid #B0BEC5;
+border-radius: 3px;
   }
 
-  .primary-button {
+  .send {
     position: absolute;
-    width: 168px;
-    height: 50px;
-    left: 96px;
-    top: 456px;
-    background: #F3B562;
-    border: none;
+width: 329px;
+height: 44px;
+left: 23px;
+top: 428px;
+border: none;
+background: #FF007A;
+border-radius: 25px;
+color: #FFFFFF;
+
   }
 
-   .btn-register {
+  .other-login {
     position: absolute;
-    width: 168px;
-    height: 50px;
-    left: 97px;
-    top: 515px;
-    background: #F3B562;
+width: 100px;
+height: 19px;
+left: 143px;
+top: 505px;
+
+font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+letter-spacing: -0.03em;
+
+color: #263238;
+
   }
 
-  .password-re {
+  .google-btn {
     position: absolute;
-    width: 249px;
-    height: 43px;
-    left: 58px;
-    top: 416px;
-    background: #FDF9F9;
-    border: 1px solid #E8A645;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+left: 33.33%;
+right: 54.93%;
+top: 82.16%;
+bottom: 11.24%;
+
+background: #3A559F;
   }
 
-  .email-re {
+  .register-link {
     position: absolute;
-    width: 249px;
-    height: 43px;
-    left: 58px;
-    top: 342px;
-    background: #FDF9F9;
-    border: 1px solid #E8A645;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
+width: 300px;
+height: 19px;
+left: 95px;
+top: 624px;
 
-  .name {
-    position: absolute;
-    width: 249px;
-    height: 43px;
-    left: 58px;
-    top: 268px;
-    background: #FDF9F9;
-    border: 1px solid #E8A645;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-family: Lato;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+letter-spacing: -0.03em;
+
+color: #263238;
   }
 }
