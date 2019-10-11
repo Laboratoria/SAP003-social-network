@@ -1,9 +1,41 @@
 .primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
+  display: flex;
+  background-color: #21f0ff;
+  padding: 3px;
+  font-size: 1.3rem;
   border-radius: 5px;
   font-weight: bold;
   border: none;
   cursor: pointer;
+  margin: auto;
 }
+
+.primary-input{
+  display: flex;
+  padding: 6px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.título-cadastro {
+  text-align: center;
+}
+
+.título-login{
+  text-align: center; 
+}
+
+.mensagem-login{
+  text-align: center;  
+}
+
+.mensagem-cadastro{
+  text-align: center;  
+}
+
+
+/* .título-cadastro{
+  display: flex; // quando bota este deixa de ficar no centro
+  text-align: center;
+} */
