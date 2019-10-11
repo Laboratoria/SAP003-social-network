@@ -1,40 +1,29 @@
-[debug] [2019-10-08T18:29:13.444Z] ----------------------------------------------------------------------
-[debug] [2019-10-08T18:29:13.446Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2019-10-08T18:29:13.447Z] CLI Version:   7.4.0
-[debug] [2019-10-08T18:29:13.447Z] Platform:      linux
-[debug] [2019-10-08T18:29:13.447Z] Node Version:  v10.16.3
-[debug] [2019-10-08T18:29:13.447Z] Time:          Tue Oct 08 2019 15:29:13 GMT-0300 (GMT-03:00)
-[debug] [2019-10-08T18:29:13.447Z] ----------------------------------------------------------------------
+[debug] [2019-10-10T19:31:40.049Z] ----------------------------------------------------------------------
+[debug] [2019-10-10T19:31:40.051Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nathy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-10T19:31:40.051Z] CLI Version:   7.5.0
+[debug] [2019-10-10T19:31:40.051Z] Platform:      win32
+[debug] [2019-10-10T19:31:40.051Z] Node Version:  v10.16.3
+[debug] [2019-10-10T19:31:40.052Z] Time:          Thu Oct 10 2019 16:31:40 GMT-0300 (GMT-03:00)
+[debug] [2019-10-10T19:31:40.052Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-10-08T18:29:13.454Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-10-08T18:29:13.454Z] > authorizing via signed-in user
-[debug] [2019-10-08T18:29:13.454Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
-[debug] [2019-10-08T18:29:13.456Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
+[debug] [2019-10-10T19:31:40.058Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-10T19:31:40.058Z] > authorizing via signed-in user
+[debug] [2019-10-10T19:31:40.058Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
+[debug] [2019-10-10T19:31:40.060Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
 
-[debug] [2019-10-08T18:30:14.618Z] ----------------------------------------------------------------------
-[debug] [2019-10-08T18:30:14.621Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2019-10-08T18:30:14.621Z] CLI Version:   7.4.0
-[debug] [2019-10-08T18:30:14.621Z] Platform:      linux
-[debug] [2019-10-08T18:30:14.621Z] Node Version:  v10.16.3
-[debug] [2019-10-08T18:30:14.622Z] Time:          Tue Oct 08 2019 15:30:14 GMT-0300 (GMT-03:00)
-[debug] [2019-10-08T18:30:14.622Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-10-08T18:30:14.627Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-10-08T18:30:14.628Z] > authorizing via signed-in user
-[debug] [2019-10-08T18:30:14.628Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
-[debug] [2019-10-08T18:30:14.630Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
-
-[debug] [2019-10-08T18:30:16.022Z] <<< HTTP RESPONSE 200
-[debug] [2019-10-08T18:30:16.024Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
+[debug] [2019-10-10T19:31:41.188Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T19:31:41.190Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
  
-[debug] [2019-10-08T18:30:17.786Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T19:31:42.642Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from '/home/ubuntu/Área de Trabalho/Laboratória/SAP003-social-network'...
+[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
 [info] 
-[debug] [2019-10-08T18:30:17.793Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
+[debug] [2019-10-10T19:31:42.644Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
  
-[debug] [2019-10-08T18:30:19.697Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T19:31:43.855Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000
+
 [info] ✔  hosting: Local server: http://localhost:5000
 [debug] [2019-10-10T20:38:59.659Z] ----------------------------------------------------------------------
 [debug] [2019-10-10T20:38:59.663Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
@@ -96,3 +85,4 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
+
