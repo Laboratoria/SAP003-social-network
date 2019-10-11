@@ -21,7 +21,6 @@ function locationHashChanged() {
     case  '#home':
       firebase.auth().onAuthStateChanged(function (user) {
         user ? document.querySelector('main').innerHTML = Home() : window.location='#login'
-        console.log(user)
         });      
     break;
     case '#login':
@@ -40,7 +39,6 @@ function locationHashChanged() {
     }); 
   }
 }
-
 
 window.addEventListener('hashchange', locationHashChanged, false)
 window.addEventListener('load', locationHashChanged, false)
