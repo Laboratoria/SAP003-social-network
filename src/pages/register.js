@@ -17,15 +17,14 @@ function createCount() {
       let errorCode = error.code;
       let errorMessage = error.message;
       if (errorCode == 'auth/email-already-in-use') {
-        alert('E-mail já cadastrado.');
+        document.querySelector('.alertMessage').textContent ='E-mail já cadastrado.' 
       } if (errorCode == 'auth/weak-password') {
-        alert('A senha é muito fraca.');
+        document.querySelector('.alertMessage').textContent ='A senha é muito fraca.'
       } if (errorCode == 'auth/invalid-email') {
-        alert('E-mail inválido.');
+        document.querySelector('.alertMessage').textContent ='E-mail inválido.';
       } else {
-        alert(errorMessage);
+        document.querySelector('.alertMessage').textContent = errorMessage;
       }
-      console.log(error);
     });
 }
 
