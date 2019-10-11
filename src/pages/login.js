@@ -6,38 +6,37 @@ function buttonLogin() {
   const password = document.querySelector('.input-password').value;
   firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
     var errorCode = error.code;
-    // var errorMessage = error.message;
 
     if (errorCode === 'auth/user-not-found') {
       alert('Usuário não encontrado!')
-    } else if(errorCode === 'auth/invalid-email') {
+    } else if (errorCode === 'auth/invalid-email') {
       alert('Digite um e-mail válido!')
-    } else if(errorCode === 'auth/wrong-password') {
+    } else if (errorCode === 'auth/wrong-password') {
       alert('Email ou senha inválido!')
     }
   });
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       window.location = '#home';
+      //console.log('conecta')
       // User is signed in.
     } else {
       // No user is signed in.
     }
-  }); 
+  });
 }
 
 function loginSocial() {
   var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function () {
-  });
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().signInWithPopup(provider).then(function () {});
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       window.location = '#home';
       // User is signed in.
     } else {
       // No user is signed in.
     }
-  });  
+  });
 }
 
 function Login() {

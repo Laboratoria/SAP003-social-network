@@ -2,20 +2,23 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function btnRegister() {
-  const email = document.querySelector('.js-email-register').value;
+  let email = document.querySelector('.js-email-register').value;
   const password = document.querySelector('.js-password-register').value;
+  // let birthday = document.querySelector('.js-birthday-register').value;
   firebase.auth().createUserWithEmailAndPassword(email, password);
-  var user = firebase.auth().currentUser;
-  let name, uemail, photoUrl, uid, emailVerified;
-
-  if (user != null) {
-    name = user.displayName;
-    uemail = user.email;
-    photoUrl = user.photoURL;
-    emailVerified = user.emailVerified;
-    uid = user.uid;
-    console.log(name, email, photoUrl, uid, emailVerified)
-  }
+  firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().currentUser;
+    if (user != null) {
+      // let name = document.querySelector('.js-name-register').value;
+      email = user.email;
+      name = user.displayName;
+      // birthday = user.birthday;
+      window.location = '#home';
+      //console.log(email, name)
+    } else {
+      // No user is signed in.
+    }
+  });
 }
 
 function Register() {
