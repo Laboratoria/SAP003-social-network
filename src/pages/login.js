@@ -22,6 +22,7 @@ function signIn(provider) {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
+      // window.location.hash="#feed"
       if (result.credential) {
         const token = result.credential.accessToken;
       }

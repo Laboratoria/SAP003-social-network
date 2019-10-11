@@ -6,7 +6,7 @@ function newUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   const name = document.querySelector('.name-input').value;
-  console.log('tadã' + name + password);
+  console.log('tadã ' + name + password);
   auth.createUserWithEmailAndPassword(email, password)
     .then((cred) => {
       console.log(cred.user);
@@ -15,9 +15,6 @@ function newUser() {
       const errorMessage = error.message;
       alert(errorMessage);
     });
-  // .then((cred) => {
-  //   console.log(cred.user);
-  // });
 }
 
 function Signup() {
