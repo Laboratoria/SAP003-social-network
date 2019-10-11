@@ -17,6 +17,29 @@ const login = (id, event) => {
 	});
 }
 
+const loginGoogle = (id, event) => {
+
+	var provider = new firebase.auth.GoogleAuthProvider();
+
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+  	// This gives you a Google Access Token. You can use it to access the Google API.
+  	var token = result.credential.accessToken;
+  	// The signed-in user info.
+  	var user = result.user;
+  	// ...
+}).catch(function(error) {
+  	// Handle Errors here.
+  	var errorCode = error.code;
+  	var errorMessage = error.message;
+  	// The email of the user's account used.
+  	var email = error.email;
+  	// The firebase.auth.AuthCredential type that was used.
+  	var credential = error.credential;
+  // ...
+  	alert(errorMessage);
+	});
+}
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
   	window.location.hash = 'mural';
@@ -34,12 +57,12 @@ export function Home() {
 	  <form class="login-form">
 	   ${Input({ id:'email-login', placeholder:'Login', type:'email'})}
 	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})}
-	   ${Button({ id:'login', title: 'Login', onclick: login})}
+	   ${Button({ class:'btn btn-login', id:'login', title: 'Login', onclick: login})}
 	  </form>
-	  ${Button({ id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})}
+	  ${Button({ class:'btn-google' ,id:'google-login', title: 'Google Login', type:'submit', onclick: loginGoogle})}
+	  ${Button({ class:'btn btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})}
 	 </section>
 	</container>`;
-
 
 	window.location.hash = "home";
 

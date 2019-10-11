@@ -14,7 +14,7 @@ export const Mural = () => {
 			<input>textarea</input><button>post</button>
 			<button>adicionar fotinha</button>	
 	</section>
-	${Button({ id:"logout", type:"button", title:"Logout", onclick: logout})}
+	${Button({ class:'btn-logout', id:"logout", type:"button", title:"Logout", onclick: logout})}
 	`;
 
 	return template;

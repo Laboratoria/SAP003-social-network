@@ -1,4 +1,3 @@
-
 const Input = (props) => {
 	const template = `
 	<input 
