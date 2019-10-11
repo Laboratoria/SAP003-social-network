@@ -1,17 +1,32 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+//import Signup from './signup.js';
+
 
 function loginUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   auth.signInWithEmailAndPassword(email, password)
     .then((cred) => {
-      console.log(cred.user);
+      localStorage.setItem('user', JSON.stringify(cred.user))
+      // console.log(cred.user);
+      firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+          window.location = '#feed';
+        }
+      })
     })
-    .catch((error) => {
-      errorMessage = error.message;
-      alert(errorMessage);
-    });
+    .catch(() => {
+      const errorMessageField = document.getElementById('errorMessage')
+      errorMessageField.textContent = 'email e/ou senha inválidos.';
+      document.querySelector('.email-input').addEventListener('focus', () => {
+        errorMessageField.textContent = '';
+      })
+    })
+}
+
+function register(){
+  window.location = "signup"   
 }
 
 function signIn(provider) {
@@ -63,14 +78,23 @@ function Login() {
   })}
   `;
   const template = `
+
   <img src="./img/pluto-floral-and-botanical-growth.png">
+  <h1>Horta Urbana</h1> 
   <form class="form-content">
-  <h1>Horta Urbana</h1>
   ${userLogin}
-  <p>Ainda não é membro?<a href='#'> Cadastre-se!</a></p>
+  <div id="errorMessage"></div>
+  <p>Ainda não é membro?</p> 
+  ${Button({
+    class: 'btn',
+    title: 'cadastre-se',
+    onclick: register,
+  })}
   </form>
   `;
   return template;
 }
 export default Login;
+
 window.signIn = signIn;
+
