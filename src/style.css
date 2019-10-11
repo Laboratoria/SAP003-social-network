@@ -1,7 +1,24 @@
-<<<<<<< HEAD
-=======
+body{
+  margin: 15px;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #dcdcdc;
+}
+
+.container-login{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+img{
+  width:100%;
+  height: 1%;
+  padding: 
+}
 .primary-button {
-  background-color: #ffe521;
+  background-color: #fdef4e;
   padding: 6px;
   font-size: 1.5rem;
   border-radius: 5px;
@@ -11,10 +28,12 @@
 }
 
 .input {
+
   border: solid 1px;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 10px;
-  display: block;
+  margin-bottom: 20px;
+  
 }
 
 .card {
@@ -23,4 +42,3 @@
   padding: 8px;
 }
 
->>>>>>> 50817c69b4ad203ae0e10633b853cad4d32c5529

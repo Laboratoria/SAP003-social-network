@@ -8,18 +8,20 @@ function pegarInput() {
     nome: document.querySelector('.js-nome').value,
     senha: document.querySelector('.js-senha').value,
   };
-  window.localStorage.setItem('usuario', JSON.stringify(dados));
 
-  // const email = document.querySelector('.js-email').value;
-  // const nome = document.querySelector('.js-nome').value;
-  // const senha = document.querySelector('.js-senha').value;
-  // localStorage.setItem('emailSalvo', email);
-  // localStorage.setItem('nomeSalvo', nome);
-  // localStorage.setItem('senhaSalvo', senha);
+  // window.localStorage.setItem('usuario', JSON.stringify(dados));
+  // arrayUsuarios.push(dados);
+  let usuarios = localStorage.getItem('arrayUsuarios');
+  usuarios = JSON.parse(usuarios);
+  if (!Array.isArray(usuarios)) {
+    usuarios = [usuarios];
+  }
+  usuarios.push(dados);
+  localStorage.setItem('arrayUsuarios', JSON.stringify(usuarios));
+  localStorage.setItem('usuarioLogado', JSON.stringify(dados));
+  window.location.hash = '#Login';
 }
-function voltar(){
-  window.location.hash = '#home';
-}
+
 
 function Cadastro() {
   const template = `
@@ -27,21 +29,26 @@ function Cadastro() {
     ${Input({ class: 'js-nome', placeholder: 'Nome completo', type: 'text' })}
     ${Input({ class: 'js-senha', placeholder: 'senha', type: 'password' })}
     ${Button({ title: 'Cadastre-se', onClick: pegarInput })}
-    ${Button({ title: 'Voltar', onClick: voltar })}
-
-  `;
+ 
+`;
   return template;
 }
 
 function locationHashChanged() {
-  if (location.hash === "#cadastro") {
+  if (location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = Cadastro();
-
-  }else if (location.hash === '#home'){
-    document.querySelector('main').innerHTML = Login();
+  }else if (location.hash === '#home')/* {
+  } else if (location.hash === '#login') {
+    document.querySelector('main').innerHTML = Login(); */
   }
 }
 
-window.addEventListener("hashchange", locationHashChanged, false);
+window.addEventListener('hashchange', locationHashChanged, false);
+
 
 export default Cadastro;
+
+/* function voltar(){
+  window.location.hash = '#home';
+} */
+/* ${Button({ title: 'Voltar', onClick: voltar })} */
