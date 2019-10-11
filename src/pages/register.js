@@ -5,7 +5,9 @@ import Input from '../components/input.js';
 
 function register(){
     const template = `
-        <h2> Crie a sua conta </h2>
+    ${Button({id:'voltar', title: 'Voltar', onClick: goToLogin})}    
+    
+    <h2> Crie a sua conta </h2>
   <form> 
        ${Input({ placeholder: 'E-mail', type: 'email', class: 'js-email-input'})}
        ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
@@ -15,7 +17,9 @@ function register(){
       return template;
   }
   
-  
+  function goToLogin() {
+    window.location.hash='home';
+  }
   function buttonRegister() {
     const email= document.querySelector('.js-email-input').value;
     const password= document.querySelector('js-password-input').value;

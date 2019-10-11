@@ -13,6 +13,8 @@ function locationHashChanged() {
   if(location.hash==='#register') {
     // return registrar()
     document.querySelector('main').innerHTML=register();
+  } else if (location.hash==='#home') {
+    document.querySelector('main').innerHTML=Home();
   }
 }
 window.addEventListener('hashchange', locationHashChanged, false);
