@@ -1,6 +1,9 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+function salve (){
+  window.location.hash = '#feed'
+}
 
 function Perfil() {
   const template = `
@@ -10,8 +13,7 @@ function Perfil() {
     ${Input({ class:'js-edade-input', placeholder:'Idade', type:'text', })}
     ${Input({ class:'js--input', placeholder:'Apelido', type:'text', })}
     ${Input({ class:'js--input', placeholder:'Professor(a) ou  aluno', type:'text', })}
-    ${Button({title: 'Salvar', onClick: () => {}})}
-    <a href='#perfil'></a>
+    ${Button({title: 'Salvar', onClick: salve})}
     </form>`;
   
   return template;
