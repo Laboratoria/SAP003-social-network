@@ -47,8 +47,7 @@ let passwordInput = document.getElementById("passwordInput");
 let displayName = document.getElementById("displayName");
 
 createUserButton.addEventListener("click", function(){
-	firebase
-		.auth().createUserWithEmailAndPassword(emailInput.Value, passwordInput.value)
+	firebase.auth().createUserWithEmailAndPassword(emailInput.Value, passwordInput.value)
 		.then(function() {
 			alert("Bem vindo" + emailInput.value)
 		})
@@ -59,10 +58,26 @@ createUserButton.addEventListener("click", function(){
 		})
 })
 
-firebase.auth().onAuthStateChanged(function(user) {
-	if (user) {
-	  // User is signed in.
-	} else {
-	  // No user is signed in.
-	}
-  });
+authEmailPassButton.addEventListener("click", function(){
+	firebase.auth().signInWithEmailAndPassword(emailInput.Value, passwordInput.value)
+		.then(function(result) {
+			console.log(result);
+			displayName.innerHTML = "Bem vindo, " + emailInput.value;
+			alert("Autenticado" + emailInput.value)
+		})
+		.catch(function (error) {
+			console.error(error.code);
+			console.error(error.message);
+			alert("Falha ao autenticar, verifique o erro no console.")
+		})
+})
+
+logOutButton.addEventListener("click", function(){
+	firebase.auth().signOut()		.then(function() {
+			displayName.innerText = "Você não está autenticado";
+			alert("Você se desligou");
+	}, function (error) {
+		console.error(error);
+	)}
+		
+})
