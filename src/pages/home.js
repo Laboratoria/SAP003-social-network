@@ -2,7 +2,7 @@ import Button from '..//components/button.js';
 import Logo from '../components/logo.js';
 
 
-function sair() {  
+function signOut() {  
   firebase.auth().signOut().then(function () {
     window.location = '#login.js';
     
@@ -21,7 +21,7 @@ function Home() {
       
     <br>
 
-    ${Button({ title: 'Sair', onClick: sair })}   
+    ${Button({ title: 'SAIR', onClick: signOut })}   
    
     
   `;

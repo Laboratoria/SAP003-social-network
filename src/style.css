@@ -4,10 +4,13 @@
   font-size: 100%;
   border: none;
   outline: none;
-  font-weight: 300; }
+  font-weight: 300;
+  font-family: 'Chewy', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-family: 'Numans', sans-serif; }
 
 body {
-  background-color: #FEF19F; }
+  background-color: #c2c0ab; }
 
 .logo {
   margin-left: auto;
@@ -41,13 +44,14 @@ body {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   padding: 5px;
   text-align: center;
   display: block;
-  background-color: #ffd45e;
-  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2); }
+  background-color: #292122;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+  color: #c2c0ab; }
 
 .auth-button {
   border: none;
@@ -58,7 +62,7 @@ body {
   padding: 5px;
   text-align: center;
   display: block;
-  background-color: #FEF19F;
+  background-color: #c2c0ab;
   font-size: 30px; }
 
 p {

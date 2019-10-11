@@ -1,10 +1,10 @@
 import Login from './pages/login.js';
-import Cadastro from './pages/cadastro.js';
+import Register from './pages/register.js';
 import Home from './pages/home.js';
 
 
 function init() {
-  document.querySelector('main').innerHTML = Home();
+  document.querySelector('main').innerHTML = Login();
 }
 
 window.addEventListener('load', init);
@@ -12,8 +12,8 @@ window.addEventListener('load', init);
 
 function locationHashChanged() {
   switch (location.hash) {
-    case '#cadastro.js':
-    document.querySelector('main').innerHTML = Cadastro();
+    case '#register.js':
+    document.querySelector('main').innerHTML = Register();
     break;
     case '#home.js':
     document.querySelector('main').innerHTML = Home();

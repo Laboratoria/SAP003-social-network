@@ -4,13 +4,20 @@ import Input from '../components/input.js';
 
 function criarLogin() {
   const email = document.querySelector('.js-email-input').value;
-  const senha = document.querySelector('.js-password-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, senha);
+  const password = document.querySelector('.js-password-input').value;
+  
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    let errorCode = error.code;
+    let errorMessage = error.message;
+    // ...    
+  });
+
   firebase.auth().onAuthStateChanged(function(user) {
     firebase.auth().currentUser;
     if (user != null) {
-      email = user.email;
-      senha = user.senha;      
+      let userEmail = user.email;
+      let userPass = user.password;      
       window.location = '#home.js';
       
       // User is signed in.
@@ -23,7 +30,8 @@ function criarLogin() {
       // let providerData = user.providerData;
       // ...
     } else {
-      console.log('Mano do céu no registro')
+      console.log('Erro no cadastro')
+      console.log(user)
       // User is signed out.
       // ...
     }
@@ -31,7 +39,7 @@ function criarLogin() {
 }
 
 
-function Cadastro() {
+function Register() {
   const template = `   
     ${Logo()}
     <br>
@@ -39,11 +47,11 @@ function Cadastro() {
     <br>
     ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}       
     <br>
-    ${Button({ title: 'Criar', onClick: criarLogin })}    
+    ${Button({ title: 'CADASTRAR', onClick: criarLogin })}    
    
   `;
 
   return template;
 }
 
-export default Cadastro;
+export default Register;

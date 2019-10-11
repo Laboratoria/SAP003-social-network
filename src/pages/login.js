@@ -19,6 +19,7 @@ function enviarLogin() {
       alert('Email ou senha inválido!')
     }
   });
+  
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       window.location = '#home.js';
@@ -38,13 +39,13 @@ function Login() {
     ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
     ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}    
     <br>
-    ${Button({ title: 'Enviar', onClick: enviarLogin })}
+    ${Button({ title: 'ENVIAR', onClick: enviarLogin })}
     
     <p>Ou acesse com...</p>
     
     ${ButtonAuth({ title: '<i class="fab fa-google-plus-square"></i>', onClick: buttonGoogle })}       
    
-    <section>Não tem uma conta? <a href="#cadastro.js">REGISTRE-SE</a></section>
+    <section>Não tem uma conta? <a href="#register.js">REGISTRE-SE</a></section>
   `;
 
   return template;
