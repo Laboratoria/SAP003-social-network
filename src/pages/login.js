@@ -28,13 +28,17 @@ let credential = error.credential;
 function enviarLogin() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-     (error) 
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+.then((response) => {
+  console.log('resposta', response)
+})
+.catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+
 
 
   console.log(email, password);
