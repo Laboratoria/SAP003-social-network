@@ -1,9 +1,22 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+html {
+  background-color: #121212;
+}
+
+h1{
+  font-size: 49px;
+  color: whitesmoke;
+}
+
+container{
+  display: flex;
+}
+
+.login{
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.logo{
+  width: 320px;
+  padding: 88px;
 }
