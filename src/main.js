@@ -1,21 +1,16 @@
 import Register from './pages/register.js';
 import Login from "./pages/login.js"
+import Home from "./pages/home.js"
 
-const init = () => {
-  location.hash = "";
-  document.querySelector('main').innerHTML = Login();
-}
-
-const routes = () =>{
-  if(location.hash === '#register'){
+const routes = () => {
+  if (location.hash === '#register') {
     document.querySelector('main').innerHTML = Register();
   } else if (location.hash === "") {
     document.querySelector('main').innerHTML = Login();
+  } else if (location.hash === "#home") {
+    document.querySelector('main').innerHTML = Home();
   }
 }
-
-// import { initRouter } from "./route.js";
-// import { observer } from "./assets/js/auth.js";
 
 // const init = () => {
 //   firebase.auth().onAuthStateChanged(e => initRouter());

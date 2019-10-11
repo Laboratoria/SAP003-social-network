@@ -1,5 +1,5 @@
 const logo = (props) => {
-    const template = `
+  const template = `
     <img src="${props.img}" class="${props.classImg}">
     <p class="${props.classP}">${props.text}</p>
     `;
