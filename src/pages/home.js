@@ -7,14 +7,15 @@ const location = () => {
 
 function Home() {
     const template = `
-    <form class="container">
-    <p> Aqui vãos os posts </p>
-    </form>
-    ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
+    <section class="container">
+      <section class="container">
+        <p> Aqui vãos os posts </p>
+      </section>
+      ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
+    </section>
   `;
 
     return template;
 }
 
 export default Home;
-
