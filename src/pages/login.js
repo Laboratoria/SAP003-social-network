@@ -38,19 +38,21 @@ const loginGoogle = () => {
 
 const Login = () => {
   const template = `
-     <section>
+    <section class="main-container">
+    <section class="logo">
       ${logo({ img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace' })}
-      <form class="container">
-      ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
-      ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
-      ${Button({ type: 'submit', title: 'Login', class: 'primary-button', onClick: userLogin })}
-      </form>
-     </section>
-     <section class="login-container">
-       <p class="login-text">Ou entre com...</p>
-       ${Google({ src: 'image/google.png', class: 'google-button', onClick: loginGoogle, type: 'image' })}
-       <p class="login-text">Não tem uma conta? <a href="#register" class="link">Registre-se</a></p>
-     </section>
+    </section>
+      <section class="container">
+        <form class="container">
+          ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
+          ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
+          ${Button({ type: 'submit', title: 'Login', class: 'primary-button', onClick: userLogin })}
+        </form>
+        <p class="login-text">Ou entre com...</p>
+        ${Google({ src: 'image/google.png', class: 'google-button', onClick: loginGoogle, type: 'image' })}
+        <p class="login-text">Não tem uma conta? <a href="#register" class="link">Registre-se</a></p>
+       </section>
+      </section>
       `;
 
   return template;

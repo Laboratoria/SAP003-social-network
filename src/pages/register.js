@@ -33,14 +33,18 @@ const location = () => {
 
 const Register = () => {
   const template = `
-  <section>
-    ${logo({ img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace' })}
-    <form class="container">
-    ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
-    ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
-    ${Button({ type: 'submit', title: 'Cadastrar', class: 'primary-button', onClick: createUser })}
-    ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
-    </form>    
+  <section class="main-container">
+    <section class="logo">
+      ${logo({ img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace' })}
+    </section>
+    <section class="container">
+      <form class="container">
+        ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
+        ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
+        ${Button({ type: 'submit', title: 'Cadastrar', class: 'primary-button', onClick: createUser })}
+        ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
+      </form>
+    </section>
   </section>
   `;
   return template;
