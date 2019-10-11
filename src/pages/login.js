@@ -1,4 +1,4 @@
-import locationHasChange from './pages/main.js';
+import locationHasChange from '../main.js';
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -22,12 +22,13 @@ function login() {
 function TemplateLogin() {
   const template = `
   <img src="img/moviment.png" alt="Logo do Moviment">
-    <h4>Bem vinda, Movimenter!</h4>
-    <form>    
+    <h4>Bem vinda, Moviment!</h4>
+    <form class="form-login">    
     ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
     ${Input({ class: 'js-password-input', placeholder: 'password', type: 'password' })}
     ${Button({ id: 'bt-login', title: 'log in', call: login })}
     </form>
+
     <p>Pode acessar também com...</p>
 
     <p><a href="#createAccount">Não tem uma conta?</a></p>

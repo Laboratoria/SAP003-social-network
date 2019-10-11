@@ -1,0 +1,30 @@
+[debug] [2019-10-10T21:38:55.190Z] ----------------------------------------------------------------------
+[debug] [2019-10-10T21:38:55.194Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-10-10T21:38:55.194Z] CLI Version:   7.4.0
+[debug] [2019-10-10T21:38:55.194Z] Platform:      linux
+[debug] [2019-10-10T21:38:55.194Z] Node Version:  v10.16.3
+[debug] [2019-10-10T21:38:55.195Z] Time:          Thu Oct 10 2019 18:38:55 GMT-0300 (GMT-03:00)
+[debug] [2019-10-10T21:38:55.195Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-10T21:38:55.206Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-10T21:38:55.206Z] > authorizing via signed-in user
+[debug] [2019-10-10T21:38:55.206Z] [iam] checking project redesocial for permissions ["firebase.projects.get"]
+[debug] [2019-10-10T21:38:55.208Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-10T21:38:55.208Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-10T21:38:55.554Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T21:38:55.562Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/redesocial:testIamPermissions  
+
+[debug] [2019-10-10T21:38:56.574Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T21:38:56.577Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/redesocial  
+ 
+[debug] [2019-10-10T21:38:57.189Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ubuntu/Laboratória/SAP003-social-network'...
+[info] 
+[debug] [2019-10-10T21:38:57.194Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/redesocial/webApps/-/config  
+ 
+[debug] [2019-10-10T21:38:58.517Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5005

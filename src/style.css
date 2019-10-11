@@ -1,5 +1,8 @@
 body{
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .primary-button {
   background-color: #014034;
@@ -9,9 +12,25 @@ body{
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  display: block;
 }
 .textarea-local{
   margin-top: 10px;
   align-items: center;
-  
 }
+.js-name-input{
+  text-align: center;
+  display: block;
+}
+.js-email-input{
+  text-align: center;
+  display: block;
+}
+.js-password-input{
+  text-align: center;
+  display: block;
+}
+
+
+
+
