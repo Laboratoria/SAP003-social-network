@@ -1,11 +1,29 @@
-import Button from '../components/button.js';
+import Button from '..//components/button.js';
+import Logo from '../components/logo.js';
+
+
+function signOut() {  
+  firebase.auth().signOut().then(function () {
+    window.location = '#login.js';
+    
+  }).catch(function (error) {
+    
+  });
+}
+
 
 function Home() {
-  const template = `
-    <h1>Home Page</h1>
-    ${Button({ id: '🐠', title: 'Botão 🐠' })}
-    ${Button({ id: '🎉', title: 'Botão 🎉' })}
-    <p>Esse é um exemplo 🍌</p>
+  const template = `   
+    ${Logo()}
+    <br>
+
+    <p>OiOiOi</p>  
+      
+    <br>
+
+    ${Button({ title: 'SAIR', onClick: signOut })}   
+   
+    
   `;
 
   return template;

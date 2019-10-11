@@ -1,78 +1,96 @@
+$cor: #c2c0ab;
+$cor2: #faff99;
+$cor3: #fce326;
+$cor4: #292122;
+
 * {
   margin: 0;
   padding: 0;
   font-size: 100%;
   border: none;
   outline: none;
-  font-weight: 300;
+  font-weight: 300;  
   font-family: 'Chewy', cursive;
   font-family: 'Sansita', sans-serif;
-  font-family: 'Numans', sans-serif; }
+  font-family: 'Numans', sans-serif;
+}
 
 body {
-  background-color: #c2c0ab; }
+  background-color: $cor;
+
+}
 
 .logo {
   margin-left: auto;
   margin-right: auto;
   width: 250px;
   height: 250px;
-  background: url(./img/logo.png) center center/250px no-repeat;
-  display: block; }
+  background: url(./img/logo.png) center center/ 250px no-repeat;
+  display: block;  
+}
 
 .name {
-  text-align: center; }
+  text-align: center;
+}
 
 .form {
-  padding: 5px; }
+  padding: 5px;
+}
 
-.js-email-input {
+.js-email-input {  
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  padding: 5px;
-  display: block; }
+  padding: 5px;  
+  display: block;
+}
 
 .js-password-input {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  padding: 5px;
-  display: block; }
+  padding: 5px;  
+  display: block;
+}
 
 .primary-button {
-  margin-top: 10px;
+  margin-top: 10px;  
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
   border-radius: 8px;
   cursor: pointer;
   padding: 5px;
   text-align: center;
   display: block;
-  background-color: #292122;
-  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-  color: #c2c0ab; }
+  background-color: $cor4;
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  color: $cor;
+}
 
 .auth-button {
   border: none;
-  margin-top: 10px;
+  margin-top: 10px;  
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
   cursor: pointer;
   padding: 5px;
-  text-align: center;
+  text-align: center;  
   display: block;
-  background-color: #c2c0ab;
-  font-size: 30px; }
+  background-color: $cor;
+  font-size: 30px;
+  
+  
+}
 
 p {
   padding-top: 30px;
   text-align: center;
-  display: block; }
+  display: block;  
+}
 
 section {
   padding-top: 30px;
   text-align: center;
-  display: block; }
+  display: block;
+}
 
-/*# sourceMappingURL=style.css.map */
