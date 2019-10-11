@@ -39,8 +39,8 @@ const Register = () => {
     ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
     ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
     ${Button({ type: 'submit', title: 'Cadastrar', class: 'primary-button', onClick: createUser })}
-    </form>
     ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
+    </form>    
   </section>
   `;
   return template;
