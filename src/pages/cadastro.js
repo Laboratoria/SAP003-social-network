@@ -25,7 +25,7 @@ export const Cadastro = () => {
 		${Input({ id:"name",  placeholder:"Nome", type:"text"})}
 		${Input({ id:"mail", placeholder:"Email", type:"email"})}
 		${Input({ id:"pass", placeholder:"Senha", type:"password"})}
-		${Button({ id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form>`;
+		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form>`;
 
 	return template;
 }

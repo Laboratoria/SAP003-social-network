@@ -1,6 +1,6 @@
 const Button = (props) => {
 	const template = `
-	<button class="login-btn"
+	<button class="${props.class}"
 	id="${props.id}" type="${props.type}"
 	onclick="button.handleClick(event, id, ${props.onclick})">${props.title}</button>`;
 
@@ -17,4 +17,3 @@ window.button = {
 }
 
 export default Button;
-
