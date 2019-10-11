@@ -1,10 +1,17 @@
 import Button from "../components/button.js";
+import Select from "../components/select.js";
 
 export const Mural = () => {
 	const template = `
 	<header>
 		<nav>
-			<li>Dropdown</li>
+			<li>
+				<select id="select">
+					${Select({name:'test1', id:'test1', class:'test-class', value:'test1'})}
+					${Select({name:'test2', id:'test2', class:'test-class', value:'test2'})}
+					${Select({name:'test3', id:'test3', class:'test-class', value:'test3'})}
+				</select>
+			</li>
 			<li>Logo</li>
 			<li>Logout</li>
 		</nav>
