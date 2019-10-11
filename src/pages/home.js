@@ -15,9 +15,10 @@ function Home() {
         <li><a href="#home">Home</a></li>
         <li><a href="#profile">Perfil</a></li>
         <li><a href="#timeline">Postagens</a></li>
-        <li> ${Button({ id: 'btn-exit', title: 'SAIR', onClick: btnSignOut })}</li>
       </ul>
+      ${Button({ id: 'btn-exit', title: 'SAIR', onClick: btnSignOut })}
     </nav>
+    
     <h1>Essa é a sua timeline</h1>
    
   `;
