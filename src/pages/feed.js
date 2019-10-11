@@ -1,14 +1,17 @@
 import Button from '../components/button.js';
 
 function SignOut () {
-  firebase.auth().signOut().then(function() { alert ('Sign-out successful.') })};
+  firebase.auth().signOut().then(function() { 
+    window.location.hash = '#login'
+    alert ('Agora tu saiu.') 
+  })
+};
 
 function Home() {
   const template = `
     <h1>Home Page</h1>
   ${Button({ id: 'singOut', title: 'Sair', onClick: SignOut})}
     <p>Esse é um exemplo 🍌</p>
-    <a href='#login'></a>
   `;
  
   return template;
