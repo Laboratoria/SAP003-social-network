@@ -29,7 +29,7 @@ const loginGoogle = () => {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      location.hash = '#home';
+      location.hash = '#feed';
     } else {
       // No user is signed in.
     }

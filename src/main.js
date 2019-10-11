@@ -8,7 +8,7 @@ const routes = () => {
   } else if (location.hash === "") {
     document.querySelector('main').innerHTML = Login();
   } else if (location.hash === "#feed") {
-    document.querySelector('main').innerHTML = Home();
+    document.querySelector('main').innerHTML = Feed();
   }
 }
 
