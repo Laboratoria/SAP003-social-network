@@ -1,20 +1,85 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #04151F;
+  background-color: #BDDC73;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
+.page{
+  height: 80vh;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page img{
+  padding:0;
+  min-width: 200px;
+  max-width:100vh;
+  max-height: 70vh;
+  flex-grow: 1;
+}
+
+.form-content{
+  padding: 1em;
+  min-width: 200px;
+  max-width:100vh;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.form-content h1{
+  font-size: 2.5rem;
   font-weight: bold;
-  border: none;
+  margin: 0 0 1em 0;
+}
+
+.form-content input{
+  background-color: #FCFCFC;
+  padding: 0.5em;
+  margin: 1em 0;
+  width: 80%;
+  border: 1px solid #322F20;
+  border-radius: 5px;
+}
+
+.btn{
+  background-color: #322F20;
+  color: #FCFCFC;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em;
+  margin: 1em;
+  width: 80px; 
+  border-radius: 10px;
+  border: 1px solid #322F20;
   cursor: pointer;
+}
+
+.btn:hover{
+  background-color: transparent;
+  color:  #322F20;
+  border: 1px solid #322F20;
+}
+
+.form-content p{
+  font-size: 0.9rem;
 }

@@ -18,8 +18,6 @@ function locationHashChanged(){
   else if(location.hash ==='#signup'){
   document.querySelector('main').innerHTML = Signup();
   }
-}
-
 
 //#login página de login
 //#signup href do "cadastre-se"
