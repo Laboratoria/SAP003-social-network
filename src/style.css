@@ -1,16 +1,28 @@
+body {
+  box-sizing: border-box;
+}
+.login-layout{
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5edda;
+}
 .primary-button {
-  background-color: #ffe521;
+  background-color: #e35b27;
   padding: 10px;
   font-size: 0.9rem;
   border-radius: 5px;
-  /* font-weight: bold; */
   border: none;
   cursor: pointer;
+  color: #f5edda;
 }
 .login-card{
   display: flex;
   flex-direction: column;
-  border: solid 2px;
   padding: 20px;
   width: 80%;
   margin: 0 auto;
@@ -22,13 +34,63 @@
   color: #fff;;
   background-color: #4686fd;
 }
+#google img{
+  margin: 0;
+}
 .btn-google:hover{
   background-color: #074cce;
 }
-
-@media (min-width: 540px) {
-  .login-card{
-    width: 50%;
-  }
+#image{
+  width: 100%;
+}
+.menu {
+  display: none;
 }
 
+@media (min-width: 540px) {
+  .login-layout{
+    flex-direction: row;
+    align-items: center
+  }
+  .container{
+    width: 40%;
+  }
+  .login-card{
+    /* width: 80%; */
+  }
+  #image{
+    width: 60%;
+  }
+  .menu ul {
+    background-color: pink;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  .menu {
+    display: flex
+  }
+
+  .menu ul li {  
+    display: inline-block;
+      
+  }
+
+  .menu ul li a {
+    display: inline-block;
+    background-color: pink;
+    color: #009FFF;
+    text-decoration: none;
+    border-bottom: 3px solid #EDEDED;
+  }
+
+  .menu ul li a:hover {
+    background-color: #D6D6D6;
+    color: #009FFF;
+    border-bottom: 3px solid #ec2F4B;
+  }
+  
+}
