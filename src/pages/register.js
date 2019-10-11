@@ -7,7 +7,11 @@ function createCount() {
   const name = document.querySelector('.js-name-input').value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
-      location.hash = 'login';
+      firebase.firestore().collection('users').doc(name).set({
+        Nome: name,
+        conta: email,
+    })
+    location.hash = 'login';
     })
     .catch(function (error) {
       let errorCode = error.code;
