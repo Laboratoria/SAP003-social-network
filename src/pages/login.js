@@ -28,6 +28,10 @@ function loginUser() {
     })
 }
 
+function register(){
+  window.location = "signup"
+}
+
 function Login() {
   const userLogin = `
   ${Input({
@@ -58,7 +62,13 @@ function Login() {
   <form>
   ${userLogin}
   <div id="errorMessage"></div>
-  <p>Ainda não é membro?</p> <a href='#signup'>Cadastre-se</a>
+  <p>Ainda não é membro?</p> 
+  ${Button({
+    class: 'btn',
+    title: 'cadastre-se',
+    onclick: register,
+    // < i class= 'fa fa-google fa-2x'></i>
+  })}
   </form>
   `;
   return template;

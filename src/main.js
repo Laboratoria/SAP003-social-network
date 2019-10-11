@@ -18,8 +18,14 @@ function locationHashChanged(){
   else if(location.hash ==='#signup'){
   document.querySelector('main').innerHTML = Signup();
   }
-  else if(location.hash ==='#login'){
-  document.querySelector('main').innerHTML = Login();
-  }
 }
+
+
+//#login página de login
+//#signup href do "cadastre-se"
+//#feed página do feed
+//Logout(), função que faz logout
+//Login()função que tem a tela do login
+//Signup() função da tela de cadastro
+//Signout()função do botão signout
 
