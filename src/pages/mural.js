@@ -6,10 +6,10 @@ export const Mural = () => {
 	<header>
 		<nav>
 			<li>
-				<select id="select">
-					${Select({name:'test1', id:'test1', class:'test-class', value:'test1'})}
-					${Select({name:'test2', id:'test2', class:'test-class', value:'test2'})}
-					${Select({name:'test3', id:'test3', class:'test-class', value:'test3'})}
+				<select id="select" onchange="test()">
+					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural', selected:"selected"})}
+					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar'})}
+					${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
 				</select>
 			</li>
 			<li>Logo</li>
@@ -27,6 +27,16 @@ export const Mural = () => {
 	return template;
 }
 
+const test = () => {
+	if (document.getElementById('select').value === "mural") {
+		window.location.hash = "mural";
+	} else if (document.getElementById("select").value === "editar") {
+		window.location.hash = "editar";
+	} else {
+		logout();
+	}
+}
+
 const logout = () => {
 
 	firebase.auth().signOut().then(function() {
@@ -35,6 +45,7 @@ const logout = () => {
 	});
 }
 
+window.test = test;
 
 //nav-bar(dropdown com nome da usuária+logo+logout) 
 

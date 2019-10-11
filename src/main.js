@@ -2,6 +2,7 @@ import {Home} from "../pages/home.js";
 import {Cadastro} from "../pages/cadastro.js";
 import {PaginaInicial} from "../pages/paginainicial.js"
 import {Mural} from "../pages/mural.js"
+import {EditarPerfil} from "../pages/editarperfil.js"
 
 function init() {
   document.querySelector("main").innerHTML = Home();
@@ -15,6 +16,10 @@ const mural = () => {
 	document.querySelector("main").innerHTML = Mural();
 }
 
+const editarPerfil = () => {
+	document.querySelector("main").innerHTML = EditarPerfil();
+}
+
 const hash = () => {
 	if (location.hash === "#sign") {
 		return cad();
@@ -22,6 +27,8 @@ const hash = () => {
 		return mural();
 	} else if (location.hash === "#home") {
 		return init();
+	} else if (location.hash === "#editar") {
+		return editarPerfil();
 	}
 }
 
