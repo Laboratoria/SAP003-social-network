@@ -42,24 +42,29 @@ function loginSocial() {
 
 function Login() {
   const template = `
-    <h1>InstaHealth</h1>
-      <form class="login-card">
-        ${Input({
-          class: 'input-email',
-          placeholder: 'email',
-          type: 'email',
-        })}
+  <section class="login-layout">
+      <img src='https://source.unsplash.com/400x150' id="image"></img>
+      <div class="container">
+        <h2>Olá, bem vinda</h2>
+        <form class="login-card">
+          ${Input({
+            class: 'input-email',
+            placeholder: 'email',
+            type: 'email',
+          })}
 
-        ${Input({
-          class: 'input-password',
-          placeholder: 'password',
-          type: 'password',
-        })}
+          ${Input({
+            class: 'input-password',
+            placeholder: 'password',
+            type: 'password',
+          })}
 
-        ${Button({ id: '🎉', title: 'Entrar 🎉', onClick: buttonLogin })}
-        ${Button({ id: 'google', title: 'Entrar com sua conta do Google', class: 'btn-google', onClick: loginSocial })}
-    </form>
-    <p>Criar conta<a href="#register">Registre-se</a></p>
+          ${Button({ id: 'entrar', title: 'Entrar', onClick: buttonLogin })}
+          ${Button({ id: 'google', title: '<img src="images/iconfinder_2_939729.png"></img>Entrar com sua conta do Google', class: 'btn-google', onClick: loginSocial })}
+        </form>
+        <p>Não tem conta? <a href="#register">Registre-se</a></p>
+      </div>
+    </section>
   `;
   return template;
 }
