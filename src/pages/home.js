@@ -10,10 +10,17 @@ function btnSignOut() {
 
 function Home() {
   const template = `
-    <h1>ESSA É A HOMEEEEE 🎉 🎉 🎉</h1>
-    ${Button({ id: 'btn-exit', title: 'SAIR', onClick: btnSignOut })}
+    <nav class="menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#profile">Perfil</a></li>
+        <li><a href="#timeline">Postagens</a></li>
+        <li> ${Button({ id: 'btn-exit', title: 'SAIR', onClick: btnSignOut })}</li>
+      </ul>
+    </nav>
+    <h1>Essa é a sua timeline</h1>
+   
   `;
-
   return template;
 }
 
