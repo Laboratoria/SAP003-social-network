@@ -18,35 +18,31 @@ function Home() {
 };
 export default Home;
 
+
 function goToRegister () {
   window.location.hash='register';
 }
 
 function buttonLogin () {
-
-}
-function buttonRegister() {
   const email= document.querySelector('.js-email-input').value;
-  const password= document.querySelector('js-password-input').value;
+  const password= document.querySelector('.js-password-input').value;
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    firebase.auth().onAuthStateChange(function(user){
+      window.location='#register';
+    })
+  }).catch(function(error) {
+    var errorCode = error.code;
+    if (errorCode === 'auth/user-not-found'){
+      alert('Usuário não encontrado')
+    } else if (errorCode === 'auth/invalid-email'){
+      alert('E-mail inválido')
+    }else if (errorCode === 'auth/invalid-password'){
+      alert('Senha incorreta')
+    }
+  });
+  
   
 }
 
-// function locationHashChanged() {
-//   if(location.hash==='#register.js') {
-//     return registrar()
-//   }
-// }
-// window.onhashchange = locationHashChanged;
   
-// firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-//   // Handle Errors here.
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-//   // ...
-// });email-password.html
 
-
-
-
-
-//${Button({ id: '🎉', title: 'Botão 🎉' })}
