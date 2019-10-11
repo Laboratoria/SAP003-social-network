@@ -100,11 +100,15 @@ body {
   body{
     background-color: #f3e5f5;
     margin: 0;
-    height: 732px;
+    height: 600px;
   }
   main{
     display: flex;
     flex-direction: column;
+  }
+
+  .primary-button:hover{
+   background-color: #af8eb5; 
   }
 
   .login-container{
