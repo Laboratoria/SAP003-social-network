@@ -2,9 +2,11 @@
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
+  justify-content: inherit;
 }
 .header {
   background-image: radial-gradient(#ffbb36 5%, #E85531);
+  height: auto;
 }
 img {
   height: 120px;
@@ -24,7 +26,7 @@ img {
 }
 .alertMessage{
   text-align: center;
-  padding: 3%;
+  padding: 1%;
   color: #FF1C14;
   font-weight: bold;
 }
@@ -74,11 +76,24 @@ img {
   width: 300px
 }
 
-/* @media screen {
-  body { background: #ECEFF1; color:#FF); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-
-  @media (screen max-width: 600px) {
-    body, #message { margin-top: 0; background: white; box-shadow: none; }
-    body { border-top: 16px solid #ffa100; }
+@media screen and (min-width: 992px){
+  .teste {
+    display: flex;
+    justify-content: center;
   }
- */
+  .header {
+    flex-grow:1;
+    display: flex;
+  } 
+  img {
+    height: auto;
+  }
+  .login-box{
+    flex-grow:1;
+    padding:2%;
+    box-sizing:border-box;
+  }
+  .primary-input  {
+    width: 60%;
+  }
+}

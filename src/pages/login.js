@@ -3,38 +3,43 @@ import Input from '../components/input.js';
 
 function Login() {
   const template = `
+  <div class="teste">
     <header class="header"><img src="./Imagens/header-logo.png"></header>
-    <h1 class="name-network">Heroínas</h1>
-    <h3 class="text-simple">Bem vinda, programadora!</h3>
-    <form class="primary-box">
-    ${Input({
+    <section class = "login-box">
+      <h1 class="name-network">Heroínas</h1>
+      <h3 class="text-simple">Bem vinda, programadora!</h3>
+      <form class="primary-box">
+      ${Input({
       class: 'js-email-input',
-      placeholder: 'email',
+      placeholder: 'Email',
       type: 'email',
     })}
-      ${Input({
+        ${Input({
       class: 'js-password-input ',
-      placeholder: 'password',
+      placeholder: 'Senha',
       type: 'password',
     })}
-      ${Button({
+        ${Button({
       id: 'btnLogin',
       title: 'Login',
       onClick: sendLogin,
     })}
-    <p class="text-simple">Ou entre com:</p>
-      ${Button({
+      <p class="text-simple">Ou entre com:</p>
+        ${Button({
       id: "iGoogle",
-      title:'<i class="fab fa-google"></i>',
+      title: '<i class="fab fa-google"></i>',
       onClick: loginGoogle,
-      })}
-  </form>
-  <p class="alertMessage"></p>
-  <p class="text-simple">Não tem uma conta?</p>
-    ${Button({
-      id:'register',
-      title:'Registre-se',
-      onClick:HashRegister})}
+    })}
+    </form>
+    <p class="alertMessage"></p>
+    <p class="text-simple">Não tem uma conta?</p>
+      ${Button({
+      id: 'register',
+      title: 'Registre-se',
+      onClick: HashRegister
+    })}
+  </section>
+  </div>
   `;
   location.hash = 'login'
   return template;
@@ -48,34 +53,36 @@ function sendLogin() {
     .catch(function (error) {
       let errorCode = error.code;
       if (errorCode === 'auth/wrong-password') {
-        document.querySelector('.alertMessage').textContent='Senha errada!';
+        document.querySelector('.alertMessage').textContent = 'Senha errada!.';
+      } if (errorCode === 'auth/user-not-found') {
+        document.querySelector('.alertMessage').textContent = 'Usuário não encontrado.';
       } else {
-        document.querySelector('.alertMessage').textContent='Usuário não cadastrado';
+        document.querySelector('.alertMessage').textContent = 'Usuário não cadastrado.';
       }
     })
 }
 
-function loginGoogle(){
-  var provider = new firebase.auth.GoogleAuthProvider();
+function loginGoogle() {
+  let provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithRedirect(provider);
-  firebase.auth().getRedirectResult().then(function(result) {
-  if (result.credential) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
+  firebase.auth().getRedirectResult().then(function (result) {
+    if (result.credential) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      let token = result.credential.accessToken;
+      // ...
+    }
+    // The signed-in user info.
+    let user = result.user;
+  }).catch(function (error) {
+    // Handle Errors here.
+    let errorCode = error.code;
+    let errorMessage = error.message;
+    // The email of the user's account used.
+    let email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    let credential = error.credential;
     // ...
-  }
-  // The signed-in user info.
-  var user = result.user;
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-});
+  });
 }
 
 function HashRegister() {
