@@ -5,12 +5,8 @@ body {
 
 input {
   border-radius: 5px;
+  padding: 8px;
 }
-
-/* { */
-  /* display: flex; */
-  /* flex-direction: column; */
-/* } */
 
 .login-layout, .register-layout {
   text-align: center; 
@@ -52,7 +48,11 @@ input {
 .btn-google {
   color: #fff;;
   background-color: #4686fd;
-  text-align: center;
+  padding: 10px; 
+  padding-left: 40px;
+  background-image:  url(images/iconfinder_2_939729.png);
+  background-position: 1% 50%;
+  background-repeat: no-repeat;
 }
 
 img.img-btn-google {
@@ -67,9 +67,12 @@ img.img-btn-google {
 
 #image {
   width: 100%;
+  /* max-height: 30%; */
 }
-
-.menu {
+.container{
+  /* max-height: 70%; */
+}
+.menu ul {
   display: none;
 }
 
@@ -94,13 +97,11 @@ img.img-btn-google {
     padding: 0;
     margin: 0;
   }
-  .menu {
-    display: flex
-  }
-
   .menu ul li {  
     display: inline-block;
-      
+  }
+  .menu {
+    display: flex;
   }
 
   .menu ul li a {
