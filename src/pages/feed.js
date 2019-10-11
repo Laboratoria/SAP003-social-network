@@ -5,17 +5,25 @@ const location = () => {
     location.hash = '';
 }
 
-function Home() {
+const logout= ()=>{
+  firebase.auth().signOut().then(function() {
+    location.hash=''
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
+function Feed() {
     const template = `
     <section class="container">
       <section class="container">
         <p> Aqui vãos os posts </p>
       </section>
-      ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
+      ${Button({ type: 'button', title: 'Logout', class: 'primary-button', onClick: logout })}
     </section>
   `;
 
     return template;
 }
 
-export default Home;
+export default Feed;
