@@ -9,8 +9,9 @@ function logOut() {
 }
 
 function Home() {
-  return `Essa é a home!
+  return `<p class="text">Essa é a home!<p>
   ${Button({
+    class: 'primary-button',
     onClick: logOut,
     title: 'Log out',
   })}

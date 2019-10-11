@@ -5,7 +5,13 @@ function createUser() {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
 
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        window.location.href = '#home';
+      }
+    });
+  }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
