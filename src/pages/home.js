@@ -2,9 +2,8 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 
 function Feed() {
-  location.hash = "#Feed";
   const template = `
-    <img src="../../imagens/logo.png"></img>
+    <img src="../../imagens/logo.png"></img class="image-logo">
     ${Textarea()}
     ${Button({ id: 'publish', title: 'Publish' })}
     `;
@@ -13,3 +12,5 @@ function Feed() {
 }
 
 export default Feed;
+
+// location.hash = "#Feed";

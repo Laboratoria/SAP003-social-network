@@ -7,30 +7,37 @@ body{
 .primary-button {
   background-color: #014034;
   padding: 3px;
+  width: 70px;
   font-size: 0.7rem;
   font-weight: bold;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  display: block;
 }
 .textarea-local{
   margin-top: 10px;
   align-items: center;
 }
-.js-name-input{
-  text-align: center;
-  display: block;
+.form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
 }
-.js-email-input{
+.form-login input{
+  margin: 5px;
   text-align: center;
-  display: block;
 }
-.js-password-input{
+.form-login button{
+  margin: 5px;
   text-align: center;
-  display: block;
 }
-
+.text-main{
+  text-align: center;
+}
+.image-logo{
+  align-items: center;
+}
 
 
 
