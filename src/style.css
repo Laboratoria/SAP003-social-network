@@ -1,7 +1,18 @@
 body {
   box-sizing: border-box;
+  margin: 0;
 }
-.login-layout{
+
+input {
+  border-radius: 5px;
+}
+
+/* { */
+  /* display: flex; */
+  /* flex-direction: column; */
+/* } */
+
+.login-layout, .register-layout {
   text-align: center; 
   display: flex;
   flex-direction: column;
@@ -11,6 +22,7 @@ body {
   height: 100vh;
   background-color: #f5edda;
 }
+
 .primary-button {
   background-color: #e35b27;
   padding: 10px;
@@ -20,16 +32,23 @@ body {
   cursor: pointer;
   color: #f5edda;
 }
-.login-card{
+
+.register-box :nth-child(n){
+  margin: 10px;
+}
+
+.login-box, .register-box {
   display: flex;
   flex-direction: column;
   padding: 20px;
   width: 80%;
   margin: 0 auto;
 }
-.login-card :nth-child(n){
+
+.login-box :nth-child(n) {
   margin: 10px;
 }
+
 .btn-google {
   color: #fff;;
   background-color: #4686fd;
@@ -38,13 +57,18 @@ body {
   background-position:left;
   background-repeat: no-repeat;
 }
-#google img{
+
+img.img-btn-google {
   margin: 0;
+  margin-right: 20px;  
 }
-.btn-google:hover{
+
+
+.btn-google:hover {
   background-color: #074cce;
 }
-#image{
+
+#image {
   width: 100%;
 }
 .menu ul {
@@ -59,9 +83,7 @@ body {
   .container{
     width: 40%;
   }
-  .login-card{
-    /* width: 80%; */
-  }
+  
   #image{
     width: 60%;
   }

@@ -26,7 +26,7 @@ function buttonLogin() {
   });
 }
 
-function loginSocial() {
+function googleLogin() {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function () {});
   firebase.auth().onAuthStateChanged(function (user) {
@@ -42,10 +42,10 @@ function loginSocial() {
 function Login() {
   const template = `
   <section class="login-layout">
-      <img src='https://source.unsplash.com/400x150' id="image"></img>
+      <img src='./images/life fitness-S.png' id="image"></img>
       <div class="container">
         <h2>Olá, bem vinda</h2>
-        <form class="login-card">
+        <form class="login-box">
           ${Input({
             class: 'input-email',
             placeholder: 'email',
