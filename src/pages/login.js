@@ -3,19 +3,32 @@
 
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+//import Signup from './signup.js';
+
 
 function loginUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
-  console.log('Entrou!!!!!!' + name + password);
   auth.signInWithEmailAndPassword(email, password)
     .then((cred) => {
-      console.log(cred.user);
-    });
+      localStorage.setItem('user', JSON.stringify(cred.user))
+      // console.log(cred.user);
+      firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+          window.location = '#feed';
+        }
+      })
+    })
+    .catch(() => {
+      const errorMessageField = document.getElementById('errorMessage')
+      errorMessageField.textContent = 'email e/ou senha inválidos.';
+      document.querySelector('.email-input').addEventListener('focus', () => {
+        errorMessageField.textContent = '';
+      })
+    })
 }
 
 function Login() {
-  // const template = "<h1>Horta Urbana</h1> <form>" + Input({ type: 'email', class: 'email-input', placeholder: 'Email' }) + Input({ type: 'password', class: 'password-input', placeholder: 'Senha' }) + Button({ id: 'btn-log-in', onclick: loginUser, title: 'Login' }) + "<button class='btn btn-lg btn-danger' id='authGoogleButton'><i class='fa fa-google fa-2x'></i></button></form><p>Ainda é membro? <a href='#'>cadastre-se</a></p>";
   const userLogin = `
   ${Input({
     type: 'email',
@@ -44,19 +57,11 @@ function Login() {
   <h1>Horta Urbana</h1> 
   <form>
   ${userLogin}
-  <p>Ainda não é membro? <a href='#signup'>Cadastre-se</a></p>
+  <div id="errorMessage"></div>
+  <p>Ainda não é membro?</p> <a href='#signup'>Cadastre-se</a>
   </form>
   `;
   return template;
 }
 
 export default Login;
-
-
-function locationHashChanged(){
-  if (location.hash ==='#signup') {
-    document.querySelector('main').innerHTML = Signup();
-  } 
-}
-
-window.addEventListener("hashchange", locationHashChanged, false);
