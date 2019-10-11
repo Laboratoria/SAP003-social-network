@@ -26,7 +26,7 @@ function buttonLogin() {
   });
 }
 
-function loginSocial() {
+function googleLogin() {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function () {});
   firebase.auth().onAuthStateChanged(function (user) {
@@ -42,10 +42,10 @@ function loginSocial() {
 function Login() {
   const template = `
   <section class="login-layout">
-      <img src='https://source.unsplash.com/400x150' id="image"></img>
+      <img src='./images/life fitness-S.png' id="image"></img>
       <div class="container">
         <h2>Olá, bem vinda</h2>
-        <form class="login-card">
+        <form class="login-box">
           ${Input({
             class: 'input-email',
             placeholder: 'email',
@@ -59,7 +59,7 @@ function Login() {
           })}
 
           ${Button({ id: 'entrar', title: 'Entrar', onClick: buttonLogin })}
-          ${Button({ id: 'google', title: '<img src="images/iconfinder_2_939729.png"></img>Entrar com sua conta do Google', class: 'btn-google', onClick: loginSocial })}
+          ${Button({ id: 'google', title: '<img class="img-btn-google" src="images/iconfinder_2_939729.png"></img>Entrar com sua conta do Google', class: 'btn-google', onClick: googleLogin })}
         </form>
         <p>Não tem conta? <a href="#register">Registre-se</a></p>
       </div>

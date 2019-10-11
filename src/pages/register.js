@@ -25,20 +25,22 @@ function btnVoltar() {
 
 function Register() {
   const template = `
-    <h1>Registre-se!</h1>
-    <form class="register-card">
-    ${Input({ type: 'text', class: 'js-name-register', placeholder: 'Digite seu nome' })}
-    ${Input({ type: 'email', class: 'js-email-register', placeholder: 'Digite seu e-mail' })}
-    ${Input({ type: 'password', class: 'js-password-register', placeholder: 'Digite a senha' })}
-    </form>
-    <form class="btn-register">
-    ${Button({
-    class: 'js-btn-register', title: 'Registrar', id: 'btnRegister', onClick: btnRegister,
-  })}
-    ${Button({
-    class: 'js-btn-voltar', title: 'Voltar', id: 'btnVoltar', onClick: btnVoltar,
-  })} 
-    </form>
+    <section class="register-layout">
+      <h1>Registre-se!</h1>
+      <form class="register-box">
+      ${Input({ type: 'text', class: 'js-name-register', placeholder: 'Digite seu nome' })}
+      ${Input({ type: 'email', class: 'js-email-register', placeholder: 'Digite seu e-mail' })}
+      ${Input({ type: 'password', class: 'js-password-register', placeholder: 'Digite a senha' })}
+      </form>
+      <form class="btn-register">
+      ${Button({
+      class: 'js-btn-register', title: 'Registrar', id: 'btnRegister', onClick: btnRegister,
+    })}
+      ${Button({
+      class: 'js-btn-voltar', title: 'Voltar', id: 'btnVoltar', onClick: btnVoltar,
+    })} 
+      </form>
+    </section>
   `;
   return template;
 }
