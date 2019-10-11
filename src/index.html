@@ -10,7 +10,17 @@
 <body>
   <main></main>
   <script type="module" src="./main.js"></script>
-  <script src= "faceLog.js"></script>
+  
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+ 
+  
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
   <!-- update the version number as needed -->
   <script defer src="/__/firebase/7.1.0/firebase-app.js"></script>
   <!-- include only the Firebase features as you need -->
@@ -20,5 +30,25 @@
   <script defer src="/__/firebase/7.1.0/firebase-storage.js"></script>
   <!-- initialize the SDK after all desired features are loaded -->
   <script defer src="/__/firebase/init.js"></script>
+  <!-- initialize the facebook login -->
+  <script src="./pages/faceLog.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBD11AkgZwGeOTq5hcOz1hvm7iMvWytIrg",
+    authDomain: "socialnetwork-c4eca.firebaseapp.com",
+    databaseURL: "https://socialnetwork-c4eca.firebaseio.com",
+    projectId: "socialnetwork-c4eca",
+    storageBucket: "socialnetwork-c4eca.appspot.com",
+    messagingSenderId: "708205039169",
+    appId: "1:708205039169:web:3b2d2028c118a3e26900c0",
+    measurementId: "G-0XZ4QWXVVB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 </html>
