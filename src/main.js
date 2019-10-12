@@ -16,7 +16,7 @@ function locationHasChange() {
 
 window.addEventListener('hashchange', locationHasChange, false);
 
-export default locationHasChange;
+// export default locationHasChange;
 
 // function initFeed() {
 //   document.querySelector('main').innerHTML = Feed();
