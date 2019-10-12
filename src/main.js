@@ -1,6 +1,6 @@
 import Login from './pages/login.js';
 import Register from './pages/register.js';
-import Home from './pages/home.js'
+import Home from './pages/home.js';
 
 const main = document.querySelector('main');
 
