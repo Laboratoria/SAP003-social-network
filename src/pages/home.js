@@ -38,8 +38,9 @@ function logOut() {
 function printPost() {
   const content = document.querySelector('#postText');
   const newPost = window.home.Post({ content: content.value });
-  const element = document.querySelector('#feed');
-  element.innerHTML += newPost;
+  const toHTML = new DOMParser().parseFromString(newPost, 'text/html');
+  const feed = document.querySelector('#feed');
+  feed.prepend(toHTML.documentElement);
 }
 
 function Home() {

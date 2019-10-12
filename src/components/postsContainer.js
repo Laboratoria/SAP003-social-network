@@ -1,11 +1,7 @@
 import Post from './post.js';
 
 function PostsContainer(props) {
-  return `
-    <div id="feed" class="feed">
-        ${props.content}
-    </div>
-`;
+  return `<div id="feed" class="feed">${props.content}</div>`;
 }
 
 window.postsContainer = {
