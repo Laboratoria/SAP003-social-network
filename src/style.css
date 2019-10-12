@@ -74,6 +74,25 @@ body {
   margin-bottom: 0;
 }
 
+.faixa-topo {
+  width: 360px;
+  height: 58px;
+  left: 0px;
+  top: 0px;
+  background: #EC6345;
+  display: block
+}
+
+.nametimeline {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 26px;
+  color: #403B3A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  margin-left: 120px;
+}
+
 @media (min-width: 1280px) {
   .img {
     margin-left: 35%;
