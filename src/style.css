@@ -20,9 +20,6 @@ body {
   background: url(./img/logo.png) center center/250px no-repeat;
   display: block; }
 
-.name {
-  text-align: center; }
-
 .form {
   padding: 5px; }
 
@@ -53,26 +50,46 @@ body {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
   color: #c2c0ab; }
 
+.auth {
+  flex-flow: row wrap;
+  justify-content: space-around; }
+
 .auth-button {
   border: none;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
   cursor: pointer;
   padding: 5px;
   text-align: center;
-  display: block;
   background-color: #c2c0ab;
   font-size: 30px; }
 
-p {
-  padding-top: 30px;
+span {
+  padding-top: 20px;
   text-align: center;
   display: block; }
 
 section {
-  padding-top: 30px;
+  padding-top: 25px;
   text-align: center;
   display: block; }
+
+.header-home {
+  background: linear-gradient(to right, #fce326, #faff99); }
+
+@media screen and (min-width: 768px) {
+  .logo {
+    float: left;
+    margin-left: 8%;
+    width: 450px;
+    height: 450px;
+    background: url(./img/logo.png) center center/450px no-repeat; }
+
+  .js-email-input {
+    margin-top: 50px; }
+
+  .js-password-input {
+    margin-top: 5px; }
+
+  .primary-button {
+    width: 18%; } }
 
 /*# sourceMappingURL=style.css.map */

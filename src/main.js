@@ -1,10 +1,11 @@
-import Login from './pages/login.js';
-import Register from './pages/register.js';
-import Home from './pages/home.js';
+import login from './pages/login.js';
+import register from './pages/register.js';
+import home from './pages/home.js';
 
 
 function init() {
-  document.querySelector('main').innerHTML = Login();
+  document.querySelector('main').innerHTML = login();
+  console.log(location)
 }
 
 window.addEventListener('load', init);
@@ -13,14 +14,14 @@ window.addEventListener('load', init);
 function locationHashChanged() {
   switch (location.hash) {
     case '#register.js':
-    document.querySelector('main').innerHTML = Register();
+    document.querySelector('main').innerHTML = register();
     break;
     case '#home.js':
-    document.querySelector('main').innerHTML = Home();
+    document.querySelector('main').innerHTML = home();
     break;
     case '#login.js':
-    document.querySelector('main').innerHTML = Login();
-    break;
+    document.querySelector('main').innerHTML = login();
+    break;    
       
   }
   
