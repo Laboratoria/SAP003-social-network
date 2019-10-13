@@ -17,7 +17,6 @@ $cor4: #292122;
 
 body {
   background-color: $cor;
-
 }
 
 .logo {
@@ -27,10 +26,6 @@ body {
   height: 250px;
   background: url(./img/logo.png) center center/ 250px no-repeat;
   display: block;  
-}
-
-.name {
-  text-align: center;
 }
 
 .form {
@@ -67,30 +62,60 @@ body {
   color: $cor;
 }
 
+.auth {
+  flex-flow: row wrap;
+  justify-content: space-around;  
+}
+
 .auth-button {
-  border: none;
-  margin-top: 10px;  
-  margin-left: auto;
-  margin-right: auto;  
+  border: none;    
   cursor: pointer;
   padding: 5px;
   text-align: center;  
-  display: block;
   background-color: $cor;
-  font-size: 30px;
-  
-  
+  font-size: 30px;  
 }
 
-p {
-  padding-top: 30px;
+span {
+  padding-top: 20px;
   text-align: center;
   display: block;  
 }
 
 section {
-  padding-top: 30px;
+  padding-top: 25px;
   text-align: center;
   display: block;
+}
+
+.header-home {
+  background: linear-gradient(to right, $cor3, $cor2)
+}
+
+@media screen and (min-width: 768px) {
+
+  .logo {
+    float: left;
+    margin-left: 8%;
+    width: 450px;
+    height: 450px;    
+    background: url(./img/logo.png) center center/ 450px no-repeat;
+     
+  }
+
+  .js-email-input {
+    margin-top: 50px;
+  }
+    
+  .js-password-input {
+    margin-top: 5px;
+  }
+
+  .primary-button {
+    width: 18%;  
+    
+  }
+
+
 }
 

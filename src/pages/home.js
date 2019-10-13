@@ -3,7 +3,8 @@ import Logo from '../components/logo.js';
 
 
 function signOut() {  
-  firebase.auth().signOut().then(function () {
+  firebase.auth().signOut()
+  .then(function () {
     window.location = '#login.js';
     
   }).catch(function (error) {
@@ -12,10 +13,12 @@ function signOut() {
 }
 
 
-function Home() {
-  const template = `   
-    ${Logo()}
+function home() {
+  const template = `
+    <header class="header-home">Laboratroca</header>   
+    <nav></nav>
     <br>
+    <h3>Olá! Bem-vinda ao seu aplicativo de trocas ;)</h3>  
 
     <p>OiOiOi</p>  
       
@@ -29,4 +32,4 @@ function Home() {
   return template;
 }
 
-export default Home;
+export default home;
