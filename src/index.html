@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Social Network</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main></main>
   <script type="module" src="./main.js"></script>
@@ -20,7 +22,7 @@
       authDomain: "social-network-squad3.firebaseapp.com",
       databaseURL: "https://social-network-squad3.firebaseio.com",
       projectId: "social-network-squad3",
-      storageBucket: "",
+      storageBucket: "gs://social-network-squad3.appspot.com/",
       messagingSenderId: "995520138055",
       appId: "1:995520138055:web:7052e1708645b8501d1a62",
       measurementId: "G-D8W2YJFD9J"
@@ -28,7 +30,9 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     // firebase.analytics();
+    //var storage = firebase.storage();
   </script>
 
 </body>
+
 </html>

@@ -8,6 +8,17 @@ function btnSignOut() {
   });
 }
 
+
+
+function btnPrint() {
+  //const firestore = firebase.firestore()
+
+  const valueTextarea = document.querySelector('.txtArea').value;
+  //const printaMsg = document.querySelector('printa')
+  console.log(valueTextarea)
+
+}
+
 function Home() {
   const template = `
     <nav class="menu">
@@ -18,11 +29,24 @@ function Home() {
       </ul>
       ${Button({ id: 'btn-exit', title: 'SAIR', onClick: btnSignOut })}
     </nav>
+
+    <nav>
+      <h3>Escreva aqui<h3>
+      <textarea class="txtArea" rows="5" cols="60"></textarea>
+      ${Button({ id: 'btn-print', title: 'PRINTA JESUS', onClick: btnPrint })}
+    </nav>
     
     <h1>Essa é a sua timeline</h1>
+
+    <p class="printa"></p>
    
   `;
   return template;
 }
+
+function Print() {
+
+}
+
 
 export default Home;

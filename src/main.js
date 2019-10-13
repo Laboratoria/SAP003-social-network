@@ -15,28 +15,28 @@ function locationHashChanged() {
   switch (location.hash) {
     case '#register':
       firebase.auth().onAuthStateChanged(function (user) {
-        user ? window.location='#home' : document.querySelector('main').innerHTML = Register();
+        user ? window.location = '#home' : document.querySelector('main').innerHTML = Register();
       });
-    break;
-    case  '#home':
+      break;
+    case '#home':
       firebase.auth().onAuthStateChanged(function (user) {
-        user ? document.querySelector('main').innerHTML = Home() : window.location='#login'
-        });      
-    break;
+        user ? document.querySelector('main').innerHTML = Home() : window.location = '#login'
+      });
+      break;
     case '#login':
       firebase.auth().onAuthStateChanged(function (user) {
-        user ? window.location='#home' : document.querySelector('main').innerHTML = Login()
-        });       
-    break;  
+        user ? window.location = '#home' : document.querySelector('main').innerHTML = Login()
+      });
+      break;
     case '#profile':
       firebase.auth().onAuthStateChanged(function (user) {
-        user ? document.querySelector('main').innerHTML = Profile() : window.location='#login'
+        user ? document.querySelector('main').innerHTML = Profile() : window.location = '#login'
       });
-    break;
-    default:  
+      break;
+    default:
       firebase.auth().onAuthStateChanged(function (user) {
-        user ? document.querySelector('main').innerHTML = Home() : window.location='#login'
-    }); 
+        user ? document.querySelector('main').innerHTML = Home() : window.location = '#login'
+      });
   }
 }
 
