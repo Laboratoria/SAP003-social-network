@@ -1,18 +1,28 @@
-//página de cadastro: input nome, email e senha e botão de cadastro
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function newUser() {
+
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   const name = document.querySelector('.name-input').value;
+
   auth.createUserWithEmailAndPassword(email, password)
     .then((cred) => {
       console.log(cred.user);
-    })
-    .catch((error) => {
+      return db.collection('users').doc(cred.user.uid).set({
+        name: name
+      });
+    }).then(() => {
+        auth.onAuthStateChanged(user => {
+          if(user){
+            window.location = '#login';
+          }
+        });
+    }).catch((error) => {
       const errorMessage = error.message;
-      alert(errorMessage);
+        const errorMessageField = document.getElementById('errorMessageSignup');
+      errorMessageField.textContent = errorMessage;
     });
 }
 
@@ -44,6 +54,7 @@ function Signup() {
   <p>Para realizar o cadastro, preencha as informações abaixo:</h1>
   <form>
   ${userInfo}
+  <div id="errorMessageSignup"></div>
   </form>
   `;
   return template;
