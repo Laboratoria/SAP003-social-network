@@ -7,7 +7,7 @@ function newUser() {
   const name = document.querySelector(".js-name-input").value;
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email, password, name)
+    .createUserWithEmailAndPassword(email, password)
     .catch(function(error){
     let errorCode = error.code;
     let errorMessage = error.message;

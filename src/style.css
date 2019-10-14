@@ -12,7 +12,7 @@ body{
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  display: block;
+  align-items: center;
 }
 .textarea-local{
   margin-top: 10px;
