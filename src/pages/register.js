@@ -2,17 +2,18 @@ import Button from '../components/button.js';
 import input from '../components/input.js';
 
 function Register() {
-  const template = `
-      <figure>
-      <img class="logo" src="img/Logo.png"/>
-      </figure>
-      <h1>Register</h1>
+  const template =
+   `  
+      <img class="logo" src="img/Logo.png"/> 
       <form>
-      ${input({ class: 'name', placeholder: 'name', type: 'text' })}
-      ${input({ class: 'email-re', placeholder: 'email', type: 'email' })}
-      ${input({ class: 'password-re', placeholder: 'password', type: 'password' })}
-      ${Button({ class: 'btn-register', onclick: emailAndPass, title: 'REGISTRAR' })}
+      <p class="register-info">Faça parte da nossa rede de colecionadores!</p>
+      ${input({ class: 'name', placeholder: 'Nome', type: 'text' })}<br>
+      ${input({ class: 'email-re', placeholder: 'Email', type: 'email' })}<br>
+      ${input({ class: 'password-re', placeholder: 'Senha', type: 'password' })}<br>
+      ${Button({ class: 'btn-register', onclick: emailAndPass, title: 'Register' })}<br>
       </form>
+      <p class="login-link">Já é registrado? Faça o <a href="#login">login</a>
+      </body>
     `;
   return template;
 }
