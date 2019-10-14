@@ -7,7 +7,15 @@ function login() {
   // criar hash para ir para a timeline.
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then(function (response) {
+    if(response){
+      location.hash = '#feed'
+    }
+
+  })
+  
+  .catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -21,7 +29,7 @@ function login() {
 
 function TemplateLogin() {
   const template = `
-  <img src="img/moviment.png" alt="Logo do Moviment" class="image">
+    <img src="img/moviment.png" alt="Logo do Moviment" class="image">
     <h4 class="text-main">Bem vinda, Moviment!</h4>
     <form class="form-login">
       ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
@@ -33,7 +41,7 @@ function TemplateLogin() {
     <p class="text-main"><a href="#createAccount">Não tem uma conta?</a></p>
   `;
 
-
+// window.location = "#createAccount";
 
   return template;
 }
