@@ -1,7 +1,11 @@
-/* eslint-disable no-plusplus */
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+window.validaLogin = (dados, logado) => {
+  for (let i = 0; i < dados.length; i++) {
+    if (logado.email === dados[i].email && logado.senha === dados[i].senha);
+  }
+};
 
 /* function pegarInput() {
   const email = document.querySelector('.js-email').value;
@@ -20,13 +24,10 @@ function pegarInput() {
     senha: document.querySelector('.js-senha').value,
   };
 
-  const usuario = JSON.parse(localStorage.getItem('arrayUsuarios'));
-  console.log(usuario);
-
-  if (window.validaLogin(usuario, logado)) {
-    localStorage.setItem('logado', JSON.stringify(logado));
-    console.log(logado);
-    // window.location.hash = '#home';
+  const dados = JSON.parse(localStorage.getItem('arrayUsuario'));
+  if (window.validaLogin(dados, logado)) {
+    localStorage.setItem('usuarioLogado', JSON.stringify(logado));
+    window.location.hash = '#Login';
   } else {
     window.alert('E-mail ou senha inválidos');
   }
@@ -59,6 +60,9 @@ function pegarInput() {
 
 function logar() {
   const template = `
+  <h1>Home Page</h1>
+  <p><a href= "#cadastro">Cadastre-se </a></p> 
+  <form>
   <nav><img src="fotos/Logo-Base_Caixa_Baixa_V4.png" alt=""></nav>
   <div class="container-login">
     <h1>Base Sustentabilidade</h1>
@@ -92,9 +96,6 @@ window.validaLogin = (arrayUsuarios, logado) => {
     }
   }
 };
-
-// const aray = [{email: "w@w", senha: "111"}
-// {email: "e@e", senha: "222"}, {email: "a@a", senha: "333"}]
 // const user = {email: "w@w", senha: "111"}
 // for (let i of aray) {
 //   console.log(i.email === user.email && )
