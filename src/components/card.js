@@ -1,8 +1,8 @@
-function Card(props) {
+function card(props) {
   const template = `
     <div class="card">${props.texto}</div>
   `;
   return template;
 }
 
-export default Card;
+export default card;

@@ -1,7 +1,6 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
 
-
 function pegarInput() {
   const dados = {
     email: document.querySelector('.js-email').value,
@@ -19,31 +18,25 @@ function pegarInput() {
   usuarios.push(dados);
   localStorage.setItem('arrayUsuarios', JSON.stringify(usuarios));
   localStorage.setItem('usuarioLogado', JSON.stringify(dados));
-  window.location.hash = '#Login';
+  window.location.hash = '#home';
 }
 
-
-function Cadastro() {
+function cadastrar() {
   const template = `
-  <h1><a href='#login'>Login</a></h1>
     ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
     ${Input({ class: 'js-nome', placeholder: 'Nome completo', type: 'text' })}
     ${Input({ class: 'js-senha', placeholder: 'senha', type: 'password' })}
     ${Button({ title: 'Cadastre-se', onClick: pegarInput })}
-
-  `;
+ 
+`;
   return template;
 }
 
+export default cadastrar;
+
 function locationHashChanged() {
   if (location.hash === '#cadastro') {
-    document.querySelector('main').innerHTML = Cadastro();
-  } else if (location.hash === '#login') {
-    document.querySelector('main').innerHTML = Login();
+    document.querySelector('main').innerHTML = cadastrar();
   }
 }
-
 window.addEventListener('hashchange', locationHashChanged, false);
-
-
-export default Cadastro;
