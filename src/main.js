@@ -7,9 +7,9 @@ function init() {
 }
 window.addEventListener('load', init);
 
-function locationHashChanged() { 
-  if (location.hash === '#timeline') {
+function locationHashChanged() {
+  if (window.location.hash === '#timeline') {
     document.querySelector('main').innerHTML = timeline();
   }
 }
-window.addEventListener("hashchange", locationHashChanged, false);
+window.addEventListener('hashchange', locationHashChanged, false);
