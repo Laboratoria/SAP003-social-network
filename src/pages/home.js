@@ -56,13 +56,14 @@ export function Home() {
 	  <h1 class="homepage-title">Share your spells...</h1>
 	  <form class="login-form">
 	   ${Input ({ id:'email-login', placeholder:'Login', type:'email'})}
-	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})}
-	   <div class"buttons">${Button({ class:'btn btn-login', id:'login', title: 'Login', onclick: login})}
-	   ${Button({ class:'btn-google' ,id:'google-login', title: 'Google Login', type:'submit', onclick: loginGoogle})}
-	   </div>
+	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})} <br>
+	   ${Button({ class:'btn-login', id:'login', title: 'Login', onclick: login})} <br>
 	  </form>
-	  ${Button({ class:'btn btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})}
-	 </section>
+	  <div class="buttons">
+	   ${Button({ class:'btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})} <br>
+	   ${Button({ class:'btn-google' , id:'google-login', title: '<img src="https://img.icons8.com/ios-glyphs/18/000000/google-logo.png" class="google-logo"> SIGN IN WITH GOOGLE', type:'submit', onclick: loginGoogle})}
+	  </div>
+	  </section>
 	</container>`;
 
 	window.location.hash = "home";

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [debug] [2019-10-10T20:03:17.433Z] ----------------------------------------------------------------------
 [debug] [2019-10-10T20:03:17.436Z] Command:       /home/laboratoria/.nvm/versions/node/v12.8.1/bin/node /home/laboratoria/.nvm/versions/node/v12.8.1/bin/firebase serve
 [debug] [2019-10-10T20:03:17.436Z] CLI Version:   7.5.0
@@ -20,7 +19,6 @@
 [debug] [2019-10-10T20:03:18.846Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
  
 [debug] [2019-10-10T20:03:20.376Z] <<< HTTP RESPONSE 200
-=======
 [debug] [2019-10-10T18:53:10.553Z] ----------------------------------------------------------------------
 [debug] [2019-10-10T18:53:10.557Z] Command:       /usr/bin/node /usr/bin/firebase serve
 [debug] [2019-10-10T18:53:10.557Z] CLI Version:   7.5.0
@@ -38,19 +36,12 @@
 [debug] [2019-10-10T18:53:13.157Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
  
 [debug] [2019-10-10T18:53:14.780Z] <<< HTTP RESPONSE 200
->>>>>>> 1a654007504459a8650f6e10cb201b5966db282b
 [info] 
 [info] === Serving from '/home/laboratoria/Desktop/SAP003-social-network'...
 [info] 
-<<<<<<< HEAD
 [debug] [2019-10-10T20:03:20.379Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
  
 [debug] [2019-10-10T20:03:21.779Z] <<< HTTP RESPONSE 200
-=======
-[debug] [2019-10-10T18:53:14.784Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
- 
-[debug] [2019-10-10T18:53:16.511Z] <<< HTTP RESPONSE 200
->>>>>>> 1a654007504459a8650f6e10cb201b5966db282b
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
 
@@ -189,3 +180,32 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5010
+[debug] [2019-10-14T16:25:51.386Z] ----------------------------------------------------------------------
+[debug] [2019-10-14T16:25:51.389Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-10-14T16:25:51.389Z] CLI Version:   7.5.0
+[debug] [2019-10-14T16:25:51.389Z] Platform:      linux
+[debug] [2019-10-14T16:25:51.389Z] Node Version:  v10.16.3
+[debug] [2019-10-14T16:25:51.389Z] Time:          Mon Oct 14 2019 13:25:51 GMT-0300 (GMT-03:00)
+[debug] [2019-10-14T16:25:51.390Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-14T16:25:51.448Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-14T16:25:51.448Z] > authorizing via signed-in user
+[debug] [2019-10-14T16:25:51.449Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-14T16:25:51.453Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-14T16:25:51.454Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-14T16:25:51.656Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-14T16:25:52.089Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-14T16:25:53.346Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-14T16:25:53.349Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-14T16:25:54.566Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/maria/Downloads/SAP003-social-network'...
+[info] 
+[debug] [2019-10-14T16:25:54.570Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-14T16:25:57.236Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
