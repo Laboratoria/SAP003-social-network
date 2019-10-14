@@ -8,26 +8,29 @@ function newUser() {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(function (response) {
-      if(response){
-        location.hash = '#feed'
+    .then(function(response) {
+      if (response) {
+        location.hash = '#feed';
       }
-  
     })
-    .catch(function(error){
-    let errorCode = error.code;
-    let errorMessage = error.message;
-   alert(errorCode, errorMessage);
+    .catch(function(error) {
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      alert(errorCode, errorMessage);
     });
 }
 
 function newUserTemplate() {
   const inNewUser = `
   <form class="form-login">
-  ${Input({ class: 'js-name-input', placeholder: 'name', type: 'text' })} 
-  ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
-  ${Input({ class: 'js-password-input', placeholder: 'password', type: 'password'})}
-  ${Button({ id: 'bt-creat-account', title: 'criar a conta', call: newUser })}
+  ${Input({ class: "js-name-input", placeholder: "name", type: "text" })} 
+  ${Input({ class: "js-email-input", placeholder: "e-mail", type: "email" })}
+  ${Input({
+    class: "js-password-input",
+    placeholder: "password",
+    type: "password"
+  })}
+  ${Button({ id: "bt-creat-account", title: "criar a conta", call: newUser })}
   </form>
   `;
 
