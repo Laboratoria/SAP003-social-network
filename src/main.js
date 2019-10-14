@@ -1,29 +1,22 @@
-
+import Home from './pages/home.js';
 import {Database, Post} from './pages/database.js';
-
-function init() {
-  document.querySelector('main').innerHTML = Database();
-  document.querySelector('main').innerHTML += Post();
-  
-}
-
-window.addEventListener('load', init);
-
-// import Home from './pages/home.js';
 import Register from './pages/register.js';
-import NewPage from './pages/newpage.js';
+
 
 function pageRoute() {
-  const pageName = (window.location.hash) ? window.location.hash : '#register';
+  const pageName = (window.location.hash) ? window.location.hash : '#Home';
   switch (pageName) {
-    case '#register':
-      document.querySelector('main').innerHTML = Register();
+    case '#home':
+      document.querySelector('main').innerHTML = Home();
       break;
-    case '#newpage':
-      document.querySelector('main').innerHTML = NewPage();
+    case '#register':
+        document.querySelector('main').innerHTML = Register();
+        break;
+    case '#postpage':
+      document.querySelector('main').innerHTML = Database();
       break;
     default:
-      document.querySelector('main').innerHTML = Register();
+      document.querySelector('main').innerHTML = Home();
   }
 }
 
