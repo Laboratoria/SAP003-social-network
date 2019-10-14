@@ -1,5 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+
+body{
+  background: #e2eefa;
+}
+
+.logo{
+height: 100%;  
+width: 100%;
+}
+
+#google{
+  background-color: aliceblue;
+  color: firebrick;
+}
+
 .primary-button {
-  background-color: #ffe521;
+  background-color: #00a1f2;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 5px;

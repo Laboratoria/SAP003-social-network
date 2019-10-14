@@ -68,7 +68,7 @@ function Login() {
   })}
   ${Button({
     id:'google',
-    title:'Google',
+    title:'<i id = "google" class="fab fa-google-plus-square"></i>',
     onClick: googleSignIn,
   })}
 `;
