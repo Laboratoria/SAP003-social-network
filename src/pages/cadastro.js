@@ -11,7 +11,7 @@ function pegarInput() {
     senha: document.querySelector('.js-senha').value,
   };
   if (dadoslocal === dadosvazios) {
-    novosdados.push(dadoslocal);
+    novosdados.push(dados);
   } else if (dadoslocal !== dadosvazios) {
     novosdados.push(dados);
     console.log(novosdados);
