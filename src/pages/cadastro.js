@@ -38,8 +38,8 @@ function locationHashChanged() {
   if (location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = Cadastro();
   }else if (location.hash === '#home')/* {
-  } else if (location.hash === '#login') {
-    document.querySelector('main').innerHTML = Login(); */
+  } else if (location.hash === '#login') */{
+    document.querySelector('main').innerHTML = Login(); 
   }
 }
 
