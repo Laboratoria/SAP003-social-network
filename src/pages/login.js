@@ -42,11 +42,8 @@ function googleLogin() {
     let errorMessage = error.message;
     let email = error.email;
     let credential = error.credential;
-    // ...
   });
 
 };
 
 export default Login
-
-/*     <h2 class="email-info">Login</h2> */
