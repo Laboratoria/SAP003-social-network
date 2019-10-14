@@ -8,6 +8,12 @@ function newUser() {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
+    .then(function (response) {
+      if(response){
+        location.hash = '#feed'
+      }
+  
+    })
     .catch(function(error){
     let errorCode = error.code;
     let errorMessage = error.message;
