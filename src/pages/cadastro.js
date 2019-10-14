@@ -1,14 +1,24 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
 
-
 function pegarInput() {
+  const novosdados = [];
+  const dadosvazios = null;
+  const dadoslocal = localStorage.getItem('cadastro');
   const dados = {
     email: document.querySelector('.js-email').value,
     nome: document.querySelector('.js-nome').value,
     senha: document.querySelector('.js-senha').value,
   };
-  window.localStorage.setItem('usuario', JSON.stringify(dados));
+  if (dadoslocal === dadosvazios) {
+    novosdados.push(dadoslocal);
+  } else if (dadoslocal !== dadosvazios) {
+    novosdados.push(dados);
+    console.log(novosdados);
+  }
+  // const itens = JSON.parse(localStorage.getItem('usuario')) || [];
+  // itens.push(dados);
+  window.localStorage.setItem('cadastro', JSON.stringify(novosdados));
 
   // const email = document.querySelector('.js-email').value;
   // const nome = document.querySelector('.js-nome').value;
@@ -33,13 +43,11 @@ function Cadastro() {
 function locationHashChanged() {
   if (location.hash === "#cadastro") {
     document.querySelector('main').innerHTML = Cadastro();
-  }else if (location.hash === '#login') {
+  } else if (location.hash === '#login') {
     document.querySelector('main').innerHTML = Login();
   }
 }
 
 window.addEventListener("hashchange", locationHashChanged, false);
-
-
 
 export default Cadastro;

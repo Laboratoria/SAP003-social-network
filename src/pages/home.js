@@ -4,15 +4,15 @@ import Input from '../components/input.js';
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
-  const peixinho = localStorage.getItem('emailSalvo');
-  const baleia = localStorage.getItem('senhaSalvo');
-  if (email === peixinho && senha === baleia) {
-    console.log('ok');
-  } else {
-    console.log('não ok');
-  }
+//   const peixinho = localStorage.getItem('emailSalvo');
+//   const baleia = localStorage.getItem('senhaSalvo');
+//   if (email === peixinho && senha === baleia) {
+//     console.log('ok');
+//   } else {
+//     console.log('não ok');
+//   }
+// }
 }
-
 // function validarEmailESenha (){
 //   if (localStorage.setItem )
 // }
