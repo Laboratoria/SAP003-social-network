@@ -3,6 +3,10 @@ import Signup from './pages/signup.js';
 import Feed from './pages/feed.js';
 import isAuthenticated from './auth.js';
 
+function init() {
+  document.querySelector('main').innerHTML = Login();
+}
+window.addEventListener('load', init);
 window.addEventListener('load', locationHashChanged);
 window.addEventListener("hashchange", locationHashChanged, false);
 

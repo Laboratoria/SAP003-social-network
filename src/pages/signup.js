@@ -8,17 +8,18 @@ function newUser() {
   const name = document.querySelector('.name-input').value;
 
   auth.createUserWithEmailAndPassword(email, password)
-    .then((cred) => {
-      console.log(cred.user);
-      return db.collection('users').doc(cred.user.uid).set({
-        name: name
+    .then(() => {
+      auth.onAuthStateChanged(user => {
+        if(user){
+          user.updateProfile({
+            displayName: name
+          });
+          window.location = '#login';
+          return db.collection('users').doc(user.uid).set({
+            name: user.displayName
+          });
+        }
       });
-    }).then(() => {
-        auth.onAuthStateChanged(user => {
-          if(user){
-            window.location = '#login';
-          }
-        });
     }).catch((error) => {
       const errorMessage = error.message;
         const errorMessageField = document.getElementById('errorMessageSignup');

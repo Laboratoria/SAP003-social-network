@@ -27,21 +27,17 @@ function signInWithAccount(provider) {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      if (result.credential) {
-        const token = result.credential.accessToken;
-      };
+      // if (result.credential) {
+      //   const token = result.credential.accessToken;
+      // };
       const user = result.user;
       if(result){
         location.hash="#feed";
       }
-      //console.log(user);
       localStorage.setItem('user', JSON.stringify(user));
-      // auth.onAuthStateChanged(user => {
-      //   if(user){
-      //     window.location = '#feed';
-      //     //window.user = user;
-      //   }
-      // });
+      return db.collection('users').doc(user.uid).set({
+        name: user.displayName
+      });
 
     }).catch((error) => {
       const errorCode = error.code;
@@ -54,10 +50,6 @@ function signInWithAccount(provider) {
 function loginGoogleUser() {
   const provider = new firebase.auth.GoogleAuthProvider();
   signInWithAccount(provider);
-}
-
-function register() {
-  window.location = "#signup";  
 }
 
 function Login() {
