@@ -6,6 +6,7 @@ body{
 }
 
 .container-login{
+  
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,11 +14,14 @@ body{
 }
 
 img{
+
   width:100%;
   height: 1%;
-  padding: 
+ 
 }
+
 .primary-button {
+
   background-color: #fdef4e;
   padding: 6px;
   font-size: 1.5rem;

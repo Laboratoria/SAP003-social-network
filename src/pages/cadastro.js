@@ -11,6 +11,7 @@ function pegarInput() {
 
   // window.localStorage.setItem('usuario', JSON.stringify(dados));
   // arrayUsuarios.push(dados);
+
   let usuarios = localStorage.getItem('arrayUsuarios');
   usuarios = JSON.parse(usuarios);
   if (!Array.isArray(usuarios)) {
@@ -37,11 +38,12 @@ function Cadastro() {
 function locationHashChanged() {
   if (location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = Cadastro();
-  }else if (location.hash === '#home')/* {
-  } else if (location.hash === '#login') {
-    document.querySelector('main').innerHTML = Login(); */
+  } else if (location.hash === '#home') {
+  /*} else if (location.hash === '#login') {*/
+    document.querySelector('main').innerHTML = Login(); 
   }
-}
+};
+
 
 window.addEventListener('hashchange', locationHashChanged, false);
 
