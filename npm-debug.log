@@ -1,0 +1,143 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-',
+1 verbose cli   'g',
+1 verbose cli   'firebase-tools' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData -
+8 silly fetchPackageMetaData g
+9 silly fetchPackageMetaData firebase-tools
+10 silly fetchOtherPackageData -
+11 silly cache add args [ '-', null ]
+12 verbose cache add spec -
+13 silly fetchNamedPackageData g
+14 silly mapToRegistry name g
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/g
+18 silly fetchNamedPackageData firebase-tools
+19 silly mapToRegistry name firebase-tools
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/firebase-tools
+23 silly cache add parsed spec Result {
+23 silly cache add   raw: '-',
+23 silly cache add   scope: null,
+23 silly cache add   name: null,
+23 silly cache add   rawSpec: '-',
+23 silly cache add   spec: '/home/laboratoria/SAP003-social-network/-',
+23 silly cache add   type: 'local' }
+24 verbose request uri https://registry.npmjs.org/g
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 13:12:22
+27 verbose request id cc030831b75b5e12
+28 http request GET https://registry.npmjs.org/g
+29 verbose request uri https://registry.npmjs.org/firebase-tools
+30 verbose request no auth needed
+31 info attempt registry request try #1 at 13:12:22
+32 http request GET https://registry.npmjs.org/firebase-tools
+33 error addLocal Could not install /home/laboratoria/SAP003-social-network/-
+34 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/home/laboratoria/SAP003-social-network/-'
+34 silly fetchPackageMetaData  error for - { Error: ENOENT: no such file or directory, open '/home/laboratoria/SAP003-social-network/-'
+34 silly fetchPackageMetaData   errno: -2,
+34 silly fetchPackageMetaData   code: 'ENOENT',
+34 silly fetchPackageMetaData   syscall: 'open',
+34 silly fetchPackageMetaData   path: '/home/laboratoria/SAP003-social-network/-' }
+35 http 200 https://registry.npmjs.org/g
+36 verbose headers { date: 'Tue, 08 Oct 2019 16:08:43 GMT',
+36 verbose headers   'content-type': 'application/json; charset=UTF-8',
+36 verbose headers   'transfer-encoding': 'chunked',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'set-cookie':
+36 verbose headers    [ '__cfduid=d382a40f338d9ddb43ff3f2ef21fd586d1570550923; expires=Wed, 07-Oct-20 16:08:43 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+36 verbose headers   'cf-cache-status': 'HIT',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'cf-ray': '522960082fb54a9a-GRU',
+36 verbose headers   age: '6373',
+36 verbose headers   etag: 'W/"6fd740ecd769ffa78b614cc855e971a5"',
+36 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+36 verbose headers   'last-modified': 'Sun, 27 May 2018 01:25:48 GMT',
+36 verbose headers   vary: 'accept-encoding, accept',
+36 verbose headers   server: 'cloudflare',
+36 verbose headers   'content-encoding': 'gzip' }
+37 silly get cb [ 200,
+37 silly get   { date: 'Tue, 08 Oct 2019 16:08:43 GMT',
+37 silly get     'content-type': 'application/json; charset=UTF-8',
+37 silly get     'transfer-encoding': 'chunked',
+37 silly get     connection: 'keep-alive',
+37 silly get     'set-cookie':
+37 silly get      [ '__cfduid=d382a40f338d9ddb43ff3f2ef21fd586d1570550923; expires=Wed, 07-Oct-20 16:08:43 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+37 silly get     'cf-cache-status': 'HIT',
+37 silly get     'cache-control': 'max-age=300',
+37 silly get     'cf-ray': '522960082fb54a9a-GRU',
+37 silly get     age: '6373',
+37 silly get     etag: 'W/"6fd740ecd769ffa78b614cc855e971a5"',
+37 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+37 silly get     'last-modified': 'Sun, 27 May 2018 01:25:48 GMT',
+37 silly get     vary: 'accept-encoding, accept',
+37 silly get     server: 'cloudflare',
+37 silly get     'content-encoding': 'gzip' } ]
+38 verbose get saving g to /home/laboratoria/.npm/registry.npmjs.org/g/.cache.json
+39 http 200 https://registry.npmjs.org/firebase-tools
+40 verbose headers { date: 'Tue, 08 Oct 2019 16:08:43 GMT',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'transfer-encoding': 'chunked',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'set-cookie':
+40 verbose headers    [ '__cfduid=d4d717f1149933ab456d83258d82bf71b1570550923; expires=Wed, 07-Oct-20 16:08:43 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+40 verbose headers   'cf-cache-status': 'HIT',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   'cf-ray': '5229600818734b55-GRU',
+40 verbose headers   age: '5508',
+40 verbose headers   etag: 'W/"f5bb68cbe74cb963422178b13701444a"',
+40 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+40 verbose headers   'last-modified': 'Wed, 25 Sep 2019 20:04:33 GMT',
+40 verbose headers   vary: 'accept-encoding, accept',
+40 verbose headers   'x-amz-meta-rev': '227-05cce98b3fa94fa3ec451f4f38e689d6',
+40 verbose headers   server: 'cloudflare',
+40 verbose headers   'content-encoding': 'gzip' }
+41 silly get cb [ 200,
+41 silly get   { date: 'Tue, 08 Oct 2019 16:08:43 GMT',
+41 silly get     'content-type': 'application/json',
+41 silly get     'transfer-encoding': 'chunked',
+41 silly get     connection: 'keep-alive',
+41 silly get     'set-cookie':
+41 silly get      [ '__cfduid=d4d717f1149933ab456d83258d82bf71b1570550923; expires=Wed, 07-Oct-20 16:08:43 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+41 silly get     'cf-cache-status': 'HIT',
+41 silly get     'cache-control': 'max-age=300',
+41 silly get     'cf-ray': '5229600818734b55-GRU',
+41 silly get     age: '5508',
+41 silly get     etag: 'W/"f5bb68cbe74cb963422178b13701444a"',
+41 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+41 silly get     'last-modified': 'Wed, 25 Sep 2019 20:04:33 GMT',
+41 silly get     vary: 'accept-encoding, accept',
+41 silly get     'x-amz-meta-rev': '227-05cce98b3fa94fa3ec451f4f38e689d6',
+41 silly get     server: 'cloudflare',
+41 silly get     'content-encoding': 'gzip' } ]
+42 verbose get saving firebase-tools to /home/laboratoria/.npm/registry.npmjs.org/firebase-tools/.cache.json
+43 silly rollbackFailedOptional Starting
+44 silly rollbackFailedOptional Finishing
+45 silly runTopLevelLifecycles Starting
+46 silly runTopLevelLifecycles Finishing
+47 silly install printInstalled
+48 verbose stack Error: ENOENT: no such file or directory, open '/home/laboratoria/SAP003-social-network/-'
+49 verbose cwd /home/laboratoria/SAP003-social-network
+50 error Linux 5.0.0-29-generic
+51 error argv "/usr/bin/node" "/usr/bin/npm" "install" "-" "g" "firebase-tools"
+52 error node v8.10.0
+53 error npm  v3.5.2
+54 error path /home/laboratoria/SAP003-social-network/-
+55 error code ENOENT
+56 error errno -2
+57 error syscall open
+58 error enoent ENOENT: no such file or directory, open '/home/laboratoria/SAP003-social-network/-'
+59 error enoent ENOENT: no such file or directory, open '/home/laboratoria/SAP003-social-network/-'
+59 error enoent This is most likely not a problem with npm itself
+59 error enoent and is related to npm not being able to find a file.
+60 verbose exit [ -2, true ]

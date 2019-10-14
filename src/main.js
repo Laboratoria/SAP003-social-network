@@ -1,3 +1,14 @@
+
+import {Database, Post} from './pages/database.js';
+
+function init() {
+  document.querySelector('main').innerHTML = Database();
+  document.querySelector('main').innerHTML += Post();
+  
+}
+
+window.addEventListener('load', init);
+
 // import Home from './pages/home.js';
 import Register from './pages/register.js';
 import NewPage from './pages/newpage.js';
@@ -18,3 +29,4 @@ function pageRoute() {
 
 window.addEventListener('load', pageRoute);
 window.addEventListener('hashchange', pageRoute, false);
+
