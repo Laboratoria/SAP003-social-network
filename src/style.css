@@ -1,16 +1,277 @@
-*{
-  padding: 0%;
-  margin: 0%;
+@media (max-width: 1900px) and (min-width: 768px){
+  main {
+  display: block;
+  margin-left: 52px;
+  }
+
+  .welcome {
+    margin-top: 32px;
+    width: 323px;
+    height: 58px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.03em;
+    color: #263238; 
+  }
+
+  .login {
+    margin-top: 8px;
+    width: 601px;
+    height: 58px;
+    left: 52px;
+    top: 198px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.03em;
+    color: #B0BEC5;
+  }
+
+
+  .email {
+    width: 288px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .email::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .email:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+
+  .password { 
+    margin-top: 32px;
+    width: 288px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .password::placeholder {
+    color: #000000;
+    opacity: 0.3
+  }
+
+  .password:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+  .send {
+    margin-top: 48px;
+    width: 128px;
+    height: 40px;
+    border: none;
+    background: #FF007A;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Lato;
+    color: #FFFFFF;
+  }
+  .send:focus {
+    outline: none;
+  }
+
+  .send:hover {
+    cursor: pointer;  
+  }
+
+  .send:active {
+    background-color: #C6005F;
+  }
+
+  .other-login {
+    margin-top: 40px;
+    height: 19px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
+    color: #BDBDBD;
+  }
+
+  .google-btn {
+    margin-top: 8px;
+    border: none;
+    padding: 0%;
+    background-color: #FFFFFF;
+    height: 40px;
+    border-radius: 25px;
+  }
+  .google-btn:focus {
+    outline: none;
+  }
+
+  .google-btn:hover {
+    cursor: pointer;  
+  }
+
+
+  .register-link {
+    height: 19px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #263238;
+    margin-top: 52px;
+  }
+
+  .logo {
+      width: auto;
+      height: 32px;
+    }
+
+  a {
+    color:#FF007A;    
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  body {
+    background-image: url(img/loginbg.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-x: 110%;
+  }
+
+  .register-info {
+    margin-top: 40px;
+    width: 601px;
+    height: 58px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.03em;
+    color: #B0BEC5;
+  }
+  
+  .name {
+    margin-top: 32px;
+    width: 288px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .name::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .name:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+  .email-re {
+    margin-top: 32px;
+    width: 288px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .email-re::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .email-re:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+  .password-re {
+    margin-top: 32px;
+    width: 288px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .password-re::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .password-re:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+  .btn-register {
+    margin-top: 48px;
+    width: 128px;
+    height: 40px;
+    border: none;
+    background: #FF007A;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Lato;
+    color: #FFFFFF;
+  }
+  .btn-register:focus {
+    outline: none;
+  }
+
+  .btn-register:hover {
+    cursor: pointer;  
+  }
+
+  .login-link {
+    height: 19px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #263238;
+    margin-top: 52px;
+  }
+
+
 }
 
+
+
+
 @media (max-width: 700px){
-    
+    main{
+      display: inline-block;
+      margin-left: 23px;
+      margin-right: 23px; 
+    }
+
+    body {
+      margin: 0%;
+    }
+
   .welcome{
-    position: absolute;
-    width: 112px;
     height: 29px;
-    left: 23px;
-    top: 120px;
+    margin-top: 48px;
     font-family: Lato;
     font-style: normal;
     font-weight: bold;
@@ -21,11 +282,9 @@
   }
 
   .login{
-    position: absolute;
-    width: 300px;
+    margin-top: 8px;
+    margin-bottom: 32px;
     height: 29px;
-    left: 23px;
-    top: 157px;
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
@@ -36,120 +295,223 @@
 
   }
 
-  .email-info {
-    position: absolute;
-    width: 33px;
-    height: 17px;
-    left: 23px;
-    top: 234px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: -0.03em;
-    color: #263238;
-      }
-
   .email {
-    position: absolute;
+    margin-top: 24px;
     width: 329px;
     height: 40px;
-    left: 23px;
-    top: 259px;
-    border: 1px solid #B0BEC5;
-    border-radius: 3px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    font-family: Lato;
+    font-size: 18px;
   }
 
-  .pass-info {
-    position: absolute;
-    width: 37px;
-    height: 17px;
-    left: 23px;
-    top: 331px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: -0.03em;
-    color: #263238;
-
+  .email::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .email:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
   }
 
   .password {
-    position: absolute;
+    margin-top: 32px;
     width: 329px;
     height: 40px;
-    left: 23px;
-    top: 356px;
-    border: 1px solid #B0BEC5;
-    border-radius: 3px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+        font-family: Lato;
+    font-size: 18px;
   }
 
+   .password::placeholder {
+    color: #000000;
+    opacity: 0.3
+  }
+
+  .password:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+
   .send {
-    position: absolute;
+    margin-top: 40px;
     width: 329px;
     height: 44px;
-    left: 23px;
-    top: 428px;
     border: none;
     background: #FF007A;
     border-radius: 25px;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 700;
     color: #FFFFFF;
 
   }
 
+  .send:active {
+    background-color: #C6005F;
+  }
+  .send:focus {
+    outline: none;
+  }
+
   .other-login {
-    position: absolute;
-    width: 100px;
+    margin-top: 40px;
     height: 19px;
-    left: 143px;
-    top: 505px;
+    text-align: center; 
     font-family: Lato;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
     letter-spacing: -0.03em;
-    color: #263238;
+    color: #bdbdbd;
 
   }
 
   .google-btn {
-    position: absolute;
-    left: 33.33%;
-    right: 54.93%;
-    top: 82.16%;
-    bottom: 11.24%;
+    margin-top: 16px;
+    padding: 0%;
     border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #FFFFFF;
   }
 
+  .google-btn:focus {
+    outline: none;
+  }
+
   .register-link {
-    position: absolute;
-    width: 300px;
+    margin-top: 52px;
     height: 19px;
-    left: 95px;
-    top: 624px;
     font-family: Lato;
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
     line-height: 19px;
-    letter-spacing: -0.03em;
     color: #263238;
   }
 
   .logo{
-    position: absolute;
-    width: 230px;
-    height: auto;
-    left: 15px;
-    top: 32px;
+    width: auto;
+    height: 32px;
+    margin-top: 20px;
+    margin-left: 0px;
   }
 
   a{
     color:#FF007A;
+  }
+
+  .register-info {
+    width: 238px;
+    height: 58px;
+    margin-bottom: 0%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.03em;
+    color: #B0BEC5;
+  }
+  
+  .name {
+    margin-top: 24px;
+    width: 280px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    font-family: Lato;
+    font-size: 18px;
+  }
+
+  .name::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .name:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+
+  .email-re {
+    margin-top: 24px;
+    width: 280px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    font-family: Lato;
+    font-size: 18px;
+  }
+
+  .email-re::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .email-re:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+  
+  .password-re {
+    margin-top: 24px;
+    width: 280px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    font-family: Lato;
+    font-size: 18px;
+  }
+
+  .password-re::placeholder {
+    color: #000000;
+    opacity: 0.3;
+  }
+  .password-re:focus {
+    outline: none;
+    border-bottom: 2px solid #FF007A;
+  }
+  
+  .btn-register {
+    margin-top: 52px;
+    width: 329px;
+    height: 44px;
+    border: none;
+    background: #FF007A;
+    border-radius: 25px;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+  }
+
+  .btn-register:active {
+    background-color: #C6005F;
+  }
+  .btn-register:focus {
+    outline: none;
+  }
+
+  .login-link {
+    margin-top: 64px;
+    height: 19px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    line-height: 19px;
+    color: #263238;
   }
 }

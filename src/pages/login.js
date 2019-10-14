@@ -4,23 +4,19 @@ import input from '../components/input.js';
 
 function Login() {
   const template = `
-    
-    
-    <img class="logo" src="img/Logo2.jpeg"/>
+
+    <img class="logo" src="img/Logo.png"/>
     <div class ="welcome">Bem Vinda,</div>    
     <p class="login">Faça o login para continuar</p>
     <form>
-    <h2 class="email-info">Login</h2>
-    ${input({ class: 'email', type: 'email' })}
-    <h2 class="pass-info">Senha</h2>
-    ${input({ class: 'password', type: 'password' })}
+    ${input({ class: 'email', placeholder:'Login', type: 'email' })}<br>    
+    ${input({ class: 'password', placeholder:'Senha', type: 'password'})}
     </form>
-    ${Button({ class: 'send', onclick: sendLogin, title: 'ENVIAR' })}
-    <p class="other-login">Ou entre com</p>
-    ${Button({ class: 'google-btn', onclick: googleLogin, title: `<img src="img/Google.png"/>` })}
-    <p class="register-link">Não é cadastrado? <a class="register-hash" href="#register">Registre-se</a></p>
-    
-  `;
+    ${Button({ class: 'send', onclick: sendLogin, title: 'Entrar' })}
+    <p class="other-login">Ou faça login com as redes sociais</p>
+    ${Button({ class: 'google-btn', onclick: googleLogin, title: `<img src="img/gbtn.png"/>` })}
+    <p class="register-link">Não é cadastrado? <a class="register-hash" href="#register">Registre-se.</a></p>
+    `
 
   return template;
 }
@@ -52,3 +48,5 @@ function googleLogin() {
 };
 
 export default Login
+
+/*     <h2 class="email-info">Login</h2> */
