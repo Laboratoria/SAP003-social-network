@@ -24,10 +24,10 @@ function newUser() {
 function newUserTemplate() {
   const inNewUser = `
   <form class="form-login">
-    ${Input({ class: 'js-name-input', placeholder: 'name', type: 'text' })} 
-    ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
-    ${Input({ class: 'js-password-input', placeholder: 'password', type: 'password'})}
-    ${Button({ id: 'bt-creat-account', title: 'criar a conta', call: newUser })}
+  ${Input({ class: 'js-name-input', placeholder: 'name', type: 'text' })} 
+  ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
+  ${Input({ class: 'js-password-input', placeholder: 'password', type: 'password'})}
+  ${Button({ id: 'bt-creat-account', title: 'criar a conta', call: newUser })}
   </form>
   `;
 

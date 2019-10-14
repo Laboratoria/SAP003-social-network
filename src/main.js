@@ -1,6 +1,5 @@
-// import Home from './pages/home';
 import TemplateLogin from './pages/login.js';
-import Feed from './pages/home.js';
+import feed from './pages/home.js';
 import newUserTemplate from './pages/createAccount.js';
 
 function init() {
@@ -10,8 +9,8 @@ function init() {
 function locationHasChange() {
   if (location.hash === "#createAccount") {
     document.querySelector('main').innerHTML = newUserTemplate();
-  } else if (location.hash === "#feed"){
-    document.querySelector('main').innerHTML = Feed();
+  } else if (location.hash ==="#feed"){
+    document.querySelector('main').innerHTML = feed();
   }
 }
 
