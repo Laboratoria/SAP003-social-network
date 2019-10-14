@@ -34,8 +34,6 @@ function pegarInput() {
   }
 }
 
-<<<<<<< HEAD
-=======
 // function validarEmailESenha (){
 //   if (localStorage.setItem )
 // }
@@ -61,7 +59,6 @@ function pegarInput() {
 // 
 
 
->>>>>>> 2fd4f51a18b9bc8f4ae666fad8070420c2120205
 function Login() {
   const template = `
   <h1>Home Page</h1>
