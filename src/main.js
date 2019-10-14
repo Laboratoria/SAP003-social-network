@@ -1,20 +1,23 @@
 import Home from './pages/home.js';
 import Postpage from './pages/postpage.js'
-
+import Register from './pages/register.js';
 
 function pageRoute() {
-  const pageName = (window.location.hash) ? window.location.hash : '#home';
+  const pageName = (window.location.hash) ? window.location.hash : '#Home';
   switch (pageName) {
     case '#home':
       document.querySelector('main').innerHTML = Home();
       break;
-    default:
+    case '#register':
+        document.querySelector('main').innerHTML = Register();
+        break;
+    case '#postpage':
       document.querySelector('main').innerHTML = Postpage();
-
+      break;
+    default:
+      document.querySelector('main').innerHTML = Home();
   }
 }
 
-
 window.addEventListener('load', pageRoute);
 window.addEventListener('hashchange', pageRoute, false);
-

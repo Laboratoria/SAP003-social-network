@@ -1,5 +1,7 @@
-import LogInGoogle from '../components/buttongoogle.js';
-import LogInFace from '../components/buttonface.js';
+import Input from '../components/input.js';
+import Button from '../components/button.js'
+
+
 
 function logWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -51,16 +53,22 @@ function logWithFacebook(){
   
 }
 
+function callPage() {
+  window.location.hash='#register'
+}
+
 function Home() {
   const template = `
     <h1>Home Page</h1>
-    ${LogInGoogle({id:'GOOGLE', title:'GOOGLE', onClick: logWithGoogle})}
-    ${LogInFace({id:'FACE', title:'FACEBOOK', onClick: logWithFacebook})}
-    `;
-    
+    ${Button({id:'GOOGLE', title:'GOOGLE', onClick: logWithGoogle})}
+    ${Button({id:'FACE', title:'FACEBOOK', onClick: logWithFacebook})}
+    ${Button({id:'CREATE', title:'REGISTRE-SE', onClick: callPage })}
+     `;
+     
   return template;
 }
 
 
 
-export default Home;
+
+export default Home ;
