@@ -19,13 +19,14 @@ function createLogin() {
 
       function createProfile() {
         const template = `
+          <img class='logo' src='logo1.png'/>
           <h1>Login</h1>
           <form>
           ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
           ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
           ${Button({ id: 'doing-login', title: 'Log In', onClick: createLogin})}
           </form>`;
-        
+
         return template;
       }
 

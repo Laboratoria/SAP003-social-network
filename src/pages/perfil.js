@@ -13,10 +13,10 @@ function Perfil() {
     ${Input({ class:'js-edade-input', placeholder:'Idade', type:'text', })}
     ${Input({ class:'js--input', placeholder:'Apelido', type:'text', })}
     ${Input({ class:'js--input', placeholder:'Professor(a) ou  aluno', type:'text', })}
-    ${Button({title: 'Salvar', onClick: salve})}
+    ${Button({title: 'Salvar', onClick: salve, class:'banana'})}
     </form>`;
-  
+
   return template;
 }
-  
+
 export default Perfil;

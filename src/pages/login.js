@@ -38,17 +38,19 @@ function Google (){
 
 function Login() {
   const template = `
-    <h1 class='content'>RedeTech</h1>
+    <img class='logo' src='logo1.png'/>
     <h2 class='content'>Seja bem-vinda(o)!</h2>
     <form class='content'>
     ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
     ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
-    ${Button({ id: 'doing-login', title: 'Log In', onClick: AuthEmailPassButton})}
-    ${Button({ id: 'google', title: 'Google', onClick: Google})}
-    <a href='#register'>Registre-se</a>
+    ${Button({ class:'primary-button banana', title: 'Log In', onClick: AuthEmailPassButton})}
+    <p>Ou entre com sua conta...</p>
+    ${Button({ class: 'google-btn', title: '', onClick: Google})}
+    <p>Ainda não tem uma conta?</p>
+    <a href='#register'>Registre-se!</a>
     </form>`;
 
   return template;
 }
-  
+
 export default Login;
