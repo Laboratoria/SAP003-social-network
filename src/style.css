@@ -1,3 +1,4 @@
+/*BASIC STYLE*/
 *{
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ body{
   background-color: #121212;
 }
 
+/*MAIN HOME*/
 .home{
   display: flex;
   justify-content: space-around;
@@ -29,7 +31,6 @@ body{
   width: 320px;
 
 }
-
 
 @media screen and (max-width: 770px) {
 
@@ -61,7 +62,7 @@ body{
 
   .login{
     padding: 20px;
-    display: flex,
+    display: flex;
     align-items: center;
   }
 
@@ -103,3 +104,11 @@ body{
     align-items: center;
   } */
 }
+
+/*MAIN SIGN UP*/
+
+/*HEADER MURA E EDITAR PÁGINA*/
+
+/*MAIN MURAL*/
+
+/*MAIN EDITAR PÁGINA*/
