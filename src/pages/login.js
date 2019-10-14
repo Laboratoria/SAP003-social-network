@@ -14,6 +14,8 @@ const signIn = () => {
         document.querySelector('.error-password').textContent = 'Senha Incorreta';
       } else if (errorCode === 'auth/user-not-found') {
         document.querySelector('.error-email').textContent = 'Email não registrado!';
+      } else if (errorCode === 'auth/invalid-email') {
+        document.querySelector('.error-email').textContent = 'Formato de email inválido';
       }
     });
   firebase.auth().onAuthStateChanged((user) => {
@@ -73,7 +75,7 @@ const login = () => {
     type: 'password',
   })}
   <p class="error-password"></p>
-  <div class="banana">
+  <div class="buttons">
     ${Button({
     title: 'Entrar',
     onClick: signIn,

@@ -1,11 +1,41 @@
+import Input from '../components/input.js';
+import List from '../components/list-menu.js';
+
+const SignOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      alert('deslogado!')
+    })
+    .catch((error) => {
+      alert('banana');
+    });
+};
+
 const timeline = () => {
   const templateTimeLine = `
-    <input type="checkbox" id="btn_menu">
-    <label for="btn_menu">&#9776;</label>
-    <nav class="menu">
+    ${Input({
+    class: 'navigation',
+    type: 'checkbox',
+  })}
+  <label for="navigation">&#9776;</label>
+  <nav class="menu">
       <ul>
-          <li><a href="#">Timeline</a></li>
-          <li><a href="#">Perfil</a></li>
+    ${List({
+    class: 'timeline',
+    title: 'Timeline',
+  })}
+    ${List({
+    class: 'profile',
+    title: 'Perfil',
+  })}
+    ${List({
+    class: 'out',
+    title: 'Sair',
+    onClick: SignOut,
+  })}
+
       </ul>
     </nav>
     <h1 class="title-timeline">Low Carb Style</h1>
@@ -23,7 +53,6 @@ const timeline = () => {
       <img src="images/curtir.png" class="img-curtir">
       <img src="images/compartilhar.svg" class="img-compartilhar">
     </div>  
-    
     `;
 
   return templateTimeLine;
