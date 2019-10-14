@@ -30,22 +30,9 @@ body{
 
 }
 
-
-@media screen and (max-width: 770px) {
-
   .home{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-}
-
-@media screen and (max-width: 420px) {
-
-  .home{
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     font-size: 14px;
   }
@@ -53,10 +40,11 @@ body{
   .homepage-title{
     font-size: 35px;
     padding: 8px;
+    text-align: center;
   }
 
   .logo{
-    width: 70%;
+    width: 40%;
   }
 
   .login{
@@ -65,41 +53,118 @@ body{
     align-items: center;
   }
 
-  /* .buttons{
-    display: flex;
-    flex-direction: row;
-  } */
+  .homepage-title{
+    align-items: center;
+  }
+
+  .buttons{
+    margin-top: 10px;
+  }
 
   #email-login{
     border-radius: 20px;
     outline:none;
-    padding: 2px;
+    padding: 8px;
+    margin: 5px;
+    width: 260px;
+    border: none;
    
   }
 
   #pass-login{
     border-radius: 20px;
     outline:none;
-    padding: 2px;
-    margin-top: 4px;
+    padding: 8px;
+    margin: 5px;
+    width: 260px;
+    border: none;
   }
+
 
   .login-form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
   }
 
-  /* #sign{
-    align-items: center;
-  } */
-
-  /* .sign-up{
-    display: flex;
-   
+  .btn {
+    border-radius: 9px;
+    outline:none;
+    padding: 7px;
   }
+
+  .btn-sign-up{
+    background-color: #E8783C;
+  }
+
 
   .sign{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    margin-right: 50px;
+  }
+
+  #login{
+    padding: 7px;
+    width: 170px;
+    border-radius: 20px;
+    background-color: red;
+    color: black;
+    font-size: 18px;
+    border: none;
+  }
+
+  .opcao{
+    color: black;
+    padding: 15px;
+  }
+
+  #google-login {
+    border-radius: 20px;
+    height: 40px;
+    width: 170px;
+    padding: 0;
+    border: 0;
+    margin: 20px;
+    border: none;
+  }
+
+  .btn-google {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #google {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    padding: 5px;
+  }
+
+  .cadastro{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  } */
-}
+  }
+
+  .tela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulo{
+    padding: 30px;
+  }
+
+  #name{
+    margin: 5px;
+    bor
+  }
+
+  #mail{
+    margin: 5px;
+  }
+

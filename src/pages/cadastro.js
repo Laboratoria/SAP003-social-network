@@ -20,12 +20,13 @@ const cadastrar = (id, event) => {
 
 export const Cadastro = () => {
 	const template = `
-	<h1>Cadastre-se</h1>
-	<form>
+	<main class="cadastro">
+	<h1 class="titulo">Cadastre-se</h1>
+	<form class="tela">
 		${Input({ id:"name",  placeholder:"Nome", type:"text"})}
 		${Input({ id:"mail", placeholder:"Email", type:"email"})}
 		${Input({ id:"pass", placeholder:"Senha", type:"password"})}
-		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form>`;
+		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form></main>`;
 
 	return template;
 }
