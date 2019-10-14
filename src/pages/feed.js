@@ -9,7 +9,7 @@ function SignOut () {
 
 function Home() {
   const template = `
-    <h1>Home Page</h1>
+    <h1>Feed</h1>
   ${Button({ id: 'singOut', title: 'Sair', onClick: SignOut})}
     <p>Esse é um exemplo 🍌</p>
   `;

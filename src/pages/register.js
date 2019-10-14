@@ -12,10 +12,13 @@ function createLogin() {
       .catch((error) => {
         console.error(error.code);
         console.error(error.message);
-        alert(`Falha ao cadastrar, verifique o erro no console`)
+        alert(`Falha ao cadastrar, verifique o e-mail e senha adicionado`)
       });
       }
 
+      function comeBack (){
+        window.location.hash = '#feed'
+      }
 
       function createProfile() {
         const template = `
@@ -24,6 +27,7 @@ function createLogin() {
           ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
           ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
           ${Button({ id: 'doing-login', title: 'Log In', onClick: createLogin})}
+          ${Button({ id: 'come-back', title: 'Voltar', onClick: comeBack})}
           </form>`;
         
         return template;
