@@ -1,5 +1,6 @@
-body{
+main{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -7,30 +8,40 @@ body{
 .primary-button {
   background-color: #014034;
   padding: 3px;
+  width: 70px;
   font-size: 0.7rem;
   font-weight: bold;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+<<<<<<< HEAD
   align-items: center;
+=======
+>>>>>>> 1fdc5cbbeddd1e79ffbb7cda947d16f8b48909a8
 }
 .textarea-local{
   margin-top: 10px;
   align-items: center;
 }
-.js-name-input{
-  text-align: center;
-  display: block;
+.form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
 }
-.js-email-input{
+.form-login input{
+  margin: 5px;
   text-align: center;
-  display: block;
 }
-.js-password-input{
+.form-login button{
+  margin: 5px;
   text-align: center;
-  display: block;
 }
-
-
+.text-main{
+  text-align: center;
+}
+.image-logo{
+  align-items: center;
+}
 
 
