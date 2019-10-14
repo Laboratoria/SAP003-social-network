@@ -1,9 +1,44 @@
+body{
+  margin: 15px;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #dcdcdc;
+}
+
+.container-login{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+img{
+  width:100%;
+  height: 1%;
+  padding: 
+}
 .primary-button {
-  background-color: #ffe521;
-  padding: 10px;
+  background-color: #fdef4e;
+  padding: 6px;
   font-size: 1.5rem;
   border-radius: 5px;
   font-weight: bold;
   border: none;
   cursor: pointer;
 }
+
+.input {
+
+  border: solid 1px;
+  border-radius: 25px;
+  padding: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.card {
+  border: solid 1px;
+  border-radius: 30px;
+  padding: 8px;
+}
+
