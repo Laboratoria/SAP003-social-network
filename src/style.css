@@ -4,6 +4,7 @@ body {
   background-color: #f3e5f5;
   margin: 0;
   padding: 0;
+  height: 600px;
 }
 
 .primary-button {
@@ -24,12 +25,12 @@ body {
 }
 
 .primary-button:hover{
- background-color: #af8eb5;
+  background-color: #af8eb5;
 }
 
 .main-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin-top: 50px;
@@ -44,26 +45,22 @@ body {
 }
 
 .primary-input{
-    border-radius: 18px;
-    width: 238px;
-    height: 31px;
-    border: 1px solid gray;
-    padding-left: 12px;
-    margin-top: 10px;
-  }
+  border-radius: 18px;
+  width: 238px;
+  height: 31px;
+  border: 1px solid gray;
+  padding-left: 12px;
+  margin-top: 10px;
+}
 
-  .login-text{
-    font: 'Roboto', sans-serif;
-  }
+.login-text{
+  font: 'Roboto', sans-serif;
+}
 
 .login-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.login-text{
-  font: 'Roboto', sans-serif;
 }
 
 .google-button{
@@ -72,10 +69,6 @@ body {
   height: 50px;
   width: 50px;
   box-shadow: 2px 2px 5px grey;
-}
-
-.google-button:hover{
-  cursor: pointer;
 }
 
 .link{
@@ -87,78 +80,54 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 280px;
-  margin-bottom: -37px;
+  width: 150px;
+  margin-bottom: -20px;
 }
 
 .text-logo{
   font-family: 'Righteous', cursive;
-  font-size: 45px;
+  font-size: 30px;
   color: rgb(59, 59, 59);
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 3px;
+}
+
+.add-post{
+  width: 50vh;
+  height: 10vh;
+  padding: 10px;
+  resize: none;
+  font-size: 15px;
 }
 
 .erro{
   text-align: center;
-
 }
 
-@media only screen and (max-width: 900px){
 
-  body{
-    height: 600px;
-  }
-
+@media (min-width: 900px){
   .main-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
   }
 
-  .login-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .google-button{
-    border-radius: 50%;
-    border: none;
-    height: 50px;
-    width: 50px;
-    box-shadow: 2px 2px 5px grey;
-  }
-
-  .link{
-    text-decoration: none;
-    color: #863895;
+  .google-button:hover{
+    cursor: pointer;
   }
 
   .logo{
-    display: flex;
-    justify-content: center;
-    height: 150px;
-    width: 150px;
-    margin-bottom: -20px;
-  }
+    height: 280px;
+    width: 280px;
+    margin-bottom: -37px;
+}
 
   .text-logo{
-    font-family: 'Righteous', cursive;
-    font-size: 30px;
-    color: rgb(59, 59, 59);
+    font-size: 45px;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 3px;
   }
 
   .add-post{
-    width: 50vh;
-    height: 10vh;
-    padding: 10px;
-    resize: none;
-    font-size: 15px;
+    width: 70vh;
   }
 }
