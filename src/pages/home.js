@@ -1,31 +1,14 @@
-import Button from '../components/button.js';
-import Textarea from '../components/textarea.js';
-
-const firebase = require("firebase");
-require("firebase/firestore");
-firebase.initializeApp({
-  apiKey: '### FIREBASE API KEY ###',
-  authDomain: '### FIREBASE AUTH DOMAIN ###',
-  projectId: '### CLOUD FIRESTORE PROJECT ID ###'
-});
-
-let db = firebase.firestore();
-
-function publish(){
-
-}
-
+import Button from "../components/button.js";
+import Textarea from "../components/textarea.js";
 
 function feed() {
   const template = `
     <img src="../../imagens/logo.png"></img class="image-logo">
-    ${Textarea({id: 'post', class: 'post', call: publish})}
-    ${Button({ id: 'publish', title: 'Publish' })}
+    ${Textarea({ id: "post", class: "post" })}
+    ${Button({ id: "publish", title: "Publish"})}
     `;
 
   return template;
 }
 
 export default feed;
-
-// location.hash = "#Feed";

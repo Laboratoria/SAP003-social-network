@@ -10,7 +10,7 @@ window.button = {
   handleClick: (event, callback) => {
     event.preventDefault();
     callback();
-  },
+  }
 };
 
 export default Button;
