@@ -13,18 +13,18 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const pages = {
-  login: Login(),
-  register: Register(),
-  post: Post(),
-}
-
 function init() {
   document.querySelector('main').innerHTML = Login();
 }
 
 window.addEventListener('load', init);
 
+const pages = {
+  login: Login(),
+  register: Register(),
+  post: Post(),
+}
+
 window.addEventListener('hashchange', () => {
-  document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
+  document.querySelector('main').innerHTML = pages[window.location.hash.substring(1)];
 }, false);
