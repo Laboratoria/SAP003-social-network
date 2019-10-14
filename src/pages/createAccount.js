@@ -26,11 +26,9 @@ function newUserTemplate() {
   `;
 
   const template = `
-  <img src="img/moviment.png" alt="Logo do Moviment" class="image-logo">
+  <img src="img/moviment.png" alt="Logo do Moviment" class="image">
   <h4 class="text-main">Bem vinda(o), Moviment! Para se cadastrar, preencha as informações</h4>
-  <form>
   ${inNewUser}
-  </form>   
   `;
 
   return template;
