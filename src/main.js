@@ -1,6 +1,6 @@
 import Login from './pages/login.js';
 import Signup from './pages/signup.js';
-import Signout from './pages/feed.js';
+import Feed from './pages/feed.js';
 import isAuthenticated from './auth.js';
 
 window.addEventListener('load', locationHashChanged);
@@ -8,15 +8,8 @@ window.addEventListener("hashchange", locationHashChanged, false);
 
 function locationHashChanged(){
  if (isAuthenticated()) {
-   if (location.hash === '#login') {
-     location.hash = '#feed';
-     document.querySelector('main').innerHTML = Signout();
-   }
-   else if (location.hash ==='#feed') {
-     document.querySelector('main').innerHTML = Signout();
-   }
-   else if(location.hash ==='#signup'){
-     document.querySelector('main').innerHTML = Signup();
+  if (location.hash ==='#feed') {
+     document.querySelector('main').innerHTML = Feed();
    }
  }
  else {

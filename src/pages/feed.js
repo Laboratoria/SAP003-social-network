@@ -23,7 +23,7 @@ function userInfo() {
     document.querySelector('.profile').innerHTML = username;
   });  
 }
-
+/*
 function publishText() {
   console.log('publicou');
   const userText = document.getElementById('user-publication').value;
@@ -31,14 +31,10 @@ function publishText() {
     text: userText,
   });
 }
-
+*/
 function Feed() {
   const template = `
   <div class='profile'></div>
-  <form class='publications'>
-    <textarea id='user-publication'>
-    ${Button({ id: 'btn-publish', onclick:publishText, title: 'Publicar'})};
-  </form>
   ${Button({ id: 'btn-log-out', onclick:logOut, title: 'Sair'})}
   `;
   userInfo()

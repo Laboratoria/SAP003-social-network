@@ -27,12 +27,22 @@ function signInWithAccount(provider) {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      // window.location.hash="#feed"
       if (result.credential) {
         const token = result.credential.accessToken;
       };
       const user = result.user;
-      console.log(user);
+      if(result){
+        location.hash="#feed";
+      }
+      //console.log(user);
+      localStorage.setItem('user', JSON.stringify(user));
+      // auth.onAuthStateChanged(user => {
+      //   if(user){
+      //     window.location = '#feed';
+      //     //window.user = user;
+      //   }
+      // });
+
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
