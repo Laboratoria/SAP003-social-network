@@ -10,7 +10,7 @@ function init() {
 function locationHasChange() {
   if (location.hash === "#createAccount") {
     document.querySelector('main').innerHTML = newUserTemplate();
-  } else if (location.hash ==="#feed"){
+  } else if (location.hash === "#feed"){
     document.querySelector('main').innerHTML = Feed();
   }
 }
