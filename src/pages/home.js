@@ -43,19 +43,21 @@ function googleSignIn(){
 
 function Login() {
   const template = `
-  <h1> Rede Social</h1>
-  <h2> Seja Bem vindx</h2>
-
+<main class="main">  
+  <h1 class="titulo"> Rede Social</h1>
+  <h2 class="subtitulo"> Seja Bem vindx</h2>
+  <form class="form">
   ${Input({
     class: 'email-input',
     placeholder: 'E-mail',
     type: 'text',
-  })}
+  })}<br>
     ${Input({
     class: 'senha-input',
     placeholder: 'Senha',
     type: 'password',
   })} <br>
+  <div class="button">
     ${Button({
     id: 'enviar',
     title: 'Login',
@@ -66,6 +68,9 @@ function Login() {
     title: 'Cadastrar',
     onClick: mudarPg,
   })}
+    </div>
+  </form>
+</main>  
   ${Button({
     id:'google',
     title:'<i id = "google" class="fab fa-google-plus-square"></i>',
