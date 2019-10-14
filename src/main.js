@@ -1,6 +1,7 @@
 import Home from './pages/home.js';
-import Postpage from './pages/postpage.js'
+import {Database, Post} from './pages/database.js';
 import Register from './pages/register.js';
+
 
 function pageRoute() {
   const pageName = (window.location.hash) ? window.location.hash : '#Home';
@@ -12,7 +13,7 @@ function pageRoute() {
         document.querySelector('main').innerHTML = Register();
         break;
     case '#postpage':
-      document.querySelector('main').innerHTML = Postpage();
+      document.querySelector('main').innerHTML = Database();
       break;
     default:
       document.querySelector('main').innerHTML = Home();
@@ -21,3 +22,4 @@ function pageRoute() {
 
 window.addEventListener('load', pageRoute);
 window.addEventListener('hashchange', pageRoute, false);
+
