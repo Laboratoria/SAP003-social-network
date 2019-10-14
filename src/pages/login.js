@@ -12,12 +12,11 @@ const userLogin = () => {
     let user = firebase.auth().currentUser;
     if (user.emailVerified) {
       console.log('Email is verified');
-      location.hash = '#home';
+      location.hash = '#feed';
     } else {
       document.querySelector('.erro').textContent = 'Email não verificado, vá até sua caixa de entrada';
     }
   }).catch(function (error) {
-    var errorCode = error.code;
     var errorMessage = error.message;
     document.querySelector('.erro').textContent = errorMessage;
   });
