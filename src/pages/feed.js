@@ -3,48 +3,57 @@ import Button from '../components/button.js';
 
 const location = () => {
   location.hash = '';
-}
+};
 
 const logout = () => {
-  firebase.auth().signOut().then(function () {
+  firebase.auth().signOut().then(() => {
     location.hash = ''
-  }).catch(function (error) {
+  }).catch((error) => {
     // An error happened.
   });
-}
+};
+
+const postTemplate = (data) => {
+  document.querySelector('.posts').innerHTML
+        += `<p> ${data.text} | ${data.date}</p>`;
+};
+
+const showPosts = () => {
+  const db = firebase.firestore();
+  db.collection('posts').orderBy('timestamp', 'desc').get()
+.then((snapshot) => {
+    snapshot.docs.forEach((doc) => {
+      postTemplate(doc.data());
+    });
+  });
+};
 
 const newPost = () => {
   const db = firebase.firestore();
   const post = {
-    //id
+    // id
     text: document.querySelector('.add-post').value,
-    day: new Date().toLocaleDateString(),
-    hour: new Date().toTimeString().substring(0, 5)
-  }
-  db.collection('posts').add(post);
-}
-
-const showPosts = () => {
-  const db = firebase.firestore();
-  db.collection('posts').orderBy('day').orderBy('hour','asc').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-      document.querySelector('.posts').innerHTML +=
-        `<p> ${doc.data().text} |${doc.data().day}| ${doc.data().hour}</p>`
-
-    });
-  });
-
-}
+    timestamp: new Date().getTime(),
+    date: new Date().toLocaleString('pt-BR').slice(0, 16),
+  };
+  db.collection('posts').add(post).then(
+    showPosts()
+  );
+};
 
 function Feed() {
   const template = `
     <section class="container">
       <section class="container">
       <textarea class="add-post" placeholder="O que você está ouvindo?"></textarea>
-      ${Button({ type: 'button', title: 'Postar', class: 'primary-button', onClick: newPost })}
+      ${Button({
+ type: 'button', title: 'Postar', class: 'primary-button', onClick: newPost 
+})}
         <div class="posts">  </div>
       </section>
-      ${Button({ type: 'button', title: 'Logout', class: 'primary-button', onClick: logout })}
+      ${Button({
+ type: 'button', title: 'Logout', class: 'primary-button', onClick: logout 
+})}
     </section>
   `;
 
@@ -52,6 +61,7 @@ function Feed() {
 }
 
 window.onhashchange = showPosts;
+window.onload = showPosts;
 
 
 
