@@ -24,11 +24,15 @@ function userInfo() {
   });  
 }
 /*
+//função para eventlistener do botão Publicar
 function publishText() {
   console.log('publicou');
   const userText = document.getElementById('user-publication').value;
   db.collection('publi').add({
     text: userText,
+    likes: 0,
+    comments: [],
+    user-id: current user displayName
   });
 }
 */
@@ -38,6 +42,7 @@ function Feed() {
   ${Button({ id: 'btn-log-out', onclick:logOut, title: 'Sair'})}
   `;
   userInfo()
+  console.log(firebase.auth().currentUser)
   return template;
 }
 
