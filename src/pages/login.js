@@ -1,42 +1,36 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-//import Signup from './signup.js';
 
 
-function loginUser() {
+function loginRegisteredUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   auth.signInWithEmailAndPassword(email, password)
     .then((cred) => {
-      localStorage.setItem('user', JSON.stringify(cred.user))
-      // console.log(cred.user);
-      firebase.auth().onAuthStateChanged(function(user){
+      localStorage.setItem('user', JSON.stringify(cred.user));
+      auth.onAuthStateChanged(user => {
         if(user){
           window.location = '#feed';
+          //window.user = user;
         }
-      })
-    })
-    .catch(() => {
-      const errorMessageField = document.getElementById('errorMessage')
+      });
+    }).catch(() => {
+      const errorMessageField = document.getElementById('errorMessage');
       errorMessageField.textContent = 'email e/ou senha inválidos.';
       document.querySelector('.email-input').addEventListener('focus', () => {
         errorMessageField.textContent = '';
-      })
-    })
+      });
+    });
 }
 
-function register(){
-  window.location = "signup"   
-}
-
-function signIn(provider) {
+function signInWithAccount(provider) {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
       // window.location.hash="#feed"
       if (result.credential) {
         const token = result.credential.accessToken;
-      }
+      };
       const user = result.user;
       console.log(user);
     }).catch((error) => {
@@ -49,7 +43,11 @@ function signIn(provider) {
 
 function loginGoogleUser() {
   const provider = new firebase.auth.GoogleAuthProvider();
-  signIn(provider);
+  signInWithAccount(provider);
+}
+
+function register() {
+  window.location = "#signup";  
 }
 
 function Login() {
@@ -67,34 +65,31 @@ function Login() {
   ${Button({
     class: 'btn',
     id: 'btn-log-in',
-    onclick: loginUser,
+    onclick: loginRegisteredUser,
     title: 'Login',
   })}
   ${Button({
     id: 'authGoogleButton',
-    class: 'btn btn-lg btn-danger fa fa-google fa-2x',
+    class: 'btn btn-lg btn-danger fa fa-google',
     onclick: loginGoogleUser,
     title: '',
   })}
   `;
   const template = `
-
   <img src="./img/pluto-floral-and-botanical-growth.png">
-  <h1>Horta Urbana</h1> 
   <form class="form-content">
-  ${userLogin}
-  <div id="errorMessage"></div>
-  <p>Ainda não é membro?</p> 
-  ${Button({
-    class: 'btn',
-    title: 'cadastre-se',
-    onclick: register,
-  })}
+    <h1>Horta Urbana</h1> 
+    ${userLogin}
+    <div id="errorMessage"></div>
+    <p>Ainda não é membro? 
+    <a href="#signup">Cadastre-se!</a>
+    </p> 
   </form>
   `;
   return template;
 }
+
 export default Login;
 
-window.signIn = signIn;
+window.signInWithAccount = signInWithAccount;
 
