@@ -22,6 +22,7 @@ function createLogin() {
 
       function createProfile() {
         const template = `
+          <img class='logo' src='logo1.png'/>
           <h1>Login</h1>
           <form>
           ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
@@ -29,7 +30,7 @@ function createLogin() {
           ${Button({ id: 'doing-login', title: 'Log In', onClick: createLogin})}
           ${Button({ id: 'come-back', title: 'Voltar', onClick: comeBack})}
           </form>`;
-        
+
         return template;
       }
 

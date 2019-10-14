@@ -19,8 +19,8 @@ function Perfil() {
     ${Input({ class: 'js-interests-check', name:'interests4', type:'checkbox', value: 'Outros...' })}
     ${Button({title: 'Salvar', onClick: salve})}
     </form>`;
-  
+
   return template;
 }
-  
+
 export default Perfil;
