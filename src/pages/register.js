@@ -25,10 +25,11 @@ function emailAndPass() {
   const userName = document.querySelector('.name').value;
   const userPass = document.querySelector('.password-re').value;
   firebase
-    .auth()
-    .createUserWithEmailAndPassword(userEmail, userPass)
-    .then(() => {
-      alert('valeu' + userName);
+    .auth().createUserWithEmailAndPassword(userEmail, userPass).then(() => {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          window.location.hash = '#feed';
+        }})
     })
     .catch((error) => {
       console.error(error.code);
@@ -38,4 +39,4 @@ function emailAndPass() {
 }
 
 
-export default Register
+export default Register;

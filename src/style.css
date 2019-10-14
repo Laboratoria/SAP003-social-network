@@ -70,8 +70,14 @@
     border-bottom: 2px solid #FF007A;
   }
 
+  .login-error {
+    font-family: Lato;
+    color: #CC311D;
+    font-size: 14px;
+  }
+
   .send {
-    margin-top: 48px;
+    margin-top: 14px;
     width: 128px;
     height: 40px;
     border: none;
@@ -131,7 +137,7 @@
     font-size: 16px;
     line-height: 19px;
     color: #263238;
-    margin-top: 52px;
+    margin-top: 24px;
   }
 
   .logo {
@@ -336,6 +342,11 @@
     border-bottom: 2px solid #FF007A;
   }
 
+  .login-error {
+    font-family: Lato;
+    color: #CC311D;
+    font-size: 14px;
+  }
 
   .send {
     margin-top: 40px;
