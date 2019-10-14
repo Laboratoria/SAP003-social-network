@@ -15,7 +15,7 @@ function enviarCadastro() {
   colecao = JSON.parse(colecao);
   /* caso não seja um vetor, transforma em um */
   if (!Array.isArray(colecao)) {
-    colecao = [colecao];
+    colecao = [];
   }
   /* adiciona o novo usuario na colecao */
   colecao.push(novoUsuario);
