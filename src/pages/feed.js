@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
-//import Input from '../components/input.js';
 
+;
 const location = () => {
     location.hash = '';
 }
@@ -12,12 +12,24 @@ const logout= ()=>{
     // An error happened.
   });
 }
+const newPost = () => {
+  const db = firebase.firestore();
+  const post={
+    text: document.querySelector('.add-post').value,
+    date: new Date().toTimeString().substring(0,5)
+  }
+ db.collection('posts').add(post);
+ document.querySelector('.posts').innerHTML +=
+ `<li> ${post.text} | ${post.date}</li>`
+}
 
 function Feed() {
     const template = `
     <section class="container">
       <section class="container">
-        <p> Aqui vãos os posts </p>
+      <textarea class="add-post" placeholder="O que você está ouvindo?"></textarea>
+      ${Button({ type: 'button', title: 'Postar', class: 'primary-button', onClick: newPost })}
+        <ul class="posts">  </ul>
       </section>
       ${Button({ type: 'button', title: 'Logout', class: 'primary-button', onClick: logout })}
     </section>
@@ -25,5 +37,8 @@ function Feed() {
 
     return template;
 }
+
+
+
 
 export default Feed;
