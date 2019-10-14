@@ -13,12 +13,13 @@ function Home() {
   
   ${Button({id: 'cadastro', title: 'Cadastrar', onClick: goToRegister })}
   
+
   `
     return template;
 };
 export default Home;
 
-
+ 
 function goToRegister () {
   window.location.hash='register';
 }
