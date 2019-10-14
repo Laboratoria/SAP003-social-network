@@ -1,9 +1,207 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
+
+
+h1{
+  font-size: 49px;
+  color: whitesmoke;
+}
+
+body{
+  background-color: #121212;
+  color: whitesmoke;
+}
+
+.home{
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.logo{
+  width: 338px;
+}
+
+#email-login{
+  border-radius: 5px;
+  outline:none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+}
+
+#pass-login{
+  border-radius: 5px;
+  outline:none;
+  padding: 2px;
+  margin-top: 4px;
+  width: 280px;
+  height: 30px;
+}
+
+.login-form{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-sign-up {
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #121212;
+}
+
+.btn-login{
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+}
+
+.btn-google{
+  font-family: 'Roboto', sans-serif;
+  height: 40px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+ .google-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+ }
+
+@media screen and (max-width: 770px) {
+
+  .home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    justify-content: center;
+  }
+
+  h1{
+    text-align: center;
+    color: wheat;
+  }
+
+  .home{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+
+  .homepage-title{
+    font-size: 35px;
+    padding: 8px;
+  }
+
+  .logo{
+    width: 70%;
+  }
+
+  .login{
+    padding: 20px;
+    display: flex,
+    align-items: center;
+  }
+
+  #email-login{
+    border-radius: 5px;
+    outline:none;
+    padding: 2px;
+    width: 280px;
+  }
+
+  #pass-login{
+    border-radius: 5px;
+    outline:none;
+    padding: 2px;
+    margin-top: 4px;
+    width: 280px;
+  }
+
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-sign-up {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background: #121212;
+  }
+
+  .btn-login{
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background: #AA4528;
+  }
+
+  .btn-google{
+    font-family: 'Roboto', sans-serif;
+    height: 40px;
+    border-width: 0;
+    background: white;
+    color: #737373;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding-right: 8px;
+  }
+  
+   .google-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+   }

@@ -8,16 +8,49 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <main></main>
-  <!-- update the version number as needed -->
-  <script defer src="/__/firebase/7.1.0/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/7.1.0/firebase-auth.js"></script>
-  <script defer src="/__/firebase/7.1.0/firebase-database.js"></script>
-  <script defer src="/__/firebase/7.1.0/firebase-messaging.js"></script>
-  <script defer src="/__/firebase/7.1.0/firebase-storage.js"></script>
-  <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
-  <script type="module" src="./main.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/7.1.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="/__/firebase/7.1.0/firebase-analytics.js"></script>
+
+	<script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+	<script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+
+</script>
+
+<!-- <h1>Autenticação</h1>
+<div>
+  <h3 id="displayName">Você não está autenticado</h3>
+  <form action="">
+    <div>
+      <label for="emailInput" >E-mail</label>
+      <input type="email" placeholder="E-mail" id="emailInput">
+    </div>
+    <div>
+        <label for="passwordInput">Senha</label>
+        <input type="password"placeholder="Senha" id="passwordInput">
+      </div>
+  </form>
+  <button id="authEmailPassButton">Autenticar</button>
+  <button id="createUserButton">Criar nova conta</button>
+</div>
+<p>-- ou --</p>
+<button id="authGoogleButton">Google</button>
+<button id="authFacebookButton">facebook</button>
+<p>
+  <button id="logOutButton">Sair</button>
+</p>
+<a href="#">Voltar para Home</a>  -->
+
+<script src="/__/firebase/init.js"></script>
+
+<script type="module" src="./main.js"></script>
 </body>
 </html>
+
+
