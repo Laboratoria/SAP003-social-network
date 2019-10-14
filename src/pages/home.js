@@ -1,7 +1,13 @@
+
+import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Button from '../components/button.js'
 
 
+function signInWithEmailAndPassword() {
+  const email = document.querySelector('.js-email-input').value;
+  const password = document.querySelector('.js-password-input').value;
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
 
 function logWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -67,10 +73,46 @@ function Home() {
      `;
      
 
+
+    .then((logedin) => {
+      alert(`Bem vindo ${email}`);
+      window.location.hash = '#newpage';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert('Usuario nao cadastrado');
+      window.location.hash = '#register';
+
+    // ...
+    });email - password.html
+}
+
+function Login() {
+  const template = `
+  <h1>entrar </h1>
+  ${Input({
+    class: 'js-email-input',
+    placeholder: 'Email',
+    type: 'email',
+  })}
+  ${Input({
+    class: 'js-password-input',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
+<br>
+<br>
+  ${Button({
+    id: 'LoginAccount',
+    title: 'Entrar',
+    onClick: signInWithEmailAndPassword,
+  })}
+`;
   return template;
 }
 
 
-
-
+export default Login;
 export default Home ;
+
