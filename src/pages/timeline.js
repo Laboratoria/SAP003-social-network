@@ -1,10 +1,10 @@
 const timeline = () => {
-    const templateTimeLine = `
+  const templateTimeLine = `
         <seccion class="faixa-topo"></seccion>
-        <h1 class="nametimeline">Timeline</h1>`
+        <h1 class="nametimeline">Timeline</h1>`;
 
-    return templateTimeLine;
-} 
+  return templateTimeLine;
+};
 
 
 export default timeline;
