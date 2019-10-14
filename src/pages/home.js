@@ -1,7 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-
 function Home() {
   const template= `
   <h2> Faça login na sua conta </h2>
@@ -10,43 +9,31 @@ function Home() {
   ${Input({placeholder: 'Digite sua senha', type: 'password', class: 'js-password-input'})}
   ${Button({id: 'button', title: 'Entrar', onClick: buttonLogin})}
   </form><br>
-  
-  ${Button({id: 'cadastro', title: 'Cadasiashds', onClick: banana })}
-
+  ${Button({id: 'cadastro', title: 'Cadastrar', onClick: goToRegister })}
   `
-    return template;
+  return template;
 };
 export default Home;
 
-function banana () {
+function goToRegister () {
   window.location.hash='register';
 }
 
 function buttonLogin () {
-
-}
-function buttonRegister() {
   const email= document.querySelector('.js-email-input').value;
   const password= document.querySelector('js-password-input').value;
-  
-}
+  // firebase.auth().signInWithEmailAndPassword(email, password)
+// }).catch(function(erro){
+  //   var erroCode = erro.code;
+  //
+  //   if(errorCode === 'auth/user-not-found'){
+  //     alert('Usuário não encontrado')
+  //   } else if(errorCode === 'auth/invalid-email') {
+  //     alert('E-mail inválido')
+  //   } else if (erroCode === 'auth/wrong-password') {
+  //     alert('Senha incorreta')
+  //   }
+//   // });
 
-// function locationHashChanged() {
-//   if(location.hash==='#register.js') {
-//     return registrar()
-//   }
 // }
-// window.onhashchange = locationHashChanged;
-  
-// firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-//   // Handle Errors here.
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-//   // ...
-// });email-password.html
-
-
-
-
-
-//${Button({ id: '🎉', title: 'Botão 🎉' })}
+}

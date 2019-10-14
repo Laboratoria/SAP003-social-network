@@ -1,6 +1,6 @@
 function Input(props) {
   const template = `
-    <input placeholder="${props.placeholder}", type="${props.type}", name="${props.name}"><br>
+    <input placeholder="${props.placeholder}", type="${props.type}", class="${props.class}"><br>
   `;
 
   return template;

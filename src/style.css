@@ -1,3 +1,7 @@
+[class*="col-"] {
+  width: 100%;
+}
+
 input{
 display: block;
 border-radius:4px;
