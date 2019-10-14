@@ -1,14 +1,13 @@
 import Button from '../components/button.js';
 
-
 const location = () => {
   location.hash = '';
 }
 
 const logout = () => {
-  firebase.auth().signOut().then(function () {
+  firebase.auth().signOut().then(() => {
     location.hash = ''
-  }).catch(function (error) {
+  }).catch((error) => {
     // An error happened.
   });
 }
@@ -16,21 +15,26 @@ const logout = () => {
 const newPost = () => {
   const db = firebase.firestore();
   const post = {
-    //id
+    //identificador do usuario no post e id do post
     text: document.querySelector('.add-post').value,
-    day: new Date().toLocaleDateString(),
-    hour: new Date().toTimeString().substring(0, 5)
+    time: new Date().getTime(),
+    hour: new Date().toLocaleString('pt-BR').substring(0, 16)
   }
   db.collection('posts').add(post);
+
 }
+
+const postsTemplate = (data) => {
+  document.querySelector('.posts').innerHTML +=
+    `<p> ${data.text} | ${data.hour}</p>`
+
+};
 
 const showPosts = () => {
   const db = firebase.firestore();
-  db.collection('posts').orderBy('day').orderBy('hour','asc').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-      document.querySelector('.posts').innerHTML +=
-        `<p> ${doc.data().text} |${doc.data().day}| ${doc.data().hour}</p>`
-
+  db.collection('posts').orderBy('time', 'desc').get().then((snapshot) => {
+    snapshot.forEach(doc => {
+      postsTemplate(doc.data());
     });
   });
 
@@ -50,7 +54,7 @@ function Feed() {
 
   return template;
 }
-
+window.onload = showPosts;
 window.onhashchange = showPosts;
 
 
