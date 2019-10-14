@@ -51,7 +51,7 @@ function Feed() {
   return template;
 }
 
-window.onload = showPosts;
+window.onhashchange = showPosts;
 
 
 
