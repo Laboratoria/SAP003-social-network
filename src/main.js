@@ -7,7 +7,7 @@ function pagesChange() {
   document.querySelector('main').innerHTML = Login();
   if (location.hash === '#login') {
     document.querySelector('main').innerHTML = Login();
-    //document.getElementByTagName("body")[0].className = "banana"
+    //document.queryselector(body).className = "banana"
   } else if (location.hash === '#register') {
     document.querySelector('main').innerHTML = Register();
     //document.getElementByTagName("body")[0].className = "peixinho"
