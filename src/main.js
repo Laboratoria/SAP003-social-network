@@ -3,10 +3,9 @@ import Feed from './pages/feed.js';
 import Perfil from './pages/perfil.js';
 import Register from './pages/register.js';
 
-function init() {
+function init(){
   document.querySelector('main').innerHTML = Login();
 }
-
 window.addEventListener('load', init);
 
 function locationHashChanged() {

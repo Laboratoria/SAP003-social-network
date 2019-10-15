@@ -36,7 +36,7 @@ function Login() {
     <form class='content'>
     ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
     ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
-    ${Button({ class:'primary-button banana', title: 'Log In', onClick: AuthEmailPassButton})}
+    ${Button({ class:'primary-button', title: 'Log In', onClick: AuthEmailPassButton})}
     <p>Ou entre com sua conta...</p>
     ${Button({ class: 'google-btn', title: '', onClick: Google})}
     <p>Ainda não tem uma conta?</p>

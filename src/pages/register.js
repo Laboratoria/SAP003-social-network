@@ -17,7 +17,7 @@ function createLogin() {
       }
 
       function comeBack (){
-        window.location.hash = '#feed'
+        window.location.hash = '#login'
       }
 
       function createProfile() {
