@@ -8,8 +8,9 @@ const logout = () => {
 
 const deletePost = (id) => { 
   const db = firebase.firestore();
-  db.collection('posts').doc(id).delete();
-  // document.getElementById(id)
+  db.collection('posts').doc(id).delete().then(()=> {
+ document.getElementById(id).parentElement.parentElement.style.display ='none';
+})
 };
 
 const postTemplate = (doc) => {
@@ -17,7 +18,7 @@ const postTemplate = (doc) => {
     += `
     <div class='posted container-post' data-id=${doc.id}> 
       <p class='posted posted-name'> ${doc.data().name}
-        <button type='button' class='delete-btn' data-id=${doc.id}>X</button>
+        <button type='button' class='delete-btn' id=${doc.id}>X</button>
       </p>
       <p class='posted text'> ${doc.data().text} | ${doc.data().date}
     </div>`;
