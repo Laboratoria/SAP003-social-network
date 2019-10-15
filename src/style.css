@@ -2,16 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
 
+/* Home */
 
-h1 {
+
+.homepage-title {
   font-size: 49px;
   color: whitesmoke;
+  text-align: center;
 }
 
 body {
@@ -19,16 +22,25 @@ body {
   color: whitesmoke;
 }
 
+.login {
+  margin-top: 35px;
+  padding: 100px;
+  margin-left: 50px;
+}
+
 .home {
   display: flex;
-  justify-content: space-around;
   height: 100%;
   width: 100%;
-  margin-top: 80px;
+  justify-items: center;
 }
 
 .logo {
-  width: 338px;
+  display: flex;
+  justify-items: initial;
+  width: 500px;
+  padding-top: 50px;
+  margin-left: 100px;
 }
 
 #email-login {
@@ -49,7 +61,7 @@ body {
 }
 
 .login-form {
-  padding: 30px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,24 +114,184 @@ body {
   box-sizing: border-box;
  }
 
-@media screen and (max-width: 770px) {
+ /* Fim da Home */
 
-  .home{
+ /*Inicio da tela de cadastro*/
+.cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28px;
+} 
+
+.cad-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.cadastre {
+  font-size: 30px;
+  text-align: center;
+}
+
+.cad-logo {
+width: 200px;
+}
+
+#name {
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#mail {
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#born {
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#pass {
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+.btn-send-sign-up {
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin: 15px;
+}
+
+.btn-go-home {
+  cursor: pointer;
+  width: 95px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin: 15px;
+  justify-content: center;
+}
+/*Fim do cadastro*/
+
+/* Início Mural */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6%;
+  background-color: #292828;
+}
+
+.nav-logo {
+  width: 106px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+
+}
+
+.nav-links li a:hover {
+  color: wheat;
+  
+}
+
+.btn-post {
+  cursor: pointer;
+  width: 95px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin-left: 7px;
+  justify-content: center;
+}
+
+#post {
+  font-size: 14px;
+  border-radius: 10px;
+  resize: none;
+  padding: 8px;
+  cursor: text;
+}
+
+#post-form {
+  display: flex;
+  justify-items: center;
+}
+/* Fim Mural */
+
+@media screen and (max-width: 817px) {
+/* Home */
+  .home {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
+  .logo {
+    width: 225px;
+  }
+
+  .login {
+    padding: 0px;
+    margin-top: 35px;
+    margin-left: 50px;
+  }
+/* Fim da Home */
+
 }
 
 @media screen and (max-width: 420px) {
+  /* Home */
   body {
     justify-content: center;
   }
 
-  h1 {
+  .homepage-title {
     text-align: center;
     color: wheat;
+    padding: 0px;
+    font-size: 34px;
   }
 
   .home {
@@ -129,13 +301,8 @@ body {
     width: 100%;
   }
 
-  .homepage-title {
-    font-size: 35px;
-    padding: 8px;
-  }
-
   .logo {
-    width: 70%;
+    width: 66%;
   }
 
   .login {
@@ -180,7 +347,7 @@ body {
     background: #121212;
   }
 
-  .btn-login{
+  .btn-login {
     width: 70px;
     height: 30px;
     border: none;
@@ -208,4 +375,5 @@ body {
     height: 18px;
     box-sizing: border-box;
    }
+/* Fim da Home */
 }

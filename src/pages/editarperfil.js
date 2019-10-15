@@ -34,3 +34,5 @@ export const EditarPerfil = () => {
 // 	}
 // }
 
+//  Bio será colocada em editar perfil
+//  ${Post({ id:'bio', placeholder:'Escreva sobre você', rows:'5', cols:'8'})}

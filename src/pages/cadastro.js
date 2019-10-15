@@ -34,15 +34,18 @@ const cadastrar = (id, event) => {
 
 export const Cadastro = () => {
 	const template = `
-	<h1>Cadastre-se</h1>
-	<form>
+	<main class="cadastro">
+	 <img src = images/Witchy-logo.png class="cad-logo"/>
+	 <h1 class="cadastre">Cadastre-se</h1>
+	 <form class="cad-form">
 		${Input({ id:"name",  placeholder:"Nome", type:"text"})}
 		${Input({ id:'born', type:'date'})}
-		${Post({ id:'bio', placeholder:'Escreva sobre você', rows:'5', cols:'8'})}
 		${Input({ id:"mail", placeholder:"Email", type:"email"})}
 		${Input({ id:"pass", placeholder:"Senha", type:"password"})}
-		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form>
-		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Back Home", onclick: goHome})}`;
+		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}
+	 </form>
+		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Back to Login", onclick: goHome})}
+	</main>`;
 
 	return template;
 }
@@ -50,4 +53,5 @@ export const Cadastro = () => {
 const goHome = () => {
 	window.location.hash = 'home';
 }
+
 
