@@ -94,4 +94,3 @@ function Login() {
 export default Login;
 
 window.signInWithAccount = signInWithAccount;
-
