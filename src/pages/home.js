@@ -47,6 +47,7 @@ function logar() {
 
 export default logar;
 
+
 /* function locationHashChanged() {
   if (location.hash === '#home') {
     document.querySelector('main').innerHTML = logar();
