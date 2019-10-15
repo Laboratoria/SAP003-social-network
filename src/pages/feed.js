@@ -1,6 +1,8 @@
 import Button from '../components/button.js';
 import Post from '../components/post.js';
+
 import PostList from '../components/post-list.js';
+
 
 function SignOut () {
   firebase.auth().signOut().then(function() {
@@ -10,6 +12,7 @@ function SignOut () {
 };
 
 function Posts() {
+
   const dataBase = firebase.firestore();
   const textInput = document.querySelector('.textarea');
   const post = {
@@ -50,10 +53,18 @@ function Feed() {
     // });
   // });
 
+  //dados firebase 
+
+};
+  
+
+function Feed() {
+
   const template = `
     <h1>Feed</h1>
   ${Button({ title: 'Sair', class: 'primary-button', onClick: SignOut})}
     <h2>Post</h2>
+
   ${Post({ class: 'textarea', id: 'post-textarea', placeholder: 'Escreva aqui', type:'text'})}
   ${Button({ title: 'Postar', class: 'primary-button', onClick: Posts})}
   <div id='banana'></div>
@@ -71,3 +82,14 @@ function Feed() {
 // };
 window.app={PostList}
 export default Feed;
+
+  ${Post({ class: 'textarea', placeholder: 'Escreva aqui', type:'text'})}  
+  ${Button({ title: 'Postar', class: 'primary-button', onClick: Posts})}
+  `;
+  
+   
+    return template;
+};
+
+export default Feed;
+
