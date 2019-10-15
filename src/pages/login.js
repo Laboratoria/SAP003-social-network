@@ -4,9 +4,11 @@ import Input from '../components/input.js';
 import Div from '../components/div.js';
 import Card from '../components/card.js';
 
+function changePg() {
+  window.location.href = '#register';
+}
 
-
-function singInwithGoogleMail() {
+function googleSignIn() {
   let provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   firebase.auth().languageCode = 'pt';
@@ -16,7 +18,7 @@ function singInwithGoogleMail() {
     let token = result.credential.accessToken;
     // The signed-in user info.
     let user = result.user;
-    window.location.hash = "#home";
+    window.location.hash = '#feed';
 
     // ...
   }).catch(function (error) {
@@ -31,77 +33,49 @@ function singInwithGoogleMail() {
   });
 }
 
-function createUserWithEmail() {
-  const email = document.querySelector('.js-email-input').value;
-  const password = document.querySelector('.js-password-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((response) => {
-      console.log('resposta', response);
-    })
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-    });
-
+function enviarLogin() {
+  const email = document.querySelector('.email-input').value;
+  const password = document.querySelector('.senha-input').value;
   console.log(email, password);
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+      window.location.href = '#feed';
+      }).catch((error) => {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+  });
 }
-//fncao para o cadastro e retornar à home
-// function backHome() {
-//   window.location.hash = #home;
-// }
 
 function Login() {
-
-  const buttons = Button({
-      id: 'loginUser',
-      title: '<p class="btn-login">Login</p>',
-      onClick: createUserWithEmail, 
-    }) + `<h3>Entre com</h3>` +    
-    // Button({
-    //   id: '🎉',
-    //   title: '<i class="fa fa-envelope"></i>',
-     // onClick: 
-    Button({
-      id: '🎉',
-      title: '<i class="fa fa-google"></i>',
-      onClick: singInwithGoogleMail,
-    }); 
-     
-  const divButtons = Div(
-    {
-      class: 'form-group',
-      content: buttons,
-    },
-  );
-
-  const cardLogin = `
+  const template = `
     ${Input({
-      class: 'js-email-input',
+      class: 'email-input',
       placeholder: 'email',
       type: 'text',
-    })
-    + Input({
-      class: 'js-password-input',
+    })}
+    ${Input({
+      class: 'senha-input',
       placeholder: 'password',
       type: 'password',
-    }) + divButtons}`;
+    })}
+    ${Button({
+      id: 'enviar',
+      title: 'Login',
+      onClick: enviarLogin,
+    })}
+    ${Button({
+      id: 'google',
+      title: '<i class="fab fa-google"></i>',
+      onClick: googleSignIn,
+    })}
+    ${Button({
+      id: 'cadastrar',
+      title: 'Cadastrar',
+      onClick: changePg,
+    })}
+  `;    
 
-  const formContainer = Div({class:'form-container', content: cardLogin});
-  const template = `
-    <header class="top-Banner">
-    <h1>Henrietta</h1>
-    <h3>Bem-vinda(o)</h3>
-    </header>
-    <form>
-      ${Card({
-    children: formContainer,
-  })}
-    <p class="register">Não tem uma conta?<a href="#cadastro">Cadastre-se</a></p>
-    <img src="pages/Telescope.png" alt="telescópio">
-    </form>
-  `;
   return template;
 }
-
 export default Login;
