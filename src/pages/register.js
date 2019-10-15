@@ -6,6 +6,7 @@ import logo from '../components/logo.js';
 const createUser = () => {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
+  const name = document.querySelector('.js-name-input').value;
 
   firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
     const errorCode = error.code;
@@ -14,8 +15,13 @@ const createUser = () => {
       document.querySelector('.erro').textContent = 'A senha é muito fraca.';
     } else {
       document.querySelector('.erro').textContent = errorMessage;
-    }
-  }).then((cred) => {
+    };
+  }
+
+  ).then(cred => {
+    cred.user.updateProfile({
+      displayName:name
+    })
     if (cred.additionalUserInfo.isNewUser) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.querySelector('.erro').textContent = 'Email cadastrado com sucesso! Verifique sua caixa de entrada!';
@@ -40,6 +46,7 @@ const Register = () => {
     <section class="container">
       <form class="container" id="register-form">
       <p class="erro"></p>
+      ${Input({ type: 'text', placeholder: 'Nome', class: 'js-name-input primary-input' })}
         ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
         ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
         ${Button({

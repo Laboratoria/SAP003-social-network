@@ -1,5 +1,6 @@
 import Button from '../components/button.js';
 
+
 const logout = () => {
   firebase.auth().signOut().catch((error) => {
     console.log(error);
@@ -7,10 +8,13 @@ const logout = () => {
 };
 
 const postTemplate = (data) => {
-  document.querySelector('.posts').innerHTML += `<p> ${data.text} | ${data.date}</p>`;
+  document.querySelector('.posts').innerHTML
+    += `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>`;
+
 };
 
 const showPosts = () => {
+
   const db = firebase.firestore();
   db.collection('posts').orderBy('timestamp', 'desc').get()
     .then((snapshot) => {
@@ -25,14 +29,15 @@ const newPost = () => {
   const textArea = document.querySelector('.add-post');
   const db = firebase.firestore();
   const post = {
-    // id post
-    // id usuario (uid)
+
+    name:firebase.auth().currentUser.displayName,
+    user:firebase.auth().currentUser.uid,
     text: textArea.value,
     timestamp: new Date().getTime(),
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
   };
   db.collection('posts').add(post).then(() => {
-    postsSpace.innerHTML = `<p> ${post.text} | ${post.date}</p>
+    postsSpace.innerHTML = `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>
     ${postsSpace.innerHTML}`;
     textArea.value = '';
   });
