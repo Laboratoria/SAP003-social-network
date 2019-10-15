@@ -141,3 +141,36 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
+[debug] [2019-10-14T17:06:28.731Z] Error: write EIO
+    at WriteWrap.afterWrite [as oncomplete] (net.js:788:14)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-15T17:02:47.146Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T17:02:47.148Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-15T17:02:47.149Z] CLI Version:   7.4.0
+[debug] [2019-10-15T17:02:47.149Z] Platform:      linux
+[debug] [2019-10-15T17:02:47.149Z] Node Version:  v10.16.3
+[debug] [2019-10-15T17:02:47.149Z] Time:          Tue Oct 15 2019 14:02:47 GMT-0300 (GMT-03:00)
+[debug] [2019-10-15T17:02:47.149Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T17:02:47.203Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T17:02:47.203Z] > authorizing via signed-in user
+[debug] [2019-10-15T17:02:47.203Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T17:02:47.205Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-15T17:02:47.205Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-15T17:02:47.513Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T17:02:47.561Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
+
+[debug] [2019-10-15T17:02:48.791Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T17:02:48.793Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
+ 
+[debug] [2019-10-15T17:02:50.066Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ubuntu/Área de Trabalho/Laboratória/SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T17:02:50.072Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
+ 
+[debug] [2019-10-15T17:02:50.474Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000

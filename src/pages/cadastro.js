@@ -25,12 +25,17 @@ function Cadastro() {
   const template = `
     <h1> Rede Social</h1>
     <h2> Cadastro</h2>
-  
+    
+    <section>
+    <form>
     ${Input({ class: 'nome-input', placeholder: 'Nome', type: 'text' })}<br>
     ${Input({ class: 'email-input', placeholder: 'E-mail', type: 'text' })}<br>
     ${Input({ class: 'senha-input', placeholder: 'Senha', type: 'password' })}<br>
     ${Button({ id: 'cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
     ${Button({ id: 'voltar', title: 'voltar', onClick: voltarPg })}
+    </form>
+    </section>
+    
 `;
   return template;
 }
