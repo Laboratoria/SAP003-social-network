@@ -1,17 +1,7 @@
 import Input from '../components/input.js';
 import List from '../components/list-menu.js';
 
-const SignOut = () => {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      alert('deslogado!');
-    })
-    .catch((error) => {
-      alert('banana');
-    });
-};
+const signOut = () => firebase.auth().signOut();
 
 const timeline = () => {
   const templateTimeLine = `
@@ -34,9 +24,8 @@ const timeline = () => {
     ${List({
     class: 'out',
     title: 'Sair',
-    onClick: SignOut,
+    onClick: signOut,
   })}
-
       </ul>
     </nav>
     <h1 class="title-timeline">Low Carb Style</h1>
