@@ -4,8 +4,8 @@ import Input from '../components/input.js';
 window.validarLogin = (colecao, usuario) => {
   console.log(colecao)
   for (let i = 0; i < colecao.length; i += 1) {
-    if (usuario.email === colecao[i].email
-      && usuario.password === colecao[i].password) {
+    if (usuario.emailDoCadastro === colecao[i].email
+      && usuario.passwordDoCadastro === colecao[i].password) {
       return true;
     }
   }
@@ -18,14 +18,20 @@ function enviarLogin() {
     passwordDoCadastro: document.querySelector('.js-password-input').value,
   };
 
-  const colecao = JSON.parse(localStorage.getItem('usuárioDoCadastro'));
+  const colecao = JSON.parse(localStorage.getItem('colecaoDeUsuarios'));
+  if (usuario.emailDoCadastro && usuario.passwordDoCadastro) {
 
-  if (window.validarLogin(colecao, usuario)) {
-    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-    window.location.hash = '#home';
+    if (window.validarLogin(colecao, usuario)) {
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+      window.location.hash = '#home';
+    } else {
+      window.alert('E-mail ou senha inválidos');
+    }
+
   } else {
-    window.alert('E-mail ou senha inválidos');
+    window.alert('Preencha e-mail e senha');
   }
+
 }
 
 // const email = document.querySelector('js-email-input').value
