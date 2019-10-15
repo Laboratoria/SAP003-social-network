@@ -9,7 +9,7 @@ function init() {
 }
 
 function onHashChange() {
-  switch (location.hash) {
+  switch (window.location.hash) {
     case '#register':
       main.innerHTML = Register();
       break;

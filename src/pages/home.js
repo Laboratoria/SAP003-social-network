@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-import PostsContainer from '../components/postsContainer.js';
+import { loadFeed } from '../components/postsContainer.js';
 import Post from '../components/post.js';
 
 function logOut() {
@@ -8,28 +8,6 @@ function logOut() {
     window.location.href = '#login';
   }).catch((error) => {
     document.getElementById('error').innerText = `${error.code} ${error.message} - Ocorreu um erro no logout.`;
-  });
-}
-
-function printPosts(post) {
-  const feed = document.querySelector('#feed');
-  const template = window.home.Post({
-    id: post.id,
-    username: post.data().user_name,
-    date: post.data().timestamp.toDate().toLocaleString(),
-    text: post.data().text,
-  });
-  feed.innerHTML += template;
-}
-
-function loadFeed() {
-  const postCollection = firebase.firestore().collection('post');
-  const feed = document.querySelector('#feed');
-
-  feed.innerText = 'Carregando...';
-  postCollection.orderBy('timestamp').get().then((snap) => {
-    feed.innerText = '';
-    snap.forEach(post => window.home.printPosts(post));
   });
 }
 
@@ -50,7 +28,9 @@ function createNewPost() {
 }
 
 function Home() {
-  return `<p class="text">Essa é a home!</p>
+  return `
+  <p class="text">Essa é a home!</p>
+  ${loadFeed()}
   ${Button({
     class: 'primary-button',
     onClick: window.home.logOut,
@@ -70,18 +50,14 @@ function Home() {
     onClick: window.home.createNewPost,
     title: 'Post!',
   })}
-
-  ${PostsContainer({
-    content: '',
-  })}`;
+  `;
 }
 
 window.home = {
   logOut,
   Post,
-  printPosts,
-  createNewPost,
   loadFeed,
+  createNewPost,
 };
 
 export default Home;

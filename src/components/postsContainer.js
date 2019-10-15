@@ -1,13 +1,31 @@
-import Post from './post.js';
+import Post from './post.js'
 
-function PostsContainer(props) {
-  return `<div id="feed" class="feed">${props.content}</div>`;
+function printPosts(post) {
+  const feed = document.querySelector('#feed');
+  const template = window.post.Post({
+    id: post.id,
+    username: post.data().user_name,
+    date: post.data().timestamp.toDate().toLocaleString(),
+    text: post.data().text,
+  });
+  feed.innerHTML += template;
 }
 
-window.postsContainer = {
-  iteratePosts: (arr) => {
-    arr.map(item => Post({ content: item }));
-  },
-};
+function loadFeed() {
+  const postCollection = firebase.firestore().collection('post');
+  const feed = document.querySelector('#feed');
 
-export default PostsContainer;
+  feed.innerText = 'Carregando...';
+  postCollection.orderBy('timestamp').get().then((snap) => {
+    feed.innerText = '';
+    snap.forEach(post => window.post.printPosts(post));
+  });
+}
+
+window.post = {
+  printPosts,
+  loadFeed,
+  Post,
+}
+
+export { loadFeed, printPosts };
