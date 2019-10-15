@@ -1,4 +1,68 @@
 import Button from '../components/button.js';
+import Input from '../components/input.js';
+
+
+function NewPostTemplate() {
+  const template = `
+  ${Input({
+    type: 'text',
+    class: 'text-area',
+    id: 'post-text',
+    placeholder: 'sdjhsjdh',
+  })}
+  ${Button({
+    type: 'button',
+    class: 'btn',
+    id: 'btn-post',
+    onclick: createPost,
+    title: 'postar',
+  })}
+  </form>
+  `;
+  return template;
+}
+
+ 
+function createPost(){
+  const text = document.querySelector('.text-area').value
+  const post = {
+    likes: 0,
+    text,
+    comments: [],
+    user_id: firebase.auth().currentUser.uid,
+  }
+  const postsCollection = firebase.firestore().collection('posts')
+  postsCollection.add(post)
+    .then(() => {
+      console.log('Post criado com sucesso!')
+      loadPosts()
+      postsCollection.get()
+    })
+    .catch((err) => {
+      console.log('erro', err)
+      console.log('Não foi possível criar post.')
+    })
+}
+
+function addPost(post) {
+  const postTemplate = `
+  <li id="${post.id}">
+    ${post.text} Likes:${post.likes}
+  </li>`
+  return postTemplate;
+}
+
+function loadPosts() {
+  const postsCollection = firebase.firestore().collection('posts')
+  postsCollection.get()
+    .then((res) => {
+      const postList = document.querySelector('.post-list')
+      postList.innerHTML = ''
+      res.forEach((post) => {
+        postList.innerHTML += addPost(post.data())
+      })
+  })
+}
 
 
 function logOut() {
@@ -13,6 +77,7 @@ function logOut() {
     })
 }
 
+
 function userInfo() {
   const user = auth.currentUser;
   db.collection('users').doc(user.uid).get().then(doc => {
@@ -23,6 +88,9 @@ function userInfo() {
     document.querySelector('.profile').innerHTML = username;
   });  
 }
+
+
+
 /*
 //função para eventlistener do botão Publicar
 function publishText() {
@@ -36,14 +104,20 @@ function publishText() {
   });
 }
 */
+
+
 function Feed() {
   const template = `
   <div class='profile'></div>
   ${Button({ id: 'btn-log-out', onclick:logOut, title: 'Sair'})}
+  ${NewPostTemplate()}
+  <ul class='post-list'></ul>
   `;
-  userInfo()
+userInfo()
+loadPosts()
   console.log(firebase.auth().currentUser)
   return template;
 }
+window.loadPosts = loadPosts;
 
 export default Feed;
