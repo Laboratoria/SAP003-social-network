@@ -19,12 +19,27 @@ function createUserWithEmailAndPassword() {
 
 function Register() {
   const template = `
-      <h1>Cadastro</h1>
-      ${Input({ class: 'name', placeholder: 'Nome', type: 'Nome' })} <br>
-      ${Input({ class: 'js-email-input', placeholder: 'Email', type: 'email' })} <br>
-      ${Input({ class: 'js-password-input', placeholder: 'Senha', type: 'password' })} <br>
-    <br>
-      ${Button({ id: 'createAccount', title: 'Cadastre-se', onClick: createUserWithEmailAndPassword })}
+    <h1>Cadastro</h1>
+    ${Input({ 
+      class: 'name', 
+      placeholder: 'Nome', 
+      type: 'Nome'
+    })} 
+    ${Input({ 
+      class: 'js-email-input', 
+      placeholder: 'Email',
+      type: 'email' 
+    })}
+    ${Input({ 
+      class: 'js-password-input', 
+      placeholder: 'Senha', 
+      type: 'password' 
+    })}
+    ${Button({ 
+      id: 'createAccount', 
+      title: 'Cadastre-se', 
+      onClick: createUserWithEmailAndPassword 
+    })}
   `;
   return template;
 }

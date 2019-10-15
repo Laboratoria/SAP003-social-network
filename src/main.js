@@ -1,4 +1,3 @@
-
 import  Home from './pages/home.js';
 import Register from './pages/register.js';
 import { Database, Post } from './pages/database.js';
