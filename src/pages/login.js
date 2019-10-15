@@ -1,6 +1,6 @@
 // import locationHasChange from '../main.js';
-import Button from "../components/button.js";
-import Input from "../components/input.js";
+import Button from '../components/button.js';
+import Input from '../components/input.js';
 
 function login() {
   const email = document.querySelector('.js-email-input').value;
@@ -8,39 +8,39 @@ function login() {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then(function(response) {
+    .then((response) => {
       if (response) {
         location.hash = '#feed';
       }
     })
 
-    .catch(function(error) {
+    .catch((error) => {
       // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       alert(errorCode, errorMessage);
     });
 }
 
 function google() {
-  var provider = new firebase.auth.GoogleAuthProvider();
+  const provider = new firebase.auth.GoogleAuthProvider();
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function(result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
-        if (result) {
-          location.hash = '#feed';
-        }
-      })
-    .catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
+    .then((result) => {
+      const token = result.credential.accessToken;
+      const user = result.user;
+      if (result) {
+        location.hash = '#feed';
+      }
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.email;
+      const credential = error.credential;
     });
-  }
+}
 
 function TemplateLogin() {
   const template = `
@@ -49,16 +49,16 @@ function TemplateLogin() {
     <h4 class="text-main">Bem vinda, Moviment!</h4>
     <form class="form-login">
       ${Input({
-        class: "js-email-input",
-        placeholder: "e-mail",
-        type: "email"
-      })}
+    class: 'js-email-input',
+    placeholder: 'e-mail',
+    type: 'email',
+  })}
       ${Input({
-        class: "js-password-input",
-        placeholder: "password",
-        type: "password"
-      })}
-      ${Button({ id: "bt-login", title: "log in", call: login })}
+    class: 'js-password-input',
+    placeholder: 'password',
+    type: 'password',
+  })}
+      ${Button({ id: 'bt-login', title: 'log in', call: login })}
     </form>
     <p class="text-main">Pode acessar também com...</p>
     ${Button({ id: 'bt-google', title: 'Google', call: google })}
