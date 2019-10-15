@@ -22,7 +22,6 @@ const cadastrar = (id, event) => {
 	const born = document.getElementById('born').value;
 	const bio = document.getElementById('bio').value;
 
-//ESTOU AQUI
 	const user = {
 		name: name,
 		email: email,
@@ -51,5 +50,8 @@ export const Cadastro = () => {
 	return template;
 }
 
+const goHome = () => {
+	window.location.hash = 'home';
+}
 
 
