@@ -106,6 +106,29 @@ body {
   text-align: center;
 }
 
+.posts{
+  width: 100%;
+}
+
+.container-post{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* padding: 5px; */
+  width: 100%;
+  margin: 5px;
+  margin-top: 20px;
+}
+
+.posted{
+  border: 1px solid black;
+  width: 100%;
+  /* margin: 10px; */
+}
+
+.posted-name{
+  background-color: pink;
+}
 
 @media (min-width: 900px){
   .main-container{
