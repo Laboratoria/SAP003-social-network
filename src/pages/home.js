@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -9,30 +8,30 @@ function mudarPg() {
 function enviarLogin() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
-  console.log(email, password);
-  firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
+
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.href = '#feed';
-    })
+  })
+
     .catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
-      // let errorMessage = error.message;
-      console.log(errorCode);
+      // const errorMessage = error.message;
+      alert(errorCode);
     // ...
     });
 }
 
-
-
 function googleSignIn(){
+
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  firebase.auth().signInWithPopup(provider).then(function (result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
     // The signed-in user info.
     const user = result.user;
     window.location.href = '#feed';
-  }).catch(function(error) {
+  }).catch(function (error) {
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -55,6 +54,7 @@ function Login() {
   <section>
   <section class="login-form">
   <form >
+
   ${Input({
     class: 'email-input',
     placeholder: ' E-mail',
@@ -87,8 +87,8 @@ function Login() {
   </form>
 </main>  
   ${Button({
-    id:'google',
-    title:'<i id = "google" class="fab fa-google-plus-square"></i>',
+    id: 'google',
+    title: '<i id = "google" class="fab fa-google-plus-square"></i>',
     onClick: googleSignIn,
   })}
 `;
@@ -106,3 +106,4 @@ export default Login;
 // }); 
 
 //CTRL K C - deixar parte selecionada comentada
+

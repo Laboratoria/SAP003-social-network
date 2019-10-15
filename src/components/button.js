@@ -1,5 +1,6 @@
 function Button(props) {
   const template = `
+
     <button 
     class="${props.class}" 
     id = "${props.id}"

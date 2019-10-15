@@ -1,3 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 
 .main{
   display: flex;
@@ -19,27 +24,6 @@
   align-items: center;
 }
 
-.primary-button {
-  display: flex;
-  background-color: #ffe521;
-  
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-html {
-  height: 100%;
-}
-
-
-@media (min-width: 180px){
-
-.main{
-  display: flex;
-  flex-direction: column;
-}
 
 body{
   background: no-repeat;
