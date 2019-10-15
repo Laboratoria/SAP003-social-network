@@ -1,25 +1,34 @@
 import Button from '../components/button.js';
 
+// let db = firebase.firestore();
 
 const logout = () => {
   firebase.auth().signOut().catch((error) => {
-    console.log(error);
+    // console.log(error);
   });
 };
 
-const postTemplate = (data) => {
-  document.querySelector('.posts').innerHTML
-    += `<p> ${data.name}<br>| ${data.text} | ${data.date}</p>`;
+const deletePost = (id) => {
+  // console.log('deletou', id);  
+  const db = firebase.firestore();
+  db.collection('posts').doc(id).delete();
+};
 
+const postTemplate = (doc) => {
+  document.querySelector('.posts').innerHTML
+    += `<p data-id=${doc.id}> ${doc.data().name}<br>| ${doc.data().text} | ${doc.data().date}
+    <button type='button' class='delete-btn' id=${doc.id}>X</button>
+    </p>`;
+  document.querySelectorAll('.delete-btn').forEach
+  (cls => cls.addEventListener('click', e => deletePost(e.target.id)));
 };
 
 const showPosts = () => {
-
   const db = firebase.firestore();
   db.collection('posts').orderBy('timestamp', 'desc').get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-        postTemplate(doc.data());
+        postTemplate(doc);
       });
     });
 };
@@ -30,13 +39,14 @@ const newPost = () => {
   const db = firebase.firestore();
   const post = {
 
-    name:firebase.auth().currentUser.displayName,
-    user:firebase.auth().currentUser.uid,
+    name: firebase.auth().currentUser.displayName,
+    user: firebase.auth().currentUser.uid,
     text: textArea.value,
     timestamp: new Date().getTime(),
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
   };
   db.collection('posts').add(post).then(() => {
+    // app.showPosts();
     postsSpace.innerHTML = `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>
     ${postsSpace.innerHTML}`;
     textArea.value = '';
@@ -64,5 +74,7 @@ function Feed() {
 
 window.onhashchange = showPosts;
 window.onload = showPosts;
+
+window.app = { postTemplate };
 
 export default Feed;

@@ -15,6 +15,12 @@ const authCheck = () => {
   });
 };
 
+// const teste = () => {
+//   firebase.firestore().collection('posts').get().then((snap) => {
+//     snap.docs.forEach(doc => console.log(doc.id));
+//   });
+// };
+
 const routes = () => {
   if (location.hash === '#register') {
     main.innerHTML = Register();
@@ -24,6 +30,8 @@ const routes = () => {
     authCheck();
   }
 };
+
+// window.onload = teste;
 
 window.addEventListener('load', routes);
 window.addEventListener('hashchange', routes);

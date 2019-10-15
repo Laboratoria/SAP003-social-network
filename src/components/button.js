@@ -4,13 +4,12 @@ const Button = (props) => {
     ${props.title}</button>`;
 
   return template;
-}
+};
 
 window.button = {
   handleClick: (event, callBack) => {
     event.preventDefault();
     callBack();
-
   },
 };
 
