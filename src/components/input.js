@@ -1,10 +1,11 @@
 function Input(props) {
   const template = `
-      <textarea
-        class="${props.class} message-area"
-        placeholder="${props.placeholder}"
-        type="${props.type}" ></textarea>
-`;
+    <input
+      class="${props.class} message-area"
+      placeholder="${props.placeholder}"
+      type="${props.type}" >
+    </input>
+  `;
 
   return template;
 }

@@ -1,5 +1,4 @@
-
-import { Login, Home } from './pages/home.js';
+import Home  from './pages/home.js';
 import Register from './pages/register.js';
 import { Database, Post } from './pages/database.js';
 
@@ -7,11 +6,8 @@ function pageRoute() {
   const pageName = (window.location.hash) ? window.location.hash : '#home';
   switch (pageName) {
     case '#home':
-      document.querySelector('main').innerHTML = Login();
+      document.querySelector('main').innerHTML = Home();
       break;
-    // case '#home':
-    //   document.querySelector('main').innerHTML = Home();
-    //   break;
     case '#register':
       document.querySelector('main').innerHTML = Register();
       break;
