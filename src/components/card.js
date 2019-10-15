@@ -1,4 +1,3 @@
- 
 function Card(props) {
   return `
     <div class="card">
