@@ -4,24 +4,22 @@ import Feed from './pages/feed.js';
 import isAuthenticated from './auth.js';
 
 window.addEventListener('load', locationHashChanged);
-window.addEventListener("hashchange", locationHashChanged, false);
+window.addEventListener('hashchange', locationHashChanged, false);
 
-function locationHashChanged(){
- if (isAuthenticated()) {
-  if (location.hash === '' ||
-      location.hash === '#login'||
-      location.hash ==='#feed') {
-     document.querySelector('main').innerHTML = Feed();
-   }
- }
- else {
-   if(location.hash ==='#signup'){
-     document.querySelector('main').innerHTML = Signup();
-   }
-   else {
-     document.querySelector('main').innerHTML = Login();
-   }
- }
+function locationHashChanged() {
+  if (isAuthenticated()) {
+    if (location.hash === '' ||
+      location.hash === '#login' ||
+      location.hash === '#feed') {
+      document.querySelector('main').innerHTML = Feed();
+    }
+  } else {
+    if (location.hash === '#signup') {
+      document.querySelector('main').innerHTML = Signup();
+    } else {
+      document.querySelector('main').innerHTML = Login();
+    };
+  }
 }
 
 //#login página de login

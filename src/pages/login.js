@@ -8,11 +8,13 @@ function loginRegisteredUser() {
   auth.signInWithEmailAndPassword(email, password)
     .then((cred) => {
       localStorage.setItem('user', JSON.stringify(cred.user));
+      console.log(cred.user);
       auth.onAuthStateChanged(user => {
         if (user) {
           window.location = '#feed';
           //window.user = user;
         }
+        console.log(user);
       });
     }).catch(() => {
       const errorMessageField = document.getElementById('errorMessage');

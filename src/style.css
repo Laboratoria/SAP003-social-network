@@ -116,6 +116,35 @@ body {
   padding: 1% 2% 2% 2%;
 }
 
+/*POST-AREA*/
+
+.post-area{
+  background:#FCFCFC;
+  padding: 1% 2% 2% 2%;
+}
+
+.input-area {
+  background: cadetblue;
+}
+
+.print-post{
+  background: rebeccapurple;
+  padding: 5% 5% 5% 5%;
+}
+
+.post-list{
+  background: rosybrown;
+  list-style-type: none;
+}
+
+.interaction-area{
+  background: sienna;
+}
+
+.coments{
+  background: orange;
+}
+
 /*BREAKPOINTS*/
 
 @media only screen and (min-width: 576px){

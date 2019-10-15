@@ -3,3 +3,5 @@ function isAuthenticated() {
 }
 
 export default isAuthenticated;
+
+//Não precisa mais deste documento

@@ -2,17 +2,16 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function newUser() {
-
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   const name = document.querySelector('.name-input').value;
 
   auth.createUserWithEmailAndPassword(email, password)
     .then(() => {
-      auth.onAuthStateChanged(user => {
+      auth.onAuthStateChanged((user) => {
         if (user) {
           user.updateProfile({
-            displayName: name
+            displayName: name,
           });
           window.location = '#login';
           return db.collection('users').doc(user.uid).set({
