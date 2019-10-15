@@ -81,7 +81,7 @@ body {
   background: #AA4528;
 }
 
-.btn-google {
+.btn-google height: ;{
   cursor:pointer;
   font-family: 'Roboto', sans-serif;
   height: 40px;
@@ -103,24 +103,24 @@ body {
  }
 
 /*Inicio da tela de cadastro*/
- .cadastro{
+ .cadastro {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 200px;
 }
 
-.tela{
+.tela {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.titulo{
+.titulo {
   padding: 10px;
 }
 
-#name{
+#name {
   border-radius: 5px;
   outline: none;
   padding: 2px;
@@ -129,7 +129,7 @@ body {
   margin: 3px;
 }
 
-#mail{
+#mail {
   border-radius: 5px;
   outline: none;
   padding: 2px;
@@ -138,7 +138,7 @@ body {
   margin: 3px;
 }
 
-#pass{
+#pass {
   border-radius: 5px;
   outline: none;
   padding: 2px;
@@ -147,7 +147,7 @@ body {
   margin: 3px;
 }
 
-.btn-send-sign-up{
+.btn-send-sign-up {
   cursor: pointer;
   width: 70px;
   height: 30px;
@@ -158,6 +158,13 @@ body {
   margin: 15px;
 }
 /*Fim do cadastro*/
+
+/*Inicio do editar perfil*/
+
+
+
+/*Fim do editar perfil*/
+
 
 @media screen and (max-width: 770px) {
 
