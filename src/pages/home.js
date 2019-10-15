@@ -11,40 +11,43 @@ function logOut() {
   });
 }
 
-// function storePostsLocally() {
-//   if (!localStorage.getItem('postsList')) {
-//     const postsList = [];
-//     localStorage.setItem('postsList', JSON.stringify(postsList));
-//   }
-//   const postsList = JSON.parse(localStorage.postsList);
-//   return postsList;
-// }
-
-// function printStoredPosts() {
-//   const list = window.home.storePostsLocally();
-//   localStorage.setItem('postsList', JSON.stringify(list));
-//   return list.map(post => `<li>${post}</li>`);
-// }
-
-// function addNewPost() {
-//   const list = window.home.storePostsLocally();
-//   const element = document.getElementById('feed');
-//   const content = document.getElementById('postText');
-//   list.push(content);
-//   const str = `<li>${content}</li>`;
-//   element.prepend(str);
-// }
-
-function printPost() {
-  const content = document.querySelector('#postText');
-  const newPost = window.home.Post({ content: content.value });
-  const toHTML = new DOMParser().parseFromString(newPost, 'text/html');
+function printPosts() {
   const feed = document.querySelector('#feed');
-  feed.prepend(toHTML.documentElement);
+  const posts = firebase.firestore().collections('post');
+
+  posts.get().then((postsList) => {
+    postsList.forEach((post) => {
+      const allPosts = window.home.Post({
+        id: post.id,
+        username: post.user_id,
+        date: post.timestamp,
+        text: post.text,
+      });
+      feed.innerHTML = allPosts;
+    });
+  });
+}
+
+function createNewPost() {
+
+  const content = document.querySelector('#postText');
+  const user = firebase.auth().currentUser;
+  const post = {
+    text: content.value,
+    likes: 0,
+    comments: [],
+    user_id: user.uid,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+  };
+  firebase.firestore().collection('post').add(post)
+  // .then(() => {
+  //   content.value = '';
+  //   printPosts();
+  // });
 }
 
 function Home() {
-  return `<p class="text">Essa é a home!<p>
+  return `<p class="text">Essa é a home!</p>
   ${Button({
     class: 'primary-button',
     onClick: window.home.logOut,
@@ -61,7 +64,7 @@ function Home() {
   
   ${Button({
     class: 'primary-button',
-    onClick: window.home.printPost,
+    onClick: window.home.createNewPost,
     title: 'Post!',
   })}
 
@@ -72,11 +75,9 @@ function Home() {
 
 window.home = {
   logOut,
-  printPost,
+  printPosts,
   Post,
-  // storePostsLocally,
-  // printStoredPosts,
-  // addNewPost,
+  createNewPost,
 };
 
 export default Home;
