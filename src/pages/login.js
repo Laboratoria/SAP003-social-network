@@ -43,6 +43,7 @@ function googleLogin() {
   firebase.auth().signInWithPopup(provider).then(function (result) {
     let token = result.credential.accessToken;
     let user = result.user;
+    window.location.hash = '#feed';
   }).catch(function (error) {
     let errorCode = error.code;
     let errorMessage = error.message;
@@ -52,5 +53,4 @@ function googleLogin() {
 
 };
 
-export default Login;
-
+export default Login
