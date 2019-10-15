@@ -19,15 +19,18 @@ function register(){
     window.location.hash='#home';
   }
   function buttonRegister() {
-    const email= document.querySelector('.js-email-input').value;
-    const password= document.querySelector('.js-password-input').value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(firebaseUser) {
-    window.location.hash='#feed'
-
-    }).catch(function(user) {
+    const email = document.querySelector('.js-email-input').value;
+    const password = document.querySelector('.js-password-input').value;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(firebaseUser) {
+        window.location.hash = '#feed'
+    })
+    .catch(function(user) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      console.log(errorMessage)
+      // ...
     });
-  }
+}
   export default register;
