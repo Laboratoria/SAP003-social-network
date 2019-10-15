@@ -9,6 +9,7 @@
 }
 
 /* Home */
+
 .homepage-title {
   font-size: 49px;
   color: whitesmoke;
@@ -115,21 +116,27 @@ body {
  /* Fim da Home */
 
  /*Inicio da tela de cadastro*/
- .cadastro {
+.cadastro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
-}
+  margin-top: 28px;
+} 
 
-.tela {
+.cad-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 46px;
 }
 
-.titulo {
-  padding: 10px;
+.cadastre {
+  font-size: 30px;
+  text-align: center;
+}
+
+.cad-logo {
+width: 200px;
 }
 
 #name {
@@ -142,6 +149,15 @@ body {
 }
 
 #mail {
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#born {
   border-radius: 5px;
   outline: none;
   padding: 2px;
@@ -169,7 +185,79 @@ body {
   background: #AA4528;
   margin: 15px;
 }
+
+.btn-go-home {
+  cursor: pointer;
+  width: 95px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin: 15px;
+  justify-content: center;
+}
 /*Fim do cadastro*/
+
+/* Início Mural */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6%;
+  background-color: #292828;
+}
+
+.nav-logo {
+  width: 106px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+
+}
+
+.nav-links li a:hover {
+  color: wheat;
+  
+}
+
+.btn-post {
+  cursor: pointer;
+  width: 95px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin-left: 7px;
+  justify-content: center;
+}
+
+#post {
+  font-size: 14px;
+  border-radius: 10px;
+  resize: none;
+  padding: 8px;
+  cursor: text;
+}
+
+#post-form {
+  display: flex;
+  justify-items: center;
+}
+/* Fim Mural */
 
 @media screen and (max-width: 817px) {
 /* Home */
@@ -189,7 +277,10 @@ body {
     margin-left: 50px;
   }
 /* Fim da Home */
+
 }
+
+
 
 @media screen and (max-width: 420px) {
   /* Home */
@@ -266,7 +357,7 @@ body {
     background: #AA4528;
   }
 
-  .btn-google {
+  .btn-google{
     font-family: 'Roboto', sans-serif;
     height: 40px;
     border-width: 0;

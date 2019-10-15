@@ -60,8 +60,8 @@ export function Home() {
 	   ${Button({ class:'btn-login', id:'login', title: 'Login', onclick: login})} <br>
 	  </form>
 	  <div class="buttons">
-	   ${Button({ class:'btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})} <br>
-	   ${Button({ class:'btn-google' , id:'google-login', title: '<img src="https://img.icons8.com/ios-glyphs/18/000000/google-logo.png" class="google-logo"> SIGN IN WITH GOOGLE', type:'submit', onclick: loginGoogle})}
+	   ${Button({ class:'btn-google' , id:'google-login', title: '<img src="https://img.icons8.com/ios-glyphs/18/000000/google-logo.png" class="google-logo"> SIGN IN WITH GOOGLE', type:'submit', onclick: loginGoogle})} <br>
+	   ${Button({ class:'btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})} 
 	  </div>
 	  </section>
 	</container>`;
