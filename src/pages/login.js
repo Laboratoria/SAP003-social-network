@@ -2,7 +2,11 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 import Card from '../components/card.js';
 
-function botaoFeliz() {
+function changePg() {
+  window.location.href = '#register';
+}
+
+function googleSignIn() {
   let provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   firebase.auth().languageCode = 'pt';
@@ -26,58 +30,48 @@ let credential = error.credential;
 }
 
 function enviarLogin() {
-  const email = document.querySelector('.js-email-input').value;
-  const password = document.querySelector('.js-password-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-.then((response) => {
-  console.log('resposta', response)
-})
-.catch(function(error) {
+  const email = document.querySelector('.email-input').value;
+  const password = document.querySelector('.senha-input').value;
+  console.log(email, password);
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+      window.location.href = '#feed';
+      })
+.catch((error) => {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-});
-
-
-
-  console.log(email, password);
+  });
 }
 
 function Login() {
-  const quadradoVerde = `
+  const template = `
     ${Input({
-      class: 'js-email-input',
+      class: 'email-input',
       placeholder: 'email',
       type: 'text',
     })}
-            ${Input({
-      class: 'js-password-input bordinha-redonda',
+    ${Input({
+      class: 'senha-input',
       placeholder: 'password',
       type: 'password',
     })}
-            ${Button({
-      id: '🎉',
-      title: 'Enviar',
+    ${Button({
+      id: 'enviar',
+      title: 'Login',
       onClick: enviarLogin,
     })}
-            ${Button({
-      id: '🎉',
-      title: '<i class="fab fa-google">GOOGLE</i> 🎉',
-      onClick: botaoFeliz,
+    ${Button({
+      id: 'google',
+      title: '<i class="fab fa-google"></i>',
+      onClick: googleSignIn,
+    })}
+    ${Button({
+      id: 'cadastrar',
+      title: 'Cadastrar',
+      onClick: changePg,
     })}
   `;    
-
-  const template = `
-    <h1>Login</h1>
-    <form>
-      ${Card({
-        children: quadradoVerde,
-      })}
-    </form>
-    <p>Esse é um exemplo 🍌</p>
-  `;
-
   return template;
 }
 
