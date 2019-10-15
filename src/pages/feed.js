@@ -79,6 +79,7 @@ function logOut() {
 
 
 function userInfo() {
+  console.log("oi", firebase.auth().currentUser);
   const user = auth.currentUser;
   db.collection('users').doc(user.uid).get().then(doc => {
     const username = `
@@ -108,14 +109,20 @@ function publishText() {
 
 function Feed() {
   const template = `
-  <div class='profile'></div>
-  ${Button({ id: 'btn-log-out', onclick:logOut, title: 'Sair'})}
-  ${NewPostTemplate()}
-  <ul class='post-list'></ul>
+    ${Button({
+      type: 'button',
+      class: 'btn',
+      id: 'btn-log-out', 
+      onclick:logOut, 
+      title: 'Sair'
+    })}
+    <div class='profile'></div>
+      ${NewPostTemplate()}
+      <ul class='post-list'></ul>
   `;
-userInfo()
-loadPosts()
-  console.log(firebase.auth().currentUser)
+  userInfo();
+  loadPosts();
+  console.log(firebase.auth().currentUser.email);
   return template;
 }
 window.loadPosts = loadPosts;
