@@ -1092,3 +1092,57 @@
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
+[debug] [2019-10-14T19:38:05.544Z] ----------------------------------------------------------------------
+[debug] [2019-10-14T19:38:05.547Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-14T19:38:05.547Z] CLI Version:   7.4.0
+[debug] [2019-10-14T19:38:05.547Z] Platform:      linux
+[debug] [2019-10-14T19:38:05.547Z] Node Version:  v8.10.0
+[debug] [2019-10-14T19:38:05.548Z] Time:          Mon Oct 14 2019 16:38:05 GMT-0300 (-03)
+[debug] [2019-10-14T19:38:05.548Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-14T19:38:05.614Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-14T19:38:05.615Z] > authorizing via signed-in user
+[debug] [2019-10-14T19:38:05.615Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-14T19:38:05.618Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-14T19:38:05.618Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-14T19:38:06.098Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-14T19:38:06.138Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-14T19:38:07.318Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-14T19:38:07.322Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-14T19:38:07.831Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-14T19:38:07.837Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-14T19:38:08.409Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-14T19:55:55.482Z] ----------------------------------------------------------------------
+[debug] [2019-10-14T19:55:55.486Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-14T19:55:55.486Z] CLI Version:   7.4.0
+[debug] [2019-10-14T19:55:55.486Z] Platform:      linux
+[debug] [2019-10-14T19:55:55.486Z] Node Version:  v8.10.0
+[debug] [2019-10-14T19:55:55.486Z] Time:          Mon Oct 14 2019 16:55:55 GMT-0300 (-03)
+[debug] [2019-10-14T19:55:55.486Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-14T19:55:55.513Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-14T19:55:55.513Z] > authorizing via signed-in user
+[debug] [2019-10-14T19:55:55.513Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-14T19:55:55.516Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-14T19:55:56.778Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-14T19:55:56.781Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-14T19:55:58.121Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-14T19:55:58.131Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-14T19:55:59.348Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
