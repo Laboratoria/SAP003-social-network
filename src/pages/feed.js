@@ -1,14 +1,8 @@
 import Button from '../components/button.js';
 
-const location = () => {
-  location.hash = '';
-};
-
 
 const logout = () => {
-  firebase.auth().signOut().then(() => {
-    location.hash = '';
-  }).catch((error) => {
+  firebase.auth().signOut().catch((error) => {
     console.log(error);
   });
 };
@@ -16,6 +10,7 @@ const logout = () => {
 const postTemplate = (data) => {
   document.querySelector('.posts').innerHTML
     += `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>`;
+
 };
 
 const showPosts = () => {
@@ -31,17 +26,20 @@ const showPosts = () => {
 
 const newPost = () => {
   const postsSpace = document.querySelector('.posts');
+  const textArea = document.querySelector('.add-post');
   const db = firebase.firestore();
   const post = {
+
     name:firebase.auth().currentUser.displayName,
     user:firebase.auth().currentUser.uid,
-    text: document.querySelector('.add-post').value,
+    text: textArea.value,
     timestamp: new Date().getTime(),
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
   };
   db.collection('posts').add(post).then(() => {
     postsSpace.innerHTML = `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>
     ${postsSpace.innerHTML}`;
+    textArea.value = '';
   });
 };
 
@@ -68,4 +66,3 @@ window.onhashchange = showPosts;
 window.onload = showPosts;
 
 export default Feed;
-
