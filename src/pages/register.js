@@ -3,10 +3,10 @@ import Input from '../components/input.js';
 
 function register(){
     const template = `
-    ${Button({id:'voltar', title: 'Voltar', onClick: goToLogin})}    
-    
+    ${Button({id:'voltar', title: 'Voltar', onClick: goToLogin})}
+
     <h2> Crie a sua conta </h2>
-  <form> 
+  <form>
        ${Input({ placeholder: 'E-mail', type: 'email', class: 'js-email-input'})}
        ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
        ${Button({ id: 'button', title: 'Cadastrar', onClick: buttonRegister})}
@@ -14,9 +14,9 @@ function register(){
        `;
       return template;
   }
-  
+
   function goToLogin() {
-    window.location.hash='home';
+    window.location.hash='#home';
   }
   function buttonRegister() {
     const email = document.querySelector('.js-email-input').value;
@@ -32,10 +32,5 @@ function register(){
       console.log(errorMessage)
       // ...
     });
-    
-    
-  }
-  
- 
-  
+}
   export default register;
