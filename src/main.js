@@ -1,16 +1,29 @@
 import Register from './pages/register.js';
-import Login from "./pages/login.js"
-import Feed from "./pages/feed.js"
+import Login from './pages/login.js';
+import Feed from './pages/feed.js';
+
+const main = document.querySelector('main');
+
+const authCheck = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      location.hash = '#feed';
+      main.innerHTML = Feed();
+    } else {
+      location.hash = '';
+    }
+  });
+};
 
 const routes = () => {
   if (location.hash === '#register') {
-    document.querySelector('main').innerHTML = Register();
+    main.innerHTML = Register();
   } else if (location.hash === '') {
-    document.querySelector('main').innerHTML = Login();
+    main.innerHTML = Login();
   } else if (location.hash === '#feed') {
-    document.querySelector('main').innerHTML = Feed();
+    authCheck();
   }
-}
+};
 
 window.addEventListener('load', routes);
 window.addEventListener('hashchange', routes);

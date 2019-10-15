@@ -1,14 +1,7 @@
 import Button from '../components/button.js';
 
-
-const location = () => {
-  location.hash = '';
-};
-
 const logout = () => {
-  firebase.auth().signOut().then(() => {
-    location.hash = '';
-  }).catch((error) => {
+  firebase.auth().signOut().catch((error) => {
     console.log(error);
   });
 };
@@ -32,7 +25,8 @@ const newPost = () => {
   const textArea = document.querySelector('.add-post');
   const db = firebase.firestore();
   const post = {
-    // id
+    // id post
+    // id usuario (uid)
     text: textArea.value,
     timestamp: new Date().getTime(),
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
