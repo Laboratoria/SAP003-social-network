@@ -1,6 +1,6 @@
+/*BASIC STYLE*/
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
 
 *{
   margin: 0;
@@ -19,6 +19,7 @@ body{
   color: whitesmoke;
 }
 
+/*MAIN HOME*/
 .home{
   display: flex;
   justify-content: space-around;
@@ -137,7 +138,7 @@ body{
 
   .login{
     padding: 20px;
-    display: flex,
+    display: flex;
     align-items: center;
   }
 
@@ -177,6 +178,18 @@ body{
     background: #121212;
   }
 
+  .sign{
+    align-items: center;
+  } */
+}
+
+/*MAIN SIGN UP*/
+
+/*HEADER MURA E EDITAR PÁGINA*/
+
+/*MAIN MURAL*/
+
+/*MAIN EDITAR PÁGINA*/
   .btn-login{
     width: 70px;
     height: 30px;
