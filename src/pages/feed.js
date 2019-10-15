@@ -84,54 +84,38 @@ function logOut() {
   auth
     .signOut()
     .then(() => {
-      localStorage.removeItem('user');
       console.log('adeus');
-      auth.onAuthStateChanged(() => {
-        window.location = '#login';
-      });
+      window.location = '#login';
     });
 }
 
-// function userInfo() {
-//   const user = auth.currentUser;
-//   db.collection('users').doc(user.uid).get().then((doc) => {
-//     const username = `
-//     <p>${user.email}</p>
-//     <h4>${doc.data().name}</h4> 
-//     `;
-//     document.querySelector('.profile').innerHTML = username;
-//   });
-// }
-
-/*
-//função para eventlistener do botão Publicar
-function publishText() {
-  console.log('publicou');
-  const userText = document.getElementById('user-publication').value;
-  db.collection('publi').add({
-    text: userText,
-    likes: 0,
-    comments: [],
-    user-id: current user displayName
-  });
+function userInfo() {
+  console.log("oi", firebase.auth().currentUser);
+  const user = auth.currentUser;
+  db.collection('users').doc(user.uid).get().then(doc => {
+    const username = `
+    <h4>${doc.data().name}</h4>
+    <p>${user.email}</p>
+    `;
+    document.querySelector('.profile').innerHTML = username;
+  });  
 }
-*/
 
 function Feed() {
   const template = `
-  <div class='profile'></div>
-  ${Button({
-    class: 'btn',
-    id: 'btn-log-out',
-    onclick: logOut,
-    title: 'Sair',
-  })}
-  ${NewPostTemplate()}
-  <ul class='post-list'></ul>
+    ${Button({
+      type: 'button',
+      class: 'btn',
+      id: 'btn-log-out', 
+      onclick:logOut, 
+      title: 'Sair'
+    })}
+    <div class='profile'></div>
+      ${NewPostTemplate()}
+      <ul class='post-list'></ul>
   `;
-  // userInfo();
+  userInfo();
   loadPosts();
-  console.log(firebase.auth().currentUser);
   return template;
 }
 

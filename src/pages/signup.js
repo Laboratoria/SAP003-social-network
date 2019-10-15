@@ -7,18 +7,21 @@ function newUser() {
   const name = document.querySelector('.name-input').value;
 
   auth.createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      auth.onAuthStateChanged((user) => {
-        if (user) {
-          user.updateProfile({
-            displayName: name,
+    .then((resp) => {
+        if (resp.user) {
+          resp.user.updateProfile({
+            displayName: name
+          })
+          .then(() => {
+            db.collection('users').doc(resp.user.uid).set({
+              name: name
+            })
+            .then(() => {
+              window.location = '#login';
+            });
           });
-          window.location = '#login';
-          return db.collection('users').doc(user.uid).set({
-            name: user.displayName
-          });
+         
         }
-      });
     }).catch((error) => {
       const errorMessage = error.message;
       const errorMessageField = document.getElementById('errorMessageSignup');
