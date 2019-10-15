@@ -21,7 +21,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
   
   <main>  
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js"></script>          
   </main>
   
   <script>
@@ -39,6 +39,9 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+
+    let db = firebase.firestore();
+    
   </script>
   
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
