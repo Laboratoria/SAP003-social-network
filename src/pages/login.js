@@ -1,3 +1,4 @@
+// import locationHasChange from '../main.js';
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -14,6 +15,7 @@ function login() {
     })
 
     .catch((error) => {
+      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorCode, errorMessage);
@@ -42,8 +44,7 @@ function google() {
 
 function TemplateLogin() {
   const template = `
-   <img src="img/moviment.png" alt="Logo do Moviment" class="image">
->>>>>>> 945c9667b9ac0504387d42dc3839b359eeeebffa
+    <img src="img/moviment.png" alt="Logo do Moviment" class="image">
     <h4 class="text-main">Bem vinda, Moviment!</h4>
     <form class="form-login">
       ${Input({
