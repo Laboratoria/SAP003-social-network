@@ -9,7 +9,7 @@ body,html{
   background: url("img/flor.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  
+
 }
 .logotipo{
   background-color:#ff944d;
@@ -19,6 +19,7 @@ body,html{
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
 }
+
 input{
   display: block;
   border-radius:4px;
@@ -36,16 +37,16 @@ input{
   margin-left: -120px;
 }
 
-h2{
+h2 {
   text-align: center;
-  }
+}
 
-  body{
-    background-color: white;
-    font-family: arial;
-    background-size: cover;
-    background-repeat: no-repeat;
-    }
+body{
+  background-color: white;
+  font-family: arial;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
     button{
       display: block;
@@ -100,7 +101,6 @@ h2{
   transform: translate(10px, 10px);
 } 
 
-
 footer{
   background-color: rgb(207, 206, 205);
   font-size: 14px;
@@ -111,18 +111,13 @@ footer{
   width: 100%;
 }
 
-  
-  
-
 /*Utiliza-se esse método para a retirada das setas no input do tipo number*/
 /*
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
                     -webkit-appearance: none;
 margin: 0;
-
 }
-
 label{
 color: black;
 text-align: center;
@@ -133,8 +128,6 @@ border-radius: 10px;
 margin: 10px auto;
 margin-top: center;
 }
-
-
 button{
   display: block;
   border-radius:4px;
@@ -151,7 +144,7 @@ button{
   left: 50%;
   margin-left: -120px;
 }*/
- 
+
 
 
 
@@ -188,5 +181,3 @@ button{
   }
 
 }*/
-
-
