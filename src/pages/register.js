@@ -20,24 +20,31 @@ function createUser() {
 }
 
 function Register() {
-  return `<form>
+  return `
+  <section class ='initial-section'>
+    <header class='initial-header' src='img/1.png'></header>
+    <img class='img-section' src='img/logo.png'/>
+    <div class="text">Registre-se para fazer parte da maior rede social de educação do Brasil!</div>
+  
+    <form>
+      ${Input({
+      id: 'email',
+      class: 'primary-input',
+      type: 'email',
+      placeholder: 'E-mail',
+    })}
     ${Input({
-    id: 'email',
-    class: 'primary-input',
-    type: 'email',
-    placeholder: 'E-mail',
-  })}
-  ${Input({
-    id: 'password',
-    class: 'primary-input',
-    type: 'password',
-    placeholder: 'Senha',
-  })}
-  ${Button({
-    title: 'Registre-se',
-    onClick: createUser,
-  })}
-    </form>`;
+      id: 'password',
+      class: 'primary-input',
+      type: 'password',
+      placeholder: 'Senha',
+    })}
+    ${Button({
+      class: 'primary-button',
+      title: 'Registre-se',
+      onClick: createUser,
+    })}
+      </form>`;
 }
 
 export default Register;
