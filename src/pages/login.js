@@ -54,8 +54,8 @@ function google (){
 
 function TemplateLogin() {
   const template = `
-
-    <img src="img/moviment.png" alt="Logo do Moviment" class="image-logo">
+   <img src="img/moviment.png" alt="Logo do Moviment" class="image">
+>>>>>>> 945c9667b9ac0504387d42dc3839b359eeeebffa
     <h4 class="text-main">Bem vinda, Moviment!</h4>
     <form class="form-login">
       ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
