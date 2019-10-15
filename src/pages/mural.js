@@ -1,6 +1,7 @@
 import Button from "../components/button.js";
 import Select from "../components/select.js";
-import Post from "../components/post.js"
+import Post from "../components/post.js";
+import Timeline from '../components/timeline.js';
 
 export const Mural = () => {
 	const template = `
@@ -23,7 +24,10 @@ export const Mural = () => {
 			${Post({id:'post', placeholder:"Qual a  bruxaria de hoje?", rows:'5', cols:'50'})}
 			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: post})}
 		</form>
-	</section>`;
+	</section>
+	<ul id='timeline'>
+		${Timeline({ class:'timeline-item'})}
+	</ul>`;
 
 	return template;
 }
@@ -40,12 +44,31 @@ const changeSelect = () => {
 
 
 //PAREI AQUI
-const post = () => {
-	const userPost = document.getElementById('post').value;
+const sendAndRetrievePost = () => {
+	const user = firebase.auth().currentUser;
 
-		
+	const text = document.getElementById('post').value;
 
-		document.getElementById('post-form').reset();
+	const post = {
+		name: user.email,
+		text
+	}
+
+	firebase.firestore().collection('posts').add(post);
+
+	document.getElementById('post-form').reset();
+
+	const timeline = document.getElementById('timeline');
+	const allPosts = firebase.firestore().collection('posts');
+
+	timeline.innerHTML = '...';
+
+	allPosts.get().then(snap => {
+		snap.forEach(postUser => {
+			addPost(postUser)
+		})
+	})
+
 }
 
 const logout = () => {
