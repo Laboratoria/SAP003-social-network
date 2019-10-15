@@ -50,40 +50,47 @@ function Login() {
   window.location.href = '#login';
 
   const login = `
-  <div class="logo">AMS - Rede de ensino</div>
-  <div class="text">Bem vindo à maior rede social de educação do Brasil!</div>
-  <form>
-    ${Input({
-    id: 'email',
-    class: 'primary-input',
-    type: 'email',
-    placeholder: 'E-mail',
-  })}
-  ${Input({
-    id: 'password',
-    class: 'primary-input',
-    type: 'password',
-    placeholder: 'Senha',
-  })}
-  ${Button({
-    class: 'primary-button',
-    title: 'Entrar',
-    onClick: userLogin,
-  })}
-  ${Button({
-    class: 'google-login',
-    title: '<img src="../img/google.png">',
-    onClick: googleLogin,
-  })}
-    </form>
+    <section class ='initial-section'>
+      <header >
+      
+      </header>
+      <img class='img-section' src='img/logo.png'/>
+      <div class="text">Bem vindo à maior rede social de educação do Brasil!</div>
+      
+      <form>
+        ${Input({
+          id: 'email',
+          class: 'primary-input',
+          type: 'email',
+          placeholder: 'E-mail',
+        })}
+      ${Input({
+          id: 'password',
+          class: 'primary-input',
+          type: 'password',
+          placeholder: 'Senha',
+        })}
+      ${Button({
+          class: 'primary-button',
+          title: 'Entrar',
+          onClick: userLogin,
+        })}
+      ${Button({
+          class: 'google-login',
+          title: '<img src="../img/google.png">',
+          onClick: googleLogin,
+        })}
+        </form>
 
-    <p id="error"></p>
+        <p class='login-error' id="error"></p>
 
-  ${Link({
-    class: 'primary-link',
-    hash: '#register',
-    text: 'Registre-se',
-  })}`;
+      ${Link({
+          class: 'register-link',
+          hash: '#register',
+          text: 'Registre-se',
+        })}
+    </section>
+  `;
 
   return login;
 }

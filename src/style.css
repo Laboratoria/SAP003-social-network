@@ -1,23 +1,47 @@
-.logo {
-  font-family: 'Rubik', sans-serif;
-  color: #6595A3;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+/*LOGIN*/
+
+.background{
+  background-color: #00bda1;
+}
+
+.initial-section{
+  background-image: url(img/background.png);
+  /* height:100%; */
+  background-size:cover;
+  margin: auto;
+  /* border: 2rem; */
+  padding: 2rem;
+}
+
+
+.initial-section img{}
+
+.img-section{
+  width: 50%;
+  display: block;
+  margin:10% auto;
 }
 
 .primary-button {
-  font-family: 'Rubik', sans-serif;
-  width: 5rem;
-  height: 3rem;
-  background-color: #C8E3E8;
-  color: #324143;
-  box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
-  padding: 10px;
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
   font-size: 1rem;
-  border-radius: 200px;
+  display: block;
+  margin: 1% auto;
+  padding: 10px;
+  width: 7rem;
+  height: 3rem; 
+  background-color: #156258;
+  background-position: center;
+  color: #f2f2f2;
+  box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
+  border-radius: 1.5rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
+}
+.primary-button:hover{
+  background-color: #f46b34;
 }
 
 .google-login img {
@@ -30,28 +54,42 @@
   height: 3rem;
   border: none;
   background-color: #fff;
-  border-radius: 100px;
-  display: block;
+  border-radius: 1.5rem;
+  display:block;
+  margin: 1% auto;
 }
 
 .primary-input {
-  background-color: #fff;
-  border: 1px solid #C8E3E8;
-  border-radius: 100px;
+  font-family: 'Questrial', sans-serif;
+  background-color: #f2f2f2;
+  border: 1px solid #33cab4;
+  border-radius: 1.5rem;
   padding: 10px;
   font-size: 1rem;
+  background-position:center;
   display: block;
   box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
-  margin: 10px;
+  margin:3% auto;
 }
 
 .text {
-  font-family: 'Montserrat', sans-serif;
-  color: #324143;
+  font-family: 'Questrial', sans-serif;
+  font-size: 100%;
+  text-align: center;
+  color: #f2f2f2;
+  display: block;
+  margin: auto;
 }
 
-.primary-link {
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: none;
-  color: #6595A3;
+.register-link {
+  font-family: 'Questrial', sans-serif;
+  color: #f2f2f2;
+  display: block;
+  /* margin: auto; */
+  align-content:left ;
+}
+
+.register-link:hover {
+  color: #f46b34;
+ 
 }
