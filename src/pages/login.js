@@ -7,13 +7,9 @@ function loginRegisteredUser() {
   const password = document.querySelector('.password-input').value;
   auth.signInWithEmailAndPassword(email, password)
     .then((cred) => {
-      localStorage.setItem('user', JSON.stringify(cred.user));
-      auth.onAuthStateChanged(user => {
-        if (user) {
-          window.location = '#feed';
-          //window.user = user;
-        }
-      });
+      if (cred.user) {
+        window.location = '#feed';
+      }
     }).catch(() => {
       const errorMessageField = document.getElementById('errorMessage');
       errorMessageField.textContent = 'email e/ou senha inválidos.';
@@ -31,14 +27,13 @@ function signInWithAccount(provider) {
       //   const token = result.credential.accessToken;
       // };
       const user = result.user;
+      
+      db.collection('users').doc(user.uid).set({
+        name: user.displayName
+      });
       if (result) {
         location.hash = "#feed";
       }
-      localStorage.setItem('user', JSON.stringify(user));
-      return db.collection('users').doc(user.uid).set({
-        name: user.displayName
-      });
-
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
