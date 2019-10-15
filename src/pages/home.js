@@ -8,9 +8,11 @@ function mudarPg() {
 function enviarLogin() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
+
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.href = '#feed';
   })
+
     .catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
@@ -20,7 +22,8 @@ function enviarLogin() {
     });
 }
 
-function googleSignIn() {
+function googleSignIn(){
+
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function (result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -42,32 +45,45 @@ function googleSignIn() {
 
 function Login() {
   const template = `
-<main class="main">  
-  <h1 class="titulo"> Funny Motivation </h1>
-  <h2 class="subtitulo"> Seja Bem vindx </h2>
-  <form class="form">
+  <header>
+    <img src="imagens/funnymot.jpg" class="logo">
+  </header>
+  <section>
+  <h1 class = "name-page"> Funny Motivation</h1>
+  <h3 class = "bem-vindx"> Seja Bem-vindxs</h3>
+  <section>
+  <section class="login-form">
+  <form >
+
   ${Input({
     class: 'email-input',
-    placeholder: 'E-mail',
+    placeholder: ' E-mail',
     type: 'text',
   })}<br>
     ${Input({
     class: 'senha-input',
-    placeholder: 'Senha',
+    placeholder: ' Senha',
     type: 'password',
-  })} <br>
-  <div class="button">
+  })}</form></section>
+    <div class="btn btn-enviar">
     ${Button({
     id: 'enviar',
     title: 'Login',
     onClick: enviarLogin,
-  })}
+  })}</div>
+    <div class="btn btn-google">
+    <h5 class="ou-entre"> Ou entre com </h5>
     ${Button({
+    id:'google',
+    title:'<i class="fab fa-google"></i>',
+    onClick: googleSignIn, 
+  })}</div>
+    <div class="btn btn-cadastrar">
+  ${Button({
     id: 'cadastrar',
-    title: 'Cadastrar',
+    title: 'Cadastre-se',
     onClick: mudarPg,
-  })}
-    </div>
+  })}</div>
   </form>
 </main>  
   ${Button({
@@ -81,3 +97,13 @@ function Login() {
 }
 
 export default Login;
+
+// Para desconectar um usuário, chame signOut:
+// firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+//}).catch(function(error) {
+  // An error happened.
+// }); 
+
+//CTRL K C - deixar parte selecionada comentada
+

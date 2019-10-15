@@ -36,6 +36,7 @@ function Cadastro() {
     <h1> Rede Social</h1>
     <h2> Cadastro</h2>
 
+
   <section>
   <form>
     ${Input({ class: 'nome-input', placeholder: 'Nome', type: 'text' })}
@@ -47,6 +48,7 @@ function Cadastro() {
     ${Button({ id: 'voltar', title: 'voltar', onClick: voltarPg })}
   </form>
   </section>
+
 `;
   return template;
 }
