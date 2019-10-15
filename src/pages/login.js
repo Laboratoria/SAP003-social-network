@@ -9,7 +9,7 @@ function loginRegisteredUser() {
     .then((cred) => {
       localStorage.setItem('user', JSON.stringify(cred.user));
       auth.onAuthStateChanged(user => {
-        if(user){
+        if (user) {
           window.location = '#feed';
           //window.user = user;
         }
@@ -31,8 +31,8 @@ function signInWithAccount(provider) {
       //   const token = result.credential.accessToken;
       // };
       const user = result.user;
-      if(result){
-        location.hash="#feed";
+      if (result) {
+        location.hash = "#feed";
       }
       localStorage.setItem('user', JSON.stringify(user));
       return db.collection('users').doc(user.uid).set({
@@ -72,7 +72,7 @@ function Login() {
   })}
   ${Button({
     id: 'authGoogleButton',
-    class: 'btn btn-lg btn-danger fa fa-google',
+    class: 'btn fa fa-google',
     onclick: loginGoogleUser,
     title: '',
   })}

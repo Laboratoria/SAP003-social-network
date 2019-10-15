@@ -16,7 +16,8 @@
     "lint": "npm run eslint && npm run htmlhint && npm run stylelint",
     "test": "jest --coverage --watch",
     "pretest": "npm run lint",
-    "start": "serve src/"
+    "start": "serve src/",
+    "sass": "sass --watch src/scss/styles.scss src/style.css"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -34,6 +35,7 @@
     "stylelint-config-recommended": "^2.2.0"
   },
   "dependencies": {
+    "node-sass": "^4.12.0",
     "serve": "^11.2.0"
   }
 }
