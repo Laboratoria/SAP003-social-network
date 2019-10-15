@@ -3,6 +3,7 @@ function Button(props) {
     <button 
     class="${props.class}" 
     id = "${props.id}"
+
     onclick="button.handleClick(event,${props.onClick})" >
     ${props.title}</button>
   `;

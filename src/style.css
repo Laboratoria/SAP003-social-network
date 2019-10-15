@@ -1,3 +1,28 @@
+
+.main{
+  display: flex;
+  align-items: center;
+}
+
+.titulo{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace ;
+}
+
+.subtitulo{ 
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+}
+
+.primary-button {
+  display: flex;
+  background-color: #ffe521;
+  
 * {
   padding: 0;
   margin: 0;
@@ -134,5 +159,12 @@ width: 100%;
   font-weight: bold;
   border: none;
   cursor: pointer;
+
   color:white;
 }  */
+
+  padding: 5px;
+  margin: auto;
+}
+
+

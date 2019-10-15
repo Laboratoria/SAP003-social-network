@@ -59,7 +59,7 @@ function Login() {
     class: 'email-input',
     placeholder: ' E-mail',
     type: 'text',
-  })}
+  })}<br>
     ${Input({
     class: 'senha-input',
     placeholder: ' Senha',
@@ -84,6 +84,13 @@ function Login() {
     title: 'Cadastre-se',
     onClick: mudarPg,
   })}</div>
+  </form>
+</main>  
+  ${Button({
+    id:'google',
+    title:'<i id = "google" class="fab fa-google-plus-square"></i>',
+    onClick: googleSignIn,
+  })}
 `;
 
   return template;
