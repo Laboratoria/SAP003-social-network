@@ -1,7 +1,11 @@
 /*BASIC STYLE*/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -12,6 +16,7 @@ h1{
 
 body{
   background-color: #121212;
+  color: whitesmoke;
 }
 
 /*MAIN HOME*/
@@ -23,14 +28,77 @@ body{
   margin-top: 80px;
 }
 
-.login{
-  /* margin-top: 200px; */
-}
-
 .logo{
-  width: 320px;
-
+  width: 338px;
 }
+
+#email-login{
+  border-radius: 5px;
+  outline:none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+}
+
+#pass-login{
+  border-radius: 5px;
+  outline:none;
+  padding: 2px;
+  margin-top: 4px;
+  width: 280px;
+  height: 30px;
+}
+
+.login-form{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-sign-up {
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #121212;
+}
+
+.btn-login{
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+}
+
+.btn-google{
+  font-family: 'Roboto', sans-serif;
+  height: 40px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+ .google-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+ }
 
 @media screen and (max-width: 770px) {
 
@@ -43,12 +111,20 @@ body{
 }
 
 @media screen and (max-width: 420px) {
+  body {
+    justify-content: center;
+  }
+
+  h1{
+    text-align: center;
+    color: wheat;
+  }
 
   .home{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
   }
 
   .homepage-title{
@@ -66,23 +142,19 @@ body{
     align-items: center;
   }
 
-  /* .buttons{
-    display: flex;
-    flex-direction: row;
-  } */
-
   #email-login{
-    border-radius: 20px;
+    border-radius: 5px;
     outline:none;
     padding: 2px;
-   
+    width: 280px;
   }
 
   #pass-login{
-    border-radius: 20px;
+    border-radius: 5px;
     outline:none;
     padding: 2px;
     margin-top: 4px;
+    width: 280px;
   }
 
   .login-form{
@@ -90,14 +162,20 @@ body{
     flex-direction: column;
     align-items: center;
   }
-
-  /* #sign{
-    align-items: center;
-  } */
-
-  /* .sign-up{
+ 
+  .buttons {
     display: flex;
-   
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-sign-up {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background: #121212;
   }
 
   .sign{
@@ -112,3 +190,31 @@ body{
 /*MAIN MURAL*/
 
 /*MAIN EDITAR PÁGINA*/
+  .btn-login{
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background: #AA4528;
+  }
+
+  .btn-google{
+    font-family: 'Roboto', sans-serif;
+    height: 40px;
+    border-width: 0;
+    background: white;
+    color: #737373;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding-right: 8px;
+  }
+  
+   .google-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+   }
