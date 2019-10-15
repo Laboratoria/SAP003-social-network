@@ -20,7 +20,7 @@ function Home() {
 };
 export default Home;
 
-
+ 
 function goToRegister () {
   window.location.hash='#register';
 }
@@ -28,18 +28,11 @@ function goToRegister () {
 function buttonLogin () {
   const email= document.querySelector('.js-email-input').value;
   const password= document.querySelector('.js-password-input').value;
-<<<<<<< HEAD
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function(firebaseUser) {
-   window.location.hash='#feed'
-
-  }).catch(function(error) {
-=======
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then(firebaseUser => {
    window.location.hash='#feed'
   })
   .catch(function(error) {
->>>>>>> e727e1435581207bb4885f55601bc953bcbf86ae
     let errorCode = error.code;
     if (errorCode === 'auth/user-not-found'){
       throw alert('Usuário não encontrado')
@@ -74,3 +67,5 @@ function googleLogin () {
     // ...
   });
 }
+
+
