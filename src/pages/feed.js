@@ -9,7 +9,7 @@ const logout = () => {
 
 const postTemplate = (data) => {
   document.querySelector('.posts').innerHTML
-    += `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>`;
+    += `<p> ${data.name}<br>| ${data.text} | ${data.date}</p>`;
 
 };
 
