@@ -12,11 +12,11 @@ window.addEventListener('load', init);
 
 function locationHashChanged() {
   if(location.hash==='#register') {
-    document.querySelector('main').innerHTML=register();
+    document.querySelector('main').innerHTML= register();
   } else if (location.hash==='#home') {
-    document.querySelector('main').innerHTML=Home();
+    document.querySelector('main').innerHTML= Home();
   } else if (location.hash==='#feed') {
-    document.querySelector('main').innerHTML=timeline();
-  }
+    document.querySelector('main').innerHTML= timeline();
+  } 
 }
 window.addEventListener('hashchange', locationHashChanged, false);
