@@ -10,7 +10,7 @@ function newUser() {
   auth.createUserWithEmailAndPassword(email, password)
     .then(() => {
       auth.onAuthStateChanged(user => {
-        if(user){
+        if (user) {
           user.updateProfile({
             displayName: name
           });
@@ -22,7 +22,7 @@ function newUser() {
       });
     }).catch((error) => {
       const errorMessage = error.message;
-        const errorMessageField = document.getElementById('errorMessageSignup');
+      const errorMessageField = document.getElementById('errorMessageSignup');
       errorMessageField.textContent = errorMessage;
     });
 }
@@ -45,17 +45,23 @@ function Signup() {
     placeholder: 'Senha',
   })}
       ${Button({
+    class: 'btn btn-register',
     id: 'btn-new-user',
     onclick: newUser,
     title: 'Cadastrar',
   })}
   `;
   const template = `
-  <h1>Bem vindo(a)!</h1>
-  <p>Para realizar o cadastro, preencha as informações abaixo:</h1>
-  <form>
-  ${userInfo}
-  <div id="errorMessageSignup"></div>
+  <header class="main-header">
+    <h1>Bem vindo(a)!</h1>
+  </header>
+  <img src="./img/icon-pluto.png">
+  <form class="form-content">
+    <main class="register-input">
+      <p class="register-text">Para realizar o cadastro, preencha as informações abaixo:</h1>
+      ${userInfo}
+      <div id="errorMessageSignup"></div>
+    </main>
   </form>
   `;
   return template;
