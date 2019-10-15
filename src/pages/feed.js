@@ -15,8 +15,8 @@ function Feed() {
   function myText() {
     const textArea = document.querySelector('.Text1').value;
     document.querySelector('.login').innerHTML = textArea;
-    console.log(textArea);
   }
+
    export default Feed;
 
 document.querySelector('.mytext').addEventListener('click',formPost)
@@ -28,7 +28,7 @@ function formPost(event){
     likes : 0,
     comments:[],
     text:text.value,
-    timestamp: fiebase.firestore.FieldValue.serverTimestamp(),
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
   }
   firebase.firestore().collection('#posts').add(post).then(res => {
     text.value =""
