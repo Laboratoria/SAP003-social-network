@@ -1,8 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-
-
 function register(){
     const template = `
     ${Button({id:'voltar', title: 'Voltar', onClick: goToLogin})}    

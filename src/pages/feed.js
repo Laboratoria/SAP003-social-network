@@ -6,7 +6,7 @@ function timeline(){
     const template = `
     <form>
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post'})}
-    ${Button({type:'submit', title: 'postar', onclick:publish})}
+    ${Button({type:'submit', title: 'postar'})}
     </form>
     <div></div>
     `
@@ -15,10 +15,4 @@ function timeline(){
 
   export default timeline;
 
-  document.getElementById("publish").addEventListener("click", tweet);
-function publish() {
-    let postStay= []
-    let tweet= document.getElementById("tweet").value;
-    document.querySelector('.post').innerHTML= `${PostStay}`;
-    localStorage.setItem("message", tweet);
-}
+

@@ -1,6 +1,6 @@
 import Home from './pages/home.js';
 import register from './pages/register.js';
-import feed from './pages/feed.js';
+import timeline from './pages/feed.js';
 
 function init() {
   document.querySelector('main').innerHTML = Home();
@@ -16,7 +16,7 @@ function locationHashChanged() {
   } else if (location.hash==='#home') {
     document.querySelector('main').innerHTML=Home();
   } else if (location.hash==='#feed') {
-    document.querySelector('main').innerHTML=feed();
+    document.querySelector('main').innerHTML=timeline();
   }
 }
 window.addEventListener('hashchange', locationHashChanged, false);
