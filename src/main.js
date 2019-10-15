@@ -13,7 +13,19 @@ const cad = () => {
 }
 
 const mural = () => {
-	document.querySelector("main").innerHTML = Mural();
+
+	const allPosts = firebase.firestore().collection('posts');	
+	allPosts.get().then(snap => {
+		let postsLayout = '';
+		snap.forEach(post => {
+			postsLayout += `
+				<li class='timeline-item'>
+					<p>${post.data().text}</p>
+					<p>${post.data().name}</p>
+				</li>`;
+		})
+		document.querySelector("main").innerHTML = Mural({postsLayout: postsLayout});
+	})
 }
 
 const editarPerfil = () => {

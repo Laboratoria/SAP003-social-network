@@ -1,9 +1,11 @@
 import Button from "../components/button.js";
 import Select from "../components/select.js";
 import Post from "../components/post.js";
-import Timeline from '../components/timeline.js';
+//import Timeline from '../components/timeline.js';
+//import Card from '../components/cardpost.js';
 
-export const Mural = () => {
+export const Mural = (props) => {
+
 	const template = `
 	<header>
 		<nav>
@@ -22,11 +24,11 @@ export const Mural = () => {
 	<section>
 		<form id='post-form'>
 			${Post({id:'post', placeholder:"Qual a  bruxaria de hoje?", rows:'5', cols:'50'})}
-			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: post})}
+			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: sendAndRetrievePost})}
 		</form>
 	</section>
 	<ul id='timeline'>
-		${Timeline({ class:'timeline-item'})}
+	${props.postsLayout}
 	</ul>`;
 
 	return template;
@@ -42,8 +44,6 @@ const changeSelect = () => {
 	}
 }
 
-
-//PAREI AQUI
 const sendAndRetrievePost = () => {
 	const user = firebase.auth().currentUser;
 
@@ -57,18 +57,6 @@ const sendAndRetrievePost = () => {
 	firebase.firestore().collection('posts').add(post);
 
 	document.getElementById('post-form').reset();
-
-	const timeline = document.getElementById('timeline');
-	const allPosts = firebase.firestore().collection('posts');
-
-	timeline.innerHTML = '...';
-
-	allPosts.get().then(snap => {
-		snap.forEach(postUser => {
-			addPost(postUser)
-		})
-	})
-
 }
 
 const logout = () => {
