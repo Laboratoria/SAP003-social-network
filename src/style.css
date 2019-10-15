@@ -51,14 +51,6 @@ img {
 #create-account.primary-button{
   margin: 5%;
 }
-#forget.primary-button{
-  background-color: transparent;
-  border: none;
-  padding: 1%;
-  margin: 0.5%;
-  font-weight: normal;
-  font-size: 0.9rem;
-}
 .primary-button {
   background-color: #FFC44F;
   padding: 2%;
@@ -72,6 +64,7 @@ img {
 .primary-button:hover {
   color: #E85531;
 }
+
 .primary-input  {
   border-radius: 15px;
   display: flex;
@@ -84,14 +77,14 @@ img {
 }
 
 @media screen and (min-width: 992px){
-  .box {
+  .teste {
     display: flex;
     justify-content: center;
   }
   .header {
     flex-grow:1;
     display: flex;
-  } 
+  }
   img {
     height: auto;
   }
