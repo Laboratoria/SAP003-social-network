@@ -1,24 +1,26 @@
 import Button from '../components/button.js';
 
-// let db = firebase.firestore();
-
 const logout = () => {
   firebase.auth().signOut().catch((error) => {
     // console.log(error);
   });
 };
 
-const deletePost = (id) => {
-  // console.log('deletou', id);  
+const deletePost = (id) => { 
   const db = firebase.firestore();
   db.collection('posts').doc(id).delete();
+  // document.getElementById(id)
 };
 
 const postTemplate = (doc) => {
   document.querySelector('.posts').innerHTML
-    += `<p data-id=${doc.id}> ${doc.data().name}<br>| ${doc.data().text} | ${doc.data().date}
-    <button type='button' class='delete-btn' id=${doc.id}>X</button>
-    </p>`;
+    += `
+    <div class='posted container-post' data-id=${doc.id}> 
+      <p class='posted posted-name'> ${doc.data().name}
+        <button type='button' class='delete-btn' data-id=${doc.id}>X</button>
+      </p>
+      <p class='posted text'> ${doc.data().text} | ${doc.data().date}
+    </div>`;
   document.querySelectorAll('.delete-btn').forEach
   (cls => cls.addEventListener('click', e => deletePost(e.target.id)));
 };
@@ -46,10 +48,11 @@ const newPost = () => {
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
   };
   db.collection('posts').add(post).then(() => {
-    // app.showPosts();
-    postsSpace.innerHTML = `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>
-    ${postsSpace.innerHTML}`;
-    textArea.value = '';
+    postsSpace.innerHTML = '';
+    app.showPosts();
+    // postsSpace.innerHTML = `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>
+    // ${postsSpace.innerHTML}`;
+    // textArea.value = '';
   });
 };
 
@@ -75,6 +78,6 @@ function Feed() {
 window.onhashchange = showPosts;
 window.onload = showPosts;
 
-window.app = { postTemplate };
+window.app = { showPosts };
 
 export default Feed;
