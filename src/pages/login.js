@@ -8,17 +8,16 @@ const userLogin = () => {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+  firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
+    const errorMessage = error.message;
+    document.querySelector('.erro').textContent = errorMessage;
+  }).then(() => {
     let user = firebase.auth().currentUser;
     if (user.emailVerified) {
-      console.log('Email is verified');
       location.hash = '#feed';
     } else {
       document.querySelector('.erro').textContent = 'Email não verificado, vá até sua caixa de entrada';
     }
-  }).catch(function (error) {
-    var errorMessage = error.message;
-    document.querySelector('.erro').textContent = errorMessage;
   });
 }
 
