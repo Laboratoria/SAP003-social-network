@@ -1,9 +1,84 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@media screen and (min-width: 280px) and (max-width: 800px) {
+
+  .primary-button {
+    background-color: #fefefe;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    width: 50%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .google-btn {
+    background-image: url('./google-icon2.png');
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 30px;
+  }
+
+  .container {
+    margin-top: 80px;
+  }
+
+  .background {
+    background-color: #FF8227;
+    font-family: 'Ubuntu', sans-serif;
+    color: #f0f4f3;
+  }
+
+  .logo {
+    margin-left: 70px;
+  }
+
+  .js-email-input {
+    border-radius: 30px;
+    padding: 5px;
+  }
+
+  .js-password-input {
+    border-radius: 30px;
+    margin: 10px;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 801px) {
+.logo {
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  
+}
+
+.google-btn {
+  background-image: url('./google-icon2.png');
+  background-repeat: no-repeat;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.background {
+  background-color: #FF8227;
+  font-family: 'Ubuntu', sans-serif;
+  color: #f0f4f3;
+}
 }
