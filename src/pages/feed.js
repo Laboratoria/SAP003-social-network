@@ -1,21 +1,13 @@
 import Button from '../components/button.js';
 
-
-const location = () => {
-  location.hash = '';
-};
-
 const logout = () => {
-  firebase.auth().signOut().then(() => {
-    location.hash = '';
-  }).catch((error) => {
+  firebase.auth().signOut().catch((error) => {
     console.log(error);
   });
 };
 
 const postTemplate = (data) => {
-  document.querySelector('.posts').innerHTML
-        += `<p> ${data.text} | ${data.date}</p>`;
+  document.querySelector('.posts').innerHTML += `<p> ${data.text} | ${data.date}</p>`;
 };
 
 const showPosts = () => {
@@ -30,16 +22,19 @@ const showPosts = () => {
 
 const newPost = () => {
   const postsSpace = document.querySelector('.posts');
+  const textArea = document.querySelector('.add-post');
   const db = firebase.firestore();
   const post = {
-    // id
-    text: document.querySelector('.add-post').value,
+    // id post
+    // id usuario (uid)
+    text: textArea.value,
     timestamp: new Date().getTime(),
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
   };
   db.collection('posts').add(post).then(() => {
     postsSpace.innerHTML = `<p> ${post.text} | ${post.date}</p>
     ${postsSpace.innerHTML}`;
+    textArea.value = '';
   });
 };
 
@@ -66,4 +61,3 @@ window.onhashchange = showPosts;
 window.onload = showPosts;
 
 export default Feed;
-

@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import logo from '../components/logo.js'
+import logo from '../components/logo.js';
 
 
 const createUser = () => {
@@ -14,14 +14,12 @@ const createUser = () => {
       document.querySelector('.erro').textContent = 'A senha é muito fraca.';
     } else {
       document.querySelector('.erro').textContent = errorMessage;
-    };
-  }
-
-  ).then(cred => {
+    }
+  }).then((cred) => {
     if (cred.additionalUserInfo.isNewUser) {
       firebase.auth().currentUser.sendEmailVerification().then(() => {
         document.querySelector('.erro').textContent = 'Email cadastrado com sucesso! Verifique sua caixa de entrada!';
-
+        document.querySelector('#register-form').reset();
       });
     }
   });
@@ -29,26 +27,32 @@ const createUser = () => {
 
 const location = () => {
   location.hash = '';
-}
+};
 
 const Register = () => {
   const template = `
   <section class="main-container">
     <section class="logo">
-      ${logo({ img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace' })}
+      ${logo({
+    img: 'image/logo.png', classImg: 'logo', classP: 'text-logo', text: 'MusicalSpace',
+  })}
     </section>
     <section class="container">
-      <form class="container">
+      <form class="container" id="register-form">
       <p class="erro"></p>
         ${Input({ type: 'email', placeholder: 'Email', class: 'js-email-input primary-input' })}
         ${Input({ type: 'password', placeholder: 'Password', class: 'js-password-input primary-input' })}
-        ${Button({ type: 'submit', title: 'Cadastrar', class: 'primary-button', onClick: createUser })}
-        ${Button({ type: 'button', title: 'Voltar', class: 'primary-button', onClick: location })}
+        ${Button({
+    type: 'submit', title: 'Cadastrar', class: 'primary-button', onClick: createUser,
+  })}
+        ${Button({
+    type: 'button', title: 'Voltar', class: 'primary-button', onClick: location,
+  })}
       </form>
     </section>
   </section>
   `;
   return template;
-}
+};
 
 export default Register;
