@@ -11,39 +11,42 @@ function logOut() {
   });
 }
 
-function printPosts() {
+function printPosts(post) {
   const feed = document.querySelector('#feed');
-  const posts = firebase.firestore().collections('post');
+  const template = window.home.Post({
+    id: post.id,
+    username: post.data().user_name,
+    date: post.data().timestamp.toDate().toLocaleString(),
+    text: post.data().text,
+  });
+  feed.innerHTML += template;
+}
 
-  posts.get().then((postsList) => {
-    postsList.forEach((post) => {
-      const allPosts = window.home.Post({
-        id: post.id,
-        username: post.user_id,
-        date: post.timestamp,
-        text: post.text,
-      });
-      feed.innerHTML = allPosts;
-    });
+function loadFeed() {
+  const postCollection = firebase.firestore().collection('post');
+  const feed = document.querySelector('#feed');
+
+  feed.innerText = 'Carregando...';
+  postCollection.orderBy('timestamp').get().then((snap) => {
+    feed.innerText = '';
+    snap.forEach(post => window.home.printPosts(post));
   });
 }
 
 function createNewPost() {
-
   const content = document.querySelector('#postText');
   const user = firebase.auth().currentUser;
   const post = {
     text: content.value,
     likes: 0,
     comments: [],
-    user_id: user.uid,
+    user_name: user.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
   };
-  firebase.firestore().collection('post').add(post)
-  // .then(() => {
-  //   content.value = '';
-  //   printPosts();
-  // });
+  firebase.firestore().collection('post').add(post).then(() => {
+    content.innerText = '';
+    window.home.loadFeed();
+  });
 }
 
 function Home() {
@@ -75,9 +78,10 @@ function Home() {
 
 window.home = {
   logOut,
-  printPosts,
   Post,
+  printPosts,
   createNewPost,
+  loadFeed,
 };
 
 export default Home;
