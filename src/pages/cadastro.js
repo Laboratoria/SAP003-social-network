@@ -23,8 +23,9 @@ function pegarInput() {
 
 function cadastrar() {
   const template = `
-  <div class="cadastro">
-  <form class="container-cadastro">
+  <img src="fotos/mia pose 1-01.png" class="mia"> 
+  <div class="container-cadastro">
+  <form class="cadastro">
     ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
     ${Input({ class: 'js-nome', placeholder: 'Nome completo', type: 'text' })}
     ${Input({ class: 'js-senha', placeholder: 'senha', type: 'password' })}
