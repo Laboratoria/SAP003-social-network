@@ -35,7 +35,7 @@ const cadastrar = (id, event) => {
 
 export const Cadastro = () => {
 	const template = `
-	<section class="cadastro">
+	<main class="cadastro">
 	 <img src = images/Witchy-logo.png class="cad-logo"/>
 	 <h1 class="cadastre">Cadastre-se</h1>
 	 <form class="cad-form">
@@ -45,12 +45,10 @@ export const Cadastro = () => {
 		${Input({ id:"pass", placeholder:"Senha", type:"password"})}
 		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}</form>
 		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Back to Login", onclick: goHome})}
-	</section>`;
+	</main>`;
 
 	return template;
 }
 
-const goHome = () => {
-	window.location.hash = 'home';
-}
+
 
