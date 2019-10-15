@@ -11,12 +11,19 @@ window.addEventListener('load', init);
 
 
 function locationHashChanged() {
-  if(location.hash==='#register') {
-    document.querySelector('main').innerHTML= register();
-  } else if (location.hash==='#home') {
-    document.querySelector('main').innerHTML= Home();
-  } else if (location.hash==='#feed') {
-    document.querySelector('main').innerHTML= timeline();
-  } 
+  switch (location.hash) {
+    case ('#register'):
+      document.querySelector('main').innerHTML= register();
+        break;
+    case ('#home'):
+      document.querySelector('main').innerHTML= Home();
+      break;
+    case ('#feed'):
+      document.querySelector('main').innerHTML= timeline();
+      break;
+    default:
+        document.querySelector('main').innerHTML= Home();
+  }
+
 }
 window.addEventListener('hashchange', locationHashChanged, false);
