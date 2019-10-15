@@ -6,9 +6,9 @@ function cadastrarUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
   // eslint-disable-next-line no-console
-  console.log(nome, email, password);
-  window.location.href = '#feed';
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{
+    window.location.href = '#feed';
+  }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
     // const errorMessage = error.message;

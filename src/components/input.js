@@ -1,8 +1,7 @@
 function Input(props) {
   const input = `
   <input 
-      class = "primary-input"
-      id = "${props.id}"
+      class = "${props.class}"
       placeholder = "${props.placeholder}"
       type = "${props.type}"/>
   `;

@@ -9,14 +9,15 @@ function mudarPg() {
 function enviarLogin() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
-  console.log(email, password);
-  window.location.href = '#feed';
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  
+  firebase.auth().signInWithEmailAndPassword(email, password).then(()=> {
+    window.location.href = '#feed';
+  })
     .catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
       // let errorMessage = error.message;
-      console.log(errorCode);
+      alert("usuario ou senha errado");
     // ...
     });
 }
@@ -57,13 +58,14 @@ function Login() {
     placeholder: 'Senha',
     type: 'password',
   })} <br>
-  <div class="button">
     ${Button({
+      class:'primary-button',
     id: 'enviar',
     title: 'Login',
     onClick: enviarLogin,
   })}
     ${Button({
+    class:'primary-button',
     id: 'cadastrar',
     title: 'Cadastrar',
     onClick: mudarPg,
@@ -73,7 +75,7 @@ function Login() {
 </main>  
   ${Button({
     id:'google',
-    title:'<i id = "google" class="fab fa-google-plus-square"></i>',
+    title:'<i class="fab fa-google-plus-square"></i>',
     onClick: googleSignIn,
   })}
 `;
