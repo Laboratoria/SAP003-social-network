@@ -2,7 +2,6 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function newUser() {
-
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   const name = document.querySelector('.name-input').value;

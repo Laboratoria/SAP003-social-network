@@ -12,7 +12,7 @@ function loginRegisteredUser() {
       }
     }).catch(() => {
       const errorMessageField = document.getElementById('errorMessage');
-      errorMessageField.textContent = 'email e/ou senha inválidos.';
+      errorMessageField.textContent = 'Email e/ou senha inválidos.';
       document.querySelector('.email-input').addEventListener('focus', () => {
         errorMessageField.textContent = '';
       });
