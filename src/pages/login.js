@@ -66,6 +66,7 @@ const login = () => {
     class: 'js-input-email',
     placeholder: 'Email',
     type: 'email',
+    id: 'js-input-email',
   })}
   <p class="error-email"></p>
 
@@ -73,6 +74,7 @@ const login = () => {
     class: 'js-input-password',
     placeholder: 'Senha',
     type: 'password',
+    id: 'js-input-password',
   })}
   <p class="error-password"></p>
   <div class="buttons">

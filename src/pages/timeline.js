@@ -6,7 +6,7 @@ const SignOut = () => {
     .auth()
     .signOut()
     .then(() => {
-      alert('deslogado!')
+      alert('deslogado!');
     })
     .catch((error) => {
       alert('banana');
@@ -17,6 +17,7 @@ const timeline = () => {
   const templateTimeLine = `
     ${Input({
     class: 'navigation',
+    id: 'navigation',
     type: 'checkbox',
   })}
   <label for="navigation">&#9776;</label>

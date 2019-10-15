@@ -123,7 +123,7 @@ label[for="navigation"]{
   height: 50px;
 }
 
-#btn {
+.navigation {
   display: none;
 }
 
