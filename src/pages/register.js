@@ -11,7 +11,7 @@ function Register() {
       <form class="primary-box">
         ${Input({
         class: 'js-name-input',
-        placeholder: 'Nome',
+        placeholder: 'Nome Completo',
         type: 'text',
       })}
         ${Input({
@@ -24,6 +24,7 @@ function Register() {
         placeholder: 'Senha',
         type: 'password',
       })}
+      <p class="alertMessage"></p>
           ${Button({
         id: 'create-account',
         title: 'Criar Conta',
@@ -33,6 +34,7 @@ function Register() {
   </section>
 </div>
   `;
+  location.hash = 'register'
   return template;
 }
 
@@ -42,24 +44,23 @@ function createCount() {
   const name = document.querySelector('.js-name-input').value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
-      const codUid = firebase.auth().getUid(email);
-      firebase.firestore().collection(codUid).doc('Perfil').set({
-        Nome: name,
-        Email: email,
+      firebase.auth().currentUser.updateProfile({
+        displayName: name
       });
+      firebase.auth().currentUser.sendEmailVerification()
       window.location.hash = 'login';
     })
     .catch(function (error) {
       let errorCode = error.code;
       let errorMessage = error.message;
       if (errorCode == 'auth/email-already-in-use') {
-        alert('E-mail já cadastrado.');
+        document.querySelector('.alertMessage').textContent ='E-mail já cadastrado.';
       } if (errorCode == 'auth/weak-password') {
-        alert('A senha é muito fraca.');
+        document.querySelector('.alertMessage').textContent = 'A senha é muito fraca.';
       } if (errorCode == 'auth/invalid-email') {
-        alert('E-mail inválido.');
+        document.querySelector('.alertMessage').textContent ='E-mail inválido.';
       } else {
-        alert(errorMessage);
+        document.querySelector('.alertMessage').textContent = errorMessage;
       }
     });
 }

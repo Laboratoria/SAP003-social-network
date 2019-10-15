@@ -1,6 +1,7 @@
 import Login from './pages/login.js';
 import Register from './pages/register.js';
 import Post from './pages/post.js';
+import Update from './pages/update.js'
 
 var firebaseConfig = {
   apiKey: "AIzaSyCd7cl5bTaNjihZaOyywCmKI2wMJTpACtc",
@@ -23,6 +24,7 @@ const pages = {
   login: Login(),
   register: Register(),
   post: Post(),
+  update: Update()
 }
 
 window.addEventListener('hashchange', () => {

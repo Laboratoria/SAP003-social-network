@@ -9,34 +9,39 @@ function Login() {
       <h1 class="name-network">Heroínas</h1>
       <h3 class="text-simple">Bem vinda, programadora!</h3>
       <form class="primary-box">
-      ${Input({
-      class: 'js-email-input',
-      placeholder: 'Email',
-      type: 'email',
-    })}
         ${Input({
-      class: 'js-password-input ',
-      placeholder: 'Senha',
-      type: 'password',
-    })}
+        class: 'js-email-input',
+        placeholder: 'Email',
+        type: 'email',
+        })}
+        ${Input({
+        class: 'js-password-input ',
+        placeholder: 'Senha',
+        type: 'password',
+        })}
         ${Button({
-      id: 'btnLogin',
-      title: 'Login',
-      onClick: sendLogin,
-    })}
-      <p class="text-simple">Ou entre com:</p>
+        id: 'btnLogin',
+        title: 'Login',
+        onClick: sendLogin,
+        })}
         ${Button({
-      id: "iGoogle",
-      title: '<i class="fab fa-google"></i>',
-      onClick: loginGoogle,
-    })}
-    </form>
+        id: 'forget',
+        title: 'Esqueci a senha',
+        onClick: forgetPassword,
+        })}
+        <p class="text-simple">Ou entre com:</p>
+        ${Button({
+        id: "iGoogle",
+        title: '<i class="fab fa-google"></i>',
+        onClick: loginGoogle,
+        })}
+      </form>
     <p class="alertMessage"></p>
     <p class="text-simple">Não tem uma conta?</p>
-      ${Button({
-      id: 'register',
-      title: 'Registre-se',
-      onClick: HashRegister
+    ${Button({
+    id: 'register',
+    title: 'Registre-se',
+    onClick: HashRegister
     })}
   </section>
   </div>
@@ -49,8 +54,9 @@ function sendLogin() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => { 
-      location.hash = 'post'})
+    .then(() => {
+      location.hash = 'post'
+    })
     .catch(function (error) {
       let errorCode = error.code;
       if (errorCode === 'auth/wrong-password') {
@@ -67,7 +73,6 @@ function loginGoogle() {
   let provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithRedirect(provider);
   firebase.auth().getRedirectResult().then(function (result) {
-    
     if (result.credential) {
       let token = result.credential.accessToken;
     }
@@ -78,6 +83,10 @@ function loginGoogle() {
     let email = error.email;
     let credential = error.credential;
   });
+}
+
+function forgetPassword() {
+  window.location.hash = 'update';
 }
 
 function HashRegister() {

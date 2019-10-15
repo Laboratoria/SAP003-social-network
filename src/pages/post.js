@@ -2,10 +2,11 @@ import Input from '../components/input.js';
 import Button from '../components/button.js';
 
 function Post() {
-
+  location.hash = 'post'
   const template = `
   <div class="box">
   <header class="header"><img src="./Imagens/header-logo.png"></header>
+  <div class="description"></div>
   <form class="primary-box">
     ${Input({
     class: 'js-post',
@@ -18,38 +19,48 @@ function Post() {
     onClick: SharePost,
   })}
   </form>
-  <ul id="history"></ul> 
+  <ul id="history">
+  </ul> 
   </div>`;
-
-  Timeline();
-
   return template;
-}
- function Timeline() {
-  const email = firebase.auth().currentUser.email;
-  const codUid = firebase.auth().getUid(email);
-  firebase.firestore().collection(codUid).doc('Post').collection('data').get().then(
-    (querySnapshot) => {querySnapshot.forEach((Post) => {
-        document.getElementById('history').insertAdjacentHTML('beforeend', `<li>${Post.data().post}</li>`);
-      });
-    });
 }
 
 function SharePost() {
-  const contPost = document.querySelector('.js-post').value;
-  const email = firebase.auth().currentUser.email;
+  const postText = document.querySelector('.js-post');
+  const email = firebase.auth().currentUser.emailVerified
   const codUid = firebase.auth().getUid(email);
-  firebase.firestore().collection(codUid).doc('Post').collection('data').add({
-    post: contPost
+  const time = firebase.firestore.FieldValue.serverTimestamp();
+  const name = firebase.auth().currentUser.displayName;
+  firebase.firestore().collection('Posts').add({
+    name: name,
+    user: codUid,
+    data: time,
+    likes: 0,
+    post: postText.value,
+    comments: []
   }).then(function () {
     console.log('Post Salvo');
-    Timeline();
   }).catch(function (error) {
     console.log('O erro é: ', error);
   })
+  document.getElementById('history').innerHTML +=`<li>${postText.value}</li>`
   document.querySelector('.js-post').value = '';
-  Timeline();
 }
+
+/* function addPost() {
+  firebase.firestore().collection('Posts').get().then(
+    (snap) => {snap.forEach((doc) => {
+      document.getElementById('history').innerHTML +=`<li>${doc.data().post}
+    </li>`;});
+  });
+}
+function loadPost() {
+  firebase.firestore().collection('Posts').get().then(
+    (snap) => {snap.forEach((doc) => {addPost(doc)});
+  });
+}
+ */
+
 
 
 
