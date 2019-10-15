@@ -1,6 +1,20 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+
+dataStorage.collection('mensagens').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    console.log(doc.data())
+    
+  });
+});
+
+// para add direto no firestore
+
+
+dataStorage.collection('nomedacoleção').add
+
+
 export const Database = () => {
   const template = `
     <h1>Post</h1>
