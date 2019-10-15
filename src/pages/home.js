@@ -16,24 +16,23 @@ function Home() {
 export default Home;
 
 function goToRegister () {
-  window.location.hash='register';
+  window.location.hash='#register';
 }
 
 function buttonLogin () {
   const email= document.querySelector('.js-email-input').value;
-  const password= document.querySelector('js-password-input').value;
-  // firebase.auth().signInWithEmailAndPassword(email, password)
-// }).catch(function(erro){
-  //   var erroCode = erro.code;
-  //
-  //   if(errorCode === 'auth/user-not-found'){
-  //     alert('Usuário não encontrado')
-  //   } else if(errorCode === 'auth/invalid-email') {
-  //     alert('E-mail inválido')
-  //   } else if (erroCode === 'auth/wrong-password') {
-  //     alert('Senha incorreta')
-  //   }
-//   // });
+  const password= document.querySelector('.js-password-input').value;
+  firebase.auth().signInWithEmailAndPassword(email, password).then(function(firebaseUser){
+    window.location='#feed';
 
-// }
+  }).catch(function(error) {
+    let errorCode = error.code;
+    if (errorCode === 'auth/user-not-found'){
+      alert('Usuário não encontrado')
+    } else if (errorCode === 'auth/invalid-email'){
+      alert('E-mail inválido')
+    }else if (errorCode === 'auth/invalid-password'){
+      alert('Senha incorreta')
+    }
+  })
 }
