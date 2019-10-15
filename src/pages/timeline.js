@@ -1,36 +1,36 @@
 import Input from '../components/input.js';
 import List from '../components/list-menu.js';
 import Button from '../components/button.js';
-import Card from '../components/card.js';
+import Post from '../components/post.js';
 
 
 const signOut = () => firebase.auth().signOut();
 
-const creatPost = () => {
-  const text = document.querySelector('.post-text').value;
+const createPost = () => {
+  const textInput = document.querySelector('.post-text');
   firebase.firestore().collection('posts').add({
-    text: text,
+    text: textInput.value,
     userId: firebase.auth().currentUser.uid,
-  }).then(result => alert('foicaceta'));
-  document.querySelector('.publication').innerHTML = text;
-}
+    addedAt: (new Date()).toISOString(),
+  }).then(() => {
+    textInput.value = '';
+  });
+};
+
 const addPost = (post) => {
-  const postTemplate = `
-    <p class='${post.class}'>
-      ${post.data().text}
-    </p>
-  `
-  document.querySelector('.publication').innerHTML += postTemplate;
-}
- 
+  const postTemplate = Post(post.data());
+  document.querySelector('.posts').innerHTML += postTemplate;
+};
+
 const loadPost = () => {
   const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.get().then(snap => {
-    snap.forEach(post => {
-      addPost(post)
-    })
-  })
-}
+  postsCollection.orderBy('addedAt', 'desc').onSnapshot((snap) => {
+    document.querySelector('.posts').innerHTML = '';
+    snap.forEach((post) => {
+      addPost(post);
+    });
+  });
+};
 
 loadPost();
 
@@ -68,23 +68,20 @@ const timeline = () => {
     </div>
     <div class="container-publicar">
       ${Input({
-      class: 'post-text',
-      id: 'post-text',
-      type: 'textarea',
-      placeholder: 'digite aqui...'
-    })}
+    class: 'post-text',
+    id: 'post-text',
+    type: 'textarea',
+    placeholder: 'digite aqui...',
+  })}
     <img src="images/img-public.png" class="img-public"> 
       ${Button({
-        class: 'btn-publicar',
-        id: 'btn-publicar',
-        type: 'submit',
-        title: 'Publicar',
-        onClick: creatPost,
-      })}
-      <div class="container-public">
-      ${Card({
-        class: 'publication',
-      })}
+    class: 'btn-publicar',
+    id: 'btn-publicar',
+    type: 'submit',
+    title: 'Publicar',
+    onClick: createPost,
+  })}
+      <div class="posts">
       </div>
       </div> 
   </form>
@@ -94,4 +91,3 @@ const timeline = () => {
 };
 
 export default timeline;
-
