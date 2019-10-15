@@ -1,11 +1,11 @@
 import Button from '../components/button.js';
 
 function Home() {
+
   const template = `
-    <h1>Home Page</h1>
-    ${Button({ id: '🐠', title: 'Botão 🐠' })}
-    ${Button({ id: '🎉', title: 'GOOGLE 🎉' })}
-    <p>Esse é um exemplo 🍌</p>
+    <h1>Feed</h1>
+    ${Button({ id: '🐠', title: '' })}
+    ${Button({ id:'x', title:'y' })}
   `;
 
   return template;
