@@ -9,7 +9,6 @@ function pegarInput() {
     if (d.email === email && d.senha === senha) {
       return d;
     }
-    return pegarInput;
   });
 
   if (logado) {
