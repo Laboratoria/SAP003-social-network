@@ -6,36 +6,33 @@
 
 .initial-section{
   background-image: url(img/background.png);
-  /* height:100%; */
   background-size:cover;
   margin: auto;
-  /* border: 2rem; */
-  padding: 2rem;
+  padding: 2em;
+    /* border: 2em; */ 
 }
-
-
-.initial-section img{}
 
 .img-section{
   width: 50%;
-  display: block;
+  display:flex;
+  flex-direction: column;
   margin:10% auto;
 }
 
 .primary-button {
   font-family: 'Questrial', sans-serif;
-  text-align: center;
-  font-size: 1rem;
-  display: block;
+  font-size: 1em;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   margin: 1% auto;
-  padding: 10px;
-  width: 7rem;
-  height: 3rem; 
+  padding: 1em 0 0 0;
+  width: 7em;
+  height: 3em; 
   background-color: #156258;
-  background-position: center;
   color: #f2f2f2;
   box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
-  border-radius: 1.5rem;
+  border-radius: 1.5em;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -45,29 +42,34 @@
 }
 
 .google-login img {
-  width: 2rem;
+  width: 1.8em;
+  
 }
 
 .google-login {
   box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
-  width: 3rem;
-  height: 3rem;
+  width: 2.5em;
+  height: 2.5em;
+  align-items: center;
   border: none;
-  background-color: #fff;
-  border-radius: 1.5rem;
-  display:block;
+  background-color: #f2f2f2;
+  border-radius: 1.5em;
+  display:flex;
+  flex-direction: column;
   margin: 1% auto;
+  padding: 0.35em 0 0 0;
 }
 
 .primary-input {
   font-family: 'Questrial', sans-serif;
   background-color: #f2f2f2;
   border: 1px solid #33cab4;
-  border-radius: 1.5rem;
+  border-radius: 1.5em;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 1em;
   background-position:center;
-  display: block;
+  display:flex;
+  flex-direction: column;
   box-shadow: 6px 6px 10px -8px rgba(0,0,0,0.56);
   margin:3% auto;
 }
@@ -77,15 +79,17 @@
   font-size: 100%;
   text-align: center;
   color: #f2f2f2;
-  display: block;
+  display:flex;
+  flex-direction: column;
   margin: auto;
 }
 
 .register-link {
   font-family: 'Questrial', sans-serif;
+  font-size: 100%;
   color: #f2f2f2;
-  display: block;
-  /* margin: auto; */
+  display:flex;
+  flex-direction: column;
   align-content:left ;
 }
 
