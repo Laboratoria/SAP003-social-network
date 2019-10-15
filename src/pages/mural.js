@@ -1,12 +1,13 @@
 import Button from "../components/button.js";
 import Select from "../components/select.js";
+import Post from "../components/post.js"
 
 export const Mural = () => {
 	const template = `
 	<header>
 		<nav>
 			<li>
-				<select id="select" onchange="test()">
+				<select id="select" onchange="changeSelect()">
 					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural', selected:"selected"})}
 					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar'})}
 					${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
@@ -16,18 +17,18 @@ export const Mural = () => {
 			<li>Logout</li>
 		</nav>
 	</header>
+
 	<section>
-		<form>
-			<input>textarea</input><button>post</button>
-			<button>adicionar fotinha</button>	
-	</section>
-	${Button({ class:'btn-logout', id:"logout", type:"button", title:"Logout", onclick: logout})}
-	`;
+		<form id='post-form'>
+			${Post({id:'post', placeholder:"Qual a  bruxaria de hoje?", rows:'5', cols:'50'})}
+			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: post})}
+		</form>
+	</section>`;
 
 	return template;
 }
 
-const test = () => {
+const changeSelect = () => {
 	if (document.getElementById('select').value === "mural") {
 		window.location.hash = "mural";
 	} else if (document.getElementById("select").value === "editar") {
@@ -35,6 +36,16 @@ const test = () => {
 	} else {
 		logout();
 	}
+}
+
+
+//PAREI AQUI
+const post = () => {
+	const userPost = document.getElementById('post').value;
+
+		
+
+		document.getElementById('post-form').reset();
 }
 
 const logout = () => {
@@ -45,14 +56,5 @@ const logout = () => {
 	});
 }
 
-window.test = test;
-
-//nav-bar(dropdown com nome da usuária+logo+logout) 
-
-//foto+nome+bio
-
-// input de texto+ 2 botões:
-// 1 foto
-// 1 enviar
-
-// embaixo mural (twitter)
+window.changeSelect
+ = changeSelect;

@@ -1,19 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 
-h1{
+h1 {
   font-size: 49px;
   color: whitesmoke;
 }
 
-body{
+body {
   background-color: #121212;
+  color: whitesmoke;
 }
 
-.home{
+.home {
   display: flex;
   justify-content: space-around;
   height: 100%;
@@ -21,150 +27,242 @@ body{
   margin-top: 80px;
 }
 
-.login{
-  /* margin-top: 200px; */
+.logo {
+  width: 338px;
 }
 
-.logo{
-  width: 320px;
-
+#email-login {
+  border-radius: 5px;
+  outline:none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
 }
+
+#pass-login {
+  border-radius: 5px;
+  outline:none;
+  padding: 2px;
+  margin-top: 4px;
+  width: 280px;
+  height: 30px;
+}
+
+.login-form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-sign-up {
+  width: 70px;
+  cursor: pointer;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #121212;
+}
+
+.btn-login {
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+}
+
+.btn-google {
+  cursor:pointer;
+  font-family: 'Roboto', sans-serif;
+  height: 40px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+ .google-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+ }
+
+/*Inicio da tela de cadastro*/
+ .cadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.tela{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo{
+  padding: 10px;
+}
+
+#name{
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#mail{
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#pass{
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+.btn-send-sign-up{
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin: 15px;
+}
+/*Fim do cadastro*/
+
+@media screen and (max-width: 770px) {
 
   .home{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    font-size: 14px;
   }
 
-  .homepage-title{
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    justify-content: center;
+  }
+
+  h1 {
+    text-align: center;
+    color: wheat;
+  }
+
+  .home {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+
+  .homepage-title {
     font-size: 35px;
     padding: 8px;
-    text-align: center;
   }
 
-  .logo{
-    width: 40%;
+  .logo {
+    width: 70%;
   }
 
-  .login{
+  .login {
     padding: 20px;
     display: flex,
     align-items: center;
   }
 
-  .homepage-title{
-    align-items: center;
-  }
-
-  .buttons{
-    margin-top: 10px;
-  }
-
-  #email-login{
-    border-radius: 20px;
+  #email-login {
+    border-radius: 5px;
     outline:none;
-    padding: 8px;
-    margin: 5px;
-    width: 260px;
-    border: none;
-   
+    padding: 2px;
+    width: 280px;
   }
 
-  #pass-login{
-    border-radius: 20px;
+  #pass-login {
+    border-radius: 5px;
     outline:none;
-    padding: 8px;
-    margin: 5px;
-    width: 260px;
-    border: none;
+    padding: 2px;
+    margin-top: 4px;
+    width: 280px;
   }
 
-
-  .login-form{
+  .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
   }
-
-  .btn {
-    border-radius: 9px;
-    outline:none;
-    padding: 7px;
-  }
-
-  .btn-sign-up{
-    background-color: #E8783C;
-  }
-
-
-  .sign{
+ 
+  .buttons {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 15px;
-    margin-right: 50px;
+    flex-direction: column;
+    align-items: center;
   }
 
-  #login{
-    padding: 7px;
-    width: 170px;
-    border-radius: 20px;
-    background-color: red;
-    color: black;
-    font-size: 18px;
-    border: none;
-  }
-
-  .opcao{
-    color: black;
-    padding: 15px;
-  }
-
-  #google-login {
-    border-radius: 20px;
-    height: 40px;
-    width: 170px;
-    padding: 0;
-    border: 0;
-    margin: 20px;
-    border: none;
-  }
-
-  .btn-google {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  #google {
+  .btn-sign-up {
+    width: 70px;
     height: 30px;
-    width: 30px;
-    margin-left: 10px;
-    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background: #121212;
   }
 
-  .cadastro{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .btn-login{
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background: #AA4528;
   }
 
-  .tela{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .btn-google{
+    font-family: 'Roboto', sans-serif;
+    height: 40px;
+    border-width: 0;
+    background: white;
+    color: #737373;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding-right: 8px;
   }
-
-  .titulo{
-    padding: 30px;
-  }
-
-  #name{
-    margin: 5px;
-    bor
-  }
-
-  #mail{
-    margin: 5px;
-  }
-
+  
+   .google-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+   }
+}

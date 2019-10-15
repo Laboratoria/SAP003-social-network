@@ -55,17 +55,15 @@ export function Home() {
 	 <section class="login">
 	  <h1 class="homepage-title">Share your spells...</h1>
 	  <form class="login-form">
-	   ${Input ({ id:'email-login', placeholder:'E-mail', type:'email'})}
-	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})}
-	   <div class ="buttons">${Button({ class:'btn btn-login', id:'login', title: 'Log in', onclick: login})}
-	   </div>
-	   
-
-	   ${Button({ class:'btn btn-google' ,id:'google-login', title: '<img id="google" src="https://img.icons8.com/color/60/000000/google-logo.png"><p class="opcao">Sign in with</p>', type:'submit', onclick: loginGoogle})}
+	   ${Input ({ id:'email-login', placeholder:'Login', type:'email'})}
+	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})} <br>
+	   ${Button({ class:'btn-login', id:'login', title: 'Login', onclick: login})} <br>
 	  </form>
-	  <div class="sign">
-	  ${Button({ class:'btn btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})} </div>
-	 </section>
+	  <div class="buttons">
+	   ${Button({ class:'btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})} <br>
+	   ${Button({ class:'btn-google' , id:'google-login', title: '<img src="https://img.icons8.com/ios-glyphs/18/000000/google-logo.png" class="google-logo"> SIGN IN WITH GOOGLE', type:'submit', onclick: loginGoogle})}
+	  </div>
+	  </section>
 	</container>`;
 
 	window.location.hash = "home";
