@@ -1,5 +1,5 @@
 import Button from '..//components/button.js';
-import Logo from '../components/logo.js';
+import savePost from '..//pages/post.js';
 
 
 function signOut() {  
@@ -18,18 +18,24 @@ function home() {
     <header class="header-home">Laboratroca</header>   
     <nav></nav>
     <br>
-    <h3>Olá! Bem-vinda ao seu aplicativo de trocas ;)</h3>  
+    <h1 class="id-user">Olá, Fulana!</h1>  
 
-    <p>OiOiOi</p>  
-      
+    <img src="./img/logo.png" class="img-user"/><textarea name="post" class="post" placeholder="O que você quer trocar?"></textarea>
+    <br>    
+    ${Button({ title: 'PUBLICAR', onClick: savePost })}   
     <br>
+    <ul class="feed">    
+    </ul>      
 
     ${Button({ title: 'SAIR', onClick: signOut })}   
    
     
-  `;
+  `;  
 
   return template;
 }
 
 export default home;
+
+
+

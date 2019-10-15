@@ -3,7 +3,6 @@ import Logo from '../components/logo.js';
 import Input from '../components/input.js';
 import ButtonAuth from '../components/button-auth.js';
 import loginGoogle from './google.js';
-import loginFacebook from './facebook.js';
 
 
 function enviarLogin() {
@@ -34,7 +33,8 @@ function enviarLogin() {
       window.location = '#home.js';      
     } else {
 
-    }
+    }    
+
   }); */
     
 }
@@ -49,8 +49,7 @@ function login() {
     ${Button({ onClick: enviarLogin, title: 'ENVIAR',  })}
     
     <span>OU ACESSE COM</span>
-    <section class="auth">
-    ${ButtonAuth({ onClick: loginFacebook, title: '<i class="fab fa-facebook-f"></i>' })}
+    <section class="auth">   
     ${ButtonAuth({ onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
     </section>       
    

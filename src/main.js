@@ -1,6 +1,7 @@
 import login from './pages/login.js';
 import register from './pages/register.js';
 import home from './pages/home.js';
+import feed from './pages/feed.js';
 
 
 function init() {
@@ -21,8 +22,10 @@ function locationHashChanged() {
     break;
     case '#login.js':
     document.querySelector('main').innerHTML = login();
-    break;    
-      
+    break;
+    case '#feed.js':
+    document.querySelector('main').innerHTML = feed();
+    break;       
   }
   
 }
