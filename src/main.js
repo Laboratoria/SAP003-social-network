@@ -1,6 +1,6 @@
 import Login from './pages/login.js';
 import Register from './pages/register.js';
-import Home from './pages/home.js'
+import Home from './pages/home.js';
 
 const main = document.querySelector('main');
 const body = document.querySelector('body');
@@ -10,7 +10,7 @@ function init() {
 }
 
 function onHashChange() {
-  switch (location.hash) {
+  switch (window.location.hash) {
     case '#register':
       body.className = "background";
       main.innerHTML = Register();
