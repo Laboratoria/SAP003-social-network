@@ -75,7 +75,6 @@ function Login() {
       onClick: changePg,
     })}
   `;    
-
   return template;
 }
 export default Login;

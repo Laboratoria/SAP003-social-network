@@ -5,13 +5,13 @@ function userRegister() {
     const nome = document.querySelector('.nome-input').value;
     const email = document.querySelector('.email-input').value;
     const password = document.querySelector('.senha-input').value;
-
     console.log(nome, email, password);
-    window.location.href = '#feed';
-    firebase.auth().createUserWithEmailAndPassword(email, password).cath((error) => {
+   
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+        window.location.href = '#feed';
+    }).cath((error) => {
         //lidar e inserir mensagem de erro 
         const errorCode = error.code;
-
         console.log(errorCode);
     });
 }
@@ -24,7 +24,7 @@ function Register() {
         <h1> Preencha os campos para realizar o cadastro!</h1>
         <form>
             ${Input({
-                class: 'name-input',
+                class: 'nome-input',
                 placeholder: 'Nome',
                 type: 'text',
                 })}
