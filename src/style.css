@@ -198,7 +198,7 @@ label[for="navigation"]{
     border-radius: 10px;
   }
 
-  .campo-publicar{
+  .post-text{
     display: flex;
     width: 272px;
     height: 96px;
@@ -229,14 +229,22 @@ label[for="navigation"]{
     display: block;
   }
 
-  .container-publicado{
+  .container-public{
     display: flex;
     width: 317px;
     height: 142px;
-    margin-left: 6%;
-    margin-top: 73%;
+    margin-left: 0%;
+    margin-top: 16%;
     background: #968B7D;
     border-radius: 10px;
+  }
+
+  .publication{
+    background: #ffffff;
+    margin-left: 0%;
+    height: 54%;
+    margin-top: 10%;
+    width: 100%;
   }
  
   .img-curtir{
