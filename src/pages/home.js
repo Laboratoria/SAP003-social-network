@@ -9,7 +9,6 @@ function pegarInput() {
     if (d.email === email && d.senha === senha) {
       return d;
     }
-    return pegarInput;
   });
 
   if (logado) {
@@ -27,7 +26,7 @@ function logar() {
   const template = `
 <img src="fotos/Logo-Base_Caixa_Baixa_V4.png" alt="">
 <div class="container-login">
-  <h1>Base Sustentabilidade</h1>
+  <h1 id="title">Base Sustentabilidade</h1>
   <h3>Bem-vindo<h3>
   <div>
   <form class="form">
