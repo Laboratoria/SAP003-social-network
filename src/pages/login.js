@@ -47,23 +47,21 @@ function createUserWithEmail() {
   console.log(email, password);
 }
 //fncao para o cadastro e retornar à home
-// function voltarPagina() {
+// function backHome() {
 //   window.location.hash = #home;
 // }
 
 function Login() {
-
 
   const buttons = Button({
       id: 'loginUser',
       title: '<p class="btn-login">Login</p>',
       onClick: createUserWithEmail, 
     }) + `<h3>Entre com</h3>` +    
-    Button({
-      id: '🎉',
-      title: '<i class="fa fa-envelope"></i>',
+    // Button({
+    //   id: '🎉',
+    //   title: '<i class="fa fa-envelope"></i>',
      // onClick: 
-    }) +
     Button({
       id: '🎉',
       title: '<i class="fa fa-google"></i>',

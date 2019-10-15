@@ -23,6 +23,7 @@ const pages = {
 // } 
 
 // window.onhashchange = locationHashChanged;
+//
 
 
 window.addEventListener('load', init); 
