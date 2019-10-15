@@ -18,11 +18,6 @@ const signIn = () => {
         document.querySelector('.error-email').textContent = 'Formato de email inválido';
       }
     });
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      window.location = '#timeline';
-    }
-  });
 };
 
 const register = () => {
@@ -41,11 +36,6 @@ const register = () => {
         document.querySelector('.error-password').textContent = 'Senha deve possuir no mínimo 6 caracteres';
       }
     });
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      window.location = '#timeline';
-    }
-  });
 };
 
 const googleLogin = () => {
@@ -79,10 +69,12 @@ const login = () => {
   <p class="error-password"></p>
   <div class="buttons">
     ${Button({
+    class: 'primary-button',
     title: 'Entrar',
     onClick: signIn,
   })}
     ${Button({
+    class: 'primary-button',
     title: 'Registrar',
     onClick: register,
   })} 
