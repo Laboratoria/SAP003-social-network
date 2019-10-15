@@ -1,29 +1,16 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-function feed(){
+
+function timeline(){
     const template = `
-  <form>
-       ${Input({ placeholder: 'Escreva o seu post', type: 'text'})}
-       ${Button({ id: 'button', title: 'postar', type: 'submit'})}
-  </form>
-       `;
+    <form>
+    ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post'})}
+    ${Button({type:'submit', title: 'postar'})}
+    </form>
+    <div></div>
+    `
       return template;
   }
-export default feed;
 
-// function loadData(){
-//   const postList = document.getElementsById("posts");
-//   const postCollection = firebase.firestore().collection("posts")
-//
-//   postCollection.get().then(snap =>{
-//     snap.forEach(post =>{
-//       addPost(post)
-//     })
-//   })
-// }
-//
-// function addPost(post){
-//   const postTemplate = `
-//   <li> </li>`
-// }
+  export default timeline;
