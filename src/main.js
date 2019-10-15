@@ -1,18 +1,19 @@
-import Home from './pages/home.js';
-import Postpage from './pages/postpage.js'
+
+import  Home from './pages/home.js';
 import Register from './pages/register.js';
+import { Database, Post } from './pages/database.js';
 
 function pageRoute() {
-  const pageName = (window.location.hash) ? window.location.hash : '#Home';
+  const pageName = (window.location.hash) ? window.location.hash : '#home';
   switch (pageName) {
     case '#home':
       document.querySelector('main').innerHTML = Home();
       break;
     case '#register':
-        document.querySelector('main').innerHTML = Register();
-        break;
-    case '#postpage':
-      document.querySelector('main').innerHTML = Postpage();
+      document.querySelector('main').innerHTML = Register();
+      break;
+    case '#database':
+      document.querySelector('main').innerHTML = Database();
       break;
     default:
       document.querySelector('main').innerHTML = Home();
