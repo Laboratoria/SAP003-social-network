@@ -17,7 +17,7 @@ function Perfil() {
     ${Input({ class: 'js-interests-check', name:'interests2', type:'checkbox', value: 'Inteligência Artificial' })}
     ${Input({ class: 'js-interests-check', name:'interests3', type:'checkbox', value: 'UI-UX' })}
     ${Input({ class: 'js-interests-check', name:'interests4', type:'checkbox', value: 'Outros...' })}
-    ${Button({title: 'Salvar', onClick: salve})}
+    ${Button({class: 'primary-button', title: 'Salvar', onClick: salve})}
     </form>`;
 
   return template;

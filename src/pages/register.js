@@ -27,8 +27,8 @@ function createLogin() {
           <form>
           ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
           ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
-          ${Button({ id: 'doing-login', title: 'Log In', onClick: createLogin})}
-          ${Button({ id: 'come-back', title: 'Voltar', onClick: comeBack})}
+          ${Button({ class: 'primary-button', id: 'doing-login', title: 'Log In', onClick: createLogin})}
+          ${Button({ class: 'primary-button', id: 'come-back', title: 'Voltar', onClick: comeBack})}
           </form>`;
 
         return template;
