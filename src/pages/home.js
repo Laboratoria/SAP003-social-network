@@ -13,7 +13,6 @@ function Home() {
   
   ${Button({id: 'cadastro', title: 'Cadastrar', onClick: goToRegister })}
   
-
   `
     return template;
 };
@@ -42,5 +41,6 @@ function buttonLogin () {
     }
   });
   
-  
 }
+
+

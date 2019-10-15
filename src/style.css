@@ -63,6 +63,43 @@ h2{
       left: 50%;
       margin-left:-120px;
     }
+  
+  .google-logo{
+  position: relative;
+  top:5%;
+  left: 46%;
+  transform: rotate(8px,8px);
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+  border-top: 20px solid #ea4335;
+  border-right: 20px solid #4285f4;
+  border-bottom: 20px solid #34a853;
+  border-left: 20px solid #fbb605;
+}
+.google-logo::before{
+  content: '';
+    position: absolute;
+    top: -98px;
+    right: -87px;
+    border-top: 31px solid transparent;
+    border-right: 40px solid #ffffff;
+    border-bottom: 59px solid transparent;
+    border-left: 99px solid transparent;
+    transform: rotate(90deg);
+}
+ 
+.google-logo::after{ 
+  content: '';
+  position: absolute;
+  top: -6%;
+  right: -10px;
+  width: 30px;
+  height: 11px;
+  background: #4285f4;
+  transform: translate(10px, 10px);
+} 
+
 
 footer{
   background-color: rgb(207, 206, 205);
@@ -126,6 +163,29 @@ button{
   font-weight: bold;
   border: none;
   cursor: pointer;
+
+
+  after
+   content: '';
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  width: 100px;
+  height: 50px;
+  background: #4285f4;
+  transform: translate(10px, 10px);
+
+  before
+   content: '';
+  position:absolute;
+  top: -155 px;
+  right: -155px;
+  border-top: 100px solid transparent;
+  border-right: 100px solid #fff;
+  border-bottom: 100px solid transparent;
+  border-left: 100px solid transparent;
+  transform: rotate(90deg);
+  }
 
 }*/
 
