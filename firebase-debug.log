@@ -1,0 +1,29 @@
+[debug] [2019-10-15T15:57:11.495Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T15:57:11.501Z] Command:       /usr/local/bin/node /home/tiemi/.npm-global/bin/firebase serve
+[debug] [2019-10-15T15:57:11.502Z] CLI Version:   7.5.0
+[debug] [2019-10-15T15:57:11.502Z] Platform:      linux
+[debug] [2019-10-15T15:57:11.502Z] Node Version:  v8.10.0
+[debug] [2019-10-15T15:57:11.502Z] Time:          Tue Oct 15 2019 12:57:11 GMT-0300 (-03)
+[debug] [2019-10-15T15:57:11.502Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T15:57:11.578Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T15:57:11.578Z] > authorizing via signed-in user
+[debug] [2019-10-15T15:57:11.579Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T15:57:11.584Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-15T15:57:11.584Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-15T15:57:11.947Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T15:57:12.020Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-15T15:57:13.065Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T15:57:13.070Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-15T15:57:13.777Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/tiemi/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T15:57:13.786Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-15T15:57:15.221Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
