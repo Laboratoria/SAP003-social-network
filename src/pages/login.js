@@ -13,7 +13,6 @@ function login() {
         location.hash = '#feed';
       }
     })
-
     .catch(function(error) {
       // Handle Errors here.
       let errorCode = error.code;
@@ -23,22 +22,23 @@ function login() {
 }
 
 function google() {
-  var provider = new firebase.auth.GoogleAuthProvider();
+  let provider = new firebase.auth.GoogleAuthProvider();
   firebase
     .auth()
     .signInWithPopup(provider)
+    // let token = result.credential.accessToken;
+    // let user = result.user;
     .then(function(result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
-        if (result) {
-          location.hash = '#feed';
-        }
-      })
+      if(result) {
+        location.hash = '#feed';
+      }
+    })
     .catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      let email = error.email;
+      let credential = error.credential;
+      alert(errorCode, errorMessage, email, credential);
     });
   }
 
