@@ -1,6 +1,6 @@
-/*BASIC STYLE*/
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 
 *{
   margin: 0;
@@ -9,18 +9,17 @@
 }
 
 
-h1{
+h1 {
   font-size: 49px;
   color: whitesmoke;
 }
 
-body{
+body {
   background-color: #121212;
   color: whitesmoke;
 }
 
-/*MAIN HOME*/
-.home{
+.home {
   display: flex;
   justify-content: space-around;
   height: 100%;
@@ -28,11 +27,11 @@ body{
   margin-top: 80px;
 }
 
-.logo{
+.logo {
   width: 338px;
 }
 
-#email-login{
+#email-login {
   border-radius: 5px;
   outline:none;
   padding: 2px;
@@ -40,7 +39,7 @@ body{
   height: 30px;
 }
 
-#pass-login{
+#pass-login {
   border-radius: 5px;
   outline:none;
   padding: 2px;
@@ -49,7 +48,7 @@ body{
   height: 30px;
 }
 
-.login-form{
+.login-form {
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -64,6 +63,7 @@ body{
 
 .btn-sign-up {
   width: 70px;
+  cursor: pointer;
   height: 30px;
   border: none;
   border-radius: 10px;
@@ -71,7 +71,8 @@ body{
   background: #121212;
 }
 
-.btn-login{
+.btn-login {
+  cursor: pointer;
   width: 70px;
   height: 30px;
   border: none;
@@ -80,7 +81,8 @@ body{
   background: #AA4528;
 }
 
-.btn-google{
+.btn-google {
+  cursor:pointer;
   font-family: 'Roboto', sans-serif;
   height: 40px;
   border-width: 0;
@@ -115,41 +117,41 @@ body{
     justify-content: center;
   }
 
-  h1{
+  h1 {
     text-align: center;
     color: wheat;
   }
 
-  .home{
+  .home {
     display: flex;
     justify-content: space-around;
     height: 100%;
     width: 100%;
   }
 
-  .homepage-title{
+  .homepage-title {
     font-size: 35px;
     padding: 8px;
   }
 
-  .logo{
+  .logo {
     width: 70%;
   }
 
-  .login{
+  .login {
     padding: 20px;
-    display: flex;
+    display: flex,
     align-items: center;
   }
 
-  #email-login{
+  #email-login {
     border-radius: 5px;
     outline:none;
     padding: 2px;
     width: 280px;
   }
 
-  #pass-login{
+  #pass-login {
     border-radius: 5px;
     outline:none;
     padding: 2px;
@@ -157,7 +159,7 @@ body{
     width: 280px;
   }
 
-  .login-form{
+  .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,18 +180,6 @@ body{
     background: #121212;
   }
 
-  .sign{
-    align-items: center;
-  } */
-}
-
-/*MAIN SIGN UP*/
-
-/*HEADER MURA E EDITAR PÁGINA*/
-
-/*MAIN MURAL*/
-
-/*MAIN EDITAR PÁGINA*/
   .btn-login{
     width: 70px;
     height: 30px;
@@ -218,3 +208,4 @@ body{
     height: 18px;
     box-sizing: border-box;
    }
+}
