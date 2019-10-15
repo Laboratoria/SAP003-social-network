@@ -29,38 +29,70 @@ function Home() {
     
     <h1>Essa é a sua timeline</h1>
 
-    <p class="printa"></p>   
+    <section class="posts"></section>
   `;
   return template;
 }
 
-function btnPrint() {
-  const valueTextarea = document.querySelector('.txtArea').value;
+function btnPrint(event) {
+  event.preventDefault()
+  const textArea = document.querySelector('.txtArea')
   // console.log(valueTextarea)
 
-  db.collection('posts').add({
-    msg: valueTextarea,
-    // first: 'Ada',
-    // last: 'Lovelace',
-    // born: 1815
+  const post = {
+    msg: textArea.value,
+    coments: [],
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+  }
+
+  //db.collection('posts').add({
+  //    msg: valueTextarea,
+  //    // first: 'Ada',
+  //    // last: 'Lovelace',
+  //    // born: 1815
+  //  })
+  //  .then(function (docRef) {
+  //    console.log('Document written with ID: ', docRef.id);
+  //  })
+  //  .catch(function (error) {
+  //    console.error('Error adding document: ', error);
+  //  });
+
+  firebase.firestore().collection('posts').add(post).then(res => {
+    textArea.value = ''
+    loadData()
   })
-  .then(function(docRef) {
-    console.log('Document written with ID: ', docRef.id);
-  })
-  .catch(function(error) {
-    console.error('Error adding document: ', error);
-  });  
 
 }
 
-function printPosts() {
-  const prints = document.querySelector('.printa')
-  db.collection("posts").get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    prints.innerHTML += `${doc.id} => ${doc.data()}`;
-      // console.log(`${doc.id} => ${doc.data()}`);
-  });
-});
+function loadData() {
+  const postColletion = firebase.firestore().collection("posts")
+  const postList = document.querySelector('.posts')
+  postList.innerHTML = 'Carregando...'
+  postColletion.get().then(snap => {
+    snap.forEach(post => {
+      printPosts(post)
+    })
+  })
+
+}
+
+function printPosts(post) {
+  const postList = document.querySelector('.posts')
+  const postTemplate = `
+    <p>
+    ${post.data().timestamp.toDate().toLocaleString('pt-BR')}:
+      ${post.data().text},
+    </p>
+  `
+  postList.innerHTML += postTemplate
+
+  //  db.collection("posts").get().then((querySnapshot) => {
+  //    querySnapshot.forEach((doc) => {
+  //      prints.innerHTML += `${doc.id} => ${doc.data()}`;
+  //      // console.log(`${doc.id} => ${doc.data()}`);
+  //    });
+  //  });
 }
 
 

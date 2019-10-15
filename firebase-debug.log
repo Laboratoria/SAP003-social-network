@@ -56,3 +56,28 @@
 [debug] [2019-10-14T15:38:30.092Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-15T02:07:45.047Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T02:07:45.050Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-15T02:07:45.051Z] CLI Version:   7.5.0
+[debug] [2019-10-15T02:07:45.051Z] Platform:      linux
+[debug] [2019-10-15T02:07:45.051Z] Node Version:  v10.16.3
+[debug] [2019-10-15T02:07:45.051Z] Time:          Mon Oct 14 2019 23:07:45 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-15T02:07:45.051Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T02:07:45.087Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T02:07:45.087Z] > authorizing via signed-in user
+[debug] [2019-10-15T02:07:45.087Z] [iam] checking project social-network-squad3 for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T02:07:45.090Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-squad3:testIamPermissions  
+
+[debug] [2019-10-15T02:07:46.250Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T02:07:46.253Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-squad3  
+ 
+[debug] [2019-10-15T02:07:47.594Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/karine/SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T02:07:47.598Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-squad3/webApps/-/config  
+ 
+[debug] [2019-10-15T02:07:48.908Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
