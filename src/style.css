@@ -102,6 +102,63 @@ body {
   box-sizing: border-box;
  }
 
+/*Inicio da tela de cadastro*/
+ .cadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.tela{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo{
+  padding: 10px;
+}
+
+#name{
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#mail{
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+#pass{
+  border-radius: 5px;
+  outline: none;
+  padding: 2px;
+  width: 280px;
+  height: 30px;
+  margin: 3px;
+}
+
+.btn-send-sign-up{
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: #AA4528;
+  margin: 15px;
+}
+/*Fim do cadastro*/
+
 @media screen and (max-width: 770px) {
 
   .home{
@@ -209,3 +266,5 @@ body {
     box-sizing: border-box;
    }
 }
+
+
