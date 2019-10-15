@@ -35,7 +35,7 @@ function cadastrar() {
 }
 
 function locationHashChanged() {
-  if (location.hash === '#cadastro') {
+  if (window.location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = cadastrar();
   }
 }
