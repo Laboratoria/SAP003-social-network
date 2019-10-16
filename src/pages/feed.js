@@ -59,5 +59,4 @@ window.feed = {
 
 }
 
-
 export default Feed;
