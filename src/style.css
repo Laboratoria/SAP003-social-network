@@ -1,26 +1,77 @@
-<<<<<<< HEAD
-=======
+body{
+  margin: 15px;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .6em;
+  background-color: #dcdcdc;
+}
+img { 
+  width:100%;
+  height: 25%;
+ 
+}
+
+.container-login{
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top:10%;
+  margin-bottom: 10%;
+ 
+}
+
 .primary-button {
-  background-color: #ffe521;
+  background-color: #fdef4e;
   padding: 6px;
-  font-size: 1.5rem;
-  border-radius: 5px;
+  border-radius: 25px;
   font-weight: bold;
   border: none;
   cursor: pointer;
+  
+}
+
+a{
+
+  color:#69a79a;
 }
 
 .input {
+
   border: solid 1px;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 10px;
-  display: block;
+  margin-bottom: 20px;
+  
 }
 
-.card {
-  border: solid 1px;
-  border-radius: 30px;
-  padding: 8px;
+.img-footer img{
+  width: 100%;
+  opacity:.8;
 }
 
->>>>>>> 50817c69b4ad203ae0e10633b853cad4d32c5529
+.container-cadastro{
+  display: flex;
+  justify-content: center;
+}
+.cadastro{
+  display: flex;
+  flex-direction: column;
+  margin-top:10%;
+  margin-bottom: 10%;
+  width: 50%;
+  justify-content: space-around;
+ 
+}
+.mia{
+  display: flex;
+  align-items: flex-start;
+  height: 25%;
+}

@@ -17,17 +17,21 @@ function pegarInput() {
   } else {
     dadoslocal.push(dados);
   }
-
   window.localStorage.setItem('cadastro', JSON.stringify(dadoslocal));
+  window.location.hash = '#home';
+
 }
 
-function Cadastro() {
+function cadastrar() {
   const template = `
-  <h1><a href='#login'>Login</a></h1>
+  <img src="fotos/mia pose 1-01.png" class="mia"> 
+  <div class="container-cadastro">
+  <form class="cadastro">
     ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
     ${Input({ class: 'js-nome', placeholder: 'Nome completo', type: 'text' })}
     ${Input({ class: 'js-senha', placeholder: 'senha', type: 'password' })}
     ${Button({ title: 'Cadastre-se', onClick: pegarInput })}
+    <p>Você já está registrado? Então venha<a href='#home'> logar</a> e fazer parte de um mundo mais sustentável.</p>
 
   `;
   return template;
@@ -35,7 +39,7 @@ function Cadastro() {
 
 function locationHashChanged() {
   if (location.hash === '#cadastro') {
-    document.querySelector('main').innerHTML = Cadastro();
+    document.querySelector('main').innerHTML = cadastrar();
   } else if (location.hash === '#login') {
     document.querySelector('main').innerHTML = Login();
   }
@@ -43,4 +47,4 @@ function locationHashChanged() {
 
 window.addEventListener('hashchange', locationHashChanged, false);
 
-export default Cadastro;
+export default cadastrar;
