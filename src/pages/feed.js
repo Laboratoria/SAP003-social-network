@@ -21,6 +21,22 @@ const checkUser = (docUid) => {
   }
 };
 
+const makePostEditable = (post) => { 
+  post.style.border = '1px solid #000000';
+  post.style.padding = '20px'
+  post.contentEditable = true
+  };
+  
+const saveEditPost = (post) => {
+  // post.style.border = '10px solid #000000';
+  // post.style.padding = '0px';
+  post.contentEditable = false;
+
+  console.log(post)
+  // const db = firebase.firestore();
+  // db.collection('posts').doc(id).update({text: post.value}) 
+}
+
 const postTemplate = (doc) => {
   document.querySelector('.posts').innerHTML
     += `
@@ -28,12 +44,22 @@ const postTemplate = (doc) => {
       <p class='posted posted-name'> ${doc.data().name}
         <button type='button' class='delete-btn' id=${doc.id} name=${doc.data().user}>X</button>
       </p>
-      <p class='posted text' contenteditable='true'> ${doc.data().text} |</p>
+      <p class='posted text'> ${doc.data().text} |</p>
+      <button type='button' class='edit-btn' id=${doc.id}>Editar</button>
+      <button type='button' class='save-btn' id=${doc.id}>Salvar</button>
       <p>${doc.data().date}</p>
     </div>`;
 
   checkUser(doc.data().user);
   document.querySelectorAll('.delete-btn').forEach(cls => cls.addEventListener('click', e => deletePost(e.target.id)));
+
+  const xuxu= document.querySelector('.text')
+  document.querySelectorAll('.edit-btn').forEach
+  (cls => cls.addEventListener('click', e => makePostEditable(xuxu)))
+
+  document.querySelectorAll('.save-btn').forEach
+  (cls => cls.addEventListener('click', saveEditPost(xuxu)))
+
 };
 
 const showPosts = () => {
