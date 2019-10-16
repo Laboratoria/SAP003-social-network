@@ -37,6 +37,7 @@ function logar() {
   </form>
   <p>Você já possui conta? Não, então <a href= '#cadastrar'>cadastre-se</a> aqui!</p>
   </div> 
+
   </div>
   <div class="img-footer">
   <img src="fotos/logo-half-2.png" alt="">
