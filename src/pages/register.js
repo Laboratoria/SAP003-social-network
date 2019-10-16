@@ -15,20 +15,19 @@ const createUser = () => {
       document.querySelector('.erro').textContent = 'A senha é muito fraca.';
     } else {
       document.querySelector('.erro').textContent = errorMessage;
-    };
-  }
-
-  ).then(cred => {
-    cred.user.updateProfile({
-      displayName:name
-    })
-    if (cred.additionalUserInfo.isNewUser) {
-      firebase.auth().currentUser.sendEmailVerification().then(() => {
-        document.querySelector('.erro').textContent = 'Email cadastrado com sucesso! Verifique sua caixa de entrada!';
-        document.querySelector('#register-form').reset();
-      });
     }
-  });
+  })
+    .then((cred) => {
+      cred.user.updateProfile({
+        displayName: name,
+      });
+      if (cred.additionalUserInfo.isNewUser) {
+        firebase.auth().currentUser.sendEmailVerification().then(() => {
+          document.querySelector('.erro').textContent = 'Email cadastrado com sucesso! Verifique sua caixa de entrada para confirmá-lo!';
+          document.querySelector('#register-form').reset();
+        });
+      }
+    });
 };
 
 const location = () => {
