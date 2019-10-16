@@ -1,9 +1,61 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
+.body {
+  background-color: #dcd6f7; 
+}
+
+/* .form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.image{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  width: 80%;
+  height: 80%;
+  border-radius: 180%;
+}
+
+.message-area{
+  display: flex;
+  margin: auto;
   border-radius: 5px;
-  font-weight: bold;
-  border: none;
+  justify-content: space-between;
+
+}
+
+
+.loginOption{
+  color: #350f63;
+  text-align: center;
+}
+
+.LoginAccount{
+  display: flex;
+  margin: auto;
+  background-color: #f18805;;
+  padding: 3px;
+  font-size: 0.8rem;
+  border-radius: 5px;
   cursor: pointer;
 }
+
+.face{
+  display: flex;
+  margin: auto;
+ 
+}
+
+.google{
+  display: flex;
+  margin: auto;
+  
+}
+
+
+
+
+
