@@ -3,7 +3,9 @@ import Feed from './pages/feed.js';
 import Perfil from './pages/perfil.js';
 import Register from './pages/register.js';
 
+
 window.addEventListener('load', locationHashChanged);
+
 
 function locationHashChanged() {
   if (location.hash === '#login') {
