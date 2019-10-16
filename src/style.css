@@ -116,7 +116,20 @@ body {
   padding: 1% 2% 2% 2%;
 }
 
+/*TEXTAREA*/
+
+.text-area{
+  width: 95%;
+  /* height: 60%; */
+  resize: none;
+  padding: 1.5%;
+  border-radius: 1%;
+}
 /*POST-AREA*/
+
+.profile {
+  background: blue;
+}
 
 .post-area{
   background:#FCFCFC;
@@ -124,7 +137,7 @@ body {
 }
 
 .input-area {
-  background: cadetblue;
+  background: red;
 }
 
 .print-post{
@@ -139,6 +152,11 @@ body {
 
 .interaction-area{
   background: sienna;
+  padding: 2% 2% 2% 2%;
+}
+
+.likes{
+  background: chartreuse;
 }
 
 .coments{
