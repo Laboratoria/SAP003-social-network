@@ -14,15 +14,21 @@ const cad = () => {
 
 const mural = () => {
 
-	const allPosts = firebase.firestore().collection('posts');	
+	const user = firebase.auth().currentUser;
+
+	const allPosts = firebase.firestore().collection('posts');
+
 	allPosts.get().then(snap => {
 		let postsLayout = '';
 		snap.forEach(post => {
-			postsLayout += `
-				<li class='timeline-item'>
+
+			if (post.data().userID === user.uid) {
+				postsLayout += `
+				<li class='timeline-item' id='${post.data().userID}'>
 					<p>${post.data().text}</p>
 					<p>${post.data().name}</p>
 				</li>`;
+			}			
 		})
 		document.querySelector("main").innerHTML = Mural({postsLayout: postsLayout});
 	})

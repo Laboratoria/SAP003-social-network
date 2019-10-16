@@ -20,13 +20,11 @@ const cadastrar = (id, event) => {
 
 	const name = document.getElementById('name').value;	
 	const born = document.getElementById('born').value;
-	const bio = document.getElementById('bio').value;
 
 	const user = {
 		name: name,
 		email: email,
 		born: born,
-		bio: bio
 	}
 
 	firebase.firestore().collection('users').add(user);
