@@ -29,3 +29,10 @@ function postar() {
 
 export default postar;
 
+/* Função logout para por no feed
+ function logout() {
+  localStorage.removeItem('usuario');
+  ${Button({ title: 'Login', onClick: logout })}
+  window.location.reload();
+}
+ */
