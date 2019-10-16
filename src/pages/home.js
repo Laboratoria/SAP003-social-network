@@ -27,6 +27,7 @@ const loginGoogle = (id, event) => {
   	// The signed-in user info.
   	var user = result.user;
   	// ...
+  	firebase.firestore().collection('users').add(user);
 }).catch(function(error) {
   	// Handle Errors here.
   	var errorCode = error.code;
@@ -38,19 +39,6 @@ const loginGoogle = (id, event) => {
   // ...
   	alert(errorMessage);
 	});
-
-	const name = document.getElementById('name').value;	
-	const born = document.getElementById('born').value;
-	const bio = document.getElementById('bio').value;
-
-	const user = {
-		name: name,
-		email: email,
-		born: born,
-		bio: bio
-	}
-
-	firebase.firestore().collection('users').add(user);
 }
 
 firebase.auth().onAuthStateChanged(function(user) {
