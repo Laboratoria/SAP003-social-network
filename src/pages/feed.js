@@ -63,8 +63,6 @@ function createPost() {
 
 function addPost(post) {
   const postTemplate = `
-  <section class="print-post">
-    <ul class="post-list">
       <li id="${post.id}">
         ${post.text} 
         <div class="interaction-area">
@@ -74,11 +72,11 @@ function addPost(post) {
           </div>
         </div>
       </li>
-    </ul>    
-  </section
   `;
   return postTemplate;
 }
+
+const deletePost = document.querySelector()
 
 function logOut() {
   auth
@@ -112,7 +110,9 @@ function Feed() {
     })}
     <div class='profile'></div>
       ${NewPostTemplate()}
+      <section class="print-post">
       <ul class='post-list'></ul>
+      </section>
   `;
   userInfo();
   loadPosts();
