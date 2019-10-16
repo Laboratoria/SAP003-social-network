@@ -21,20 +21,15 @@ const checkUser = (docUid) => {
   }
 };
 
-const makePostEditable = (post) => { 
-  post.style.border = '1px solid #000000';
-  post.style.padding = '20px'
-  post.contentEditable = true
+const makePostEditable = (id) => { 
+  document.getElementsByClassName(id)[0].firstChild.parentElement.contentEditable = true
   };
   
-const saveEditPost = (post) => {
-  // post.style.border = '10px solid #000000';
-  // post.style.padding = '0px';
-  post.contentEditable = false;
-
-  console.log(post)
-  // const db = firebase.firestore();
-  // db.collection('posts').doc(id).update({text: post.value}) 
+const saveEditPost = (id) => {
+  const pText= document.getElementsByClassName(id)[0].firstChild.parentElement
+  pText.contentEditable = false;
+  const db = firebase.firestore();
+  db.collection('posts').doc(id).update({text: pText.textContent}) 
 }
 
 const postTemplate = (doc) => {
@@ -44,21 +39,21 @@ const postTemplate = (doc) => {
       <p class='posted posted-name'> ${doc.data().name}
         <button type='button' class='delete-btn' id=${doc.id} name=${doc.data().user}>X</button>
       </p>
-      <p class='posted text'> ${doc.data().text} |</p>
-      <button type='button' class='edit-btn' id=${doc.id}>Editar</button>
-      <button type='button' class='save-btn' id=${doc.id}>Salvar</button>
+      <p class='posted text ${doc.id}'> ${doc.data().text} |</p>
+      <button type='button' class='edit-btn' name=${doc.id}>Editar</button>
+      <button type='button' class='save-btn' name=${doc.id}>Salvar</button>
       <p>${doc.data().date}</p>
     </div>`;
 
   checkUser(doc.data().user);
   document.querySelectorAll('.delete-btn').forEach(cls => cls.addEventListener('click', e => deletePost(e.target.id)));
 
-  const xuxu= document.querySelector('.text')
+  const editPost= document.querySelector('.text')
   document.querySelectorAll('.edit-btn').forEach
-  (cls => cls.addEventListener('click', e => makePostEditable(xuxu)))
+  (cls => cls.addEventListener('click', e => makePostEditable(e.target.name)))
 
   document.querySelectorAll('.save-btn').forEach
-  (cls => cls.addEventListener('click', saveEditPost(xuxu)))
+  (cls => cls.addEventListener('click', e => saveEditPost(e.target.name)))
 
 };
 
