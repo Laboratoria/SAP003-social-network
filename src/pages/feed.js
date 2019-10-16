@@ -6,11 +6,20 @@ const logout = () => {
   });
 };
 
-const deletePost = (id) => { 
+const deletePost = (id) => {
   const db = firebase.firestore();
-  db.collection('posts').doc(id).delete().then(()=> {
- document.getElementById(id).parentElement.parentElement.style.display ='none';
-})
+  db.collection('posts').doc(id).delete().then(() => {
+    document.getElementById(id).parentElement.parentElement.style.display = 'none';
+  });
+};
+
+const checkUser = (docUid) => {
+  const user = firebase.auth().currentUser.uid;
+  if (user !== docUid) {
+    document.getElementsByName(docUid).forEach((bt) => {
+      bt.style.display = 'none';
+    });
+  }
 };
 
 const postTemplate = (doc) => {
@@ -18,12 +27,13 @@ const postTemplate = (doc) => {
     += `
     <div class='posted container-post' data-id=${doc.id}> 
       <p class='posted posted-name'> ${doc.data().name}
-        <button type='button' class='delete-btn' id=${doc.id}>X</button>
+        <button type='button' class='delete-btn' id=${doc.id} name=${doc.data().user}>X</button>
       </p>
       <p class='posted text'> ${doc.data().text} | ${doc.data().date}
     </div>`;
-  document.querySelectorAll('.delete-btn').forEach
-  (cls => cls.addEventListener('click', e => deletePost(e.target.id)));
+
+  checkUser(doc.data().user);
+  document.querySelectorAll('.delete-btn').forEach(cls => cls.addEventListener('click', e => deletePost(e.target.id)));
 };
 
 const showPosts = () => {
