@@ -28,9 +28,16 @@ function createNewPost() {
 }
 
 function Home() {
+  if (!firebase.auth().currentUser) {
+    window.location.href = '#login';
+  }
+
+  window.location.href = '#home';
+
+  setTimeout(loadFeed, 500);
+
   return `
   <p class="text">Essa é a home!</p>
-  ${loadFeed()}
   ${Button({
     class: 'primary-button',
     onClick: window.home.logOut,
@@ -50,6 +57,8 @@ function Home() {
     onClick: window.home.createNewPost,
     title: 'Post!',
   })}
+
+  <div id="feed" class="feed"></div>
   `;
 }
 

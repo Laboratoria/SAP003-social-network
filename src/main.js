@@ -6,17 +6,23 @@ const main = document.querySelector('main');
 const body = document.querySelector('body');
 
 function init() {
-  main.innerHTML = Login();
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      main.innerHTML = Home();
+    } else {
+      main.innerHTML = Login();
+    }
+  });
 }
 
 function onHashChange() {
   switch (window.location.hash) {
     case '#register':
-      body.className = "background";
+      body.className = 'background';
       main.innerHTML = Register();
       break;
     case '#login':
-      body.className = "background";
+      body.className = 'background';
       main.innerHTML = Login();
       break;
     case '#home':
