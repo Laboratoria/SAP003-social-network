@@ -8,7 +8,7 @@ const logout = () => {
 
 const deletePost = (id) => {
   app.db.collection('posts').doc(id).delete().then(() => {
-    document.getElementById(id).parentElement.parentElement.style.display = 'none';
+    document.getElementById(id).parentElement.parentElement.remove();
   });
 };
 
@@ -16,7 +16,7 @@ const checkUser = (docUid) => {
   const user = app.auth.currentUser.uid;
   if (user !== docUid) {
     document.getElementsByName(docUid).forEach((bt) => {
-      bt.style.display = 'none';
+      bt.remove();
     });
   }
 };
@@ -28,7 +28,8 @@ const postTemplate = (doc) => {
       <p class='posted posted-name'> ${doc.data().name}
         <button type='button' class='delete-btn' id=${doc.id} name=${doc.data().user}>X</button>
       </p>
-      <p class='posted text'> ${doc.data().text} | ${doc.data().date}
+      <p class='posted text' contenteditable='true'> ${doc.data().text} |</p>
+      <p>${doc.data().date}</p>
     </div>`;
 
   checkUser(doc.data().user);
