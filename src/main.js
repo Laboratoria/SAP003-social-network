@@ -4,7 +4,7 @@ import Button from '../components/button.js';
 import Feed from './pages/feed.js';
 
 function init() {
-  document.querySelector('main').innerHTML = Login();
+  document.querySelector('main').innerHTML = Feed();
 }
 
 window.addEventListener('load', init);
