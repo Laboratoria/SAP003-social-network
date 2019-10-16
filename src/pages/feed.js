@@ -1,16 +1,24 @@
 import Button from '../components/button.js';
 
 const logout = () => {
-  firebase.auth().signOut().catch((error) => {
+  app.auth.signOut().catch((error) => {
     // console.log(error);
   });
 };
 
-const deletePost = (id) => { 
-  const db = firebase.firestore();
-  db.collection('posts').doc(id).delete().then(()=> {
- document.getElementById(id).parentElement.parentElement.style.display ='none';
-})
+const deletePost = (id) => {
+  app.db.collection('posts').doc(id).delete().then(() => {
+    document.getElementById(id).parentElement.parentElement.remove();
+  });
+};
+
+const checkUser = (docUid) => {
+  const user = app.auth.currentUser.uid;
+  if (user !== docUid) {
+    document.getElementsByName(docUid).forEach((bt) => {
+      bt.remove();
+    });
+  }
 };
 
 const postTemplate = (doc) => {
@@ -18,17 +26,18 @@ const postTemplate = (doc) => {
     += `
     <div class='posted container-post' data-id=${doc.id}> 
       <p class='posted posted-name'> ${doc.data().name}
-        <button type='button' class='delete-btn' id=${doc.id}>X</button>
+        <button type='button' class='delete-btn' id=${doc.id} name=${doc.data().user}>X</button>
       </p>
-      <p class='posted text'> ${doc.data().text} | ${doc.data().date}
+      <p class='posted text' contenteditable='true'> ${doc.data().text} |</p>
+      <p>${doc.data().date}</p>
     </div>`;
-  document.querySelectorAll('.delete-btn').forEach
-  (cls => cls.addEventListener('click', e => deletePost(e.target.id)));
+
+  checkUser(doc.data().user);
+  document.querySelectorAll('.delete-btn').forEach(cls => cls.addEventListener('click', e => deletePost(e.target.id)));
 };
 
 const showPosts = () => {
-  const db = firebase.firestore();
-  db.collection('posts').orderBy('timestamp', 'desc').get()
+  app.db.collection('posts').orderBy('timestamp', 'desc').get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
         postTemplate(doc);
@@ -39,21 +48,17 @@ const showPosts = () => {
 const newPost = () => {
   const postsSpace = document.querySelector('.posts');
   const textArea = document.querySelector('.add-post');
-  const db = firebase.firestore();
   const post = {
-
-    name: firebase.auth().currentUser.displayName,
-    user: firebase.auth().currentUser.uid,
+    name: app.auth.currentUser.displayName,
+    user: app.auth.currentUser.uid,
     text: textArea.value,
     timestamp: new Date().getTime(),
     date: new Date().toLocaleString('pt-BR').slice(0, 16),
   };
-  db.collection('posts').add(post).then(() => {
+  app.db.collection('posts').add(post).then(() => {
     postsSpace.innerHTML = '';
     app.showPosts();
-    // postsSpace.innerHTML = `<p> ${post.name}<br>| ${post.text} | ${post.date}</p>
-    // ${postsSpace.innerHTML}`;
-    // textArea.value = '';
+    textArea.value = '';
   });
 };
 
@@ -79,6 +84,10 @@ function Feed() {
 window.onhashchange = showPosts;
 window.onload = showPosts;
 
-window.app = { showPosts };
+window.app = {
+  showPosts,
+  db: firebase.firestore(),
+  auth: firebase.auth(),
+};
 
 export default Feed;
