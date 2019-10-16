@@ -16,6 +16,17 @@ function timeline(){
 
   export default timeline;
 
+function idUserLogado(){
+  
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      <p>Olá fulana!</p>
+    } else {
+      // No user is signed in.
+    }
+  });
+} 
+
 function logout(){
   let singout = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signOut(provider).then(function(result) {
