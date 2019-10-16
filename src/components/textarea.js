@@ -1,6 +1,6 @@
 function Textarea(props) {
   const template = `
-      <textarea class= '${props.class}' rows='5' cols='33' id='${props.id}'> </textarea>
+      <textarea class= '${props.class}' rows='5' cols='33' value ="${props.text}"> </textarea>
     `;
 
   return template;
