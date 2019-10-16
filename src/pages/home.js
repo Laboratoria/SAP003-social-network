@@ -63,8 +63,7 @@ function callPage() {
 
 function Home() {
   const template = `
-    <h1>Home Page</h1>
-
+    
     ${Button({ id: 'GOOGLE', title: 'GOOGLE', onClick: logWithGoogle })}
     ${Button({ id: 'FACE', title: 'FACEBOOK', onClick: logWithFacebook })}
     ${Button({ id: 'CREATE', title: 'REGISTRE-SE', onClick: callPage })}

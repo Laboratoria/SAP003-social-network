@@ -1,18 +1,7 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-
-// dataStorage.collection('mensagens').get().then((snapshot) => {
-//   snapshot.docs.forEach(doc => {
-//     console.log(doc.data())
-    
-//   });
-// });
-
-// para add direto no firestore
-
-
-dataStorage.collection('nomedacoleção').add
+// dataStorage.collection('nomedacoleção').add
 
 
 export const Database = () => {
@@ -30,6 +19,7 @@ export const Database = () => {
       onClick: Post,
     })}
     </form>
+    <div ></div>
   `;
 
   return template;
@@ -41,6 +31,15 @@ export const Post = () => {
   return message;
 };
 
+const message = document.querySelector('.js-message-area').value;
+
+message.addEventListener("Post", function(event) {
+  event.preventDefault();
+
+})
+
+const db = firebase.firestore();
+db.settings({timestampsInSnapshots})
 
 
 // dataStorage.collection('mensagens').get().then((snapshot) => {
