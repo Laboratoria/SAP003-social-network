@@ -56,3 +56,32 @@
 [debug] [2019-10-15T16:42:34.760Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-15T19:30:57.606Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T19:30:57.608Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-15T19:30:57.609Z] CLI Version:   7.4.0
+[debug] [2019-10-15T19:30:57.609Z] Platform:      linux
+[debug] [2019-10-15T19:30:57.609Z] Node Version:  v8.10.0
+[debug] [2019-10-15T19:30:57.609Z] Time:          Tue Oct 15 2019 16:30:57 GMT-0300 (-03)
+[debug] [2019-10-15T19:30:57.609Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T19:30:57.619Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T19:30:57.619Z] > authorizing via signed-in user
+[debug] [2019-10-15T19:30:57.619Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T19:30:57.621Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-15T19:30:57.621Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-15T19:30:58.829Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T19:30:58.835Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-15T19:30:59.816Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T19:30:59.820Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-15T19:31:01.114Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T19:31:01.120Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-15T19:31:02.638Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
