@@ -4,21 +4,23 @@ import Post from "../components/post.js"
 
 export const Mural = () => {
 	const template = `
-	<header>
+	<header class="navbar">
 		<nav>
-			<li>
-				<select id="select" onchange="changeSelect()">
-					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural', selected:"selected"})}
-					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar'})}
-					${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
-				</select>
-			</li>
-			<li>Logo</li>
-			<li>Logout</li>
+			<ul class="nav-links">
+				<li class="dropdown-menu">
+					<select id="select" onchange="changeSelect()">
+						${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural', selected:"selected"})}
+						${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar'})}
+						${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
+					</select>
+				</li>
+				<li><img class="nav-logo" src="images/witchy-navbar.png" alt="navlogo"> </li>
+				<li>Logout</li>
+			</ul>	
 		</nav>
 	</header>
 
-	<section>
+	<section class="post-section">
 		<form id='post-form'>
 			${Post({id:'post', placeholder:"Qual a  bruxaria de hoje?", rows:'5', cols:'50'})}
 			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: post})}
