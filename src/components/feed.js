@@ -1,8 +1,8 @@
-import Post from './post.js'
+import Post from './post.js';
 
 function printPosts(post) {
   const feed = document.querySelector('#feed');
-  const template = window.post.Post({
+  const template = window.feed.Post({
     id: post.id,
     username: post.data().user_name,
     date: post.data().timestamp.toDate().toLocaleString(),
@@ -13,19 +13,23 @@ function printPosts(post) {
 
 function loadFeed() {
   const postCollection = firebase.firestore().collection('post');
-  const feed = document.querySelector('#feed');
-
-  feed.innerText = 'Carregando...';
-  postCollection.orderBy('timestamp').get().then((snap) => {
-    feed.innerText = '';
-    snap.forEach(post => window.post.printPosts(post));
+  postCollection.orderBy('timestamp', 'desc').get().then((snap) => {
+    snap.forEach(post => window.feed.printPosts(post));
   });
+  return '';
 }
 
-window.post = {
+function Feed() {
+  return `
+  <div id="feed" class ="feed">${window.feed.loadFeed()}</div>
+  `;
+}
+
+window.feed = {
   printPosts,
   loadFeed,
   Post,
-}
+  Feed,
+};
 
-export { loadFeed, printPosts };
+export { loadFeed, Feed };
