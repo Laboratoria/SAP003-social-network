@@ -20,6 +20,7 @@ function pegarInput() {
   } else {
     console.log('Ocorreu um erro :(');
   }
+  window.location.hash = '#feed';
 }
 
 function logar() {
@@ -34,7 +35,7 @@ function logar() {
   ${Input({ class: 'js-senha', placeholder: 'Senha', type: 'password' })}
   ${Button({ title: 'Login', onClick: pegarInput })}
   </form>
-  <p>Você já possui conta? Não, então <a href= "#cadastro">cadastre-se</a> aqui!</p>
+  <p>Você já possui conta? Não, então <a href= '#cadastrar'>cadastre-se</a> aqui!</p>
   </div> 
   </div>
   <div class="img-footer">
@@ -45,20 +46,3 @@ function logar() {
 }
 
 export default logar;
-
-
-/* function locationHashChanged() {
-  if (location.hash === '#home') {
-    document.querySelector('main').innerHTML = logar();
-  }
-}
-window.location.hash = '#home';
-window.addEventListener('hashchange', locationHashChanged, false); */
-
-/* Função logout para por no feed
- function logout() {
-  localStorage.removeItem('usuario');
-  ${Button({ title: 'Login', onClick: logout })}
-  window.location.reload();
-}
- */
