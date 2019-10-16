@@ -7,34 +7,27 @@ import Post from '../components/post.js';
 const signOut = () => firebase.auth().signOut();
 
 const createPost = () => {
-  const textInput = document.querySelector('.post-text');
-  firebase.firestore().collection('posts').add({
-    text: textInput.value,
-    userId: firebase.auth().currentUser.uid,
-    addedAt: (new Date()).toISOString(),
-  }).then(() => {
-    textInput.value = '';
+  const textInput = document.querySelector('.post-text').value;
+  if (textInput === '') {
+    alert('ferrou');
+  } else {
+    firebase.firestore().collection('posts').add({
+      text: textInput,
+      userId: firebase.auth().currentUser.uid,
+      addedAt: (new Date()).toISOString(),
+    })
+      .then(() => {
+        textInput.value = '';
+      });
+  }
+};
+
+const timeline = (props) => {
+  let layout = '';
+  props.posts.forEach((post) => {
+    layout += Post(post.data());
   });
-};
 
-const addPost = (post) => {
-  const postTemplate = Post(post.data());
-  document.querySelector('.posts').innerHTML += postTemplate;
-};
-
-const loadPost = () => {
-  const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.orderBy('addedAt', 'desc').onSnapshot((snap) => {
-    document.querySelector('.posts').innerHTML = '';
-    snap.forEach((post) => {
-      addPost(post);
-    });
-  });
-};
-
-loadPost();
-
-const timeline = () => {
   const templateTimeLine = `
      ${Input({
     class: 'navigation',
@@ -82,6 +75,7 @@ const timeline = () => {
     onClick: createPost,
   })}
       <div class="posts">
+      ${layout}
       </div>
       </div> 
   </form>

@@ -13,7 +13,10 @@ const locationHashChanged = () => {
   const hash = window.location.hash;
 
   if (hash === '#timeline') {
-    document.querySelector('main').innerHTML = timeline();
+    const postsCollection = firebase.firestore().collection('posts');
+    postsCollection.orderBy('addedAt', 'desc').onSnapshot((snap) => {
+      document.querySelector('main').innerHTML = timeline({ posts: snap });
+    });
   } else if (hash === '#login') {
     document.querySelector('main').innerHTML = login();
   }
