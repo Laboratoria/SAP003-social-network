@@ -28,13 +28,7 @@ function locationHashChanged() {
         });
       break;
     default:
-       firebase.auth().onAuthStateChanged(user => {
-          if (user) {
-           document.querySelector('main').innerHTML= timeline(); 
-          } else {
-            document.querySelector('main').innerHTML= Home();
-          }
-        });
+      document.querySelector('main').innerHTML= Home();
   }
 
 }

@@ -38,12 +38,12 @@ function logout(){
       const id= firebase.auth().currentUser.uid;
       const post = {
       text,
-      user: id
+      user: id,
     };
-    firebase.firestore().collection('posts').add(post).then(docRef => {
-     
+    firebase.firestore().collection('posts').add(post).then(doc => {
+     console.log(doc);
     })
-  }
+  };
 
 // function loadData() {
 //   const postCollection = firebase.firestore().collection('posts')
