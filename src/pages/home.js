@@ -33,7 +33,6 @@ function publish() {
     coments: [],
     timestamp: fieldValue.serverTimestamp(),
   };
-
   const postColletion = firebase.firestore().collection('posts');
   postColletion.add(post).then((res) => {
     textArea.value = '';
