@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-import { loadFeed } from '../components/postsContainer.js';
+import { loadFeed, Feed } from '../components/feed.js';
 import Post from '../components/post.js';
 
 function logOut() {
@@ -14,6 +14,7 @@ function logOut() {
 function createNewPost() {
   const content = document.querySelector('#postText');
   const user = firebase.auth().currentUser;
+  const feed = document.querySelector('#feed');
   const post = {
     text: content.value,
     likes: 0,
@@ -22,21 +23,14 @@ function createNewPost() {
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
   };
   firebase.firestore().collection('post').add(post).then(() => {
-    content.innerText = '';
+    feed.innerHTML = '';
+    content.value = '';
     window.home.loadFeed();
   });
 }
 
 function Home() {
-  if (!firebase.auth().currentUser) {
-    window.location.href = '#login';
-  }
-
-  window.location.href = '#home';
-
-  setTimeout(loadFeed, 500);
-
-  return `
+  const template = `
   <p class="text">Essa é a home!</p>
   ${Button({
     class: 'primary-button',
@@ -58,8 +52,10 @@ function Home() {
     title: 'Post!',
   })}
 
-  <div id="feed" class="feed"></div>
+  ${Feed()}
   `;
+
+  return template;
 }
 
 window.home = {
