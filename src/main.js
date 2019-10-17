@@ -1,8 +1,13 @@
-// import Home from './pages/home.js';
+import Home from './pages/home.js';
 import Login from './pages/login.js';
 
-function init() {
-  document.querySelector('main').innerHTML = Login();
+function router() {
+  if (window.location.hash === '#home') {
+    document.querySelector('main').innerHTML = Home();
+  } else {
+    document.querySelector('main').innerHTML = Login();
+  }
 }
 
-window.addEventListener('load', init);
+window.addEventListener('load', router);
+window.addEventListener('hashchange', router);

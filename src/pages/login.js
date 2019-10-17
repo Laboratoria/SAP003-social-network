@@ -10,7 +10,12 @@ function enviarLogin() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
 
-  alert(`${email}, ${password}`);
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+      if (user) {
+        window.location.hash = '#home';
+      }
+    });
 }
 
 function Login() {
@@ -27,7 +32,7 @@ function Login() {
     })}
             ${Button({
       id: '🎉',
-      title: 'Enviar',
+      title: 'Cadastrar',
       onClick: enviarLogin,
     })}
             ${Button({
