@@ -46,13 +46,15 @@ const changeSelect = () => {
 }
 
 const sendAndRetrievePost = () => {
+
 	const user = firebase.auth().currentUser;
 
 	const text = document.getElementById('post').value;
 
 	const post = {
 		name: user.email,
-		text
+		text,
+		userID: user.uid,
 	}
 
 	firebase.firestore().collection('posts').add(post);
