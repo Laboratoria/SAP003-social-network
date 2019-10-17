@@ -19,10 +19,8 @@
 // function loadData () {
 //     const postlist = document.getElementById("idexemplo");
 //     const postCollection = firebase.firestore().collection("posts");
-//     postlist.innerHTML ="Carregando..."
-// //snap "foto dos dados"
 //     postCollection.get().then(snap => {
-//         postlist.innerHTML =""
+        
 //         //percorre dados
 //         snap.forEach(post =>{
 //             addPost(post)

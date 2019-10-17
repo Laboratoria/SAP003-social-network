@@ -1,4 +1,4 @@
-import Login from './pages/login.js';
+import Login from './pages/login1.js';
 import Register from './pages/register.js';
 import Button from '../components/button.js';
 import Feed from './pages/feed.js';

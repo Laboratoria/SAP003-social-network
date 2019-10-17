@@ -36,7 +36,7 @@ function googleSignIn() {
 function enviarLogin() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
-  console.log(email, password);
+  
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
       window.location.href = '#feed';
       }).catch((error) => {
