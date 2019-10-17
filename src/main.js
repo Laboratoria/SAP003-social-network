@@ -4,7 +4,7 @@ import Button from '../components/button.js';
 import Feed from './pages/feed.js';
 
 function init() {
-  document.querySelector('main').innerHTML = Feed();
+  document.querySelector('main').innerHTML = Login();
 }
 
 window.addEventListener('load', init);
@@ -31,5 +31,5 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+//firebase.analytics();
 

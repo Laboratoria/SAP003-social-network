@@ -54,7 +54,7 @@ const loadPost = () => {
 }
 
 
-loadPost()
+//loadPost()
 
 
 export default Feed;
