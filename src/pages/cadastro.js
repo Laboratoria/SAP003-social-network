@@ -19,7 +19,6 @@ function pegarInput() {
   }
   window.localStorage.setItem('cadastro', JSON.stringify(dadoslocal));
   window.location.hash = '#home';
-
 }
 
 function cadastrar() {

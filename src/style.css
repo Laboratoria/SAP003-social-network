@@ -75,3 +75,7 @@ a{
   align-items: flex-start;
   height: 25%;
 }
+.erro {
+  color: red;
+  text-align: center;
+}
