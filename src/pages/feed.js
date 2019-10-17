@@ -57,7 +57,6 @@ function Posts() {
 };
 
 window.feed = {
-
 }
 
 export default Feed;
