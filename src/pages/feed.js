@@ -62,7 +62,6 @@ function Posts() {
 };
 
 window.feed = {
-
 };
 
 
