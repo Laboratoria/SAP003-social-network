@@ -1,5 +1,5 @@
-import Button from "../components/button.js";
-import Input from "../components/input.js";
+import Button from '../components/button.js';
+import Input from '../components/input.js';
 
 function newUser() {
   const email = document.querySelector('.js-email-input').value;
@@ -8,14 +8,14 @@ function newUser() {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(function(response) {
+    .then((response) => {
       if (response) {
         location.hash = '#feed';
       }
     })
-    .catch(function(error) {
-      let errorCode = error.code;
-      let errorMessage = error.message;
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
       alert(errorCode, errorMessage);
     });
 }
@@ -23,14 +23,14 @@ function newUser() {
 function newUserTemplate() {
   const inNewUser = `
   <form class="form-login">
-  ${Input({ class: "js-name-input", placeholder: "name", type: "text" })} 
-  ${Input({ class: "js-email-input", placeholder: "e-mail", type: "email" })}
+  ${Input({ class: 'js-name-input', placeholder: 'name', type: 'text' })} 
+  ${Input({ class: 'js-email-input', placeholder: 'e-mail', type: 'email' })}
   ${Input({
-    class: "js-password-input",
-    placeholder: "password",
-    type: "password"
+    class: 'js-password-input',
+    placeholder: 'password',
+    type: 'password',
   })}
-  ${Button({ id: "bt-creat-account", title: "criar a conta", call: newUser })}
+  ${Button({ id: 'bt-creat-account', title: 'criar a conta', call: newUser })}
   </form>
   `;
 

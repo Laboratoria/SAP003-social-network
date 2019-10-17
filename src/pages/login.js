@@ -57,7 +57,7 @@ function TemplateLogin() {
     placeholder: 'password',
     type: 'password',
   })}
-      ${Button({ id: 'bt-login', title: 'log in', call: login })}
+      ${Button({ id: 'bt-login', title: 'Login', call: login })}
     </form>
     <p class="text-main">Pode acessar também com...</p>
     ${Button({ id: 'bt-google', title: 'Google', call: google })}

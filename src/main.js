@@ -11,6 +11,7 @@ function locationHasChange() {
     document.querySelector('main').innerHTML = newUserTemplate();
   } else if (location.hash === '#feed') {
     document.querySelector('main').innerHTML = feed();
+    window.loadPost();
   }
 }
 
