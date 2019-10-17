@@ -9,7 +9,8 @@ function Home() {
   ${Input({placeholder: 'Digite seu e-mail', type: 'email', class: 'js-email-input'})}
   ${Input({placeholder: 'Digite sua senha', type: 'password', class: 'js-password-input'})}
   ${Button({id: 'button', title: 'Entrar', onClick: buttonLogin})}<br>
-  ${Button({id: 'button', title: 'Login com o Google', onClick:googleLogin})}
+  ${Button({id: 'google-button',  title: '🇬 Entrar com o Google', onClick:googleLogin})}
+  
   </form><br>
 
 
@@ -43,7 +44,7 @@ function buttonLogin () {
     }
   
   });
-
+  
 
 }
 
@@ -67,5 +68,6 @@ function googleLogin () {
     // ...
   });
 }
+
 
 

@@ -48,7 +48,7 @@ body{
   background-repeat: no-repeat;
 }
 
-    button{
+button{
       display: block;
       border-radius:4px;
       -moz-border-radius:4px;
@@ -88,6 +88,7 @@ body{
     border-bottom: 59px solid transparent;
     border-left: 99px solid transparent;
     transform: rotate(90deg);
+
 }
  
 .google-logo::after{ 
@@ -101,7 +102,7 @@ body{
   transform: translate(10px, 10px);
 } 
 
-footer{
+footer {
   background-color: rgb(207, 206, 205);
   font-size: 14px;
   text-align: center;
