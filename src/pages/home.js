@@ -2,9 +2,9 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 // import Card from '../components/card.js';
 
-function addPost(post) {
+function addPost(post, postId) {
   const postTemplate = `
-  <li class='post-li'>
+  <li id='${postId}' class='post-li'>
   ${post.timestamp.toDate().toLocaleString('pt-BR')}: </br >
   ${post.text} </br >
   🏆 ${post.likes}
@@ -18,7 +18,7 @@ function loadPost() {
   postColletion.get().then((snap) => {
     postList.innerHTML = '';
     snap.forEach((post) => {
-      postList.innerHTML += addPost(post.data());
+      postList.innerHTML += addPost(post.data(), post.id);
     });
   });
 }
@@ -26,14 +26,14 @@ function loadPost() {
 function publish() {
   const textArea = document.querySelector('.post');
   const fieldValue = firebase.firestore.FieldValue;
+  const id = firebase.auth().currentUser.uid;
   const post = {
+    user: id,
     text: textArea.value,
-    user_id: 'cat',
     likes: 0,
     coments: [],
     timestamp: fieldValue.serverTimestamp(),
   };
-
   const postColletion = firebase.firestore().collection('posts');
   postColletion.add(post).then((res) => {
     textArea.value = '';
