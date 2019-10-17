@@ -1,7 +1,8 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-const dataStorage= firebase.firestore()
+// dataStorage.collection('nomedacoleção').add
+
 
 export const Database = () => {
   const template = `
@@ -18,6 +19,7 @@ export const Database = () => {
       onClick: Post,
     })}
     </form>
+    <div ></div>
   `;
 
   return template;
@@ -29,6 +31,15 @@ export const Post = () => {
   return message;
 };
 
+// const message = document.querySelector('.js-message-area').value;
+
+// message.addEventListener("Post", function(event) {
+//   event.preventDefault();
+
+// })
+
+// const db = firebase.firestore();
+// db.settings({timestampsInSnapshots})
 
 
 // dataStorage.collection('mensagens').get().then((snapshot) => {

@@ -26,12 +26,14 @@ function logWithGoogle() {
       window.location.hash = '#database';
       const token = result.credential.accessToken;
       const user = result.user;
-    })
-    .catch((error) => {
+    
+    }).catch((error) => {
+    
       const errorCode = error.code;
       const errorMessage = error.message;
       const email = error.email;
       const credential = error.credential;
+    
     });
 }
 
@@ -42,14 +44,16 @@ function logWithFacebook() {
     display: 'popup',
   }); firebase.auth().signInWithPopup(provider)
     .then((result) => {
+      window.location.hash = '#database'
       const token = result.credential.accessToken;
       const user = result.user;
-    })
-    .catch((error) => {
+      
+    }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       const email = error.email;
       const credential = error.credential;
+      
     });
 }
 
@@ -80,16 +84,19 @@ function Home() {
         onClick: signInWithEmailAndPassword,
       })}
       <p class="loginOption">Ou entre com:<p>
+      <div class="btn-position">
       ${Button({ 
         class: 'google',
-        title: 'GOOGLE', 
-        onClick: logWithGoogle 
+        title: 'G', 
+        onClick: logWithGoogle,
+         
       })}
       ${Button({ 
         class: 'face', 
-        title: 'FACEBOOK', 
+        title: 'F', 
         onClick: logWithFacebook 
       })}
+      </div>
       <p class="loginOption">Ainda não tem conta? Registre-se.<p>
 
     </form>
@@ -99,4 +106,6 @@ function Home() {
   return template;
 }
 
-export default Home
+
+
+export default Home 

@@ -4,9 +4,12 @@
 
 /* .form{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-} */
+  align-items: center; 
+}  */
+  
+
 
 .image{
   display: flex;
@@ -43,16 +46,41 @@
   cursor: pointer;
 }
 
-.face{
+
+.btn-position{
   display: flex;
+  width: 15%;
   margin: auto;
+}
+
+.face{
+  margin: auto;
+  background-color: #2372a3;
+  border-radius: 100%; 
+  border: none;
+  height: 100%;
+  line-height: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #dcd6f7;
+  font-weight: bold;
+  cursor: pointer;
  
 }
 
 .google{
-  display: flex;
   margin: auto;
-  
+  background-color: #dd4b39;
+  border-radius: 100%; 
+  border: none;
+  height: 100%;
+  line-height: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #dcd6f7;
+  font-weight: bold;
+  cursor: pointer;
+
 }
 
 
