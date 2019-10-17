@@ -1,6 +1,6 @@
 .primary-button {
   display: flex;
-  background-color: #21f0ff;
+  background-color: #cfff21;
   padding: 3px;
   font-size: 1.3rem;
   border-radius: 5px;
@@ -16,6 +16,18 @@
   border-radius: 5px;
   margin: auto;
   margin-bottom: 10px;
+}
+
+.primary-textarea{
+  display: flex;
+  /* padding: 20px;
+  border-radius: 5px; */
+  margin: auto;
+  margin-bottom: 10px;
+  width:320px; 
+  margin-top:5px; 
+  border-radius:20px; 
+  padding: 5px 15px
 }
 
 .título-cadastro {
@@ -34,6 +46,39 @@
   text-align: center;  
 }
 
+/* .js-botao-textarea {
+  align-self: auto
+  background-color: #cfff21;
+  padding: 3px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+} */
+
+
+/* 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+} */
+
+/* @media (min-width: 500px) {
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+
+} */
 
 /* .título-cadastro{
   display: flex; // quando bota este deixa de ficar no centro
