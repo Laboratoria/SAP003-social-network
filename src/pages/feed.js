@@ -25,6 +25,7 @@ function Posts() {
   const dataBase = firebase.firestore();
   const textInput = document.querySelector('.textarea');
   const post = {
+    timestamp: new Date().toLocaleDateString('pt-BR') + ':' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
     text: textInput.value,
     likes: 0,
     coments: [],
@@ -33,18 +34,18 @@ function Posts() {
   console.log(post);
   dataBase.collection('posts').add(post)
   .then(function loadFeed(post) {
-    document.getElementById('banana').innerHTML='Carregando...'
-
-    dataBase.collection('posts').get().then((snap) => {
-      document.getElementById('banana').innerHTML=''
+    document.getElementById('banana').innerHTML='Carregando...';
+    dataBase.collection('posts').orderBy('timestamp', 'desc').get().then((snap) => {
+      document.getElementById('banana').innerHTML='';
 
       snap.forEach((post) => {
         const postTemplate = `
-        <li class='postMessage' id='${post.id}'>
+        <section class='postMessage' id='${post.id}'>
+        ${post.data().timestamp}:
         ${post.data().user_id}
         ${post.data().text}
         ${post.data().likes}
-        </li>
+        </section>
         `;
         document.getElementById('banana').innerHTML += postTemplate;
 
