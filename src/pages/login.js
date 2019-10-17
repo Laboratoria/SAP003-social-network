@@ -54,7 +54,7 @@ const login = () => {
     <form class="form">
     ${Input({
     class: 'js-input-email',
-    placeholder: 'Email',
+    placeholder: 'email@exemplo.com',
     type: 'email',
     id: 'js-input-email',
   })}
