@@ -1,6 +1,14 @@
 import Button from '../components/button.js';
-// import Input from '../components/input.js';
 import PostInput from '../components/postinput.js';
+
+function logOut() {
+  auth
+    .signOut()
+    .then(() => {
+      console.log('adeus');
+      window.location = '#login';
+    });
+}
 
 function userInfo() {
   console.log('oi', firebase.auth().currentUser);
@@ -22,14 +30,52 @@ function NewPostTemplate() {
     placeholder: 'No que está pensando?',
   })}
   ${Button({
-    type: 'button',
-    class: 'btn',
     id: 'btn-post',
+    class: 'btn',
     onclick: createPost,
     title: 'Postar',
   })}
   `;
   return template;
+}
+
+function createPost() {
+  const text = document.querySelector('.text-area').value;
+  const post = {
+    likes: 0,
+    text,
+    comments: [],
+    user_id: firebase.auth().currentUser.uid,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  };
+  const postsCollection = firebase.firestore().collection('posts');
+  postsCollection.add(post)
+    .then(() => {
+      console.log('Post criado com sucesso!');
+      loadPosts();
+    })
+    .catch((error) => {
+      console.log('erro', error);
+      console.log('Não foi possível criar post.');
+    });
+}
+
+function addPost(post, postId) {
+  const postTemplate = `
+    <li id="${postId}">
+    <div><span class="edit-post fa fa-pencil"></span></div>
+      <p>${post.text}</p>
+      <div class="interaction-area">
+        <div class="likes">
+          Likes:${post.likes}
+        </div>
+        <div class="coments">
+          Comentários
+        </div>
+      </div>
+    </li>
+  `;
+  return postTemplate;
 }
 
 function loadPosts() {
@@ -39,56 +85,21 @@ function loadPosts() {
       const postList = document.querySelector('.post-list');
       postList.innerHTML = '';
       res.forEach((post) => {
-        postList.innerHTML += addPost(post.data());
+        postList.innerHTML += addPost(post.data(), post.id);
+      });
+      document.querySelectorAll('.edit-post').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          editPost(event.target.parentNode.parentNode.getAttribute('id'));
+        });
       });
     });
 }
 
-function createPost() {
-  const text = document.querySelector('.text-area').value;
-  const post = {
-    likes: 0,
-    text: text,
-    comments: [],
-    user_id: firebase.auth().currentUser.uid,
-  };
+function editPost(postId) {
+  const newText = "batatinha";
   const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.add(post)
-    .then(() => {
-      console.log('Post criado com sucesso!');
-      loadPosts();
-      postsCollection.get();
-    })
-    .catch((error) => {
-      console.log('erro', error);
-      console.log('Não foi possível criar post.');
-    });
-}
-
-function addPost(post) {
-  const postTemplate = `
-      <li id="${post.id}">
-        ${post.text}; 
-        <div class="interaction-area">
-          <div class="likes">
-            Likes:${post.likes}
-          </div>
-          <div class="coments">
-            Comentarios
-          </div>
-        </div>
-      </li>
-  `;
-  return postTemplate;
-}
-
-function logOut() {
-  auth
-    .signOut()
-    .then(() => {
-      console.log('adeus');
-      window.location = '#login';
-    });
+  postsCollection.doc(postId).update({ text: newText });
+  console.log("editar");
 }
 
 function Feed() {
@@ -100,18 +111,16 @@ function Feed() {
     onclick: logOut,
     title: 'Sair',
   })}
-  <div class='profile'></div>
+  <div class='profile'>${userInfo()}</div>
   <section class="post-area">
     <form class="input-area">
       ${NewPostTemplate()}
     </form>
   </section>
   <section class="print-post">
-    <ul class='post-list'>${addPost}</ul>
+    <ul class='post-list'>${loadPosts()}</ul>
   </section>
   `;
-  userInfo();
-  loadPosts();
   return template;
 }
 

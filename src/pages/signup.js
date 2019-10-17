@@ -8,20 +8,20 @@ function newUser() {
 
   auth.createUserWithEmailAndPassword(email, password)
     .then((resp) => {
-        if (resp.user) {
-          resp.user.updateProfile({
-            displayName: name
-          })
+      if (resp.user) {
+        resp.user.updateProfile({
+          displayName: name
+        })
           .then(() => {
             db.collection('users').doc(resp.user.uid).set({
               name: name
             })
-            .then(() => {
-              window.location = '#login';
-            });
+              .then(() => {
+                window.location = '#login';
+              });
           });
-         
-        }
+
+      }
     }).catch((error) => {
       const errorMessage = error.message;
       const errorMessageField = document.getElementById('errorMessageSignup');

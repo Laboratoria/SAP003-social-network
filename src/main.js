@@ -5,20 +5,20 @@ import Feed from './pages/feed.js';
 window.addEventListener('load', locationHashChanged);
 window.addEventListener('hashchange', locationHashChanged, false);
 
-function locationHashChanged(){
-  firebase.auth().onAuthStateChanged(user => {
+function locationHashChanged() {
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      if (location.hash ==='#feed') {
+      if (location.hash === '#feed') {
         document.querySelector('main').innerHTML = Feed();
       } else if (location.hash === '#login' || location.hash === '') {
         document.querySelector('main').innerHTML = Login();
-      } else if (location.hash ==='#signup'){
+      } else if (location.hash === '#signup') {
         document.querySelector('main').innerHTML = Signup();
       }
     } else {
       if (location.hash === '#login' || location.hash === '') {
         document.querySelector('main').innerHTML = Login();
-      } else if(location.hash === '#signup'){
+      } else if (location.hash === '#signup') {
         document.querySelector('main').innerHTML = Signup();
       }
     }

@@ -13,3 +13,5 @@ window.button = {
 };
 
 export default Button;
+
+//passar o evento no callback e passo na funçñao de deletar/editar
