@@ -76,8 +76,54 @@ img {
   width: 300px
 }
 
+.description {
+  display: flex;
+  justify-content: flex-start;
+  padding: 6%;
+}
+
+.avatar {
+  height: 70px;
+  margin: 0;
+}
+
+.name-display{
+  margin-left: 10%;
+}
+
+.card {
+  display: flex;
+  flex-flow: wrap-reverse;
+  margin: 10%;
+  height: 3em;
+  width: auto;
+  padding: 2%;  
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 1px #ff1c14;
+}
+
+.card-name{
+  display: inline-block;
+  font-size: 90%;
+
+}
+.card-post {
+  display: inline-block;
+}
+
+.card-time {
+  display: inline-block;
+  font-size: 70%;
+  align-self: flex-start;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  padding: 1%;
+
+}
+
 @media screen and (min-width: 992px){
-  .teste {
+  .box {
     display: flex;
     justify-content: center;
   }

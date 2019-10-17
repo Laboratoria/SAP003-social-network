@@ -14,10 +14,6 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-// function init() {
-//   document.querySelector('main').innerHTML = Login();
-// }
-
 window.addEventListener('load', acesspages);
 
 function acesspages () {
