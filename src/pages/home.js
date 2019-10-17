@@ -26,9 +26,10 @@ function loadPost() {
 function publish() {
   const textArea = document.querySelector('.post');
   const fieldValue = firebase.firestore.FieldValue;
+  const id = firebase.auth().currentUser.uid;
   const post = {
+    user: id,
     text: textArea.value,
-    user_id: 'cat',
     likes: 0,
     coments: [],
     timestamp: fieldValue.serverTimestamp(),
