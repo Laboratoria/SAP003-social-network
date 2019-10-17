@@ -1,4 +1,5 @@
 import Button from '../components/button.js';
+import udButton from '../components/udButton.js';
 
 const logout = () => {
   app.auth.signOut().catch((error) => {
@@ -6,7 +7,7 @@ const logout = () => {
   });
 };
 
-const deletePost = (id) => {
+const deletePost = () => {
   app.db.collection('posts').doc(id).delete().then(() => {
     document.getElementById(id).parentElement.parentElement.remove();
   });
@@ -21,15 +22,15 @@ const checkUser = (docUid) => {
   }
 };
 
-const makePostEditable = (id) => { 
+const makePostEditable = () => { 
   document.getElementsByClassName(id)[0].firstChild.parentElement.contentEditable = true
   };
   
-const saveEditPost = (id) => {
+const saveEditPost = () => {
   const pText= document.getElementsByClassName(id)[0].firstChild.parentElement
   pText.contentEditable = false;
   const db = firebase.firestore();
-  db.collection('posts').doc(id).update({text: pText.textContent}) 
+  db.collection('posts').doc(id).update({text: pText.textContent, date: new Date().toLocaleString('pt-BR').slice(0, 16),})
 }
 
 const postTemplate = (doc) => {
@@ -37,24 +38,16 @@ const postTemplate = (doc) => {
     += `
     <div class='posted container-post' data-id=${doc.id}> 
       <p class='posted posted-name'> ${doc.data().name}
-        <button type='button' class='delete-btn' id=${doc.id} name=${doc.data().user}>X</button>
+      ${udButton({type: 'button', class: 'delete-btn', name: doc.data().user, id: doc.id, onClick: deletePost, title: 'X' })}
       </p>
       <p class='posted text ${doc.id}'> ${doc.data().text} |</p>
-      <button type='button' class='edit-btn' name=${doc.id}>Editar</button>
-      <button type='button' class='save-btn' name=${doc.id}>Salvar</button>
+      ${udButton({type: 'button', class: 'edit-btn', name: doc.data().user, id: doc.id, onClick: makePostEditable, title: 'Editar' })}
+      ${udButton({type: 'button', class: 'save-btn', name: doc.data().user, id: doc.id, onClick: saveEditPost, title: 'Salvar' })}
       <p>${doc.data().date}</p>
     </div>`;
 
   checkUser(doc.data().user);
-  document.querySelectorAll('.delete-btn').forEach(cls => cls.addEventListener('click', e => deletePost(e.target.id)));
-
-  const editPost= document.querySelector('.text')
-  document.querySelectorAll('.edit-btn').forEach
-  (cls => cls.addEventListener('click', e => makePostEditable(e.target.name)))
-
-  document.querySelectorAll('.save-btn').forEach
-  (cls => cls.addEventListener('click', e => saveEditPost(e.target.name)))
-
+  checkUser(doc.data().user);
 };
 
 const showPosts = () => {
