@@ -7,35 +7,48 @@
   font-weight: 300;
   font-family: 'Chewy', cursive;
   font-family: 'Sansita', sans-serif;
-  font-family: 'Numans', sans-serif; }
+  font-family: 'Numans', sans-serif; 
+}
 
 body {
-  background-color: #c2c0ab; }
+  background-color: #fffbad52; 
+  
+}
 
 .logo {
   margin-left: auto;
   margin-right: auto;
   width: 250px;
   height: 250px;
-  background: url(./img/logo.png) center center/250px no-repeat;
-  display: block; }
+  background: url(./img/drawing-1.png) center center/250px no-repeat;
+  display: block; 
+}
 
-.form {
-  padding: 5px; }
+
+.paragraph {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+  
 
 .js-email-input {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
   padding: 5px;
-  display: block; }
+  display: block;   
+  box-shadow: 0 0 1em #fce326;
+}
 
 .js-password-input {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
   padding: 5px;
-  display: block; }
+  display: block; 
+  box-shadow: 0 0 1em #fce326;
+}
+
 
 .primary-button {
   margin-top: 10px;
@@ -48,29 +61,34 @@ body {
   display: block;
   background-color: #292122;
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-  color: #c2c0ab; }
+  color: #c2c0ab; 
+}
 
 .auth {
   flex-flow: row wrap;
-  justify-content: space-around; }
+  justify-content: space-around; 
+}
 
 .auth-button {
   border: none;
   cursor: pointer;
   padding: 5px;
   text-align: center;
-  background-color: #c2c0ab;
-  font-size: 30px; }
+  background-color: #fffbad00;
+  font-size: 30px; 
+}
 
 span {
   padding-top: 20px;
   text-align: center;
-  display: block; }
+  display: block; 
+}
 
 section {
   padding-top: 25px;
   text-align: center;
-  display: block; }
+  display: block; 
+}
 
 .header-home {
   background: linear-gradient(to top, #fce326, #faff99);
@@ -110,13 +128,17 @@ section {
     margin-left: 8%;
     width: 450px;
     height: 450px;
-    background: url(./img/logo.png) center center/450px no-repeat; }
+    background: url(./img/drawing-1.png) center center/450px no-repeat; }
 
   .js-email-input {
-    margin-top: 50px; }
+    margin-top: 50px; 
+  }
 
   .js-password-input {
-    margin-top: 5px; }
+    margin-top: 5px; 
+  }
 
   .primary-button {
-    width: 18%; } }
+    width: 18%; 
+  } 
+  }

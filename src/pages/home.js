@@ -15,7 +15,7 @@ function signOut() {
 
 function home() {
   const template = `
-    <header class="header-home">Laboratroca</header>   
+    <header class="header-home"><img src="./img/logo.png" height="300" width="1350"></header>   
     <nav></nav>
     <br>
     <h1 class="id-user">Olá, Fulana!</h1>  

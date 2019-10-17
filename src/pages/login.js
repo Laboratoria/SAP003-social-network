@@ -42,19 +42,26 @@ function enviarLogin() {
 function login() {
   const template = `   
     ${Logo()}
-    <br>
-    ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
-    ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}    
-    <br>
-    ${Button({ onClick: enviarLogin, title: 'ENVIAR',  })}
+    <p class="paragraph"> Mantenha na sua vida só o que lhe faz bem,
+    <br>o que "já fez" troque com alguém!</br>
     
+    <br>
+    <b><h1 class="paragraph">LOGIN </h1> </b>
+    <br>
+    <form class="form-set">
+    ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
+    <br>
+    ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}  
+    <br> 
+    ${Button({ onClick: enviarLogin, title: 'ENVIAR',  })}
     <span>OU ACESSE COM</span>
     <section class="auth">   
     ${ButtonAuth({ onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
     </section>       
-   
     <section class="register">Não tem uma conta? <a href="#register.js">REGISTRE-SE</a></section>
-  `;
+    </form>
+  
+    `;
 
   return template;
 }
