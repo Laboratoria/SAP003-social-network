@@ -8,6 +8,8 @@ function savePost() {
 
   db.collection('post').add({
     post: post,
+    likes: 0,
+    comments: [],
     //user_id: id.data,    
   })
   .then(function (docRef) {
@@ -19,8 +21,10 @@ function savePost() {
 function addPost(post) {
   const feed = document.querySelector('.feed');
   const feedPost = `
-  <li>
+  <li class="post-list">
   ${post.data().post}
+  <br>
+  💛 ${post.data().likes}
   </li>
   <br>
   `
@@ -28,6 +32,7 @@ function addPost(post) {
 };
 
 function loadPost() {
+  document.querySelector('.feed').innerHTML = 'Carregando...';
   db.collection('post').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
