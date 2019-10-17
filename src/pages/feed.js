@@ -1,11 +1,12 @@
 import Button from '../components/button.js';
+import Textarea from '../components/textarea.js';
+
 
 function Feed() {
 loadPost ()
   const template =`
     <form id ="formPost">
-    <textarea class='Text1' placeholder=''></textarea>
-    <p class="login"></p>
+    ${Textarea({ class: 'Text1', placeholder: ''})}
     ${Button({ class: 'mytext', onclick:formPost, title: 'ENVIAR' })}
     </form>
     <ul id="posts"></ul>
@@ -26,17 +27,15 @@ function formPost(){
     .then(res => {
 
       document.querySelector('#posts').innerHTML += `
-      <li>
+      <div class='card-post'>
       ${post.text}
       ${post.likes}
       ${post.time}
-      </li>
+      </div>
       `
     })
 }
   
-
-
 function addingPost(post){
   const listPost = document.querySelector('#posts');
   const templatePost = `
@@ -63,8 +62,3 @@ function loadPost () {
 
 }
 export default Feed;
-
-
-
-
- /*   ${post.data().timestamp.toLocaleString('pt-BR')}: */

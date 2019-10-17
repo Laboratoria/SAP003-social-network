@@ -1,4 +1,5 @@
-@media (max-width: 1900px) and (min-width: 768px){
+/* WEB */
+@media (max-width: 1900px) and (min-width: 700px){
   main {
   display: block;
   margin-left: 52px;
@@ -263,266 +264,121 @@
 
 
 
-
+/* MOBILE */
 @media (max-width: 700px){
-    main{
-      display: inline-block;
-      margin-left: 23px;
-      margin-right: 23px; 
-    }
+body{  
+  font-family: 'Lato';
+  letter-spacing: -0.03em;
+  display: flex;
+}
 
-    body {
-      margin: 0%;
-    }
+.logo {
+  width: 35%;
+  height: auto;
+  margin-top: 5%;
+  margin-left: 5%;  
+}
 
-  .welcome{
-    height: 29px;
-    margin-top: 48px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.03em;
-    color: #263238;
-  }
+.welcome {
+  font-weight: bold;
+  font-size: 160%;
+  margin-top:13%;
+  margin-left: 5%;
+}
 
-  .login{
-    margin-top: 8px;
-    margin-bottom: 32px;
-    height: 29px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.03em;
-    color: #B0BEC5;
+.login{
+  color: #B0BEC5;
+  font-size: 160%;
+  margin-top: 2%;
+  margin-left: 5%;
+  line-height: 29px;
+}
 
-  }
+.email{
+  width: 90%;
+  margin-top: 10%;
+  margin-left: 5%;
+  font-size: 110%;
+  border: none;
+  color: #263238;
+  opacity: 0.5;
+  background: transparent;
+  border-bottom: 1px solid #BDBDBD;
+}
 
-  .email {
-    margin-top: 24px;
-    width: 329px;
-    height: 40px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #bdbdbd;
-    font-family: Lato;
-    font-size: 18px;
-  }
+.email:focus{
+  outline: none;
+  opacity: 100;
+  border-bottom: 2px solid #FF007A;
+}
 
-  .email::placeholder {
-    color: #000000;
-    opacity: 0.3;
-  }
-  .email:focus {
-    outline: none;
-    border-bottom: 2px solid #FF007A;
-  }
+.password {
+  width: 90%;
+  margin-top: 13%;
+  margin-left: 5%;
+  font-size: 110%;
+  border: none;
+  color: #263238;
+  opacity: 0.5;
+  background: transparent;
+  border-bottom: 1px solid #BDBDBD;
+}
 
-  .password {
-    margin-top: 32px;
-    width: 329px;
-    height: 40px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #bdbdbd;
-        font-family: Lato;
-    font-size: 18px;
-  }
+.password:focus{
+  outline: none;
+  opacity: 100;
+  border-bottom: 2px solid #FF007A;
+}
 
-   .password::placeholder {
-    color: #000000;
-    opacity: 0.3
-  }
+.send{
+  color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  width: 90%;
+  height: 7.5%;
+  margin-top: 13%;
+  margin-left: 5%;
+  background-color: #FF007A;
+  border: none;
+  border-radius: 25px;
+}
 
-  .password:focus {
-    outline: none;
-    border-bottom: 2px solid #FF007A;
-  }
+.send:active{
+  background-color: #C6005F;
+}
 
-  .login-error {
-    font-family: Lato;
-    color: #CC311D;
-    font-size: 14px;
-  }
+.send:focus{
+  outline: none;
+}
 
-  .send {
-    margin-top: 40px;
-    width: 329px;
-    height: 44px;
-    border: none;
-    background: #FF007A;
-    border-radius: 25px;
-    font-family: Lato;
-    font-size: 18px;
-    font-weight: 700;
-    color: #FFFFFF;
+.other-login{
+  width: 100%;
+  margin-top: 15%;
+  text-align: center;
+  color: #BDBDBD;
+  font-size: 100%;
+  font-weight: bold;
+}
 
-  }
+.google-btn{
+  width: 100%;
+  margin-top: 4%;
+  border: none;
+  background-color: #FFFFFF;
+}
 
-  .send:active {
-    background-color: #C6005F;
-  }
-  .send:focus {
-    outline: none;
-  }
+.register-link{
+  margin-top: 16%;
+  margin-bottom: 5%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 110%;
+  color: #263238
+}
 
-  .other-login {
-    margin-top: 40px;
-    height: 19px;
-    text-align: center; 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 19px;
-    letter-spacing: -0.03em;
-    color: #bdbdbd;
+a{
+  color: #C6005F;
+  text-decoration: none;
+}
 
-  }
-
-  .google-btn {
-    margin-top: 16px;
-    padding: 0%;
-    border: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #FFFFFF;
-  }
-
-  .google-btn:focus {
-    outline: none;
-  }
-
-  .register-link {
-    margin-top: 52px;
-    height: 19px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
-    line-height: 19px;
-    color: #263238;
-  }
-
-  .logo{
-    width: auto;
-    height: 32px;
-    margin-top: 20px;
-    margin-left: 0px;
-  }
-
-  a{
-    color:#FF007A;
-  }
-
-  .register-info {
-    width: 238px;
-    height: 58px;
-    margin-bottom: 0%;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.03em;
-    color: #B0BEC5;
-  }
-  
-  .name {
-    margin-top: 24px;
-    width: 280px;
-    height: 40px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #bdbdbd;
-    font-family: Lato;
-    font-size: 18px;
-  }
-
-  .name::placeholder {
-    color: #000000;
-    opacity: 0.3;
-  }
-  .name:focus {
-    outline: none;
-    border-bottom: 2px solid #FF007A;
-  }
-
-  .email-re {
-    margin-top: 24px;
-    width: 280px;
-    height: 40px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #bdbdbd;
-    font-family: Lato;
-    font-size: 18px;
-  }
-
-  .email-re::placeholder {
-    color: #000000;
-    opacity: 0.3;
-  }
-  .email-re:focus {
-    outline: none;
-    border-bottom: 2px solid #FF007A;
-  }
-  
-  .password-re {
-    margin-top: 24px;
-    width: 280px;
-    height: 40px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #bdbdbd;
-    font-family: Lato;
-    font-size: 18px;
-  }
-
-  .password-re::placeholder {
-    color: #000000;
-    opacity: 0.3;
-  }
-  .password-re:focus {
-    outline: none;
-    border-bottom: 2px solid #FF007A;
-  }
-  
-  .btn-register {
-    margin-top: 52px;
-    width: 329px;
-    height: 44px;
-    border: none;
-    background: #FF007A;
-    border-radius: 25px;
-    font-family: Lato;
-    font-size: 16px;
-    font-weight: bold;
-    color: #FFFFFF;
-
-  }
-
-  .btn-register:active {
-    background-color: #C6005F;
-  }
-  .btn-register:focus {
-    outline: none;
-  }
-
-  .login-link {
-    margin-top: 64px;
-    height: 19px;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
-    line-height: 19px;
-    color: #263238;
-  }
 }

@@ -24,11 +24,16 @@ function emailAndPass() {
   const userEmail = document.querySelector('.email-re').value;
   const userName = document.querySelector('.name').value;
   const userPass = document.querySelector('.password-re').value;
+  const userInfo = firebase.auth().currentUser;
   firebase
     .auth().createUserWithEmailAndPassword(userEmail, userPass).then(() => {
       firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
+        if (userInfo != null) {
+          name = userName.displayName;
+          email = userInfo.email;
+          uid = userInfo.uid;
           window.location.hash = '#feed';
+console.log(userInfo);
         }})
     })
     .catch((error) => {
