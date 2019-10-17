@@ -56,3 +56,30 @@
     padding: 5px;
   }
 }
+
+@media (min-width: 801px) {
+.logo {
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  
+}
+
+.google-btn {
+  background-image: url('./google-icon2.png');
+  background-repeat: no-repeat;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.background {
+  background-color: #FF8227;
+  font-family: 'Ubuntu', sans-serif;
+  color: #f0f4f3;
+}
+}

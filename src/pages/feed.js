@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Post from '../components/post.js';
-//import PostList from '../components/post-list.js';
+
 
 function SignOut () {
   firebase.auth().signOut().then(function() {
@@ -22,6 +22,7 @@ function Feed() {
 };
 
 function Posts() {
+
   const dataBase = firebase.firestore();
   const textInput = document.querySelector('.textarea');
   const post = {
@@ -57,6 +58,18 @@ function Posts() {
 };
 
 window.feed = {
+
 }
 
+};
+  
+
+
+
 export default Feed;
+
+
+  
+   
+
+
