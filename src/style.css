@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-@media screen and (min-width: 280px) and (max-width: 800px) {
+@media (max-width: 700px) {
 
   .primary-button {
     background-color: #fefefe;
@@ -30,10 +30,7 @@
     border-radius: 30px;
   }
 
-  .container {
-    margin-top: 80px;
-  }
-
+  
   .background {
     background-color: #FF8227;
     font-family: 'Ubuntu', sans-serif;
@@ -41,8 +38,8 @@
   }
 
   .logo {
-    display: flex;
-    justify-content: center;
+    margin-left: 25px;
+    margin-top: 10px;
   }
 
   .js-email-input {
@@ -57,17 +54,22 @@
   }
 }
 
-@media (min-width: 801px) {
+.container{
+float: none;
+width: auto;
+}
+
 .logo {
-  margin-left: 200px;
-  margin-top: 200px;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(150%,110%)
 }
 
 .content {
   display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
-  
+  align-items: center;
+  flex-flow: column wrap;
+  transform: translate(10%,-8%);
 }
 
 .google-btn {
@@ -82,4 +84,7 @@
   font-family: 'Ubuntu', sans-serif;
   color: #f0f4f3;
 }
+
+.image{
+  background-image: url('./image.png');
 }

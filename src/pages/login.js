@@ -6,13 +6,13 @@ function AuthEmailPassButton() {
   const password = document.querySelector('.js-password-input').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function () {
-      window.location.hash = '#perfil';
+      window.location.hash = '#feed';
       alert('Autenticado ' + email);
   })
   .catch(function (error) {
       console.error(error.code);
       console.error(error.message);
-      alert('Falha ao autenticar, verifique oo e-mail e senha inseridos.')
+      alert('Falha ao autenticar, verifique o e-mail e senha inseridos.')
   });
 }
 
@@ -21,6 +21,7 @@ function Google (){
   firebase.auth().signInWithPopup(provider).then(function(result) {
     var token = result.credential.accessToken;
     var user = result.user;
+    window.location.hash = '#feed';
   }).catch(function(error) {
     var errorCode = error.code;
     var errorMessage = error.message;

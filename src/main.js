@@ -11,7 +11,6 @@ function locationHashChanged() {
   if (location.hash === '#login') {
     document.querySelector('main').innerHTML = Login();
   } else if (location.hash === '#feed') {
-
     document.querySelector('main').innerHTML = Feed();
   } else if (location.hash === '#perfil') {
     document.querySelector('main').innerHTML = Perfil();
