@@ -42,9 +42,6 @@ function publish() {
   });
 }
 
-var userCollection = db.collection('users').doc('user.uid');
-console.log(userCollection);
-
 function feed() {
   const template = `
     <img src="../../imagens/logo.png"></img class="image-logo">
@@ -56,7 +53,7 @@ function feed() {
     <ul class='post-ul'>
     </ul>
     </div>
-     `;
+    `;
 
   return template;
 }
