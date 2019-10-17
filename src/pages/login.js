@@ -6,7 +6,7 @@ function Login() {
   const template = `
 
     <img class="logo" src="img/Logo.png"/>
-    <div class ="welcome">Bem Vinda,</div>    
+    <div class ="welcome">Boas vindas,</div>    
     <p class="login">Faça o login para continuar</p>
     <form>
     ${input({ class: 'email', placeholder: 'Login', type: 'email' })}<br>

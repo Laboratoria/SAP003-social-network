@@ -28,11 +28,11 @@ function formPost(){
     .then(res => {
 
       document.querySelector('#posts').innerHTML += `
-      <li>
+      <div class='card-post'>
       ${post.text}
       ${post.likes}
       ${post.time}
-      </li>
+      </div>
       `
     })
 }
