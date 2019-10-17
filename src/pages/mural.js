@@ -55,9 +55,12 @@ const sendAndRetrievePost = () => {
 		name: user.email,
 		text,
 		userID: user.uid,
+		date: Date.now().toLocaleString('pt-BR')
 	}
 
 	firebase.firestore().collection('posts').add(post);
+
+	window.mural();
 
 	document.getElementById('post-form').reset();
 }
