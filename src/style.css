@@ -198,10 +198,10 @@ body {
 
 /* Início Mural */ 
 .navbar { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 4px 6%; 
+  /* display: flex; 
+  justify-content: space-around;  */
+  /* align-items: center;  */
+  padding: 14px; 
   background-color: #292828; 
 } 
 
@@ -213,19 +213,11 @@ body {
 
 .nav-links { 
   list-style: none; 
-} 
-
-.nav-links li { 
-  display: inline-block; 
-  padding: 0px 20px; 
-} 
-
-.nav-links li a { 
-  transition: all 0.3s ease 0s;
-} 
-
-.nav-links li a:hover { 
-  color: wheat; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  padding-right: 5px;
 } 
 
 .btn-post { 
@@ -238,6 +230,7 @@ body {
   background: #AA4528; 
   margin-left: 7px; 
   justify-content: center; 
+  outline: 0;
 } 
 
 #post { 
@@ -246,6 +239,7 @@ body {
   resize: none; 
   padding: 8px; 
   cursor: text; 
+  outline: 0; 
 } 
 
 #post-form { 
@@ -262,6 +256,14 @@ body {
   flex-direction: column; 
   align-items: center; 
 } 
+
+.cadastro { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 28px; 
+  flex-wrap: nowrap;
+}  
 
 .logo { 
   width: 225px; 
@@ -298,12 +300,16 @@ body {
 
 .logo { 
   width: 66%; 
+  padding-top: 0;
+  margin-left: 0;
 } 
 
 .login { 
   padding: 20px; 
   display: flex, 
-  align-items: center; 
+  align-items: center;
+  margin-left: 0;
+  margin-top: 0; 
 } 
 
 #email-login { 
@@ -371,4 +377,40 @@ body {
   box-sizing: border-box; 
 } 
 /* Fim da Home */ 
+
+/*Inicio de editar perfil*/
+#post-form { 
+  display: flex;  
+  flex-direction: column;
+  margin: 5px;
+  /* border:solid 1px white;
+  border-radius: 10px 10px;  */
+  padding: 10px;
+
+} 
+
+
+
+.btn-post { 
+  cursor: pointer; 
+  width: 95px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: whitesmoke; 
+  background: #AA4528; 
+  margin-left: 7px; 
+  margin-top: 10px;
+  justify-content: center; 
+} 
+
+.timeline-item{
+  border:solid 1px white;
+  border-radius: 10px 10px; 
+  padding: 10px;
+  margin: 10px;
+}
+
+
+/*Fim de editar perfil*/
 } 
