@@ -19,10 +19,10 @@ loadPost()
     const loading = document.querySelector('.loading');
     loading.innerHTML=""
     const user = firebase.auth().currentUser;
-     const collectionPost = firebase.firestore().collection('posts')
+    const collectionPost = firebase.firestore().collection('posts').orderBy('time', 'desc');
     collectionPost.where('user', '==', user.uid).get().then(snap => {snap.forEach(post => {
-    addingPost(post)
-    }) 
+      addingPost(post);
+    })
   }) 
   }
   
@@ -39,13 +39,13 @@ function formPost(){
   }
   firebase.firestore().collection('posts').add(post)
     .then(res => {
-      document.querySelector('#posts').innerHTML += `
+      document.querySelector('#posts').insertAdjacentHTML ('afterbegin', `
       <div class='card-post'>
       ${post.text}
       ${post.likes}
       ${post.time}
       </div>
-      `
+      `)
     })
 }
   
