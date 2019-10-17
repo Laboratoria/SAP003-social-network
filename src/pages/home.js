@@ -21,7 +21,7 @@ function Home() {
 };
 export default Home;
 
-
+ 
 function goToRegister () {
   window.location.hash='#register';
 }
@@ -69,12 +69,5 @@ function googleLogin () {
   });
 }
 
-// firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     // User is signed in.
-//     console.log('banana', user)
-//   } else {
-//     // No user is signed in.
-//   }
-// });
+
 
