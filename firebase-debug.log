@@ -23,3 +23,139 @@
 [debug] [2019-10-15T21:10:31.320Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-16T16:24:52.359Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T16:24:52.362Z] Command:       /home/laboratoria/.nvm/versions/node/v12.8.1/bin/node /home/laboratoria/.nvm/versions/node/v12.8.1/bin/firebase serve
+[debug] [2019-10-16T16:24:52.363Z] CLI Version:   7.5.0
+[debug] [2019-10-16T16:24:52.363Z] Platform:      linux
+[debug] [2019-10-16T16:24:52.363Z] Node Version:  v12.8.1
+[debug] [2019-10-16T16:24:52.369Z] Time:          Wed Oct 16 2019 13:24:52 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-16T16:24:52.369Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T16:24:52.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T16:24:52.386Z] > authorizing via signed-in user
+[debug] [2019-10-16T16:24:52.386Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-16T16:24:52.388Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-16T16:24:52.388Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-16T16:24:52.851Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:24:52.858Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-16T16:24:54.228Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:24:54.233Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-16T16:24:54.843Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-16T16:24:54.848Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-16T16:24:56.326Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-16T16:57:51.805Z] Error: socket hang up
+    at connResetException (internal/errors.js:559:14)
+    at TLSSocket.socketOnEnd (_http_client.js:433:23)
+    at TLSSocket.emit (events.js:208:15)
+    at TLSSocket.EventEmitter.emit (domain.js:476:20)
+    at endReadableNT (_stream_readable.js:1168:12)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-16T16:58:30.158Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T16:58:30.167Z] Command:       /home/laboratoria/.nvm/versions/node/v12.8.1/bin/node /home/laboratoria/.nvm/versions/node/v12.8.1/bin/firebase serve
+[debug] [2019-10-16T16:58:30.167Z] CLI Version:   7.5.0
+[debug] [2019-10-16T16:58:30.167Z] Platform:      linux
+[debug] [2019-10-16T16:58:30.167Z] Node Version:  v12.8.1
+[debug] [2019-10-16T16:58:30.168Z] Time:          Wed Oct 16 2019 13:58:30 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-16T16:58:30.168Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T16:58:30.174Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T16:58:30.175Z] > authorizing via signed-in user
+[debug] [2019-10-16T16:58:30.175Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-16T16:58:30.177Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-16T16:58:31.661Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:58:31.666Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-16T16:58:36.168Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-16T16:58:36.173Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-16T16:58:38.377Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-16T17:17:14.372Z] Error: socket hang up
+    at connResetException (internal/errors.js:559:14)
+    at TLSSocket.socketOnEnd (_http_client.js:433:23)
+    at TLSSocket.emit (events.js:208:15)
+    at TLSSocket.EventEmitter.emit (domain.js:476:20)
+    at endReadableNT (_stream_readable.js:1168:12)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-16T17:17:32.982Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T17:17:32.984Z] Command:       /home/laboratoria/.nvm/versions/node/v12.8.1/bin/node /home/laboratoria/.nvm/versions/node/v12.8.1/bin/firebase serve
+[debug] [2019-10-16T17:17:32.985Z] CLI Version:   7.5.0
+[debug] [2019-10-16T17:17:32.985Z] Platform:      linux
+[debug] [2019-10-16T17:17:32.985Z] Node Version:  v12.8.1
+[debug] [2019-10-16T17:17:32.985Z] Time:          Wed Oct 16 2019 14:17:32 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-16T17:17:32.985Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T17:17:32.997Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T17:17:32.998Z] > authorizing via signed-in user
+[debug] [2019-10-16T17:17:32.998Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-16T17:17:33.000Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-16T17:17:33.000Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-16T17:17:33.583Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T17:17:33.591Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-16T17:17:34.806Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T17:17:34.810Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-16T17:17:36.126Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-16T17:17:36.131Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-16T17:17:37.590Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-16T17:20:36.620Z] Error: Client network socket disconnected before secure TLS connection was established
+    at connResetException (internal/errors.js:559:14)
+    at TLSSocket.onConnectEnd (_tls_wrap.js:1357:19)
+    at Object.onceWrapper (events.js:291:20)
+    at TLSSocket.emit (events.js:208:15)
+    at TLSSocket.EventEmitter.emit (domain.js:476:20)
+    at endReadableNT (_stream_readable.js:1168:12)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-16T17:20:54.357Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T17:20:54.360Z] Command:       /home/laboratoria/.nvm/versions/node/v12.8.1/bin/node /home/laboratoria/.nvm/versions/node/v12.8.1/bin/firebase serve
+[debug] [2019-10-16T17:20:54.360Z] CLI Version:   7.5.0
+[debug] [2019-10-16T17:20:54.361Z] Platform:      linux
+[debug] [2019-10-16T17:20:54.361Z] Node Version:  v12.8.1
+[debug] [2019-10-16T17:20:54.361Z] Time:          Wed Oct 16 2019 14:20:54 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-10-16T17:20:54.361Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T17:20:54.369Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T17:20:54.370Z] > authorizing via signed-in user
+[debug] [2019-10-16T17:20:54.370Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-16T17:20:54.372Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-16T17:20:59.049Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T17:20:59.053Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-16T17:21:01.006Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-16T17:21:01.012Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-16T17:21:03.437Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000

@@ -1,11 +1,13 @@
 import Button from "../components/button.js";
 import Select from "../components/select.js";
-import Post from "../components/post.js"
+import Post from "../components/post.js";
 
-export const Mural = () => {
+export const Mural = (props) => {
+
 	const template = `
+
 	<header class="navbar">
-		<nav>
+		<nav class="banner">
 			<ul class="nav-links">
 				<li class="dropdown-menu">
 					<select id="select" onchange="changeSelect()">
@@ -15,7 +17,7 @@ export const Mural = () => {
 					</select>
 				</li>
 				<li><img class="nav-logo" src="images/witchy-navbar.png" alt="navlogo"> </li>
-				<li>Logout</li>
+				<li>Logout </li>
 			</ul>	
 		</nav>
 	</header>
@@ -23,9 +25,12 @@ export const Mural = () => {
 	<section class="post-section">
 		<form id='post-form'>
 			${Post({id:'post', placeholder:"Qual a  bruxaria de hoje?", rows:'5', cols:'50'})}
-			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: post})}
+			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: sendAndRetrievePost})}
 		</form>
-	</section>`;
+	</section>
+	<ul id='timeline'>
+	${props.postsLayout}
+	</ul>`;
 
 	return template;
 }
@@ -40,14 +45,19 @@ const changeSelect = () => {
 	}
 }
 
+const sendAndRetrievePost = () => {
+	const user = firebase.auth().currentUser;
 
-//PAREI AQUI
-const post = () => {
-	const userPost = document.getElementById('post').value;
+	const text = document.getElementById('post').value;
 
-		
+	const post = {
+		name: user.email,
+		text
+	}
 
-		document.getElementById('post-form').reset();
+	firebase.firestore().collection('posts').add(post);
+
+	document.getElementById('post-form').reset();
 }
 
 const logout = () => {
