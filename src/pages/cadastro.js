@@ -3,20 +3,26 @@ import Button from '../components/button.js';
 
 
 function enviarCadastro() {
+
+  /* pega a coleção do LS */
+  let colecao = localStorage.getItem('colecaoDeUsuarios');
+  /* converte a string em vetor */
+  colecao = JSON.parse(colecao);
+
+  if (!Array.isArray(colecao)) {
+    colecao = [];
+  }
+  
+
   const novoUsuario = {
     nome: document.querySelector('.js-nomeCadastro-input').value,
     sobrenome: document.querySelector('.js-sobrenomeCadastro-input').value,
     email: document.querySelector('.js-emailCadastro-input').value,
     password: document.querySelector('.js-novaSenhaCadastro-input').value,
+    post: [],
+    id: colecao.length
   };
-  /* pega a coleção do LS */
-  let colecao = localStorage.getItem('colecaoDeUsuarios');
-  /* converte a string em vetor */
-  colecao = JSON.parse(colecao);
-  /* caso não seja um vetor, transforma em um */
-  if (!Array.isArray(colecao)) {
-    colecao = [];
-  }
+
   /* adiciona o novo usuario na colecao */
   colecao.push(novoUsuario);
   /* salva a coleção com o novo cadastro de volta no LS */
@@ -25,6 +31,10 @@ function enviarCadastro() {
   localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
   /* muda o hash do endereço para que a função trocaPagina()
   perceba a mudança e mude a página que estamos */
+  
+  console.log(colecao)
+  /* caso não seja um vetor, transforma em um */
+  
   window.location.hash = '#login';
 }
 

@@ -6,7 +6,7 @@ window.validarLogin = (colecao, usuario) => {
   for (let i = 0; i < colecao.length; i += 1) {
     if (usuario.emailDoCadastro === colecao[i].email
       && usuario.passwordDoCadastro === colecao[i].password) {
-      return true;
+      return colecao[i].id;
     }
   }
   return false;
@@ -22,7 +22,8 @@ function enviarLogin() {
   if (usuario.emailDoCadastro && usuario.passwordDoCadastro) {
 
     if (window.validarLogin(colecao, usuario)) {
-      localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+      const id = window.validarLogin(colecao, usuario)
+      localStorage.setItem('usuarioLogado', JSON.stringify(id));
       window.location.hash = '#home';
     } else {
       window.alert('E-mail ou senha inválidos');
