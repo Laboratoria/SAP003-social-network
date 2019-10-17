@@ -57,15 +57,16 @@ button{
   -moz-box-shadow: 1px 1px 2px #333333;
   -webkit-box-shadow: 1px 1px 2px #333333;
   background: rgba(255,255,255,0.7);
-  border:1px solid #000000;
+  border:1px solid black;
   width:250px;
   height: 20px;
   position: relative;
   left: 50%;
   margin-left: -120px;
+  background-image: url(img/google-icon.png);
 }
 
-footer{
+footer {
   background-color: rgb(207, 206, 205);
   font-size: 14px;
   text-align: center;
