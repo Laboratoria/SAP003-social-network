@@ -15,7 +15,7 @@ function pegarInput() {
   })[0];
 
   if (logado) {
-    localStorage.setItem('usuario', JSON.stringify(logado));
+    localStorage.setItem('usuario', JSON.stringify(logado.id));
     window.location.hash = '#feed';
     return true;
   }
