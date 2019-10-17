@@ -1,10 +1,10 @@
-import Login from './pages/login1.js';
+import Login from './pages/login.js';
 import Register from './pages/register.js';
 import Button from '../components/button.js';
 import Feed from './pages/feed.js';
 
 function init() {
-  document.querySelector('main').innerHTML = Feed();
+  document.querySelector('main').innerHTML = Login();
 }
 
 window.addEventListener('load', init);
@@ -31,5 +31,5 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+//firebase.analytics();
 
