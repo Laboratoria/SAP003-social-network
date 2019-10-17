@@ -25,6 +25,7 @@ function postar() {
   return template;
 }
 
+
 export default postar;
 
 /* Função logout para por no feed
