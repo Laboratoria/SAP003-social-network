@@ -1,19 +1,23 @@
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 
-
-function SignOut () {
+function signOut () {
   firebase.auth().signOut().then(function() {
-    window.location.hash = '#login'
+    window.location.hash = '#login';
     alert ('Agora tu saiu.')
   })
+};
+
+function profile () {
+  window.location.hash = '#perfil';
 };
 
 function Feed() {
   const template = `
   <h1>Feed</h1>
-  ${Button({ title: 'Sair', class: 'primary-button', onClick: SignOut})}
-  <h2>Post</h2>
+  ${Button({ title: 'Sair', class: 'primary-button', onClick: signOut})}
+  ${Button({ title: 'Perfil', class: 'primary-button', onClick: profile})}
+   <h2>Post</h2>
   ${Post({ class: 'textarea', id: 'post-textarea', placeholder: 'Escreva aqui', type:'text'})}
   ${Button({ title: 'Postar', class: 'primary-button', onClick: Posts})}
   <div id='banana'></div>
@@ -58,18 +62,7 @@ function Posts() {
 };
 
 window.feed = {
-
-}
-
 };
-  
-
 
 
 export default Feed;
-
-
-  
-   
-
-

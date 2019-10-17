@@ -1,6 +1,6 @@
 function Button(props) {
   const template = `
-    <button class=""${props.class}" onclick="button.handleClick(event, ${props.onClick})" >
+    <button class="${props.class}" onclick="button.handleClick(event, ${props.onClick})" >
     ${props.title}</button>
   `;
 
