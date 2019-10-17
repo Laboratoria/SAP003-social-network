@@ -2,19 +2,18 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function salvar() {
-  let postagem = JSON.parse(localStorage.getItem('post'));
+  const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
+  const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
+
+  const posts = usuarioTotal[usuarioAtual].posts;
 
   const post = {
     post2: document.querySelector('.post').value,
   };
-  if (!postagem) {
-    postagem = [post];
-  } else {
-    postagem.push(post);
-  }
-  window.localStorage.setItem('post', JSON.stringify(postagem));
-  const amemSenhor = JSON.stringify(postagem);
-  document.getElementById('banana').innerHTML = amemSenhor;
+
+  posts.push(post);
+  window.localStorage.setItem('cadastro', JSON.stringify(usuarioTotal));
+  document.getElementById('banana').innerHTML = posts.map(elem => `<p>${elem.post2}</p>`).join('');
 }
 
 function postar() {

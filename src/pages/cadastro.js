@@ -6,16 +6,20 @@ import Button from '../components/button.js';
 function pegarInput() {
   let dadoslocal = JSON.parse(localStorage.getItem('cadastro'));
 
+  console.log(dadoslocal);
+
   const dados = {
     email: document.querySelector('.js-email').value,
     nome: document.querySelector('.js-nome').value,
     senha: document.querySelector('.js-senha').value,
-    post: [],
+    posts: [],
   };
 
   if (!dadoslocal) {
+    dados.id = 0;
     dadoslocal = [dados];
   } else {
+    dados.id = dadoslocal.length;
     dadoslocal.push(dados);
   }
   window.localStorage.setItem('cadastro', JSON.stringify(dadoslocal));
@@ -38,9 +42,9 @@ function cadastrar() {
 }
 
 function locationHashChanged() {
-  if (location.hash === '#cadastro') {
+  if (window.location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = cadastrar();
-  } else if (location.hash === '#login') {
+  } else if (window.location.hash === '#login') {
     document.querySelector('main').innerHTML = Login();
   }
 }
