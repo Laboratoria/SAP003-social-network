@@ -24,18 +24,8 @@ function emailAndPass() {
   const userEmail = document.querySelector('.email-re').value;
   const userName = document.querySelector('.name').value;
   const userPass = document.querySelector('.password-re').value;
-  const userInfo = firebase.auth().currentUser;
-  firebase
-    .auth().createUserWithEmailAndPassword(userEmail, userPass).then(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        if (userInfo != null) {
-          name = userName.displayName;
-          email = userInfo.email;
-          uid = userInfo.uid;
-          window.location.hash = '#feed';
-console.log(userInfo);
-        }})
-    })
+   firebase
+    .auth().createUserWithEmailAndPassword(userEmail, userPass).then(() => {})
     .catch((error) => {
       console.error(error.code);
       console.error(error.message);
@@ -45,3 +35,7 @@ console.log(userInfo);
 
 
 export default Register;
+
+
+
+// user.uid data-banana

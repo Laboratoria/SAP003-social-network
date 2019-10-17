@@ -2,8 +2,8 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 
 
-function Feed() {
-loadPost ()
+function Feed(props) {
+loadPost()
   const template =`
     <form id ="formPost">
     ${Textarea({ class: 'Text1', placeholder: ''})}
@@ -13,11 +13,25 @@ loadPost ()
     `
     return template;
   }
-  
 
+  //essa percorre os posts do template e carrega eles
+  function loadPost () {
+    const loading = document.querySelector('.loading');
+    loading.innerHTML=""
+    const user = firebase.auth().currentUser;
+     const collectionPost = firebase.firestore().collection('posts')
+    collectionPost.where('user', '==', user.uid).get().then(snap => {snap.forEach(post => {
+    addingPost(post)
+    }) 
+  }) 
+  }
+  
+// essa função cria o objeto do post no banco de dados e cria o card
 function formPost(){
+  const id = firebase.auth().currentUser.uid
   const text = document.querySelector('.Text1').value;
   const post = {
+    user: id,
     likes : 0,
     comments:[],
     text: text,
@@ -25,7 +39,6 @@ function formPost(){
   }
   firebase.firestore().collection('posts').add(post)
     .then(res => {
-
       document.querySelector('#posts').innerHTML += `
       <div class='card-post'>
       ${post.text}
@@ -36,6 +49,7 @@ function formPost(){
     })
 }
   
+// esta busca os posts do banco de dados e adiciona no template
 function addingPost(post){
   const listPost = document.querySelector('#posts');
   const templatePost = `
@@ -48,17 +62,5 @@ function addingPost(post){
   listPost.innerHTML += templatePost
 }
 
-function loadPost () {
-  const loading = document.querySelector('.loading');
-  loading.innerHTML=""
-   const collectionPost = firebase.firestore().collection('posts')
-  collectionPost.get().then(snap => {snap.forEach(post => {
-  addingPost(post)
 
-
-  }) 
-}) 
-
-
-}
 export default Feed;

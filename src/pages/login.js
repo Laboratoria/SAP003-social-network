@@ -26,12 +26,6 @@ function sendLogin() {
   const emailValue = document.querySelector('.email').value;
   const passValue = document.querySelector('.password').value;
   firebase.auth().signInWithEmailAndPassword(emailValue, passValue).then(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        window.location.hash = '#feed';
-      }
-    })
-
       }).catch(() => {
         const erro = document.querySelector('.login-error');
         return erro.innerHTML = 'Login ou senha inválidos'
