@@ -1,25 +1,282 @@
-[debug] [2019-10-15T16:34:07.060Z] ----------------------------------------------------------------------
-[debug] [2019-10-15T16:34:07.067Z] Command:       /home/anannda/.nvm/versions/node/v12.11.0/bin/node /home/anannda/.nvm/versions/node/v12.11.0/bin/firebase serve
-[debug] [2019-10-15T16:34:07.067Z] CLI Version:   7.5.0
-[debug] [2019-10-15T16:34:07.068Z] Platform:      linux
-[debug] [2019-10-15T16:34:07.068Z] Node Version:  v12.11.0
-[debug] [2019-10-15T16:34:07.069Z] Time:          Tue Oct 15 2019 13:34:07 GMT-0300 (GMT-03:00)
-[debug] [2019-10-15T16:34:07.069Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:43:35.148Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:43:35.154Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:43:35.154Z] CLI Version:   7.5.0
+[debug] [2019-10-17T16:43:35.154Z] Platform:      linux
+[debug] [2019-10-17T16:43:35.154Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:43:35.155Z] Time:          Thu Oct 17 2019 13:43:35 GMT-0300 (-03)
+[debug] [2019-10-17T16:43:35.155Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-10-15T16:34:07.142Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-10-15T16:34:07.146Z] > authorizing via signed-in user
-[debug] [2019-10-15T16:34:07.147Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
-[debug] [2019-10-15T16:34:07.156Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+[debug] [2019-10-17T16:43:35.172Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:43:35.173Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:43:35.173Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:43:35.176Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-17T16:43:35.176Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-17T16:43:35.548Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:43:35.624Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
 
-[debug] [2019-10-15T16:34:08.357Z] <<< HTTP RESPONSE 200
-[debug] [2019-10-15T16:34:08.364Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+[debug] [2019-10-17T16:43:39.388Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:43:39.393Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
  
-[debug] [2019-10-15T16:34:09.628Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:43:50.532Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from '/home/anannda/Área de Trabalho/Laboratória/Rede Social/SAP003-social-network'...
+[info] === Serving from '/home/ester/ester-git/SAP003-social-network'...
 [info] 
-[debug] [2019-10-15T16:34:09.635Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
+[debug] [2019-10-17T16:43:50.539Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
  
-[debug] [2019-10-15T16:34:10.862Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:43:53.238Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T18:37:50.294Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T18:37:50.299Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T18:37:50.300Z] CLI Version:   7.5.0
+[debug] [2019-10-17T18:37:50.300Z] Platform:      linux
+[debug] [2019-10-17T18:37:50.300Z] Node Version:  v8.10.0
+[debug] [2019-10-17T18:37:50.300Z] Time:          Thu Oct 17 2019 15:37:50 GMT-0300 (-03)
+[debug] [2019-10-17T18:37:50.300Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T18:37:50.419Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T18:37:50.419Z] > authorizing via signed-in user
+[debug] [2019-10-17T18:37:50.419Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T18:37:50.423Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-17T18:37:50.424Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-17T18:37:50.738Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T18:37:50.814Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T18:37:51.961Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T18:37:51.964Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+ 
+[debug] [2019-10-17T18:37:54.976Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ester/ester-git/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T18:37:54.980Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
+ 
+[debug] [2019-10-17T18:37:56.506Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T18:43:35.819Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketOnEnd (_http_client.js:423:23)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T18:43:35.823Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T18:43:35.824Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketOnEnd (_http_client.js:423:23)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T18:43:35.825Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketOnEnd (_http_client.js:423:23)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T18:43:35.827Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T18:43:35.829Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T18:44:12.945Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T18:44:12.950Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T18:44:12.951Z] CLI Version:   7.5.0
+[debug] [2019-10-17T18:44:12.951Z] Platform:      linux
+[debug] [2019-10-17T18:44:12.951Z] Node Version:  v8.10.0
+[debug] [2019-10-17T18:44:12.951Z] Time:          Thu Oct 17 2019 15:44:12 GMT-0300 (-03)
+[debug] [2019-10-17T18:44:12.956Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T18:44:13.025Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T18:44:13.025Z] > authorizing via signed-in user
+[debug] [2019-10-17T18:44:13.026Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T18:44:13.032Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T18:44:14.596Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T18:44:14.599Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+ 
+[debug] [2019-10-17T18:44:15.914Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ester/ester-git/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T18:44:15.920Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
+ 
+[debug] [2019-10-17T18:44:17.173Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T19:13:37.679Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T19:13:37.690Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T19:13:37.692Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T19:13:37.694Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T19:13:37.724Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T19:13:37.725Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T19:14:44.928Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T19:14:44.934Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T19:14:44.934Z] CLI Version:   7.5.0
+[debug] [2019-10-17T19:14:44.934Z] Platform:      linux
+[debug] [2019-10-17T19:14:44.934Z] Node Version:  v8.10.0
+[debug] [2019-10-17T19:14:44.934Z] Time:          Thu Oct 17 2019 16:14:44 GMT-0300 (-03)
+[debug] [2019-10-17T19:14:44.935Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T19:14:45.007Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T19:14:45.008Z] > authorizing via signed-in user
+[debug] [2019-10-17T19:14:45.008Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T19:14:45.014Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T19:14:55.208Z] Error: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+[debug] [2019-10-17T19:15:22.093Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T19:15:22.099Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T19:15:22.099Z] CLI Version:   7.5.0
+[debug] [2019-10-17T19:15:22.099Z] Platform:      linux
+[debug] [2019-10-17T19:15:22.099Z] Node Version:  v8.10.0
+[debug] [2019-10-17T19:15:22.100Z] Time:          Thu Oct 17 2019 16:15:22 GMT-0300 (-03)
+[debug] [2019-10-17T19:15:22.100Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T19:15:22.112Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T19:15:22.112Z] > authorizing via signed-in user
+[debug] [2019-10-17T19:15:22.112Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T19:15:22.115Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T19:15:24.724Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T19:15:24.727Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+ 
+[debug] [2019-10-17T19:15:35.155Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: Server Error. socket hang up
+[debug] [2019-10-17T19:15:47.995Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T19:15:48.000Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T19:15:48.001Z] CLI Version:   7.5.0
+[debug] [2019-10-17T19:15:48.001Z] Platform:      linux
+[debug] [2019-10-17T19:15:48.001Z] Node Version:  v8.10.0
+[debug] [2019-10-17T19:15:48.001Z] Time:          Thu Oct 17 2019 16:15:48 GMT-0300 (-03)
+[debug] [2019-10-17T19:15:48.001Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T19:15:48.011Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T19:15:48.012Z] > authorizing via signed-in user
+[debug] [2019-10-17T19:15:48.012Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T19:15:48.015Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T19:16:48.199Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T19:16:48.203Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T19:16:48.203Z] CLI Version:   7.5.0
+[debug] [2019-10-17T19:16:48.203Z] Platform:      linux
+[debug] [2019-10-17T19:16:48.203Z] Node Version:  v8.10.0
+[debug] [2019-10-17T19:16:48.204Z] Time:          Thu Oct 17 2019 16:16:48 GMT-0300 (-03)
+[debug] [2019-10-17T19:16:48.204Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T19:16:48.213Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T19:16:48.213Z] > authorizing via signed-in user
+[debug] [2019-10-17T19:16:48.213Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T19:16:48.217Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T19:16:58.266Z] Error: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+[debug] [2019-10-17T19:17:33.676Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T19:17:33.680Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T19:17:33.680Z] CLI Version:   7.5.0
+[debug] [2019-10-17T19:17:33.680Z] Platform:      linux
+[debug] [2019-10-17T19:17:33.680Z] Node Version:  v8.10.0
+[debug] [2019-10-17T19:17:33.680Z] Time:          Thu Oct 17 2019 16:17:33 GMT-0300 (-03)
+[debug] [2019-10-17T19:17:33.680Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T19:17:33.690Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T19:17:33.690Z] > authorizing via signed-in user
+[debug] [2019-10-17T19:17:33.690Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T19:17:33.693Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2019-10-17T19:17:34.940Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T19:17:34.943Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+ 
+[debug] [2019-10-17T19:17:35.442Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ester/ester-git/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T19:17:35.449Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
+ 
+[debug] [2019-10-17T19:17:35.869Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
