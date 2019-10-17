@@ -1,8 +1,7 @@
 import Button from '../components/button.js';
 
 function Feed() {
-
-  loadPost ()
+loadPost ()
   const template =`
     <form id ="formPost">
     <textarea class='Text1' placeholder=''></textarea>
