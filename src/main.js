@@ -8,10 +8,20 @@ window.addEventListener('load', locationHashChanged);
 
 
 function locationHashChanged() {
+  firebase.auth().onAuthStateChanged((user) => {
+  if (user) {   
   if (location.hash === '#login') {
     document.querySelector('main').innerHTML = Login();
   } else if (location.hash === '#feed') {
-    document.querySelector('main').innerHTML = Feed();
+    firebase.firestore().collection('posts')
+    .where('user', '==', user.uid)
+    .get()
+    .then((querySnapshot) => {
+    document.querySelector('main').innerHTML = Feed({
+      posts: querySnapshot,
+    })
+    })  
+  }   
   } else if (location.hash === '#perfil') {
     document.querySelector('main').innerHTML = Perfil();
   } else if (location.hash === '#register') {
@@ -20,5 +30,6 @@ function locationHashChanged() {
     document.querySelector('main').innerHTML = Login();
   }
 }
+  )}
 
 window.onhashchange = locationHashChanged;
