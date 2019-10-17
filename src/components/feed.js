@@ -3,7 +3,7 @@ import Post from './post.js';
 function printPosts(post) {
   const feed = document.querySelector('#feed');
   const template = window.feed.Post({
-    id: post.id,
+    dataId: post.id,
     username: post.data().user_name,
     date: post.data().timestamp.toDate().toLocaleString(),
     text: post.data().text,
