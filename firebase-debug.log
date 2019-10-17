@@ -608,3 +608,403 @@
 [debug] [2019-10-16T14:31:02.233Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-15T19:30:57.606Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T19:30:57.608Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-15T19:30:57.609Z] CLI Version:   7.4.0
+[debug] [2019-10-15T19:30:57.609Z] Platform:      linux
+[debug] [2019-10-15T19:30:57.609Z] Node Version:  v8.10.0
+[debug] [2019-10-15T19:30:57.609Z] Time:          Tue Oct 15 2019 16:30:57 GMT-0300 (-03)
+[debug] [2019-10-15T19:30:57.609Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T19:30:57.619Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T19:30:57.619Z] > authorizing via signed-in user
+[debug] [2019-10-15T19:30:57.619Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T19:30:57.621Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-15T19:30:57.621Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-15T19:30:58.829Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T19:30:58.835Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-15T19:30:59.816Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T19:30:59.820Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-15T19:31:01.114Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoria/SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T19:31:01.120Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-15T19:31:02.638Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-16T16:55:17.246Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T16:55:17.249Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-16T16:55:17.250Z] CLI Version:   7.4.0
+[debug] [2019-10-16T16:55:17.250Z] Platform:      linux
+[debug] [2019-10-16T16:55:17.250Z] Node Version:  v8.10.0
+[debug] [2019-10-16T16:55:17.250Z] Time:          Wed Oct 16 2019 13:55:17 GMT-0300 (-03)
+[debug] [2019-10-16T16:55:17.250Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T16:55:17.328Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T16:55:17.328Z] > authorizing via signed-in user
+[debug] [2019-10-16T16:55:17.328Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-16T16:55:17.331Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-16T16:55:17.332Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-16T16:55:18.564Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:55:18.770Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-16T16:55:19.942Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:55:19.948Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-16T16:55:21.684Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-16T16:55:21.690Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-16T16:55:23.173Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T15:48:15.978Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T15:48:15.982Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T15:48:15.982Z] CLI Version:   7.4.0
+[debug] [2019-10-17T15:48:15.982Z] Platform:      linux
+[debug] [2019-10-17T15:48:15.982Z] Node Version:  v8.10.0
+[debug] [2019-10-17T15:48:15.982Z] Time:          Thu Oct 17 2019 12:48:15 GMT-0300 (-03)
+[debug] [2019-10-17T15:48:15.983Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T15:48:16.040Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T15:48:16.040Z] > authorizing via signed-in user
+[debug] [2019-10-17T15:48:16.041Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T15:48:16.045Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-17T15:48:16.046Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-17T15:48:39.945Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T15:48:40.008Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T15:49:10.462Z] Error: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+[debug] [2019-10-17T15:49:22.560Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T15:49:22.563Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T15:49:22.563Z] CLI Version:   7.4.0
+[debug] [2019-10-17T15:49:22.564Z] Platform:      linux
+[debug] [2019-10-17T15:49:22.564Z] Node Version:  v8.10.0
+[debug] [2019-10-17T15:49:22.564Z] Time:          Thu Oct 17 2019 12:49:22 GMT-0300 (-03)
+[debug] [2019-10-17T15:49:22.564Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T15:49:22.573Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T15:49:22.573Z] > authorizing via signed-in user
+[debug] [2019-10-17T15:49:22.573Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T15:49:22.576Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T15:49:53.360Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T15:49:53.364Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-17T15:50:03.503Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T15:50:03.512Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-17T15:50:11.899Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T15:54:35.494Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T15:54:35.497Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T15:54:35.498Z] CLI Version:   7.4.0
+[debug] [2019-10-17T15:54:35.498Z] Platform:      linux
+[debug] [2019-10-17T15:54:35.498Z] Node Version:  v8.10.0
+[debug] [2019-10-17T15:54:35.498Z] Time:          Thu Oct 17 2019 12:54:35 GMT-0300 (-03)
+[debug] [2019-10-17T15:54:35.498Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T15:54:35.506Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T15:54:35.507Z] > authorizing via signed-in user
+[debug] [2019-10-17T15:54:35.507Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T15:54:35.510Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T15:54:58.838Z] Error: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+[debug] [2019-10-17T15:56:27.111Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T15:56:27.114Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T15:56:27.115Z] CLI Version:   7.4.0
+[debug] [2019-10-17T15:56:27.115Z] Platform:      linux
+[debug] [2019-10-17T15:56:27.115Z] Node Version:  v8.10.0
+[debug] [2019-10-17T15:56:27.115Z] Time:          Thu Oct 17 2019 12:56:27 GMT-0300 (-03)
+[debug] [2019-10-17T15:56:27.115Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T15:56:27.125Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T15:56:27.126Z] > authorizing via signed-in user
+[debug] [2019-10-17T15:56:27.126Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T15:56:27.129Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T15:57:03.888Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: Server Error. socket hang up
+[debug] [2019-10-17T15:57:47.269Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T15:57:47.273Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T15:57:47.273Z] CLI Version:   7.4.0
+[debug] [2019-10-17T15:57:47.273Z] Platform:      linux
+[debug] [2019-10-17T15:57:47.273Z] Node Version:  v8.10.0
+[debug] [2019-10-17T15:57:47.273Z] Time:          Thu Oct 17 2019 12:57:47 GMT-0300 (-03)
+[debug] [2019-10-17T15:57:47.273Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T15:57:47.284Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T15:57:47.284Z] > authorizing via signed-in user
+[debug] [2019-10-17T15:57:47.285Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T15:57:47.288Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T15:57:50.190Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T15:57:50.192Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-17T15:57:52.835Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T15:57:52.846Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-17T15:57:54.196Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T16:05:14.412Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:05:14.420Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:05:14.422Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:05:14.423Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:05:14.424Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:05:14.425Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:08:08.345Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:08:08.348Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:08:08.348Z] CLI Version:   7.4.0
+[debug] [2019-10-17T16:08:08.348Z] Platform:      linux
+[debug] [2019-10-17T16:08:08.349Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:08:08.349Z] Time:          Thu Oct 17 2019 13:08:08 GMT-0300 (-03)
+[debug] [2019-10-17T16:08:08.349Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T16:08:08.382Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:08:08.382Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:08:08.382Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:08:08.385Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T16:08:15.418Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:08:15.421Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-17T16:08:21.048Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T16:08:21.057Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-17T16:08:24.653Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T16:17:12.378Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketOnEnd (_http_client.js:423:23)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:17:12.382Z] Error: socket hang up
+    at createHangUpError (_http_client.js:331:15)
+    at TLSSocket.socketCloseListener (_http_client.js:363:23)
+    at emitOne (events.js:121:20)
+    at TLSSocket.emit (events.js:211:7)
+    at _handle.close (net.js:567:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:356:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:18:19.162Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:18:19.166Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:18:19.166Z] CLI Version:   7.4.0
+[debug] [2019-10-17T16:18:19.166Z] Platform:      linux
+[debug] [2019-10-17T16:18:19.166Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:18:19.166Z] Time:          Thu Oct 17 2019 13:18:19 GMT-0300 (-03)
+[debug] [2019-10-17T16:18:19.167Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T16:18:19.188Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:18:19.189Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:18:19.189Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:18:19.192Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T16:19:32.343Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: Server Error. socket hang up
+[debug] [2019-10-17T16:19:42.415Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:19:42.418Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:19:42.419Z] CLI Version:   7.4.0
+[debug] [2019-10-17T16:19:42.419Z] Platform:      linux
+[debug] [2019-10-17T16:19:42.419Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:19:42.419Z] Time:          Thu Oct 17 2019 13:19:42 GMT-0300 (-03)
+[debug] [2019-10-17T16:19:42.419Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T16:19:42.428Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:19:42.428Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:19:42.428Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:19:42.431Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T16:24:23.680Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:24:23.683Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:24:23.683Z] CLI Version:   7.4.0
+[debug] [2019-10-17T16:24:23.683Z] Platform:      linux
+[debug] [2019-10-17T16:24:23.683Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:24:23.684Z] Time:          Thu Oct 17 2019 13:24:23 GMT-0300 (-03)
+[debug] [2019-10-17T16:24:23.684Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T16:24:23.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:24:23.694Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:24:23.695Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:24:23.697Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T16:24:43.366Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:24:43.369Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-17T16:24:53.908Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T16:24:53.917Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-17T16:24:56.974Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-17T16:25:35.579Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:25:35.586Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:25:35.779Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-17T16:28:25.183Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:28:25.187Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:28:25.187Z] CLI Version:   7.4.0
+[debug] [2019-10-17T16:28:25.187Z] Platform:      linux
+[debug] [2019-10-17T16:28:25.187Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:28:25.187Z] Time:          Thu Oct 17 2019 13:28:25 GMT-0300 (-03)
+[debug] [2019-10-17T16:28:25.187Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T16:28:25.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:28:25.201Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:28:25.201Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:28:25.204Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T16:29:31.345Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:29:31.348Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-17T16:29:56.968Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T16:29:56.973Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-17T16:30:27.272Z] Error: getaddrinfo ENOTFOUND firebase.googleapis.com firebase.googleapis.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND firebase.googleapis.com firebase.googleapis.com:443
+[debug] [2019-10-17T16:32:56.475Z] ----------------------------------------------------------------------
+[debug] [2019-10-17T16:32:56.482Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-17T16:32:56.483Z] CLI Version:   7.4.0
+[debug] [2019-10-17T16:32:56.483Z] Platform:      linux
+[debug] [2019-10-17T16:32:56.483Z] Node Version:  v8.10.0
+[debug] [2019-10-17T16:32:56.483Z] Time:          Thu Oct 17 2019 13:32:56 GMT-0300 (-03)
+[debug] [2019-10-17T16:32:56.483Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-17T16:32:56.555Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-17T16:32:56.556Z] > authorizing via signed-in user
+[debug] [2019-10-17T16:32:56.557Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-17T16:32:56.561Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-17T16:33:06.806Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-17T16:33:06.809Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-17T16:33:10.123Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/fabricia/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-17T16:33:10.132Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-17T16:33:14.045Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000

@@ -61,31 +61,48 @@ function callPage() {
   window.location.hash = '#register';
 }
 
+
+
 function Home() {
   const template = `
-    
-    ${Button({ id: 'GOOGLE', title: 'GOOGLE', onClick: logWithGoogle })}
-    ${Button({ id: 'FACE', title: 'FACEBOOK', onClick: logWithFacebook })}
-    ${Button({ id: 'CREATE', title: 'REGISTRE-SE', onClick: callPage })}
-        
+    <img class="image" src="Images/animals.jpg">
+    <form class= "form">
+      
       ${Input({
-    class: 'js-email-input',
-    placeholder: 'Email',
-    type: 'email',
-  })}
+        class: 'js-email-input',
+        placeholder: 'Email',
+        type: 'email',
+      })}
       ${Input({
-    class: 'js-password-input',
-    placeholder: 'Senha',
-    type: 'password',
-  })}
-    <br>
-    <br>
+        class: 'js-password-input',
+        placeholder: 'Senha',
+        type: 'password',
+      })}
       ${Button({
-    id: 'LoginAccount',
-    title: 'Entrar',
-    onClick: signInWithEmailAndPassword,
-  })}
-    `;
+        class: 'LoginAccount',
+        title: 'Entrar',
+        onClick: signInWithEmailAndPassword,
+      })}
+      <p class="loginOption">Ou entre com:<p>
+      <div class="btn-position">
+      ${Button({ 
+        class: 'google',
+        title: 'G', 
+        onClick: logWithGoogle,
+         
+      })}
+      ${Button({ 
+        class: 'face', 
+        title: 'F', 
+        onClick: logWithFacebook 
+      })}
+      </div>
+      <p class="loginOption">Ainda não tem conta? Registre-se.<p>
+
+    </form>
+  
+  `;
+  
   return template;
 }
 

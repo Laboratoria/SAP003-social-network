@@ -1,17 +1,89 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
+.body {
+  background-color: #dcd6f7; 
+}
+
+/* .form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}  */
+  
+
+
+.image{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  width: 80%;
+  height: 80%;
+  border-radius: 180%;
+}
+
+.message-area{
+  display: flex;
+  margin: auto;
   border-radius: 5px;
-  font-weight: bold;
-  border: none;
+  justify-content: space-between;
+
+}
+
+
+.loginOption{
+  color: #350f63;
+  text-align: center;
+}
+
+.LoginAccount{
+  display: flex;
+  margin: auto;
+  background-color: #f18805;;
+  padding: 3px;
+  font-size: 0.8rem;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 
+.btn-position{
+  display: flex;
+  width: 15%;
+  margin: auto;
+}
 
-.image {
-  background-color: #ffe521
+.face{
+  margin: auto;
+  background-color: #2372a3;
+  border-radius: 100%; 
+  border: none;
+  height: 100%;
+  line-height: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #dcd6f7;
+  font-weight: bold;
+  cursor: pointer;
+ 
+}
+
+.google{
+  margin: auto;
+  background-color: #dd4b39;
+  border-radius: 100%; 
+  border: none;
+  height: 100%;
+  line-height: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #dcd6f7;
+  font-weight: bold;
+  cursor: pointer;
 
 }
+
+
+
+
 

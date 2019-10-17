@@ -31,15 +31,15 @@ export const Post = () => {
   return message;
 };
 
-const message = document.querySelector('.js-message-area').value;
+// const message = document.querySelector('.js-message-area').value;
 
-message.addEventListener("Post", function(event) {
-  event.preventDefault();
+// message.addEventListener("Post", function(event) {
+//   event.preventDefault();
 
-})
+// })
 
-const db = firebase.firestore();
-db.settings({timestampsInSnapshots})
+// const db = firebase.firestore();
+// db.settings({timestampsInSnapshots})
 
 
 // dataStorage.collection('mensagens').get().then((snapshot) => {
