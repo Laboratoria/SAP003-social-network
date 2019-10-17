@@ -43,20 +43,20 @@ const editPost = () => {
 
 };
 
-const saveEditPost= (event)=> {
+const saveEditPost= ()=> {
   const id = event.target.dataset.id;
-  firebase.firestore().collection('post').doc(id).update();
+  const saveText = document.getElementById(id)
+  const newText = saveText.textContent
+  firebase.firestore().collection('post').doc(id).update({
+    text: newText,
+  });
+  saveText.setAttribute('contentEditable', 'false');
 
-
-//   Map<String, Object> userUpdates = new HashMap<>();
-// userUpdates.put("alanisawesome/nickname", "Alan The Machine");
-// userUpdates.put("gracehop/nickname", "Amazing Grace");
-
-usersRef.updateChildrenAsync(userUpdates);
 }
 window.post ={
   deletePost,
   editPost,
+  saveEditPost
 }
 
 export default Post;
