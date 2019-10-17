@@ -4,19 +4,24 @@ import Feed from './pages/feed.js';
 
 
 function pagesChange() {
-document.querySelector('main').innerHTML = Login();
-  if (location.hash === '#login') {
-    document.querySelector('main').innerHTML = Login();
-    //document.queryselector(body).className = "banana"
-  } else if (location.hash === '#register') {
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    if (window.location.hash = '#feed'){
+        document.querySelector('main').innerHTML = Feed();   
+        }
+      
+    }  else if (location.hash === '#register') {
     document.querySelector('main').innerHTML = Register();
-    //document.getElementByTagName("body")[0].className = "peixinho"
-  } else if (location.hash === '#feed') {
-      document.querySelector('main').innerHTML = Feed();
-    };
-      //document.getElementByTagName("body")[0].className = "xuxu"
+    } else {
+      location.hash === '#login'
+      document.querySelector('main').innerHTML = Login();
   }
-
+})
+};
 
 window.addEventListener('hashchange', pagesChange);
 window.addEventListener('load', pagesChange);
+
+
+
+    //document.getElementByTagName("body")[0].className = "peixinho"
