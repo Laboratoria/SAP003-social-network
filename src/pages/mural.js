@@ -5,8 +5,9 @@ import Post from "../components/post.js";
 export const Mural = (props) => {
 
 	const template = `
+
 	<header class="navbar">
-		<nav>
+		<nav class="banner">
 			<ul class="nav-links">
 				<li class="dropdown-menu">
 					<select id="select" onchange="changeSelect()">
@@ -16,7 +17,7 @@ export const Mural = (props) => {
 					</select>
 				</li>
 				<li><img class="nav-logo" src="images/witchy-navbar.png" alt="navlogo"> </li>
-				<li>Logout</li>
+				<li>Logout </li>
 			</ul>	
 		</nav>
 	</header>
