@@ -7,12 +7,29 @@ function init() {
 }
 
 function locationHasChange() {
-  if (location.hash === '#createAccount') {
-    document.querySelector('main').innerHTML = newUserTemplate();
-  } else if (location.hash === '#feed') {
-    document.querySelector('main').innerHTML = feed();
-    window.loadPost();
-  }
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      if (location.hash === '#feed') {
+        firebase
+          .firestore()
+          .collection('posts')
+          .where('user', '==', user.uid)
+          .get()
+          .then((querySnapshot) => {
+            document.querySelector('main').innerHTML = feed({
+              posts: querySnapshot,
+            });
+          });
+      }
+    } else {
+      (location.hash === '#login');
+      document.querySelector('main').innerHTML = TemplateLogin();
+    }
+
+    if (location.hash === '#createAccount') {
+      document.querySelector('main').innerHTML = newUserTemplate();
+    }
+  });
 }
 
 window.addEventListener('hashchange', locationHasChange, false);

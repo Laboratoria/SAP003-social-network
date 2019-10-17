@@ -13,9 +13,7 @@ function login() {
         location.hash = '#feed';
       }
     })
-
     .catch((error) => {
-      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorCode, errorMessage);
