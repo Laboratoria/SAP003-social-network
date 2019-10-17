@@ -8,18 +8,19 @@ const authCheck = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       location.hash = '#feed';
-      main.innerHTML = Feed();
+
+      firebase.firestore().collection('posts')
+          .orderBy('timestamp', 'desc')
+          .get()
+          .then((querySnapshot) => {
+            main.innerHTML = Feed({posts: querySnapshot });
+
+          });
     } else {
       location.hash = '';
     }
   });
 };
-
-// const teste = () => {
-//   firebase.firestore().collection('posts').get().then((snap) => {
-//     snap.docs.forEach(doc => console.log(doc.id));
-//   });
-// };
 
 const routes = () => {
   if (location.hash === '#register') {
@@ -31,7 +32,6 @@ const routes = () => {
   }
 };
 
-// window.onload = teste;
 
 window.addEventListener('load', routes);
 window.addEventListener('hashchange', routes);

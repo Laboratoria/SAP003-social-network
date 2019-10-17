@@ -8,6 +8,7 @@ const actionButton = (props) => {
   
   window.button = {
     handleClick: (event, callBack) => {
+      event.preventDefault();
       event.target.id;
       callBack();
     },
