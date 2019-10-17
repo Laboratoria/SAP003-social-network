@@ -10,6 +10,7 @@ function pegarInput() {
     email: document.querySelector('.js-email').value,
     nome: document.querySelector('.js-nome').value,
     senha: document.querySelector('.js-senha').value,
+    post: [],
   };
 
   if (!dadoslocal) {
