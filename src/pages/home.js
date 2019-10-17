@@ -2,9 +2,9 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 // import Card from '../components/card.js';
 
-function addPost(post) {
+function addPost(post, postId) {
   const postTemplate = `
-  <li class='post-li'>
+  <li id='${postId}' class='post-li'>
   ${post.timestamp.toDate().toLocaleString('pt-BR')}: </br >
   ${post.text} </br >
   🏆 ${post.likes}
@@ -18,7 +18,7 @@ function loadPost() {
   postColletion.get().then((snap) => {
     postList.innerHTML = '';
     snap.forEach((post) => {
-      postList.innerHTML += addPost(post.data());
+      postList.innerHTML += addPost(post.data(), post.id);
     });
   });
 }
