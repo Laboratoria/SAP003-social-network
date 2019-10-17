@@ -62,7 +62,8 @@ function callPage() {
 function Home() {
   const template = `
     <img class="image" src="Images/animals.jpg">
-    <form class= "form">
+    <h1 class="titulo">Amigo Pet</h1>
+    <form>
       
       ${Input({
         class: 'js-email-input',
@@ -90,9 +91,9 @@ function Home() {
         title: 'FACEBOOK', 
         onClick: logWithFacebook 
       })}
-      <p class="loginOption">Ainda não tem conta? Registre-se.<p>
-
+      <p class="loginOption">Ainda não tem conta? <a href="#register"><strong>Registre-se!</strong></a></p>
     </form>
+    
   
   `;
   

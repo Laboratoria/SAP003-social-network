@@ -1,19 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 .body {
   background-color: #dcd6f7; 
+  font-family: 'Quicksand', sans-serif;
 }
 
-/* .form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.titulo{
+  font-weight: bolder;
+  color: #350f63;
+  text-align: center;
+  font-size: 35 px;
+
+}
 
 .image{
   display: flex;
   justify-content: center;
   margin: auto;
   padding-top: 10px;
-  padding-bottom: 30px;
   width: 80%;
   height: 80%;
   border-radius: 180%;
@@ -23,7 +27,11 @@
   display: flex;
   margin: auto;
   border-radius: 5px;
-  justify-content: space-between;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 20px;
+  height: 25px;
+  width: 200px;
+  text-align: center;
 
 }
 
@@ -31,6 +39,7 @@
 .loginOption{
   color: #350f63;
   text-align: center;
+  
 }
 
 .LoginAccount{
@@ -38,9 +47,12 @@
   margin: auto;
   background-color: #f18805;;
   padding: 3px;
-  font-size: 0.8rem;
+  width: 80px;
+  font-size: 1.0rem;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  justify-content: center;
 }
 
 .face{
@@ -54,8 +66,31 @@
   margin: auto;
   
 }
+.createAccount{
+  display: flex;
+  margin: auto;
+  background-color: #f18805;;
+  padding: 3px;
+  width: 110px;
+  font-size: 1.0rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  justify-content: center;
 
+}
 
+.footer{
 
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  
+}
+/* .cadastro{
+display: flex;
+padding: 30%;
+
+} */
 
 
