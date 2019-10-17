@@ -21,6 +21,7 @@ function pegarInput() {
   window.location.hash = '#home';
 }
 
+
 function cadastrar() {
   const template = `
   <img src="fotos/mia pose 1-01.png" class="mia"> 
