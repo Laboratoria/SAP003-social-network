@@ -9,7 +9,7 @@ function init() {
 window.addEventListener('load', init);
 
 function locationHashChanged() {
-  switch (location.hash) {
+  switch (window.location.hash) {
     case '#cadastrar':
       document.querySelector('main').innerHTML = cadastrar();
       break;
@@ -19,6 +19,8 @@ function locationHashChanged() {
     case '#feed':
       document.querySelector('main').innerHTML = feed();
       break;
+    default:
+      document.querySelector('main').innerHTML = logar();
   }
 }
 

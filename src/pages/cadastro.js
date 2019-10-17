@@ -1,3 +1,4 @@
+
 import Input from '../components/input.js';
 import Button from '../components/button.js';
 
@@ -18,7 +19,6 @@ function pegarInput() {
   }
   window.localStorage.setItem('cadastro', JSON.stringify(dadoslocal));
   window.location.hash = '#home';
-
 }
 
 function cadastrar() {
@@ -35,5 +35,15 @@ function cadastrar() {
   `;
   return template;
 }
+
+function locationHashChanged() {
+  if (location.hash === '#cadastro') {
+    document.querySelector('main').innerHTML = cadastrar();
+  } else if (location.hash === '#login') {
+    document.querySelector('main').innerHTML = Login();
+  }
+}
+
+window.addEventListener('hashchange', locationHashChanged, false);
 
 export default cadastrar;

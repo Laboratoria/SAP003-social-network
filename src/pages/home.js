@@ -1,27 +1,34 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+
 function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
   const dados = JSON.parse(localStorage.getItem('cadastro'));
-  const logado = dados.reduce((d) => {
+
+  const logado = dados.filter((d) => {
     if (d.email === email && d.senha === senha) {
       return d;
     }
-  });
+    return null;
+  })[0];
 
   if (logado) {
     localStorage.setItem('usuario', JSON.stringify(logado));
-    const paragraph = document.createElement('p');
-    const node = document.createTextNode(`Bem-vindo ${logado.nome}`);
-    paragraph.appendChild(node);
-    document.getElementById('title').appendChild(paragraph);
-  } else {
-    console.log('Ocorreu um erro :(');
+    window.location.hash = '#feed';
+    return true;
   }
-  window.location.hash = '#feed';
+  document.getElementById('erro').innerHTML = 'Usuario ou senha invalido!';
+  console.log('Ocorreu um erro :(');
+  return false;
 }
+
+// function logout() {
+//   localStorage.removeItem('usuario');
+
+//   window.location.reload();
+// }
 
 function logar() {
   const template = `
@@ -29,6 +36,7 @@ function logar() {
 <div class="container-login">
   <h1 id="title">Base Sustentabilidade</h1>
   <h3>Bem-vindo<h3>
+  <p id="erro" class="erro"></p>
   <div>
   <form class="form">
   ${Input({ class: 'js-email', placeholder: 'Email', type: 'email' })}
