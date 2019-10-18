@@ -207,26 +207,33 @@ label[for="navigation"] {
   display: flex;
   width: 317px;
   height: 142px;
-  margin-left: 0%;
-  margin-top: 16%;
+  margin-top: 15%;
   background: #968B7D;
   border-radius: 10px;
 }
 
-.publication {
-  background: #ffffff;
-  margin-left: 0%;
-  margin-right: -13%;
-  height: 54%;
-  margin-top: 10%;
-  width: 100%;
+.date-post {
+  display: inline-block;
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.edit-post {
+  font-size: 15px;
+  color: #FFFFFF;
 }
 
 .delete-post {
   font-size: 15px;
   color: #FFFFFF;
-  margin-right: -13%;
-  margin-top: -35%;
+}
+
+.publication {
+  background: #ffffff;
+  margin-left: -64%;
+  height: 54%;
+  margin-top: 10%;
+  width: 100%;
 }
 
 /* .img-curtir{

@@ -14,7 +14,7 @@ const createPost = () => {
     firebase.firestore().collection('posts').add({
       text: textInput,
       userId: firebase.auth().currentUser.uid,
-      addedAt: (new Date()).toISOString(),
+      addedAt: (new Date()).toLocaleString('pt-BR'),
     })
       .then(() => {
         textInput.value = '';
@@ -27,10 +27,21 @@ const deletePost = (event) => {
   firebase.firestore().collection('posts').doc(id).delete();
 };
 
+const updatePost = (event) => {
+  const id = event.target.dataset.id;
+  const editedPost = document.querySelector('.publication').value;
+  firebase.firestore().collection('posts').doc(id).update({ text: editedPost });
+};
+
 const timeline = (props) => {
   let layout = '';
   props.posts.forEach((snap) => {
-    layout += Post({ id: snap.id, post: snap.data(), deleteEvent: deletePost });
+    layout += Post({
+      id: snap.id,
+      post: snap.data(),
+      deleteEvent: deletePost,
+      updateEvent: updatePost,
+    });
   });
 
   const templateTimeLine = `
