@@ -2,7 +2,6 @@ import Button from '..//components/button.js';
 import savePost from '..//pages/post.js';
 import Logo from '../components/logo.js';
 
-
 function signOut() {  
   firebase.auth().signOut()
   .then(function () {
@@ -21,7 +20,7 @@ function home() {
     </header>   
     <nav></nav>
     <br>
-    <h1 class="id-user">Olá, Fulana!</h1>
+    <h1 class="id-user">Olá, ${firebase.auth().currentUser.uid}</h1>
     ${Button({ class: "button-out", onClick: signOut, title:'<i class="fas fa-sign-out-alt"></i>' })}
     <div class= "post-area">
       <img class="img-user" src="./img/profile_girl.png"/>

@@ -2,6 +2,7 @@ import Button from '../components/button.js';
 import Logo from '../components/logo.js';
 import Input from '../components/input.js';
 
+
 function criarLogin() {
   const name = document.querySelector('.js-namefull-input').value;
   const email = document.querySelector('.js-email-input').value;
@@ -9,7 +10,19 @@ function criarLogin() {
   
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function () {
-    window.location = '#home.js';        
+    uid = firebase.auth().currentUser.uid;
+
+    if (uid != null) {
+      
+      window.location = '#home.js';
+      
+      db.collection('users').add({
+        name: name,
+        email: email,
+        uid: uid
+        
+      })
+    }
 
   })  
   .catch(function (error) {       
@@ -30,33 +43,7 @@ function criarLogin() {
     }
       
   });
-
-  /* firebase.auth().onAuthStateChanged(function(user) {
-    firebase.auth().currentUser;
-    if (user != null) {
-      console.log(user)
-            
-      window.location = '#home.js';
-      
-      // User is signed in.
-      //let displayName = user.displayName;      
-      // let email = user.email;
-      // let emailVerified = user.emailVerified;
-      // let photoURL = user.photoURL;
-      // let isAnonymous = user.isAnonymous;
-      // let uid = user.uid;
-      // let providerData = user.providerData;
-      // ...
-    } else {
-      
-      window.location = '#login.js';
-      
-      // User is signed out.
-      // ...
-    }
-  }); */
 }
-
 
 function register() {
   const template = `   
@@ -75,3 +62,6 @@ function register() {
 }
 
 export default register;
+
+
+

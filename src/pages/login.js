@@ -7,26 +7,41 @@ import loginGoogle from './google.js';
 function enviarLogin() {
   const email = document.querySelector('.js-email-input').value;
   const senha = document.querySelector('.js-password-input').value;
+
   firebase.auth().signInWithEmailAndPassword(email, senha)
   .then(function () {
-    window.location = '#home.js';
-    console.log(location);
+    uid = firebase.auth().currentUser.uid;
+
+    if (uid != null) {
+      
+      window.location = '#home.js';
+      /* console.log(location); */
+
+      db.collection('users').add({
+        name: name,
+        email: email,
+        uid: uid
+        
+      })
+
+    }
+
    
   }).catch(function(error) {     
     let errorCode = error.code;
     if (errorCode === 'auth/user-not-found') {
       alert('Usuário não encontrado!')
-      window.location = '#login.js';     
+      window.location = '#home.js';     
     } else if (errorCode === 'auth/invalid-email') {
       alert('Digite um e-mail válido!')
-      window.location = '#login.js';      
+      window.location = '#home.js';      
     } else if (errorCode === 'auth/wrong-password') {
       alert('Email ou senha inválido!')
-      window.location = '#login.js';      
+      window.location = '#home.js';     
     }
   });
   
-  /* firebase.auth().onAuthStateChanged(function (user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       console.log(user)
       window.location = '#home.js';      
@@ -34,7 +49,7 @@ function enviarLogin() {
 
     }    
 
-  }); */
+  });
     
 }
 
