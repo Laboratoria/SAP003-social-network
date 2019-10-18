@@ -9,7 +9,6 @@
 }
 
 /* Home */
-
 .homepage-title {
   font-size: 49px;
   color: whitesmoke;
@@ -112,7 +111,6 @@ body {
   height: 18px;
   box-sizing: border-box;
  }
-
  /* Fim da Home */
 
  /*Inicio da tela de cadastro*/
@@ -225,12 +223,10 @@ width: 200px;
 
 .nav-links li a {
   transition: all 0.3s ease 0s;
-
 }
 
 .nav-links li a:hover {
   color: wheat;
-  
 }
 
 .btn-post {
