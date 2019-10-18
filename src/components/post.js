@@ -4,17 +4,23 @@ import Button from './button.js';
 const Post = (props) => {
   const template = `
   <div class="container-public">
-  <p data-id='${props.id}' contentEditable="true" class='publication'>${props.post.text}
+  <p data-id='${props.id}' class='publication'>${props.post.text}
     </p>
     <div class="info-post">
     <p data-id='${props.id}' class='date-post'>${props.post.addedAt.slice(0, 16)}</p> 
-       ${Button({
-    class: 'edit-post',
+    ${Button({
+    class: 'save-post',
     dataId: props.id,
     title: 'Editar',
+    onClick: props.enableEvent,
+  })} 
+    ${Button({
+    class: 'edit-post',
+    dataId: props.id,
+    title: 'Salvar',
     onClick: props.updateEvent,
   })} 
-      ${Button({
+    ${Button({
     class: 'delete-post',
     dataId: props.id,
     title: 'Deletar',

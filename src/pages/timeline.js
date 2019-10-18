@@ -27,9 +27,14 @@ const deletePost = (event) => {
   firebase.firestore().collection('posts').doc(id).delete();
 };
 
+const enableField = (event) => {
+  const id = event.target.dataset.id;
+  document.querySelector(`[data-id=${id}]`).contentEditable = 'true';
+};
+
 const updatePost = (event) => {
   const id = event.target.dataset.id;
-  const editedPost = document.querySelector('.publication').textContent;
+  const editedPost = document.querySelector(`[data-id=${id}]`).textContent;
   firebase.firestore().collection('posts').doc(id).update({ text: editedPost, addedAt: (new Date()).toLocaleString('pt-BR') });
 };
 
@@ -41,6 +46,7 @@ const timeline = (props) => {
       post: snap.data(),
       deleteEvent: deletePost,
       updateEvent: updatePost,
+      enableEvent: enableField,
     });
   });
 

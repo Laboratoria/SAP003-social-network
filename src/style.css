@@ -217,9 +217,9 @@ label[for="navigation"] {
   display: inline-block;
   font-size: 15px;
   color: #FFFFFF;
-  margin-top: 55%;
-  margin-left: -48%;
-  margin-right: 45%;
+  margin-top: 45%;
+  margin-left: -20%;
+  margin-right: 35%;
 }
 
 .edit-post {
@@ -227,8 +227,16 @@ label[for="navigation"] {
   color: #FFFFFF;
   background: #968B7D;
   border: none;
-  margin-left: -5%;
-  margin-right: 5%;
+  margin-right: 3%;
+}
+
+.save-post {
+  font-size: 15px;
+  color: #FFFFFF;
+  background: #968B7D;
+  border: none;
+  margin-left: -25%;
+  margin-right: 3%;
 }
 
 .delete-post {
@@ -242,7 +250,7 @@ label[for="navigation"] {
   background: #ffffff;
   margin-top: 10%;
   margin-left: 0%;
-  margin-right: -67%;
+  margin-right: -82%;
   height: 54%;
   width: 100%;
 }
