@@ -22,20 +22,26 @@ const createPost = () => {
   }
 };
 
+const deletePost = (event) => {
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('posts').doc(id).delete();
+  // event.target.parentElement.remove();
+};
+
 const timeline = (props) => {
   let layout = '';
-  props.posts.forEach((post) => {
-    layout += Post(post.data());
+  props.posts.forEach((snap) => {
+    layout += Post({ id: snap.id, post: snap.data(), deleteEvent: deletePost });
   });
 
   const templateTimeLine = `
-     ${Input({
+    ${Input({
     class: 'navigation',
     id: 'navigation',
     type: 'checkbox',
   })}
-  <label for="navigation">&#9776;</label>
-  <nav class="menu">
+    <label for="navigation">&#9776;</label>
+    <nav class="menu">
       <ul>
     ${List({
     class: 'timeline',
@@ -63,7 +69,7 @@ const timeline = (props) => {
       ${Input({
     class: 'post-text',
     id: 'post-text',
-    type: 'textarea',
+    type: 'text',
     placeholder: 'digite aqui...',
   })}
     <img src="images/img-public.png" class="img-public"> 
