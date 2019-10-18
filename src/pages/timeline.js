@@ -9,7 +9,7 @@ const signOut = () => firebase.auth().signOut();
 const createPost = () => {
   const textInput = document.querySelector('.post-text').value;
   if (textInput === '') {
-    alert('ferrou');
+    alert('Campo Vazio! Digite sua mensagem');
   } else {
     firebase.firestore().collection('posts').add({
       text: textInput,
@@ -29,8 +29,8 @@ const deletePost = (event) => {
 
 const updatePost = (event) => {
   const id = event.target.dataset.id;
-  const editedPost = document.querySelector('.publication').value;
-  firebase.firestore().collection('posts').doc(id).update({ text: editedPost });
+  const editedPost = document.querySelector('.publication').textContent;
+  firebase.firestore().collection('posts').doc(id).update({ text: editedPost, addedAt: (new Date()).toLocaleString('pt-BR') });
 };
 
 const timeline = (props) => {
