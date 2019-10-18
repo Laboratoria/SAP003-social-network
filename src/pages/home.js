@@ -27,6 +27,7 @@ const loginGoogle = (id, event) => {
   	// The signed-in user info.
   	var user = result.user;
   	// ...
+  	firebase.firestore().collection('users').add(user);
 }).catch(function(error) {
   	// Handle Errors here.
   	var errorCode = error.code;

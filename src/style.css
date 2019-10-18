@@ -1,374 +1,479 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap'); 
 
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
-}
-
-/* Home */
-.homepage-title {
-  font-size: 49px;
-  color: whitesmoke;
-  text-align: center;
-}
-
-body {
-  background-color: #121212;
-  color: whitesmoke;
-}
-
-.login {
-  margin-top: 35px;
-  padding: 100px;
-  margin-left: 50px;
-}
-
-.home {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  justify-items: center;
-}
-
-.logo {
-  display: flex;
-  justify-items: initial;
-  width: 500px;
-  padding-top: 50px;
-  margin-left: 100px;
-}
-
-#email-login {
-  border-radius: 5px;
-  outline:none;
-  padding: 2px;
-  width: 280px;
-  height: 30px;
-}
-
-#pass-login {
-  border-radius: 5px;
-  outline:none;
-  padding: 2px;
-  margin-top: 4px;
-  width: 280px;
-  height: 30px;
-}
-
-.login-form {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.btn-sign-up {
-  width: 70px;
-  cursor: pointer;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  color: whitesmoke;
-  background: #121212;
-}
-
-.btn-login {
-  cursor: pointer;
-  width: 70px;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  color: whitesmoke;
-  background: #AA4528;
-}
-
-.btn-google {
-  cursor:pointer;
-  font-family: 'Roboto', sans-serif;
-  height: 40px;
-  border-width: 0;
-  background: white;
-  color: #737373;
-  border-radius: 5px;
-  white-space: nowrap;
-  padding-right: 8px;
-}
-
- .google-logo {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 8px 0 8px 8px;
-  width: 18px;
-  height: 18px;
-  box-sizing: border-box;
- }
- /* Fim da Home */
-
- /*Inicio da tela de cadastro*/
-.cadastro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 28px;
+* { 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Lato', sans-serif; 
 } 
 
-.cad-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
-}
+/* Home */ 
+.homepage-title { 
+  font-size: 49px; 
+  color: whitesmoke; 
+  text-align: center; 
+} 
 
-.cadastre {
-  font-size: 30px;
-  text-align: center;
-}
+body { 
+  background-color: #121212; 
+  color: whitesmoke; 
+} 
 
-.cad-logo {
-width: 200px;
-}
+.login { 
+  margin-top: 35px; 
+  padding: 100px; 
+  margin-left: 50px; 
+} 
 
-#name {
-  border-radius: 5px;
-  outline: none;
-  padding: 2px;
-  width: 280px;
-  height: 30px;
-  margin: 3px;
-}
+.home { 
+  display: flex; 
+  height: 100%; 
+  width: 100%; 
+  justify-items: center; 
+} 
 
-#mail {
-  border-radius: 5px;
-  outline: none;
-  padding: 2px;
-  width: 280px;
-  height: 30px;
-  margin: 3px;
-}
+.logo { 
+  display: flex; 
+  justify-items: initial; 
+  width: 500px; 
+  padding-top: 50px; 
+  margin-left: 100px; 
+} 
 
-#born {
-  border-radius: 5px;
-  outline: none;
-  padding: 2px;
-  width: 280px;
-  height: 30px;
-  margin: 3px;
-}
+#email-login { 
+  border-radius: 5px; 
+  outline:none; 
+  padding: 2px; 
+  width: 280px; 
+  height: 30px; 
+} 
 
-#pass {
-  border-radius: 5px;
-  outline: none;
-  padding: 2px;
-  width: 280px;
-  height: 30px;
-  margin: 3px;
-}
+#pass-login { 
+  border-radius: 5px; 
+  outline:none; 
+  padding: 2px; 
+  margin-top: 4px; 
+  width: 280px; 
+  height: 30px; 
+} 
 
-.btn-send-sign-up {
-  cursor: pointer;
-  width: 70px;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  color: whitesmoke;
-  background: #AA4528;
-  margin: 15px;
-}
+.login-form { 
+  padding: 12px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+} 
 
-.btn-go-home {
-  cursor: pointer;
-  width: 95px;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  color: whitesmoke;
-  background: #AA4528;
-  margin: 15px;
-  justify-content: center;
-}
-/*Fim do cadastro*/
+.buttons { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+} 
 
-/* Início Mural */
-.navbar {
+.btn-sign-up { 
+  width: 70px; 
+  cursor: pointer; 
+  height: 30px; 
+  border: none;  
+  border-radius: 10px; 
+  color: whitesmoke; 
+  background: #121212;
+} 
+
+.btn-login { 
+  cursor: pointer; 
+  width: 70px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: whitesmoke; 
+  background: #AA4528; 
+} 
+
+.btn-google { 
+  cursor:pointer; 
+  font-family: 'Roboto', sans-serif; 
+  height: 40px; 
+  border-width: 0; 
+  background: white; 
+  color: #737373; 
+  border-radius: 5px; 
+  white-space: nowrap; 
+  padding-right: 8px; 
+} 
+
+.google-logo { 
+  display: inline-block; 
+  vertical-align: middle; 
+  margin: 8px 0 8px 8px; 
+  width: 18px; 
+  height: 18px; 
+  box-sizing: border-box; 
+} 
+/* Fim da Home */ 
+
+/*Inicio da tela de cadastro*/ 
+.cadastro { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 28px; 
+}  
+
+.cad-form { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 46px; 
+} 
+
+.cadastre { 
+  font-size: 30px; 
+  text-align: center; 
+} 
+
+.cad-logo { 
+  width: 200px; 
+} 
+
+#name { 
+  border-radius: 5px; 
+  outline: none; 
+  padding: 2px; 
+  width: 280px; 
+  height: 30px; 
+  margin: 3px; 
+} 
+
+#mail { 
+  border-radius: 5px; 
+  outline: none; 
+  padding: 2px; 
+  width: 280px; 
+  height: 30px; 
+  margin: 3px; 
+} 
+
+#born { 
+  border-radius: 5px; 
+  outline: none; 
+  padding: 2px; 
+  width: 280px; 
+  height: 30px; 
+  margin: 3px; 
+} 
+
+#pass { 
+  border-radius: 5px; 
+  outline: none; 
+  padding: 2px; 
+  width: 280px;  
+  height: 30px; 
+  margin: 3px; 
+} 
+
+.btn-send-sign-up { 
+  cursor: pointer; 
+  width: 70px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: whitesmoke; 
+  background: #AA4528; 
+  margin: 15px; 
+} 
+
+.btn-go-home { 
+  cursor: pointer; 
+  width: 115px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: whitesmoke; 
+  background: #AA4528; 
+  margin: 15px; 
+  justify-content: center; 
+} 
+/*Fim do cadastro*/ 
+
+/* Início Mural */ 
+
+.navbar { 
+  align-items: center; 
+  padding: 4px; 
+  background-color: #292828; 
+} 
+
+.nav-logo { 
+  width: 106px; 
+  list-style: none; 
+  align-items: center; 
+} 
+
+.nav-links { 
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 4px 6%;
-  background-color: #292828;
+  width: 99%;
+  padding-right: 6px;
+  padding-left: 4px;
+} 
+
+.nav-links li { 
+  display: inline-block;  
+} 
+
+.dropdown-menu {
+  padding-top: 8px;
 }
 
-.nav-logo {
-  width: 106px;
-  list-style: none;
-  align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-}
-
-.nav-links li {
+.menu-dropdown {
+  position: relative;
   display: inline-block;
-  padding: 0px 20px;
-}
-
-.nav-links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav-links li a:hover {
-  color: wheat;
-}
-
-.btn-post {
-  cursor: pointer;
-  width: 95px;
-  height: 30px;
   border: none;
-  border-radius: 10px;
-  color: whitesmoke;
-  background: #AA4528;
-  margin-left: 7px;
-  justify-content: center;
+  color: #CCCCCC;
+  background-color: #121212;
+  height: 35px;
 }
 
 #post {
-  font-size: 14px;
-  border-radius: 10px;
-  resize: none;
-  padding: 8px;
-  cursor: text;
+  background-color: #292828;
+  color: #cccccc;
+  border-color: #282828;
 }
 
-#post-form {
+.btn-logout {
+  padding-top: 12px;
+  cursor: pointer; 
+  width: 95px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: #CCCCCC; 
+  background: #292828;
+  font-size: 18px; 
+  margin-left: 7px; 
+  justify-content: center; 
+}
+
+#timeline {
+  text-align: center;
+  border: 20px;
+  border-color: #737373;
+}
+
+.class-mural {
+  color: #CCCCCC;
+  background-color: #121212;
+}
+
+.class-editar-perfil {
+  color: #CCCCCC;
+  background-color: #121212;
+}
+
+.btn-post { 
+  cursor: pointer; 
+  width: 95px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: whitesmoke; 
+  background: #AA4528; 
+  margin-left: 7px; 
+  justify-content: center; 
+} 
+
+#post { 
+  font-size: 14px; 
+  border-radius: 10px; 
+  resize: none; 
+  padding: 8px; 
+  cursor: text; 
+} 
+
+#post-form { 
   display: flex;
-  justify-items: center;
-}
-/* Fim Mural */
+  padding-top: 30px;
+  justify-content: center; 
+} 
 
-@media screen and (max-width: 817px) {
-/* Home */
-  .home {
-    display: flex;
-    flex-direction: column;
+p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* Fim Mural */ 
+
+ 
+@media screen and (max-width: 817px) { 
+  /* Home */ 
+  .home { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  } 
+  
+  .cadastro { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 28px; 
+    flex-wrap: nowrap;
+  }  
+  
+  .logo { 
+    width: 225px; 
+  } 
+  
+  .login { 
+    padding: 0px; 
+    margin-top: 35px; 
+    margin-left: 50px; 
+  } 
+  /* Fim da Home */ 
+} 
+  
+   
+@media screen and (max-width: 420px) { 
+  /* Home */ 
+  body { 
+    justify-content: center; 
+  } 
+  
+  .homepage-title { 
+    text-align: center; 
+    color: wheat; 
+    padding: 0px; 
+    font-size: 34px; 
+  } 
+  
+  .home { 
+    display: flex; 
+    justify-content: space-around; 
+    height: 100%; 
+    width: 100%; 
+  } 
+  
+  .logo { 
+    width: 66%; 
+    padding-top: 0;
+    margin-left: 0;
+  } 
+  
+  .login { 
+    padding: 20px; 
+    display: flex, 
     align-items: center;
-  }
+    margin-left: 0;
+    margin-top: 0; 
+  } 
+  
+  #email-login { 
+    border-radius: 5px; 
+    outline:none; 
+    padding: 2px; 
+    width: 280px; 
+  } 
+  
+  #pass-login { 
+    border-radius: 5px; 
+    outline:none;   
+    padding: 2px; 
+    margin-top: 4px; 
+    width: 280px; 
+  } 
+  
+  .login-form { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  } 
+  
+  .buttons { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  } 
+  
+  .btn-sign-up { 
+    width: 70px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    color: whitesmoke; 
+    background: #121212; 
+  } 
+  
+  .btn-login { 
+    width: 70px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    color: whitesmoke; 
+    background: #AA4528; 
+  } 
+  
+  .btn-google { 
+    font-family: 'Roboto', sans-serif; 
+    height: 40px; 
+    border-width: 0; 
+    background: white; 
+    color: #737373; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    padding-right: 8px; 
+  } 
+  
+  .google-logo { 
+    display: inline-block; 
+    vertical-align: middle; 
+    margin: 8px 0 8px 8px; 
+    width: 18px; 
+    height: 18px; 
+    box-sizing: border-box; 
+  } 
+  /* Fim da Home */ 
+  
+  /*Inicio de mural*/
+  #post-form { 
+    display: flex;  
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+  } 
 
-  .logo {
-    width: 225px;
-  }
-
-  .login {
-    padding: 0px;
-    margin-top: 35px;
-    margin-left: 50px;
-  }
-/* Fim da Home */
-
-}
-
-@media screen and (max-width: 420px) {
-  /* Home */
-  body {
+  .btn-logout {
+    padding-top: 12px;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: #CCCCCC;
+    background: #292828;
+    font-size: 18px;
+    /* margin-left: 7px; */
     justify-content: center;
   }
-
-  .homepage-title {
-    text-align: center;
-    color: wheat;
-    padding: 0px;
-    font-size: 34px;
-  }
-
-  .home {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-  }
-
-  .logo {
-    width: 66%;
-  }
-
-  .login {
-    padding: 20px;
-    display: flex,
-    align-items: center;
-  }
-
-  #email-login {
-    border-radius: 5px;
-    outline:none;
-    padding: 2px;
-    width: 280px;
-  }
-
-  #pass-login {
-    border-radius: 5px;
-    outline:none;
-    padding: 2px;
-    margin-top: 4px;
-    width: 280px;
-  }
-
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
- 
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn-sign-up {
-    width: 70px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-    color: whitesmoke;
-    background: #121212;
-  }
-
-  .btn-login {
-    width: 70px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-    color: whitesmoke;
-    background: #AA4528;
-  }
-
-  .btn-google{
-    font-family: 'Roboto', sans-serif;
-    height: 40px;
-    border-width: 0;
-    background: white;
-    color: #737373;
-    border-radius: 5px;
-    white-space: nowrap;
-    padding-right: 8px;
-  }
   
-   .google-logo {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 8px 0 8px 8px;
-    width: 18px;
-    height: 18px;
-    box-sizing: border-box;
-   }
-/* Fim da Home */
-}
+ .btn-post { 
+    cursor: pointer; 
+    width: 95px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    color: whitesmoke; 
+    background: #AA4528; 
+    margin-left: 7px; 
+    margin-top: 10px;
+    justify-content: center; 
+  } 
+  
+  .timeline-item{
+    border:solid 1px #292828;
+    border-radius: 10px 10px; 
+    padding: 10px;
+    margin: 10px;
+  }
+ /*Fim de mural*/
+  } 
