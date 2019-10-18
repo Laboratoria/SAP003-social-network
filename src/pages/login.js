@@ -12,17 +12,18 @@ function enviarLogin() {
   .then(function () {
     uid = firebase.auth().currentUser.uid;
 
+       
     if (uid != null) {
       
       window.location = '#home.js';
       /* console.log(location); */
 
-      db.collection('users').add({
+   /*    db.collection('users').add({
         name: name,
         email: email,
         uid: uid
         
-      })
+      }) */
 
     }
 
@@ -43,7 +44,7 @@ function enviarLogin() {
   
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      console.log(user)
+      //console.log(user)      
       window.location = '#home.js';      
     } else {
 

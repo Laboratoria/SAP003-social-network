@@ -11,7 +11,8 @@ function savePost() {
     post: post,
     likes: 0,
     comments: [],
-    uid: uid,    
+    uid: uid,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
   .then(function (docRef) {
     app.loadPost()
@@ -25,7 +26,7 @@ function addPost(post) {
   <li class="post-list">
   ${post.data().post}
   <br>  
-  <span class="date-hour">data e hora</span>
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   <br>
   💛 ${post.data().likes}
   </li>
@@ -36,7 +37,7 @@ function addPost(post) {
 
 function loadPost() {
   document.querySelector('.feed').innerHTML = 'Carregando...';
-  db.collection('post').get()
+  db.collection('post').orderBy('timestamp').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {

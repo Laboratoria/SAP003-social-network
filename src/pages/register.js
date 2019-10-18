@@ -11,6 +11,7 @@ function criarLogin() {
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function () {
     uid = firebase.auth().currentUser.uid;
+    console.log(d_name = firebase.auth().currentUser.providerData.displayName);
 
     if (uid != null) {
       
@@ -20,6 +21,7 @@ function criarLogin() {
         name: name,
         email: email,
         uid: uid
+         
         
       })
     }
