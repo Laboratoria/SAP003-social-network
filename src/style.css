@@ -210,29 +210,40 @@ label[for="navigation"] {
   margin-top: 15%;
   background: #968B7D;
   border-radius: 10px;
+  font-family: sans-serif;
 }
 
 .date-post {
   display: inline-block;
   font-size: 15px;
   color: #FFFFFF;
+  margin-top: 55%;
+  margin-left: -48%;
+  margin-right: 45%;
 }
 
 .edit-post {
   font-size: 15px;
   color: #FFFFFF;
+  background: #968B7D;
+  border: none;
+  margin-left: -5%;
+  margin-right: 5%;
 }
 
 .delete-post {
   font-size: 15px;
   color: #FFFFFF;
+  background: #968B7D;
+  border: none;
 }
 
 .publication {
   background: #ffffff;
-  margin-left: -64%;
-  height: 54%;
   margin-top: 10%;
+  margin-left: 0%;
+  margin-right: -67%;
+  height: 54%;
   width: 100%;
 }
 
