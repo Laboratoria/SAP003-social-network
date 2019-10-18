@@ -22,7 +22,7 @@ body {
   color: #EC6345;
 }
 
-.img {
+.logo {
   border-radius: 150px;
   width: 100%;
   margin-top: 30px;
@@ -216,9 +216,17 @@ label[for="navigation"] {
 .publication {
   background: #ffffff;
   margin-left: 0%;
+  margin-right: -13%;
   height: 54%;
   margin-top: 10%;
   width: 100%;
+}
+
+.delete-post {
+  font-size: 15px;
+  color: #FFFFFF;
+  margin-right: -13%;
+  margin-top: -35%;
 }
 
 /* .img-curtir{
@@ -236,7 +244,7 @@ label[for="navigation"] {
   } */
 
 @media (min-width: 1280px) {
-  .img {
+  .logo {
     margin-left: 35%;
     border-radius: 150px;
     width: 30%;
