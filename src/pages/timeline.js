@@ -60,10 +60,12 @@ const timeline = (props) => {
     </nav>
     <form action="" id="post-form">
     <h1 class="title-timeline">Low Carb Style</h1>
+    <div class="users">
     <img src="images/usuario.png" class="img-usuario">
     <div class="dados-usuario">
       <h3 clas="nome-usuario">Nome</h3>
       <p clas="bio-usuario"><em>Biografia</em></p>
+      </div>
     </div>
     <div class="container-publicar">
       ${Input({
