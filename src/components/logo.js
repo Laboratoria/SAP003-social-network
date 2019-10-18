@@ -1,7 +1,7 @@
-function Logo() {
+function Logo(props) {
   const logo = `
   <header class="header">
-    <h1 class="logo"></h1>    
+    <h1 class= "${props.class}"></h1>    
   </header>
   `;
   return logo;
