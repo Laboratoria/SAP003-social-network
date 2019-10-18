@@ -25,7 +25,6 @@ const createPost = () => {
 const deletePost = (event) => {
   const id = event.target.dataset.id;
   firebase.firestore().collection('posts').doc(id).delete();
-  // event.target.parentElement.remove();
 };
 
 const timeline = (props) => {
@@ -74,7 +73,7 @@ const timeline = (props) => {
     type: 'text',
     placeholder: 'digite aqui...',
   })}
-    <img src="images/img-public.png" class="img-public"> 
+  <img src="images/img-public.png" class="img-public"> 
       ${Button({
     class: 'btn-publicar',
     id: 'btn-publicar',

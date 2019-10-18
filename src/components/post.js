@@ -4,13 +4,14 @@ import Button from './button.js';
 const Post = (props) => {
   const template = `
   <div class="container-public">
-    <p data-id='${props.id}' class='publication'>${props.post.text}
+    <p data-id='${props.id}' contentEditable="true" class='publication'>${props.post.text}
+    </p>
     ${Button({
     class: 'delete-post',
     dataId: props.id,
-    title: 'Deletar',
+    title: 'X',
     onClick: props.deleteEvent,
-  })} </p>
+  })} 
   </div>`;
 
   return template;
