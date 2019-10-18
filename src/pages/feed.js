@@ -1,5 +1,6 @@
 import Button from '../components/button.js';
 import PostInput from '../components/postinput.js';
+import Input from '../components/input.js';
 
 function logOut() {
   auth
@@ -64,7 +65,7 @@ function addPost(post, postId) {
   const postTemplate = `
     <li id="${postId}">
     <div><span class="edit-post fa fa-pencil"></span></div>
-      <p>${post.text}</p>
+      <p class="post-text">${post.text}</p>
       <div class="interaction-area">
         <div class="likes">
           Likes:${post.likes}
@@ -96,11 +97,65 @@ function loadPosts() {
 }
 
 function editPost(postId) {
-  const newText = "batatinha";
+  // const teste = "lalala"
+  const postText = document.querySelector('.post-text');
+  const textField = postText.textContent;
+  postText.innerHTML = `
+  <form class="edit-section">
+  ${Input({
+    type: 'text',
+    class: 'text-area',
+    value: textField,
+  })}
+  ${Button({
+    id: 'btn-save',
+    class: 'btn save-btn',
+    // onclick: saveEdition,
+    title: 'Salvar',
+  })}
+  ${Button({
+    id: 'btn-cancel',
+    class: 'btn cancel-btn',
+    // onclick: cancelEdition,
+    title: 'Cancelar',
+  })}
+  </form>
+  `;
+
+  document.querySelector('.cancel-btn').addEventListener('click', () => {
+    document.querySelector('.edit-section').innerHTML = `
+      <p class="post-text">${textField}</p>
+    `;
+  });
+
+  document.querySelectorAll('.save-btn').addEventListener('click', () => {
+    const newText = document.querySelector('.text-area').value;
+    const edited = document.querySelector('.edit-section');
+    edited.innerHTML = `
+        <p class="post-text">${newText}</p>
+        `;
+  });
   const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.doc(postId).update({ text: newText });
-  console.log("editar");
+  postsCollection.doc(postId).update({ text: edition });
+  console.log(postText);
+  console.log(textField);
 }
+
+
+// function saveEdition() {
+//   const newText = document.querySelector('.text-area').value;
+//   const edited = document.querySelector('.edit-section');
+//   edited.innerHTML = `
+//     <p class="post-text">${newText}</p>
+//     `;
+//   return edited;
+// }
+
+// function cancelEdition() {
+//   document.querySelector('.edit-section').innerHTML = `
+//     <p class="post-text">${textField}</p>
+//   `;
+// }
 
 function Feed() {
   const template = `
@@ -127,3 +182,9 @@ function Feed() {
 export default Feed;
 
 window.loadPosts = loadPosts;
+
+
+// PostInput({
+//   class: 'text-area',
+//   id: 'post-text',
+//   placeholder: '',

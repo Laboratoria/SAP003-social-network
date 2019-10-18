@@ -78,7 +78,6 @@ body {
   width: 100px;
 }
 
-
 .btn:hover{
   background-color: transparent;
   color:  #322F20;
@@ -162,6 +161,10 @@ body {
 
 .coments{
   background: orange;
+}
+
+.post-text{
+  background: grey;
 }
 
 /*BREAKPOINTS*/
