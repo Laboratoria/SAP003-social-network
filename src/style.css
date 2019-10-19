@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 
   .primary-button {
     background-color: #fefefe;
-    padding: 10px;
+    padding: 5px;
     font-size: 14px;
     border-radius: 25px;
     font-weight: bold;
     border: none;
     cursor: pointer;
     margin: 5px;
-    width: 50%;
+    width: 20%;
   }
 
   .content {
     display: flex;
-    flex-direction: column;
     margin: 15px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    align-items: center;
+    border-radius: 25px;
+    width: auto;
   }
 
   .google-btn {
@@ -30,21 +30,24 @@
     border-radius: 30px;
   }
 
-  
   .background {
-    background-color: #FF8227;
+    background-color: #ffa05a;
     font-family: 'Ubuntu', sans-serif;
     color: #f0f4f3;
   }
 
   .logo {
-    margin-left: 25px;
-    margin-top: 10px;
+    margin: 0%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translate(140px, 10px);
   }
 
   .js-email-input {
     border-radius: 30px;
     padding: 5px;
+    width: 50%;
   }
 
   .js-password-input {
@@ -52,24 +55,40 @@
     margin: 10px;
     padding: 5px;
   }
+  .textarea{
+    width: 90%;
+  }
+
+  .postMessage{
+  margin: 5px;
+  padding: 10px;
+  border: solid;
+  border-color: white;
+  border-radius: 10px;
+  }
 }
 
+@media (min-width: 760px) {
 .container{
 float: none;
-width: auto;
+
 }
 
 .logo {
-  flex-direction: column;
-  align-items: center;
-  transform: translate(150%,110%)
+  width: 15%;
+  transform: translate(140%,120%);
+}
+
+#h2{
+  transform: translate(40%,-150%);
 }
 
 .content {
   display: flex;
   align-items: center;
   flex-flow: column wrap;
-  transform: translate(10%,-8%);
+  transform: translate(40%,-16%);
+  width: 70%;
 }
 
 .google-btn {
@@ -80,11 +99,54 @@ width: auto;
 }
 
 .background {
-  background-color: #FF8227;
-  font-family: 'Ubuntu', sans-serif;
-  color: #f0f4f3;
+  background-color: #ffa05a;
+    font-family: 'Ubuntu', sans-serif;
+    color: #f0f4f3;
 }
 
 .image{
   background-image: url('./image.png');
+}
+
+.primary-button {
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  width: 10%;
+}
+
+.js-email-input {
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.js-password-input {
+  border-radius: 30px;
+  margin: 10px;
+  padding: 10px;
+}
+.post{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(400px, -90px);
+  border-radius: 30px;
+  border-color: gray;
+}
+.postMessage{
+  display: flex;
+  justify-content: flex-end;
+  transform: translate(-570px, 190px);
+  margin: 5px;
+  padding: 10px;
+  border: solid;
+  border-color: gray;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
 }
