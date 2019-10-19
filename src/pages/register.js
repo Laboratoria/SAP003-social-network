@@ -5,10 +5,11 @@ function createLogin() {
     const email = document.querySelector('.js-email-input').value;
     const password = document.querySelector('.js-password-input').value;
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        window.location.hash = '#login'
-        // alert(`Bem vindo ` + email)
-      })
+    .then((user) => {
+      if (user) {
+        window.location.hash = '#login';
+      }
+    })
       .catch((error) => {
         console.error(error.code);
         console.error(error.message);
