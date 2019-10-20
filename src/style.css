@@ -160,23 +160,44 @@ section {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  border: solid;  
+  border: double;  
+  border-color: #fce326;  
   border-radius: 8px; 
   align-items: center;
   text-align: left;  
-  background: #edffb0;
+  background-color: #fff;
+   
+}
+
+.border {
+  border-bottom: double #fce326;
+}
+
+.date-hour {
+  float: right;
 }
 
 .feed {
-  font-size: 10px;
-  background-color: #fffbad00; 
+  font-size: 12px;
+  background-color: #fffbad00;
+  
 }
+
+.button-home {
+  color: black;
+  float: left;
+  font-size: 12px;
+  background-color: #fffbad00;
+  margin-left: 33px;
+}
+
 
 .button-out {
   float: right; 
   margin-right: 10px;
   font-size: 12px;
   background-color: #fffbad00;
+  cursor: pointer;
 }
 
 .button-send {
@@ -185,8 +206,15 @@ section {
   margin-right: 5px;
   font-size: 12px;
   background-color: #fffbad00;
-  vertical-align:middle; 
-  
+  cursor: pointer;    
+}
+
+.button-feed {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #fffbad00;   
+
 }
 
 

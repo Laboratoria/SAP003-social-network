@@ -1,3 +1,5 @@
+import Button from '..//components/button.js';
+
 window.app = {
   loadPost: loadPost,
 };
@@ -24,11 +26,15 @@ function addPost(post) {
   const feed = document.querySelector('.feed');
   const feedPost = `
   <li class="post-list">
+  <br>  
   ${post.data().post}
   <br>  
-  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   <br>
-  💛 ${post.data().likes}
+  <p class="border"></p>
+  ${Button({ class: "button-feed", onClick: savePost, title:'💛' })} 
+  ${post.data().likes}
+  ${Button({ class: "button-feed", onClick: savePost, title:'💬' })} 
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   </li>
   <br>
   `
@@ -37,7 +43,7 @@ function addPost(post) {
 
 function loadPost() {
   document.querySelector('.feed').innerHTML = 'Carregando...';
-  db.collection('post').orderBy('timestamp').get()
+  db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {

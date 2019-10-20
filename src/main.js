@@ -1,6 +1,7 @@
 import login from './pages/login.js';
 import register from './pages/register.js';
 import home from './pages/home.js';
+import profile from './pages/profile.js';
 
 
 function locationHashChanged() {
@@ -22,10 +23,10 @@ function locationHashChanged() {
         document.querySelector('main').innerHTML = login();
         break;
 
-      /* case '#profile.js': 
+      case '#profile.js': 
         user ? document.querySelector('main').innerHTML = profile() :
         window.location = '#login.js';        
-        break; */
+        break;
 
       default:
         window.location = '#login.js'
