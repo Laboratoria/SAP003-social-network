@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
-import PostInput from '../components/postinput.js';
-import Input from '../components/input.js';
+import PostInput from '../components/textarea.js';
+// import Input from '../components/input.js';
 
 function logOut() {
   auth
@@ -80,6 +80,55 @@ function addPost(post, postId) {
   return postTemplate;
 }
 
+function save() {
+  const id = event.target.dataset.id;
+  console.log(id);
+  console.log('salvar!');
+  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+  const newText = postText.textContent;
+  firebase.firestore().collection('posts').doc(id).update({
+    text: newText,
+  });
+  postText.setAttribute('contentEditable', 'false');
+}
+
+function cancel() {
+  const id = event.target.dataset.id;
+  console.log(id);
+  console.log('cancelar');
+  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+  const text = postText.textContent;
+  postText.innerHTML = `
+  <p class='post-text'>${text}</p>
+  `;
+  postText.setAttribute('contenteditable', 'false');
+}
+
+function editPost(postId) {
+  const id = postId;
+  console.log(id);
+  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+  // const text = postText.textContent;
+  const button = document.getElementById(id).getElementsByClassName('edit-button')[0];
+  postText.setAttribute('contenteditable', 'true');
+  button.innerHTML = `
+    ${window.button.component({
+    id: 'btn-save',
+    class: 'btn save-btn',
+    dataId: postId,
+    onclick: save,
+    title: 'Salvar',
+  })}
+    ${window.button.component({
+    id: 'btn-cancel',
+    class: 'btn cancel-btn',
+    dataId: postId,
+    onclick: cancel,
+    title: 'Cancelar',
+  })}
+  `;
+}
+
 function loadPosts() {
   const postsCollection = firebase.firestore().collection('posts');
   postsCollection.get()
@@ -97,58 +146,9 @@ function loadPosts() {
     });
 }
 
-function saveEdition() {
-  const newText = document.querySelector('.text-area').value;
-  const edited = document.querySelector('.edit-section');
-  edited.innerHTML = `
-      <p class='post-text'>${newText}</p>
-      `;
-}
-
-function cancelEdition() {
-  const newText = postText.setAttribute('contenteditable', 'false');
-  const teste = postText.textContent;
-
-  document.querySelector('.edit-section').innerHTML = `
-      <p class='post-text'>${postText}</p>
-    `;
-}
-
-function editPost(postId) {
-  const id = postId;
-  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
-  const teste = postText.textContent;
-  const button = document.getElementById(id).getElementsByClassName('edit-button')[0];
-  const newText = postText.setAttribute('contenteditable', 'true');
-  console.log(id);
-  console.log(postText);
-  console.log(teste);
-  console.log(newText);
-  button.innerHTML = `
-    ${Button({
-    id: 'btn-save',
-    class: 'btn save-btn',
-    onclick: saveEdition,
-    title: 'Salvar',
-  })}
-    ${Button({
-    id: 'btn-cancel',
-    class: 'btn cancel-btn',
-    onclick: cancelEdition,
-    title: 'Cancelar',
-  })}
-  `;
-  // const postsCollection = firebase.firestore().collection('posts');
-  // postsCollection
-  //   .doc(postId)
-  //   .update({
-  //     text: newText,
-  //   });
-}
-
 function Feed() {
   const template = `
-    ${Button({
+    ${window.button.component({
     type: 'button',
     class: 'btn',
     id: 'btn-log-out',
