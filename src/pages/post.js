@@ -1,3 +1,5 @@
+import Button from '..//components/button.js';
+
 window.app = {
   loadPost: loadPost,
 };
@@ -11,7 +13,8 @@ function savePost() {
     post: post,
     likes: 0,
     comments: [],
-    uid: uid,    
+    uid: uid,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
   .then(function (docRef) {
     app.loadPost()
@@ -23,11 +26,15 @@ function addPost(post) {
   const feed = document.querySelector('.feed');
   const feedPost = `
   <li class="post-list">
+  <br>  
   ${post.data().post}
   <br>  
-  <span class="date-hour">data e hora</span>
   <br>
-  💛 ${post.data().likes}
+  <p class="border"></p>
+  ${Button({ class: "button-feed", onClick: savePost, title:'💛' })} 
+  ${post.data().likes}
+  ${Button({ class: "button-feed", onClick: savePost, title:'💬' })} 
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   </li>
   <br>
   `
@@ -36,7 +43,7 @@ function addPost(post) {
 
 function loadPost() {
   document.querySelector('.feed').innerHTML = 'Carregando...';
-  db.collection('post').get()
+  db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {

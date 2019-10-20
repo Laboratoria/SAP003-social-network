@@ -10,20 +10,22 @@ function criarLogin() {
   
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function () {
-    uid = firebase.auth().currentUser.uid;
+    
+    firebase.auth().currentUser.updateProfile({
+      displayName: name
+    })            
 
-    if (uid != null) {
+    if (uid != null) {     
       
       window.location = '#home.js';
       
       db.collection('users').add({
         name: name,
         email: email,
-        uid: uid
+        uid: uid    
         
-      })
-    }
-
+      })      
+    }   
   })  
   .catch(function (error) {       
     let errorCode = error.code;    
@@ -40,8 +42,7 @@ function criarLogin() {
       alert('Este e-mail já foi utilizado!')
       window.location = '#login.js';
       window.location = '#register.js';      
-    }
-      
+    }      
   });
 }
 
