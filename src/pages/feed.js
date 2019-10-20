@@ -7,8 +7,9 @@ function createPost() {
     likes: 0,
     text,
     comments: [],
-    user_id: firebase.auth().currentUser.displayName,
-    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    user_name: firebase.auth().currentUser.displayName,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    privacy: 'public'
   };
   const postsCollection = firebase.firestore().collection('posts');
   postsCollection.add(post)
@@ -22,19 +23,30 @@ function createPost() {
     });
 }
 
+function printComments(arr) {
+  let template = '';
+  arr.forEach(text => {
+    template += `<li class='comments-list'>${text}</li>`;
+  });
+  //console.log(post);
+  return template;
+}
+
 function addPost(post, postId) {
   const postTemplate = `
-      <li id="${postId}">
-
-        <div>${post.createdAt.toDate().toLocaleString('pt-BR')}</div>
-        ${post.text} 
-        <div class="interaction-area">
-          Likes:${post.likes}
-          <div class="coments">
-            <span class='fa fa-comments'></span>
-          </div>
-        </div>
-      </li>
+    <li id="${postId}">
+      <p>Postado por ${post.user_name} em ${post.createdAt.toDate().toLocaleString('pt-BR').substr(0, 19)}
+      </p>
+      <p>${post.text}
+      </p>
+      <div class="interaction-area">
+        Likes:${post.likes}
+        <span class='comment-icon fa fa-comments'></span>
+      </div>
+      <div class="comments">
+        <ul class='comment-posts'>${printComments(post.comments)}</ul>
+      </div>
+    </li>
   `;
   return postTemplate;
 }
@@ -53,8 +65,7 @@ function userInfo() {
   const user = auth.currentUser;
   db.collection('users').doc(user.uid).get().then(doc => {
     const username = `
-    <h4>${doc.data().name}</h4>
-    <p>${user.email}</p>
+    <h4>Bem vindo(a), ${doc.data().name}!</h4>
     `;
     document.querySelector('.profile').innerHTML = username;
   });  
@@ -88,22 +99,26 @@ function NewPostTemplate() {
 
 function loadPosts() {
   const postsCollection = firebase.firestore().collection('posts');
-  console.log(typeof firebase.firestore.FieldValue.serverTimestamp());
-  postsCollection.orderBy('createdAt', 'desc').onSnapshot((snapshot) =>{
-
+  postsCollection.where('privacy', '==', 'public').orderBy('createdAt', 'desc').onSnapshot((snapshot) =>{
     const postList = document.querySelector('.post-list');
     postList.innerHTML = '';
-    //console.log(snapshot.docs)
     snapshot.docs.forEach((post) => {
-      //console.log(post.data().id)
       postList.innerHTML += addPost(post.data(), post.id);
-    })
-    // snapshot.docChanges().forEach((change) =>{
-    //   let updates = change.doc.data();
-    //   //console.log(updates);
-    //   postList.innerHTML += addPost(updates);
-    // })
+    });
+    document.querySelectorAll('.comment-icon').forEach ((icon) => {
+      icon.addEventListener('click', (event) => {
+        addComment(event.target.parentNode.parentNode.getAttribute('id'))});
+    });
   });
+  
+}
+
+function addComment(event) {
+  const estrelinha = 'hahahahahaah'
+  const doc = db.collection('posts').doc(event);
+  doc.update({
+      comments: firebase.firestore.FieldValue.arrayUnion(estrelinha)
+    });  
 }
 
 function Feed() {

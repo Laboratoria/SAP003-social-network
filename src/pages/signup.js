@@ -14,7 +14,8 @@ function newUser() {
           })
           .then(() => {
             db.collection('users').doc(resp.user.uid).set({
-              name: name
+              name: name,
+              likes: []
             })
             .then(() => {
               window.location = '#login';
