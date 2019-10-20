@@ -1,5 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
+import Textarea from '../components/textarea.js';
 
 function createPost() {
   const text = document.querySelector('.text-area').value;
@@ -44,11 +45,60 @@ function addPost(post, postId) {
         <span class='comment-icon fa fa-comments'></span>
       </div>
       <div class="comments">
+        <div class="comment-container">
+        </div>
         <ul class='comment-posts'>${printComments(post.comments)}</ul>
       </div>
     </li>
   `;
   return postTemplate;
+}
+
+function saveComment(){
+  //console.log('clicou em postar');
+  const newComment = document.querySelector('.textarea-comment').value;
+  const datasetid = event.target.dataset.id;
+  console.log(datasetid);
+  const doc = db.collection('posts').doc(datasetid);
+  doc.update({
+    comments: firebase.firestore.FieldValue.arrayUnion(newComment)
+  });
+}
+
+function cancelComment(){
+  //console.log('clicou em cancelar');
+  const datasetid = event.target.dataset.id;
+  document.getElementById(datasetid).getElementsByClassName('comment-container')[0].innerHTML = '';
+}
+
+function addComment(postId) {
+  //const estrelinha = 'ownnnnn';
+  const commentArea = `
+    ${Textarea({
+      class: 'textarea-comment', 
+      placeholder:'Escreva um comentário'
+    })}
+    ${window.button.component({
+      type: 'button',
+      class: 'btn',
+      id: 'btn-comment-post',
+      dataId: postId,
+      onclick: saveComment,
+      title: 'Postar',
+    })}
+    ${window.button.component({
+      type: 'button',
+      class: 'btn',
+      id: 'btn-comment-cancel',
+      dataId: postId,
+      onclick: cancelComment,
+      title: 'Cancelar',
+    })}
+  `;
+  const createWriteSection = document.getElementById(postId).getElementsByClassName('comment-container')[0];
+  createWriteSection.innerHTML = `
+      ${commentArea}
+  `;
 }
 
 function logOut() {
@@ -113,13 +163,6 @@ function loadPosts() {
   
 }
 
-function addComment(event) {
-  const estrelinha = 'hahahahahaah'
-  const doc = db.collection('posts').doc(event);
-  doc.update({
-      comments: firebase.firestore.FieldValue.arrayUnion(estrelinha)
-    });  
-}
 
 function Feed() {
   const template = `
