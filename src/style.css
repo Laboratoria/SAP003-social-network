@@ -1,4 +1,4 @@
-/* WEB */
+/*WEB*/
 @media (max-width: 1900px) and (min-width: 700px){
   main {
   display: block;
@@ -262,7 +262,7 @@
 
 }
 
-/* MOBILE */
+/*MOBILE*/
 @media (max-width: 700px){
 body{  
   font-family: 'Lato';
@@ -270,7 +270,7 @@ body{
   display: flex;
 }
 
-/* TELA LOGIN*/
+/*LOGIN*/
 .logo {
   width: 35%;
   height: auto;
@@ -385,7 +385,7 @@ a{
   text-decoration: none;
 }
 
-/*TELA REGISTER*/
+/*REGISTER*/
 .logo {
   width: 35%;
   height: auto;
@@ -485,4 +485,53 @@ a{
   color: #263238
 }
 
+/*FEED*/
+.card-post{
+  background-color: #BDBDBD;
+  width: 90%;
+  margin:auto;
+}
+
+.card-texts{
+  margin:5%;
+  padding:1%;
+}
+
+.post-text{
+
+}
+
+.likes{
+
+}
+
+.date-time{
+
+}
+
+.btn-logout{
+  color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  width: 25%;
+  height: 4%;
+  margin-top: 5%;
+  margin-left: 5%;
+  background-color: #FF007A;
+  border: none;
+  border-radius: 25px;
+}
+
+.mytext {
+  color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  width: 25%;
+  height: 10%;
+  margin-top: 5%;
+  margin-left: 5%;
+  background-color: #FF007A;
+  border: none;
+  border-radius: 25px;
+}
 }
