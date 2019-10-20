@@ -3,12 +3,11 @@ import timeline from './pages/timeline.js';
 
 const locationHashChanged = () => {
   const hash = window.location.hash;
-  const user = firebase.auth().currentUser;
-
+  // const user = firebase.auth().currentUser;
   if (hash === '#timeline') {
     const postsCollection = firebase.firestore().collection('posts');
     postsCollection.orderBy('addedAt', 'desc')
-      .where('userId', '==', user.uid)
+      // .where('userId', '==', user.uid)
       .onSnapshot((snap) => {
         document.querySelector('main').innerHTML = timeline({ posts: snap });
       });
