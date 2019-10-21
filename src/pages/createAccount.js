@@ -10,13 +10,12 @@ function newUser() {
     .createUserWithEmailAndPassword(email, password)
     .then((response) => {
       if (response) {
-        location.hash = '#feed';
+        window.location.hash = '#feed';
       }
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorCode, errorMessage);
+      alert(errorMessage);
     });
 }
 

@@ -9,14 +9,15 @@ function login() {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((response) => {
-      if (response) {
-        location.hash = '#feed';
-      }
+      window.user = {
+        email: response.user.email,
+        uid: response.user.uid,
+      };
+      window.location.hash = '#feed';
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorCode, errorMessage);
+      alert(errorMessage);
     });
 }
 
@@ -58,7 +59,7 @@ function TemplateLogin() {
       ${Button({ id: 'bt-login', title: 'Login', call: login })}
     </form>
     <p class="text-main">Pode acessar também com...</p>
-    ${Button({ id: 'bt-google', title: 'Google', call: google })}
+    ${Button({ id: 'bt-google', title: '<i class="fab fa-google"></i> Google', call: google })}
    
     <p class="text-main"><a href="#createAccount">Não tem uma conta?</a></p>
   `;
