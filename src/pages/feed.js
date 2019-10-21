@@ -1,4 +1,5 @@
 import Button from '../components/button.js';
+//import Input from '../components/input.js';
 import Textarea from '../components/textarea.js';
 
 function logOut() {
@@ -12,35 +13,119 @@ function logOut() {
 
 function userInfo() {
   const user = auth.currentUser;
-  db.collection('users').doc(user.uid).get().then((doc) => {
+  db.collection('users').doc(user.uid).get().then(doc => {
     const username = `
-    <h4>${doc.data().name}</h4>
-    <p>${user.email}</p>
+    <h4>Bem vindo(a), ${doc.data().name}!</h4>
     `;
     document.querySelector('.profile').innerHTML = username;
-  });
-}
+  });  
+
 
 function createPost() {
   const text = document.querySelector('.text-area').value;
   const post = {
     likes: 0,
-    text,
+    text: text,
     comments: [],
+    user_name: firebase.auth().currentUser.displayName,
     user_id: firebase.auth().currentUser.uid,
     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    privacy: 'public'
   };
   const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.add(post)
-    .then(() => {
-      loadPosts();
-    })
+  postsCollection
+    .add(post)
+    .then() //loadPosts() dentro do then
     .catch((error) => {
       console.log('erro', error);
+      console.log('Não foi possível criar post.');
     });
+    document.querySelector('.text-area').value = '';
 }
 
-function NewPostTemplate() {
+function printComments(arr) {
+  let template = '';
+  arr.forEach(text => {
+    template += `<li class='comments-list'>${text.userName}<br>${text.newComment}</li>`;
+  });
+  return template;
+}
+
+function addPost(post, postId) {
+  //checar condição de loggeduser para a edição
+  const LoggedUserID = firebase.auth().currentUser.uid;
+  const postTemplate = `
+      <li class='post' id="${postId}">
+      <p>Postado por ${post.user_name} em ${post.createdAt.toDate().toLocaleString('pt-BR').substr(0, 19)}
+      </p>
+      <p class="post-text">${post.text}
+      </p>
+        ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div> <div><span class="edit-post fa fa-pencil"></span></div>' : ''}
+      <div class="edit-button"></div>
+
+      <div class="interaction-area">
+        <div class="like fa fa-heart"></div>
+        ${post.likes}
+        <span class='comment-icon fa fa-comments'></span>
+        <div class="comments">
+          <div class="comment-container"></div>
+          <ul class='comment-posts'>${printComments(post.comments)}</ul>
+        </div>
+      </li>
+      `;
+  return postTemplate;
+}
+
+function saveComment(){
+  const newComment = document.querySelector('.textarea-comment').value;
+  const datasetid = event.target.dataset.id;
+  console.log(datasetid);
+  db.collection('users').doc(auth.currentUser.uid).get().then(doc => {
+    const userName = doc.data().name;
+    const docu = db.collection('posts').doc(datasetid);
+    docu.update({
+      comments: firebase.firestore.FieldValue.arrayUnion({
+        userName, 
+        newComment
+      })
+    });
+  });
+}
+
+function cancelComment(){
+  const datasetid = event.target.dataset.id;
+  document.getElementById(datasetid).querySelector('.comment-container').innerHTML = '';
+}
+
+function addComment(postId) {
+  const commentArea = `
+    ${Textarea({
+      class: 'textarea-comment', 
+      placeholder:'Escreva um comentário'
+    })}
+    ${Button({
+      type: 'button',
+      class: 'btn',
+      id: 'btn-comment-post',
+      dataId: postId,
+      onclick: saveComment,
+      title: 'Postar',
+    })}
+    ${Button({
+      type: 'button',
+      class: 'btn',
+      id: 'btn-comment-cancel',
+      dataId: postId,
+      onclick: cancelComment,
+      title: 'Cancelar',
+    })}
+  `;
+  const createSection = document.getElementById(postId).querySelector('.comment-container');
+  createSection.innerHTML = `${commentArea}`;
+}
+
+
+  function NewPostTemplate() {
   const postArea = `
   ${Textarea({
     class: 'text-area',
@@ -68,52 +153,6 @@ function NewPostTemplate() {
   return template;
 }
 
-function loadPosts() {
-  const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.get()
-    .then((res) => {
-      const postList = document.querySelector('.post-list');
-      postList.innerHTML = '';
-      res.forEach((post) => {
-        postList.innerHTML += addPost(post.data(), post.id);
-      });
-      document.querySelectorAll('.delete').forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-          deletePost(event.target.parentNode.getAttribute('id'))
-        });
-      });
-      document.querySelectorAll('.like').forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-          likePost(event.target.parentNode.parentNode.getAttribute('id'))
-        });
-      });
-      document.querySelectorAll('.edit-post').forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-          editPost(event.target.parentNode.parentNode.getAttribute('id'));
-        });
-      });
-    }); //FECHA O THEN
-}
-
-function addPost(post, postId) {
-  //checar condição de loggeduser para a edição
-  const LoggedUserID = firebase.auth().currentUser.uid;
-  const postTemplate = `
-      <li class='post' id="${postId}">
-      <p class="post-text">${post.text}</p>
-        ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div> <div><span class="edit-post fa fa-pencil"></span></div>' : ''}
-      <div class="edit-button"></div>
-      <div class="interaction-area">
-        <div class="like fa fa-heart"></div>
-        ${post.likes}
-          <div class="coments">
-            Comentarios
-          </div>
-        </div>
-      </li>
-      `;
-  return postTemplate;
-}
 
 function save() {
   const id = event.target.dataset.id;
@@ -190,6 +229,67 @@ async function likePost(postId) {
   loadPosts();
 }
 
+function loadPosts() {
+  const postsCollection = firebase.firestore().collection('posts');
+  postsCollection.where('privacy', '==', 'public').orderBy('createdAt', 'desc').onSnapshot((snapshot) =>{
+    const postList = document.querySelector('.post-list');
+    postList.innerHTML = '';
+    snapshot.docs.forEach((post) => {
+      postList.innerHTML += addPost(post.data(), post.id);
+    });
+    document.querySelectorAll('.comment-icon').forEach ((icon) => {
+      icon.addEventListener('click', (event) => {
+        addComment(event.target.parentNode.parentNode.getAttribute('id'))});
+      });
+    }); 
+    document.querySelectorAll('.delete').forEach((btn) => {
+       btn.addEventListener('click', (event) => {
+        deletePost(event.target.parentNode.getAttribute('id'))
+        });
+     });
+     document.querySelectorAll('.like').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          likePost(event.target.parentNode.parentNode.getAttribute('id'))
+        });
+      });
+      document.querySelectorAll('.edit-post').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          editPost(event.target.parentNode.parentNode.getAttribute('id'));
+        });
+      });
+}
+
+  /*
+function loadPosts() {
+  const postsCollection = firebase.firestore().collection('posts');
+  postsCollection.get()
+    .then((res) => {
+      const postList = document.querySelector('.post-list');
+      postList.innerHTML = '';
+      res.forEach((post) => {
+        postList.innerHTML += addPost(post.data(), post.id);
+      });
+      document.querySelectorAll('.delete').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          deletePost(event.target.parentNode.getAttribute('id'))
+        });
+      });
+      document.querySelectorAll('.like').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          likePost(event.target.parentNode.parentNode.getAttribute('id'))
+        });
+      });
+      document.querySelectorAll('.edit-post').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          editPost(event.target.parentNode.parentNode.getAttribute('id'));
+        });
+      });
+    }); //FECHA O THEN
+}
+*/
+
+
+  
 function Feed() {
   const template = `
   <header class='header'>
@@ -244,6 +344,7 @@ function Feed() {
       <ul class='post-list'>${loadPosts()}</ul>
       </section>
   `;
+  
   return template;
 }
 
