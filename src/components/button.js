@@ -10,7 +10,7 @@ window.button = {
     event.preventDefault();
     callback();
   },
-  component: Button
+  //component: Button
 };
 
 export default Button;

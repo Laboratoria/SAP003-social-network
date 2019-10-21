@@ -6,28 +6,27 @@ function createPost() {
   const text = document.querySelector('.text-area').value;
   const post = {
     likes: 0,
-    text,
+    text: text,
     comments: [],
     user_name: firebase.auth().currentUser.displayName,
     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     privacy: 'public'
   };
   const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.add(post)
-    .then(() => {
-      console.log('Post criado com sucesso!');
-      //text = ''
-    })
+  postsCollection
+    .add(post)
+    .then()
     .catch((error) => {
       console.log('erro', error);
       console.log('Não foi possível criar post.');
     });
+    document.querySelector('.text-area').value = '';
 }
 
 function printComments(arr) {
   let template = '';
   arr.forEach(text => {
-    template += `<li class='comments-list'>${text}</li>`;
+    template += `<li class='comments-list'>${text.userName}<br>${text.newComment}</li>`;
   });
   //console.log(post);
   return template;
@@ -55,30 +54,34 @@ function addPost(post, postId) {
 }
 
 function saveComment(){
-  //console.log('clicou em postar');
   const newComment = document.querySelector('.textarea-comment').value;
   const datasetid = event.target.dataset.id;
   console.log(datasetid);
-  const doc = db.collection('posts').doc(datasetid);
-  doc.update({
-    comments: firebase.firestore.FieldValue.arrayUnion(newComment)
+  db.collection('users').doc(auth.currentUser.uid).get().then(doc => {
+    const userName = doc.data().name;
+    //console.log(userzinho);
+    const docu = db.collection('posts').doc(datasetid);
+    docu.update({
+      comments: firebase.firestore.FieldValue.arrayUnion({
+        userName, 
+        newComment
+      })
+    });
   });
 }
 
 function cancelComment(){
-  //console.log('clicou em cancelar');
   const datasetid = event.target.dataset.id;
-  document.getElementById(datasetid).getElementsByClassName('comment-container')[0].innerHTML = '';
+  document.getElementById(datasetid).querySelector('.comment-container').innerHTML = '';
 }
 
 function addComment(postId) {
-  //const estrelinha = 'ownnnnn';
   const commentArea = `
     ${Textarea({
       class: 'textarea-comment', 
       placeholder:'Escreva um comentário'
     })}
-    ${window.button.component({
+    ${Button({
       type: 'button',
       class: 'btn',
       id: 'btn-comment-post',
@@ -86,7 +89,7 @@ function addComment(postId) {
       onclick: saveComment,
       title: 'Postar',
     })}
-    ${window.button.component({
+    ${Button({
       type: 'button',
       class: 'btn',
       id: 'btn-comment-cancel',
@@ -95,10 +98,8 @@ function addComment(postId) {
       title: 'Cancelar',
     })}
   `;
-  const createWriteSection = document.getElementById(postId).getElementsByClassName('comment-container')[0];
-  createWriteSection.innerHTML = `
-      ${commentArea}
-  `;
+  const createSection = document.getElementById(postId).querySelector('.comment-container');
+  createSection.innerHTML = `${commentArea}`;
 }
 
 function logOut() {
@@ -111,7 +112,6 @@ function logOut() {
 }
 
 function userInfo() {
-  //console.log("oi", firebase.auth().currentUser);
   const user = auth.currentUser;
   db.collection('users').doc(user.uid).get().then(doc => {
     const username = `
@@ -123,11 +123,10 @@ function userInfo() {
 
 function NewPostTemplate() {
   const postArea = `
-  ${Input({
-    type: 'text',
+  ${Textarea({
     class: 'text-area',
     id: 'post-text',
-    placeholder: 'texto',
+    placeholder: 'No que você está pensando?',
   })}
   ${Button({
     type: 'button',
@@ -159,8 +158,7 @@ function loadPosts() {
       icon.addEventListener('click', (event) => {
         addComment(event.target.parentNode.parentNode.getAttribute('id'))});
     });
-  });
-  
+  }); 
 }
 
 
@@ -173,11 +171,11 @@ function Feed() {
       onclick:logOut, 
       title: 'Sair'
     })}
-    <div class='profile'>${userInfo()}</div>
-      ${NewPostTemplate()}
-      <section class="print-post">
+    <section class='profile'>${userInfo()}</section>
+    ${NewPostTemplate()}
+    <section class="print-post">
       <ul class='post-list'>${loadPosts()}</ul>
-      </section>
+    </section>
   `;
   return template;
 }
