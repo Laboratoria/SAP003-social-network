@@ -1,6 +1,7 @@
-import  Home from './pages/home.js';
+import Home from './pages/home.js';
 import Register from './pages/register.js';
-import { Database, Post, Feed } from './pages/database.js';
+import { Database, Post, Feed, sendPost } from './pages/database.js';
+
 
 function pageRoute() {
   const pageName = (window.location.hash) ? window.location.hash : '#home';
