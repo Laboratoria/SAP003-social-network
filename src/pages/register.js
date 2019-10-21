@@ -20,7 +20,7 @@ function createUserWithEmailAndPassword() {
 function Register() {
   const template = `
     <form class = 'cadastro'>
-    <h2 class="titulo">Cadastro</h2>
+    <h1 class="titulo title-size">Cadastro</h1>
     ${Input({ 
       class: 'name', 
       placeholder: 'Nome', 
@@ -37,11 +37,11 @@ function Register() {
       type: 'password' 
     })}
     ${Button({ 
-      class: 'createAccount', 
+      class: 'create-account', 
       title: 'Cadastre-se', 
       onClick: createUserWithEmailAndPassword 
     })}
-    <p class="loginOption">Já é cadastrado? <a href="#home"><strong>Entrar!</strong></a></p>
+    <p class="login-option">Já é cadastrado? <a href="#home"><strong>Entrar!</strong></a></p>
     </form>
   `;
   return template;

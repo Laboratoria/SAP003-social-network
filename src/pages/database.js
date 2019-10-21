@@ -1,20 +1,33 @@
 import Button from '../components/button.js';
-import Input from '../components/input.js';
+import Textarea from '../components/textarea.js';
 
-// dataStorage.collection('nomedacoleção').add
+export const Post = () => {
+  const message = document.querySelector('.js-message-area').value;
+  firebase.firestore().collection('posts').add({message})
+ 
+};
 
+export const Feed = () => {
+  firebase.firestore().collection('posts').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      console.log(doc.data())
+      
+    });
+  });
+  
+};
 
 export const Database = () => {
   const template = `
-    <h1>Post</h1>
+    <h1 class="titulo">Post</h1>
     <form>
-    ${Input({
-      class: 'js-message-area',
+    ${Textarea({
+      class: 'js-message-area message-post',
       placeholder: 'Digite sua mensagem',
       type: 'textarea',
     })}
     ${Button({
-      id: 'post',
+      class: 'post',
       title: 'Postar',
       onClick: Post,
     })}
@@ -25,31 +38,7 @@ export const Database = () => {
   return template;
 };
 
-export const Post = () => {
-  const message = document.querySelector('.js-message-area').value;
-  console.log(message);
-  return message;
-};
-
-// const message = document.querySelector('.js-message-area').value;
-
-// message.addEventListener("Post", function(event) {
-//   event.preventDefault();
-
-// })
-
-// const db = firebase.firestore();
-// db.settings({timestampsInSnapshots})
 
 
-// dataStorage.collection('mensagens').get().then((snapshot) => {
-//   snapshot.docs.forEach(doc => {
-//     console.log(doc.data())
-    
-//   });
-// });
-
-// // para add direto no firestore
 
 
-// dataStorage.collection('nomedacoleção').add
