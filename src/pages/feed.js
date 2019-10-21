@@ -26,14 +26,14 @@ function logout(){
   });
   }
 
-  document.getElementById("postForm").addEventListener("submit",function(event){
+ /* function postForm(event){
     event.preventDefault();
     const text = document.getElementById("textPost").value;
     const post = {
       text: text,
       user_id: "",
       likes: 0,
-      comments: 
+      comments:
 
     }
-  })
+  })*/

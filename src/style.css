@@ -48,67 +48,42 @@ body{
   background-repeat: no-repeat;
 }
 
-    button{
-      display: block;
-      border-radius:4px;
-      -moz-border-radius:4px;
-      -webkit-border-radius:4px;
-      box-shadow: 1px 1px 2px #333333;
-      -moz-box-shadow: 1px 1px 2px #333333;
-      -webkit-box-shadow: 1px 1px 2px #333333;
-      background: rgba(255,255,255,0.7);
-      border:1px solid #000000;
-      width:250px;
-      height: 20px;
-      position: relative;
-      left: 50%;
-      margin-left:-120px;
-    }
-  
-  .google-logo{
+button{
+  display: block;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  box-shadow: 1px 1px 2px #333333;
+  -moz-box-shadow: 1px 1px 2px #333333;
+  -webkit-box-shadow: 1px 1px 2px #333333;
+  background: rgba(255,255,255,0.7);
+  border:1px solid #000000;
+  width:250px;
+  height: 20px;
   position: relative;
-  top:5%;
-  left: 46%;
-  transform: rotate(8px,8px);
-  width:30px;
-  height: 30px;
-  border-radius: 50%;
-  border-top: 20px solid #ea4335;
-  border-right: 20px solid #4285f4;
-  border-bottom: 20px solid #34a853;
-  border-left: 20px solid #fbb605;
-}
-.google-logo::before{
-  content: '';
-    position: absolute;
-    top: -98px;
-    right: -87px;
-    border-top: 31px solid transparent;
-    border-right: 40px solid #ffffff;
-    border-bottom: 59px solid transparent;
-    border-left: 99px solid transparent;
-    transform: rotate(90deg);
-}
- 
-.google-logo::after{ 
-  content: '';
-  position: absolute;
-  top: -6%;
-  right: -10px;
-  width: 30px;
-  height: 11px;
-  background: #4285f4;
-  transform: translate(10px, 10px);
-} 
+  left: 50%;
+  margin-left:-120px;
+  cursor: pointer;
+  }
+.google-btn{
+  left: 50%;
+  margin-left:-120px;
+  cursor: pointer;
+  width:250px;
+  height: 20px;
 
+}
+  
+    
+ 
 footer{
-  background-color: rgb(207, 206, 205);
-  font-size: 14px;
-  text-align: center;
-  min-height: 5vh;
-  margin: 0;
-  padding-top: 4px;
-  width: 100%;
+background-color: rgb(207, 206, 205);
+font-size: 14px;
+text-align: center;
+min-height: 5vh;
+margin: 0;
+padding-top: 4px;
+width: 100%;
 }
 
 /*Utiliza-se esse método para a retirada das setas no input do tipo number*/
@@ -156,28 +131,4 @@ button{
   font-weight: bold;
   border: none;
   cursor: pointer;
-
-
-  after
-   content: '';
-  position: absolute;
-  top: 50%;
-  right: -50px;
-  width: 100px;
-  height: 50px;
-  background: #4285f4;
-  transform: translate(10px, 10px);
-
-  before
-   content: '';
-  position:absolute;
-  top: -155 px;
-  right: -155px;
-  border-top: 100px solid transparent;
-  border-right: 100px solid #fff;
-  border-bottom: 100px solid transparent;
-  border-left: 100px solid transparent;
-  transform: rotate(90deg);
-  }
-
 }*/

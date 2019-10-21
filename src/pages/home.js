@@ -3,13 +3,15 @@ import Input from '../components/input.js';
 
 
 function Home() {
+
   const template= `
   <h2> Faça login na sua conta </h2>
   <form>
-  ${Input({placeholder: 'Digite seu e-mail', type: 'email', class: 'js-email-input'})}
-  ${Input({placeholder: 'Digite sua senha', type: 'password', class: 'js-password-input'})}
-  ${Button({id: 'button', title: 'Entrar', onClick: buttonLogin})}<br>
-  ${Button({id: 'button', title: 'Login com o Google', onClick:googleLogin})}
+  ${Input({placeholder: 'Email', type: 'email', class: 'js-email-input'})}
+  ${Input({placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
+  ${Button({id: 'button',  title: 'Entrar', onClick: buttonLogin})}<br>
+  
+  ${Button({id:'google-btn', onClick:googleLogin , title: '<img src= img/google.png width="36" height="15"> Registre-se usando Google'})}
   </form><br>
 
 
