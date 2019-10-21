@@ -3,6 +3,7 @@ import List from '../components/list-menu.js';
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Textarea from '../components/textarea.js';
+import Bio from '../components/bio.js';
 
 const signOut = () => firebase.auth().signOut();
 
@@ -79,10 +80,8 @@ const timeline = (props) => {
   })}
       </ul>
     </nav>
-    <h1 class="title-timeline">Low Carb Style</h1>
-    <div class="users">
-      <img src="images/usuario.png" class="img-usuario">
-    </div>
+    <h1 class="title-timeline">Low Carb Style</h1>  
+  ${Bio(props.user || {})}
   <form>
     <div class="container-publish">
       <div class="textarea-publish">
