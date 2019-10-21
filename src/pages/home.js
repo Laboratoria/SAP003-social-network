@@ -20,7 +20,6 @@ function pegarInput() {
     return true;
   }
   document.getElementById('erro').innerHTML = 'Usuario ou senha invalido!';
-  console.log('Ocorreu um erro :(');
   return false;
 }
 

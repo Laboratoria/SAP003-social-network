@@ -51,6 +51,9 @@ a{
   margin-bottom: 20px;
   
 }
+.card {
+  border: solid 1px black;
+}
 
 .img-footer img{
   width: 100%;
