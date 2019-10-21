@@ -68,6 +68,24 @@
   justify-content: center;
 }
 
+.signout{
+  display: flex;
+  margin: auto;  
+  background-color: #f18805;;
+  padding: 3px;
+  width: 80px;
+  font-size: 1.0rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  justify-content: center;
+}
+
+.post-area{
+  text-align: center;
+  background-color: #cac0f3;
+}
+
 .btn-position{
   display: flex;
   width: 30%;
