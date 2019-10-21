@@ -1,0 +1,47 @@
+[debug] [2019-10-15T19:03:41.707Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T19:03:41.810Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\anaco\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-15T19:03:41.810Z] CLI Version:   7.4.0
+[debug] [2019-10-15T19:03:41.811Z] Platform:      win32
+[debug] [2019-10-15T19:03:41.811Z] Node Version:  v10.16.3
+[debug] [2019-10-15T19:03:43.006Z] Time:          Tue Oct 15 2019 16:03:41 GMT-0300 (GMT-03:00)
+[debug] [2019-10-15T19:03:43.006Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T19:03:43.301Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T19:03:43.303Z] > authorizing via signed-in user
+[debug] [2019-10-15T19:03:43.303Z] [iam] checking project rede-social-ams for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T19:03:43.305Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-15T19:03:43.306Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-15T19:03:43.644Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T19:03:43.856Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ams:testIamPermissions  
+
+[debug] [2019-10-15T19:03:44.874Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T19:03:44.875Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ams  
+ 
+[debug] [2019-10-15T19:03:46.090Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\anaco\Desktop\SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T19:03:46.138Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ams/webApps/-/config  
+ 
+[debug] [2019-10-15T19:03:47.318Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-10-15T19:06:22.932Z] Error: socket hang up
+    at createHangUpError (_http_client.js:323:15)
+    at TLSSocket.socketOnEnd (_http_client.js:426:23)
+    at TLSSocket.emit (events.js:203:15)
+    at TLSSocket.EventEmitter.emit (domain.js:448:20)
+    at endReadableNT (_stream_readable.js:1145:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-10-15T19:06:22.934Z] Error: socket hang up
+    at createHangUpError (_http_client.js:323:15)
+    at TLSSocket.socketOnEnd (_http_client.js:426:23)
+    at TLSSocket.emit (events.js:203:15)
+    at TLSSocket.EventEmitter.emit (domain.js:448:20)
+    at endReadableNT (_stream_readable.js:1145:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -1,16 +1,15 @@
-function Button(props) {
-  const template = `
-    <button class="primary-button" onclick="button.handleClick('${props.id}')" >${props.title}</button>
-  `;
+import Post from './post.js';
 
-  return template;
+function Button(props) {
+  return `<button data-id=${props.dataId} class="${props.class}" onclick="button.handleClick(event, ${props.onClick})"> ${props.title}</button>`;
 }
 
 window.button = {
-  handleClick: (id) => {
-    console.log(`Esse é o meu botão ${id}`);
-    return `Esse é o meu botão ${id}`;
+  handleClick: (event, callback) => {
+    event.preventDefault();
+    callback(event);
   },
+  component: Button,
 };
 
 export default Button;
