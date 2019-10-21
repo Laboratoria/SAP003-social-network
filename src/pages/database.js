@@ -1,5 +1,5 @@
 import Button from '../components/button.js';
-import Input from '../components/input.js';
+import Textarea from '../components/textarea.js';
 
 function signOut() {
   firebase.auth().signOut()
@@ -21,19 +21,28 @@ function sendPost() {
   });
 }
 
-// function showPost () {
-//   firebase.firestore().collection('mensagens').get()
-//   .then((snapshot) => {
-//     snapshot.docs.forEach(doc => {
-//     (doc.data())
-//     });
-//   });
-// }
+export const Post = () => {
+  const message = document.querySelector('.js-message-area').value;
+  firebase.firestore().collection('posts').add({message})
+ 
+};
+
+export const Feed = () => {
+  firebase.firestore().collection('posts').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+      console.log(doc.data())
+      
+    });
+  });
+  
+};
+
 
 function Database() {
   const template = `
-    <h1>Post</h1>
+    <h1 class="titulo">Post</h1>
     <form>
+
     ${Input({
     class: 'js-message-area',
     placeholder: 'Digite sua mensagem',
@@ -49,6 +58,18 @@ function Database() {
     title: 'Sair',
     onClick: signOut,
   })}
+
+    ${Textarea({
+      class: 'js-message-area message-post',
+      placeholder: 'Digite sua mensagem',
+      type: 'textarea',
+    })}
+    ${Button({
+      class: 'post',
+      title: 'Postar',
+      onClick: Post,
+    })}
+
     </form>
     <div ></div>
   `;
@@ -56,9 +77,16 @@ function Database() {
   return template;
 }
 
+
 export {
   signOut,
   sendPost,
   // showPost,
   Database,
 };
+
+
+
+
+
+

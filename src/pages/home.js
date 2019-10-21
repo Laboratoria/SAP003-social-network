@@ -80,11 +80,11 @@ function Home() {
         type: 'password',
       })}
       ${Button({
-        class: 'LoginAccount',
+        class: 'Login-account',
         title: 'Entrar',
         onClick: signInWithEmailAndPassword,
       })}
-      <p class="loginOption">Ou entre com:<p>
+      <p class="login-option">Ou entre com:<p>
       <div class="btn-position">
       ${Button({ 
         class: 'google',
@@ -97,7 +97,8 @@ function Home() {
         title: 'F', 
         onClick: logWithFacebook 
       })}
-      <p class="loginOption">Ainda não tem conta? <a href="#register"><strong>Registre-se!</strong></a></p>
+      </div>
+      <p class="login-option">Ainda não tem conta? <a href="#register"><strong>Registre-se!</strong></a></p>
     </form>
   `;
   
