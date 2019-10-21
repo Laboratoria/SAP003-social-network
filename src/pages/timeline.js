@@ -9,6 +9,7 @@ const signOut = () => firebase.auth().signOut();
 
 const createPost = () => {
   const textInput = document.querySelector('.post-text').value;
+  const selectPrivacy = document.querySelector('.slc-privacy').value;
   if (textInput === '') {
     alert('Campo Vazio! Digite sua mensagem');
   } else {
@@ -18,6 +19,7 @@ const createPost = () => {
       addedAt: (new Date()).toLocaleString('pt-BR'),
       likes: 0,
       comments: [],
+      privacy: selectPrivacy,
     })
       .then(() => {
         textInput.value = '';
@@ -32,12 +34,12 @@ const deletePost = (event) => {
 
 const enableField = (event) => {
   const id = event.target.dataset.id;
-  document.querySelector(`[data-id=${id}]`).contentEditable = 'true';
+  document.querySelector(`[data-id=text-${id}]`).contentEditable = 'true';
 };
 
 const updatePost = (event) => {
   const id = event.target.dataset.id;
-  const editedPost = document.querySelector(`[data-id=${id}]`).textContent;
+  const editedPost = document.querySelector(`[data-id=text-${id}]`).textContent;
   firebase.firestore().collection('posts').doc(id).update({ text: editedPost, addedAt: (new Date()).toLocaleString('pt-BR') });
 };
 
@@ -94,6 +96,11 @@ const timeline = (props) => {
     placeholder: 'digite aqui...',
   })}
       </div>
+    <select class="slc-privacy">
+      <option value="" disabled selected>🔐</option>
+      <option value="🔓">Público 🔓</option>
+      <option value="🔐">Privado 🔐</option>
+    </select>
       <div class="images-publish">
         <img src="images/img-public.png" class="img-public"> 
         ${Button({

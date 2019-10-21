@@ -9,9 +9,10 @@ const Post = (props) => {
       <p data-id='${props.id}' class='date-post'>${props.post.addedAt.slice(0, 16)}</p> 
     </div>
     <div class="publication-public">
-      <p data-id='${props.id}' class='publication'>${props.post.text}</p>
+      <p data-id='text-${props.id}' class='publication'>${props.post.text}</p>
       <hr>
       <p data-id='${props.id}' class='likes'>${props.post.like}</p>
+      <p data-id='${props.id}' class='text-privacy'>${props.post.privacy}</p>
     </div>
     <div class="info-post">
     ${ButtonImage({

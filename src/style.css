@@ -178,6 +178,23 @@ label[for="navigation"] {
   background: #FBFBFB;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+select {
+  font-family: sans-serif;
+  text-align-last: center;
+}
+
+.slc-privacy {
+  width: 22%;
+  margin-top: -7%;
+  margin-left: 74%;
+}
+
+.text-privacy {
+  margin-top: -13%;
+  margin-left: 90%;
+}
+
 .images-publish {
   margin-top: 2%;
   display: flex;
@@ -189,6 +206,8 @@ label[for="navigation"] {
   height: 42px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
+  margin-right: 30%;
+  margin-top: -2%
 }
 
 .btn-publicar {
