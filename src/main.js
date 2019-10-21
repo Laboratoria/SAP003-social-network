@@ -1,7 +1,7 @@
 import Login from './pages/login.js';
 import Signup from './pages/signup.js';
 import Feed from './pages/feed.js';
-
+import Profile from './pages/profile.js';
 window.addEventListener('load', locationHashChanged);
 window.addEventListener('hashchange', locationHashChanged, false);
 
@@ -14,6 +14,16 @@ function locationHashChanged() {
         document.querySelector('main').innerHTML = Login();
       } else if (location.hash === '#signup') {
         document.querySelector('main').innerHTML = Signup();
+      } else if (location.hash === '#profile'){
+        firebase.firestore().collection('posts')
+        .where('user_id', '==', user.uid)
+        .get()
+        .then((querySnapshot) => {
+          document.querySelector('main').innerHTML = Profile({
+            posts: querySnapshot,
+          });
+        });
+        
       }
     } else {
       if (location.hash === '#login' || location.hash === '') {
