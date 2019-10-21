@@ -13,7 +13,7 @@ function signInWithEmailAndPassword() {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert('Usuario nao cadastrado');
+      alert('Usuário não cadastrado');
       window.location.hash = '#register';
     }); email-password.html;
 }
@@ -44,7 +44,7 @@ function logWithFacebook() {
     display: 'popup',
   }); firebase.auth().signInWithPopup(provider)
     .then((result) => {
-      window.location.hash = '#database'
+      window.location.hash = '#database';
       const token = result.credential.accessToken;
       const user = result.user;
       
