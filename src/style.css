@@ -169,6 +169,11 @@ section {
    
 }
 
+.idname {
+  font-weight: bold;
+
+}
+
 .border {
   border-bottom: double #fce326;
 }

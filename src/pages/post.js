@@ -14,6 +14,7 @@ function savePost() {
     likes: 0,
     comments: [],
     uid: uid,
+    idname: firebase.auth().currentUser.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
   .then(function (docRef) {    
@@ -24,9 +25,10 @@ function savePost() {
 
 function addPost(post) {
   const feed = document.querySelector('.feed');
-  const feedPost = `
+  const feedPost = `  
   <li data-id= '${post.id}' class="post-list">
-  <br>  
+  <span class= "idname">${post.data().idname}:</span>
+  <p class="border"></p>
   ${post.data().post}
   <br>  
   <br>
@@ -41,7 +43,7 @@ function addPost(post) {
   feed.innerHTML += feedPost;
 };
 
-function loadPost() {  
+function loadPost(props) {  
   db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
