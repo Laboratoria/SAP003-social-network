@@ -1,20 +1,21 @@
-const Google = (props) => {
+const ButtonImage = (props) => {
   const template = `
   <input
+    data-id=${props.dataId}
     class="${props.class}"
     type="${props.type}" 
-    onclick="google.handleClick(event,${props.onClick})"
+    onclick="image.handleClick(event,${props.onClick})"
     src="${props.src}"/>
   `;
 
   return template;
 };
 
-window.google = {
+window.image = {
   handleClick: (event, callback) => {
     event.preventDefault();
-    callback();
+    callback(event);
   },
 };
 
-export default Google;
+export default ButtonImage;

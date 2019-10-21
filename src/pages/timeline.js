@@ -2,6 +2,7 @@ import Input from '../components/input.js';
 import List from '../components/list-menu.js';
 import Button from '../components/button.js';
 import Post from '../components/post.js';
+import Textarea from '../components/textarea.js';
 
 
 const signOut = () => firebase.auth().signOut();
@@ -15,6 +16,8 @@ const createPost = () => {
       text: textInput,
       userId: firebase.auth().currentUser.uid,
       addedAt: (new Date()).toLocaleString('pt-BR'),
+      likes: 0,
+      comments: [],
     })
       .then(() => {
         textInput.value = '';
@@ -27,9 +30,14 @@ const deletePost = (event) => {
   firebase.firestore().collection('posts').doc(id).delete();
 };
 
+const enableField = (event) => {
+  const id = event.target.dataset.id;
+  document.querySelector(`[data-id=${id}]`).contentEditable = 'true';
+};
+
 const updatePost = (event) => {
   const id = event.target.dataset.id;
-  const editedPost = document.querySelector('.publication').textContent;
+  const editedPost = document.querySelector(`[data-id=${id}]`).textContent;
   firebase.firestore().collection('posts').doc(id).update({ text: editedPost, addedAt: (new Date()).toLocaleString('pt-BR') });
 };
 
@@ -41,6 +49,7 @@ const timeline = (props) => {
       post: snap.data(),
       deleteEvent: deletePost,
       updateEvent: updatePost,
+      enableEvent: enableField,
     });
   });
 
@@ -68,34 +77,37 @@ const timeline = (props) => {
   })}
       </ul>
     </nav>
-    <form action="" id="post-form">
     <h1 class="title-timeline">Low Carb Style</h1>
     <div class="users">
-    <img src="images/usuario.png" class="img-usuario">
-    <div class="dados-usuario">
-      <h3 clas="nome-usuario">Nome</h3>
-      <p clas="bio-usuario"><em>Biografia</em></p>
+      <img src="images/usuario.png" class="img-usuario">
+      <div class="dados-usuario">
+        <h3 clas="nome-usuario">Nome</h3>
+        <p clas="bio-usuario"><em>Biografia</em></p>
       </div>
     </div>
-    <div class="container-publicar">
-      ${Input({
+  <form>
+    <div class="container-publish">
+      <div class="textarea-publish">
+      ${Textarea({
     class: 'post-text',
     id: 'post-text',
-    type: 'text',
     placeholder: 'digite aqui...',
   })}
-  <img src="images/img-public.png" class="img-public"> 
-      ${Button({
+      </div>
+      <div class="images-publish">
+        <img src="images/img-public.png" class="img-public"> 
+        ${Button({
     class: 'btn-publicar',
     id: 'btn-publicar',
     type: 'submit',
     title: 'Publicar',
     onClick: createPost,
   })}
+      </div> 
+    </div>
       <div class="posts">
       ${layout}
       </div>
-      </div> 
   </form>
     `;
 
