@@ -51,6 +51,35 @@ img {
 #create-account.primary-button{
   margin: 5%;
 }
+.primary-icon{
+  border:1px solid #FFC44F;
+  border-radius: 1%;
+}
+.primary-icon-delete{
+  position: absolute;
+  right: 5%;
+  margin: 2% 4%;
+  font-weight: 900;
+  color: red;
+}
+.primary-icon-like{
+  position: absolute;
+  margin-bottom: 1%;
+  left: 80%;
+  align-self: flex-end;
+}
+.primary-icon-edit{
+  position: absolute;
+  left: 10%;
+  align-self: flex-end;
+  margin: 1%;
+}
+.primary-icon-save{
+  position: absolute;
+  left: 21%;
+  align-self: flex-end;
+  margin: 1%;
+}
 .primary-button {
   background-color: #FFC44F;
   padding: 2%;
@@ -64,16 +93,21 @@ img {
 .primary-button:hover {
   color: #E85531;
 }
-
+.post-box{
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+  margin: 10% 5%;
+}
 .primary-input  {
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  margin: 2%;
+  margin: 0 10%;
 }
 .js-post {
-  height: 150px;
-  width: 300px
+  height: 80px;
+  width: 85%;
 }
 
 .description {
@@ -93,35 +127,42 @@ img {
 
 .card {
   display: flex;
-  flex-flow: wrap-reverse;
-  margin: 10%;
-  height: 3em;
-  width: auto;
+  flex-flow: column;
+  height: auto;
+  width: 90%;
   padding: 2%;  
   border-radius: 10px;
   box-shadow: 3px 3px 10px 1px #ff1c14;
+  padding: 2% 2% 15% 2%;
 }
 
 .card-name{
   display: inline-block;
   font-size: 90%;
+  font-weight: bolder;
 
 }
 .card-post {
   display: inline-block;
+  word-wrap: break-word;
 }
 
 .card-time {
   display: inline-block;
   font-size: 70%;
   align-self: flex-start;
-  justify-content: flex-end;
-  position: absolute;
-  right: 0;
   padding: 1%;
-
 }
-
+.menu {
+  display: flex;
+  padding: 5%;
+  justify-content: space-around;
+  list-style: none;
+}
+#history{
+  margin:0;
+  padding:0;
+}
 @media screen and (min-width: 992px){
   .box {
     display: flex;

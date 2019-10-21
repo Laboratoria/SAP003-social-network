@@ -1,22 +1,34 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
 import PostCard from '../components/postcard.js';
+import Icons from '../components/icons.js'
 
 function loadPost() {
   const email = firebase.auth().currentUser.emailVerified;
   const codUid = firebase.auth().getUid(email);
-  /* const name = firebase.auth().currentUser.displayName; */
   firebase.firestore().collection('Posts').where("user", "==", codUid).orderBy("data", "desc").get().then(
     (snap) => {
       snap.forEach((doc) => {
-        templatePosts({ name: doc.data().name, post: doc.data().post, time: doc.data().data.toDate().toLocaleString("pt-BR") });
+        templatePosts({ 
+          dataId: doc.id,
+          like: doc.data().likes,
+          name: doc.data().name, 
+          post: doc.data().post, 
+          time: doc.data().data.toDate().toLocaleString("pt-BR") });
       });
     });
 }
 
 function templatePosts(props) {
-  const xuxu = document.getElementById("history")
-  xuxu.innerHTML += PostCard(props)
+  const timeline = document.getElementById("history");
+  timeline.innerHTML += `<div id=${props.dataId} class='post-box'> 
+    ${Icons({id:props.dataId, class:'delete', title:'x',onClick: deletePost,})}
+    ${PostCard(props)} 
+    ${Icons({id:props.dataId, class:'like', title:`<i class="fas fa-heart"> ${props.like}</i>`,onClick: likePost,})}
+    ${Icons({id:props.dataId, class:'edit',title:'edit',onClick: editPost,})}
+    ${Icons({id:props.dataId, class:'save',title:'save',onClick: savePost,})}
+    </div>`
+    document.getElementById(props.dataId).querySelector('.primary-icon-save').style.display = 'none';
 }
 
 function Post() {
@@ -25,7 +37,7 @@ function Post() {
   <div class="box">
   <header class="header"><img src="./Imagens/header-logo.png"></header>
   <nav>
-  <ul>
+  <ul class="menu">
     <li><a href="#">Feed</a></li>
     <li><a href="#">Perfil</a></li>
     <li><a href="#">Sair</a></li>
@@ -42,6 +54,7 @@ function Post() {
     type: 'text',
   })}
     ${Button({
+    type: 'submit',
     id: 'share',
     title: 'Compartilhar',
     onClick: SharePost,
@@ -72,6 +85,44 @@ function SharePost() {
     loadPost();
   })
   document.querySelector('.js-post').value = '';
+}
+
+function deletePost(event) {
+  const idPost = event.target.id;
+  firebase.firestore().collection('Posts').doc(idPost).delete();
+  event.target.parentElement.remove();
+}
+
+function likePost(event) {
+  const idPost = event.target.dataset.id
+  const x = firebase.firestore().collection('Posts').doc(idPost).get().then((doc) => doc.data().likes)
+  console.log(x)
+  firebase.firestore().collection('Posts').doc(idPost).update({
+    likes: 1,
+  }) 
+}
+
+function editPost(event) {
+  const idPost = event.target.id;
+  const select = document.getElementById(idPost).getElementsByClassName('card-post')[0];
+  select.setAttribute('contentEditable', 'true')
+  document.getElementById(idPost).querySelector('.primary-icon-save').style.display = 'inline';
+}
+
+
+function savePost(event) {
+  const idPost = event.target.id;
+  const newtext = document.getElementById(idPost).getElementsByClassName('card-post')[0].innerHTML;
+  firebase.firestore().collection('Posts').doc(idPost).update(
+    {post: newtext}
+  );
+  document.getElementById(idPost).querySelector('.primary-icon-save').style.display = 'none';
+}
+
+window.post = {
+  deletePost,
+  editPost,
+  savePost,
 }
 
 export default Post;
