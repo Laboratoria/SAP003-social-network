@@ -10,9 +10,12 @@ function userLogin() {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .catch((error) => {
         const errorCode = error.code;
+        console.log(errorCode);
         const errorMessage = error.message;
         if (errorCode === 'auth/user-not-found') {
           document.getElementById('error').innerText = 'Usuário não cadastrado.';
+        } if (errorCode === 'auth/wrong-password') {
+          document.getElementById('error').innerText = 'Senha incorreta';
         }
       });
   })
@@ -32,16 +35,21 @@ function googleLogin() {
       }
     }).catch((error) => {
       const errorCode = error.code;
+      console.log(errorCode);
       const errorMessage = error.message;
       const email = error.email;
+      console.log(email);
+
       const credential = error.credential;
       if (errorCode === 'auth/user-not-found') {
-        document.getElementById('error').innerText = `${error.message} - erro no login do google`;
+        document.getElementById('error').innerText = `${errorMessage} - erro no login do google`;
+      } if (errorCode === 'auth/wrong-password') {
+        document.getElementById('error').innerText = `${errorMessage} - senha incorreta`;
       }
     });
   })
     .catch(() => {
-      alert('deu erro');
+      // alert('deu erro');
     });
 }
 

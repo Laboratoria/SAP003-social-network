@@ -17,6 +17,8 @@ function createUser() {
     });
   }).catch((error) => {
     const errorCode = error.code;
+    console.log(errorCode);
+
     const errorMessage = error.message;
     if (errorCode === 'auth/email-already-in-use') {
       document.getElementById('error').innerText = 'E-mail já cadastrado.';
@@ -32,30 +34,30 @@ function createUser() {
 
 function Register() {
   return `
-    <div id="error"></div>
     <section class ='initial-section'>
       <header class='initial-header'></header>
       <img class='img-section' src='img/logo.png'/>
-      <div class="intro-text secondary-font">Registre-se para fazer parte da maior rede social de educação do Brasil!</div>
+      <div class="text">Registre-se para fazer parte da maior rede social de educação do Brasil!</div>
     
       <form>
       ${Input({
     id: 'email',
-    class: 'primary-input secondary-font',
+    class: 'primary-input',
     type: 'email',
     placeholder: 'E-mail',
   })}
       ${Input({
     id: 'password',
-    class: 'primary-input secondary-font',
+    class: 'primary-input',
     type: 'password',
     placeholder: 'Senha',
   })}
       ${Button({
-    class: 'primary-button primary-font',
+    class: 'primary-button',
     title: 'Registre-se',
     onClick: createUser,
   })}
+  <p class='login-error' id="error"></p>
       </form>`;
 }
 
