@@ -1,62 +1,66 @@
 import Button from '../components/button.js';
 import Logo from '../components/logo.js';
 import Input from '../components/input.js';
-import ButtonAuth from '../components/button-auth.js';
 import loginGoogle from './google.js';
 
 
 function enviarLogin() {
   const email = document.querySelector('.js-email-input').value;
   const senha = document.querySelector('.js-password-input').value;
+
   firebase.auth().signInWithEmailAndPassword(email, senha)
   .then(function () {
-    window.location = '#home.js';
-    console.log(location);
-   
+    uid = firebase.auth().currentUser.uid;
+
+    if (uid != null) {
+      
+      window.location = '#home.js';
+     
+    }   
   }).catch(function(error) {     
     let errorCode = error.code;
     if (errorCode === 'auth/user-not-found') {
       alert('Usuário não encontrado!')
-      window.location = '#login.js';     
+      window.location = '#home.js';     
     } else if (errorCode === 'auth/invalid-email') {
       alert('Digite um e-mail válido!')
-      window.location = '#login.js';      
+      window.location = '#home.js';      
     } else if (errorCode === 'auth/wrong-password') {
       alert('Email ou senha inválido!')
-      window.location = '#login.js';      
+      window.location = '#home.js';     
     }
   });
   
-  /* firebase.auth().onAuthStateChanged(function (user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      console.log(user)
-      window.location = '#home.js';      
+      
+      window.location = '#home.js';
+
     } else {
 
     }    
 
-  }); */
+  });
     
 }
 
 function login() {
   const template = `   
-    ${Logo()}
-    <p class="paragraph"> Mantenha na sua vida só o que lhe faz bem,
-    <br>o que "já fez" troque com alguém!</br>
-    
+    ${Logo({ class: "logo"})}
     <br>
-    <b><h1 class="paragraph">LOGIN </h1> </b>
+    <span class="phrase"> Mantenha na sua vida só o que lhe faz bem,
+    <br>o que "já fez" troque com alguém!</br>
+    <br>
+    <span class= "access">LOGIN</span>
     <br>
     <form class="form-set">
     ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
     <br>
-    ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}  
-    <br> 
-    ${Button({ onClick: enviarLogin, title: 'ENVIAR',  })}
-    <span>OU ACESSE COM</span>
+    ${Button({ class: "primary-button", onClick: enviarLogin, title: 'ENVIAR',  })}
+    
+    <span class= "access">OU ACESSE COM</span>
     <section class="auth">   
-    ${ButtonAuth({ onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
+    ${Button({ class: "auth-button", onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
     </section>       
     <section class="register">Não tem uma conta? <a href="#register.js">REGISTRE-SE</a></section>
     </form>
