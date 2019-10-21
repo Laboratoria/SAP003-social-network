@@ -74,10 +74,10 @@ body {
   width: 70px; 
   cursor: pointer; 
   height: 30px; 
-  border: none; 
+  border: none;  
   border-radius: 10px; 
   color: whitesmoke; 
-  background: #121212; 
+  background: #121212;
 } 
 
 .btn-login { 
@@ -185,7 +185,7 @@ body {
 
 .btn-go-home { 
   cursor: pointer; 
-  width: 95px; 
+  width: 115px; 
   height: 30px; 
   border: none; 
   border-radius: 10px; 
@@ -197,11 +197,10 @@ body {
 /*Fim do cadastro*/ 
 
 /* Início Mural */ 
+
 .navbar { 
-  /* display: flex; 
-  justify-content: space-around;  */
-  /* align-items: center;  */
-  padding: 14px; 
+  align-items: center; 
+  padding: 4px; 
   background-color: #292828; 
 } 
 
@@ -212,13 +211,65 @@ body {
 } 
 
 .nav-links { 
-  list-style: none; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center;
-  width: 100%;
-  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
+  padding-right: 6px;
+  padding-left: 4px;
 } 
+
+.nav-links li { 
+  display: inline-block;  
+} 
+
+.dropdown-menu {
+  padding-top: 8px;
+}
+
+.menu-dropdown {
+  position: relative;
+  display: inline-block;
+  border: none;
+  color: #CCCCCC;
+  background-color: #121212;
+  height: 35px;
+}
+
+#post {
+  background-color: #292828;
+  color: #cccccc;
+  border-color: #282828;
+}
+
+.btn-logout {
+  padding-top: 12px;
+  cursor: pointer; 
+  width: 95px; 
+  height: 30px; 
+  border: none; 
+  border-radius: 10px; 
+  color: #CCCCCC; 
+  background: #292828;
+  font-size: 18px; 
+  margin-left: 7px; 
+  justify-content: center; 
+}
+
+#timeline {
+  text-align: center;
+  border: 20px;
+  border-color: #737373;
+}
+
+.class-mural {
+  color: #CCCCCC;
+  background-color: #121212;
+}
+
+.class-editar-perfil {
+  color: #CCCCCC;
+  background-color: #121212;
+}
 
 .btn-post { 
   cursor: pointer; 
@@ -230,7 +281,6 @@ body {
   background: #AA4528; 
   margin-left: 7px; 
   justify-content: center; 
-  outline: 0;
 } 
 
 #post { 
@@ -239,178 +289,191 @@ body {
   resize: none; 
   padding: 8px; 
   cursor: text; 
-  outline: 0; 
 } 
 
 #post-form { 
-  display: flex;  
-  justify-items: center; 
+  display: flex;
+  padding-top: 30px;
+  justify-content: center; 
 } 
+
+p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 /* Fim Mural */ 
 
  
 @media screen and (max-width: 817px) { 
-/* Home */ 
-.home { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  /* Home */ 
+  .home { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  } 
+  
+  .cadastro { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 28px; 
+    flex-wrap: nowrap;
+  }  
+  
+  .logo { 
+    width: 225px; 
+  } 
+  
+  .login { 
+    padding: 0px; 
+    margin-top: 35px; 
+    margin-left: 50px; 
+  } 
+  /* Fim da Home */ 
 } 
-
-.cadastro { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  margin-top: 28px; 
-  flex-wrap: nowrap;
-}  
-
-.logo { 
-  width: 225px; 
-} 
-
-.login { 
-  padding: 0px; 
-  margin-top: 35px; 
-  margin-left: 50px; 
-} 
-/* Fim da Home */ 
-} 
-
- 
+  
+   
 @media screen and (max-width: 420px) { 
-/* Home */ 
-body { 
-  justify-content: center; 
-} 
+  /* Home */ 
+  body { 
+    justify-content: center; 
+  } 
+  
+  .homepage-title { 
+    text-align: center; 
+    color: wheat; 
+    padding: 0px; 
+    font-size: 34px; 
+  } 
+  
+  .home { 
+    display: flex; 
+    justify-content: space-around; 
+    height: 100%; 
+    width: 100%; 
+  } 
+  
+  .logo { 
+    width: 66%; 
+    padding-top: 0;
+    margin-left: 0;
+  } 
+  
+  .login { 
+    padding: 20px; 
+    display: flex, 
+    align-items: center;
+    margin-left: 0;
+    margin-top: 0; 
+  } 
+  
+  #email-login { 
+    border-radius: 5px; 
+    outline:none; 
+    padding: 2px; 
+    width: 280px; 
+  } 
+  
+  #pass-login { 
+    border-radius: 5px; 
+    outline:none;   
+    padding: 2px; 
+    margin-top: 4px; 
+    width: 280px; 
+  } 
+  
+  .login-form { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  } 
+  
+  .buttons { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  } 
+  
+  .btn-sign-up { 
+    width: 70px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    color: whitesmoke; 
+    background: #121212; 
+  } 
+  
+  .btn-login { 
+    width: 70px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    color: whitesmoke; 
+    background: #AA4528; 
+  } 
+  
+  .btn-google { 
+    font-family: 'Roboto', sans-serif; 
+    height: 40px; 
+    border-width: 0; 
+    background: white; 
+    color: #737373; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    padding-right: 8px; 
+  } 
+  
+  .google-logo { 
+    display: inline-block; 
+    vertical-align: middle; 
+    margin: 8px 0 8px 8px; 
+    width: 18px; 
+    height: 18px; 
+    box-sizing: border-box; 
+  } 
+  /* Fim da Home */ 
+  
+  /*Inicio de mural*/
+  #post-form { 
+    display: flex;  
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+  } 
 
-.homepage-title { 
-  text-align: center; 
-  color: wheat; 
-  padding: 0px; 
-  font-size: 34px; 
-} 
-
-.home { 
-  display: flex; 
-  justify-content: space-around; 
-  height: 100%; 
-  width: 100%; 
-} 
-
-.logo { 
-  width: 66%; 
-  padding-top: 0;
-  margin-left: 0;
-} 
-
-.login { 
-  padding: 20px; 
-  display: flex, 
-  align-items: center;
-  margin-left: 0;
-  margin-top: 0; 
-} 
-
-#email-login { 
-  border-radius: 5px; 
-  outline:none; 
-  padding: 2px; 
-  width: 280px; 
-} 
-
-#pass-login { 
-  border-radius: 5px; 
-  outline:none;   
-  padding: 2px; 
-  margin-top: 4px; 
-  width: 280px; 
-} 
-
-.login-form { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-} 
-
-.buttons { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-} 
-
-.btn-sign-up { 
-  width: 70px; 
-  height: 30px; 
-  border: none; 
-  border-radius: 10px; 
-  color: whitesmoke; 
-  background: #121212; 
-} 
-
-.btn-login { 
-  width: 70px; 
-  height: 30px; 
-  border: none; 
-  border-radius: 10px; 
-  color: whitesmoke; 
-  background: #AA4528; 
-} 
-
-.btn-google { 
-  font-family: 'Roboto', sans-serif; 
-  height: 40px; 
-  border-width: 0; 
-  background: white; 
-  color: #737373; 
-  border-radius: 5px; 
-  white-space: nowrap; 
-  padding-right: 8px; 
-} 
-
-.google-logo { 
-  display: inline-block; 
-  vertical-align: middle; 
-  margin: 8px 0 8px 8px; 
-  width: 18px; 
-  height: 18px; 
-  box-sizing: border-box; 
-} 
-/* Fim da Home */ 
-
-/*Inicio de editar perfil*/
-#post-form { 
-  display: flex;  
-  flex-direction: column;
-  margin: 5px;
-  /* border:solid 1px white;
-  border-radius: 10px 10px;  */
-  padding: 10px;
-
-} 
-
-
-
-.btn-post { 
-  cursor: pointer; 
-  width: 95px; 
-  height: 30px; 
-  border: none; 
-  border-radius: 10px; 
-  color: whitesmoke; 
-  background: #AA4528; 
-  margin-left: 7px; 
-  margin-top: 10px;
-  justify-content: center; 
-} 
-
-.timeline-item{
-  border:solid 1px white;
-  border-radius: 10px 10px; 
-  padding: 10px;
-  margin: 10px;
-}
-
-
-/*Fim de editar perfil*/
-} 
+  .btn-logout {
+    padding-top: 12px;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: #CCCCCC;
+    background: #292828;
+    font-size: 18px;
+    /* margin-left: 7px; */
+    justify-content: center;
+  }
+  
+ .btn-post { 
+    cursor: pointer; 
+    width: 95px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    color: whitesmoke; 
+    background: #AA4528; 
+    margin-left: 7px; 
+    margin-top: 10px;
+    justify-content: center; 
+  } 
+  
+  .timeline-item{
+    border:solid 1px #292828;
+    border-radius: 10px 10px; 
+    padding: 10px;
+    margin: 10px;
+  }
+ /*Fim de mural*/
+  } 
