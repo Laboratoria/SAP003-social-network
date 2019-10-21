@@ -6,8 +6,6 @@ function signOut() {
     .then(() => {
       alert('Sua sessão foi encerrada com sucesso!');
       window.location.hash = '#home';
-    })
-    .catch((error) => {
     });
 }
 
@@ -18,24 +16,21 @@ function sendPost() {
     user_id: firebase.auth().currentUser.uid,
     likes: '',
     comments: [],
-  });
+  })
+    .then(() => {
+      document.querySelector('div').innerHTML += 
+      `<p>${message}</p>`;
+    });
 }
 
-export const Post = () => {
-  const message = document.querySelector('.js-message-area').value;
-  firebase.firestore().collection('posts').add({message})
- 
-};
-
-export const Feed = () => {
-  firebase.firestore().collection('posts').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-      console.log(doc.data())
-      
-    });
-  });
-  
-};
+// function algumacoisaPost() {
+//   firebase.firestore().collection('feed').get(text)
+//     .then((snapshot) => {
+//       snapshot.docs.forEach((doc) => {
+//         console.log(doc.data());
+//       });
+//     });
+// }
 
 
 function Database() {
@@ -43,33 +38,22 @@ function Database() {
     <h1 class="titulo">Post</h1>
     <form>
 
-    ${Input({
-    class: 'js-message-area',
+    ${Textarea({
+    class: 'js-message-area message-post',
     placeholder: 'Digite sua mensagem',
     type: 'textarea',
   })}
     ${Button({
-    id: 'post',
+    class: 'post',
     title: 'Postar',
     onClick: sendPost,
   })}
+    <div class="post-area"></div>
     ${Button({
-    id: 'signout',
+    class: 'signout',
     title: 'Sair',
     onClick: signOut,
   })}
-
-    ${Textarea({
-      class: 'js-message-area message-post',
-      placeholder: 'Digite sua mensagem',
-      type: 'textarea',
-    })}
-    ${Button({
-      class: 'post',
-      title: 'Postar',
-      onClick: Post,
-    })}
-
     </form>
     <div ></div>
   `;
@@ -78,15 +62,4 @@ function Database() {
 }
 
 
-export {
-  signOut,
-  sendPost,
-  // showPost,
-  Database,
-};
-
-
-
-
-
-
+export default Database;

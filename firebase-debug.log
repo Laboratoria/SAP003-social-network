@@ -1,0 +1,26 @@
+[debug] [2019-10-21T19:41:52.460Z] ----------------------------------------------------------------------
+[debug] [2019-10-21T19:41:52.468Z] Command:       /usr/local/bin/node /home/tiemi/.npm-global/bin/firebase serve
+[debug] [2019-10-21T19:41:52.469Z] CLI Version:   7.5.0
+[debug] [2019-10-21T19:41:52.469Z] Platform:      linux
+[debug] [2019-10-21T19:41:52.469Z] Node Version:  v8.10.0
+[debug] [2019-10-21T19:41:52.469Z] Time:          Mon Oct 21 2019 16:41:52 GMT-0300 (-03)
+[debug] [2019-10-21T19:41:52.469Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-21T19:41:52.485Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-21T19:41:52.486Z] > authorizing via signed-in user
+[debug] [2019-10-21T19:41:52.486Z] [iam] checking project socialnetwork-c4eca for permissions ["firebase.projects.get"]
+[debug] [2019-10-21T19:41:52.491Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialnetwork-c4eca:testIamPermissions  
+
+[debug] [2019-10-21T19:41:53.866Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-21T19:41:53.872Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca  
+ 
+[debug] [2019-10-21T19:41:55.286Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/tiemi/Desktop/SAP003-social-network'...
+[info] 
+[debug] [2019-10-21T19:41:55.296Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialnetwork-c4eca/webApps/-/config  
+ 
+[debug] [2019-10-21T19:41:56.612Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5005

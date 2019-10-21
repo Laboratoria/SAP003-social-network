@@ -1,6 +1,6 @@
 import Home from './pages/home.js';
 import Register from './pages/register.js';
-import { Database, Post, Feed, sendPost } from './pages/database.js';
+import Database from './pages/database.js';
 
 
 function pageRoute() {
