@@ -8,12 +8,16 @@ const goTimeline = () => {
   
 const signOut = () => firebase.auth().signOut();
 
-const saveData = () => {
-    const nameUser = document.querySelector(".inp-name-profile");
-    const ageUser = document.querySelector(".inp-age-profile");
-    const professionUser = document.querySelector(".inp-profession-profile");   
-    document.querySelector(".dados-usuario").innerHTML =  `${nameUser.value}, ${ageUser.value}, ${professionUser.value}`
-}
+const createUser = () => {
+    const nameUser = document.querySelector('.inp-name-profile').value;
+    const ageUser = document.querySelector('.inp-age-profile').value;
+    const professionUser = document.querySelector('.inp-profession-profile').value;
+      firebase.firestore().collection('users').add({
+        name: nameUser,
+        age: ageUser,
+        profession: professionUser,
+    })
+  };
 
 const profile = () => {
     const templateProfile = `
@@ -39,6 +43,7 @@ const profile = () => {
         </nav>
     <h1 class="title-timeline">Low Carb Style</h1>
     <p class="text-profile">Insira seus dados pessoais aqui...</p>
+    <form>
     <div class="container-form-profile">
         ${Input({
             class: 'inp-name-profile',
@@ -63,9 +68,12 @@ const profile = () => {
             id: 'btn-profile',
             type: 'submit',
             title: 'Salvar Perfil',
-            onClick: saveData,
+            onClick: createUser,
         })}
     </div>
+    </form>
+    <p class="dados-usuario">
+    </p>
     `;  
     return templateProfile;
 };

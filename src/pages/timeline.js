@@ -80,10 +80,6 @@ const timeline = (props) => {
     <h1 class="title-timeline">Low Carb Style</h1>
     <div class="users">
       <img src="images/usuario.png" class="img-usuario">
-      <div class="dados-usuario">
-        <h3 clas="nome-usuario">Nome</h3>
-        <p clas="bio-usuario"><em>Biografia</em></p>
-      </div>
     </div>
   <form>
     <div class="container-publish">
@@ -108,7 +104,6 @@ const timeline = (props) => {
       <div class="posts">
       ${layout}
       </div>
->>>>>>> master
   </form>
     `;
 
