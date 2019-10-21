@@ -6,8 +6,6 @@ import Button from '../components/button.js';
 function pegarInput() {
   let dadoslocal = JSON.parse(localStorage.getItem('cadastro'));
 
-  console.log(dadoslocal);
-
   const dados = {
     email: document.querySelector('.js-email').value,
     nome: document.querySelector('.js-nome').value,

@@ -1,7 +1,8 @@
 import Button from '../components/button.js';
-import Input from '../components/input.js';
+import Textarea from '../components/textarea.js';
+// import Card from '../components/card.js';
 
-function salvar() {
+export function salvar() {
   const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
   const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
 
@@ -9,6 +10,7 @@ function salvar() {
 
   const post = {
     post2: document.querySelector('.post').value,
+    id: new Date().getTime(),
   };
 
   posts.push(post);
@@ -18,20 +20,17 @@ function salvar() {
 
 function postar() {
   const template = `
-    ${Input({ class: 'post', placeholder: 'Postagem', type: 'text' })}
+    ${Textarea({ class: 'post' })}
     ${Button({ title: 'Compartilhar', onClick: salvar })}
     <p id='banana'></p>
   `;
   return template;
 }
-
+// ${Card({ children: `<p id='banana'></p>` })}
 
 export default postar;
-
-/* Função logout para por no feed
- function logout() {
-  localStorage.removeItem('usuario');
-  ${Button({ title: 'Login', onClick: logout })}
-  window.location.reload();
-}
- */
+// function logout() {
+//   localStorage.removeItem('usuario');
+//   ${Button({ title: 'Login', onClick: logout })}
+//   window.location.reload();
+// }
