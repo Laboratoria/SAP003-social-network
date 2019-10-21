@@ -1,7 +1,7 @@
-//import Button from '../components/button.js';
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 // import Input from '../components/input.js';
+import Card from '../components/card.js';
 
 
 function enviarPublicacao(){
@@ -14,34 +14,68 @@ function enviarPublicacao(){
     postagem: document.querySelector('.js-mensagem-textarea').value,
     likes: 0,
     privacidade: 'publico',
-    id: posts.length
+    id: posts.length,
+    // comentario:[]
   }
 
-      posts.push(mensagem);
+   posts.push(mensagem);
 
    window.localStorage.setItem('colecaoDeUsuarios', JSON.stringify(bancoDeDados));
 
    document.querySelector('.resp').innerHTML = '';
-    // const lll = JSON.stringify(mensagemSalvar);
-    posts.map(elem => 
-      document.querySelector('.resp').innerHTML += `<p>${elem.postagem}</p>`)
-    // document.querySelector('.resp').innerHTML = lll;
+
+
+   
+  
+   posts.map(elem => 
+      document.querySelector('.resp').innerHTML += template(elem.postagem))
+      
 }
 
 
-
-//   const mensagem ={
-//   postagem: document.querySelector('js-mensagem-textarea').value  
-//   }
-
-//   let mensagemSalvar = localStorage.getItem('Publicar');
+function template(postagem){
+  const template = `<p>${postagem}</p>
+  ${Button({
+    id: 'Botão',
+    // class: 'js-botao-textarea'
+    title: 'Editar',
+    // onClick: editarPublicação,
+  })}
+  ${Button({
+    id: 'Botão',
+    // class: 'js-botao-textarea'
+    title: 'Deletar',
+    // onClick: deletarPublicação,
+  })}`
   
-//   mensagemSalvar = JSON.parse(mensagemSalvar)
+  return `${Card({children: template})}`
 
-//   mensagemSalvar.push(mensagem);
 
-//   localStorage.setItem('Publicar', JSON.stringify(mensagemSalvar));
+  
+}
+
+
+//FIXAR OS POSTS
+// function printarPubliacao(){
+
 // }
+
+//BOTÃO DE DELETE, EDITAR E COMENTAR OS POSTS FIXADOS
+
+//INSERIR COMENTÁRIOS AOS POSTS FIXADOS
+// const pegarComentario = JSON.parse(localStorage.getItem('comentarioDoPost'));
+// if (!Array.isArray(pegarComentario)) {
+//   pegarComentario = [];
+// }
+
+// const comentario = 
+
+//  mensagem.comentario
+
+// BOTÃO DO LIKE (USAR O REDUCE?)
+
+
+  
 
 function Home() {
   const template = `
@@ -76,50 +110,11 @@ function Home() {
   return template;
 }
 
+
+
+
 export default Home;
 
-// function Home() {
-//   const template = `
-//     <h1 class= "título-login">Login</h1>
-//    <form> 
 
-//    ${Textarea({
-//     class: 'js-mensagem-textarea',
-//     placeholder: 'Escreva aqui sua mensagem',
-//     type: 'text',
-//   })}
-
-//    ${Button({
-//     id: 'Botão',
-//     title: 'Publicar',
-//     onClick: enviarPublicacao,
-//   })}
-
-//     </form>
-//     <p class="mensagem-login">Não tem conta? <a href="#cadastro">Cadastre-se</a> </p>
-
-//   `;
-
-//   return template;
-// }
-
-// export default Home;
-
-
-// ${Button({ id: '🐠', title: 'Botão 🐠' })}
-// ${Button({ id: '🎉', title: 'Botão 🎉' })}
-
-// <p>Esse é um exemplo 🍌</p>
-
-
-// ${Textarea({
-//   class: 'js-mensagem-textarea',
-//   placeholder: 'Escreva aqui sua mensagem',
-//   type: 'text',
-//  })}
-
-// ${Input({
-//   class: 'js-mensagem-input',
-//   placeholder: 'Escreva aqui sua mensagem',
-//   type: 'text',
-// })}
+window.enviarPublicacao = enviarPublicacao
+window.template = template

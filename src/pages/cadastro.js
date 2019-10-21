@@ -4,9 +4,8 @@ import Button from '../components/button.js';
 
 function enviarCadastro() {
 
-  /* pega a coleção do LS */
   let colecao = localStorage.getItem('colecaoDeUsuarios');
-  /* converte a string em vetor */
+  
   colecao = JSON.parse(colecao);
 
   if (!Array.isArray(colecao)) {
@@ -23,25 +22,21 @@ function enviarCadastro() {
     id: colecao.length
   };
 
-  /* adiciona o novo usuario na colecao */
   colecao.push(novoUsuario);
-  /* salva a coleção com o novo cadastro de volta no LS */
   localStorage.setItem('colecaoDeUsuarios', JSON.stringify(colecao));
-  /* salva o novo usuario de forma isolada no LS, pois ele precisa estar logado */
   localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
-  /* muda o hash do endereço para que a função trocaPagina()
-  perceba a mudança e mude a página que estamos */
   
-  console.log(colecao)
-  /* caso não seja um vetor, transforma em um */
+  // console.log(colecao)
   
   window.location.hash = '#login';
 }
 
 function Cadastro() {
   const template = `
-      <h1 class="título-cadastro">Cadastre-se:</h1>
-     <form> 
+  <img src="" class=""> 
+  <div class="container-cadastro">
+  <h1 class="título-cadastro">Cadastre-se:</h1>
+  <form class="cadastro"> 
   
      ${Input({
     class: 'js-nomeCadastro-input',
@@ -74,9 +69,10 @@ function Cadastro() {
   })}
   
     </form>
-
+    
     <p class= "mensagem-cadastro">Já tem conta? <a href="#login">Entrar</a> </p>
-      
+    </div>
+
     `;
 
   return template;
