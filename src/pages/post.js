@@ -16,7 +16,7 @@ function savePost() {
     uid: uid,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
-  .then(function (docRef) {
+  .then(function (docRef) {    
     app.loadPost()
   })
   document.querySelector('.post').value = '';  
@@ -25,7 +25,7 @@ function savePost() {
 function addPost(post) {
   const feed = document.querySelector('.feed');
   const feedPost = `
-  <li class="post-list">
+  <li data-id= '${post.id}' class="post-list">
   <br>  
   ${post.data().post}
   <br>  
@@ -41,8 +41,7 @@ function addPost(post) {
   feed.innerHTML += feedPost;
 };
 
-function loadPost() {
-  document.querySelector('.feed').innerHTML = 'Carregando...';
+function loadPost() {  
   db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';

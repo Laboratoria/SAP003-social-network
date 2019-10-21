@@ -13,7 +13,9 @@ function criarLogin() {
     
     firebase.auth().currentUser.updateProfile({
       displayName: name
-    })            
+    })
+    
+    uid = firebase.auth().currentUser.uid;
 
     if (uid != null) {     
       

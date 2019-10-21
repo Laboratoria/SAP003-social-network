@@ -16,7 +16,7 @@ function locationHashChanged() {
       case '#home.js': 
         user ? document.querySelector('main').innerHTML = home() :
         window.location = '#login.js';        
-        break;
+        break;       
       
       case '#login.js': 
         user ? window.location = '#home.js' : 

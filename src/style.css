@@ -227,15 +227,23 @@ section {
     background: url(./img/logo.png) center center/450px no-repeat; 
   }
 
+  .js-namefull-input {
+    margin-top: 100px; 
+  }
+
   .js-email-input {
-    margin-top: 50px; 
+    margin-top: 5px; 
   }
 
   .js-password-input {
     margin-top: 5px; 
   }
 
-  .primary-button {
-    width: 18%; 
-  } 
+  .primary-button {  
+    width: 10%; 
+  }
+  
+  .phrase {
+    font-size: 16px;
+  }
 }
