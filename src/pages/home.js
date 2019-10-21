@@ -45,7 +45,7 @@ function buttonLogin () {
     }
   
   });
-
+  
 
 }
 
@@ -69,5 +69,3 @@ function googleLogin () {
     // ...
   });
 }
-
-

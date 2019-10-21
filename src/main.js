@@ -19,10 +19,16 @@ function locationHashChanged() {
       document.querySelector('main').innerHTML= Home();
       break;
     case ('#feed'):
-      document.querySelector('main').innerHTML= timeline();
+        firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+           document.querySelector('main').innerHTML= timeline(); 
+          } else {
+            document.querySelector('main').innerHTML= Home();
+          }
+        });
       break;
     default:
-        document.querySelector('main').innerHTML= Home();
+      document.querySelector('main').innerHTML= Home();
   }
 
 }

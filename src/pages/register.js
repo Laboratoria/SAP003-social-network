@@ -7,9 +7,10 @@ function register(){
 
     <h2> Crie a sua conta </h2>
   <form>
-       ${Input({ placeholder: 'E-mail', type: 'email', class: 'js-email-input'})}
-       ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
-       ${Button({ id: 'button', title: 'Cadastrar', onClick: buttonRegister})}
+    ${Input({placeholder:'Digite seu nome', type:'text', class:'username'})}
+    ${Input({ placeholder: 'E-mail', type: 'email', class: 'js-email-input'})}
+    ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
+    ${Button({ id: 'button', title: 'Cadastrar', onClick: buttonRegister})}
   </form>
        `;
       return template;
@@ -34,3 +35,5 @@ function register(){
     });
 }
   export default register;
+
+  
