@@ -4,8 +4,11 @@ import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Textarea from '../components/textarea.js';
 
-
 const signOut = () => firebase.auth().signOut();
+
+const goProfile = () => {
+  window.location = '#profile';
+};
 
 const createPost = () => {
   const textInput = document.querySelector('.post-text').value;
@@ -62,15 +65,12 @@ const timeline = (props) => {
     <label for="navigation">&#9776;</label>
     <nav class="menu">
       <ul>
-    ${List({
-    class: 'timeline',
-    title: 'Timeline',
-  })}
-    ${List({
+  ${List({
     class: 'profile',
     title: 'Perfil',
+    onClick: goProfile,
   })}
-    ${List({
+  ${List({
     class: 'out',
     title: 'Sair',
     onClick: signOut,
@@ -80,10 +80,6 @@ const timeline = (props) => {
     <h1 class="title-timeline">Low Carb Style</h1>
     <div class="users">
       <img src="images/usuario.png" class="img-usuario">
-      <div class="dados-usuario">
-        <h3 clas="nome-usuario">Nome</h3>
-        <p clas="bio-usuario"><em>Biografia</em></p>
-      </div>
     </div>
   <form>
     <div class="container-publish">

@@ -11,7 +11,7 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.text-welcome, .js-input-email, .js-input-password, .primary-button, .error-email, .error-password, .text {
+.text-welcome, .js-input-email, .js-input-password, .primary-button, .error-email, .error-password, .text, .text-profile {
   font-family: sans-serif;
 }
 
@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.js-input-email, .js-input-password {
+.js-input-email, .js-input-password, .inp-name-profile, .inp-age-profile, .inp-profession-profile {
   background: #FFFFFF;
   box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
   border-radius: 9px;
@@ -43,7 +43,11 @@ body {
   margin-top: 20px;
 }
 
-.primary-button {
+.inp-age-profile{
+  width: 97%;
+}
+
+.primary-button, .btn-profile {
   background: #EC6345;
   padding: 8px;
   font-size: 1.2rem;
@@ -54,6 +58,10 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
   margin-top: 10px;
+}
+
+.btn-profile{
+  margin-top: 10%;
 }
 
 .error-email {
@@ -72,6 +80,24 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 13px;
   margin-bottom: 0;
+}
+
+.container-form-profile{
+  background-color: #988a87;
+  display: flex;
+  width: 69%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 17%;
+  margin-left: 5%;
+  border-radius: 4%;
+  padding: 10%;
+}
+
+.text-profile{
+  text-align: center;
+  color: chocolate;
+  margin-top: 16%;
 }
 
 /* ---------timeline------------------ */
@@ -264,12 +290,14 @@ label[for="navigation"] {
 }
 
 @media (min-width: 1280px) {
+  
   .logo {
     margin-left: 35%;
     border-radius: 150px;
     width: 30%;
     margin-top: 30px;
   }
+
   label[for="navigation"] {
     display: none;
   }
@@ -280,12 +308,14 @@ label[for="navigation"] {
     margin-left: 10%;
     transition: none;
   }
+
   .menu ul {
     position: none;
     margin-left: none;
     margin-right: none;
     margin-top: none;
   }
+
   .menu li {
     background-color: #EC6345;
   }
@@ -294,28 +324,34 @@ label[for="navigation"] {
     margin-top: 0%;
     font-size: 36px;
   }
+
   .users {
     display: flex;
     justify-content: start;
     margin-top: 10%;
   }
+
   .img-usuario {
     margin-left: 15%;
     margin-right: 0%;
     margin-top: -3%;
     width: 10%;
   }
+
   .container-publish {
     width: 400px;
     height: 230px;
     margin-top: -10%;
   }
+
   .post-text {
     width: 300px;
     height: 140px;
   }
+
   .container-public {
     width: 400px;
     margin-top: 2%;
   }
+
 } 
