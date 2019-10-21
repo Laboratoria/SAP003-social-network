@@ -60,21 +60,22 @@ function Login() {
     placeholder: 'Senha',
   })}
   ${Button({
-    class: 'btn',
+    class: 'btn btn-gray',
     id: 'btn-log-in',
     onclick: loginRegisteredUser,
     title: 'Login',
   })}
   ${Button({
     id: 'authGoogleButton',
-    class: 'btn fa fa-google',
+    class: 'btn fa fa-google btn-gray',
     onclick: loginGoogleUser,
     title: '',
   })}
   `;
   const template = `
-  <img src="./img/pluto-floral-and-botanical-growth.png">
-  <form class="form-content">
+  <article class='login-page'>
+  <img class='login-img' src="./img/pluto-floral-and-botanical-growth.png">
+  <form class="form-content-login">
     <h1>Horta Urbana</h1> 
     ${userLogin}
     <div id="errorMessage"></div>
@@ -82,6 +83,7 @@ function Login() {
     <a href="#signup">Cadastre-se!</a>
     </p> 
   </form>
+  </article>
   `;
   return template;
 }
