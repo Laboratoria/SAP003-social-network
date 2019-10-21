@@ -1,8 +1,8 @@
-function PostInput(props) {
+function Textarea(props) {
   const template = ` 
-    <textarea class="${props.class}" id="${props.id}" placeholder="${props.placeholder}"></textarea>
+    <textarea class="${props.class}" id="${props.id}" placeholder="${props.placeholder}">${props.value}</textarea>
     `;
   return template;
 }
 
-export default PostInput;
+export default Textarea;

@@ -1,69 +1,44 @@
-//COM INPUT
-// function editPost(postId) {
-//   // const teste = "Socorro! SOS!"
-//   const postText = document.querySelector('.post-text');
-//   const textField = postText.textContent;
-//   //const createtag = 
-//   // const postsCollection = firebase.firestore().collection('posts');
-//   // postsCollection.doc(postId).update({ text: teste });
-//   console.log(postText);
-//   console.log(textField);
+// function save() {
+//   const id = event.target.dataset.id;
+//   const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+//   const newText = postText.textContent;
+//   firebase.firestore().collection('posts').doc(id).update({
+//     text: newText,
+//   });
+//   postText.setAttribute('contentEditable', 'false');
+//   document.getElementById(id).getElementsByClassName('edit-button')[0].innerHTML = '';
+// }
+
+// function cancel() {
+//   const id = event.target.dataset.id;
+//   const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+//   const text = postText.textContent;
 //   postText.innerHTML = `
-//   <form class="edit-section">
-//   ${PostInput({
-//   class: 'text-area',
-//   id: 'post-text',
-//   placeholder: '',
-//   })}
-//   </form>
-//   <div class="edit-buttons">
+//   <p class='post-text'>${text}</p>
+//   `;
+//   postText.setAttribute('contenteditable', 'false');
+//   document.getElementById(id).getElementsByClassName('edit-button')[0].innerHTML = '';
+// }
+
+// function editPost(postId) {
+//   const id = postId;
+//   const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+//   const button = document.getElementById(id).getElementsByClassName('edit-button')[0];
+//   postText.setAttribute('contenteditable', 'true');
+//   button.innerHTML = `
 //     ${Button({
 //     id: 'btn-save',
 //     class: 'btn save-btn',
-//     // onclick: saveEdition,
+//     dataId: postId,
+//     onclick: save,
 //     title: 'Salvar',
 //   })}
 //     ${Button({
 //     id: 'btn-cancel',
 //     class: 'btn cancel-btn',
-//     // onclick: cancelEdition,
+//     dataId: postId,
+//     onclick: cancel,
 //     title: 'Cancelar',
 //   })}
-//   </div>
-
-// `;
-// }
-
-// function saveEdition() {
-//   const newText = document.querySelector('.text-area').value;
-//   const edited = document.querySelector('.edit-section');
-//   edited.innerHTML = `
-//     <p class='post-text'>${newText}</p>
-//     `;
-//   return edited;
-// }
-
-// function cancelEdition() {
-//   document.querySelector('.edit-section').innerHTML = `
-//     <p class='post-text'>${textField}</p>
 //   `;
 // }
-
-
-
-function saveEdition() {
-  const newText = document.querySelector('.text-area').value;
-  const edited = document.querySelector('.edit-section');
-  edited.innerHTML = `
-      <p class='post-text'>${newText}</p>
-      `;
-}
-
-function cancelEdition() {
-  const newText = postText.setAttribute('contenteditable', 'false');
-  const teste = postText.textContent;
-
-  document.querySelector('.edit-section').innerHTML = `
-      <p class='post-text'>${postText}</p>
-    `;
-}

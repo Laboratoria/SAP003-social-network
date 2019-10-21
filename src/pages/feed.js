@@ -1,6 +1,5 @@
 import Button from '../components/button.js';
-import PostInput from '../components/textarea.js';
-// import Input from '../components/input.js';
+import Textarea from '../components/textarea.js';
 
 function logOut() {
   auth
@@ -25,10 +24,11 @@ function userInfo() {
 
 function NewPostTemplate() {
   const template = `
-  ${PostInput({
+  ${Textarea({
     class: 'text-area',
     id: 'post-text',
     placeholder: 'No que está pensando?',
+    value: '',
   })}
   ${Button({
     id: 'btn-post',
@@ -82,44 +82,49 @@ function addPost(post, postId) {
 
 function save() {
   const id = event.target.dataset.id;
-  console.log(id);
-  console.log('salvar!');
-  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
-  const newText = postText.textContent;
+  const postText = document.getElementById(id).querySelector('.post-text');
+  const saveEdit = document.querySelector('.edit-textarea').value;
+  postText.innerHTML = `
+  <p class='post-text'>${saveEdit}</p>
+  `;
   firebase.firestore().collection('posts').doc(id).update({
-    text: newText,
+    text: saveEdit,
   });
-  postText.setAttribute('contentEditable', 'false');
+  document.getElementById(id).querySelector('.edit-button').innerHTML = '';
 }
 
 function cancel() {
   const id = event.target.dataset.id;
-  console.log(id);
-  console.log('cancelar');
-  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
+  const postText = document.getElementById(id).querySelector('.post-text');
   const text = postText.textContent;
   postText.innerHTML = `
   <p class='post-text'>${text}</p>
   `;
-  postText.setAttribute('contenteditable', 'false');
+  document.getElementById(id).querySelector('.edit-button').innerHTML = '';
 }
 
 function editPost(postId) {
   const id = postId;
-  console.log(id);
-  const postText = document.getElementById(id).getElementsByClassName('post-text')[0];
-  // const text = postText.textContent;
-  const button = document.getElementById(id).getElementsByClassName('edit-button')[0];
-  postText.setAttribute('contenteditable', 'true');
+  const postText = document.getElementById(id).querySelector('.post-text');
+  const button = document.getElementById(id).querySelector('.edit-button');
+  const text = postText.textContent;
+  postText.innerHTML = `
+  ${Textarea({
+    class: 'edit-textarea',
+    id: 'edit-textarea',
+    placeholder: '',
+    value: text,
+  })}
+  `;
   button.innerHTML = `
-    ${window.button.component({
+    ${Button({
     id: 'btn-save',
     class: 'btn save-btn',
     dataId: postId,
     onclick: save,
     title: 'Salvar',
   })}
-    ${window.button.component({
+    ${Button({
     id: 'btn-cancel',
     class: 'btn cancel-btn',
     dataId: postId,
