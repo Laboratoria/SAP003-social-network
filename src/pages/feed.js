@@ -1,13 +1,33 @@
 import Button from '../components/button.js';
-import Input from '../components/input.js';
+import Textarea from '../components/textarea.js';
+
+function logOut() {
+  auth
+    .signOut()
+    .then(() => {
+      console.log('adeus');
+      window.location = '#login';
+    });
+}
+
+function userInfo() {
+  const user = auth.currentUser;
+  db.collection('users').doc(user.uid).get().then((doc) => {
+    const username = `
+    <h4>${doc.data().name}</h4>
+    <p>${user.email}</p>
+    `;
+    document.querySelector('.profile').innerHTML = username;
+  });
+}
 
 function NewPostTemplate() {
-  const postArea = `
-  ${Input({
-    type: 'text',
+  const template = `
+  ${Textarea({
     class: 'text-area',
     id: 'post-text',
-    placeholder: 'texto',
+    placeholder: 'No que você está pensando?',
+    value: '',
   })}
   ${Button({
     type: 'button',
@@ -41,17 +61,22 @@ function loadPosts() {
       document.querySelectorAll('.delete').forEach((btn) => {
         btn.addEventListener('click', (event) => {
           deletePost(event.target.parentNode.getAttribute('id'))
-        })
-      })
+        });
+      });
       document.querySelectorAll('.like').forEach((btn) => {
         btn.addEventListener('click', (event) => {
         likePost(event.target.parentNode.parentNode.getAttribute('id'))
-          console.log(event.target.parentNode.parentNode.getAttribute('id'))
-        })
-      })
-    });
+        });
+      });
+      document.querySelectorAll('.edit-post').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+        editPost(event.target.parentNode.parentNode.getAttribute('id'));
+        });
+      }); 
+    }); //FECHA O THEN
 }
 
+//aqui 
 function createPost() {
   const text = document.querySelector('.text-area').value;
   const post = {
@@ -59,27 +84,27 @@ function createPost() {
     text,
     comments: [],
     user_id: firebase.auth().currentUser.uid,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
   };
   const postsCollection = firebase.firestore().collection('posts');
   postsCollection.add(post)
     .then(() => {
-      console.log('Post criado com sucesso!');
       loadPosts();
-      postsCollection.get();
     })
     .catch((error) => {
       console.log('erro', error);
-      console.log('Não foi possível criar post.');
     });
 }
 
 function addPost(post, postId) {
-  const LoggedUserID = firebase.auth().currentUser.uid
+//checar condição de loggeduser para a edição
+ const LoggedUserID = firebase.auth().currentUser.uid
   const postTemplate = `
       <li class='post' id="${postId}">
-        <div class='post-text'> ${post.text}</div> 
-        ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div>' : '' }
-        <div class="interaction-area">
+      <p class="post-text">${post.text}</p>
+        ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div> <div><span class="edit-post fa fa-pencil"></span></div>' : '' }
+      <div class="edit-button"></div>
+      <div class="interaction-area">
         <div class="like fa fa-heart"></div>
         ${post.likes}
           <div class="coments">
@@ -91,7 +116,59 @@ function addPost(post, postId) {
   return postTemplate;
 }
 
-   
+function save() {
+  const id = event.target.dataset.id;
+  const postText = document.getElementById(id).querySelector('.post-text');
+  const saveEdit = document.querySelector('.edit-textarea').value;
+  postText.innerHTML = `
+  <p class='post-text'>${saveEdit}</p>
+  `;
+  firebase.firestore().collection('posts').doc(id).update({
+    text: saveEdit,
+  });
+  document.getElementById(id).querySelector('.edit-button').innerHTML = '';
+}
+
+function cancel() {
+  const id = event.target.dataset.id;
+  const postText = document.getElementById(id).querySelector('.post-text');
+  const text = postText.textContent;
+  postText.innerHTML = `
+  <p class='post-text'>${text}</p>
+  `;
+  document.getElementById(id).querySelector('.edit-button').innerHTML = '';
+}
+
+function editPost(postId) {
+  const id = postId;
+  const postText = document.getElementById(id).querySelector('.post-text');
+  const button = document.getElementById(id).querySelector('.edit-button');
+  const text = postText.textContent;
+  postText.innerHTML = `
+  ${Textarea({
+    class: 'edit-textarea',
+    id: 'edit-textarea',
+    placeholder: '',
+    value: text,
+  })}
+  `;
+  button.innerHTML = `
+    ${Button({
+    id: 'btn-save',
+    class: 'btn save-btn',
+    dataId: postId,
+    onclick: save,
+    title: 'Salvar',
+  })}
+    ${Button({
+    id: 'btn-cancel',
+    class: 'btn cancel-btn',
+    dataId: postId,
+    onclick: cancel,
+    title: 'Cancelar',
+  })}
+  `;
+}
 
 function deletePost(postId){
   if(!confirm('Tem certeza que deseja excluir essa publicação?')) return
@@ -113,30 +190,6 @@ async function likePost (postId){
   })
   loadPosts()  
 }
-
-  function logOut() {
-  auth
-    .signOut()
-    .then(() => {
-      console.log('adeus');
-      window.location = '#login';
-    });
-}
-
- function userInfo() {
-  console.log("oi", firebase.auth().currentUser);
-  const user = auth.currentUser;
-  db.collection('users').doc(user.uid).get().then(doc => {
-    const username = `
-    <h4>${doc.data().name}</h4>
-    <p>${user.email}</p>
-    `;
-    document.querySelector('.profile').innerHTML = username;
-    return username
-  });  
-}
-
-
 
 function Feed() {
   const template = `
@@ -195,6 +248,6 @@ function Feed() {
   return template;
 }
 
-export default Feed
+export default Feed;
 
-window.loadPosts = loadPosts;
+//window.loadPosts = loadPosts;

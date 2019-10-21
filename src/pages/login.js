@@ -27,7 +27,6 @@ function signInWithAccount(provider) {
       //   const token = result.credential.accessToken;
       // };
       const user = result.user;
-      
       db.collection('users').doc(user.uid).set({
         name: user.displayName
       });

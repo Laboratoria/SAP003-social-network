@@ -1,6 +1,6 @@
 function Button(props) {
   const template = `
-    <button class='${props.class}' onclick="button.handleClick(event, ${props.onclick})">${props.title}</button>
+    <button class='${props.class}' data-id='${props.dataId}' onclick="button.handleClick(event, ${props.onclick})">${props.title}</button>
     `;
   return template;
 }
@@ -10,6 +10,7 @@ window.button = {
     event.preventDefault();
     callback();
   },
+  component: Button,
 };
 
 export default Button;

@@ -88,7 +88,6 @@ body {
 
 .menu-icon{
   margin:0px 15px 0px 15px;
-
 }
 
 .profile-btn, .logout-btn{
@@ -113,7 +112,6 @@ body {
   text-align: center;
 }
 
-/*HEADER - REGISTER*/
 .main-header{
   width: 90%;
   margin: 30px 25px 20px 25px;
@@ -122,24 +120,18 @@ body {
   justify-content: center;
 }
 
-/*REGISTER-INPUT*/
-
 .register-input { 
   display: flex;
   flex-direction: column; 
   align-items: center;
-  
 }
 
-/*REGISTER - TEXT*/
 .register-text{
   text-align: center;
   text-align: justify;
   margin: auto;
   padding: 1% 2% 2% 2%;
 }
-
-/*POST-AREA*/
 
 .header{
   width: 100vw;
@@ -148,7 +140,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
 
 .header-title{
   display: flex;
@@ -229,8 +220,10 @@ transition: all .4s linear;
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .post-list{
   list-style-type: none;
+  padding: 1.5%;
 }
 
 .delete{
@@ -258,15 +251,12 @@ transition: all .4s linear;
   color: rgb(113, 194, 6);
   cursor: pointer;
 }
+
 .coments{
   background: orange;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-
 }
-
-
-/*BREAKPOINTS*/
 
 @media only screen and (min-width: 576px){
 
@@ -308,12 +298,3 @@ transition: all .4s linear;
     visibility: hidden;
   }
 }
-
-
-
-
-/* @media (min-width: 768px) {  }
-
-@media (min-width: 992px) {  }
-
-@media (min-width: 1200px) { } */
