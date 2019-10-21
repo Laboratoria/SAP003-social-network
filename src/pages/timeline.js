@@ -3,8 +3,11 @@ import List from '../components/list-menu.js';
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 
-
 const signOut = () => firebase.auth().signOut();
+
+const goProfile = () => {
+  window.location = '#profile';
+};
 
 const createPost = () => {
   const textInput = document.querySelector('.post-text');
@@ -36,7 +39,7 @@ loadPost();
 
 const timeline = () => {
   const templateTimeLine = `
-     ${Input({
+  ${Input({
     class: 'navigation',
     id: 'navigation',
     type: 'checkbox',
@@ -44,45 +47,42 @@ const timeline = () => {
   <label for="navigation">&#9776;</label>
   <nav class="menu">
       <ul>
-    ${List({
-    class: 'timeline',
-    title: 'Timeline',
-  })}
-    ${List({
+  ${List({
     class: 'profile',
     title: 'Perfil',
+    onClick: goProfile,
   })}
-    ${List({
+  ${List({
     class: 'out',
     title: 'Sair',
     onClick: signOut,
   })}
       </ul>
     </nav>
-    <form action="" id="post-form">
+  <form action="" id="post-form">
     <h1 class="title-timeline">Low Carb Style</h1>
     <img src="images/usuario.png" class="img-usuario">
     <div class="dados-usuario">
       <h3 clas="nome-usuario">Nome</h3>
+      <p class="age-user">Idade</p>
       <p clas="bio-usuario"><em>Biografia</em></p>
     </div>
     <div class="container-publicar">
-      ${Input({
-    class: 'post-text',
-    id: 'post-text',
-    type: 'textarea',
-    placeholder: 'digite aqui...',
-  })}
+    ${Input({
+      class: 'post-text',
+      id: 'post-text',
+      type: 'textarea',
+      placeholder: 'digite aqui...',
+    })}
     <img src="images/img-public.png" class="img-public"> 
-      ${Button({
-    class: 'btn-publicar',
-    id: 'btn-publicar',
-    type: 'submit',
-    title: 'Publicar',
-    onClick: createPost,
-  })}
-      <div class="posts">
-      </div>
+    ${Button({
+      class: 'btn-publicar',
+      id: 'btn-publicar',
+      type: 'submit',
+      title: 'Publicar',
+      onClick: createPost,
+    })}
+      <div class="posts"></div>
       </div> 
   </form>
     `;

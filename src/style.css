@@ -11,7 +11,7 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.text-welcome, .js-input-email, .js-input-password, .primary-button, .error-email, .error-password, .text {
+.text-welcome, .js-input-email, .js-input-password, .primary-button, .error-email, .error-password, .text, .text-profile {
   font-family: sans-serif;
 }
 
@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.js-input-email, .js-input-password {
+.js-input-email, .js-input-password, .inp-name-profile, .inp-age-profile, .inp-profession-profile {
   background: #FFFFFF;
   box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
   border-radius: 9px;
@@ -43,7 +43,11 @@ body {
   margin-top: 20px;
 }
 
-.primary-button {
+.inp-age-profile{
+  width: 92%;
+}
+
+.primary-button, .btn-profile {
   background: #EC6345;
   padding: 8px;
   font-size: 1.2rem;
@@ -54,6 +58,10 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
   margin-top: 10px;
+}
+
+.btn-profile{
+  margin-top: 10%;
 }
 
 .error-email {
@@ -72,6 +80,18 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 13px;
   margin-bottom: 0;
+}
+
+.container-form-profile{
+  background-color: #988a87;
+  display: flex;
+  width: 69%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 21%;
+  margin-left: 5%;
+  border-radius: 4%;
+  padding: 10%;
 }
 
 /* ---------timeline------------------ */
@@ -138,6 +158,15 @@ label[for="navigation"]{
   color: #403B3A;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
+}
+
+.text-profile {
+  display: block;
+  margin-top: 16%;
+  font-size: 17px;
+  text-align: center;
+  font-family: sans-serif;
+  color: brown;
 }
 
 @media(max-width: 800px){

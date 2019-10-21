@@ -1,5 +1,6 @@
 import login from './pages/login.js';
 import timeline from './pages/timeline.js';
+import profile from './pages/profile.js';
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -16,6 +17,8 @@ const locationHashChanged = () => {
     document.querySelector('main').innerHTML = timeline();
   } else if (hash === '#login') {
     document.querySelector('main').innerHTML = login();
+  } else if (hash === '#profile') {
+    document.querySelector('main').innerHTML = profile();
   }
 };
 

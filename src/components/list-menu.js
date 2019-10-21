@@ -3,8 +3,8 @@ const List = (props) => {
   <li
   class="${props.class}"
   onClick="list.handleClick(event, ${props.onClick})">
-${props.title}</li>
-`;
+  ${props.title}</li>
+  `;
   return template;
 };
 
