@@ -9,7 +9,10 @@ function newUser() {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((response) => {
-      if (response) {
+        response.user.updateProfile({
+        displayName: name,
+      })
+        if (response) {
         window.location.hash = '#feed';
       }
     })

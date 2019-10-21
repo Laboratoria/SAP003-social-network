@@ -63,6 +63,8 @@ function TemplateLogin() {
    
     <p class="text-main"><a href="#createAccount">Não tem uma conta?</a></p>
   `;
+
+  window.location.hash = '#login';
   return template;
 }
 
