@@ -14,7 +14,7 @@ function userLogin() {
         const errorMessage = error.message;
         if (errorCode === 'auth/user-not-found') {
           document.getElementById('error').innerText = 'Usuário não cadastrado.';
-        } if (errorCode === 'auth/wrong-password') {
+        } else if (errorCode === 'auth/wrong-password') {
           document.getElementById('error').innerText = 'Senha incorreta';
         }
       });
@@ -43,7 +43,7 @@ function googleLogin() {
       const credential = error.credential;
       if (errorCode === 'auth/user-not-found') {
         document.getElementById('error').innerText = `${errorMessage} - erro no login do google`;
-      } if (errorCode === 'auth/wrong-password') {
+      } else if (errorCode === 'auth/wrong-password') {
         document.getElementById('error').innerText = `${errorMessage} - senha incorreta`;
       }
     });

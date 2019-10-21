@@ -22,9 +22,9 @@ function createUser() {
     const errorMessage = error.message;
     if (errorCode === 'auth/email-already-in-use') {
       document.getElementById('error').innerText = 'E-mail já cadastrado.';
-    } if (errorCode === 'auth/weak-password') {
+    } else if (errorCode === 'auth/weak-password') {
       document.getElementById('error').innerText = 'A senha é muito pequena.';
-    } if (errorCode === 'auth/invalid-email') {
+    } else if (errorCode === 'auth/invalid-email') {
       document.getElementById('error').innerText = 'E-mail inválido.';
     } else {
       document.getElementById('error').innerText = errorMessage;
