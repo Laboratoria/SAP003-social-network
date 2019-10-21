@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Google from '../components/google-button.js';
+import ButtonImage from '../components/image-button.js';
 
 const signIn = () => {
   const email = document.querySelector('.js-input-email').value;
@@ -54,7 +54,7 @@ const login = () => {
     <form class="form">
     ${Input({
     class: 'js-input-email',
-    placeholder: 'Email',
+    placeholder: 'email@exemplo.com',
     type: 'email',
     id: 'js-input-email',
   })}
@@ -80,7 +80,7 @@ const login = () => {
   })} 
   </div>
   <p id="text-p" class="text">ou entrar com...</p>
-    ${Google({
+    ${ButtonImage({
     class: 'img-google',
     type: 'image',
     src: 'images/google.png',

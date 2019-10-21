@@ -2,6 +2,7 @@ import Input from '../components/input.js';
 import List from '../components/list-menu.js';
 import Button from '../components/button.js';
 import Post from '../components/post.js';
+import Textarea from '../components/textarea.js';
 
 const signOut = () => firebase.auth().signOut();
 
@@ -10,42 +11,59 @@ const goProfile = () => {
 };
 
 const createPost = () => {
-  const textInput = document.querySelector('.post-text');
-  firebase.firestore().collection('posts').add({
-    text: textInput.value,
-    userId: firebase.auth().currentUser.uid,
-    addedAt: (new Date()).toISOString(),
-  }).then(() => {
-    textInput.value = '';
-  });
+  const textInput = document.querySelector('.post-text').value;
+  if (textInput === '') {
+    alert('Campo Vazio! Digite sua mensagem');
+  } else {
+    firebase.firestore().collection('posts').add({
+      text: textInput,
+      userId: firebase.auth().currentUser.uid,
+      addedAt: (new Date()).toLocaleString('pt-BR'),
+      likes: 0,
+      comments: [],
+    })
+      .then(() => {
+        textInput.value = '';
+      });
+  }
 };
 
-const addPost = (post) => {
-  const postTemplate = Post(post.data());
-  document.querySelector('.posts').innerHTML += postTemplate;
+const deletePost = (event) => {
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('posts').doc(id).delete();
 };
 
-const loadPost = () => {
-  const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.orderBy('addedAt', 'desc').onSnapshot((snap) => {
-    document.querySelector('.posts').innerHTML = '';
-    snap.forEach((post) => {
-      addPost(post);
+const enableField = (event) => {
+  const id = event.target.dataset.id;
+  document.querySelector(`[data-id=${id}]`).contentEditable = 'true';
+};
+
+const updatePost = (event) => {
+  const id = event.target.dataset.id;
+  const editedPost = document.querySelector(`[data-id=${id}]`).textContent;
+  firebase.firestore().collection('posts').doc(id).update({ text: editedPost, addedAt: (new Date()).toLocaleString('pt-BR') });
+};
+
+const timeline = (props) => {
+  let layout = '';
+  props.posts.forEach((snap) => {
+    layout += Post({
+      id: snap.id,
+      post: snap.data(),
+      deleteEvent: deletePost,
+      updateEvent: updatePost,
+      enableEvent: enableField,
     });
   });
-};
 
-loadPost();
-
-const timeline = () => {
   const templateTimeLine = `
-  ${Input({
+    ${Input({
     class: 'navigation',
     id: 'navigation',
     type: 'checkbox',
   })}
-  <label for="navigation">&#9776;</label>
-  <nav class="menu">
+    <label for="navigation">&#9776;</label>
+    <nav class="menu">
       <ul>
   ${List({
     class: 'profile',
@@ -59,31 +77,38 @@ const timeline = () => {
   })}
       </ul>
     </nav>
-  <form action="" id="post-form">
     <h1 class="title-timeline">Low Carb Style</h1>
-    <img src="images/usuario.png" class="img-usuario">
-    <div class="dados-usuario">
-      <h3 clas="nome-usuario">Nome</h3>
-      <p class="age-user">Idade</p>
-      <p clas="bio-usuario"><em>Biografia</em></p>
+    <div class="users">
+      <img src="images/usuario.png" class="img-usuario">
+      <div class="dados-usuario">
+        <h3 clas="nome-usuario">Nome</h3>
+        <p clas="bio-usuario"><em>Biografia</em></p>
+      </div>
     </div>
-    <div class="container-publicar">
-    ${Input({
-      class: 'post-text',
-      id: 'post-text',
-      type: 'textarea',
-      placeholder: 'digite aqui...',
-    })}
-    <img src="images/img-public.png" class="img-public"> 
-    ${Button({
-      class: 'btn-publicar',
-      id: 'btn-publicar',
-      type: 'submit',
-      title: 'Publicar',
-      onClick: createPost,
-    })}
-      <div class="posts"></div>
+  <form>
+    <div class="container-publish">
+      <div class="textarea-publish">
+      ${Textarea({
+    class: 'post-text',
+    id: 'post-text',
+    placeholder: 'digite aqui...',
+  })}
+      </div>
+      <div class="images-publish">
+        <img src="images/img-public.png" class="img-public"> 
+        ${Button({
+    class: 'btn-publicar',
+    id: 'btn-publicar',
+    type: 'submit',
+    title: 'Publicar',
+    onClick: createPost,
+  })}
       </div> 
+    </div>
+      <div class="posts">
+      ${layout}
+      </div>
+>>>>>>> master
   </form>
     `;
 
