@@ -4,6 +4,8 @@ import {PaginaInicial} from "../pages/paginainicial.js"
 import {Mural} from "../pages/mural.js"
 import {EditarPerfil} from "../pages/editarperfil.js"
 import Button from '../components/button.js';
+import Post from '../components/post.js';
+import Input from '../components/input.js';
 
 function init() {
   document.querySelector("main").innerHTML = Home();
@@ -19,17 +21,18 @@ const mural = () => {
 	const allPosts = firebase.firestore().collection('posts');
 
 //não usar o if para posts públicos
-	allPosts.get().then(snap => {
+	allPosts.orderBy('date', 'desc').get().then(snap => {
 		let postsLayout = '';
 
 		snap.forEach(post => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
-				<li class='timeline-item' data-id='${post.data().userID}'>
+				<li class='timeline-item' data-id='${post.data().userID}' post-id='${post.id}'>
 					<p>${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({id:post.id, title:'deletar',onclick:deletar})}
+					${Button({id:post.id, title:'editar', onclick: editar})}
 				</li>
 				`;
 			}
@@ -42,7 +45,18 @@ const deletar = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).delete();
 
 	document.getElementById(id).parentElement.remove();
+}
 
+const editar = (id, event) => {
+	const postEdit = firebase.firestore().collection('posts').doc(id);	
+
+	postEdit.get().then(post => {
+		document.querySelector(`[post-id=${post.id}]`).innerHTML = `
+		<input placeholder='${post.data().text}'></input>
+		`;
+
+	
+})
 }
 
 const editarPerfil = () => {
