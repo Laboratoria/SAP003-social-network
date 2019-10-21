@@ -7,9 +7,7 @@ function locationHashChanged() {
   const dataBase = firebase.firestore();
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      if (location.hash === '#login') {
-        document.querySelector('main').innerHTML = Login();
-      } else if (location.hash === '#feed') {
+      if (location.hash === '#feed') {
         dataBase.collection('posts')
           .where('user', '==', user.uid)
           .get()
@@ -18,7 +16,6 @@ function locationHashChanged() {
               posts: querySnapshot,
             });
           });
-          document.querySelector('main').innerHTML = feed();
       } else if (location.hash === '#perfil') {
         document.querySelector('main').innerHTML = Perfil();
       } else if (location.hash === '#register') {
