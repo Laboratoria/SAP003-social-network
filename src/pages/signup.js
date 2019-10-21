@@ -8,21 +8,21 @@ function newUser() {
 
   auth.createUserWithEmailAndPassword(email, password)
     .then((resp) => {
-        if (resp.user) {
-          resp.user.updateProfile({
-            displayName: name
-          })
+      if (resp.user) {
+        resp.user.updateProfile({
+          displayName: name
+        })
           .then(() => {
             db.collection('users').doc(resp.user.uid).set({
               name: name,
               likes: []
             })
-            .then(() => {
-              window.location = '#login';
-            });
+              .then(() => {
+                window.location = '#login';
+              });
           });
-         
-        }
+
+      }
     }).catch((error) => {
       const errorMessage = error.message;
       const errorMessageField = document.getElementById('errorMessageSignup');
@@ -42,26 +42,26 @@ function Signup() {
     class: 'email-input',
     placeholder: 'Email',
   })}
-      ${Input({
+    ${Input({
     type: 'password',
     class: 'password-input',
     placeholder: 'Senha',
   })}
-      ${Button({
-    class: 'btn btn-register',
+    ${Button({
+    class: 'btn btn-register btn-gray',
     id: 'btn-new-user',
     onclick: newUser,
     title: 'Cadastrar',
   })}
-  `;
+  `;  
   const template = `
   <header class="main-header">
     <h1>Bem vindo(a)!</h1>
   </header>
-  <img src="./img/icon-pluto.png">
-  <form class="form-content">
+  <form class="form-content-signup">
+  <img class='signup-img' src="./img/icon-pluto.png">
     <main class="register-input">
-      <p class="register-text">Para realizar o cadastro, preencha as informações abaixo:</h1>
+      <p class="register-text">Para realizar o cadastro, preencha as informações abaixo:</p>
       ${userInfo}
       <div id="errorMessageSignup"></div>
     </main>
