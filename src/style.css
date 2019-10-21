@@ -9,6 +9,7 @@ body,html{
   background: url("img/flor.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background: #000000;
 
 }
 .logotipo{
