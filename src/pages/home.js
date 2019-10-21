@@ -47,18 +47,6 @@ function publish() {
 
 function feed() {
   const template = `
-<<<<<<< HEAD
-    <img src="../../imagens/logo.png"></img class="image-logo">
-    <p>Bem vinda!</p>
-    <p>O que você deseja postar agora...</p>
-    ${Textarea({ id: 'post', class: 'post' })}
-    ${Button({ id: 'publish', title: 'Publish', call: publish })}
-    <div class ='post-public'>
-    <ul class='post-ul'>
-    </ul>
-    </div>
-    `;
-=======
 <img src="../../imagens/logo.png"></img class="image-logo">
 ${Textarea({ id: 'post', class: 'post' })}
 ${Button({ id: 'publish', title: 'Publish', call: publish })}
@@ -67,7 +55,6 @@ ${Button({ id: 'publish', title: 'Publish', call: publish })}
 </ul>
 </div>
 `;
->>>>>>> 30d1fd3b21697203e9c67b5e994bcd10b9b002dc
 
   return template;
 }
