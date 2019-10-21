@@ -55,28 +55,28 @@ function Login() {
       
       </header>
       <img class='img-section' src='img/logo.png'/>
-      <div class="text">Bem vindo à maior rede social de educação do Brasil!</div>
+      <div class="intro-text secondary-font">Bem vindo à maior rede social de educação do Brasil!</div>
       
       <form>
         ${Input({
     id: 'email',
-    class: 'primary-input',
+    class: 'primary-input secondary-font',
     type: 'email',
     placeholder: 'E-mail',
   })}
       ${Input({
     id: 'password',
-    class: 'primary-input',
+    class: 'primary-input secondary-font',
     type: 'password',
     placeholder: 'Senha',
   })}
       ${Button({
-    class: 'primary-button',
+    class: 'primary-button primary-font',
     title: 'Entrar',
     onClick: userLogin,
   })}
       ${Button({
-    class: 'google-login',
+    class: 'google-login primary-login',
     title: '<img src="../img/google.png">',
     onClick: googleLogin,
   })}

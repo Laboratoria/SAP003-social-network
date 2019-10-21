@@ -1,11 +1,13 @@
 import Post from './post.js';
+import Date from './date.js';
 
 function printPosts(post) {
   const feed = document.querySelector('#feed');
+
   const template = window.feed.Post({
     dataId: post.id,
     username: post.data().user_name,
-    date: post.data().timestamp.toDate().toLocaleString(),
+    date: Date({ timestamp: post.data().timestamp }),
     text: post.data().text,
   });
   feed.innerHTML += template;

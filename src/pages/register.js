@@ -36,23 +36,23 @@ function Register() {
     <section class ='initial-section'>
       <header class='initial-header'></header>
       <img class='img-section' src='img/logo.png'/>
-      <div class="text">Registre-se para fazer parte da maior rede social de educação do Brasil!</div>
+      <div class="intro-text secondary-font">Registre-se para fazer parte da maior rede social de educação do Brasil!</div>
     
       <form>
       ${Input({
     id: 'email',
-    class: 'primary-input',
+    class: 'primary-input secondary-font',
     type: 'email',
     placeholder: 'E-mail',
   })}
       ${Input({
     id: 'password',
-    class: 'primary-input',
+    class: 'primary-input secondary-font',
     type: 'password',
     placeholder: 'Senha',
   })}
       ${Button({
-    class: 'primary-button',
+    class: 'primary-button primary-font',
     title: 'Registre-se',
     onClick: createUser,
   })}

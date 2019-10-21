@@ -30,27 +30,28 @@ function createNewPost() {
 }
 
 function Home() {
+  window.location.href = '#home';
+
   const template = `
-  <p class="text">Essa é a home!</p>
   ${Button({
-    class: 'primary-button',
+    class: 'primary-button primary-font',
     onClick: window.home.logOut,
     title: 'Log out',
   })}
-
-  <p id="error"></p>
   
+  <form>
   ${Textarea({
     id: 'postText',
-    class: 'primary-textarea',
+    class: 'post-textbox secondary-font',
     placeholder: 'O que você está pensando agora?',
   })}
   
   ${Button({
-    class: 'primary-button',
+    class: 'primary-button primary-font',
     onClick: window.home.createNewPost,
     title: 'Post!',
   })}
+  </form>
 
   ${Feed()}
   `;
