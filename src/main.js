@@ -21,6 +21,7 @@ function trocaPagina() {
       if (ultimaPagina !== 'home') {
         document.querySelector('main').innerHTML = Home();
         ultimaPagina = 'home';
+        enviarPublicacao();
       }
       break;
 

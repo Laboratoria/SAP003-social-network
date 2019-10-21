@@ -43,8 +43,11 @@ function enviarLogin() {
 
 function Login() {
   const template = `
-    <h1 class= "título-login">Login</h1>
-   <form> 
+  <img src="" alt="">
+  <div class="container-login">
+  <h1 class= "título-login">Escamb</h1>
+  <h3> Bem-vindo(a)!</h3>
+  <form> 
 
    ${Input({
     class: 'js-email-input',
@@ -66,6 +69,7 @@ function Login() {
 
     </form>
     <p class="mensagem-login">Não tem conta? <a href="#cadastro">Cadastre-se</a> </p>
+    </div>
 
   `;
 
