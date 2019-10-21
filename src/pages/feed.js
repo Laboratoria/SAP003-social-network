@@ -21,8 +21,27 @@ function userInfo() {
   });
 }
 
+function createPost() {
+  const text = document.querySelector('.text-area').value;
+  const post = {
+    likes: 0,
+    text,
+    comments: [],
+    user_id: firebase.auth().currentUser.uid,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  };
+  const postsCollection = firebase.firestore().collection('posts');
+  postsCollection.add(post)
+    .then(() => {
+      loadPosts();
+    })
+    .catch((error) => {
+      console.log('erro', error);
+    });
+}
+
 function NewPostTemplate() {
-  const template = `
+  const postArea = `
   ${Textarea({
     class: 'text-area',
     id: 'post-text',
@@ -39,11 +58,11 @@ function NewPostTemplate() {
   `;
   const template = `
   <div class='post-area-container'
-  <section class="input-area">
-   <form class="post-area">
-      ${postArea}
-    </form>
-  </section>
+    <section class="input-area">
+      <form class="post-area">
+        ${postArea}
+      </form>
+    </section>
   </div>
   `;
   return template;
@@ -65,44 +84,24 @@ function loadPosts() {
       });
       document.querySelectorAll('.like').forEach((btn) => {
         btn.addEventListener('click', (event) => {
-        likePost(event.target.parentNode.parentNode.getAttribute('id'))
+          likePost(event.target.parentNode.parentNode.getAttribute('id'))
         });
       });
       document.querySelectorAll('.edit-post').forEach((btn) => {
         btn.addEventListener('click', (event) => {
-        editPost(event.target.parentNode.parentNode.getAttribute('id'));
+          editPost(event.target.parentNode.parentNode.getAttribute('id'));
         });
-      }); 
+      });
     }); //FECHA O THEN
 }
 
-//aqui 
-function createPost() {
-  const text = document.querySelector('.text-area').value;
-  const post = {
-    likes: 0,
-    text,
-    comments: [],
-    user_id: firebase.auth().currentUser.uid,
-    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  };
-  const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.add(post)
-    .then(() => {
-      loadPosts();
-    })
-    .catch((error) => {
-      console.log('erro', error);
-    });
-}
-
 function addPost(post, postId) {
-//checar condição de loggeduser para a edição
- const LoggedUserID = firebase.auth().currentUser.uid
+  //checar condição de loggeduser para a edição
+  const LoggedUserID = firebase.auth().currentUser.uid;
   const postTemplate = `
       <li class='post' id="${postId}">
       <p class="post-text">${post.text}</p>
-        ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div> <div><span class="edit-post fa fa-pencil"></span></div>' : '' }
+        ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div> <div><span class="edit-post fa fa-pencil"></span></div>' : ''}
       <div class="edit-button"></div>
       <div class="interaction-area">
         <div class="like fa fa-heart"></div>
@@ -170,25 +169,25 @@ function editPost(postId) {
   `;
 }
 
-function deletePost(postId){
-  if(!confirm('Tem certeza que deseja excluir essa publicação?')) return
-     const postsCollection = firebase.firestore().collection('posts');
-    postsCollection.doc(postId).delete().then( () => {
-      loadPosts() 
-    })
-    .catch( (error) => {
-      console.log(error)
-    })
+function deletePost(postId) {
+  if (!confirm('Tem certeza que deseja excluir essa publicação?')) return
+  const postsCollection = firebase.firestore().collection('posts');
+  postsCollection.doc(postId).delete().then(() => {
+    loadPosts();
+  })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
-async function likePost (postId){
+async function likePost(postId) {
   const postsCollection = firebase.firestore().collection('posts');
   const actualPost = await postsCollection.doc(postId).get()
   postsCollection.doc(postId).set({
     ...actualPost.data(),
     likes: ++actualPost.data().likes
-  })
-  loadPosts()  
+  });
+  loadPosts();
 }
 
 function Feed() {
@@ -211,12 +210,12 @@ function Feed() {
   </div>
   </div>
     ${Button({
-      type: 'button',
-      class: 'btn logout-btn hide-mobile',
-      id: 'btn-log-out', 
-      onclick:logOut, 
-      title: 'Sair'
-    })}
+    type: 'button',
+    class: 'btn logout-btn hide-mobile',
+    id: 'btn-log-out',
+    onclick: logOut,
+    title: 'Sair'
+  })}
     <input 
       type='checkbox'
       id='toggle-side-menu' 
@@ -224,19 +223,19 @@ function Feed() {
     />
     <div class='side-menu hide-desktop'>
     ${Button({
-      type: 'button',
-      class: 'btn profile-btn ',
-      id: 'btn-profile',
-      onclick: () => window.location = '#profile',
-      title: 'Meu Perfil',
-    })}
+    type: 'button',
+    class: 'btn profile-btn ',
+    id: 'btn-profile',
+    onclick: () => window.location = '#profile',
+    title: 'Meu Perfil',
+  })}
     ${Button({
-      type: 'button',
-      class: 'btn logout-btn ',
-      id: 'btn-log-out', 
-      onclick:logOut, 
-      title: 'Sair'
-    })}
+    type: 'button',
+    class: 'btn logout-btn ',
+    id: 'btn-log-out',
+    onclick: logOut,
+    title: 'Sair'
+  })}
     </div>
     </header>
     <div class='profile'>${userInfo()}</div>
@@ -250,4 +249,4 @@ function Feed() {
 
 export default Feed;
 
-//window.loadPosts = loadPosts;
+window.loadPosts = loadPosts;
