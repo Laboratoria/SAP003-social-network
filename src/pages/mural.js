@@ -5,19 +5,17 @@ import Post from "../components/post.js";
 export const Mural = (props) => {
 
 	const template = `
-
 	<header class="navbar">
 		<nav class="banner">
 			<ul class="nav-links">
 				<li class="dropdown-menu">
-					<select id="select" onchange="changeSelect()">
+					<select class="menu-dropdown" id="select" onchange="changeSelect()">
 						${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural', selected:"selected"})}
 						${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar'})}
-						${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
 					</select>
 				</li>
 				<li><img class="nav-logo" src="images/witchy-navbar.png" alt="navlogo"> </li>
-				<li>Logout </li>
+				<li>${Button({class:'btn-logout', id:'btn-logout', type:'submit', title:'Sair', onclick: logout})}</li>
 			</ul>	
 		</nav>
 	</header>
@@ -56,7 +54,9 @@ const sendAndRetrievePost = () => {
 		text,
 		userID: user.uid,
 		date: new Date().toLocaleString('pt-BR'),
+		likes:0
 	}
+
 
 	firebase.firestore().collection('posts').add(post);
 
