@@ -33,7 +33,6 @@ function enviarCadastro() {
 
 function Cadastro() {
   const template = `
-  <img src="" class=""> 
   <div class="container-cadastro">
   <h1 class="título-cadastro">Cadastre-se:</h1>
   <form class="cadastro"> 
