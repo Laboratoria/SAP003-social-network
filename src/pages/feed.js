@@ -1,8 +1,9 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-// import Card from '../components/card.js';
+import Card from '../components/card.js';
 
-export function salvar() {
+
+function salvar() {
   const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
   const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
 
@@ -13,9 +14,20 @@ export function salvar() {
     id: new Date().getTime(),
   };
 
+
   posts.push(post);
   window.localStorage.setItem('cadastro', JSON.stringify(usuarioTotal));
-  document.getElementById('banana').innerHTML = posts.map(elem => `<p>${elem.post2}</p>`).join('');
+  document.getElementById('banana').innerHTML = posts.map(elem => banana(elem.post2)).join('');
+  //  document.getElementById('banana').innerHTML = posts.map(elem => `<p>${elem.post2}</p>`).join('');
+
+
+  function banana(post2) {
+    const template = `
+      <p>${post2}</p>
+      ${Button({ title: 'Detelar' })}
+    `;
+    return `${Card({ children: template })}`;
+  }
 }
 
 function postar() {
@@ -26,9 +38,11 @@ function postar() {
   `;
   return template;
 }
-// ${Card({ children: `<p id='banana'></p>` })}
 
+// ${Card({ children: `<p id='banana'></p>` })}
 export default postar;
+
+window.salvar = salvar;
 // function logout() {
 //   localStorage.removeItem('usuario');
 //   ${Button({ title: 'Login', onClick: logout })}

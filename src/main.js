@@ -1,7 +1,6 @@
 import logar from './pages/home.js';
 import cadastrar from './pages/cadastro.js';
-import feed, { salvar } from './pages/feed.js';
-
+import feed from './pages/feed.js';
 
 function init() {
   document.querySelector('main').innerHTML = logar();
@@ -16,10 +15,10 @@ function locationHashChanged() {
       break;
     case '#home':
       document.querySelector('main').innerHTML = logar();
-      salvar();
       break;
     case '#feed':
       document.querySelector('main').innerHTML = feed();
+      salvar();
       break;
     default:
       document.querySelector('main').innerHTML = logar();
