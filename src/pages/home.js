@@ -1,6 +1,5 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-// import Card from '../components/card.js';
 
 function loadPost() {
   const postColletion = firebase
@@ -28,11 +27,12 @@ function publish() {
     timestamp: fieldValue.serverTimestamp(),
   };
   const postColletion = firebase.firestore().collection('posts');
-  postColletion.add(post).then((res) => {
+  postColletion.add(post).then(() => {
     textArea.value = '';
     window.home.loadPost();
     postColletion.get();
   });
+  return post;
 }
 function logout() {
   firebase.auth()
@@ -45,7 +45,33 @@ function deletePost(event) {
   const id = event.target.dataset.id;
   firebase.firestore().collection('posts').doc(id).delete();
   event.target.parentElement.remove();
+}
+function saveEdit(postId) {
+  const id = postId;
+  console.log(id);
+  const textAreaEdit = document.querySelector('.edit-textArea');
+  const text = document.querySelector('.p-text');
+  text.innerHTML = `
+  <p class = 'p-text'> ${textAreaEdit.value} </p>
+  `;
+  firebase.firestore().collection('posts').doc(id).update({
+    text: textAreaEdit,
+  });
+}
 
+function editPost() {
+  const text = document.querySelector('.p-text');
+  text.innerHTML = ` 
+  ${window.textarea.component({
+    class: 'edit-textArea',
+    id: 'dataId',
+    value: text,
+  })}
+  ${window.button.component({
+    id: 'edit-button',
+    title: 'Editar',
+    call: window.home.saveEdit,
+  })} `;
 }
 
 function feed() {
@@ -65,19 +91,28 @@ ${Button({ id: 'logout', title: 'logout', call: logout })}
 
 function addPost(post, postId) {
   const postTemplate = `
+  <div>
 <li data-id='${postId}' class='post-li'>
 ${post.timestamp.toDate().toLocaleString('pt-BR')}: </br >
- ${post.text} </br >
+<p class = 'p-text'> ${post.text} </p> </br >
 🏆 ${post.likes}
+</li>
+</div>
+<div>
 ${window.button.component({ dataId: postId, title: 'deletar', call: window.home.deletePost })
 }
-</li>`;
+${window.button.component({ dataId: postId, title: 'editar', call: window.home.editPost })
+}
+</div>`;
   return postTemplate;
 }
 
 export default feed;
 
 window.home = {
+  editPost,
   deletePost,
   loadPost,
+  saveEdit,
+  addPost,
 };
