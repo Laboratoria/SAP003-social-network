@@ -9,4 +9,8 @@ function Input(props) {
   return template;
 }
 
+window.input = {
+  Input,
+};
+
 export default Input;
