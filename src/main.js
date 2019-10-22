@@ -33,7 +33,7 @@ const mural = () => {
 					${Button({ id: post.id, title:'deletar',onclick: deletar})}
 					${Button({ id: post.id, title:'editar', onclick: editar})}
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id='${post.id}'>${post.data().likes}</p>
+					<p like-id='${post.id}'>${post.data().likes}</p>
 					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
 					${Button({id: post.id, title: 'comentar', onclick: comment})}
 				</li>
@@ -45,7 +45,7 @@ const mural = () => {
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
+					<p like-id="${post.id}">${post.data().likes}</p>
 				</li>
 				`;
 			}
@@ -74,6 +74,8 @@ const like = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).get().then((post) => {
 		let like = (post.data().likes) +1 ;
 		firebase.firestore().collection('posts').doc(id).update({likes: like});
+
+		document.querySelector(`[like-id='${id}']`).innerHTML = like;
 })}
 
 
