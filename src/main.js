@@ -1,5 +1,5 @@
 import Login from './pages/login.js';
-import feed from './pages/feed.js';
+import Feed from './pages/feed.js';
 import Perfil from './pages/perfil.js';
 import Register from './pages/register.js';
 
@@ -7,25 +7,28 @@ function locationHashChanged() {
   const dataBase = firebase.firestore();
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      if (location.hash === '#feed') {
+      if (window.location.hash === '#feed') {
         dataBase.collection('posts')
           .where('user', '==', user.uid)
           .get()
           .then((querySnapshot) => {
-            document.querySelector('main').innerHTML = feed({
+            document.querySelector('main').innerHTML = Feed({
               posts: querySnapshot,
             });
           });
-      } else if (location.hash === '#perfil') {
+      } 
+        else if (window.location.hash === '#perfil') {
         document.querySelector('main').innerHTML = Perfil();
-      } else if (location.hash === '#register') {
+      }
+    }
+      else if (window.location.hash === '#register') {
         document.querySelector('main').innerHTML = Register();
       } else {
         document.querySelector('main').innerHTML = Login();
       }
-    }
   });
 }
 
-window.onhashchange = locationHashChanged;
+//window.onhashchange = locationHashChanged;
 window.addEventListener('load', locationHashChanged);
+window.addEventListener('hashchange', locationHashChanged);
