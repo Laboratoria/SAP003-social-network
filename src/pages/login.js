@@ -1,7 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-
 function loginRegisteredUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
@@ -28,10 +27,10 @@ function signInWithAccount(provider) {
       // };
       const user = result.user;
       db.collection('users').doc(user.uid).set({
-        name: user.displayName
+        name: user.displayName,
       });
       if (result) {
-        location.hash = "#feed";
+        location.hash = '#feed';
       }
     }).catch((error) => {
       const errorCode = error.code;

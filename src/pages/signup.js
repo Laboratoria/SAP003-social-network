@@ -5,7 +5,6 @@ function newUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   const name = document.querySelector('.name-input').value;
-
   auth.createUserWithEmailAndPassword(email, password)
     .then((resp) => {
       if (resp.user) {
@@ -21,7 +20,6 @@ function newUser() {
                 window.location = '#login';
               });
           });
-
       }
     }).catch((error) => {
       const errorMessage = error.message;
@@ -53,7 +51,7 @@ function Signup() {
     onclick: newUser,
     title: 'Cadastrar',
   })}
-  `;  
+  `;
   const template = `
   <header class="main-header">
     <h1>Bem vindo(a)!</h1>
