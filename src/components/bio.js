@@ -1,7 +1,7 @@
 const Bio = (user) => {
   const template = `
   <div class="users">
-  <img src="images/usuario.png" class="img-usuario">
+  <img src="images/img-user-photo.png" class="img-usuario">
    <div class="bio">
     <p>${user.name || ''}</p>
     <p>${user.age || ''}</p>
