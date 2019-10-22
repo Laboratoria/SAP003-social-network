@@ -7,7 +7,15 @@ function init() {
   if (!user) {
     document.querySelector('main').innerHTML = Home();
   } else if (user) {
-     document.querySelector('main').innerHTML= timeline(); 
+    document.querySelector('main').innerHTML= timeline(); 
+    // firebase.firestore().collection('posts')
+    // .where('user', '==', user.uid)
+    // .get()
+    //       .then((querySnapshot) => {
+    //         document.querySelector('main').innerHTML = Home({
+    //           posts: querySnapshot,
+    //         });
+    //       });
   } 
 
 })
