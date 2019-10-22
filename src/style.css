@@ -5,50 +5,119 @@ body,html{
 
 .banner{
 	max-width:100%;
-  min-height:40vh;
-  background: url("img/flor.jpg");
+  min-height:25vh;
+  background: url("img/m.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background: #000000;
 
 }
 .logotipo{
-  background-color:#ff944d;
-  text-align: center;
-  margin: 0;
-  padding:5px;
+  color: #fff;
+  background-color:#4c87df;
+  text-align: left;
+  margin: 0px;
+  padding:1px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 3vh;
-  background: #ff944d;
+  min-height: 4vh;
+  background: #4c87df;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'
 }
 
-input{
+.nav-links{
+  display: flex;
+  background-color:;
+  justify-content: space-around;
+  width: 40%;
+  position: absolute;
+  right: 20%;
+  height: 20vh;
+  top: 4vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-links li{
+  list-style: none;
+  opacity: 50px;
+}
+
+.nav-links a{
+  color: #000;
+  text-decoration: aliceblue;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+
+}
+
+.burger{
+  display: none;
+  cursor: pointer;
   display: block;
+  margin-left: -250px;
+  cursor: pointer;
+  height: 31px;
+}
+.burger div{
+  width: 20px;
+  height: 3px;
+  background-color: aliceblue;
+  margin: 5px;
+}
+
+input{
+  display: flex;
   border-radius:4px;
   -moz-border-radius:4px;
-  -webkit-border-radius:4px;
+  -webkit-border-radius:8px;
   box-shadow: 1px 1px 2px #333333;
   -moz-box-shadow: 1px 1px 2px #333333;
   -webkit-box-shadow: 1px 1px 2px #333333;
   background: rgba(255,255,255,0.7);
   border:1px solid #000000;
   width:250px;
-  height: 20px;
+  height: 30px;
   position: relative;
   left: 50%;
   margin-left: -120px;
 }
+.js-email-input{
+  text-align: center;
+}
+.js-password-input{
+  text-align: center;
+}
+.username{
+  text-align: center;
+}
 
 h2 {
   text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+.post{
+  text-align: center;
+}
+
+/* web margin-left:483px */
+.text-centro{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-left: 173px;
+
+  
 }
 
 body{
@@ -56,36 +125,38 @@ body{
   font-family: arial;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 button{
-  display: block;
+  display: flex;
   border-radius:4px;
   -moz-border-radius:4px;
-  -webkit-border-radius:4px;
+  -webkit-border-radius:5px;
   box-shadow: 1px 1px 2px #333333;
   -moz-box-shadow: 1px 1px 2px #333333;
   -webkit-box-shadow: 1px 1px 2px #333333;
   background: rgba(255,255,255,0.7);
   border:1px solid #000000;
-  width:250px;
-  height: 20px;
+  width:152px;
+  height: 33px;
   position: relative;
-  left: 50%;
-  margin-left:-120px;
+  left: 60%;
+  margin-left:-105px;
   cursor: pointer;
+  text-align: center;
   }
+
+
 .google-btn{
   left: 50%;
-  margin-left:-120px;
+  margin-left:-10px;
   cursor: pointer;
   width:250px;
   height: 20px;
 
 }
   
-    
- 
 footer{
 background-color: rgb(207, 206, 205);
 font-size: 14px;
@@ -95,6 +166,21 @@ margin: 0;
 padding-top: 4px;
 width: 100%;
 }
+
+/*@media screen and (max-width:1024px){
+  .nav-links{
+    width:60%;
+  }
+}
+
+@media screen and (max-width:768px){
+  .nav-links{
+    position: absolute;
+    right: 0px;
+    height: 0;
+  }*/
+  
+
 
 /*Utiliza-se esse método para a retirada das setas no input do tipo number*/
 /*
