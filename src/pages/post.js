@@ -33,13 +33,13 @@ function addPost(post) {
   <br>  
   <br>
   <p class="border"></p>
-  ${Button({ class: "button-feed", onClick: savePost, title:'💛' })} 
+  ${Button({ class: "button-feed", onClick: getCount(), title:'💛' })} 
   ${post.data().likes}
   ${Button({ class: "button-feed", onClick: loadComments(post), title:'💬' })}
   <p class="border"></p>
+  
   ${post.data().comments}
   <br>
-
     </li>
   <br>
   `
@@ -56,10 +56,22 @@ function loadPosts() {
   })
 };
 
-function loadComments(post){
+function loadComments(){
   document.querySelector('.feed').innerHTML += `
  
   ` 
 }
+
+function getCount() {
+  return db.collection('post').get().then(snap => {
+      let total_count = 0;
+      snap.forEach(post => {
+          total_count += post.data().count;
+      });
+
+      return total_count;
+  });
+}
+
 
 export default savePost;
