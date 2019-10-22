@@ -1,12 +1,13 @@
 import Input from '../components/input.js';
 import Button from '../components/button.js';
 import PostCard from '../components/postcard.js';
-import Icons from '../components/icons.js'
+import Icons from '../components/icons.js';
+import Menu from '../components/menu.js';
 
 function loadPost() {
   const email = firebase.auth().currentUser.emailVerified;
   const codUid = firebase.auth().getUid(email);
-  firebase.firestore().collection('Posts').where("user", "==", codUid).orderBy("data", "desc").get().then(
+  firebase.firestore().collection('Posts').where("user", "==", codUid).orderBy("data", "desc").onSnapshot(
     (snap) => {
       snap.forEach((doc) => {
         templatePosts({ 
@@ -24,7 +25,7 @@ function templatePosts(props) {
   timeline.innerHTML += `<div id=${props.dataId} class='post-box'> 
     ${Icons({id:props.dataId, class:'delete', title:'x',onClick: deletePost,})}
     ${PostCard(props)} 
-    ${Icons({id:props.dataId, class:'like', title:`<i class="fas fa-heart"> ${props.like}</i>`,onClick: likePost,})}
+    ${Icons({id:props.dataId, class:'like', title:`${props.like}`,onClick: likePost,})}
     ${Icons({id:props.dataId, class:'edit',title:'edit',onClick: editPost,})}
     ${Icons({id:props.dataId, class:'save',title:'save',onClick: savePost,})}
     </div>`
@@ -40,10 +41,15 @@ function Post() {
   <label for="btn-menu">&#9776;</label>
   <nav class="menu">
   <ul>
-    <li><a href="#">Feed</a></li>
-    <li><a href="#">Perfil</a></li>
-    <li><a href="javascript:firebase.auth().signOut()">Sair</a></li>
-    </ul>
+  ${Menu({
+    name: 'Perfil',
+    link: pagePerfil,
+  })}
+  ${Menu({
+    name: 'Sair',
+    link: logOut,
+  })}
+  </ul> 
   </nav>
   <div class="description">
     <img class = "avatar" src="./Imagens/avatar.png">
@@ -96,11 +102,16 @@ function deletePost(event) {
 
 function likePost(event) {
 
-  const idPost = event.target.dataset.id
-  const x = firebase.firestore().collection('Posts').doc(idPost).get().then((doc) => doc.data().likes)
-  firebase.firestore().collection('Posts').doc(idPost).update({
-    likes: 1,
-  }) 
+  const idPost = event.target.id;
+  console.log(idPost)
+  let y = Number(document.getElementById(idPost).getElementsByClassName('primary-icon-like')[0].textContent);
+  y++;
+  console.log(y) 
+   firebase.firestore().collection('Posts').doc(idPost).update({
+     likes: y,
+  }).then(()=>{
+    location.reload()
+  })
 }
 
 function editPost(event) {
@@ -119,6 +130,17 @@ function savePost(event) {
   );
   document.getElementById(idPost).querySelector('.primary-icon-save').style.display = 'none';
 }
+
+function pagePerfil(){
+  //console.log('oi');
+  window.location.hash='perfil'
+};
+
+function logOut(){
+  console.log('ola');
+  firebase.auth().signOut();
+};
+
 
 
 window.post = {

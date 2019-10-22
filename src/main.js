@@ -2,6 +2,7 @@ import Login from './pages/login.js';
 import Register from './pages/register.js';
 import Post from './pages/post.js';
 import Update from './pages/update.js'
+import Perfil from './pages/perfil.js'
 
 window.addEventListener('load', acesspages);
 
@@ -17,9 +18,12 @@ function acesspages () {
     case "#update":
       user ? window.location = "#post" : document.querySelector('main').innerHTML = Update();
     break;
+    case "#perfil" :
+      user ? document.querySelector('main').innerHTML = Perfil() : window.location = "#login";
+    break;
     case "#post" :
       user ? document.querySelector('main').innerHTML = Post() : window.location = "#login";
-    break
+    break;
     default:
       window.location = "#login";
   }})
