@@ -49,6 +49,12 @@ const updatePost = (event) => {
   firebase.firestore().collection('posts').doc(id).update({ text: editedPost, privacy: editedSelect });
 };
 
+const liked = (event) => {
+  const id = event.target.dataset.id;
+  const countLikes = Number(document.querySelector(`[data-id=numbers-${id}]`).textContent) + 1;
+  firebase.firestore().collection('posts').doc(id).update({ likes: countLikes });
+};
+
 const timeline = (props) => {
   let layout = '';
   props.posts.forEach((snap) => {
@@ -60,6 +66,7 @@ const timeline = (props) => {
         deleteEvent: deletePost,
         updateEvent: updatePost,
         enableEvent: enableField,
+        likesEvent: liked,
       });
     }
   });
@@ -97,10 +104,10 @@ const timeline = (props) => {
   })}
       </div>
     ${Select({
-        class: 'slc-privacy',
-        selected: '🔓',
-        options: [{ value:'🔓', text: 'Público 🔓' }, {value: '🔐' , text: 'Privado 🔐' }],
-      })}
+    class: 'slc-privacy',
+    selected: '🔓',
+    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+  })}
       <div class="images-publish">
         <img src="images/img-public.png" class="img-public"> 
         ${Button({
