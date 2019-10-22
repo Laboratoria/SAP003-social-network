@@ -57,12 +57,6 @@ function logWithFacebook() {
     });
 }
 
-function callPage() {
-  window.location.hash = '#register';
-}
-
-
-
 function Home() {
   const template = `
     <img class="image" src="Images/animals.jpg">
