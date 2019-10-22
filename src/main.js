@@ -1,6 +1,7 @@
 import Login from './pages/login.js';
 import Cadastro from './pages/cadastro.js';
 import Home from './pages/home.js';
+import Perfil from  './pages/perfil.js';
 
 let ultimaPagina = '';
 
@@ -8,6 +9,9 @@ let ultimaPagina = '';
  * Função responsável por identificar mudança no hash e chamar a página de acordo
  */
 function trocaPagina() {
+  const id = JSON.parse(localStorage.getItem('usuarioLogado'));
+  const bancoDeDados = JSON.parse(localStorage.getItem('colecaoDeUsuarios')); 
+
   switch (window.location.hash) {
     case '#cadastro':
       if (ultimaPagina !== 'cadastro') {
@@ -21,9 +25,18 @@ function trocaPagina() {
       if (ultimaPagina !== 'home') {
         document.querySelector('main').innerHTML = Home();
         ultimaPagina = 'home';
-        enviarPublicacao();
+        window.home.imprimirPosts(bancoDeDados[id].post);
+        // template ();
       }
       break;
+    
+    case '#perfil':
+      if (ultimaPagina !== 'perfil') {
+        document.querySelector('main').innerHTML = Perfil();
+        ultimaPagina = 'perfil';
+      }
+      break;
+    
 
     default:
       if (ultimaPagina !== 'login') {
