@@ -5,20 +5,28 @@ import profile from './pages/profile.js';
 const locationHashChanged = () => {
   const hash = window.location.hash;
   if (hash === '#timeline') {
-    const postsCollection = firebase.firestore().collection('posts');
-    postsCollection.orderBy('addedAt', 'desc')
-      .onSnapshot((snap) => {
-        document.querySelector('main').innerHTML = timeline({ posts: snap });
+    firebase.firestore().collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((userSnap) => {
+        const postsCollection = firebase.firestore().collection('posts');
+        postsCollection.orderBy('addedAt', 'desc')
+          .onSnapshot((snap) => {
+            document.querySelector('main').innerHTML = timeline({ posts: snap, user: userSnap.data() });
+          });
       });
   } else if (hash === '#login') {
     document.querySelector('main').innerHTML = login();
-  }  else if (hash === '#profile') {
+  } else if (hash === '#profile') {
     const userCollection = firebase.firestore().collection('users');
-    userCollection.get().then(snap => {
-    document.querySelector('main').innerHTML = profile({ users: snap });
-  })
+    userCollection
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((snap) => {
+        document.querySelector('main').innerHTML = profile({ user: snap.data() });
+      });
+  }
 };
-}
 
 const init = (user) => {
   if (!user) {

@@ -3,42 +3,48 @@ import List from '../components/list-menu.js';
 import Button from '../components/button.js';
 
 const goTimeline = () => {
-    window.location = '#timeline';
-  };
-  
+  window.location = '#timeline';
+};
+
 const signOut = () => firebase.auth().signOut();
 
-const createUser = () => {
-    const nameUser = document.querySelector('.inp-name-profile').value;
-    const ageUser = document.querySelector('.inp-age-profile').value;
-    const professionUser = document.querySelector('.inp-profession-profile').value;
-      firebase.firestore().collection('users').add({
-        name: nameUser,
-        age: ageUser,
-        profession: professionUser,
+const updateProfile = () => {
+  const nameUser = document.querySelector('.inp-name-profile').value;
+  const ageUser = document.querySelector('.inp-age-profile').value;
+  const professionUser = document.querySelector('.inp-profession-profile').value;
+  firebase.firestore().collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .set({
+      name: nameUser,
+      age: ageUser,
+      profession: professionUser,
     })
-  };
+    .then(() => {
+      alert('Perfil atualizado!');
+    });
+};
 
-const profile = () => {
-    const templateProfile = `
+const profile = (props) => {
+  const user = props.user || {};
+  const templateProfile = `
     ${Input({
-        class: 'navigation',
-        id: 'navigation',
-        type: 'checkbox',
-      })}
+    class: 'navigation',
+    id: 'navigation',
+    type: 'checkbox',
+  })}
       <label for="navigation">&#9776;</label>
       <nav class="menu">
           <ul>
       ${List({
-        class: 'timeline',
-        title: 'Timeline',
-        onClick: goTimeline,
-      })}
+    class: 'timeline',
+    title: 'Timeline',
+    onClick: goTimeline,
+  })}
       ${List({
-        class: 'out',
-        title: 'Sair',
-        onClick: signOut,
-      })}
+    class: 'out',
+    title: 'Sair',
+    onClick: signOut,
+  })}
           </ul>
         </nav>
     <h1 class="title-timeline">Low Carb Style</h1>
@@ -46,37 +52,39 @@ const profile = () => {
     <form>
     <div class="container-form-profile">
         ${Input({
-            class: 'inp-name-profile',
-            id: 'inp-name-profile',
-            type: 'text',
-            placeholder: 'Seu nome...',
-        })}
+    class: 'inp-name-profile',
+    id: 'inp-name-profile',
+    type: 'text',
+    value: user.name || '',
+    placeholder: 'Seu nome...',
+  })}
         ${Input({
-            class: 'inp-age-profile',
-            id: 'inp-age-profile',
-            type: 'number',
-            placeholder: 'Sua idade...',
-        })}
+    class: 'inp-age-profile',
+    id: 'inp-age-profile',
+    type: 'number',
+    value: user.age,
+    placeholder: 'Sua idade...',
+  })}
         ${Input({
-            class: 'inp-profession-profile',
-            id: 'inp-profession-profile',
-            type: 'text',
-            placeholder: 'Sua profissão...',
-        })}
+    class: 'inp-profession-profile',
+    id: 'inp-profession-profile',
+    type: 'text',
+    value: user.profession || '',
+    placeholder: 'Sua profissão...',
+  })}
         ${Button({
-            class: 'btn-profile',
-            id: 'btn-profile',
-            type: 'submit',
-            title: 'Salvar Perfil',
-            onClick: createUser,
-        })}
+    class: 'btn-profile',
+    id: 'btn-profile',
+    type: 'submit',
+    title: 'Salvar Perfil',
+    onClick: updateProfile,
+  })}
     </div>
     </form>
     <p class="dados-usuario">
     </p>
-    `;  
-    return templateProfile;
+    `;
+  return templateProfile;
 };
 
 export default profile;
-  
