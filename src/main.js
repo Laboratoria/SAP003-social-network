@@ -20,15 +20,14 @@ const mural = () => {
 
 	const allPosts = firebase.firestore().collection('posts');
 
-	//não usar o if para posts públicos
 	allPosts.orderBy('date', 'desc').get().then(snap => {
 		let postsLayout = '';
 
 		snap.forEach(post => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
-				<li class='timeline-item' data-id='${post.data().userID}' post-id='${post.id}'>
-					<p>${post.data().text}</p>
+				<li class='timeline-item' data-id='${post.data().userID}'>
+					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({id:post.id, title:'deletar',onclick:deletar})}
@@ -44,12 +43,14 @@ const mural = () => {
 }
 
 const editar = (id, event) => {
-	const postEdit = firebase.firestore().collection('posts').doc(id);	
 
-	postEdit.get().then(post => {
-		document.querySelector(`[post-id=${post.id}]`).innerHTML = `
-		<input placeholder='${post.data().text}'></input>
-		`;
+	const postEdit = document.querySelector(`[post-id='${id}']`).innerText;
+
+	const post = firebase.firestore()
+.collection('posts').doc(id)
+
+	post.update({
+		text: postEdit
 	})
 }
 
