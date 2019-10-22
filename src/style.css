@@ -169,12 +169,20 @@ section {
    
 }
 
+.idname {
+  font-weight: bold;
+
+}
+
 .border {
   border-bottom: double #fce326;
 }
 
 .date-hour {
-  float: right;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+ 
 }
 
 .feed {

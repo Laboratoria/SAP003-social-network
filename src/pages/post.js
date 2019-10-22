@@ -2,6 +2,7 @@ import Button from '..//components/button.js';
 
 window.app = {
   loadPost: loadPost,
+  filterPost: filterPost
 };
 
 function savePost() {
@@ -14,6 +15,7 @@ function savePost() {
     likes: 0,
     comments: [],
     uid: uid,
+    idname: firebase.auth().currentUser.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
   .then(function (docRef) {    
@@ -24,9 +26,10 @@ function savePost() {
 
 function addPost(post) {
   const feed = document.querySelector('.feed');
-  const feedPost = `
+  const feedPost = `  
   <li data-id= '${post.id}' class="post-list">
-  <br>  
+  <span class= "idname">${post.data().idname}:</span>
+  <p class="border"></p>
   ${post.data().post}
   <br>  
   <br>
@@ -34,6 +37,26 @@ function addPost(post) {
   ${Button({ class: "button-feed", onClick: savePost, title:'💛' })} 
   ${post.data().likes}
   ${Button({ class: "button-feed", onClick: savePost, title:'💬' })} 
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+  </li>
+  <br>
+  `
+  feed.innerHTML += feedPost;
+};
+
+function addPostPro(post) {
+  const feed = document.querySelector('.feed');
+  const feedPost = `  
+  <li data-id= '${post.id}' class="post-list">
+  <span class= "idname">${post.data().idname}:</span>
+  <p class="border"></p>
+  ${post.data().post}
+  <br>  
+  <br>
+  <p class="border"></p>
+  ${Button({ class: "button-feed", onClick: savePost, title:'🖍' })}  
+  ${Button({ class: "button-feed", onClick: savePost, title:'🗑' })}
+  ${Button({ class: "button-feed", onClick: savePost, title:'🔒' })} 
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   </li>
   <br>
@@ -51,5 +74,18 @@ function loadPost() {
   })
 };
 
+
+function filterPost() {
+  const user = firebase.auth().currentUser.uid;  
+  db.collection('post')    
+  .where('uid', '==', user)  
+  .get()
+  .then((snap) => {
+    document.querySelector('.feed').innerHTML = '';
+    snap.forEach(post => {
+      addPostPro(post)
+    })
+  })
+}
 
 export default savePost;
