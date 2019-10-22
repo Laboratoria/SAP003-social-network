@@ -55,7 +55,7 @@ function addPostPro(post) {
   <br>
   <p class="border"></p>
   ${Button({ class: "button-feed", onClick: savePost, title:'🖍' })}  
-  ${Button({ class: "button-feed", onClick: savePost, title:'🗑' })}
+  ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
   ${Button({ class: "button-feed", onClick: savePost, title:'🔒' })} 
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   </li>
@@ -86,6 +86,12 @@ function filterPost() {
       addPostPro(post)
     })
   })
+}
+
+function deletePost(event) {
+  const id = event.target.dataset.id;  
+  db.collection('post').doc(id).delete();  
+  event.target.parentElement.remove();
 }
 
 export default savePost;
