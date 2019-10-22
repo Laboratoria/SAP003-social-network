@@ -1,6 +1,7 @@
 import Button from './button.js';
 import ButtonImage from './image-button.js';
 import Select from './select.js';
+import Input from './input.js';
 
 const Post = (props) => {
   const userId = firebase.auth().currentUser.uid;
@@ -8,7 +9,7 @@ const Post = (props) => {
   <div class="container-public">
     <div class="date-public">
       <p data-id='${props.id}' class='date-post'>${props.post.addedAt.slice(0, 16)}</p> 
-    </div>
+      </div>
     <div class="publication-public">
       <p data-id='text-${props.id}' class='publication'>${props.post.text}</p>
       <hr>
@@ -23,13 +24,28 @@ const Post = (props) => {
       </div>
     </div>
     <div class="info-post">
-    ${ButtonImage({
+  ${ButtonImage({
     class: 'like-post',
     dataId: props.id,
     type: 'image',
     src: 'images/curtir.png',
     onClick: props.likesEvent,
-  })}`;
+  })}
+  ${Input({
+    class: 'ipt-comments',
+    dataId: props.id,
+    id: 'ipt-comments',
+    placeholder: 'comentar...', 
+    type: 'text',
+  })} 
+  ${Button({
+    class: 'btn-comment',
+    id: 'btn-comment',
+    type: 'submit',
+    title: 'Comentar',
+    // onClick: sendComments,
+  })}
+  `;
 
   if (userId === props.post.userId) {
     template += Button({

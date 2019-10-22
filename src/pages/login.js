@@ -35,7 +35,7 @@ const register = () => {
       } else if (errorCode === 'auth/weak-password') {
         document.querySelector('.error-password').textContent = 'Senha deve possuir no mínimo 6 caracteres';
       }
-    });
+    })
 };
 
 const googleLogin = () => {

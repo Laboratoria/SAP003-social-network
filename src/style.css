@@ -224,7 +224,6 @@ select {
 .slc-privacy-post {
   width: 22%;
   height: 1%;
-  margin-top: 24%;
 }
 
 .images-publish {
@@ -277,9 +276,9 @@ select {
   width: 100%;  
 }
 
-.publication {
+/* .publication {
   height: 40%;
-}
+} */
 
 .likes {
   margin-top: -2%;
