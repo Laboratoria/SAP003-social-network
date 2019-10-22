@@ -1,0 +1,29 @@
+[debug] [2019-10-19T22:48:36.171Z] ----------------------------------------------------------------------
+[debug] [2019-10-19T22:48:36.173Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-10-19T22:48:36.173Z] CLI Version:   7.5.0
+[debug] [2019-10-19T22:48:36.174Z] Platform:      linux
+[debug] [2019-10-19T22:48:36.174Z] Node Version:  v10.16.3
+[debug] [2019-10-19T22:48:36.174Z] Time:          Sat Oct 19 2019 19:48:36 GMT-0300 (GMT-03:00)
+[debug] [2019-10-19T22:48:36.174Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-19T22:48:36.214Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-19T22:48:36.214Z] > authorizing via signed-in user
+[debug] [2019-10-19T22:48:36.214Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-19T22:48:36.216Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-19T22:48:36.217Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-19T22:48:36.470Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-19T22:48:36.605Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+
+[debug] [2019-10-19T22:48:37.726Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-19T22:48:37.730Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+ 
+[debug] [2019-10-19T22:48:39.058Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/maria/Downloads/SAP003-social-network'...
+[info] 
+[debug] [2019-10-19T22:48:39.063Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+ 
+[debug] [2019-10-19T22:48:40.389Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
