@@ -179,7 +179,10 @@ section {
 }
 
 .date-hour {
-  float: right;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+ 
 }
 
 .feed {

@@ -12,20 +12,11 @@ function signOut() {
 }
 
 
-function user() {
-
-  
-  
- /*  console.log(firebase.auth().currentUser.uid);
-  const teste = db.collection('users').get().then({
-    
-  }) */
-  console.log('oi');
-
-}
-
-
 function profile() {
+
+  window.app.filterPost();
+
+
   const template = `
     <header class= "header-home">
     ${Logo({ class: "logonav" })}         
@@ -38,8 +29,7 @@ function profile() {
     <div class= "post-area">
       <img class="img-user" src="./img/profile_girl.png"/>     
     </div>
-    <br>
-    ${Button({ class: "primary-button", onClick: user, title:'teste' })}        
+    <br>    
     <ul class="feed">    
     </ul>   
   `;

@@ -2,6 +2,7 @@ import Button from '..//components/button.js';
 
 window.app = {
   loadPost: loadPost,
+  filterPost: filterPost
 };
 
 function savePost() {
@@ -43,7 +44,27 @@ function addPost(post) {
   feed.innerHTML += feedPost;
 };
 
-function loadPost(props) {  
+function addPostPro(post) {
+  const feed = document.querySelector('.feed');
+  const feedPost = `  
+  <li data-id= '${post.id}' class="post-list">
+  <span class= "idname">${post.data().idname}:</span>
+  <p class="border"></p>
+  ${post.data().post}
+  <br>  
+  <br>
+  <p class="border"></p>
+  ${Button({ class: "button-feed", onClick: savePost, title:'🖍' })}  
+  ${Button({ class: "button-feed", onClick: savePost, title:'🗑' })}
+  ${Button({ class: "button-feed", onClick: savePost, title:'🔒' })} 
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+  </li>
+  <br>
+  `
+  feed.innerHTML += feedPost;
+};
+
+function loadPost() {  
   db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
@@ -53,5 +74,18 @@ function loadPost(props) {
   })
 };
 
+
+function filterPost() {
+  const user = firebase.auth().currentUser.uid;  
+  db.collection('post')    
+  .where('uid', '==', user)  
+  .get()
+  .then((snap) => {
+    document.querySelector('.feed').innerHTML = '';
+    snap.forEach(post => {
+      addPostPro(post)
+    })
+  })
+}
 
 export default savePost;
