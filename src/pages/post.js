@@ -16,7 +16,7 @@ function savePost() {
     uid: uid,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
-  .then(function (docRef) {
+  .then(function (docRef) {    
     app.loadPost()
   })
   document.querySelector('.post').value = '';  
@@ -25,7 +25,9 @@ function savePost() {
 function addPost(post) {
   const feed = document.querySelector('.feed');
   const feedPost = `
-  <li class="post-list">
+  <li data-id= '${post.id}' class="post-list">
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+
   <br>  
   ${post.data().post}
   <br>  
@@ -34,16 +36,17 @@ function addPost(post) {
   ${Button({ class: "button-feed", onClick: savePost, title:'💛' })} 
   ${post.data().likes}
   ${Button({ class: "button-feed", onClick: loadComments(post), title:'💬' })}
-  ${post.data().comments} 
-  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
-  </li>
+  <p class="border"></p>
+  ${post.data().comments}
+  <br>
+
+    </li>
   <br>
   `
   feed.innerHTML += feedPost;
 };
 
-function loadPosts() {
-  document.querySelector('.feed').innerHTML = 'Carregando...';
+function loadPosts() {  
   db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
@@ -55,11 +58,8 @@ function loadPosts() {
 
 function loadComments(post){
   document.querySelector('.feed').innerHTML += `
-  <br>
-  <p class="border"></p>
-  <br>
-  `
-
+ 
+  ` 
 }
 
 export default savePost;

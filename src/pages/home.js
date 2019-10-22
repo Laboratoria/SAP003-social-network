@@ -3,6 +3,7 @@ import savePost from '..//pages/post.js';
 import Logo from '../components/logo.js';
 
 
+
 function signOut() {  
   firebase.auth().signOut()
   .then(function () {
@@ -13,8 +14,8 @@ function signOut() {
   });
 }
 
-
 function home() {
+  window.app.loadPost();  
   const template = `
     <header class= "header-home">
     ${Logo({ class: "logonav" })}         
