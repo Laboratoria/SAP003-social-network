@@ -15,7 +15,7 @@ function locationHasChange() {
       };
       window.location.hash = '#feed';
       document.querySelector('main').innerHTML = feed();
-      window.loadPost();
+      window.home.loadPost();
     } else if (!window.location.hash || window.location.hash === '#login') {
       document.querySelector('main').innerHTML = TemplateLogin();
     } else if (window.location.hash === '#createAccount') {

@@ -43,7 +43,6 @@ function google() {
 
 function TemplateLogin() {
   const template = `
-
     <img src="img/moviment.png" alt="Logo do Moviment" class="image">
     <h4 class="text-main">Bem vinda, Moviment!</h4>
     <form class="form-login">
@@ -64,6 +63,8 @@ function TemplateLogin() {
    
     <p class="text-main"><a href="#createAccount">Não tem uma conta?</a></p>
   `;
+
+  window.location.hash = '#login';
   return template;
 }
 

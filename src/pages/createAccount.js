@@ -9,7 +9,10 @@ function newUser() {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((response) => {
-      if (response) {
+        response.user.updateProfile({
+        displayName: name,
+      })
+        if (response) {
         window.location.hash = '#feed';
       }
     })
@@ -34,7 +37,7 @@ function newUserTemplate() {
   `;
 
   const template = `
-  <img src="img/moviment.png" alt="Logo do Moviment" class="image">
+  <img src="img/moviment.png" alt="Logo do Moviment" class="image-logo">
   <h4 class="text-main">Bem vinda(o), Moviment! Para se cadastrar, preencha as informações</h4>
   ${inNewUser}
   `;

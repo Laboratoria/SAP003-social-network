@@ -2,16 +2,6 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 // import Card from '../components/card.js';
 
-function addPost(post, postId) {
-  const postTemplate = `
-<li id='${postId}' class='post-li'>
-${post.timestamp.toDate().toLocaleString('pt-BR')}: </br >
-${post.text} </br >
-🏆 ${post.likes}
-</li>`;
-  return postTemplate;
-}
-
 function loadPost() {
   const postColletion = firebase
     .firestore()
@@ -35,29 +25,59 @@ function publish() {
     text: textArea.value,
     likes: 0,
     coments: [],
-    timestamp: fieldValue.serverTimestamp()
+    timestamp: fieldValue.serverTimestamp(),
   };
   const postColletion = firebase.firestore().collection('posts');
   postColletion.add(post).then((res) => {
     textArea.value = '';
-    loadPost();
+    window.home.loadPost();
     postColletion.get();
   });
+}
+function logout() {
+  firebase.auth()
+    .signOut()
+    .then(() => {
+      window.location = '#login';
+    });
+}
+function deletePost(event) {
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('posts').doc(id).delete();
+  event.target.parentElement.remove();
+
 }
 
 function feed() {
   const template = `
+  <p>${firebase.auth().currentUser.displayName}</p>
 <img src="../../imagens/logo.png"></img class="image-logo">
 ${Textarea({ id: 'post', class: 'post' })}
 ${Button({ id: 'publish', title: 'Publish', call: publish })}
 <div class ='post-public'>
 <ul class='post-ul'>
 </ul>
+${Button({ id: 'logout', title: 'logout', call: logout })}
 </div>
 `;
-
   return template;
 }
+
+function addPost(post, postId) {
+  const postTemplate = `
+<li data-id='${postId}' class='post-li'>
+${post.timestamp.toDate().toLocaleString('pt-BR')}: </br >
+ ${post.text} </br >
+🏆 ${post.likes}
+${window.button.component({ dataId: postId, title: 'deletar', call: window.home.deletePost })
+}
+</li>`;
+  return postTemplate;
+}
+
 export default feed;
 
-window.loadPost = loadPost;
+window.home = {
+  deletePost,
+  loadPost,
+};
