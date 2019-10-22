@@ -29,13 +29,28 @@ function deletePost(event) {
   // document.querySelector(`li[data-id='${id}']`).remove();
 }
 
+function sendComment(event) {
+  const id = event.target.dataset.id;
+  const text = document.querySelector(`input[data-id='${id}']`).value;
+  event.target.insertAdjacentHTML('afterend', `<li>${text}</li>`)
+  firebase.firestore().collection(`posts/${id}/comments`).add({ text });
+}
+
 function Home(props) {
   let postsLayout = '';
-  props.posts.forEach((doc) => {
+  console.log(props.posts)
+  props.posts.forEach((post) => {
     postsLayout += `
-      <li data-id='${doc.id}'>
-        ${doc.data().text}
-        ${Button({ dataId: doc.id, title: 'Deletar', onClick: deletePost })}
+      <li data-id='${post.id}'>
+        ${post.text}
+        ${Button({ dataId: post.id, title: 'Deletar', onClick: deletePost })}
+        <ul>
+          <li>
+            ${Input({ dataId: post.id, class: 'js-text', type: 'text', placeholder: 'Comentar aqui' })}
+            ${Button({ dataId: post.id, title: 'Comentário', onClick: sendComment })}
+            </li>
+            ${post.comments.map(comment => `<li>${comment.text}</li>`).join('')}
+        </ul>
       </li>
     `;
   });
