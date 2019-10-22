@@ -13,13 +13,13 @@ const Post = (props) => {
       <p data-id='text-${props.id}' class='publication'>${props.post.text}</p>
       <hr>
       <div class='info-like-privacy'>
-      <p data-id='${props.id}' class='likes'>${props.post.like}</p>
+      <p data-id='numbers-${props.id}' class='likes'>${props.post.likes || ''}</p>
       ${Select({
-        class: 'slc-privacy-post',
-        dataId: props.id,
-        selected: props.post.privacy,
-        options: [{ value:'🔓', text: 'Público 🔓' }, { value: '🔐' , text: 'Privado 🔐' }],
-      })}
+    class: 'slc-privacy-post',
+    dataId: props.id,
+    selected: props.post.privacy,
+    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+  })}
       </div>
     </div>
     <div class="info-post">
@@ -28,6 +28,7 @@ const Post = (props) => {
     dataId: props.id,
     type: 'image',
     src: 'images/curtir.png',
+    onClick: props.likesEvent,
   })}`;
 
   if (userId === props.post.userId) {
