@@ -20,23 +20,32 @@ const mural = () => {
 
 	const allPosts = firebase.firestore().collection('posts');
 
-	//não usar o if para posts públicos
 	allPosts.orderBy('date', 'desc').get().then(snap => {
 		let postsLayout = '';
 
 		snap.forEach(post => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
-				<li class='timeline-item' data-id='${post.data().userID}' post-id='${post.id}'>
-					<p>${post.data().text}</p>
+				<li class='timeline-item' data-id='${post.data().userID}'>
+					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ id: post.id, title:'deletar',onclick: deletar})}
 					${Button({ id: post.id, title:'editar', onclick: editar})}
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
 					<p id='${post.id}'>${post.data().likes}</p>
-					${Post({id: post.id, placeholder: 'Comentários', rows: '5', cols: '50'  })}
+					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
 					${Button({id: post.id, title: 'comentar', onclick: comment})}
+				</li>
+				`;
+			} else {
+				postsLayout += `
+				<li class='timeline-item' data-id='${post.data().userID}'>
+					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p>${post.data().date}</p>
+					<p>${post.data().name}</p>
+					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
+					<p id="${post.id}">${post.data().likes}</p>
 				</li>
 				`;
 			}
@@ -53,28 +62,19 @@ const comment = (id, event) => {
 
 
 const editar = (id, event) => {
-	const postEdit = firebase.firestore().collection('posts').doc(id);	
-
-	postEdit.get().then(post => {
-		document.querySelector(`[post-id=${post.id}]`).innerHTML = `
-		<input placeholder='${post.data().text}'></input>
-		`;
+	const user = firebase.auth().currentUser;
+	const postEdit = document.querySelector(`[post-id='${id}']`).innerText;
+	const post = firebase.firestore().collection('posts').doc(id);
+	post.update({
+		text: postEdit
 	})
 }
 
 const like = (id, event) => {
-	firebase.firestore().collection('posts').doc(id).get().then((doc) => {
-		let like = (doc.data().likes) +1 ;
+	firebase.firestore().collection('posts').doc(id).get().then((post) => {
+		let like = (post.data().likes) +1 ;
 		firebase.firestore().collection('posts').doc(id).update({likes: like});
-   })
-//.then(() => {
-//     app.loadPosts();
-//   });
-}
-	// const likes = document.getElementById(post.id);
-	// const likesbutton = document.querySelector(`${post.data().likes}`);
-	// likesbutton.innerHTML++;
-	//firebase.firestore().collection('posts').doc(id).update({ likes });
+})}
 
 
 const deletar = (id, event) => {
@@ -83,7 +83,31 @@ const deletar = (id, event) => {
 }
 
 const editarPerfil = () => {
-	document.querySelector("main").innerHTML = EditarPerfil();
+	
+	const user = firebase.auth().currentUser;
+	var name, email, phoneNumber, photoUrl, uid, emailVerified;
+
+	if (user != null) {
+  	name = user.displayName;
+  	email = user.email;
+  	phoneNumber = user.phoneNumber;
+  	photoUrl = user.photoURL;
+  	emailVerified = user.emailVerified;
+  	uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                   // this value to authenticate with your backend server, if
+                   // you have one. Use User.getToken() instead.
+	}	
+
+	console.log(user)
+
+	const template = `
+		<p>${name}</p>
+		<p>${email}</p>
+		<p>${phoneNumber}</p>
+		<p></p>
+	`;
+
+	document.querySelector("main").innerHTML = EditarPerfil({ template });
 }
 
 const hash = () => {
