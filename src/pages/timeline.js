@@ -50,13 +50,16 @@ const updatePost = (event) => {
 const timeline = (props) => {
   let layout = '';
   props.posts.forEach((snap) => {
-    layout += Post({
-      id: snap.id,
-      post: snap.data(),
-      deleteEvent: deletePost,
-      updateEvent: updatePost,
-      enableEvent: enableField,
-    });
+    const post = snap.data();
+    if (post.userId === firebase.auth().currentUser.uid || post.privacy === '🔓') {
+      layout += Post({
+        id: snap.id,
+        post,
+        deleteEvent: deletePost,
+        updateEvent: updatePost,
+        enableEvent: enableField,
+      });
+    }
   });
 
   const templateTimeLine = `

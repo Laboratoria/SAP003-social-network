@@ -3,7 +3,8 @@ import ButtonImage from './image-button.js';
 
 
 const Post = (props) => {
-  const template = `
+  const userId = firebase.auth().currentUser.uid;
+  let template = `
   <div class="container-public">
     <div class="date-public">
       <p data-id='${props.id}' class='date-post'>${props.post.addedAt.slice(0, 16)}</p> 
@@ -20,27 +21,32 @@ const Post = (props) => {
     dataId: props.id,
     type: 'image',
     src: 'images/curtir.png',
-  })} 
-    ${Button({
-    class: 'edit-post',
-    dataId: props.id,
-    title: 'Editar',
-    onClick: props.enableEvent,
-  })} 
-    ${Button({
-    class: 'save-post',
-    dataId: props.id,
-    title: 'Salvar',
-    onClick: props.updateEvent,
-  })} 
-    ${Button({
-    class: 'delete-post',
-    dataId: props.id,
-    title: 'Deletar',
-    onClick: props.deleteEvent,
-  })} 
-  </div>
-</div>`;
+  })}`;
+
+  if (userId === props.post.userId) {
+    template += Button({
+      class: 'edit-post',
+      dataId: props.id,
+      title: 'Editar',
+      onClick: props.enableEvent,
+    });
+
+    template += Button({
+      class: 'save-post',
+      dataId: props.id,
+      title: 'Salvar',
+      onClick: props.updateEvent,
+    });
+
+    template += Button({
+      class: 'delete-post',
+      dataId: props.id,
+      title: 'Deletar',
+      onClick: props.deleteEvent,
+    });
+  }
+
+  template += '</div></div>';
 
   return template;
 };
