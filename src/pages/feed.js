@@ -25,29 +25,23 @@ function logout(){
   }, function(error) {
     console.error('Sign Out Error', error);
   });
-}
 
-function addPost(post) {
-  const postdiv = document.querySelector('.postdiv')
-  const qualquercoisa= 'funcionaaaa'
+  
+  }
+  
+  
+    function formSubmit(){
+      const text = document.querySelector('.post').value;
+      const id= firebase.auth().currentUser.uid;
+      const post = {
+      text,
+      user: id,
 
-    postdiv.innerHTML += qualquercoisa
-}
-
-function formSubmit(){
-  let text = document.querySelector('.post').value;
-  const template = `<div></div>`
-  const id= firebase.auth().currentUser.uid;
-  const post = {
-  text,
-  user: id,
-  likes: 0,
-  comments: [],
-      
     };
     firebase.firestore().collection('posts').add(post)
      load()
   };
+
 
   function load() {
     const postCollection = firebase.firestore().collection('posts')
