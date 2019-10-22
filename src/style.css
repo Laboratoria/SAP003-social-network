@@ -68,6 +68,9 @@
   border-color: gray;
   border-radius: 5px;
   background-color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+
   }
 }
 
@@ -153,6 +156,6 @@ float: none;
   border-color: gray;
   border-radius: 5px;
   background-color: #ffffff;
-  list-style: none; 
+  list-style: none;
 }
 }
