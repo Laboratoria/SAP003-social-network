@@ -36,6 +36,16 @@ const mural = () => {
 					<p id="${post.id}">${post.data.likes}</p>
 				</li>
 				`;
+			} else {
+				postsLayout += `
+				<li class='timeline-item' data-id='${post.data().userID}'>
+					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p>${post.data().date}</p>
+					<p>${post.data().name}</p>
+					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
+					<p id="${post.id}">${post.data.likes}</p>
+				</li>
+				`;
 			}
 		})
 		document.querySelector("main").innerHTML = Mural({ postsLayout });
@@ -43,6 +53,8 @@ const mural = () => {
 }
 
 const editar = (id, event) => {
+
+	const user = firebase.auth().currentUser;
 
 	const postEdit = document.querySelector(`[post-id='${id}']`).innerText;
 
@@ -67,7 +79,31 @@ const deletar = (id, event) => {
 }
 
 const editarPerfil = () => {
-	document.querySelector("main").innerHTML = EditarPerfil();
+	
+	const user = firebase.auth().currentUser;
+	var name, email, phoneNumber, photoUrl, uid, emailVerified;
+
+	if (user != null) {
+  	name = user.displayName;
+  	email = user.email;
+  	phoneNumber = user.phoneNumber;
+  	photoUrl = user.photoURL;
+  	emailVerified = user.emailVerified;
+  	uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                   // this value to authenticate with your backend server, if
+                   // you have one. Use User.getToken() instead.
+	}	
+
+	console.log(user)
+
+	const template = `
+		<p>${name}</p>
+		<p>${email}</p>
+		<p>${phoneNumber}</p>
+		<p></p>
+	`;
+
+	document.querySelector("main").innerHTML = EditarPerfil({ template });
 }
 
 const hash = () => {
