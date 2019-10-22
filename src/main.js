@@ -8,9 +8,10 @@ function init() {
     document.querySelector('main').innerHTML = Home();
   } else if (user) {
      document.querySelector('main').innerHTML= timeline(); 
-    } 
+  } 
 
-})}
+})
+}
 
 window.addEventListener('load', init);
 
@@ -33,3 +34,4 @@ function locationHashChanged() {
 
 }
 window.addEventListener('hashchange', locationHashChanged, false);
+
