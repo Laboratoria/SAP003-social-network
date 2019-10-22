@@ -9,14 +9,14 @@ function timeline(){
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
     ${Button({id: 'postForm', title: 'postar', onClick: formSubmit})}<br>
     </form>
-    <div id='posts'></div>
+    <div class='postdiv'></div>
     ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
       return template;
   }
 
-  export default timeline;
-  
+export default timeline;
+
 
 function idUserLogado(){
   
@@ -30,52 +30,43 @@ function idUserLogado(){
 } 
 
 function logout(){
-  let singout = document.querySelector('buttonlogout');
-  firebase.auth().signOut(singout).then(function(user) {
+  firebase.auth().signOut().then(function() {
     window.location.hash='#home'
-    console.log(singout)
-    alert('voce saiu da sua conta')
-  }).catch(function(error) {
-    // An error happened.
-    alert('erro')
+    console.log('Signed Out');
+  }, function(error) {
+    console.error('Sign Out Error', error);
   });
+
   
   }
   
- 
   
     function formSubmit(){
       const text = document.querySelector('.post').value;
       const id= firebase.auth().currentUser.uid;
       const post = {
       text,
-      user: id
+      user: id,
+
     };
-    firebase.firestore().collection('posts').add(post).then(docRef => {
-     
-    })
+    firebase.firestore().collection('posts').add(post)
+     load()
+  };
+
+
+  function load() {
+    const postCollection = firebase.firestore().collection('posts')
+      const postList = document.querySelector('.postdiv')
+      postList.innerHTML = '';
+      postCollection.get().then(snap => {
+        snap.forEach(post => {
+        console.log(post)
+        })
+      })
   }
 
-// function loadData() {
-//   const postCollection = firebase.firestore().collection('posts')
-//   const postList = document.getElementById('posts')
-//   postList.innerHTML = 'Carregando...'
-//   postCollection.orderBy('timestop').get().then(snap => {
-//     postList.innerHTML = ''
-//     snap.forEach(post => {
-//       addPost(post)
-//     })
-//   })
- 
-// }
+  window.load=load;
 
-// function addPost(post){
-//   const postList= document.getElementById('posts');
-//   const postTemplate = `
-//   <li>
-//     ${post.data().timestop.toDate().toLocalString("pt-BR")}:
-//     ${post.data().text}
-//     </li>
-//     `
-//     postList.innerHTML += postTemplate
-// }
+   
+  
+  
