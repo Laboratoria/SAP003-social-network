@@ -1,7 +1,6 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-
 function loginRegisteredUser() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
@@ -27,12 +26,11 @@ function signInWithAccount(provider) {
       //   const token = result.credential.accessToken;
       // };
       const user = result.user;
-      
       db.collection('users').doc(user.uid).set({
-        name: user.displayName
+        name: user.displayName,
       });
       if (result) {
-        location.hash = "#feed";
+        location.hash = '#feed';
       }
     }).catch((error) => {
       const errorCode = error.code;
@@ -60,21 +58,22 @@ function Login() {
     placeholder: 'Senha',
   })}
   ${Button({
-    class: 'btn',
+    class: 'btn btn-gray',
     id: 'btn-log-in',
     onclick: loginRegisteredUser,
     title: 'Login',
   })}
   ${Button({
     id: 'authGoogleButton',
-    class: 'btn fa fa-google',
+    class: 'btn fa fa-google btn-gray',
     onclick: loginGoogleUser,
     title: '',
   })}
   `;
   const template = `
-  <img src="./img/pluto-floral-and-botanical-growth.png">
-  <form class="form-content">
+  <article class='login-page'>
+  <img class='login-img' src="./img/pluto-floral-and-botanical-growth.png">
+  <form class="form-content-login">
     <h1>Horta Urbana</h1> 
     ${userLogin}
     <div id="errorMessage"></div>
@@ -82,6 +81,7 @@ function Login() {
     <a href="#signup">Cadastre-se!</a>
     </p> 
   </form>
+  </article>
   `;
   return template;
 }
