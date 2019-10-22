@@ -1,7 +1,7 @@
 function Input(props) {
   const input = `
   <form class="form">
-    <input class="${props.class}" type="${props.type}" " placeholder="${props.placeholder}"/>    
+    <input data-id="${props.dataId}" class="${props.class}" type="${props.type}" " placeholder="${props.placeholder}"/>    
   </form>
   `;
   return input;
