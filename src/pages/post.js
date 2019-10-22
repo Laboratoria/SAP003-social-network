@@ -34,10 +34,12 @@ function templatePosts(props) {
 function Post() {
   location.hash = 'post'
   const template = `
-  <div class="box">
+  <div class="box-post">
   <header class="header"><img src="./Imagens/header-logo.png"></header>
-  <nav>
-  <ul class="menu">
+  <input type="checkbox" id="btn-menu"/>
+  <label for="btn-menu">&#9776;</label>
+  <nav class="menu">
+  <ul>
     <li><a href="#">Feed</a></li>
     <li><a href="#">Perfil</a></li>
     <li><a href="javascript:firebase.auth().signOut()">Sair</a></li>
@@ -54,7 +56,6 @@ function Post() {
     type: 'text',
   })}
     ${Button({
-    type: 'submit',
     id: 'share',
     title: 'Compartilhar',
     onClick: SharePost,
@@ -94,9 +95,9 @@ function deletePost(event) {
 }
 
 function likePost(event) {
+
   const idPost = event.target.dataset.id
   const x = firebase.firestore().collection('Posts').doc(idPost).get().then((doc) => doc.data().likes)
-  console.log(x)
   firebase.firestore().collection('Posts').doc(idPost).update({
     likes: 1,
   }) 
@@ -118,6 +119,7 @@ function savePost(event) {
   );
   document.getElementById(idPost).querySelector('.primary-icon-save').style.display = 'none';
 }
+
 
 window.post = {
   deletePost,

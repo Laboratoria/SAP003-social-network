@@ -4,6 +4,49 @@
   padding: 0;
   justify-content: inherit;
 }
+.alertMessage{
+  text-align: center;
+  padding: 1%;
+  color: #FF1C14;
+  font-weight: bold;
+}
+.avatar {
+  height: 70px;
+  margin: 0;
+}
+.card {
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  width: 90%;
+  padding: 2%;  
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 1px #ff1c14;
+  padding: 2% 2% 15% 2%;
+}
+.card-name{
+  display: inline-block;
+  font-size: 90%;
+  font-weight: bolder;
+}
+.card-post {
+  display: inline-block;
+  word-wrap: break-word;
+}
+.card-time {
+  display: inline-block;
+  font-size: 70%;
+  align-self: flex-start;
+  padding: 1%;
+}
+.description {
+  display: flex;
+  justify-content: flex-start;
+  padding: 6%;
+}
+.fa-google{
+  color: white;
+}
 .header {
   background-image: radial-gradient(#ffbb36 5%, #E85531);
   height: auto;
@@ -13,6 +56,32 @@ img {
   display: flex;
   margin: auto;
 }
+.js-post {
+  height: 80px;
+  width: 85%;
+}
+.menu {
+  margin-left: -100%;
+  width: 100%;
+  transition: all .4s;
+}
+.menu ul {
+  list-style: none;
+  position:relative;
+}
+.menu ul li{
+  width: 100%;
+  float: none;
+}
+.menu a {
+  padding: 15px;
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+}
+.name-display{
+  margin-left: 10%;
+}
 .name-network {
   color: #FF1C14;
   font-size: 200%;
@@ -20,36 +89,11 @@ img {
   text-align: center;
   padding: 5%;
 }
-.text-simple {
-  text-align: center;
-  padding: 3%;
-}
-.alertMessage{
-  text-align: center;
-  padding: 1%;
-  color: #FF1C14;
-  font-weight: bold;
-}
 .primary-box{
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: center;
-}
-#iGoogle.primary-button{
-  background-color: #DB4437;
-  border-radius: 100%;
-  height: auto;
-}
-.fa-google{
-  color: white;
-}
-#register.primary-button{
-  display: block;
-  margin: auto
-}
-#create-account.primary-button{
-  margin: 5%;
 }
 .primary-icon{
   border:1px solid #FFC44F;
@@ -103,61 +147,46 @@ img {
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  margin: 0 10%;
+  margin: 1% 10%;
 }
-.js-post {
-  height: 80px;
-  width: 85%;
+.text-simple {
+  text-align: center;
+  padding: 3%;
 }
-
-.description {
-  display: flex;
-  justify-content: flex-start;
-  padding: 6%;
-}
-
-.avatar {
-  height: 70px;
-  margin: 0;
-}
-
-.name-display{
-  margin-left: 10%;
-}
-
-.card {
-  display: flex;
-  flex-flow: column;
+#iGoogle.primary-button{
+  background-color: #DB4437;
+  border-radius: 100%;
   height: auto;
-  width: 90%;
-  padding: 2%;  
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px 1px #ff1c14;
-  padding: 2% 2% 15% 2%;
 }
-
-.card-name{
-  display: inline-block;
-  font-size: 90%;
-  font-weight: bolder;
-
+#register.primary-button{
+  display: block;
+  margin: auto
 }
-.card-post {
-  display: inline-block;
-  word-wrap: break-word;
+#create-account.primary-button{
+  margin: 5%;
 }
-
-.card-time {
-  display: inline-block;
-  font-size: 70%;
-  align-self: flex-start;
-  padding: 1%;
+#forget.primary-button{
+  background-color: transparent;
+  font-weight: normal;
+  padding: 2%;
+  margin: 1%;
+  font-size: 1rem;
+  cursor: pointer;
 }
-.menu {
-  display: flex;
-  padding: 5%;
-  justify-content: space-around;
-  list-style: none;
+#btn-menu {
+  display: none;
+}
+#btn-menu:checked ~ .menu{
+  margin-left: 0;
+  display: block;
+}
+label[for="btn-menu"]{
+  padding: 5px;
+  text-align: left;
+  font-size: 30px;
+  cursor: pointer;
+  height: 50px;
+  display: block;
 }
 #history{
   margin:0;
