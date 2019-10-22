@@ -13,6 +13,10 @@ function signOut() {
 
 
 function profile() {
+
+  window.app.filterPost();
+
+
   const template = `
     <header class= "header-home">
     ${Logo({ class: "logonav" })}         

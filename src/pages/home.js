@@ -30,7 +30,8 @@ function home() {
       ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane"></i>' })}
     </div>
     <br>    
-    <ul class="feed">    
+    <ul class="feed">
+    <ul class="comments">     
     </ul>   
   `;    
 
