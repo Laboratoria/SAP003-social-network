@@ -40,7 +40,7 @@ function Post() {
   <ul class="menu">
     <li><a href="#">Feed</a></li>
     <li><a href="#">Perfil</a></li>
-    <li><a href="#">Sair</a></li>
+    <li><a href="javascript:firebase.auth().signOut()">Sair</a></li>
     </ul>
   </nav>
   <div class="description">
