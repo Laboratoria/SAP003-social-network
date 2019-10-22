@@ -1,6 +1,7 @@
 const Input = (props) => {
   const template = `
     <input
+    data-id='${props.data}'
     class='${props.class}'
     id='${props.id}'
     value='${props.value || ''}' 
