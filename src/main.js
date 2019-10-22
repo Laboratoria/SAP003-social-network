@@ -18,6 +18,9 @@ const mural = () => {
 
 	const allPosts = firebase.firestore().collection('posts');
 
+
+
+
 //não usar o if para posts públicos
 	allPosts.get().then(snap => {
 		let postsLayout = '';
@@ -37,6 +40,11 @@ const mural = () => {
 		document.querySelector("main").innerHTML = Mural({postsLayout});
 	})
 }
+
+
+
+
+
 
 const deletar = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).delete();
@@ -66,3 +74,45 @@ window.mural = mural;
 window.addEventListener("load", init);
 
 window.addEventListener("hashchange", hash, false);
+
+
+
+
+
+
+
+
+const mural = () => {
+	const user = firebase.auth().currentUser;
+
+	const allPosts = firebase.firestore().collection('posts');
+
+	
+
+
+//não usar o if para posts públicos
+	allPosts.get().then(snap => {
+		let commentPost = '';
+
+		snap.forEach(post => {
+			if (post.data().userID === user.uid) {
+				commentPost += `
+				<li class='timeline-item' data-id='${post.data().userID}'>
+					<p>${post.data().text}</p>
+					<p>${post.data().date}</p>
+					<p>${post.data().name}</p>
+					${Button({id:post.id, title:'comentar',onclick:comentar})}
+				</li>
+				`;
+			}
+		})
+		document.querySelector("main").innerHTML = Mural({commentPost});
+	})
+}
+
+const comentar = (id, event) => {
+	firebase.firestore().collection('posts/comments').doc(id);
+
+	document.getElementById(id).parentElement.remove();
+
+}
