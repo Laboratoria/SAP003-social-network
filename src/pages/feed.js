@@ -5,11 +5,27 @@ import Input from '../components/input.js';
 
 function timeline(){
     const template = `
-    <form>
+    <nav>
+    <ul class="nav-links">
+     <li><a href="#">HOME</a></li>
+     <li><a href="#">ALCATEIA</a></li>
+     <li><a href="#">SAIR</a></li>          
+   </ul>
+   <div class="burger">
+     <div class="line1"></div>
+     <div class="line2"></div>
+     <div class="line3"></div>
+   </div>
+</nav>
+
+<h2> Ola, seja bem-vindo! </h2>
+    <form><br>
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
     ${Button({id: 'postForm', title: 'postar', onClick: formSubmit})}<br>
+
     </form>
     <div class='postdiv'></div>
+
     ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
       return template;

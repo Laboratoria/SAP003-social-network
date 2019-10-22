@@ -3,14 +3,20 @@ import Input from '../components/input.js';
 
 function register(){
     const template = `
+    <div class="logotipo">
+       <h4 class="text-center">ALCATEIA</h4>
+    </div>
+    <div class="banner"></div>
     ${Button({id:'voltar', title: 'Voltar', onClick: goToLogin})}
+    
 
     <h2> Crie a sua conta </h2>
+    
   <form>
     ${Input({placeholder:'Digite seu nome', type:'text', class:'username'})}
     ${Input({ placeholder: 'E-mail', type: 'email', class: 'js-email-input'})}
     ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
-    ${Button({ id: 'button', title: 'Cadastrar', onClick: buttonRegister})}
+    ${Button({ class:'cadastrar', id: 'button', title: 'Cadastrar', onClick: buttonRegister})}
   </form>
        `;
       return template;
