@@ -13,13 +13,15 @@ function router() {
               posts: querySnapshot,
             });
           });
+      } else {
+        window.location.hash = '#login';
+        document.querySelector('main').innerHTML = Login();
       }
     } else {
       window.location.hash = '#login';
       document.querySelector('main').innerHTML = Login();
     }
   });
-
 }
 
 window.addEventListener('load', router);
