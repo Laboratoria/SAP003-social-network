@@ -31,10 +31,12 @@ const mural = () => {
 					<p>${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({id:post.id, title:'deletar',onclick:deletar})}
-					${Button({id:post.id, title:'editar', onclick: editar})}
+					${Button({ id: post.id, title:'deletar',onclick: deletar})}
+					${Button({ id: post.id, title:'editar', onclick: editar})}
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data.likes}</p>
+					<p id='${post.id}'>${post.data().likes}</p>
+					${Post({id: post.id, placeholder: 'Comentários', rows: '5', cols: '50'  })}
+					${Button({id: post.id, title: 'comentar', onclick: comment})}
 				</li>
 				`;
 			}
@@ -42,6 +44,13 @@ const mural = () => {
 		document.querySelector("main").innerHTML = Mural({ postsLayout });
 	})
 }
+
+const comment = (id, event) => {
+	const text = document.querySelector(`.txt-area[post-id='${post.id}']`).value;
+	firebase.firestore().collection(`posts/${id}/comments`).add({text, user: id})
+	console.log(text);
+}
+
 
 const editar = (id, event) => {
 	const postEdit = firebase.firestore().collection('posts').doc(id);	
@@ -54,11 +63,19 @@ const editar = (id, event) => {
 }
 
 const like = (id, event) => {
-	const amei = post.data.likes;
-	amei.innerHTML++;
-	likes = document.getElementById(post.id);
-	firebase.firestore().collection('posts').doc(id).update({ likes });
+	firebase.firestore().collection('posts').doc(id).get().then((doc) => {
+		let like = (doc.data().likes) +1 ;
+		firebase.firestore().collection('posts').doc(id).update({likes: like});
+   })
+//.then(() => {
+//     app.loadPosts();
+//   });
 }
+	// const likes = document.getElementById(post.id);
+	// const likesbutton = document.querySelector(`${post.data().likes}`);
+	// likesbutton.innerHTML++;
+	//firebase.firestore().collection('posts').doc(id).update({ likes });
+
 
 const deletar = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).delete();

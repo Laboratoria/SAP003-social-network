@@ -224,6 +224,7 @@ body {
 
 .dropdown-menu {
   padding-top: 8px;
+  outline: none;
 }
 
 .menu-dropdown {
@@ -233,6 +234,7 @@ body {
   color: #CCCCCC;
   background-color: #121212;
   height: 35px;
+  outline: none;
 }
 
 #post {
