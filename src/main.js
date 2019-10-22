@@ -30,12 +30,12 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ id: post.id, title:'deletar',onclick: deletar})}
-					${Button({ id: post.id, title:'editar', onclick: editar})}
+					${Button({ id: post.id, title: 'deletar', onclick: deletar })}
+					${Button({ id: post.id, title: 'editar', onclick: editar })}
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
 					<p id='${post.id}'>${post.data().likes}</p>
-					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
-					${Button({id: post.id, title: 'comentar', onclick: comment})}
+					${Post({ id: post.id, placeholder: 'Comentários', rows: '2', cols: '15' })}
+					${Button({ id: post.id, title: 'comentar', onclick: comment })}
 				</li>
 				`;
 			} else {
@@ -46,6 +46,8 @@ const mural = () => {
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
 					<p id="${post.id}">${post.data().likes}</p>
+					${Post({ id: post.id, placeholder: 'Comentários', rows: '2', cols: '15' })}
+					${Button({ id: post.id, title: 'comentar', onclick: comment })}
 				</li>
 				`;
 			}
@@ -56,7 +58,7 @@ const mural = () => {
 
 const comment = (id, event) => {
 	const text = document.querySelector(`.txt-area[post-id='${post.id}']`).value;
-	firebase.firestore().collection(`posts/${id}/comments`).add({text, user: id})
+	firebase.firestore().collection(`posts/${id}/comments`).add({ text, user: id })
 	console.log(text);
 }
 
@@ -72,9 +74,10 @@ const editar = (id, event) => {
 
 const like = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).get().then((post) => {
-		let like = (post.data().likes) +1 ;
-		firebase.firestore().collection('posts').doc(id).update({likes: like});
-})}
+		let like = (post.data().likes) + 1;
+		firebase.firestore().collection('posts').doc(id).update({ likes: like });
+	})
+}
 
 
 const deletar = (id, event) => {
@@ -83,20 +86,20 @@ const deletar = (id, event) => {
 }
 
 const editarPerfil = () => {
-	
+
 	const user = firebase.auth().currentUser;
 	var name, email, phoneNumber, photoUrl, uid, emailVerified;
 
 	if (user != null) {
-  	name = user.displayName;
-  	email = user.email;
-  	phoneNumber = user.phoneNumber;
-  	photoUrl = user.photoURL;
-  	emailVerified = user.emailVerified;
-  	uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                   // this value to authenticate with your backend server, if
-                   // you have one. Use User.getToken() instead.
-	}	
+		name = user.displayName;
+		email = user.email;
+		phoneNumber = user.phoneNumber;
+		photoUrl = user.photoURL;
+		emailVerified = user.emailVerified;
+		uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+		// this value to authenticate with your backend server, if
+		// you have one. Use User.getToken() instead.
+	}
 
 	console.log(user)
 
