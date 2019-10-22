@@ -46,7 +46,6 @@ function Login() {
   </section>
   </div>
   `;
-  // location.hash = 'login'
   return template;
 }
 

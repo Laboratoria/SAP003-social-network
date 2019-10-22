@@ -40,7 +40,7 @@ function Post() {
   <ul class="menu">
     <li><a href="#">Feed</a></li>
     <li><a href="#">Perfil</a></li>
-    <li><a href="#">Sair</a></li>
+    <li><a href="javascript:firebase.auth().signOut()">Sair</a></li>
     </ul>
   </nav>
   <div class="description">
@@ -54,7 +54,6 @@ function Post() {
     type: 'text',
   })}
     ${Button({
-    type: 'submit',
     id: 'share',
     title: 'Compartilhar',
     onClick: SharePost,
@@ -118,6 +117,7 @@ function savePost(event) {
   );
   document.getElementById(idPost).querySelector('.primary-icon-save').style.display = 'none';
 }
+
 
 window.post = {
   deletePost,

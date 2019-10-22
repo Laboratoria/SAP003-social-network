@@ -51,6 +51,14 @@ img {
 #create-account.primary-button{
   margin: 5%;
 }
+#forget.primary-button{
+  background-color: transparent;
+  font-weight: normal;
+  padding: 2%;
+  margin: 1%;
+  font-size: 1rem;
+  cursor: pointer;
+}
 .primary-icon{
   border:1px solid #FFC44F;
   border-radius: 1%;
@@ -103,7 +111,7 @@ img {
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  margin: 0 10%;
+  margin: 1% 10%;
 }
 .js-post {
   height: 80px;
