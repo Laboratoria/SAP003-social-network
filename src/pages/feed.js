@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-// import Card from '../components/card.js';
+import Card from '../components/card.js';
 
 export function salvar() {
   const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
@@ -22,11 +22,11 @@ function postar() {
   const template = `
     ${Textarea({ class: 'post' })}
     ${Button({ title: 'Compartilhar', onClick: salvar })}
+    ${Card({ children: `<p id='banana'></p>` })}
     <p id='banana'></p>
   `;
   return template;
 }
-// ${Card({ children: `<p id='banana'></p>` })}
 
 export default postar;
 // function logout() {
