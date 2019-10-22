@@ -1,7 +1,7 @@
 import Button from "../components/button.js";
 import Select from "../components/select.js";
 
-export const EditarPerfil = () => {
+export const EditarPerfil = (props) => {
 	const template = `
 	<header>
 		<nav>
@@ -16,7 +16,7 @@ export const EditarPerfil = () => {
 			<li>Logout</li>
 		</nav>
 	</header>
-	<p>teste</p>
+	${props.template}
 	`;
 
 	return template;
