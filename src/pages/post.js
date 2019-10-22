@@ -30,14 +30,18 @@ function addPost(post) {
   <li data-id= '${post.id}' class="post-list">
   <span class= "idname">${post.data().idname}:</span>
   <p class="border"></p>
+  <div class="text-post">
   ${post.data().post}
+  </div>
   <br>  
   <br>
   <p class="border"></p>
-  ${Button({ class: "button-feed", onClick: savePost, title:'💛' })} 
+  ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
   ${post.data().likes}
-  ${Button({ class: "button-feed", onClick: savePost, title:'💬' })} 
+  ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'💬' })} 
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+    <ul class="comments">    
+    </ul>   
   </li>
   <br>
   `
@@ -54,10 +58,13 @@ function addPostPro(post) {
   <br>  
   <br>
   <p class="border"></p>
-  ${Button({ class: "button-feed", onClick: savePost, title:'🖍' })}  
+  ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}
+  ${Button({ dataId: post.id, class: "button-feed", onClick: saveEdit, title:'✅' })}  
   ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
-  ${Button({ class: "button-feed", onClick: savePost, title:'🔒' })} 
+  ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'🔒' })}   
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+    <ul class="comments">    
+    </ul> 
   </li>
   <br>
   `
@@ -87,6 +94,47 @@ function filterPost() {
     })
   })
 }
+
+function countLikes(event) {
+  const id = event.target.dataset.id;  
+  db.collection('post').doc(id).get()
+  .then((post => {
+    const countlike = (post.data().likes) + 1;
+    db.collection('post').doc(id).update({
+      likes: countlike
+    });
+    app.loadPost();
+  }))  
+}
+
+/* function editPost(event) {
+  const id = event.target.dataset.id; 
+  const postEdit = document.querySelector('.text-post');
+  postEdit.post.add('post-edit');
+  postEdit.setAttribute('contenteditable', 'true');
+  postEdit.focus()
+
+  
+}
+
+function saveEdit() {
+  console.log(ed)
+
+  
+} */
+
+/* function editPost(event) {
+  const id = event.target.dataset.id;  
+  db.collection('post').doc(id).get()
+  .then((post => {
+    const postEdit = input
+    db.collection('post').doc(id).update({
+      post: postEdit
+    });
+    app.loadPost();
+  }))
+  
+} */
 
 function deletePost(event) {
   const id = event.target.dataset.id;  
