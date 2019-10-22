@@ -1,5 +1,5 @@
 import Login from './pages/login.js';
-import feed from './pages/feed.js';
+import Feed from './pages/feed.js';
 import Perfil from './pages/perfil.js';
 import Register from './pages/register.js';
 
@@ -12,7 +12,7 @@ function locationHashChanged() {
           .where('user', '==', user.uid)
           .get()
           .then((querySnapshot) => {
-            document.querySelector('main').innerHTML = feed({
+            document.querySelector('main').innerHTML = Feed({
               posts: querySnapshot,
             });
           });
@@ -23,7 +23,9 @@ function locationHashChanged() {
       } else {
         document.querySelector('main').innerHTML = Login();
       }
-    }
+    } else {
+    document.querySelector('main').innerHTML = Login();
+  }
   });
 }
 
