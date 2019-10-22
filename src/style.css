@@ -178,8 +178,8 @@ label[for="navigation"] {
 .img-usuario {
   margin-left: -30%;
   margin-right: 10%;
-  margin-top: -8%;
-  width: 85px;
+  width: 32%;
+  height: 5%;
 }
 
 .container-publish {
@@ -216,9 +216,15 @@ select {
   margin-left: 74%;
 }
 
-.text-privacy {
-  margin-top: -13%;
-  margin-left: 90%;
+.info-like-privacy {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.slc-privacy-post {
+  width: 22%;
+  height: 1%;
+  margin-top: 24%;
 }
 
 .images-publish {
@@ -249,7 +255,6 @@ select {
   flex-direction: column;
   margin: 0 auto;
   width: 317px;
-  height: 170px;
   margin-top: 10%;
   background: #968B7D;
   border-radius: 10px;
@@ -270,7 +275,6 @@ select {
 .publication-public {
   background: #ffffff;
   width: 100%;  
-  height: 50%;
 }
 
 .publication {

@@ -1,6 +1,6 @@
 import Button from './button.js';
 import ButtonImage from './image-button.js';
-
+import Select from './select.js';
 
 const Post = (props) => {
   const userId = firebase.auth().currentUser.uid;
@@ -12,8 +12,15 @@ const Post = (props) => {
     <div class="publication-public">
       <p data-id='text-${props.id}' class='publication'>${props.post.text}</p>
       <hr>
+      <div class='info-like-privacy'>
       <p data-id='${props.id}' class='likes'>${props.post.like}</p>
-      <p data-id='${props.id}' class='text-privacy'>${props.post.privacy}</p>
+      ${Select({
+        class: 'slc-privacy-post',
+        dataId: props.id,
+        selected: props.post.privacy,
+        options: [{ value:'🔓', text: 'Público 🔓' }, { value: '🔐' , text: 'Privado 🔐' }],
+      })}
+      </div>
     </div>
     <div class="info-post">
     ${ButtonImage({

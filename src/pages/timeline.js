@@ -4,6 +4,7 @@ import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Textarea from '../components/textarea.js';
 import Bio from '../components/bio.js';
+import Select from '../components/select.js';
 
 const signOut = () => firebase.auth().signOut();
 
@@ -44,7 +45,8 @@ const enableField = (event) => {
 const updatePost = (event) => {
   const id = event.target.dataset.id;
   const editedPost = document.querySelector(`[data-id=text-${id}]`).textContent;
-  firebase.firestore().collection('posts').doc(id).update({ text: editedPost, addedAt: (new Date()).toLocaleString('pt-BR') });
+  const editedSelect = document.querySelector(`[data-id=privacy-${id}]`).value;
+  firebase.firestore().collection('posts').doc(id).update({ text: editedPost, privacy: editedSelect });
 };
 
 const timeline = (props) => {
@@ -94,11 +96,11 @@ const timeline = (props) => {
     placeholder: 'digite aqui...',
   })}
       </div>
-    <select class="slc-privacy">
-      <option value="" disabled selected>🔐</option>
-      <option value="🔓">Público 🔓</option>
-      <option value="🔐">Privado 🔐</option>
-    </select>
+    ${Select({
+        class: 'slc-privacy',
+        selected: '🔓',
+        options: [{ value:'🔓', text: 'Público 🔓' }, {value: '🔐' , text: 'Privado 🔐' }],
+      })}
       <div class="images-publish">
         <img src="images/img-public.png" class="img-public"> 
         ${Button({

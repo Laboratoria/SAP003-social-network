@@ -20,7 +20,7 @@ const updateProfile = () => {
       profession: professionUser,
     })
     .then(() => {
-      alert('Perfil atualizado!');
+      window.location = '#timeline';
     });
 };
 
