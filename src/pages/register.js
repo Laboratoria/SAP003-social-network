@@ -9,7 +9,7 @@ function userRegister() {
    
     firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
         window.location.href = '#feed';
-    }).cath((error) => {
+    }).catch((error) => {
         //lidar e inserir mensagem de erro 
         const errorCode = error.code;
         console.log(errorCode);
