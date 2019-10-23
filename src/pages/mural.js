@@ -56,8 +56,10 @@ const sendAndRetrievePost = () => {
 		name: user.email,
 		text,
 		userID: user.uid,
-		date: Date.now().toLocaleString('pt-BR')
+		date: new Date().toLocaleString('pt-BR'),
+		likes:0
 	}
+
 
 	firebase.firestore().collection('posts').add(post);
 
