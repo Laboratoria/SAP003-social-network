@@ -20,13 +20,13 @@ function sendPost() {
   })
   .then((docRef) => {
     document.querySelector('.post-area').insertAdjacentHTML('afterbegin', 
-    `<li style=list-style-type: none data-id=>${message}
-    <div class= 'delete'>${window.button.component({ 
+    `<li class='linha-post' style=list-style-type:none data-id=>${message}
+    ${window.button.component({ 
       dataId: docRef.id,
       class: 'delete',
-      title: 'x',
+      title: '🗑',
       onClick: window.Delete,
-    })}</div>
+    })}
     </li>`
     );
   });
@@ -43,17 +43,17 @@ function Database(props) {
   let postTemplate = "";
   props.feed.forEach((doc) => {
     postTemplate+=
-      `<li class= 'linha'>${doc.data().text} 
+      `<li class='linha-post' style=list-style-type:none>${doc.data().text}
       ${Button({ 
         dataId: doc.id,
         class: 'delete',
-        title: 'x',
+        title: '🗑',
         onClick: Delete,
       })}</li>`
   })
 
   const template = `
-  <h1 class="titulo">Post</h1>
+  <h1 class="titulo">Timeline</h1>
   <form>
   ${Textarea({
     class: 'js-message-area message-post',
