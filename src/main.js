@@ -11,7 +11,7 @@ function init() {
       if (window.location.hash === '#feed'){
         firebase.firestore().collection('post')
         
-        .where('user', '==', user.id)
+        .where('userID', '==', user.uid)
         .get()
         .then((querySnapshot) => {
           document.querySelector('main').innerHTML=Feed({

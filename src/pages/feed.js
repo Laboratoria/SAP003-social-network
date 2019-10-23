@@ -2,7 +2,17 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 import Div from '../components/div.js';
 
-function Feed() {
+function Feed(props) {
+
+  let postsLayout = '';
+  props.post.forEach((doc) => {
+    console.log(props.post)
+    postsLayout += `
+      <li data-id='${doc.id}'>
+        ${doc.data().text}
+     
+      </li>
+    `});
   const template = `
     <h1>Rede Social</h1>
     ${Input({
@@ -13,10 +23,8 @@ function Feed() {
     Button({
       title: 'enviar',
       onClick: saveData
-    }) +
-    Div ({
-      class:'insert-post',
-    })}`;
+    })}
+    <div class='insert-post'>${postsLayout}</div> `;
 
   return template;
 }
@@ -45,10 +53,12 @@ function saveData() {
     likes: 0,
     addeAt: new Date().toISOString()
   }
-  firebase.firestore().collection('post').add(post).then(result => document.querySelector('.insert-post').innerHTML +=`<section>
+  firebase.firestore().collection('post').add(post).then(result => {
+    console.log(result.id);
+    document.querySelector('.insert-post').innerHTML +=`<section >
 <p>${post.text}</p>
 </section>` 
-)
+  })
 }
 
 
