@@ -1,29 +1,41 @@
-body{
-  margin: 15px;
-  padding: 15px;
+body { 
+  
   font-family: 'Montserrat', sans-serif;
-  font-size: .6em;
-  background-color: #dcdcdc;
-}
-img { 
-  width:100%;
-  height: 25%;
- 
+  font-size: .7em;
+  padding: 15px;
+  background: #dcdcdc url("fotos/logo-half-2.png") no-repeat fixed 50% 50%;
+
 }
 
 .container-login{
-
+  
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5%;
+  
+}
+
+img { 
+
+  align-items: center;
+  height: 25%;
+  width:80%;
+
+}
+
+.titulo{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  
 
 }
 
 .form{
+
   display: flex;
   flex-direction: column;
-  margin-top:10%;
   margin-bottom: 10%;
  
 }
@@ -40,7 +52,7 @@ img {
 
 a{
 
-  color:#69a79a;
+  color:#fdef4e;
 }
 
 .input {
@@ -49,36 +61,56 @@ a{
   border-radius: 25px;
   padding: 10px;
   margin-bottom: 20px;
+  width: 220px;
   
 }
-.card {
-  border: solid 1px black;
+.erro {
+  color: red;
+  text-align: center;
 }
 
-.img-footer img{
-  width: 100%;
-  opacity:.8;
-}
+/*começa cadastro*/
 
-.container-cadastro{
+/* .container-cadastro{
+ display: flex;
+ 
+} */
+
+.mia {
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  height: 25%;
 }
+
+.text{
+  width: 150px;
+  height: 150px;
+ 
+}
+.wall{
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.wall:target{
+  border: 1px solid #000;
+  display: block;
+}
+
 .cadastro{
+  
   display: flex;
   flex-direction: column;
   margin-top:10%;
   margin-bottom: 10%;
   width: 50%;
   justify-content: space-around;
- 
+  
 }
-.mia{
-  display: flex;
-  align-items: flex-start;
-  height: 25%;
-}
-.erro {
-  color: red;
-  text-align: center;
+
+
+
+.card {          
+border: solid 1px black;         
 }
