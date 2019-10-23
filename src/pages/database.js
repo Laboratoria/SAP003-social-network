@@ -20,7 +20,7 @@ function sendPost() {
   })
   .then((docRef) => {
     document.querySelector('.post-area').insertAdjacentHTML('afterbegin', 
-    `<li data-id=>${message}
+    `<li style=list-style-type: none data-id=>${message}
     <div class= 'delete'>${window.button.component({ 
       dataId: docRef.id,
       class: 'delete',
