@@ -6,8 +6,8 @@ main{
   width: 100%;
 }
 .primary-button {
-  background-color: #014034;
-  padding: 3px;
+  background-color: #24BF67;
+  padding: 5px;
   width: 70px;
   font-size: 0.7rem;
   font-weight: bold;
@@ -15,9 +15,13 @@ main{
   border-radius: 10px;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   align-items: center;
 =======
 >>>>>>> 1fdc5cbbeddd1e79ffbb7cda947d16f8b48909a8
+=======
+  margin: 5px;
+>>>>>>> f33f6d61f8115513ef2d42111294b5c96f96b6ac
 }
 .textarea-local{
   margin-top: 10px;
@@ -43,5 +47,7 @@ main{
 .image-logo{
   align-items: center;
 }
-
-
+.post-li{
+  margin-top: 5px;
+  text-align: center;
+}
