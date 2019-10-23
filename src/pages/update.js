@@ -5,7 +5,7 @@ function Update() {
   const template = `
   <div class="box">
     <header class="header"><img src="./Imagens/header-logo.png"></header>
-    <section class = "login-box">
+    <section class = "update-box">
       <h1 class="name-network">Heroínas</h1>
       <h3 class="text-simple">Redefinição de Senha!</h3>
       <form class="primary-box">

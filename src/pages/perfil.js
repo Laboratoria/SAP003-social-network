@@ -5,7 +5,7 @@ import Menu from '../components/menu.js';
 function Perfil() {
   const template = `
   <div class="box">
-    <header class="header"><img src="./Imagens/header-logo.png"></header>
+    <header class="header"><img src="./Imagens/header-logo.png">
     <input type="checkbox" id="btn-menu"/>
     <label for="btn-menu">&#9776;</label>
     <nav class="menu">
@@ -20,12 +20,17 @@ function Perfil() {
       })}
     </ul> 
     </nav>
-    <section class = "login-box">
+    </header>
+    <section class = "primary-box">
       <h1 class="name-network">Heroínas</h1>
       <form class="primary-box">
         ${firebase.auth().currentUser.displayName}
         ${firebase.auth().currentUser.email}
-       
+        ${Button({
+          id: 'deleteCount',
+          title: 'deletar conta',
+          onClick: deleteCount,
+          })}
     </form>
   </section>
 </div>
@@ -66,6 +71,10 @@ function pageFeed() {
 
   function logOut(){
     firebase.auth().signOut();
+  }
+
+  function deleteCount(){
+    firebase.auth().currentUser.delete();
   }
 
 export default Perfil;

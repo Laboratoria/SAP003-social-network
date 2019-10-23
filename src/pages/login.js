@@ -24,16 +24,16 @@ function Login() {
         title: 'Login',
         onClick: sendLogin,
         })}
-        ${Button({
-        id: 'forget',
-        title: 'Esqueci a senha',
-        onClick: forgetPassword,
-        })}
         <p class="text-simple">Ou entre com:</p>
         ${Button({
         id: "iGoogle",
         title: '<i class="fab fa-google"></i>',
         onClick: loginGoogle,
+        })}
+        ${Button({
+        id: 'forget',
+        title: 'Esqueci a senha',
+        onClick: forgetPassword,
         })}
       </form>
     <p class="alertMessage"></p>

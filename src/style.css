@@ -6,7 +6,6 @@
 }
 .alertMessage{
   text-align: center;
-  padding: 1%;
   color: #FF1C14;
   font-weight: bold;
 }
@@ -64,20 +63,28 @@ img {
   margin-left: -100%;
   width: 100%;
   transition: all .4s;
+  position: absolute;
+  
 }
 .menu ul {
   list-style: none;
   position:relative;
+  display: inline-block;
 }
 .menu ul li{
   width: 100%;
   float: none;
+  background-color: #FFC44F;
+  
 }
 .menu a {
   padding: 15px;
   display: flex;
   text-decoration: none;
   text-align: center;
+}
+.menu ul li:hover a{
+  background-color: #FF1C14;
 }
 .name-display{
   margin-left: 10%;
@@ -87,7 +94,7 @@ img {
   font-size: 200%;
   margin: auto;
   text-align: center;
-  padding: 5%;
+  padding: 4%;
 }
 .primary-box{
   display: flex;
@@ -145,17 +152,16 @@ img {
 }
 .primary-input  {
   border-radius: 15px;
-  display: flex;
   padding: 5px;
-  margin: 1% 10%;
+  margin: 3%;
 }
 .text-simple {
   text-align: center;
-  padding: 3%;
+  padding: 3% 0 1%;
 }
 #iGoogle.primary-button{
   background-color: #DB4437;
-  border-radius: 100%;
+  border-radius: 50%;
   height: auto;
 }
 #register.primary-button{
@@ -177,7 +183,7 @@ img {
   display: none;
 }
 #btn-menu:checked ~ .menu{
-  margin-left: 0;
+  margin-left: 5%;
   display: block;
 }
 label[for="btn-menu"]{
@@ -186,7 +192,11 @@ label[for="btn-menu"]{
   font-size: 30px;
   cursor: pointer;
   height: 50px;
-  display: block;
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border: 2px solid  #FFC44F;
 }
 #history{
   margin:0;
@@ -198,18 +208,26 @@ label[for="btn-menu"]{
     justify-content: center;
   }
   .header {
-    flex-grow:1;
+    flex:1 1 100%;
     display: flex;
   }
   img {
     height: auto;
   }
   .login-box{
-    flex-grow:1;
-    padding:2%;
-    box-sizing:border-box;
+    flex:1 1 100%;
+    padding: 2%;
+  }
+  .register-box{
+    flex:1 1 100%;
+    padding: 2% 0 12%;
+  }
+  .update-box{
+    flex:1 1 100%;
+    padding: 14% 0 14%;
   }
   .primary-input  {
-    width: 60%;
+    width: 50%;
+    margin: 2%
   }
 }

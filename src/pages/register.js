@@ -5,7 +5,7 @@ function Register() {
   const template = `
   <div class="box">
     <header class="header"><img src="./Imagens/header-logo.png"></header>
-    <section class = "login-box">
+    <section class = "register-box">
       <h1 class="name-network">Heroínas</h1>
       <h3 class="text-simple">Para fazer seu cadastro na rede Heroínas preencha os campos abaixo!</h3>
       <form class="primary-box">
