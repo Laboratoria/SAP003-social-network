@@ -225,6 +225,18 @@ section {
 
 }
 
+.button-save {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #fffbad00;  
+  visibility: hidden;
+}
+
+.show {  
+  visibility: visible;
+}
+
 
 @media screen and (min-width: 768px) {
   .logo {
