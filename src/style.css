@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-@media (max-width: 750px) {
+@media (max-width: 751px) {
 
   .primary-button {
     background-color: #fefefe;
@@ -68,13 +68,24 @@
   border-color: gray;
   border-radius: 5px;
   background-color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  transform: translate(-40px, 10px);
+
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 750px) {
 .container{
 float: none;
 
+}
+
+.icone {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
 }
 
 .logo {
@@ -146,13 +157,17 @@ float: none;
 .postMessage{
   display: flex;
   justify-content: flex-end;
-  transform: translate(-570px, 190px);
+  transform: translate(-40px, 10px);
   margin: 5px;
   padding: 10px;
   border: solid;
   border-color: gray;
   border-radius: 5px;
   background-color: #ffffff;
-  list-style: none; 
+  list-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  width: 100%;
 }
+
 }

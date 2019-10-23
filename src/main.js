@@ -16,13 +16,14 @@ function locationHashChanged() {
               posts: querySnapshot,
             });
           });
-      } 
-        else if (window.location.hash === '#perfil') {
+      
+         } else if (window.location.hash === '#perfil') {
         document.querySelector('main').innerHTML = Perfil();
-      }
-    }
-      else if (window.location.hash === '#register') {
+      } else if (window.location.hash === '#register') {
         document.querySelector('main').innerHTML = Register();
+      } else {
+        document.querySelector('main').innerHTML = Login();
+      }
       } else {
         document.querySelector('main').innerHTML = Login();
       }
