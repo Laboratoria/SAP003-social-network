@@ -15,13 +15,25 @@ const Post = (props) => {
     dataId: props.id,
     text: props.post.user ? `Publicado por ${props.post.user.name}` : 'fulano',
   })}
-      <p data-id='${props.id}' class='date-post'>${props.post.addedAt.slice(0, 16)}</p> 
+    ${Paragraph({
+    class: 'date-post',
+    dataId: props.id,
+    text: props.post.addedAt.slice(0, 16),
+  })} 
       </div>
     <div class="publication-public">
-      <p data-id='text-${props.id}' class='publication'>${props.post.text}</p>
+    ${Paragraph({
+    class: 'publication',
+    dataId: props.id,
+    text: props.post.text,
+  })} 
       <hr>
       <div class='info-like-privacy'>
-      <p data-id='numbers-${props.id}' class='likes'>${props.post.likes || ''}</p>
+      ${Paragraph({
+    class: 'likes',
+    dataId: `numbers-${props.id}`,
+    text: props.post.likes || '',
+  })} 
       ${Select({
     class: 'slc-privacy-post',
     dataId: props.id,
@@ -35,7 +47,7 @@ const Post = (props) => {
     class: 'like-post',
     dataId: props.id,
     type: 'image',
-    src: 'images/curtir.png',
+    src: 'images/curtir-heart.png',
     onClick: props.likesEvent,
   })}
   `;
@@ -65,22 +77,6 @@ const Post = (props) => {
 
   template += `
   </div>
-  <div class="comentario">
-  ${Input({
-    class: 'ipt-comments',
-    dataId: props.id,
-    id: 'ipt-comments',
-    placeholder: 'comentar...',
-    type: 'text',
-  })} 
-  ${Button({
-    class: 'btn-comment',
-    id: 'btn-comment',
-    type: 'submit',
-    title: 'Comentar',
-    // onClick: sendComments,
-  })}
-    </div>
   </div>`;
 
   return template;

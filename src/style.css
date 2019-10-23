@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.js-input-email, .js-input-password, .inp-name-profile, .inp-age-profile, .inp-profession-profile, .ipt-comments{
+.js-input-email, .js-input-password, .inp-name-profile, .inp-age-profile, .inp-profession-profile {
   background: #FFFFFF;
   box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
   border-radius: 9px;
@@ -226,6 +226,10 @@ select {
   height: 1%;
 }
 
+.like-post {
+  width: 10%;
+}
+
 .images-publish {
   margin-top: 2%;
   display: flex;
@@ -241,7 +245,7 @@ select {
   margin-top: -2%
 }
 
-.btn-publicar,  .btn-comment {
+.btn-publicar {
   width: 106px;
   height: 35px;
   background: #EC6345;
