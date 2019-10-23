@@ -30,7 +30,7 @@ function addPost(post) {
   <li data-id= '${post.id}' class="post-list">
   <span class= "idname">${post.data().idname}:</span>
   <p class="border"></p>
-  <div class="text-post">
+  <div class="text-post" data-id='${post.id}'>
   ${post.data().post}
   </div>
   <br>  
@@ -54,14 +54,16 @@ function addPostPro(post) {
   <li data-id= '${post.id}' class="post-list">
   <span class= "idname">${post.data().idname}:</span>
   <p class="border"></p>
+  <div class="text-post" data-id='${post.id}'>
   ${post.data().post}
+  </div>
   <br>  
   <br>
   <p class="border"></p>
-  ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}
-  ${Button({ dataId: post.id, class: "button-feed", onClick: saveEdit, title:'✅' })}  
+  ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}    
   ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
-  ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'🔒' })}   
+  ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'🔒' })}
+  ${Button({ dataId: post.id, class: "button-save", onClick: saveEdit, title:'✅' })}   
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
     <ul class="comments">    
     </ul> 
@@ -107,34 +109,21 @@ function countLikes(event) {
   }))  
 }
 
-/* function editPost(event) {
+function editPost(event) {
   const id = event.target.dataset.id; 
-  const postEdit = document.querySelector('.text-post');
-  postEdit.post.add('post-edit');
+  const postEdit = document.querySelector(`.text-post[data-id='${id}']`);
+  const saveButton = document.querySelector(`.button-save[data-id='${id}']`);
+  saveButton.classList.add('show');
   postEdit.setAttribute('contenteditable', 'true');
-  postEdit.focus()
-
-  
+  postEdit.focus()  
 }
 
 function saveEdit() {
-  console.log(ed)
-
-  
-} */
-
-/* function editPost(event) {
-  const id = event.target.dataset.id;  
-  db.collection('post').doc(id).get()
-  .then((post => {
-    const postEdit = input
-    db.collection('post').doc(id).update({
-      post: postEdit
-    });
-    app.loadPost();
-  }))
-  
-} */
+  const id = event.target.dataset.id;
+  event.target.classList.remove('show');
+  const post = document.querySelector(`.text-post[data-id='${id}']`).textContent.trim();
+  db.collection('post').doc(id).update({post})  
+}
 
 function deletePost(event) {
   const id = event.target.dataset.id;  
