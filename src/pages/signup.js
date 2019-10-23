@@ -34,16 +34,19 @@ function Signup() {
     type: 'text',
     class: 'name-input',
     placeholder: 'Nome',
+    value:''
   })}
     ${Input({
     type: 'email',
     class: 'email-input',
     placeholder: 'Email',
+    value:''
   })}
     ${Input({
     type: 'password',
     class: 'password-input',
     placeholder: 'Senha',
+    value:''
   })}
     ${Button({
     class: 'btn btn-register btn-gray',

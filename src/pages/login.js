@@ -51,11 +51,13 @@ function Login() {
     type: 'email',
     class: 'email-input',
     placeholder: 'Email',
+    value:''
   })}
   ${Input({
     type: 'password',
     class: 'password-input',
     placeholder: 'Senha',
+    value:''
   })}
   ${Button({
     class: 'btn btn-gray',

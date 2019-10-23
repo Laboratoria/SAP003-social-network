@@ -258,6 +258,19 @@ transition: all .4s linear;
   border-bottom-right-radius: 10px;
 }
 
+
+/*MÔNICA MEXEU AQUI*/
+.privacy{
+  font-family: 'FontAwesome';
+  
+}
+
+.privacy option{
+  font-family: 'FontAwesome';
+}
+
+/*MÔNICA MEXEU AQUI*/
+
 @media only screen and (min-width: 576px){
 
   .login-page{
