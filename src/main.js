@@ -5,19 +5,39 @@ import Database from './pages/database.js';
 
 function pageRoute() {
   const pageName = (window.location.hash) ? window.location.hash : '#home';
-  switch (pageName) {
-    case '#home':
-      document.querySelector('main').innerHTML = Home();
-      break;
-    case '#register':
-      document.querySelector('main').innerHTML = Register();
-      break;
-    case '#database':
-      document.querySelector('main').innerHTML = Database();
-      break;
-    default:
-      document.querySelector('main').innerHTML = Home();
-  }
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      switch (pageName) {
+        case '#home':
+          document.querySelector('main').innerHTML = Home();
+          break;
+        case '#register':
+          document.querySelector('main').innerHTML = Register();
+          break;
+        case '#database':
+          firebase.firestore().collection('feed').get()
+            .then((querySnapshot) => {
+              document.querySelector('main').innerHTML = Database({
+                feed: querySnapshot,
+              });
+            });
+          break;
+        default:
+          document.querySelector('main').innerHTML = Home();
+      }
+    } else {
+      switch (pageName) {
+        case '#home':
+          document.querySelector('main').innerHTML = Home();
+          break;
+        case '#register':
+          document.querySelector('main').innerHTML = Register();
+          break;
+        default:
+          document.querySelector('main').innerHTML = Home();
+      }
+    }
+  })
 }
 
 window.addEventListener('load', pageRoute);

@@ -145,6 +145,24 @@
   font-size: 30px;
 
 }
+.delete{
+  padding: 3px;
+  width: 30px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  justify-content: right;
+
+}
+.linha{
+  border: red;
+  
+  
+}
+.delete{
+  justify-items: right;
+}
 /* .cadastro{
 display: flex;
 padding: 30%;
