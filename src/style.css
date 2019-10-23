@@ -83,7 +83,8 @@
 
 .post-area{
   text-align: center;
-  background-color: #cac0f3;
+  background-color:#8a92dd;
+  padding: 10px;
 }
 
 .btn-position{
@@ -136,9 +137,13 @@
 }
 
 .footer{
-  display: flex;
-  justify-content: center;
-  font-size: 13px;
+
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+ 
 }
 
 .title-size{
@@ -146,23 +151,30 @@
 
 }
 .delete{
-  padding: 3px;
+  padding: 5px;
+  margin-left: 10px;
   width: 30px;
-  height: 25px;
+  height: 30px;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
-  justify-content: right;
+  background-color: white;;
+  
+
 
 }
-.linha{
-  border: red;
+.linha-post{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(214, 217, 236);
+  margin: 10px;
+  word-break: break-all;
+  padding-left: 20px;
+ 
   
   
 }
-.delete{
-  justify-items: right;
-}
+
 /* .cadastro{
 display: flex;
 padding: 30%;
