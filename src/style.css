@@ -25,53 +25,45 @@ nav{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 4vh;
+  min-height: 6vh;
   background: #4c87df;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'
 }
 
 .nav-links{
   display: flex;
-  background-color:;
   justify-content: space-around;
-  width: 40%;
-  position: absolute;
-  right: 20%;
-  height: 20vh;
-  top: 4vh;
+  width: 20%;
+  /* position: absolute;
+  right: 3%;
+  height: 12vh;
+  top: 0vh;
   flex-direction: column;
   align-items: center;
+  transform: translateX(100%); */
 }
 
 .nav-links li{
   list-style: none;
-  opacity: 50px;
+  opacity: 0px;
 }
 
 .nav-links a{
   color: #000;
-  text-decoration: aliceblue;
+  text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 15px;
-  position: absolute;
-
 }
 
-.burger{
-  display: none;
-  cursor: pointer;
-  display: block;
-  margin-left: -250px;
-  cursor: pointer;
-  height: 31px;
-}
+.nav-links
+
 .burger div{
   width: 20px;
   height: 3px;
-  background-color: aliceblue;
+  background-color: #fff;
   margin: 5px;
-}
+} 
 
 input{
   display: flex;
@@ -116,8 +108,6 @@ h2 {
   align-items: center;
   color: #fff;
   margin-left: 173px;
-
-  
 }
 
 body{
@@ -127,7 +117,7 @@ body{
   background-repeat: no-repeat;
 }
 
-button{
+/* .button{
   display: flex;
   border-radius:4px;
   -moz-border-radius:4px;
@@ -144,14 +134,20 @@ button{
   margin-left:-105px;
   cursor: pointer;
   text-align: center;
-  }
+  } */
+
+.bntentrar{
 
 
-.google-btn{
+}
+
+.bntgoogle{
+  display: flex;
+  border-radius:4px;
   left: 50%;
-  margin-left:-10px;
+  margin-left:-100px;
   cursor: pointer;
-  width:250px;
+  width:25px;
   height: 20px;
 
 }
@@ -166,18 +162,38 @@ padding-top: 4px;
 width: 100%;
 }
 
-/*@media screen and (max-width:1024px){
+@media screen and (max-width:1400px){
   .nav-links{
-    width:60%;
+    width:100%;
+  } 
+  .burger{
+    display: none;
   }
 }
 
+
 @media screen and (max-width:768px){
+  .body{
+    overflow-x: hidden;
+  }
+  .burger{
+    display: block;
+  }
   .nav-links{
-    position: absolute;
-    right: 0px;
-    height: 0;
-  }*/
+    position: absolute;  
+    display: flex;
+    width: 20%;
+    right: 3%;
+    height: 12vh;
+    top: 0vh;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+  }
+}
+
+
+
   
 
 
