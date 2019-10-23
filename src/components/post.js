@@ -2,12 +2,19 @@ import Button from './button.js';
 import ButtonImage from './image-button.js';
 import Select from './select.js';
 import Input from './input.js';
+import Paragraph from './paragraph.js';
+
 
 const Post = (props) => {
   const userId = firebase.auth().currentUser.uid;
   let template = `
   <div class="container-public">
-    <div class="date-public">
+    <div class="data-date-public">
+    ${Paragraph({
+    class: 'name-user',
+    dataId: props.id,
+    text: props.post.user ? `Publicado por ${props.post.user.name}` : 'fulano',
+  })}
       <p data-id='${props.id}' class='date-post'>${props.post.addedAt.slice(0, 16)}</p> 
       </div>
     <div class="publication-public">
@@ -30,20 +37,6 @@ const Post = (props) => {
     type: 'image',
     src: 'images/curtir.png',
     onClick: props.likesEvent,
-  })}
-  ${Input({
-    class: 'ipt-comments',
-    dataId: props.id,
-    id: 'ipt-comments',
-    placeholder: 'comentar...', 
-    type: 'text',
-  })} 
-  ${Button({
-    class: 'btn-comment',
-    id: 'btn-comment',
-    type: 'submit',
-    title: 'Comentar',
-    // onClick: sendComments,
   })}
   `;
 
@@ -70,7 +63,25 @@ const Post = (props) => {
     });
   }
 
-  template += '</div></div>';
+  template += `
+  </div>
+  <div class="comentario">
+  ${Input({
+    class: 'ipt-comments',
+    dataId: props.id,
+    id: 'ipt-comments',
+    placeholder: 'comentar...',
+    type: 'text',
+  })} 
+  ${Button({
+    class: 'btn-comment',
+    id: 'btn-comment',
+    type: 'submit',
+    title: 'Comentar',
+    // onClick: sendComments,
+  })}
+    </div>
+  </div>`;
 
   return template;
 };

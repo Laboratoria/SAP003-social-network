@@ -18,16 +18,23 @@ const createPost = () => {
   if (textInput === '') {
     alert('Campo Vazio! Digite sua mensagem');
   } else {
-    firebase.firestore().collection('posts').add({
-      text: textInput,
-      userId: firebase.auth().currentUser.uid,
-      addedAt: (new Date()).toLocaleString('pt-BR'),
-      likes: 0,
-      comments: [],
-      privacy: selectPrivacy,
-    })
-      .then(() => {
-        textInput.value = '';
+    firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((userSnap) => {
+        firebase.firestore().collection('posts').add({
+          text: textInput,
+          userId: firebase.auth().currentUser.uid,
+          addedAt: (new Date()).toLocaleString('pt-BR'),
+          likes: 0,
+          comments: [],
+          privacy: selectPrivacy,
+          user: userSnap.data(),
+        })
+          .then(() => {
+            textInput.value = '';
+          });
       });
   }
 };

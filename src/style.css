@@ -260,13 +260,11 @@ select {
   font-family: sans-serif;
 }
 
-.date-public {
+.data-date-public {
   display: flex;
-  justify-content: flex-end;
-}
-
-.date-post {
+  justify-content: space-between;
   margin-right: 5%;
+  margin-left: 5%;
   font-size: 15px;
   color: #FFFFFF;
 }
