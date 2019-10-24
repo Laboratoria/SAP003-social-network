@@ -7,7 +7,7 @@
     font-size: 14px;
     border-radius: 25px;
     font-weight: bold;
-    border: none;
+    border: 1px solid grey;
     cursor: pointer;
     margin: 5px;
     width: 20%;
@@ -55,6 +55,7 @@
     margin: 10px;
     padding: 5px;
   }
+
   .textarea{
     width: 90%;
   }
@@ -70,11 +71,17 @@
   background-color: #ffffff;
   font-family: 'Ubuntu', sans-serif;
   color: black;
+  transform: translate(-40px, 10px);
+  }
 
+  .postHeader {
+    overflow: hidden;
+    background-color: #C3C7C1;
+    padding: 10px 10px;
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 751px) {
 .container{
 float: none;
 
@@ -89,7 +96,12 @@ float: none;
   transform: translate(40%,-150%);
 }
 
+.textarea{
+  width: 90%;
+}
+
 .content {
+  position: absolute;
   display: flex;
   align-items: center;
   flex-flow: column wrap;
@@ -124,6 +136,7 @@ float: none;
   cursor: pointer;
   margin: 5px;
   width: 10%;
+  border: 1px solid grey;
 }
 
 .js-email-input {
@@ -137,9 +150,10 @@ float: none;
   padding: 10px;
 }
 .post{
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   transform: translate(400px, -90px);
   border-radius: 30px;
   border-color: gray;
@@ -148,14 +162,25 @@ float: none;
 
 .postMessage{
   display: flex;
-  justify-content: flex-end;
-  transform: translate(-570px, 190px);
-  margin: 5px;
-  padding: 10px;
-  border: solid;
-  border-color: gray;
-  border-radius: 5px;
-  background-color: #ffffff;
-  list-style: none;
+    justify-content: flex-end;
+    flex-direction: column;
+    transform: translate(-40px, 10px);
+    margin: 5px;
+    padding: 10px;
+    border: solid;
+    border-color: gray;
+    border-radius: 5px;
+    background-color: #ffffff;
+    list-style: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    width: 100%;
 }
+
+.postHeader {
+  overflow: hidden;
+  background-color: #C3C7C1;
+  padding: 10px 10px;
+}
+
 }
