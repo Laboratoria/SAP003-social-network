@@ -13,33 +13,12 @@ function locationHashChanged() {
     case '#cadastrar':
       document.querySelector('main').innerHTML = cadastrar();
       break;
-    case '#item-1':
-        document.querySelector('main').innerHTML = cadastrar();
-        salvar();
-        break;
-    case '#item-2':
-        document.querySelector('main').innerHTML = cadastrar();
-        salvar();
-        break;
-    case '#item-3':
-        document.querySelector('main').innerHTML = cadastrar();
-        salvar();
-        break;
-    case '#item-4':
-          document.querySelector('main').innerHTML = cadastrar();
-          salvar();
-          break;
-    case '#item-5':
-          document.querySelector('main').innerHTML = cadastrar();
-          salvar();
-          break;
     case '#home':
       document.querySelector('main').innerHTML = logar();
       break;
     case '#feed':
       document.querySelector('main').innerHTML = feed();
       salvar();
-     
     default:
       document.querySelector('main').innerHTML = logar();
   }
