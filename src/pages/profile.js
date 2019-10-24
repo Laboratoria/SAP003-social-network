@@ -47,6 +47,8 @@ const profile = (props) => {
   })}
           </ul>
         </nav>
+        </nav>
+    <img class="img-profile" src="images/img-profile.png">
     <h1 class="title-timeline">Low Carb Style</h1>
     <p class="text-profile">Insira seus dados pessoais aqui...</p>
     <form>

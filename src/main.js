@@ -32,8 +32,11 @@ const init = (user) => {
   if (!user) {
     window.location = '#login';
     locationHashChanged();
-  } else {
+  } else if (user == login()) {
     window.location = '#timeline';
+    locationHashChanged();
+  } else {
+    window.location = '#profile';
     locationHashChanged();
   }
 };

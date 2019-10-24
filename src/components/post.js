@@ -1,9 +1,7 @@
 import Button from './button.js';
 import ButtonImage from './image-button.js';
 import Select from './select.js';
-import Input from './input.js';
 import Paragraph from './paragraph.js';
-
 
 const Post = (props) => {
   const userId = firebase.auth().currentUser.uid;
@@ -20,36 +18,35 @@ const Post = (props) => {
     dataId: props.id,
     text: props.post.addedAt.slice(0, 16),
   })} 
-      </div>
+    </div>
     <div class="publication-public">
     ${Paragraph({
     class: 'publication',
     dataId: props.id,
     text: props.post.text,
   })} 
-      <hr>
-      <div class='info-like-privacy'>
-      ${Paragraph({
-    class: 'likes',
-    dataId: `numbers-${props.id}`,
-    text: props.post.likes || '',
-  })} 
-      ${Select({
+    <div class='info-like-privacy'>
+    ${Select({
     class: 'slc-privacy-post',
     dataId: props.id,
     selected: props.post.privacy,
     options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
   })}
-      </div>
+    </div>
     </div>
     <div class="info-post">
-  ${ButtonImage({
+    ${ButtonImage({
     class: 'like-post',
     dataId: props.id,
     type: 'image',
     src: 'images/curtir-heart.png',
     onClick: props.likesEvent,
   })}
+    ${Paragraph({
+    class: 'likes',
+    dataId: `numbers-${props.id}`,
+    text: props.post.likes || '',
+  })} 
   `;
 
   if (userId === props.post.userId) {
