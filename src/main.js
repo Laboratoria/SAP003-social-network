@@ -26,7 +26,6 @@ function trocaPagina() {
         document.querySelector('main').innerHTML = Home();
         ultimaPagina = 'home';
         window.home.imprimirPosts(bancoDeDados[id].post);
-        // template ();
       }
       break;
     

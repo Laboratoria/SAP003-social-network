@@ -3,6 +3,7 @@ function Button(props) {
     <button 
     data-id="${props.id}"
     class="primary-button"
+    class="${props.class}"
      onclick="button.handleClick(event, ${props.onClick})" >
      ${props.title}
      </button>
@@ -21,3 +22,5 @@ window.button = {
 };
 
 export default Button;
+
+

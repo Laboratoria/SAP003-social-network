@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 window.validarLogin = (colecao, usuario) => {
-  console.log(colecao)
+  // console.log(colecao)
   for (let i = 0; i < colecao.length; i += 1) {
     if (usuario.emailDoCadastro === colecao[i].email
       && usuario.passwordDoCadastro === colecao[i].password) {
