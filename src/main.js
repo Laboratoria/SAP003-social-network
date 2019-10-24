@@ -1,6 +1,6 @@
 import Login from './pages/login.js';
 import Feed from './pages/feed.js';
-import Perfil from './pages/perfil.js';
+import Profile from './pages/profile.js';
 import Register from './pages/register.js';
 
 function locationHashChanged() {
@@ -16,8 +16,8 @@ function locationHashChanged() {
               posts: querySnapshot,
             });
           });
-      } else if (location.hash === '#perfil') {
-        document.querySelector('main').innerHTML = Perfil();
+      } else if (location.hash === '#profile') {
+        document.querySelector('main').innerHTML = Profile();
       } else if (location.hash === '#register') {
         document.querySelector('main').innerHTML = Register();
       } else {
