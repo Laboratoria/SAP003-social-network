@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @media (max-width: 750px) {
 
   .primary-button {
-    background-color: #fefefe;
+    background-color: #ffa05a;
     padding: 5px;
     font-size: 14px;
     border-radius: 25px;
@@ -31,9 +37,9 @@
   }
 
   .background {
-    background-color: #ffa05a;
+    background-color: #ffffff;
     font-family: 'Ubuntu', sans-serif;
-    color: #f0f4f3;
+    color: #ffa05a;
   }
 
   .logo {
@@ -47,13 +53,14 @@
   .js-email-input {
     border-radius: 30px;
     padding: 5px;
-    width: 50%;
+    width: 25%;
   }
 
   .js-password-input {
     border-radius: 30px;
     margin: 10px;
     padding: 5px;
+    width: 25%;
   }
 
   .textarea{
@@ -62,7 +69,7 @@
 
   .postMessage{
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   border: solid;
   border-radius: 10px;
   list-style: none;
@@ -73,18 +80,16 @@
   color: black;
   transform: translate(-40px, 10px);
   }
+}
+
+@media (min-width: 750px) {
+  }
 
   .postHeader {
     overflow: hidden;
     background-color: #C3C7C1;
     padding: 10px 10px;
   }
-}
-
-@media (min-width: 751px) {
-.container{
-float: none;
-
 }
 
 .logo {
@@ -117,9 +122,9 @@ float: none;
 }
 
 .background {
-  background-color: #ffa05a;
+  background-color: #ffffff;
   font-family: 'Ubuntu', sans-serif;
-  color: #f0f4f3;
+  color: #ffa05a;
 }
 
 .image{
@@ -127,7 +132,7 @@ float: none;
 }
 
 .primary-button {
-  background-color: #ffffff;
+  background-color: #ffa05a;
   padding: 10px;
   font-size: 14px;
   border-radius: 25px;
@@ -135,6 +140,9 @@ float: none;
   border: none;
   cursor: pointer;
   margin: 5px;
+  width: 13%;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
   width: 10%;
   border: 1px solid grey;
 }
@@ -142,19 +150,23 @@ float: none;
 .js-email-input {
   border-radius: 30px;
   padding: 10px;
+  width: 25%;
 }
 
 .js-password-input {
   border-radius: 30px;
   margin: 10px;
   padding: 10px;
+  width: 25%;
 }
+
 .post{
   width: 50%;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
+  transform: translate(400px, 80px);
   justify-content: center;
-  transform: translate(400px, -90px);
   border-radius: 30px;
   border-color: gray;
   list-style: none;
@@ -162,6 +174,54 @@ float: none;
 
 .postMessage{
   display: flex;
+  justify-content: flex-end;
+  transform: translate(-40px, 10px);
+  margin: 3px;
+  padding: 3px;
+  border: solid;
+  border-color: gray;
+  border-radius: 5px;
+  background-color: #ffffff;
+  list-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  width: 100%;
+}
+
+.left {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  transform: translate(220%, -320%);
+  width: 30%;
+  font-weight: bold;
+}
+
+.right {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  margin-top: -9.5%;
+  margin-left: 2%;
+  width: 40%;
+  font-weight: bold;
+}
+
+.header{
+  background-color: #ffa05a;
+  width: auto;
+  height: 70px;
+}
+
+.logo-feed{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  margin-left: 45%;
     justify-content: flex-end;
     flex-direction: column;
     transform: translate(-40px, 10px);
