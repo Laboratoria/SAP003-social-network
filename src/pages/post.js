@@ -43,7 +43,7 @@ function addPost(post) {
   <span class ="idname">Comentários</span>
   ${post.data().comments.map(c => `<p class="comment">${c}</p>`).join('')}
   <textarea name="post" class="post" placeholder="Comenta aqui! :)"></textarea>
-      ${Button({ class: "button-send", onClick: saveComments, title:'<i class="fas fa-paper-plane"></i>' })}
+      ${Button({ dataId: post.id, class: "button-send", onClick: saveComments, title:'<i class="fas fa-paper-plane"></i>' })}
     </div>
   </li>`
   
@@ -62,9 +62,11 @@ function showComments(){
   }
 }
 
-function saveComments() {
-
-
+function saveComments(event) {
+  const id = event.target.dataset.id;
+  const text = document.querySelector(`input[data-id='${id}']`).value;
+  console.log(text);
+ 
 } 
  
 function addPostPro(post) {
