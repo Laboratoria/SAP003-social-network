@@ -149,7 +149,6 @@ function Feed(props) {
       })}</li>
     </nav>
 </header>
-
   <div class='post'>
   ${Post({
     class: 'textarea',
