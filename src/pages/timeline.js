@@ -99,7 +99,7 @@ const timeline = (props) => {
   })}
       </ul>
     </nav>
-    <img class="img-timeline" src="images/img-timeline.png">
+    <img class="back-timeline" src="images/back-timeline.png">
     <h1 class="title-timeline">Low Carb Style</h1>  
   ${Bio(props.user || {})}
   <form>

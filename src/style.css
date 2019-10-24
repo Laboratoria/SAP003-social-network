@@ -2,7 +2,7 @@ body {
   background: #F5F5F4;
 }
 
-.img-login{
+.img-logoweb{
   display: block;
   width: 80%;
   margin-left: auto;
@@ -120,6 +120,10 @@ body {
 
 /* ---------timeline------------------ */
 
+.back-timeline{
+
+}
+
 label[for="navigation"] {
   display: block;
   margin-left: -2%;
@@ -174,6 +178,13 @@ label[for="navigation"] {
 
 .navigation {
   display: none;
+}
+  
+.img-timeline{
+  display: block;
+  width: 23%;
+  margin-left: 6%;
+  margin-top: -5%;
 }
 
 .title-timeline {
@@ -488,6 +499,7 @@ body{
   .slc-privacy-post{
     margin-left: 82%;
   }
+
   .img-timeline{
     display: block;
     width: 23%;
