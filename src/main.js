@@ -24,44 +24,61 @@ const mural = () => {
 		let postsLayout = '';
 //usuario logado
 		snap.forEach(post => {
-			if (post.data().userID === user.uid) {
-				postsLayout += `
-				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
-					<p>${post.data().date}</p>
-					<p>${post.data().name}</p>
-					${Button({id:post.id, title:'deletar',onclick:deletar})}
-					${Button({id:post.id, title:'editar', onclick: editar})}
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
-					<ul>
-						<li>
-							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
-							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
+	//		firebase.firestore().collection('posts/${post.id}/comments')
+			post.ref.collection('comments').get()
+				.then(commentSnap => {
+					const comments = [];
+					commentSnap.forEach( comment => {
+						comments.push(comment.data());
+					});
+					
+					
+					if (post.data().userID === user.uid) {
+						postsLayout += `
+						<li class='timeline-item' data-id='${post.data().userID}'>
+							<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+							<p>${post.data().date}</p>
+							<p>${post.data().name}</p>
+							${Button({id:post.id, title:'deletar',onclick:deletar})}
+							${Button({id:post.id, title:'editar', onclick: editar})}
+							${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
+							<p id="${post.id}">${post.data().likes}</p>
+							<ul>
+								<li>
+									${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
+									${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
+								</li>
+								${comments}
+							</ul>
 						</li>
-					</ul>
-				</li>
-				`;
-				//usuario não logado
-			} else {
-				postsLayout += `
-				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
-					<p>${post.data().date}</p>
-					<p>${post.data().name}</p>
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
-					<ul>
-						<li>
-							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
-							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
+						`;
+						//usuario não logado
+					} else {
+						postsLayout += `
+						<li class='timeline-item' data-id='${post.data().userID}'>
+							<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+							<p>${post.data().date}</p>
+							<p>${post.data().name}</p>
+							${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
+							<p id="${post.id}">${post.data().likes}</p>
+							<ul>
+								<li>
+									${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
+									${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
+								</li>
+								${comments.map(comment => `<li>${comment.text}</li>`).join("")}
+							</ul>
 						</li>
-					</ul>
-				</li>
-				`;
-			}
+						`;
+					}
+					
+					document.querySelector("main").innerHTML = Mural({ postsLayout });
+					
+					console.log(comments)
+				})
+		
+			
 		})
-		document.querySelector("main").innerHTML = Mural({ postsLayout });
 	})
 }
 
