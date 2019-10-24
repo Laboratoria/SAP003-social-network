@@ -38,8 +38,12 @@ function locationHashChanged() {
       break;
     case '#feed':
       document.querySelector('main').innerHTML = feed();
+      window.postarPublicacao();
+      // carregarPosts();
+      break;
+
       salvar();
-     
+
     default:
       document.querySelector('main').innerHTML = logar();
   }
