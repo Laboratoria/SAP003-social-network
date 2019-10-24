@@ -2,7 +2,15 @@ body {
   background: #F5F5F4;
 }
 
+.img-login{
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .text-title {
+  margin-top: 2%;
   text-align: center;
   font-weight: normal;
   font-size: 36px;
@@ -16,10 +24,21 @@ body {
 }
 
 .text-welcome {
+  margin-top: -5%;
   text-align: center;
   font-size: 20px;
   line-height: 38px;
   color: #EC6345;
+}
+
+.info-login{
+  margin-top: -4%;
+  margin-left: 13%;
+  margin-right: 18%;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  color: #ec5231;
 }
 
 .logo {
@@ -64,21 +83,13 @@ body {
   margin-top: 10%;
 }
 
-.error-email {
-  font-size: 20px;
+.error-email, .error-password {
+  font-size: 15px;
   line-height: 13px;
   color: rgb(231, 46, 46);
+  font-weight: bold;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 13px;
-  margin-bottom: 0;
-}
-
-.error-password {
-  font-size: 20px;
-  line-height: 13px;
-  color: rgb(231, 46, 46);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 13px;
+  margin-top: 6px;
   margin-bottom: 0;
 }
 
@@ -100,21 +111,27 @@ body {
   margin-top: 16%;
 }
 
+.text{
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  color: #ec5231;
+}
+
 /* ---------timeline------------------ */
 
 label[for="navigation"] {
   display: block;
   margin-left: -2%;
   margin-top: -2%;
-  padding: 5px;
+  padding: 1%;
   background-color: #EC6345;
-  color: #FFFFFF;
+  color: #000000;
   font-family: sans-serif;
   text-align: center;
-  font-size: 30px;
+  font-size: 245%;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 13%;
 }
 
 .navigation:checked~.menu {
@@ -145,10 +162,10 @@ label[for="navigation"] {
 
 .menu ul li {
   width: 100%;
+  cursor: pointer;
 }
 
 .menu li {
-  padding: 15px;
   display: block;
   text-align: center;
   background-color: #ec7f45;
@@ -160,10 +177,10 @@ label[for="navigation"] {
 }
 
 .title-timeline {
-  margin-top: -85px;
+  margin-top: -27%;
+  margin-left: 15%;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 36px;
   color: #403B3A;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -172,22 +189,25 @@ label[for="navigation"] {
 .users {
   display: flex;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 12%;
 }
 
 .img-usuario {
-  margin-left: -30%;
-  margin-right: 10%;
-  width: 32%;
+  margin-left: -8%;
+  margin-right: 12%;
+  width: 27%;
   height: 5%;
+}
+
+.bio{
+  font-size: 19px;
 }
 
 .container-publish {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 317px;
-  height: 210px;
+  width: 92%;
   margin-top: 10%;
   background: #524D47;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -204,64 +224,56 @@ label[for="navigation"] {
   background: #FBFBFB;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.images-publish {
+  display: flex;
+  width: 92%;
+  margin-top: 2%;
+}
 
 select {
   font-family: sans-serif;
   text-align-last: center;
 }
 
+.slc-privacy, .btn-publicar {
+  font-weight: bold;
+}
 .slc-privacy {
-  width: 22%;
-  margin-top: -7%;
-  margin-left: 74%;
-}
-
-.info-like-privacy {
-  display: flex;
-  justify-content: space-between; 
-}
-
-.slc-privacy-post {
-  width: 22%;
-  height: 1%;
-}
-
-.like-post {
-  width: 10%;
-}
-
-.images-publish {
-  margin-top: 2%;
-  display: flex;
-  justify-content:space-around;
-}
-
-.img-public {
-  width: 44px;
-  height: 42px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-  margin-right: 30%;
-  margin-top: -2%
-}
-
-.btn-publicar {
-  width: 106px;
-  height: 35px;
+  margin-left: 3%;
+  height: 79%;
   background: #EC6345;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+}
+
+.btn-publicar {
+  display: block;
+  margin-left: 49%;
+  margin-top: -1%;
+  background: #EC6345;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 20px; 
 }
 
 .container-public {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 317px;
+  width: 94%;
   margin-top: 10%;
   background: #968B7D;
   border-radius: 10px;
   font-family: sans-serif;
+}
+
+.name-user {
+  font-size: 14px;
+  margin-left: -3%;
+}
+
+.data-date-public, .slc-privacy-post, .edit-post, .save-post, .delete-post {
+  color: white;
+  font-weight: bold;
 }
 
 .data-date-public {
@@ -278,8 +290,28 @@ select {
   width: 100%;  
 }
 
+.info-like-privacy {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.slc-privacy-post {
+  margin-left: 70%;
+  background: #968B7D;
+  box-shadow: 2px 1px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  width: 28%;
+  color: #FFFFFF;
+}
+
+.like-post {
+  width: 14%;
+  height: 2%;
+}
+
 .likes {
-  margin-top: -2%;
+  color: white;
+  font-weight: bold;
 }
 
 .info-post {
@@ -310,68 +342,197 @@ select {
 }
 
 @media (min-width: 1280px) {
-  
-  .logo {
-    margin-left: 35%;
-    border-radius: 150px;
-    width: 30%;
-    margin-top: 30px;
+
+/* ----- login */
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+  .img-logo{
+    width: 47%;
+    margin-top: 3%;
+    margin-left: 3%;
   }
+
+  .text-welcome, .info-login, .text, .primary-button, .text-profile, .btn-profile, .btn-publicar, .slc-privacy {
+    color: rgb(61, 60, 60);
+    font-family: sans-serif;
+  }
+
+  .text-title{
+    margin-top: -43%;
+    margin-left: 50%;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 29px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .text-welcome{ 
+    margin-left: 53%;
+    margin-top: 2%;
+    font-size: 20px;
+    line-height: 38px;
+  }  
+
+  .info-login{
+    margin-left: 57%;
+    margin-top: 3%;
+    margin-right: 6%;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+  }
+  
+  .form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 26%;
+    margin-top: 4%;
+  }
+
+  /* ----- timeline */
 
   label[for="navigation"] {
     display: none;
   }
   .menu {
-    width: 100%;
-    height: 50px;
+    width: 18%;
     font-family: sans-serif;
-    margin-left: 10%;
+    margin-left: 83%;
     transition: none;
   }
 
-  .menu ul {
-    position: none;
-    margin-left: none;
-    margin-right: none;
-    margin-top: none;
-  }
-
-  .menu li {
-    background-color: #EC6345;
-  }
- 
   .title-timeline {
-    margin-top: 0%;
+    margin-top: -21%;
+    margin-left: auto;
     font-size: 36px;
   }
 
+  .img-usuario {
+    margin-left: 10%;
+    margin-right: 2%;
+    margin-top: -1%;
+    width: 10%;
+  }
   .users {
     display: flex;
     justify-content: start;
-    margin-top: 10%;
+    margin-top: 24%;
   }
 
-  .img-usuario {
-    margin-left: 15%;
-    margin-right: 0%;
-    margin-top: -3%;
-    width: 10%;
-  }
+  .bio{
+    font-size: 19px;
+    margin-top: -1%;
+  }  
 
   .container-publish {
-    width: 400px;
-    height: 230px;
-    margin-top: -10%;
+    width: 45%;
+    margin-top: -26%;
+    margin-left: 37%;
   }
 
   .post-text {
-    width: 300px;
-    height: 140px;
+    width: 100%;
+    height: 69px;
+    margin-top: 5%;
+  }
+
+  .images-publish{
+    width: 103%;
+    margin-top: 1%;
+  }
+
+  .publication-public{
+    background: #ffffff;
+    width: 100%;
+  }
+  .slc-privacy {
+    margin-left: 3%;
+    height: 20px;
+    background: #EC6345;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-top: -1%;
+  }
+
+  .btn-publicar{
+    margin-left: 64%;
+    background: #EC6345;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
   }
 
   .container-public {
-    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 37%;
+    width: 45%;
+    margin-top: 2%;
+    background: #968B7D;
+    border-radius: 10px;
+    font-family: sans-serif;
+  }
+
+  .like-post{
+    width: 5%;
+    height: 28px;
+    margin-left: -2%;
     margin-top: 2%;
   }
 
-} 
+  .slc-privacy-post{
+    margin-left: 82%;
+  }
+  .img-timeline{
+    display: block;
+    width: 23%;
+    margin-left: 6%;
+    margin-top: -5%;
+  }
+
+  /* ----- profile */
+
+  .img-profile{
+    display: block;
+    width: 23%;
+    margin-top: -5%;
+  }
+
+  .title-timeline{
+    margin-top: -21%;
+    margin-left: auto;
+    font-size: 36px;
+  }
+  .text-profile{
+    text-align: center;
+    color: chocolate;
+    margin-top: 4%;
+    font-size: 19px;
+  }
+
+  .container-form-profile{
+    background-color: #988a87;
+    display: flex;
+    width: 43%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+    margin-left: 27%;
+    border-radius: 4%;
+    padding: 2%;
+  }
+
+  .inp-age-profile, .inp-name-profile, .inp-profession-profile{
+    background: #FFFFFF;
+    box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
+    border-radius: 9px;
+    padding: 10px;
+    margin-top: 29px;
+    width: 48%;
+  }
+}

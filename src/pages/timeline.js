@@ -99,6 +99,7 @@ const timeline = (props) => {
   })}
       </ul>
     </nav>
+    <img class="img-timeline" src="images/img-timeline.png">
     <h1 class="title-timeline">Low Carb Style</h1>  
   ${Bio(props.user || {})}
   <form>
@@ -110,14 +111,13 @@ const timeline = (props) => {
     placeholder: 'digite aqui...',
   })}
       </div>
-    ${Select({
+      <div class="images-publish">
+      ${Select({
     class: 'slc-privacy',
     selected: '🔓',
     options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
   })}
-      <div class="images-publish">
-        <img src="images/img-public.png" class="img-public"> 
-        ${Button({
+      ${Button({
     class: 'btn-publicar',
     id: 'btn-publicar',
     type: 'submit',

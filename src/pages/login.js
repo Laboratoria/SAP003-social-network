@@ -29,11 +29,11 @@ const register = () => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/email-already-in-use') {
-        document.querySelector('.error-email').textContent = 'Email já possui uma conta';
+        document.querySelector('.error-email').textContent = 'E-mail já possui uma conta cadastrada!';
       } else if (errorCode === 'auth/invalid-email') {
-        document.querySelector('.error-email').textContent = 'Formato de email inválido';
+        document.querySelector('.error-email').textContent = 'Formato de email inválido!';
       } else if (errorCode === 'auth/weak-password') {
-        document.querySelector('.error-password').textContent = 'Senha deve possuir no mínimo 6 caracteres';
+        document.querySelector('.error-password').textContent = 'Senha deve possuir no mínimo 6 caracteres!';
       }
     })
 };
@@ -47,22 +47,23 @@ const googleLogin = () => {
 
 const login = () => {
   const template = `
-      <img class="img" src="images/img.png">
+      <img class="img-logo" src="images/img-lc1.png">
       <h1 class="text-title">Low Carb Style</h1>
       <h2 class="text-welcome">Boas vindas...</h2>
+      <p class='info-login'>Insira nos campos abaixo seu e-mail e senha para entrar ou cadastrar-se.</p>
 
     <form class="form">
     ${Input({
     class: 'js-input-email',
     placeholder: 'email@exemplo.com',
-    type: 'email',
+    type: 'e-mail',
     id: 'js-input-email',
   })}
   <p class="error-email"></p>
 
     ${Input({
     class: 'js-input-password',
-    placeholder: 'Senha',
+    placeholder: 'senha',
     type: 'password',
     id: 'js-input-password',
   })}
@@ -79,7 +80,7 @@ const login = () => {
     onClick: register,
   })} 
   </div>
-  <p id="text-p" class="text">ou entrar com...</p>
+  <p id="text-p" class="text">Ou entrar com...</p>
     ${ButtonImage({
     class: 'img-google',
     type: 'image',
