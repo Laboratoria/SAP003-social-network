@@ -6,6 +6,10 @@ import Input from '../components/input.js';
 function sendPost() {
   const text = document.querySelector('.js-text').value;
   const id = firebase.auth().currentUser.uid;
+  const file = document.querySelector('.js-filte').files[0];
+  firebase.storage().ref().child('oi.jpg').put(file).then( () => {
+    console.log('oi');
+  })
   firebase.firestore().collection('posts').add({ text, user: id })
     .then((docRef) => {
       document.querySelector('ul').insertAdjacentHTML('afterbegin', `
@@ -43,6 +47,7 @@ function Home(props) {
   const template = `
     <h1>Home Page</h1>
     <form>
+      ${Input({ class: 'js-filte', type: 'file', placeholder: 'Digite aqui'})}
       ${Input({ class: 'js-text', type: 'text', placeholder: 'Digite aqui'})}
       ${Button({ id: '🐠', title: 'Botão 🐠', onClick: sendPost })}
     </form>
