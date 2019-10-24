@@ -4,7 +4,7 @@
   display: block;
   margin-left: 52px;
   }
-
+/* LOGIN */
   .welcome {
     margin-top: 32px;
     width: 323px;
@@ -71,7 +71,7 @@
     border-bottom: 2px solid #FF007A;
   }
 
-  .login-error {
+  .error {
     font-family: Lato;
     color: #CC311D;
     font-size: 14px;
@@ -129,7 +129,6 @@
     cursor: pointer;  
   }
 
-
   .register-link {
     height: 19px;
     font-family: Lato;
@@ -154,28 +153,56 @@
     cursor: pointer;
   }
 
-  body {
+  .bg-login {
     background-image: url(img/loginbg.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position-x: 110%;
   }
 
+/*   FEED */
+/*     REGISTER */
+
+  .bg-register {
+     background-color: #FF007A;
+     background-image: url(img/registerilus.png);
+     background-attachment: fixed;
+     background-repeat: no-repeat;
+     width: 468.49px;
+     height: 494px;
+     background-position-x: 90%;
+     background-position-y: 50%;
+
+  }
+
+  .logo {
+    width: auto;
+    height: 32px;
+  }
+
   .register-info {
-    margin-top: 40px;
-    width: 601px;
-    height: 58px;
+    width: 475px;
+    height: 116px;
     font-family: Lato;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 48px;
     line-height: 58px;
     letter-spacing: -0.03em;
-    color: #B0BEC5;
+    color: #FFFFFF;
+  }
+
+  .register-form {
+    width: 336px;
+    height: 313px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    padding-left: 10%;
   }
   
   .name {
-    margin-top: 32px;
+    margin-top: 40px;
     width: 288px;
     height: 32px;
     border: none;
@@ -229,7 +256,7 @@
   }
 
   .btn-register {
-    margin-top: 48px;
+    margin-top: 40px;
     width: 128px;
     height: 40px;
     border: none;
@@ -248,18 +275,21 @@
     cursor: pointer;  
   }
 
-  .login-link {
+  .login-link { 
+    width: 203px;
     height: 19px;
     font-family: Lato;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    color: #263238;
-    margin-top: 52px;
+    color: #FFFFFF;
+    margin-top: 10%;
   }
-
-
+  .a-register {
+    color: #FFFFFF;
+    font-weight: inherit;
+  }
 }
 
 /*MOBILE*/
@@ -387,18 +417,34 @@ a{
 
 /*REGISTER*/
 .logo {
-  width: 35%;
+  width: 45%;
   height: auto;
   margin-top: 5%;
   margin-left: 5%;  
 }
-
+.bg-register {
+  background-color: #FF007A;
+}
 .register-info{
-  color: #B0BEC5;
-  font-size: 160%;
-  margin-top: 10%;
-  margin-left: 5%;
+
+  font-family: Lato;
+  font-style: normal;
+  font-size: 180%;
   line-height: 29px;
+  color: #FFFFFF;
+  margin-top: 15%;
+  margin-left: 5%;
+
+}
+
+.register-form {
+  margin-top: 16%;
+  margin-left: 5%;
+  width: 90%;
+  height: 45%;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
 }
 
 .name {
@@ -458,10 +504,9 @@ a{
 .btn-register {
   color: #FFFFFF;
   font-size: 100%;
-  font-weight: bold;
-  width: 90%;
+  width: 50%;
   height: 45px;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 5%;
   background-color: #FF007A;
   border: none;
@@ -470,6 +515,7 @@ a{
 
 .btn-register:active{
   background-color: #C6005F;
+  font-weight: bold;
 }
 
 .btn-register:focus{
@@ -477,12 +523,18 @@ a{
 }
 
 .login-link {
-  margin-top: 16%;
-  margin-bottom: 5%;
+  margin-top: 30%;
+  font-family: Lato;
+  font-style: normal;
   font-weight: bold;
+  font-size: 18px;
+  line-height: 19px;
+  color: #FFFFFF;
   text-align: center;
-  font-size: 110%;
-  color: #263238
+}
+
+.a-register{
+  color: #FFFFFF;
 }
 
 /*FEED*/
@@ -497,17 +549,6 @@ a{
   padding:1%;
 }
 
-.post-text{
-
-}
-
-.likes{
-
-}
-
-.date-time{
-
-}
 
 .btn-logout{
   color: #FFFFFF;
@@ -533,5 +574,9 @@ a{
   background-color: #FF007A;
   border: none;
   border-radius: 25px;
+}
+
+.post-img {
+  max-width: 200px
 }
 }

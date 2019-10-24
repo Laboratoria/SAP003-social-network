@@ -11,7 +11,7 @@ function Login() {
     <form>
     ${input({ class: 'email', placeholder: 'Login', type: 'email' })}<br>
     ${input({ class: 'password', placeholder: 'Senha', type: 'password' })}
-    <p class='login-error'></p>    
+    <p class='error'></p>    
     </form>
     ${Button({ class: 'send', onclick: sendLogin, title: 'Entrar' })}
     <p class="other-login">Ou faça login com as redes sociais</p>

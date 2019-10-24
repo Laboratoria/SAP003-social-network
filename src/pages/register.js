@@ -4,15 +4,15 @@ import input from '../components/input.js';
 function Register() {
   const template =
    `  
-      <img class="logo" src="img/Logo.png"/> 
-      <form>
+      <img class="logo" src="img/registerlogo.png"/>
       <p class="register-info">Faça parte da nossa rede de colecionadores!</p>
+      <form class='register-form'>
       ${input({ class: 'name', placeholder: 'Nome', type: 'text' })}<br>
       ${input({ class: 'email-re', placeholder: 'Email', type: 'email' })}<br>
       ${input({ class: 'password-re', placeholder: 'Senha', type: 'password' })}<br>
       ${Button({ class: 'btn-register', onclick: emailAndPass, title: 'Register' })}<br>
       </form>
-      <p class="login-link">Já é registrado? Faça o <a href="#login">login</a>
+      <p class="login-link">Já é registrado? Faça o <a class='a-register' href="#login">login</a>
       </body>
     `;
   return template;
@@ -29,8 +29,9 @@ function emailAndPass() {
     .catch((error) => {
       console.error(error.code);
       console.error(error.message);
-      alert('falha ai');
     })
+
+  window.name = userName;
 }
 
 
