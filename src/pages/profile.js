@@ -63,7 +63,7 @@ function Profile() {
 
   const template = `
   <header class='header'>
-    <h1><img class='logo-feed' src='logo1.png'/></a></h1>
+    <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
     <nav>
         <li class="left">${Button({ class: 'left',
         title: 'Encerrar Sessão',

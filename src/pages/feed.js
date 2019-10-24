@@ -1,7 +1,5 @@
-
 import Button from '../components/button.js';
 import Post from '../components/post.js';
-
 
 function signOut() {
   firebase.auth().signOut().then(() => {
@@ -17,12 +15,12 @@ function profile() {
 function AddPostToFirebase() {
   const dataBase = firebase.firestore();
   const id = firebase.auth().currentUser.uid;
-  const name = firebase.auth().currentUser.displayName;
-  const textInput = document.querySelector('.textarea').value;
+  const name = firebase.auth().currentUser.email;
+  const textInput = document.querySelector('.textarea');
   const post = {
     timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
     name,
-    text: textInput,
+    text: textInput.value,
     likes: 0,
     comments: [],
     user_id: id,
@@ -83,38 +81,28 @@ function loadFeed () {
   .then((querySnapshot) => {
     querySnapshot.forEach((post) => {
       const postsFeed =  `<li data-id='${post.id}' class='postMessage'>
-      ${post.data().timestamp}
-      ${post.data().name} disse: <br>
-      ${post.data().text}<br>
-      ${post.data().likes}
-      ${Button({
-    dataId: post.id,
-    class: 'primary-button',
-    title: '🗑️',
-    onClick: deletePost,
-  })}
-      ${Button({
-      dataId: post.id,
-      class: 'primary-button',
-      title: '✏️',
-      onClick: editPost,
-  })}
-  </li>
-    </div>
-  `;
-  document.querySelector('.timeline').innerHTML += postsFeed;
-      });
-      `<li>
       <div class='postHeader'>${post.data().timestamp}-</div>
       <div class='postHeader'>${post.data().user_id} disse:</div>
-      <div id='post_${post.id}'>${post.data().text}</div>      
+      <div id='post_${post.id}'>${post.data().text}</div>
       ${post.data().likes}
-      ${Button({dataId: post.id, title: '🗑️', class: 'primary-button', onClick: deletePost,})}
-      ${Button({id: 'edit-'+post.id, dataId: post.id, title: '✏️', class: 'edit-btn primary-button', onClick: editPost,})}
-      </li>`
+      ${Button({
+        dataId: post.id,
+        title: '🗑️',
+        class: 'primary-button',
+        onClick: deletePost,
+      })}
+      ${Button({
+        id: 'edit-'+post.id,
+        dataId: post.id,
+        title: '✏️',
+        class: 'edit-btn primary-button',
+        onClick: editPost,
+      })}
+      </li>`;
       document.querySelector('.timeline').innerHTML += postsFeed;
     });
-  };
+  });
+}
 
 function loadCard () {
   firebase.firestore().collection('persona').get()
@@ -130,6 +118,7 @@ function loadCard () {
       });
     });
 }
+
 function Feed(props) {
   const name = firebase.auth().currentUser.displayName;
   let postsLayout = '';
@@ -144,11 +133,13 @@ function Feed(props) {
       </li>
     `;
   });
+
   window.feed.loadFeed();
   window.feed.loadCard();
+
   const template = `
   <header class='header'>
-    <h1><img class='logo-feed' src='logo1.png'/></a></h1>
+    <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
     <nav>
         <li class="left">${Button({ class: 'left',
         title: 'Encerrar Sessão',
@@ -160,7 +151,7 @@ function Feed(props) {
       })}</li>
     </nav>
 </header>
-
+  <h2>Post</h2>
   <div class='post'>
   ${Post({
     class: 'textarea',
@@ -173,11 +164,14 @@ function Feed(props) {
     class: 'primary-button',
     onClick: AddPostToFirebase,
   })}
+  <div>
   <ul class= 'timeline'>${postsLayout}</ul>
   <ul class= 'card'>${postsLayout}</ul>
   `;
+
   return template;
 }
+
 window.feed = {
   deletePost,
   editPost,
@@ -186,4 +180,5 @@ window.feed = {
   loadCard,
   saveEdit
 };
+
 export default Feed;

@@ -25,7 +25,7 @@ function createLogin() {
 
       function createProfile() {
         const template = `
-          <img class='logo' src='logo1.png'/>
+          <img class='logo' src='logoredetech.png'/>
           <h1>Login</h1>
           <form>
           ${Input({ class:'js-name-input', placeholder:'Como gostaria ser chamado?', type:'text', })}

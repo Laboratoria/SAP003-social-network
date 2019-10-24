@@ -28,6 +28,7 @@
     align-items: center;
     border-radius: 25px;
     width: auto;
+    margin-top: 25%;
   }
 
   .google-btn {
@@ -44,24 +45,37 @@
   }
 
   .logo {
-    margin: 0%;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    transform: translate(140px, 10px);
+    transform: translate(92px, 50px);
   }
 
   .js-email-input {
     border-radius: 30px;
-    padding: 5px;
-    width: 25%;
+    padding: 10px;
+    width: 50%;
   }
 
   .js-password-input {
     border-radius: 30px;
+    margin: 10px 5px;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .login{
+    background-color: #ffa05a;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 1px solid grey;
+    cursor: pointer;
     margin: 10px;
-    padding: 5px;
-    width: 25%;
+    width: 40%;
+  }
+
+  .cadastro{
+    padding: 20px;
   }
 
   .textarea{
@@ -81,21 +95,39 @@
   color: black;
   transform: translate(-40px, 10px);
   }
+
+  .bemvinda {
+    padding: 15px;
+  }
 }
 
 @media (min-width: 750px) {
-  }
-
   .postHeader {
     overflow: hidden;
     background-color: #C3C7C1;
     padding: 10px 10px;
   }
 
-
 .logo {
   width: 15%;
   transform: translate(140%,120%);
+}
+
+
+.bemvinda {
+  padding: 15px;
+}
+
+.login{
+  background-color: #ffa05a;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 1px solid grey;
+  cursor: pointer;
+  margin: 10px;
+  width: 20%;
 }
 
 #h2{
@@ -160,6 +192,11 @@
   padding: 10px;
   width: 25%;
 }
+
+.cadastro{
+  padding: 20px;
+}
+
 
 .post{
   width: 50%;
@@ -244,3 +281,4 @@
   padding: 10px 10px;
 }
 
+}
