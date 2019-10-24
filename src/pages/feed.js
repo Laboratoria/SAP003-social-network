@@ -1,6 +1,7 @@
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 
+
 function signOut() {
   firebase.auth().signOut().then(() => {
     window.location.hash = '#login';
@@ -9,18 +10,18 @@ function signOut() {
 }
 
 function profile() {
-  window.location.hash = '#perfil';
+  window.location.hash = '#profile';
 }
 
 function AddPostToFirebase() {
   const dataBase = firebase.firestore();
   const id = firebase.auth().currentUser.uid;
-  const name = firebase.auth().currentUser.email;
-  const textInput = document.querySelector('.textarea');
+  const name = firebase.auth().currentUser.displayName;
+  const textInput = document.querySelector('.textarea').value;
   const post = {
     timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
     name,
-    text: textInput.value,
+    text: textInput,
     likes: 0,
     comments: [],
     user_id: id,
@@ -31,7 +32,7 @@ function AddPostToFirebase() {
       <li class='postMessage' data-id='${docRef.id}'>
       ${post.timestamp}
       ${post.name}
-      ${post.text}
+      ${post.text}<br>
       ${post.likes}
       ${post.comments}
       ${window.button.component({
@@ -46,7 +47,8 @@ function AddPostToFirebase() {
         title: '✏️',
         onClick: window.feed.editPost,
       })}
-      </li> `)
+      </li> 
+      `)
     });
 }
 
@@ -67,41 +69,78 @@ function loadFeed () {
     .then((querySnapshot) => {
       querySnapshot.forEach((post) => {
       const postsFeed =  `<li data-id='${post.id}' class='postMessage'>
-      ${post.data().timestamp}-
-      ${post.data().user_id} disse:
-      ${post.data().text}
+      ${post.data().timestamp}
+      ${post.data().name} disse: <br>
+      ${post.data().text}<br>
       ${post.data().likes}
       ${Button({
     dataId: post.id,
+    class: 'primary-button',
     title: '🗑️',
     onClick: deletePost,
   })}
       ${Button({
       dataId: post.id,
+      class: 'primary-button',
       title: '✏️',
       onClick: editPost,
   })}
-  </li>`;
+  </li>
+    </div>
+  `;
   document.querySelector('.timeline').innerHTML += postsFeed;
       });
     });
 }
 
-function Feed() {
+function loadCard () {
+  firebase.firestore().collection('persona').get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((persona) => {
+      const cardFeed =  `<li data-id='${persona.id}' class=''>
+      ${persona.data().name} <br>
+      ${persona.data().profession}
+  </li>
+    </div>
+  `;
+  document.querySelector('.card').innerHTML = cardFeed;
+      });
+    });
+}
+
+
+function Feed(props) {
+  const name = firebase.auth().currentUser.displayName;
+  let postsLayout = '';
+  props.posts.forEach((post) => {
+    postsLayout += `
+      <li  class='postMessage' data-id='${post.id}'>
+      ${post.name}
+      ${post.timestamp}<br>
+      ${post.text}<br>
+      ${post.likes}
+      ${Button({  dataId: post.id, class: 'primary-button', title: '🗑️', onClick: deletePost,})}
+      </li>
+    `;
+  });
+
   window.feed.loadFeed();
+  window.feed.loadCard();
   const template = `
-  <h1>Feed</h1>
-  ${Button({
-    title: 'Sair',
-    class: 'primary-button',
-    onClick: signOut,
-  })}
-  ${Button({
-    title: 'Perfil',
-    class: 'primary-button',
-    onClick: profile,
-  })}
-  <h2>Post</h2>
+  <header class='header'>
+    <h1><img class='logo-feed' src='logo1.png'/></a></h1>
+    <nav>
+        <li class="left">${Button({ class: 'left',
+        title: 'Encerrar Sessão',
+        onClick: signOut,
+      })}</li>
+      <li class="right">${Button({ class: 'right',
+          title: `${name}`,
+          onClick: profile,
+      })}</li>
+    </nav>
+</header>
+
   <div class='post'>
   ${Post({
     class: 'textarea',
@@ -114,8 +153,8 @@ function Feed() {
     class: 'primary-button',
     onClick: AddPostToFirebase,
   })}
-  <div>
-  <ul class= 'timeline'></ul>
+  <ul class= 'timeline'>${postsLayout}</ul>
+  <ul class= 'card'>${postsLayout}</ul>
   `;
 
   return template;
@@ -125,7 +164,8 @@ window.feed = {
   deletePost,
   editPost,
   loadFeed,
-  AddPostToFirebase
+  AddPostToFirebase,
+  loadCard
 };
 
 export default Feed;
