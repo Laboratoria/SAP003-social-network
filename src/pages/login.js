@@ -36,9 +36,6 @@ const register = () => {
         document.querySelector('.error-password').textContent = 'Senha deve possuir no mínimo 6 caracteres!';
       }
     })
-    .then(() => {
-      window.location = '#profile';
-    });
 };
 
 const googleLogin = () => {
@@ -83,7 +80,7 @@ const login = () => {
     onClick: register,
   })} 
   </div>
-  <p id="text-p" class="text">ou entrar com...</p>
+  <p id="text-p" class="text">Ou entrar com...</p>
     ${ButtonImage({
     class: 'img-google',
     type: 'image',

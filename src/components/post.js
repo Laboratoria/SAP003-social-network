@@ -41,7 +41,7 @@ const Post = (props) => {
     });
   }
   template += ` 
-      </div>
+      </div>  
     </div>
     <div class="info-post">
     ${ButtonImage({
