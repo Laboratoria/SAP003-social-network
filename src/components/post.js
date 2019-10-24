@@ -1,7 +1,6 @@
 import Button from './button.js';
 import ButtonImage from './image-button.js';
 import Select from './select.js';
-import Input from './input.js';
 import Paragraph from './paragraph.js';
 
 
@@ -24,7 +23,7 @@ const Post = (props) => {
     <div class="publication-public">
     ${Paragraph({
     class: 'publication',
-    dataId: props.id,
+    dataId: `text-${props.id}`,
     text: props.post.text,
   })} 
       <hr>
@@ -33,13 +32,16 @@ const Post = (props) => {
     class: 'likes',
     dataId: `numbers-${props.id}`,
     text: props.post.likes || '',
-  })} 
-      ${Select({
-    class: 'slc-privacy-post',
-    dataId: props.id,
-    selected: props.post.privacy,
-    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
-  })}
+  })} `;
+  if (userId === props.post.userId) {
+    template += Select({
+      class: 'slc-privacy-post',
+      dataId: `privacy-${props.id}`,
+      selected: props.post.privacy,
+      options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+    });
+  }
+  template += ` 
       </div>
     </div>
     <div class="info-post">

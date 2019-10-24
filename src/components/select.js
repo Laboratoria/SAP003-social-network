@@ -1,5 +1,5 @@
 const Select = (props) => {
-  let template = `<select data-id='privacy-${props.dataId}' class='${props.class}'>`;
+  let template = `<select data-id='${props.dataId}' class='${props.class}'>`;
   const options = props.options || [];
 
   options.forEach((option) => {
@@ -16,4 +16,3 @@ const Select = (props) => {
 };
 
 export default Select;
-
