@@ -21,18 +21,22 @@ function userInfo() {
 }
 
 function createPost() {
+
   const text = document.querySelector('.text-area').value;
+  //const userdoc =  db.collection('users').doc(auth.currentUser.uid)
+
   const post = {
     likes: 0,
     user_likes: [],
     text,
     comments: [],
-    user_name: firebase.auth().currentUser.displayName,
-    user_id: firebase.auth().currentUser.uid,
+    user_name: auth.currentUser.displayName,
+    user_id: auth.currentUser.uid,
     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     privacy: 'public',
   };
-  const postsCollection = firebase.firestore().collection('posts');
+
+  const postsCollection = db.collection('posts');
   postsCollection
     .add(post)
     .then()
@@ -94,7 +98,7 @@ function addPost(post, postId) {
         ${post.likes}
         <div class='comment-icon fa fa-comments'></div>
         <!----------------------------------------------------Monica mexeu aqui-->
-        ${LoggedUserID === post.user_id ? '<select class="privacy"><option value="fa fa-globe">&#xf0ac; Público</option><option value="fa fa-lock">&#xf023; Privado</option></select>' : ''}
+        ${LoggedUserID === post.user_id ? '<select class="privacy"><option value="fa-globe">Público</option><option value="fa-lock"> Privado</option></select>' : ''}
         <!----------------------------------------------------Monica mexeu aqui-->
         <div class="comments">
           <div class="comment-container"></div>
@@ -106,7 +110,7 @@ function addPost(post, postId) {
 }
 
 function loadPosts() {
-  const postsCollection = firebase.firestore().collection('posts');
+  const postsCollection = db.collection('posts');
   postsCollection.where('privacy', '==', 'public').orderBy('createdAt', 'desc').onSnapshot((snapshot) => {
     const postList = document.querySelector('.post-list');
     postList.innerHTML = '';
@@ -146,6 +150,7 @@ function loadPosts() {
 }
 
 function Feed() {
+
   const template = `
   <header class='header'>
     ${Button({

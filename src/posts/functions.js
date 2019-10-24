@@ -120,7 +120,7 @@ function EditPost(postId) {
 }
 
 async function LikePost(postId) {
-  const postsCollection = firebase.firestore().collection('posts');
+  const postsCollection = db.collection('posts');
   const actualPost = await postsCollection.doc(postId).get();
 
   postsCollection.doc(postId).get().then(doc => {
@@ -130,17 +130,11 @@ async function LikePost(postId) {
     if(!thisUser) {
       console.log('foi');
       postsCollection.doc(postId).update({
-          //...actualPost.data(),
           likes: ++actualPost.data().likes,
           user_likes: firebase.firestore.FieldValue.arrayUnion(auth.currentUser.uid)
         });
       };
-   })
-
-  // postsCollection.doc(postId).set({
-  //   ...actualPost.data(),
-  //   likes: ++actualPost.data().likes,
-  // });
+   });
 }
 
 function DeletePost(postId) {
