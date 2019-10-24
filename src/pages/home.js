@@ -26,6 +26,10 @@ function home() {
     ${Button({ class: "button-out", onClick: signOut, title:'<i class="fas fa-sign-out-alt"></i>' })}
     <div class= "post-area">      
       <a href ='#profile.js'><img class="img-user" src="./img/profile_girl.png"/></a>
+      <select class ="privacidade">
+        <option value="publico"class="optionpublico">Público</option>
+        <option value="privado" class="optionprivado">Privado</option>
+      </select>
       <textarea name="post" class="post" placeholder="O que você quer trocar?"></textarea>
       ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane"></i>' })}
     </div>

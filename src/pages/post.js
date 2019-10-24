@@ -1,5 +1,6 @@
 import Button from '..//components/button.js';
 
+
 window.app = {
   loadPost: loadPost,
   filterPost: filterPost
@@ -9,12 +10,13 @@ function savePost() {
 
   const post = document.querySelector('.post').value;
   const uid = firebase.auth().currentUser.uid;
+  const privacityPost = document.querySelector('.privacidade').value;
 
   db.collection('post').add({
     post: post,
     likes: 0,
-    comments: [],
     uid: uid,
+    privacidade: privacityPost,
     idname: firebase.auth().currentUser.displayName,
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
@@ -28,10 +30,12 @@ function addPost(post) {
   const feed = document.querySelector('.feed');
   const feedPost = `  
   <li data-id= '${post.id}' class="post-list">
-  <span class= "idname">${post.data().idname}:</span>
+  <span class= "idname">${post.data().idname}:
+  </span>
   <p class="border"></p>
   <div class="text-post" data-id='${post.id}'>
   ${post.data().post}
+  
   </div>
   <br>  
   <br>
@@ -50,6 +54,13 @@ function addPost(post) {
 
 function addPostPro(post) {
   const feed = document.querySelector('.feed');
+  let privacity = post.data().privacidade;
+  if (privacity === 'publico'){
+    console.log(publicooooo)
+  }else{
+    console.log(privadoooooo)
+  }
+  
   const feedPost = `  
   <li data-id= '${post.id}' class="post-list">
   <span class= "idname">${post.data().idname}:</span>
@@ -64,7 +75,8 @@ function addPostPro(post) {
   ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
   ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'🔒' })}
   ${Button({ dataId: post.id, class: "button-save", onClick: saveEdit, title:'✅' })}   
-  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+  ${privacity}
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span> 
     <ul class="comments">    
     </ul> 
   </li>
@@ -78,11 +90,12 @@ function loadPost() {
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {
-      addPost(post)
+      if(post.data().uid == uid || post.data().privacidade == 'publico'){
+        addPost(post)
+      }
     })
   })
 };
-
 
 function filterPost() {
   const user = firebase.auth().currentUser.uid;  
@@ -131,5 +144,6 @@ function deletePost(event) {
   event.target.parentElement.remove();
 }
 
+
+
 export default savePost;
-//teste
