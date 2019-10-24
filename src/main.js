@@ -30,12 +30,12 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ id: post.id, title: 'deletar', onclick: deletar })}
-					${Button({ id: post.id, title: 'editar', onclick: editar })}
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id='${post.id}'>${post.data().likes}</p>
-					${Post({ id: post.id, placeholder: 'Comentários', rows: '2', cols: '15' })}
-					${Button({ id: post.id, title: 'comentar', onclick: comment })}
+					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodelete.png" class="icon-delete" />', onclick: deletar })}
+					${Button({ class:'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
+					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					<span like-id='${post.id}' class="like">${post.data().likes}</span>
+					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
+					${Button({id: post.id, title: 'comentar', onclick: comment})}
 				</li>
 				`;
 			} else {
@@ -44,8 +44,8 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
+					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					<p like-id="${post.id}" class="like">${post.data().likes}</p>
 					${Post({ id: post.id, placeholder: 'Comentários', rows: '2', cols: '15' })}
 					${Button({ id: post.id, title: 'comentar', onclick: comment })}
 				</li>
@@ -74,10 +74,11 @@ const editar = (id, event) => {
 
 const like = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).get().then((post) => {
-		let like = (post.data().likes) + 1;
-		firebase.firestore().collection('posts').doc(id).update({ likes: like });
-	})
-}
+		let like = (post.data().likes) +1 ;
+		let likes = document.querySelector(`[like-id='${id}']`)
+		firebase.firestore().collection('posts').doc(id).update({likes: like});
+		likes.innerHTML = like;
+})}
 
 
 const deletar = (id, event) => {
