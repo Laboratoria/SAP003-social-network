@@ -30,7 +30,7 @@ const createPost = () => {
           likes: 0,
           comments: [],
           privacy: selectPrivacy,
-          user: userSnap.data(),
+          user: userSnap.data() || null,
         })
           .then(() => {
             textInput.value = '';

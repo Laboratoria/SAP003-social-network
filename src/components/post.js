@@ -11,7 +11,7 @@ const Post = (props) => {
     ${Paragraph({
     class: 'name-user',
     dataId: props.id,
-    text: props.post.user ? `Publicado por ${props.post.user.name}` : 'fulano',
+    text: props.post.user ? `Publicado por ${props.post.user.name}` : 'Publicado por fulano',
   })}
     ${Paragraph({
     class: 'date-post',
@@ -22,17 +22,26 @@ const Post = (props) => {
     <div class="publication-public">
     ${Paragraph({
     class: 'publication',
-    dataId: props.id,
+    dataId: `text-${props.id}`,
     text: props.post.text,
   })} 
-    <div class='info-like-privacy'>
-    ${Select({
-    class: 'slc-privacy-post',
-    dataId: props.id,
-    selected: props.post.privacy,
-    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
-  })}
-    </div>
+      <hr>
+      <div class='info-like-privacy'>
+      ${Paragraph({
+    class: 'likes',
+    dataId: `numbers-${props.id}`,
+    text: props.post.likes || '',
+  })} `;
+  if (userId === props.post.userId) {
+    template += Select({
+      class: 'slc-privacy-post',
+      dataId: `privacy-${props.id}`,
+      selected: props.post.privacy,
+      options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+    });
+  }
+  template += ` 
+      </div>
     </div>
     <div class="info-post">
     ${ButtonImage({
