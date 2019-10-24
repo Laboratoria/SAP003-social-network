@@ -9,7 +9,6 @@ export const EditarPerfil = (props) => {
 				<select id="select" onchange="changeSelect()">
 					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural'})}
 					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar', selected:'selected'})}
-					${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
 				</select>
 			</li>
 			<li>Logo</li>

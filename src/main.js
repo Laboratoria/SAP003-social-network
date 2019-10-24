@@ -30,8 +30,8 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({id:post.id, title:'deletar',onclick:deletar})}
-					${Button({id:post.id, title:'editar', onclick: editar})}
+					${Button({ id: post.id, title:'deletar',onclick: deletar})}
+					${Button({ id: post.id, title:'editar', onclick: editar})}
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
 					<p id="${post.id}">${post.data().likes}</p>
 					<ul>
@@ -40,6 +40,9 @@ const mural = () => {
 							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
 						</li>
 					</ul>
+					<p like-id='${post.id}'>${post.data().likes}</p>
+					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
+					${Button({id: post.id, title: 'comentar', onclick: comment})}
 				</li>
 				`;
 				//usuario não logado
@@ -57,6 +60,7 @@ const mural = () => {
 							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
 						</li>
 					</ul>
+					<p like-id="${post.id}">${post.data().likes}</p>
 				</li>
 				`;
 			}
@@ -66,26 +70,30 @@ const mural = () => {
 }
 
 
+const comment = (id, event) => {
+	const text = document.querySelector(`.txt-area[post-id='${post.id}']`).value;
+	firebase.firestore().collection(`posts/${id}/comments`).add({text, user: id})
+	console.log(text);
+}
+
+
 const editar = (id, event) => {
-
 	const user = firebase.auth().currentUser;
-
 	const postEdit = document.querySelector(`[post-id='${id}']`).innerText;
-
-	const post = firebase.firestore()
-.collection('posts').doc(id)
-
+	const post = firebase.firestore().collection('posts').doc(id);
 	post.update({
 		text: postEdit
 	})
 }
 
 const like = (id, event) => {
-	const amei = post.data.likes;
-	amei.innerHTML++;
-	likes = document.getElementById(post.id);
-	firebase.firestore().collection('posts').doc(id).update({ likes });
-}
+	firebase.firestore().collection('posts').doc(id).get().then((post) => {
+		let like = (post.data().likes) +1 ;
+		firebase.firestore().collection('posts').doc(id).update({likes: like});
+
+		document.querySelector(`[like-id='${id}']`).innerHTML = like;
+})}
+
 
 const deletar = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).delete();
