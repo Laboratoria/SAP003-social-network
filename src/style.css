@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); 
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * { 
   margin: 0; 
   padding: 0; 
   font-family: 'Lato', sans-serif; 
-} 
-
+}
 /* Home */ 
 .homepage-title { 
   font-size: 49px; 
@@ -22,22 +21,20 @@ body {
 .login { 
   margin-top: 35px; 
   padding: 100px; 
-  margin-left: 50px; 
 } 
 
 .home { 
   display: flex; 
   height: 100%; 
-  width: 100%; 
-  justify-items: center; 
+  width: 100%;
+  justify-content: center; 
 } 
 
 .logo { 
   display: flex; 
-  justify-items: initial; 
+  justify-content: initial; 
   width: 500px; 
   padding-top: 50px; 
-  margin-left: 100px; 
 } 
 
 #email-login { 
@@ -68,6 +65,7 @@ body {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
+  margin-bottom: 30px;
 } 
 
 .btn-sign-up { 
@@ -241,6 +239,7 @@ body {
   background-color: #292828;
   color: #cccccc;
   border-color: #282828;
+  outline: none;
 }
 
 .btn-logout {
@@ -282,7 +281,8 @@ body {
   color: whitesmoke; 
   background: #AA4528; 
   margin-left: 7px; 
-  justify-content: center; 
+  justify-content: center;
+  outline: none; 
 } 
 
 #post { 
@@ -304,15 +304,21 @@ p {
   justify-content: center;
   flex-direction: column;
 }
+
+.btn-edit, .btn-likes, .post-comment, .btn-comment {
+  outline: none;
+}
+
 /* Fim Mural */ 
 
  
-@media screen and (max-width: 817px) { 
+@media screen and (max-width: 992px) { 
   /* Home */ 
   .home { 
     display: flex; 
     flex-direction: column; 
-    align-items: center; 
+    align-items: center;
+    align-content: center;
   } 
   
   .cadastro { 
@@ -329,8 +335,7 @@ p {
   
   .login { 
     padding: 0px; 
-    margin-top: 35px; 
-    margin-left: 50px; 
+    align-self: center;
   } 
   /* Fim da Home */ 
 } 
@@ -338,43 +343,35 @@ p {
    
 @media screen and (max-width: 420px) { 
   /* Home */ 
-  body { 
-    justify-content: center; 
-  } 
   
   .homepage-title { 
     text-align: center; 
     color: wheat; 
     padding: 0px; 
-    font-size: 34px; 
+    font-size: 30px; 
   } 
   
   .home { 
     display: flex; 
-    justify-content: space-around; 
-    height: 100%; 
-    width: 100%; 
+    justify-content: space-between;
+    flex-direction: column;
   } 
   
   .logo { 
-    width: 66%; 
-    padding-top: 0;
-    margin-left: 0;
+    width: 65%; 
+    align-self: center;
   } 
   
   .login { 
-    padding: 20px; 
-    display: flex, 
-    align-items: center;
-    margin-left: 0;
-    margin-top: 0; 
+    flex-direction: column;
+    justify-content: center;
   } 
-  
+
   #email-login { 
     border-radius: 5px; 
     outline:none; 
     padding: 2px; 
-    width: 280px; 
+    width: 230px; 
   } 
   
   #pass-login { 
@@ -382,7 +379,7 @@ p {
     outline:none;   
     padding: 2px; 
     margin-top: 4px; 
-    width: 280px; 
+    width: 230px; 
   } 
   
   .login-form { 
