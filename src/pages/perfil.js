@@ -11,26 +11,55 @@ function Perfil() {
     <nav class="menu">
     <ul>
     ${Menu({
-        name: 'Feed',
-        link: pageFeed,
-      })}
+    name: 'Feed',
+    link: pageFeed,
+  })}
     ${Menu({
-        name: 'Sair',
-        link: logOut,
-      })}
+    name: 'Sair',
+    link: logOut,
+  })}
     </ul> 
     </nav>
     </header>
     <section class = "primary-box">
       <h1 class="name-network">Heroínas</h1>
       <form class="primary-box">
-        ${firebase.auth().currentUser.displayName}
-        ${firebase.auth().currentUser.email}
+        <div class="data-perfil">
+        <label>Nome: 
+        ${Input({
+          class: 'name-perfil',
+          value:`${firebase.auth().currentUser.displayName}`,
+          type: 'text',
+        })}</label/>
+        <label>Email: 
+        ${Input({
+          class: 'email-perfil',
+          value:`${firebase.auth().currentUser.email}`,
+          type: 'text',
+        })}</label>
+        <label>Trabalho: 
+        ${Input({
+          class: 'perfil-job',
+          value:`${firebase.firestore().collection('users').doc(firebase.auth().getUid(firebase.auth().currentUser.email)).get().then(function (doc) { document.querySelector('.perfil-job').value = doc.data().job })}`,
+          type: 'text',
+        })}</label>
+        <label>Data de nascimento: 
+        ${Input({
+          class: 'perfil-born',
+          value:`${firebase.firestore().collection('users').doc(firebase.auth().getUid(firebase.auth().currentUser.email)).get().then(function (doc) { document.querySelector('.perfil-born').value = doc.data().dateBorn })}`,
+          type: 'text',
+        })}</label>
+        </div>
         ${Button({
-          id: 'deleteCount',
-          title: 'deletar conta',
-          onClick: deleteCount,
-          })}
+        id: 'saveData',
+        title: 'Salvar dados',
+        onClick: saveData,
+        })}
+        ${Button({
+        id: 'deleteCount',
+        title: 'deletar conta',
+        onClick: deleteCount,
+        })}
     </form>
   </section>
 </div>
@@ -39,42 +68,33 @@ function Perfil() {
   return template;
 }
 
-/* function createCount() {
-  const email = document.querySelector('.js-email-input').value;
-  const password = document.querySelector('.js-password-input').value;
-  const name = document.querySelector('.js-name-input').value;
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      firebase.auth().currentUser.updateProfile({
-        displayName: name
-      });
-      firebase.auth().currentUser.sendEmailVerification()
-      window.location.hash = 'login';
-    })
-    .catch(function (error) {
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      if (errorCode == 'auth/email-already-in-use') {
-        document.querySelector('.alertMessage').textContent ='E-mail já cadastrado.';
-      } if (errorCode == 'auth/weak-password') {
-        document.querySelector('.alertMessage').textContent = 'A senha é muito fraca.';
-      } if (errorCode == 'auth/invalid-email') {
-        document.querySelector('.alertMessage').textContent ='E-mail inválido.';
-      } else {
-        document.querySelector('.alertMessage').textContent = errorMessage;
-      }
-    });
-} */
 function pageFeed() {
-    window.location.hash = 'post';
-  }
+  window.location.hash = 'post';
+}
 
-  function logOut(){
-    firebase.auth().signOut();
-  }
+function logOut() {
+  firebase.auth().signOut();
+}
 
-  function deleteCount(){
-    firebase.auth().currentUser.delete();
-  }
+function deleteCount() {
+  firebase.auth().currentUser.delete();
+}
+
+
+function saveData() {
+  const name = document.querySelector('.name-perfil').value;
+  const email = document.querySelector('.email-perfil').value;
+  const job = document.querySelector('.perfil-job').value;
+  const dateBorn = document.querySelector('.perfil-born').value;
+  console.log(name,email,job,dateBorn)
+  firebase.firestore().collection('users').doc(firebase.auth().getUid(firebase.auth().currentUser.email)).update(
+    {job,
+    dateBorn}
+  );
+  firebase.auth().currentUser.updateProfile({
+    displayName: name,
+    email,
+  });
+}
 
 export default Perfil;

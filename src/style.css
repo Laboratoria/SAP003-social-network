@@ -38,6 +38,11 @@
   align-self: flex-start;
   padding: 1%;
 }
+.data-perfil{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .description {
   display: flex;
   justify-content: flex-start;

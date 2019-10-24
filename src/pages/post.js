@@ -5,7 +5,7 @@ import Icons from '../components/icons.js';
 import Menu from '../components/menu.js';
 
 function loadPost() {
-  const email = firebase.auth().currentUser.emailVerified;
+  const email = firebase.auth().currentUser.email;
   const codUid = firebase.auth().getUid(email);
   firebase.firestore().collection('Posts').where("user", "==", codUid).orderBy("data", "desc").onSnapshot(
     (snap) => {
@@ -54,11 +54,13 @@ function Post() {
   <div class="description">
     <img class = "avatar" src="./Imagens/avatar.png">
     <p class = "name-display">${firebase.auth().currentUser.displayName}</p>
+    <p class='post-job'>${firebase.firestore().collection('users').doc(firebase.auth().getUid(firebase.auth().currentUser.email)).get().then(function(doc) {document.querySelector('.post-job').textContent = doc.data().job})}</p>;
   </div>
   <form class="primary-box">
     ${Input({
     class: 'js-post',
     placeholder: 'O que quer compartilhar?',
+    value:'',
     type: 'text',
   })}
     ${Button({
@@ -102,13 +104,12 @@ function deletePost(event) {
 
 function likePost(event) {
   const idPost = event.target.id;
-  console.log(idPost)
-  let y = Number(document.getElementById(idPost).getElementsByClassName('primary-icon-like')[0].textContent.replace(/\D/g,''));
-  y++;
+  let y = Number(document.getElementById(idPost).getElementsByClassName('primary-icon-like')[0].textContent.replace('likes ',''));
+  y++
   firebase.firestore().collection('Posts').doc(idPost).update({
-     likes: y,
+    likes: y,
   }).then(()=>{
-    location.reload()
+    //location.reload()
   }) 
 }
 

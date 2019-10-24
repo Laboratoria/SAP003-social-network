@@ -12,11 +12,13 @@ function Login() {
         ${Input({
         class: 'js-email-input',
         placeholder: 'Email',
+        value:'',
         type: 'email',
         })}
         ${Input({
         class: 'js-password-input ',
         placeholder: 'Senha',
+        value:'',
         type: 'password',
         })}
         ${Button({

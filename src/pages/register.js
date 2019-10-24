@@ -12,16 +12,31 @@ function Register() {
         ${Input({
         class: 'js-name-input',
         placeholder: 'Nome Completo',
+        value:'',
         type: 'text',
-      })}
+        })}
+        ${Input({
+        class: 'js-date-input',
+        placeholder: 'data de nascimento',
+        value:'',
+        type: 'date',
+        })}
+        ${Input({
+        class: 'js-job-input',
+        placeholder: 'job',
+        value:'',
+        type: 'text',
+        })}
         ${Input({
         class: 'js-email-input',
         placeholder: 'Email',
+        value:'',
         type: 'text',
       })}
           ${Input({
         class: 'js-password-input ',
         placeholder: 'Senha',
+        value:'',
         type: 'password',
       })}
       <p class="alertMessage"></p>
@@ -42,12 +57,20 @@ function createCount() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
   const name = document.querySelector('.js-name-input').value;
+  const born = document.querySelector('.js-date-input').value;
+  const job = document.querySelector('.js-job-input').value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
       firebase.auth().currentUser.updateProfile({
-        displayName: name
+        displayName: name,
       });
       firebase.auth().currentUser.sendEmailVerification()
+      const email = firebase.auth().currentUser.email;
+      const codUid = firebase.auth().getUid(email);
+      firebase.firestore().collection('users').doc(codUid).set({
+        dateBorn: born,
+        job,
+      })
       window.location.hash = 'login';
     })
     .catch(function (error) {

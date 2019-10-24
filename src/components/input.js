@@ -3,7 +3,8 @@ function Input(props) {
     <input
         class="${props.class} primary-input"
         placeholder="${props.placeholder}"
-        type="${props.type}" />
+        value="${props.value}"
+        type="${props.type}">
     `;
     return template;
 }

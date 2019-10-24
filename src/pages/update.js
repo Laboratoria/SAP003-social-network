@@ -12,6 +12,7 @@ function Update() {
         ${Input({
         class: 'js-email-input',
         placeholder: 'Email',
+        value:'',
         type: 'email',
         })}
         ${Button({
