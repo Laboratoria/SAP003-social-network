@@ -2,7 +2,7 @@ body {
   background: #F5F5F4;
 }
 
-.img-logoweb{
+.img-logo{
   display: block;
   width: 80%;
   margin-left: auto;
@@ -19,6 +19,10 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.text{
+  color: #403B3A;
+}
+
 .text-welcome, .js-input-email, .js-input-password, .primary-button, .error-email, .error-password, .text, .text-profile {
   font-family: sans-serif;
 }
@@ -28,7 +32,7 @@ body {
   text-align: center;
   font-size: 20px;
   line-height: 38px;
-  color: #EC6345;
+  color: #403B3A;
 }
 
 .info-login{
@@ -38,7 +42,7 @@ body {
   text-align: center;
   font-size: 15px;
   font-style: italic;
-  color: #ec5231;
+  color: #403B3A;
 }
 
 .logo {
@@ -93,13 +97,18 @@ body {
   margin-bottom: 0;
 }
 
+.img-profile{
+  margin-left: 24%;
+  width: 47%;
+}
+
 .container-form-profile{
   background-color: #988a87;
   display: flex;
   width: 69%;
   flex-direction: column;
   align-items: center;
-  margin-top: 17%;
+  margin-top: 11%;
   margin-left: 5%;
   border-radius: 4%;
   padding: 10%;
@@ -108,7 +117,7 @@ body {
 .text-profile{
   text-align: center;
   color: chocolate;
-  margin-top: 16%;
+  margin-top: 3%;
 }
 
 .text{
@@ -119,10 +128,6 @@ body {
 }
 
 /* ---------timeline------------------ */
-
-.back-timeline{
-
-}
 
 label[for="navigation"] {
   display: block;
@@ -418,39 +423,50 @@ body{
     transition: none;
   }
 
+  .menu li {
+    background-color: #8a2257;
+    border-radius: 60%;
+  }
+
+  .section-menu{
+    background-image: url("images/back-section.png");
+  }
+
   .title-timeline {
-    margin-top: -21%;
+    margin-top: -4%;
     margin-left: auto;
-    font-size: 36px;
+    font-size: 43px;
   }
 
   .img-usuario {
     margin-left: 10%;
     margin-right: 2%;
-    margin-top: -1%;
     width: 10%;
   }
   .users {
     display: flex;
     justify-content: start;
-    margin-top: 24%;
+    margin-top: 2%;
+    margin-left: -5%;
   }
 
   .bio{
     font-size: 19px;
-    margin-top: -1%;
   }  
 
   .container-publish {
     width: 45%;
-    margin-top: -26%;
+    margin-top: -10.5%;
     margin-left: 37%;
+  }
+
+  .textarea-publish{
+    margin-top: -4%;
   }
 
   .post-text {
     width: 100%;
     height: 69px;
-    margin-top: 5%;
   }
 
   .images-publish{
@@ -465,7 +481,7 @@ body{
   .slc-privacy {
     margin-left: 3%;
     height: 20px;
-    background: #EC6345;
+    background: #ff467a;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     margin-top: -1%;
@@ -473,7 +489,7 @@ body{
 
   .btn-publicar{
     margin-left: 64%;
-    background: #EC6345;
+    background: #ff467a;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
   }
@@ -489,6 +505,10 @@ body{
     font-family: sans-serif;
   }
 
+  .publication-public{
+    height: auto;
+  }
+
   .like-post{
     width: 5%;
     height: 28px;
@@ -498,6 +518,8 @@ body{
 
   .slc-privacy-post{
     margin-left: 82%;
+    height: 24px;
+    margin-top: 5%;
   }
 
   .img-timeline{
@@ -513,17 +535,13 @@ body{
     display: block;
     width: 23%;
     margin-top: -5%;
+    margin-left: 0%;
   }
 
-  .title-timeline{
-    margin-top: -21%;
-    margin-left: auto;
-    font-size: 36px;
-  }
   .text-profile{
     text-align: center;
     color: chocolate;
-    margin-top: 4%;
+    margin-top: -15%;
     font-size: 19px;
   }
 

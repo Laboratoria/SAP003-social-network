@@ -3,9 +3,9 @@ const Bio = (user) => {
   <div class="users">
   <img src="images/img-user.png" class="img-usuario">
    <div class="bio">
-    <p>${user.name || ''}</p>
-    <p>${user.age  || ''}</p>
-    <p>${user.profession || ''}</p>
+    <p>${user.name || 'Nome'}</p>
+    <p>${user.age  || 'Idade'}</p>
+    <p>${user.profession || 'Profissão'}</p>
     </div>
   </div>
   `;

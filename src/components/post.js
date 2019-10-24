@@ -25,7 +25,6 @@ const Post = (props) => {
     dataId: `text-${props.id}`,
     text: props.post.text,
   })} 
-      <hr>
       <div class='info-like-privacy'>
       ${Paragraph({
     class: 'likes',
