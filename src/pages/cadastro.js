@@ -1,7 +1,5 @@
-
 import Input from '../components/input.js';
 import Button from '../components/button.js';
-
 
 function pegarInput() {
   let dadoslocal = JSON.parse(localStorage.getItem('cadastro'));
@@ -42,11 +40,10 @@ function cadastrar() {
 function locationHashChanged() {
   if (window.location.hash === '#cadastro') {
     document.querySelector('main').innerHTML = cadastrar();
-  } else if (window.location.hash === '#login') {
-    document.querySelector('main').innerHTML = Login();
   }
 }
 
 window.addEventListener('hashchange', locationHashChanged, false);
+
 
 export default cadastrar;
