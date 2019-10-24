@@ -8,17 +8,25 @@ window.app = {
 function savePost() {
   const post = document.querySelector('.post').value;
   const uid = firebase.auth().currentUser.uid;
-  db.collection('post').add({
-    post: post,
-    likes: 0,    
-    uid: uid,
-    idname: firebase.auth().currentUser.displayName,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
-  })
-  .then(function (docRef) {    
-    app.loadPost()
-  })
-  document.querySelector('.post').value = '';  
+  
+  if (post === '') {    
+    alert('Ops! Você não disse o que quer trocar.')
+
+  } else {
+
+    db.collection('post').add({
+      post: post,
+      likes: 0,    
+      uid: uid,
+      idname: firebase.auth().currentUser.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
+    })
+    .then(function (docRef) {    
+      app.loadPost()
+    })
+    document.querySelector('.post').value = '';  
+  }
+  
 };
 
 function addPost(post) {
@@ -45,14 +53,17 @@ function addPost(post) {
   <br>
   `
 
-  db.collection(`post/${post.id}/comments`).get()
+  db.collection(`post/${post.id}/comments`).orderBy('timestamp', 'desc').get()
   .then((snapcomments) => {
     snapcomments.forEach((comment) => {      
       const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
-      feedcom.innerHTML = '';
+      
       feedcom.innerHTML += `${comment.data().timestamp.toDate().toLocaleString('pt-BR')} - 
       ${comment.data().idname}:
-      ${comment.data().txtComment}`          
+      ${comment.data().txtComment}
+      <br>
+      <br>
+      `          
     })   
   })
 
