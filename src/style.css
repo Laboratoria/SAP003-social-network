@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+a@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * { 
@@ -260,6 +260,7 @@ body {
   text-align: center;
   border: 20px;
   border-color: #737373;
+  list-style: none;
 }
 
 .class-mural {

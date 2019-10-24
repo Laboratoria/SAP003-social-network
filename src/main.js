@@ -22,7 +22,7 @@ const mural = () => {
 
 	allPosts.orderBy('date', 'desc').get().then(snap => {
 		let postsLayout = '';
-
+//usuario logado
 		snap.forEach(post => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
@@ -30,14 +30,22 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ class:'btn-edit', id: post.id, title:'deletar',onclick: deletar})}
+					${Button({ id: post.id, title:'deletar',onclick: deletar})}
 					${Button({ id: post.id, title:'editar', onclick: editar})}
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
+					<p id="${post.id}">${post.data().likes}</p>
+					<ul>
+						<li>
+							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
+							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
+						</li>
+					</ul>
 					<p like-id='${post.id}'>${post.data().likes}</p>
-					${Post({class:'post-comment', id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
-					${Button({class:'btn-comment', id: post.id, title: 'comentar', onclick: comment})}
+					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
+					${Button({id: post.id, title: 'comentar', onclick: commentarPost})}
 				</li>
 				`;
+				//usuario não logado
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
@@ -45,9 +53,14 @@ const mural = () => {
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
+					<p id="${post.id}">${post.data().likes}</p>
+					<ul>
+						<li>
+							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
+							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
+						</li>
+					</ul>
 					<p like-id="${post.id}">${post.data().likes}</p>
-					${Post({ class:'post-comment', id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
-					${Button({class:'btn-comment' ,id: post.id, title: 'comentar', onclick: comment})}
 				</li>
 				`;
 			}
@@ -56,11 +69,12 @@ const mural = () => {
 	})
 }
 
-const comment = (id, event) => {
-	//const text = document.querySelector(`[id='${id}']`);
-	//firebase.firestore().collection(`posts/${id}/comments`).add({text, user: id})
-	console.log(text);
-}
+
+// const comment = (id, event) => {
+// 	const text = document.querySelector(`.txt-area[post-id='${post.id}']`).value;
+// 	firebase.firestore().collection(`posts/${id}/comments`).add({text, user: id})
+// 	console.log(text);
+// }
 
 
 const editar = (id, event) => {
@@ -84,6 +98,12 @@ const like = (id, event) => {
 const deletar = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).delete();
 	document.getElementById(id).parentElement.remove();
+}
+
+const commentarPost = (id, event) => {
+	const input = document.querySelector(`input[data-id='${id}']`);
+	firebase.firestore().collection(`posts/${id}/comments`).add({text: input.value});
+	event.target.parentElement.innerHTML += `<li>${input.value}</li>`	
 }
 
 // const editarPerfil = () => {
@@ -127,8 +147,9 @@ const hash = () => {
 	// }
 }
 //mudança de hash #
+
+
 window.mural = mural;
 
 window.addEventListener("load", init);
-
 window.addEventListener("hashchange", hash, false);

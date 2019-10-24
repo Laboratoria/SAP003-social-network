@@ -28,7 +28,9 @@ export const Mural = (props) => {
 	</section>
 	<ul id='timeline'>
 	${props.postsLayout}
-	</ul>`;
+	<ul id='comment-icon'>
+	${props.postsLayout}
+	`
 
 	return template;
 }
