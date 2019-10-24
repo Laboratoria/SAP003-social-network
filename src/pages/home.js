@@ -31,7 +31,8 @@ function home() {
     </div>
     <br>    
     <ul class="feed">    
-    </ul>   
+    </ul>
+      
   `;    
 
   return template;
