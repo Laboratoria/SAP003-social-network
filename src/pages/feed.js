@@ -1,6 +1,7 @@
+
 import Button from '../components/button.js';
 import Post from '../components/post.js';
-const dataBase = firebase.firestore();
+
 
 function signOut() {
   firebase.auth().signOut().then(() => {
@@ -10,44 +11,47 @@ function signOut() {
 }
 
 function profile() {
-  window.location.hash = '#perfil';
+  window.location.hash = '#profile';
 }
 
 function AddPostToFirebase() {
   const dataBase = firebase.firestore();
   const id = firebase.auth().currentUser.uid;
-  const email = firebase.auth().currentUser.email;
-  const textInput = document.querySelector('.textarea');
+  const name = firebase.auth().currentUser.displayName;
+  const textInput = document.querySelector('.textarea').value;
   const post = {
     timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
-    email,
-    text: textInput.value,
+    name,
+    text: textInput,
     likes: 0,
     comments: [],
     user_id: id,
   };
-  dataBase.collection('posts').add(post).then((docRef) => {
-      document.querySelector('.timeline').insertAdjacentHTML('afterbegin', `
-      <li class='postMessage' data-id='${docRef.id}'>
-      ${post.timestamp}
-      ${post.name}
-      ${post.text}
-      ${post.likes}
-      ${post.comments}
-      ${window.button.component({
-        dataId: docRef.id,
-        class: 'primary-button',
-        title: '🗑️',
-        onClick: window.feed.deletePost,
-      })}
-      ${window.button.component({
-        dataId: docRef.id,
-        class: 'primary-button',
-        title: '✏️',
-        onClick: window.feed.editPost,
-      })}
-      </li> `)
-    });
+  dataBase.collection('posts').add(post)
+  .then((docRef) => {
+    document.querySelector('.timeline').insertAdjacentHTML('afterbegin', `
+    <li class='postMessage' data-id='${docRef.id}'>
+    <div class='postHeader'>${post.timestamp}</div>
+    <div class='postHeader'>${post.name} disse:</div>
+    <div id='post_${docRef.id}'>${post.text}</div>
+    ${post.likes}
+    ${post.comments}
+    ${window.button.component({
+      dataId: docRef.id,
+      class: 'primary-button',
+      title: '🗑️',
+      onClick: window.feed.deletePost,
+    })}
+    ${window.button.component({
+      id: 'edit-'+docRef.id,
+      dataId: docRef.id,
+      class: 'primary-button',
+      title: '✏️',
+      onClick: window.feed.editPost
+    })}
+    </li> `)
+    console.log(post)
+  });
 }
 
 function deletePost(event) {
@@ -58,51 +62,105 @@ function deletePost(event) {
 
 function editPost(event) {
   const id = event.target.dataset.id;
-  firebase.firestore().collection('posts').doc(id).update();
-  event.target.parentElement.add();
+  document.getElementById('post_'+id).contentEditable = true;
+  document.getElementById('post_'+id).style.border = '1px solid black';
+  document.querySelector('#edit-'+id).innerHTML = '✔️';
+  document.querySelector('#edit-'+id).addEventListener('click', window.feed.saveEdit);
+}
+
+function saveEdit () {
+  const id = event.target.dataset.id;
+  document.getElementById('post_'+id).contentEditable = false;
+  document.getElementById('post_'+id).style.border = '';
+  document.querySelector('#edit-'+id).innerHTML = '✏️';
+  const text = document.querySelector('#post_'+id).textContent;
+  firebase.firestore().collection('posts').doc(id).update({text});
+  document.querySelector('#edit-'+id).removeEventListener('click', window.feed.saveEdit);
 }
 
 function loadFeed () {
   firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((post) => {
+  .then((querySnapshot) => {
+    querySnapshot.forEach((post) => {
       const postsFeed =  `<li data-id='${post.id}' class='postMessage'>
-      ${post.data().timestamp}-
-      ${post.data().user_id} disse:
-      ${post.data().text}
+      ${post.data().timestamp}
+      ${post.data().name} disse: <br>
+      ${post.data().text}<br>
       ${post.data().likes}
       ${Button({
     dataId: post.id,
+    class: 'primary-button',
     title: '🗑️',
     onClick: deletePost,
   })}
       ${Button({
       dataId: post.id,
+      class: 'primary-button',
       title: '✏️',
       onClick: editPost,
   })}
-  </li>`;
+  </li>
+    </div>
+  `;
   document.querySelector('.timeline').innerHTML += postsFeed;
+      });
+      `<li>
+      <div class='postHeader'>${post.data().timestamp}-</div>
+      <div class='postHeader'>${post.data().user_id} disse:</div>
+      <div id='post_${post.id}'>${post.data().text}</div>      
+      ${post.data().likes}
+      ${Button({dataId: post.id, title: '🗑️', class: 'primary-button', onClick: deletePost,})}
+      ${Button({id: 'edit-'+post.id, dataId: post.id, title: '✏️', class: 'edit-btn primary-button', onClick: editPost,})}
+      </li>`
+      document.querySelector('.timeline').innerHTML += postsFeed;
+    });
+  };
+
+function loadCard () {
+  firebase.firestore().collection('persona').get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((persona) => {
+      const cardFeed =  `<li data-id='${persona.id}' class=''>
+      ${persona.data().name} <br>
+      ${persona.data().profession}
+  </li>
+    </div>
+  `;
+  document.querySelector('.card').innerHTML = cardFeed;
       });
     });
 }
-
-function Feed() {
+function Feed(props) {
+  const name = firebase.auth().currentUser.displayName;
+  let postsLayout = '';
+  props.posts.forEach((post) => {
+    postsLayout += `
+      <li  class='postMessage' data-id='${post.id}'>
+      ${post.name}
+      ${post.timestamp}<br>
+      ${post.text}<br>
+      ${post.likes}
+      ${Button({  dataId: post.id, class: 'primary-button', title: '🗑️', onClick: deletePost,})}
+      </li>
+    `;
+  });
   window.feed.loadFeed();
+  window.feed.loadCard();
   const template = `
-  <h1>Feed</h1>
-  ${Button({
-    title: 'Sair',
-    class: 'primary-button',
-    onClick: signOut,
-  })}
-  ${Button({
-    title: 'Perfil',
-    class: 'primary-button',
-    onClick: profile,
-  })}
-  <h2>Post</h2>
-  <section class= 'timeline'>
+  <header class='header'>
+    <h1><img class='logo-feed' src='logo1.png'/></a></h1>
+    <nav>
+        <li class="left">${Button({ class: 'left',
+        title: 'Encerrar Sessão',
+        onClick: signOut,
+      })}</li>
+      <li class="right">${Button({ class: 'right',
+          title: `${name}`,
+          onClick: profile,
+      })}</li>
+    </nav>
+</header>
+
   <div class='post'>
   ${Post({
     class: 'textarea',
@@ -115,18 +173,17 @@ function Feed() {
     class: 'primary-button',
     onClick: AddPostToFirebase,
   })}
-  </div>
-  </section>
+  <ul class= 'timeline'>${postsLayout}</ul>
+  <ul class= 'card'>${postsLayout}</ul>
   `;
-
   return template;
 }
-
 window.feed = {
   deletePost,
   editPost,
   loadFeed,
-  AddPostToFirebase
+  AddPostToFirebase,
+  loadCard,
+  saveEdit
 };
-
 export default Feed;

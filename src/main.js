@@ -1,7 +1,7 @@
 import Login from './pages/login.js';
 import Feed from './pages/feed.js';
-import Perfil from './pages/perfil.js';
 import Register from './pages/register.js';
+import Profile from './pages/profile.js';
 
 function locationHashChanged() {
   const dataBase = firebase.firestore();
@@ -16,20 +16,18 @@ function locationHashChanged() {
               posts: querySnapshot,
             });
           });
-      
-         } else if (window.location.hash === '#perfil') {
-        document.querySelector('main').innerHTML = Perfil();
-      } else if (window.location.hash === '#register') {
+     } else if (window.location.hash === '#profile') {
+        document.querySelector('main').innerHTML = Profile();
+      } 
+    } 
+       else if (window.location.hash === '#register') {
+         
         document.querySelector('main').innerHTML = Register();
       } else {
         document.querySelector('main').innerHTML = Login();
       }
-      } else {
-        document.querySelector('main').innerHTML = Login();
-      }
-  });
+});
 }
 
-//window.onhashchange = locationHashChanged;
 window.addEventListener('load', locationHashChanged);
 window.addEventListener('hashchange', locationHashChanged);

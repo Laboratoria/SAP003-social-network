@@ -5,7 +5,7 @@ function salve() {
   window.location.hash = '#feed';
 }
 
-function Perfil() {
+function Profile() {
   const template = `
   <h1>Perfil</h1>
   ${Button({
@@ -74,4 +74,4 @@ function Perfil() {
   return template;
 }
 
-export default Perfil;
+export default Profile;
