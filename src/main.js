@@ -2,7 +2,7 @@ import { Home } from "../pages/home.js";
 import { Cadastro } from "../pages/cadastro.js";
 import { PaginaInicial } from "../pages/paginainicial.js"
 import { Mural } from "../pages/mural.js"
-//import { EditarPerfil } from "../pages/editarperfil.js"
+import { About } from "../pages/editarperfil.js"
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Input from '../components/input.js';
@@ -53,7 +53,7 @@ const mural = () => {
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p post-id='${post.id}'>${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
@@ -67,16 +67,12 @@ const mural = () => {
 				</li>
 				`;
 			}
-					
 					document.querySelector("main").innerHTML = Mural({ postsLayout });
 		
-				})
-		
-			
+				})	
 		})
 	})
 }
-
 
 const editar = (id, event) => {
 	const user = firebase.auth().currentUser;
@@ -108,34 +104,31 @@ const commentarPost = (id, event) => {
 	event.target.parentElement.innerHTML += `<p>${input.value}</p>`
 }
 
+const about = () => {
 
-// const editarPerfil = () => {
-	
-// 	const user = firebase.auth().currentUser;
-// 	var name, email, phoneNumber, photoUrl, uid, emailVerified;
+	const template = `
+		<section class='texto'>
+			<h1 class='sobre-titulo'>Sobre</h1>
+			<p class='sobre-texto'>resumo do readme</p>
+		</section>
+		<section class='imagens-das-desenvolvedoras'>
+			<div class='dev'>
+				<img>
+				<p>Évora</p>
+			</div>
+			<div class='dev'>
+				<img>
+				<p>Jéssica</p>
+			</div>
+			<div class='dev'>
+				<img>
+				<p>Maria Carolina</p>
+			</div>
+		</section>
+	`;
 
-// 	if (user != null) {
-//   	name = user.displayName;
-//   	email = user.email;
-//   	phoneNumber = user.phoneNumber;
-//   	photoUrl = user.photoURL;
-//   	emailVerified = user.emailVerified;
-//   	uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-//                    // this value to authenticate with your backend server, if
-//                    // you have one. Use User.getToken() instead.
-// 	}	
-
-// 	console.log(user)
-
-// 	const template = `
-// 		<p>${name}</p>
-// 		<p>${email}</p>
-// 		<p>${phoneNumber}</p>
-// 		<p></p>
-// 	`;
-
-// 	document.querySelector("main").innerHTML = EditarPerfil({ template });
-// }
+	document.querySelector("main").innerHTML = About({ template });
+}
 
 
 const hash = () => {
@@ -145,10 +138,9 @@ const hash = () => {
 		return mural();
 	} else if (location.hash === "#home") {
 		return init();
-	} 
-	// else if (location.hash === "#editar") {
-	// 	return editarPerfil();
-	// }
+	}	else if (location.hash === "#editar") {
+		return about();
+	}
 }
 //mudança de hash #
 

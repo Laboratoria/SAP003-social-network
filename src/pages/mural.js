@@ -20,6 +20,10 @@ export const Mural = (props) => {
 		</nav>
 	</header>
 
+	<section class='user-profile'>
+		
+	</section>
+
 	<section class="post-section">
 		<form id='post-form'>
 			${Post({ id: 'post', placeholder: "Qual a  bruxaria de hoje?", rows: '5', cols: '50' })}
@@ -58,7 +62,6 @@ const sendAndRetrievePost = () => {
 		date: new Date().toLocaleString('pt-BR'),
 		likes: 0
 	}
-
 
 	firebase.firestore().collection('posts').add(post);
 
