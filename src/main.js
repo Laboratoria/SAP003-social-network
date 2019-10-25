@@ -16,6 +16,7 @@ function locationHashChanged() {
               posts: querySnapshot,
             });
           });
+
       } else if (location.hash === '#perfil') {
         document.querySelector('main').innerHTML = Perfil();
       } else if (location.hash === '#register') {
