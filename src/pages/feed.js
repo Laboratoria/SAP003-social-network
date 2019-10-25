@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-import { AddComment, PrivacyPost, EditPost, LikePost, DeletePost } from '../posts/functions.js';
+import { AddComment, DeleteComment, PrivacyPost, EditPost, LikePost, DeletePost } from '../posts/functions.js';
 
 function logOut() {
   auth
@@ -11,40 +11,49 @@ function logOut() {
 }
 
 function userInfo() {
+
   const user = auth.currentUser;
-  db.collection('users').doc(user.uid).get().then((doc) => {
-    const username = `
-    <h4>Bem vindo(a), ${doc.data().name}!</h4>
-    `;
-    document.querySelector('.profile').innerHTML = username;
-  });
+  db
+    .collection('users')
+    .doc(user.uid)
+    .get()
+    .then((doc) => {
+      const username = `
+      <h4>Bem vindo(a), ${doc.data().name}!</h4>
+      `;
+      document.querySelector('.profile').innerHTML = username;
+    });
 }
 
 function createPost() {
 
   const text = document.querySelector('.text-area').value;
   //const userdoc =  db.collection('users').doc(auth.currentUser.uid)
+  const user = auth.currentUser;
+  db
+    .collection('users')
+    .doc(user.uid)
+    .get()
+    .then((doc) => {
 
-  const post = {
-    likes: 0,
-    user_likes: [],
-    text,
-    comments: [],
-    user_name: auth.currentUser.displayName,
-    user_id: auth.currentUser.uid,
-    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    privacy: 'public',
-  };
+      const post = {
+        likes: 0,
+        user_likes: [],
+        text,
+        comments: [],
+        user_name: doc.data().name,
+        user_id: user.uid,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        privacy: 'public',
+      };
 
-  const postsCollection = db.collection('posts');
-  postsCollection
-    .add(post)
-    .then()
-    .catch((error) => {
-      console.log('erro', error);
-      console.log('Não foi possível criar post.');
-    });
-  document.querySelector('.text-area').value = '';
+      db
+        .collection('posts')
+        .add(post)
+        .then();
+        
+      document.querySelector('.text-area').value = '';
+  });
 }
 
 function NewPostTemplate() {
@@ -75,18 +84,20 @@ function NewPostTemplate() {
   return template;
 }
 
-function printComments(arr) {
+function printComments(arr, logged) {
   let template = '';
   arr.forEach((text) => {
     template += `
-    <li class='comments-list'>${text.userName}<br>${text.newComment}</li>
+    <li class='comments-list' data-userid='${text.id}'  data-ref='${text.idComment}'>
+      ${logged === text.id ? '<div class="delete-comment fa fa-trash"></div>':''}
+      ${text.userName}<br>${text.newComment}</li>
     `;
   });
   return template;
 }
 
 function addPost(post, postId) {
-  const LoggedUserID = firebase.auth().currentUser.uid;
+  const LoggedUserID = auth.currentUser.uid;
   const postTemplate = `
       <li class='post' id="${postId}">
         <p>Postado por ${post.user_name} em ${post.createdAt.toDate().toLocaleString('pt-BR').substr(0, 19)}</p>
@@ -94,15 +105,16 @@ function addPost(post, postId) {
         ${LoggedUserID === post.user_id ? '<div class="delete fa fa-trash"></div> <div><span class="edit-post fa fa-pencil"></span></div>' : ''}
         <div class="edit-button"></div>
         <div class="interaction-area">
-        <div class="like fa fa-heart"></div>
-        ${post.likes}
-        <div class='comment-icon fa fa-comments'></div>
-        <!----------------------------------------------------Monica mexeu aqui-->
-        ${LoggedUserID === post.user_id ? '<select class="privacy"><option value="fa-globe">Público</option><option value="fa-lock"> Privado</option></select>' : ''}
-        <!----------------------------------------------------Monica mexeu aqui-->
+          <div class="like fa fa-heart"></div>
+          ${post.likes}
+          <div class='comment-icon fa fa-comments'></div>
+          <!----------------------------------------------------Monica mexeu aqui-->
+          ${LoggedUserID === post.user_id ? '<select class="privacy"><option value="fa-globe">Público</option><option value="fa-lock"> Privado</option></select>' : ''}
+          <!----------------------------------------------------Monica mexeu aqui-->
+        </div>
         <div class="comments">
           <div class="comment-container"></div>
-          <ul class='comment-posts'>${printComments(post.comments)}</ul>
+          <ul class='comment-posts'>${printComments(post.comments, LoggedUserID)}</ul>
         </div>
       </li>
       `;
@@ -120,6 +132,12 @@ function loadPosts() {
     document.querySelectorAll('.delete').forEach((btn) => {
       btn.addEventListener('click', (event) => {
         DeletePost(event.target.parentNode.getAttribute('id'));
+      });
+    });
+    document.querySelectorAll('.delete-comment').forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        DeleteComment(event.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('id'), event.currentTarget.parentNode.dataset.userid, event.currentTarget.parentNode.dataset.ref);
+        console.log(event.currentTarget.parentNode.dataset.ref)
       });
     });
     document.querySelectorAll('.like').forEach((btn) => {

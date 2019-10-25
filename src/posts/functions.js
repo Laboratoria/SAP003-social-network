@@ -4,14 +4,18 @@ import Textarea from '../components/textarea.js';
 
 function saveComment() {
     const newComment = document.querySelector('.textarea-comment').value;
+    const idComment = newComment.replace(/\s/g, '');
     const datasetid = event.target.dataset.id;
-    db.collection('users').doc(auth.currentUser.uid).get().then((doc) => {
+    db.collection('users').doc(auth.currentUser.uid).get().then(doc => {
       const userName = doc.data().name;
+      const id = doc.id
       const docPost = db.collection('posts').doc(datasetid);
       docPost.update({
         comments: firebase.firestore.FieldValue.arrayUnion({
           userName,
           newComment,
+          id,
+          idComment
         }),
       });
     });
@@ -48,6 +52,19 @@ const commentArea = `
 `;
 const createSection = document.getElementById(postId).querySelector('.comment-container');
 createSection.innerHTML = `${commentArea}`;
+}
+
+function DeleteComment(postid) {
+  const postDoc = db.collection('posts').doc(postid);
+  postDoc.get().then(d =>{
+    let arrComments = d.data().comments;
+    let targetObj = arrComments.find(c => c.idComment);
+    console.log(targetObj);
+
+    postDoc.update({
+      comments: firebase.firestore.FieldValue.arrayRemove(targetObj)
+    });
+  });
 }
 
 function PrivacyPost(postId, option){
@@ -139,12 +156,14 @@ async function LikePost(postId) {
 
 function DeletePost(postId) {
   if (!confirm('Tem certeza que deseja excluir essa publicação?')) return;
-  const postsCollection = firebase.firestore().collection('posts');
-  postsCollection.doc(postId).delete().then(() => {
-  })
+  db
+    .collection('posts')
+    .doc(postId)
+    .delete()
+    .then()
     .catch((error) => {
       console.log(error);
     });
 }
 
-export { AddComment, PrivacyPost, EditPost, LikePost, DeletePost };
+export { AddComment, DeleteComment, PrivacyPost, EditPost, LikePost, DeletePost };
