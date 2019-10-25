@@ -1,0 +1,16 @@
+function Input(props) {
+  const template = `
+      <input
+        class="${props.class} primary-input"
+        placeholder="${props.placeholder}"
+        type="${props.type}" />
+    `;
+
+  return template;
+}
+
+window.input = {
+  Input,
+};
+
+export default Input;
