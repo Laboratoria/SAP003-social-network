@@ -24,6 +24,13 @@ const mural = () => {
 		let postsLayout = '';
 		//usuario logado
 		snap.forEach(post => {
+	//		firebase.firestore().collection('posts/${post.id}/comments')
+			post.ref.collection('comments').get()
+				.then(commentSnap => {
+					const comments = [];
+					commentSnap.forEach( comment => {
+						comments.push(comment.data());
+					});
 			if (post.data().userID === user.uid) {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
@@ -33,28 +40,38 @@ const mural = () => {
 					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
 					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
-					<span like-id='${post.id}' class="like">${post.data().likes}</span>
-					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
-					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					<p like-id='${post.id}' class="like">${post.data().likes}</p>
+					<section class="comment">
+						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+						${Button({ class: 'btn-comment', id: post.id, title: '<img src="images/botaocomentar.png" class="icon-comment" />', onclick: commentarPost })}
+					</section>
+						${comments.map(comment => `<p>${comment.text}<p> <p>${user.email}</p>`).join("")}
 				</li>
 				`;
-
 				//usuario não logado
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p post-id='${post.id}'>${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
 					<p like-id="${post.id}" class="like">${post.data().likes}</p>
-					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
-					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					<section class="comment">
+						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+						${Button({ class: 'btn-comment', id: post.id, title: '<img src="images/botaocomentar.png" class="icon-comment" />', onclick: commentarPost })}
+					</section>
+						${comments.map(comment => `<p>${comment.text}<p> <p>${user.email}</p>`).join("")}
 				</li>
 				`;
 			}
+					
+					document.querySelector("main").innerHTML = Mural({ postsLayout });
+		
+				})
+		
+			
 		})
-		document.querySelector("main").innerHTML = Mural({ postsLayout });
 	})
 }
 
