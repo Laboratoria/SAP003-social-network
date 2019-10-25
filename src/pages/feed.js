@@ -2,6 +2,9 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 import Card from '../components/card.js';
 
+const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
+const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
+
 function deletarPost(e) {
   const postId = parseInt(e.target.parentElement.id, 10);
   const objUsuario = JSON.parse(localStorage.getItem('cadastro'));
@@ -22,13 +25,11 @@ function editarPost(e) {
   paragrafo.contentEditable = 'true';
   paragrafo.focus();
 
-  // LOGICA QUE FIZ PARA SALVAR A POSTAGEM EDITADA, MAS NÃO TA FUNCIONANDO
-  // paragrafo.onblur = () => {dd
-  //   paragrafo.contentEditable = 'false';
-  // },
-  // const indicePost = window.usuarioTotal[window.usuarioAtual].posts.findIndex(posts => posts.id === postId);
-  // window.usuarioTotal[window.usuarioAtual].posts[indicePost].publicacao = paragrafo.textContent;
-  // window.localStorage.setItem('cadastro', JSON.stringify(window.usuarioTotal));
+  paragrafo.addEventListener('keyup', () => {
+    const indicePost = usuarioTotal[usuarioAtual].posts.findIndex(posts => posts.id === postId);
+    usuarioTotal[usuarioAtual].posts[indicePost].publicacao = paragrafo.textContent;
+    window.localStorage.setItem('cadastro', JSON.stringify(usuarioTotal));
+  });
 }
 
 function templatePosts(publicacao, id) {
@@ -43,9 +44,6 @@ function templatePosts(publicacao, id) {
 }
 
 function postarPublicacao() {
-  const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
-  const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
-
   const posts = usuarioTotal[usuarioAtual].posts;
   const post = {
     publicacao: document.querySelector('.post').value,
@@ -69,8 +67,6 @@ function feed() {
 
 window.templatePosts = templatePosts;
 window.postarPublicacao = postarPublicacao;
-window.usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
-Window.usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
 
 
 export default feed;
