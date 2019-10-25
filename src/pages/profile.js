@@ -10,12 +10,14 @@ const signOut = () => firebase.auth().signOut();
 
 const updateProfile = () => {
   const nameUser = document.querySelector('.inp-name-profile').value;
+  const imageUser = document.querySelector('.inp-image-profile').value;
   const ageUser = document.querySelector('.inp-age-profile').value;
   const professionUser = document.querySelector('.inp-profession-profile').value;
   firebase.firestore().collection('users')
     .doc(firebase.auth().currentUser.uid)
     .set({
       name: nameUser,
+      image: imageUser,
       age: ageUser,
       profession: professionUser,
     })
@@ -53,6 +55,13 @@ const profile = (props) => {
     <p class="text-profile">Insira seus dados pessoais aqui...</p>
     <form>
     <div class="container-form-profile">
+    ${Input({
+    class: 'inp-image-profile',
+    id: 'inp-image-profile',
+    type: 'text',
+    value: user.image || '',
+    placeholder: 'Link da sua imagem...',
+  })}
     ${Input({
     class: 'inp-name-profile',
     id: 'inp-name-profile',
