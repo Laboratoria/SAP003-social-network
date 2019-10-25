@@ -2,8 +2,8 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 import Card from '../components/card.js';
 
-function deletar(evento) {
-  const postId = parseInt(evento.target.parentElement.id, 10);
+function deletarPost(e) {
+  const postId = parseInt(e.target.parentElement.id, 10);
   const objUsuario = JSON.parse(localStorage.getItem('cadastro'));
 
   let num = 0;
@@ -14,78 +14,73 @@ function deletar(evento) {
   });
 
   localStorage.setItem('cadastro', JSON.stringify(objUsuario));
-
-
-
-  // let t = []
-  // const ttt = objUsuario.forEach(user => t.push(user.posts))
-  // t[0].forEach((i) => {
-  //   console.log(i.id);
-  //   if (i.id === postId) {
-  //     console.log('entrou', i);
-  //   }
-  // })
-  
-
-  // const lili = la.filter(user => user.posts.id === postId);
-  // const teste = document.querySelectorAll('.primary-button');
-  // const toto = Array.from(teste);
-  // console.log(toto)
-  // toto.forEach(i => i.addEventListener('click', testeClique));
 }
 
-function banana(post2, id) {
+
+function templatePosts(publicacao, id) {
   const template = `
     <article id='${id}'>
-      <p>${post2}</p>
-      ${Button({ title: 'Deletar', onClick: deletar })}
+      <p data-id='${id}'>${publicacao}</p>
+      ${Button({ title: 'Deletar', onClick: deletarPost })}
+      ${Button({ title: 'Editar', onClick: editarPost })}
     </article>
   `;
   return `${Card({ children: template })}`;
 }
 
-function salvar() {
+function postarPublicacao() {
   const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
   const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
 
   const posts = usuarioTotal[usuarioAtual].posts;
-
   const post = {
-    post2: document.querySelector('.post').value,
+    publicacao: document.querySelector('.post').value,
     id: new Date().getTime(),
   };
-
+  document.querySelector('.post').value = '';
   posts.push(post);
 
   window.localStorage.setItem('cadastro', JSON.stringify(usuarioTotal));
-  document.getElementById('banana').innerHTML = posts.map(elem => banana(elem.post2, elem.id)).join('');
-  //  document.getElementById('banana').innerHTML = posts.map(elem => `<p>${elem.post2}</p>`).join('');
+  document.getElementById('post').innerHTML = posts.map(elem => templatePosts(elem.publicacao, elem.id)).join('');
 }
 
-// function postar() {
-//   const template = `
-//     ${Textarea({ class: 'post' })}
-//     ${Button({ title: 'Compartilhar', onClick: salvar })}
-//     <p id='banana'></p>
-//   `;
-//   return template;
-// }
+
+function editarPost(e) {
+  const postId = parseInt(e.target.parentElement.id, 10);
+  const paragrafo = document.querySelector(`p[data-id='${postId}']`);
+  paragrafo.contentEditable = 'true'; //true para a edição quando for clicada
+  paragrafo.focus();//clica e fica laranja
+
+  //LOGICA QUE FIZ PARA SALVAR A POSTAGEM EDITADA, MAS NÃO TA FUNCIONANDO
+ 
+  paragrafo.onblur = () => {
+    paragrafo.contentEditable = 'false';
+  },
+  /* const indicePost = window.usuarioTotal[window.usuarioAtual].posts.findIndex(posts => post.id === postId);
+  window.usuarioTotal[window.usuarioAtual].posts[indicePost].publicacao = paragrafo.textContent;
+  window.localStorage.setItem('cadastro', JSON.stringify(window.usuarioTotal)); 
+   */
+}
 
 function feed() {
   const template = `
-    ${Textarea({ class: 'post' })}
-    ${Button({ title: 'Compartilhar', onClick: salvar })}
-    ${Card({ children: `<p id='banana'></p>` })}
-    <p id='banana'></p>
+  <div class='container-feed'>
+    ${Textarea({ class: 'post', placeholder: 'Conta pra gente' })}
+    ${Button({ title: 'Compartilhar', onClick: postarPublicacao })}
+    <p id='post'></p>
+    </div>
+
   `;
   return template;
 }
 
-// ${Card({ children: `<p id='banana'></p>` })}
-export default feed;
+window.templatePosts = templatePosts;
+window.postarPublicacao = postarPublicacao;
+window.usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
+Window.usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
 
-window.salvar = salvar;
-// window.postar = postar;
+
+export default feed;
 
 // function logout() {
 //   localStorage.removeItem('usuario');

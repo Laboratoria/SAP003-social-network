@@ -18,7 +18,10 @@ function locationHashChanged() {
       break;
     case '#feed':
       document.querySelector('main').innerHTML = feed();
+      window.postarPublicacao();
+      // carregarPosts();
       salvar();
+      break;
     default:
       document.querySelector('main').innerHTML = logar();
   }

@@ -1,0 +1,28 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    padding: 15px;
+    background: #dcdcdc;  
+  }
+
+@media screen and (max-width:780px) {
+
+.container-feed { 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.post {
+
+  background-color: #dcdcdc;
+  padding: 6px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+}
+
+
+  }

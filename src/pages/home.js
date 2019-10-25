@@ -6,7 +6,6 @@ function pegarInput() {
   const email = document.querySelector('.js-email').value;
   const senha = document.querySelector('.js-senha').value;
   const dados = JSON.parse(localStorage.getItem('cadastro'));
-
   const logado = dados.filter((d) => {
     if (d.email === email && d.senha === senha) {
       return d;
@@ -23,11 +22,6 @@ function pegarInput() {
   return false;
 }
 
-// function logout() {
-//   localStorage.removeItem('usuario');
-
-//   window.location.reload();
-// }
 
 function logar() {
   const template = `
@@ -51,5 +45,9 @@ function logar() {
 `;
   return template;
 }
+
+// window.home = {
+//   dados: JSON.parse(localStorage.getItem('cadastro'))
+// };
 
 export default logar;

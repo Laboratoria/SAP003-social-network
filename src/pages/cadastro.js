@@ -1,7 +1,5 @@
-
 import Input from '../components/input.js';
 import Button from '../components/button.js';
-
 
 function pegarInput() {
   let dadoslocal = JSON.parse(localStorage.getItem('cadastro'));
@@ -10,7 +8,7 @@ function pegarInput() {
     email: document.querySelector('.js-email').value,
     nome: document.querySelector('.js-nome').value,
     senha: document.querySelector('.js-senha').value,
-    posts: [],
+    teste: [],
   };
 
   if (!dadoslocal) {
@@ -41,8 +39,13 @@ function cadastrar() {
   return template;
 }
 
-export default cadastrar;
+function locationHashChanged() {
+  if (window.location.hash === '#cadastro') {
+    document.querySelector('main').innerHTML = cadastrar();
+  }
+}
 
+export default cadastrar;
 
 /* <div class= 'container-text'>
   <div  class='item'>
@@ -64,3 +67,4 @@ export default cadastrar;
   </div>
     </div>*/
   
+
