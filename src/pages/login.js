@@ -32,9 +32,9 @@ function Google() {
 
 function Login() {
   const template = `
-    <img class='logo' src='logoredetech.png'/>    
+    <img class='logo' src=''logoredetech.png''/>
     <form class='content'>
-    <h2 class='bemvinda'>Seja bem-vinda(o)!</h2>
+    <h2>Seja bem-vinda(o)!</h2>
     ${Input({
     class: 'js-email-input',
     placeholder: 'E-mail',
