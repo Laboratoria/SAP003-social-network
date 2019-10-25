@@ -47,10 +47,10 @@ const googleLogin = () => {
 
 const login = () => {
   const template = `
-      <img class="img-logo" src="images/img-lc1.png">
-      <h1 class="text-title">Low Carb Style</h1>
-      <h2 class="text-welcome">Boas vindas...</h2>
-      <p class='info-login'>Insira nos campos abaixo seu e-mail e senha para entrar ou cadastrar-se.</p>
+    <img class="img-logo" src="images/img-logo.png">
+    <h1 class="text-title">Low Carb Style</h1>
+    <h2 class="text-welcome">Boas vindas...</h2>
+    <p class='info-login'>Insira nos campos abaixo seu e-mail e senha para entrar ou cadastrar-se.</p>
 
     <form class="form">
     ${Input({

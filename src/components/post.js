@@ -79,7 +79,7 @@ const Post = (props) => {
       onClick: props.deleteEvent,
     });
   }
-
+  
   template += `
   </div>
   </div>`;
