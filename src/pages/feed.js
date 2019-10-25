@@ -25,6 +25,9 @@ function editarPost(e) {
   const paragrafo = document.querySelector(`p[data-id='${postId}']`);
   paragrafo.contentEditable = 'true';
   paragrafo.focus();
+  paragrafo.onblur = () => {
+    paragrafo.contentEditable = 'false';
+  };
 
   paragrafo.addEventListener('keyup', () => {
     const indicePost = usuarioTotal[usuarioAtual].posts.findIndex(posts => posts.id === postId);
@@ -59,6 +62,7 @@ function postarPublicacao() {
 }
 
 function mostrarPublicacao() {
+
   const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
   const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
   const posts = usuarioTotal[usuarioAtual].posts;
@@ -71,11 +75,11 @@ function logout() {
   window.location.hash='#home';
 }
 
+
 function feed() {
   const template = `
     ${Button({ title: 'Sair', onClick: logout })}
     ${Textarea({ class: 'post' })}
-
     ${Button({ title: 'Compartilhar', onClick: postarPublicacao })}
     <p id='post'></p>
   `;
@@ -84,8 +88,12 @@ function feed() {
 
 window.templatePosts = templatePosts;
 window.postarPublicacao = postarPublicacao;
+
+window.exibirPublicacao = exibirPublicacao;
+
+export default feed;
+
 window.mostrarPublicacao = mostrarPublicacao;
 
 
 export default feed;
-
