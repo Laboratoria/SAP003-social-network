@@ -1,8 +1,15 @@
+
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @media (max-width: 750px) {
 
   .primary-button {
-    background-color: #fefefe;
+    background-color: #ffa05a;
     padding: 5px;
     font-size: 14px;
     border-radius: 25px;
@@ -27,6 +34,7 @@
     align-items: center;
     border-radius: 25px;
     width: auto;
+    margin-top: 25%;
   }
 
   .google-btn {
@@ -37,25 +45,43 @@
   }
 
   .background {
+    background-color: #ffffff;
     font-family: 'Ubuntu', sans-serif;
-    color: orangered;
+    color: #ffa05a;
   }
 
   .logo {
-    margin: 0%;
-    transform: translate(80px, 10px);
+    display: flex;
+    transform: translate(92px, 50px);
   }
 
   .js-email-input {
     border-radius: 30px;
-    padding: 5px;
+    padding: 10px;
     width: 50%;
   }
 
   .js-password-input {
     border-radius: 30px;
+    margin: 10px 5px;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .login{
+    background-color: #ffa05a;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 1px solid grey;
+    cursor: pointer;
     margin: 10px;
-    padding: 5px;
+    width: 40%;
+  }
+
+  .cadastro{
+    padding: 20px;
   }
 
   .textarea{
@@ -64,7 +90,7 @@
 
   .postMessage{
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   border: solid;
   border-radius: 10px;
   list-style: none;
@@ -76,22 +102,37 @@
   transform: translate(-40px, 10px);
   }
 
+  .bemvinda {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 750px) {
   .postHeader {
     overflow: hidden;
     background-color: #FFDE82;
     padding: 10px 10px;
   }
-}
-
-@media (min-width: 751px) {
-
-.timeline {
-  justify-content: center;
-}
 
 .logo {
   width: 20%;
   transform: translate(110%,90%);
+}
+
+.bemvinda {
+  padding: 15px;
+}
+
+.login{
+  background-color: #ffa05a;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 1px solid grey;
+  cursor: pointer;
+  margin: 10px;
+  width: 20%;
 }
 
 #h2{
@@ -119,8 +160,9 @@
 }
 
 .background {
+  background-color: #ffffff;
   font-family: 'Ubuntu', sans-serif;
-  color: orangered;
+  color: #ffa05a;
 }
 
 .image{
@@ -128,7 +170,7 @@
 }
 
 .primary-button {
-  background-color: #ffffff;
+  background-color: #ffa05a;
   padding: 10px;
   font-size: 14px;
   border-radius: 25px;
@@ -142,13 +184,21 @@
 .js-email-input {
   border-radius: 30px;
   padding: 10px;
+  width: 25%;
 }
 
 .js-password-input {
   border-radius: 30px;
   margin: 10px;
   padding: 10px;
+  width: 25%;
 }
+
+.cadastro{
+  padding: 20px;
+}
+
+
 .post{
   width: 70%;
   flex-direction: column;
@@ -156,15 +206,50 @@
 
 .postMessage{
   display: flex;
-    flex-direction: column;
-    margin: 10px;
-    padding: 10px;
-    border: solid;
-    border-color: orange;
-    border-radius: 5px;
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
-    width: 80%;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border: solid;
+  border-color: orange;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+}
+
+.left {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  transform: translate(220%, -320%);
+  width: 30%;
+  font-weight: bold;
+}
+
+.right {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  margin-top: -9.5%;
+  margin-left: 2%;
+  width: 40%;
+  font-weight: bold;
+}
+
+.header{
+  background-color: #ffa05a;
+  width: auto;
+  height: 70px;
+}
+
+.logo-feed{
+  width: 10%;
+  display: flex;
+  align-items: center;
+    justify-content: flex-end;
 }
 
 .postHeader {
