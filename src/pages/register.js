@@ -21,7 +21,7 @@ function backPage() {
 function Register() {
     const template = `
         <header>
-        <img src = "pages/logo.png" class="logo">
+        <img src = "/images/logo.png" alt="logo" class="logo">
         </header>
         <form class="form-register">
         <h2 class="cad"> Cadastre-se!</h2>

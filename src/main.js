@@ -2,8 +2,7 @@ import Login from './pages/login.js';
 import Register from './pages/register.js';
 //import Button from '../components/button.js';
 import Feed from './pages/feed.js';
-
-
+import Profile from './pages/profile.js';
 
 function init() {
   firebase.auth().onAuthStateChanged((user) =>{
@@ -20,9 +19,11 @@ function init() {
         });
       } else if (window.location.hash ==='#login'){
         document.querySelector('main').innerHTML = Login();
+      } else if (window.location.hash ==='#profile'){
+        document.querySelector('main').innerHTML = Profile();
       } else {
-        window.location.hash ==='#login';
-        document.querySelector('main').innerHTML = Login();
+        window.location.hash ==='#register';
+        document.querySelector('main').innerHTML = Register();
       }
     } else {
       window.location.hash ==='#register';
