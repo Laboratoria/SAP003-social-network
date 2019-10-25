@@ -113,21 +113,21 @@ const timeline = (props) => {
     id: 'post-text',
     placeholder: 'digite aqui...',
   })}
-      </div>
-      <div class='images-publish'>
-        ${Select({
+    </div>
+    <div class='images-publish'>
+    ${Select({
     class: 'slc-privacy',
     selected: '🔓',
     options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
   })}
-        ${Button({
+    ${Button({
     class: 'btn-publicar',
     id: 'btn-publicar',
     type: 'submit',
     title: 'Publicar',
     onClick: createPost,
   })}
-      </div> 
+    </div> 
     </div>
     <div class='posts'>
       ${layout}
