@@ -52,6 +52,7 @@ function Database(props) {
   props.feed.forEach((doc) => {
     postTemplate+=
       `<li class='post-template' style=list-style-type:none>
+      
       ${doc.data().user_email}
       <br>${doc.data().timestamp.toDate().toLocaleString('pt-BR')}
       <br>${doc.data().text}
@@ -64,8 +65,8 @@ function Database(props) {
   })
 
   const template = `
+  <form class="form-timeline">
   <h1 class="page-title">Timeline</h1>
-  <form>
   ${Textarea({
     class: 'js-message-area message-post',
     placeholder: 'Digite sua mensagem',
