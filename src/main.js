@@ -41,12 +41,10 @@ const mural = () => {
 					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
 					<p like-id='${post.id}' class="like">${post.data().likes}</p>
-					<section class="comment">
 						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
-						${Button({ class: 'btn-comment', id: post.id, title: '<img src="images/botaocomentar.png" class="icon-comment" />', onclick: commentarPost })}
-					</section>
+						${Button({ class: 'btn-comment', id: post.id, title:'Comentar', onclick: commentarPost })}
 					<ul>
-						${comments.map(comment => `<li>${comment.text}<li> <li>${user.email}<li>`).join("")}
+						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 					</ul>
 				</li>
 				`;
@@ -54,17 +52,16 @@ const mural = () => {
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}'>${post.data().text}</p>
+					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
 					<p like-id="${post.id}" class="like">${post.data().likes}</p>
-					<section class="comment">
-						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
-						${Button({ class: 'btn-comment', id: post.id, title: '<img src="images/botaocomentar.png" class="icon-comment" />', onclick: commentarPost })}
-					</section>
+					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					
 					<ul>
-						${comments.map(comment => `<li>${comment.text}<li>`).join("")}
+						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 					</ul>
 				</li>
 				`;
@@ -78,7 +75,6 @@ const mural = () => {
 		})
 	})
 }
-
 
 const editar = (id, event) => {
 	const user = firebase.auth().currentUser;
@@ -107,7 +103,7 @@ const deletar = (id, event) => {
 const commentarPost = (id, event) => {
 	const input = document.querySelector(`input[data-id='${id}']`);
 	firebase.firestore().collection(`posts/${id}/comments`).add({ text: input.value });
-	event.target.parentElement.innerHTML += `<p>${input.value}</p>`
+	event.target.parentElement.innerHTML += `<p class='ja'>${input.value}</p>`
 }
 
 

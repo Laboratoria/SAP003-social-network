@@ -13,6 +13,10 @@
   text-align: center; 
 } 
 
+li {
+  list-style: none;
+}
+
 body { 
   background-color: #121212; 
   color: whitesmoke; 
@@ -41,17 +45,25 @@ body {
   border-radius: 5px; 
   outline:none; 
   padding: 2px; 
+  margin-bottom: 8px;
   width: 280px; 
   height: 30px; 
+  cursor: text;
+  background-color: #282828;
+  border: none;
+  color: #737373;
 } 
 
 #pass-login { 
   border-radius: 5px; 
   outline:none; 
   padding: 2px; 
-  margin-top: 4px; 
   width: 280px; 
   height: 30px; 
+  cursor: text;
+  background-color: #282828;
+  border: none;
+  color: #737373; 
 } 
 
 .login-form { 
@@ -69,26 +81,29 @@ body {
 } 
 
 .btn-sign-up { 
-  width: 70px; 
+  outline: none;
+  width: 170px; 
   cursor: pointer; 
   height: 30px; 
   border: none;  
   border-radius: 10px; 
-  color: whitesmoke; 
+  color: #cccccc;
   background: #121212;
 } 
 
 .btn-login { 
+  outline:none;
   cursor: pointer; 
   width: 70px; 
   height: 30px; 
   border: none; 
   border-radius: 10px; 
-  color: whitesmoke; 
+  color: #000000; ; 
   background: #AA4528; 
 } 
 
 .btn-google { 
+  outline:none;
   cursor:pointer; 
   font-family: 'Roboto', sans-serif; 
   height: 40px; 
@@ -140,7 +155,11 @@ body {
   padding: 2px; 
   width: 280px; 
   height: 30px; 
-  margin: 3px; 
+  margin: 3px;
+  cursor: text;
+  background-color: #282828;
+  border: none;
+  color: #737373; 
 } 
 
 #mail { 
@@ -149,7 +168,11 @@ body {
   padding: 2px; 
   width: 280px; 
   height: 30px; 
-  margin: 3px; 
+  margin: 3px;
+  cursor: text;
+  background-color: #282828;
+  border: none;
+  color: #737373; 
 } 
 
 #born { 
@@ -158,16 +181,24 @@ body {
   padding: 2px; 
   width: 280px; 
   height: 30px; 
-  margin: 3px; 
+  margin: 3px;
+  cursor: text;
+  background-color: #282828;
+  border: none;
+  color: #737373; 
 } 
 
 #pass { 
   border-radius: 5px; 
   outline: none; 
   padding: 2px; 
-  width: 280px;  
+  width: 280px; 
   height: 30px; 
-  margin: 3px; 
+  margin: 3px;
+  cursor: text;
+  background-color: #282828;
+  border: none;
+  color: #737373; 
 } 
 
 .btn-send-sign-up { 
@@ -176,7 +207,7 @@ body {
   height: 30px; 
   border: none; 
   border-radius: 10px; 
-  color: whitesmoke; 
+  color: #000000;  
   background: #AA4528; 
   margin: 15px; 
 } 
@@ -187,7 +218,7 @@ body {
   height: 30px; 
   border: none; 
   border-radius: 10px; 
-  color: whitesmoke; 
+  color: #000000;  
   background: #AA4528; 
   margin: 15px; 
   justify-content: center; 
@@ -307,8 +338,11 @@ body {
 .timeline-item{
   border:solid 1px #292828;
   border-radius: 10px 10px; 
-  padding: 10px;
-  margin: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 22px;
 }
 
 .btn-delete, .btn-edit, .btn-likes {
@@ -326,11 +360,11 @@ body {
 
 .btn-comment {
   cursor: pointer; 
-  width: 60px; 
+  width: 66px; 
   height: 30px; 
   border: none; 
   border-radius: 10px; 
-  color: whitesmoke; 
+  color: #000000; 
   background: #AA4528; 
   margin-left: 7px;
   justify-content: center; 
