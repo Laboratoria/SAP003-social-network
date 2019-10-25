@@ -18,16 +18,14 @@ function locationHashChanged() {
           });
       } else if (location.hash === '#profile') {
         document.querySelector('main').innerHTML = Profile();
-      } else if (location.hash === '#register') {
+      } 
+    } else if (location.hash === '#register') {
         document.querySelector('main').innerHTML = Register();
       } else {
         document.querySelector('main').innerHTML = Login();
       }
-    } else {
-    document.querySelector('main').innerHTML = Login();
-  }
   });
 }
 
-window.onhashchange = locationHashChanged;
+window.addEventListener('load', locationHashChanged);
 window.addEventListener('load', locationHashChanged);
