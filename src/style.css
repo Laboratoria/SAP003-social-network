@@ -43,10 +43,7 @@
 
   .logo {
     margin: 0%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    transform: translate(140px, 10px);
+    transform: translate(80px, 10px);
   }
 
   .js-email-input {
