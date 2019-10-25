@@ -34,18 +34,17 @@ const mural = () => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p post-id='${post.id}' contenteditable="true" class="post">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({id:post.id, title:'deletar',onclick:deletar})}
-					${Button({id:post.id, title:'editar', onclick: editar})}
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
+					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
+					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
+					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					<span like-id='${post.id}' class="like">${post.data().likes}</span>
+					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					
 					<ul>
-						<li>
-							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
-							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
-						</li>
 						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 					</ul>
 				</li>
@@ -57,13 +56,12 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
+					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					<p like-id="${post.id}" class="like">${post.data().likes}</p>
+					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					
 					<ul>
-						<li>
-							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
-							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
-						</li>
 						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 					</ul>
 				</li>
