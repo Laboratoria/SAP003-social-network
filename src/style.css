@@ -59,10 +59,11 @@ nav ul li:last-child {
 .js-namefull-input {
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 5px;
   display: block;
-  box-shadow: 0 0 0.5em #fce326;
+  border-top-style: inset;
+  border-color: black;
   font-family: 'Josefin Sans', sans-serif;    
 }
 
@@ -73,6 +74,7 @@ nav ul li:last-child {
   padding: 5px;
   display: block;;
   font-family: 'Josefin Sans', sans-serif;  
+  border-top-style: inset;
 }
 
 .js-password-input {
@@ -82,6 +84,7 @@ nav ul li:last-child {
   padding: 5px;
   display: block;
   font-family: 'Josefin Sans', sans-serif; 
+  border-top-style: inset;
 }
 
 
@@ -188,8 +191,7 @@ section {
 
 .post-list { 
   list-style: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin:0 auto 20px auto;
   width: 80%;
   border: solid;  
   border-color: white;  
@@ -292,14 +294,19 @@ section {
 
   .js-namefull-input {
     margin-top: 100px; 
+
   }
 
   .js-email-input {
     margin-top: 5px; 
+    border-color: black;
+    border-style: solid;
   }
 
   .js-password-input {
     margin-top: 5px; 
+    border-color: black;
+    border-style: solid;
   }
 
   .primary-button {  
