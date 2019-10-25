@@ -1,0 +1,22 @@
+
+  .container-cadastro { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mia {
+    display: flex;
+    align-self: flex-start;
+   
+  }
+  
+  .cadastro {
+    justify-content: space-around;
+    margin-top:10%;
+    margin-bottom: 5%;
+    width: 50%;
+   
+  }
+  
