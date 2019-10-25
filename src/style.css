@@ -159,16 +159,16 @@ width: 100%;
 }
 
 button {
-  -webkit-appearance: button;
+  /* -webkit-appearance: button;
   -webkit-writing-mode: horizontal-tb !important;
-  text-rendering: auto;
+  text-rendering: auto; */
   color: #C6005F;
-  letter-spacing: normal;
+  /* letter-spacing: normal;
   word-spacing: normal;
   text-transform: none;
   text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
+  text-shadow: none; */
+  display: flex;
   text-align: center;
   align-items: flex-start;
   cursor: default;
