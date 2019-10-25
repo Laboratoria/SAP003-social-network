@@ -136,8 +136,7 @@ function loadPosts() {
     });
     document.querySelectorAll('.delete-comment').forEach((btn) => {
       btn.addEventListener('click', (event) => {
-        DeleteComment(event.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('id'), event.currentTarget.parentNode.dataset.userid, event.currentTarget.parentNode.dataset.ref);
-        console.log(event.currentTarget.parentNode.dataset.ref)
+        DeleteComment(event.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('id'));
       });
     });
     document.querySelectorAll('.like').forEach((btn) => {
@@ -155,15 +154,12 @@ function loadPosts() {
         AddComment(event.target.parentNode.parentNode.getAttribute('id'));
       });
     });
-    ///////////////////////////////////Monica mexeu aqui
     document.querySelectorAll('.privacy').forEach((selection) => {
       selection.addEventListener('change', (event) => {
         let targetOption = document.querySelector('.privacy').options[document.querySelector('.privacy').selectedIndex].value
-        //console.log(targetOption)
         PrivacyPost(event.target.parentNode.parentNode.getAttribute('id'), targetOption);
       });
     });
-    ///////////////////////////////////Monica mexeu aqui
   });
 }
 

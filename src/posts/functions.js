@@ -6,24 +6,29 @@ function saveComment() {
     const newComment = document.querySelector('.textarea-comment').value;
     const idComment = newComment.replace(/\s/g, '');
     const datasetid = event.target.dataset.id;
-    db.collection('users').doc(auth.currentUser.uid).get().then(doc => {
-      const userName = doc.data().name;
-      const id = doc.id
-      const docPost = db.collection('posts').doc(datasetid);
-      docPost.update({
-        comments: firebase.firestore.FieldValue.arrayUnion({
-          userName,
-          newComment,
-          id,
-          idComment
-        }),
+    db
+      .collection('users')
+      .doc(auth.currentUser.uid)
+      .get()
+      .then(doc => {
+        const userName = doc.data().name;
+        const id = doc.id
+        const docPost = db.collection('posts').doc(datasetid);
+        docPost
+          .update({
+            comments: firebase.firestore.FieldValue.arrayUnion({
+              userName,
+              newComment,
+              id,
+              idComment
+            }),
+          });
       });
-    });
-  }
+}
 
 function cancelComment() {
-const datasetid = event.target.dataset.id;
-document.getElementById(datasetid).querySelector('.comment-container').innerHTML = '';
+  const datasetid = event.target.dataset.id;
+  document.getElementById(datasetid).querySelector('.comment-container').innerHTML = '';
 }
 
 function AddComment(postId) {
@@ -55,27 +60,29 @@ createSection.innerHTML = `${commentArea}`;
 }
 
 function DeleteComment(postid) {
+  if (!confirm('Tem certeza que deseja excluir esse comentário?')) return;
+  db
   const postDoc = db.collection('posts').doc(postid);
-  postDoc.get().then(d =>{
-    let arrComments = d.data().comments;
-    let targetObj = arrComments.find(c => c.idComment);
-    console.log(targetObj);
+  postDoc
+    .get()
+    .then(d =>{
+      let arrComments = d.data().comments;
+      let targetObj = arrComments.find(c => c.idComment);
+      console.log(targetObj);
 
-    postDoc.update({
-      comments: firebase.firestore.FieldValue.arrayRemove(targetObj)
+      postDoc.update({
+        comments: firebase.firestore.FieldValue.arrayRemove(targetObj)
+      });
     });
-  });
 }
 
 function PrivacyPost(postId, option){
   const docPost = db.collection('posts').doc(postId);
   if(option === 'fa-globe'){
-    //console.log('public');
     docPost.update({
       privacy: "public"
     });
   } else if(option === 'fa-lock') {
-    //console.log('private');
     docPost.update({
       privacy: "private"
     });
@@ -89,9 +96,12 @@ function saveEdit() {
   postText.innerHTML = `
   <p class='post-text'>${saveEdit}</p>
   `;
-  firebase.firestore().collection('posts').doc(id).update({
-    text: saveEdit,
-  });
+  db
+    .collection('posts')
+    .doc(id)
+    .update({
+      text: saveEdit,
+    });
   document.getElementById(id).querySelector('.edit-button').innerHTML = '';
 }
 
