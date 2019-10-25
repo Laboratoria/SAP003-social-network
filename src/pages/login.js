@@ -54,7 +54,7 @@ const login = () => {
   <div class="container-form-perfil">
     <h1 class="text-title">Low Carb Style</h1>
     <h2 class="text-welcome">Boas vindas...</h2>
-    <p class='info-login'>Insira nos campos abaixo seu e-mail e senha para entrar ou cadastrar-se.</p>
+    <p class="info-login">Insira nos campos abaixo seu e-mail e senha para entrar ou cadastrar-se.</p>
     <form class="form">
     ${Input({
     class: 'js-input-email',
@@ -62,15 +62,15 @@ const login = () => {
     type: 'e-mail',
     id: 'js-input-email',
   })}
-  <p class='error-email'></p>
+  <p class="error-email"></p>
     ${Input({
     class: 'js-input-password',
     placeholder: 'senha',
     type: 'password',
     id: 'js-input-password',
   })}
-  <p class='error-password'></p>
-  <div class='buttons'>
+  <p class="error-password"></p>
+  <div class="buttons">
     ${Button({
     class: 'primary-button',
     title: 'Entrar',
@@ -82,7 +82,7 @@ const login = () => {
     onClick: register,
   })} 
   </div>
-  <p id='text-p' class='text'>Ou entrar com...</p>
+  <p id="text-p" class="text">Ou entrar com...</p>
     ${ButtonImage({
     class: 'img-google',
     type: 'image',

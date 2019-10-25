@@ -81,14 +81,14 @@ const timeline = (props) => {
   });
 
   const templateTimeLine = `
-  <section class='section-menu'>
+  <section class="section-menu">
     ${Input({
     class: 'navigation',
     id: 'navigation',
     type: 'checkbox',
   })}
-    <label for='navigation'>&#9776;</label>
-    <nav class='menu'>
+    <label for="navigation">&#9776;</label>
+    <nav class="menu">
       <ul>
         ${List({
     class: 'profile',
@@ -103,18 +103,18 @@ const timeline = (props) => {
       </ul>
     </nav>
   </section>
-  <h1 class='title-timeline'>Low Carb Style</h1>  
+  <h1 class="title-timeline">Low Carb Style</h1>  
   ${Bio(props.user || {})}
   <form>
-    <div class='container-publish'>
-      <div class='textarea-publish'>
+    <div class="container-publish">
+      <div class="textarea-publish">
         ${Textarea({
     class: 'post-text',
     id: 'post-text',
     placeholder: 'digite aqui...',
   })}
     </div>
-    <div class='images-publish'>
+    <div class="images-publish">
     ${Select({
     class: 'slc-privacy',
     selected: '🔓',
@@ -129,7 +129,7 @@ const timeline = (props) => {
   })}
     </div> 
     </div>
-    <div class='posts'>
+    <div class="posts">
       ${layout}
     </div>
   </form>

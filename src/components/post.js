@@ -6,8 +6,8 @@ import Paragraph from './paragraph.js';
 const Post = (props) => {
   const userId = firebase.auth().currentUser.uid;
   let template = `
-  <div class='container-public'>
-    <div class='data-date-public'>
+  <div class="container-public">
+    <div class="data-date-public">
     ${Paragraph({
     class: 'name-user',
     dataId: props.id,
@@ -19,13 +19,13 @@ const Post = (props) => {
     text: props.post.addedAt.slice(0, 16),
   })} 
     </div>
-    <div class='publication-public'>
+    <div class="publication-public">
     ${Paragraph({
     class: 'publication',
     dataId: `text-${props.id}`,
     text: props.post.text,
   })} 
-      <div class='info-like-privacy'>
+      <div class="info-like-privacy">
     ${Paragraph({
     class: 'likes',
     dataId: `numbers-${props.id}`,
@@ -42,7 +42,7 @@ const Post = (props) => {
   template += ` 
       </div>  
     </div>
-    <div class='info-post'>
+    <div class="info-post">
     ${ButtonImage({
     class: 'like-post',
     dataId: props.id,
