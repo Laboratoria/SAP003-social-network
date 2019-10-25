@@ -80,58 +80,58 @@ const timeline = (props) => {
     }
   });
 
-const templateTimeLine = `
+  const templateTimeLine = `
   <section class='section-menu'>
     ${Input({
-      class: 'navigation',
-      id: 'navigation',
-      type: 'checkbox',
-    })}
-    <label for="navigation">&#9776;</label>
-    <nav class="menu">
+    class: 'navigation',
+    id: 'navigation',
+    type: 'checkbox',
+  })}
+    <label for='navigation'>&#9776;</label>
+    <nav class='menu'>
       <ul>
         ${List({
-          class: 'profile',
-          title: 'Perfil',
-          onClick: goProfile,
-        })}
+    class: 'profile',
+    title: 'Perfil',
+    onClick: goProfile,
+  })}
         ${List({
-          class: 'out',
-          title: 'Sair',
-          onClick: signOut,
-        })}
+    class: 'out',
+    title: 'Sair',
+    onClick: signOut,
+  })}
       </ul>
     </nav>
   </section>
-  <h1 class="title-timeline">Low Carb Style</h1>  
+  <h1 class='title-timeline'>Low Carb Style</h1>  
   ${Bio(props.user || {})}
   <form>
-    <div class="container-publish">
-      <div class="textarea-publish">
+    <div class='container-publish'>
+      <div class='textarea-publish'>
         ${Textarea({
-          class: 'post-text',
-          id: 'post-text',
-          placeholder: 'digite aqui...',
-        })}
+    class: 'post-text',
+    id: 'post-text',
+    placeholder: 'digite aqui...',
+  })}
       </div>
-      <div class="images-publish">
+      <div class='images-publish'>
         ${Select({
-          class: 'slc-privacy',
-          selected: '🔓',
-          options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
-        })}
+    class: 'slc-privacy',
+    selected: '🔓',
+    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+  })}
         ${Button({
-          class: 'btn-publicar',
-          id: 'btn-publicar',
-          type: 'submit',
-          title: 'Publicar',
-          onClick: createPost,
-        })}
+    class: 'btn-publicar',
+    id: 'btn-publicar',
+    type: 'submit',
+    title: 'Publicar',
+    onClick: createPost,
+  })}
       </div> 
     </div>
-    <div class="posts">
+    <div class='posts'>
       ${layout}
-      <p class="comment-container"></p>
+      <p class='comment-container'></p>
     </div>
   </form>
   `;
