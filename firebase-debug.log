@@ -1,29 +1,29 @@
-[debug] [2019-10-24T18:23:56.404Z] ----------------------------------------------------------------------
-[debug] [2019-10-24T18:23:56.407Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2019-10-24T18:23:56.408Z] CLI Version:   7.5.0
-[debug] [2019-10-24T18:23:56.408Z] Platform:      linux
-[debug] [2019-10-24T18:23:56.408Z] Node Version:  v10.16.3
-[debug] [2019-10-24T18:23:56.409Z] Time:          Thu Oct 24 2019 15:23:56 GMT-0300 (GMT-03:00)
-[debug] [2019-10-24T18:23:56.409Z] ----------------------------------------------------------------------
+[debug] [2019-10-25T01:42:59.522Z] ----------------------------------------------------------------------
+[debug] [2019-10-25T01:42:59.525Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-10-25T01:42:59.525Z] CLI Version:   7.5.0
+[debug] [2019-10-25T01:42:59.525Z] Platform:      linux
+[debug] [2019-10-25T01:42:59.526Z] Node Version:  v10.16.3
+[debug] [2019-10-25T01:42:59.526Z] Time:          Thu Oct 24 2019 22:42:59 GMT-0300 (GMT-03:00)
+[debug] [2019-10-25T01:42:59.526Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-10-24T18:23:56.471Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-10-24T18:23:56.471Z] > authorizing via signed-in user
-[debug] [2019-10-24T18:23:56.471Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
-[debug] [2019-10-24T18:23:56.474Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-10-24T18:23:56.475Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2019-10-25T01:42:59.534Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-25T01:42:59.534Z] > authorizing via signed-in user
+[debug] [2019-10-25T01:42:59.534Z] [iam] checking project rede-social-ba65a for permissions ["firebase.projects.get"]
+[debug] [2019-10-25T01:42:59.536Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-25T01:42:59.536Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2019-10-24T18:23:56.729Z] <<< HTTP RESPONSE 200
-[debug] [2019-10-24T18:23:57.059Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
+[debug] [2019-10-25T01:42:59.802Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-25T01:42:59.884Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-ba65a:testIamPermissions  
 
-[debug] [2019-10-24T18:23:58.162Z] <<< HTTP RESPONSE 200
-[debug] [2019-10-24T18:23:58.168Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
+[debug] [2019-10-25T01:43:00.939Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-25T01:43:00.944Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a  
  
-[debug] [2019-10-24T18:23:58.615Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-25T01:43:02.371Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/home/maria/Downloads/SAP003-social-network'...
 [info] 
-[debug] [2019-10-24T18:23:58.624Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
+[debug] [2019-10-25T01:43:02.375Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-ba65a/webApps/-/config  
  
-[debug] [2019-10-24T18:23:59.957Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-25T01:43:03.702Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000

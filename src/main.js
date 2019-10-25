@@ -2,7 +2,7 @@ import { Home } from "../pages/home.js";
 import { Cadastro } from "../pages/cadastro.js";
 import { PaginaInicial } from "../pages/paginainicial.js"
 import { Mural } from "../pages/mural.js"
-import { EditarPerfil } from "../pages/editarperfil.js"
+//import { EditarPerfil } from "../pages/editarperfil.js"
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Input from '../components/input.js';
@@ -89,33 +89,35 @@ const commentarPost = (id, event) => {
 	event.target.parentElement.innerHTML += `<p>${input.value}</p>`
 }
 
-const editarPerfil = () => {
 
-	const user = firebase.auth().currentUser;
-	var name, email, phoneNumber, photoUrl, uid, emailVerified;
+// const editarPerfil = () => {
+	
+// 	const user = firebase.auth().currentUser;
+// 	var name, email, phoneNumber, photoUrl, uid, emailVerified;
 
-	if (user != null) {
-		name = user.displayName;
-		email = user.email;
-		phoneNumber = user.phoneNumber;
-		photoUrl = user.photoURL;
-		emailVerified = user.emailVerified;
-		uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-		// this value to authenticate with your backend server, if
-		// you have one. Use User.getToken() instead.
-	}
+// 	if (user != null) {
+//   	name = user.displayName;
+//   	email = user.email;
+//   	phoneNumber = user.phoneNumber;
+//   	photoUrl = user.photoURL;
+//   	emailVerified = user.emailVerified;
+//   	uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+//                    // this value to authenticate with your backend server, if
+//                    // you have one. Use User.getToken() instead.
+// 	}	
 
-	console.log(user)
+// 	console.log(user)
 
-	const template = `
-		<p>${name}</p>
-		<p>${email}</p>
-		<p>${phoneNumber}</p>
-		<p></p>
-	`;
+// 	const template = `
+// 		<p>${name}</p>
+// 		<p>${email}</p>
+// 		<p>${phoneNumber}</p>
+// 		<p></p>
+// 	`;
 
-	document.querySelector("main").innerHTML = EditarPerfil({ template });
-}
+// 	document.querySelector("main").innerHTML = EditarPerfil({ template });
+// }
+
 
 const hash = () => {
 	if (location.hash === "#sign") {
@@ -124,9 +126,10 @@ const hash = () => {
 		return mural();
 	} else if (location.hash === "#home") {
 		return init();
-	} else if (location.hash === "#editar") {
-		return editarPerfil();
-	}
+	} 
+	// else if (location.hash === "#editar") {
+	// 	return editarPerfil();
+	// }
 }
 //mudança de hash #
 
@@ -135,4 +138,3 @@ window.mural = mural;
 
 window.addEventListener("load", init);
 window.addEventListener("hashchange", hash, false);
-
