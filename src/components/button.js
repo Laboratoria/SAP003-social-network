@@ -1,6 +1,6 @@
 const Button = (props) => {
   const template = `
-    <button data-id=${props.dataId} class="${props.class}" 
+    <button data-id="${props.dataId}" class="${props.class}" 
     onclick="button.handleClick(event, ${props.onClick})" >${props.title}</button>
   `;
 

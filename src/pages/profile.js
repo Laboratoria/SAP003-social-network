@@ -29,7 +29,7 @@ const updateProfile = () => {
 const profile = (props) => {
   const user = props.user || {};
   const templateProfile = `
-  <section class='section-menu'>
+  <section class="section-menu">
     ${Input({
     class: 'navigation',
     id: 'navigation',
