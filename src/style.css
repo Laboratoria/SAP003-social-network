@@ -65,15 +65,51 @@ body {
   padding: 0.5em;
   margin: 1em;
   width: 80px; 
-  border-radius: 100px;
+  border-radius: 5px;
   cursor: pointer;
 }
+
 .btn-gray{
   background-color: #322F20;
   color: #FCFCFC;
   border: 1px solid #322F20;
+}
+
+.btn-google{
+  background: #ffffff;
+  color: #444444;
+  padding: 4px;;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.icon-google{
+  background: url("img/btn_google2.png") transparent no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 34px;
+  height: 34px;
+}
+
+.button-text-google{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: bold;
 
 }
+
+.error-message{
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: red;
+  margin: 1em;
+}
+
 .btn-register{
   width: 100px;
 }
@@ -257,6 +293,7 @@ transition: all .4s linear;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 
 @media only screen and (min-width: 576px){
 
