@@ -1,7 +1,16 @@
-
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
 
 body
 {
+  background-image: url(pokbg.jpg);
+  background-attachment: fixed;
+  background-size: 100% 100%;
   margin: 0;
   padding: 0;
   background: #48486d9c;
