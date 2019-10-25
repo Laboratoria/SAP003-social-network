@@ -1,7 +1,8 @@
 import Button from '../components/button.js';
 import Logo from '../components/logo.js';
 import Input from '../components/input.js';
-import loginGoogle from './google.js';
+import loginGoogle from '../pages/google.js';
+import loginFacebook from '../pages/facebook.js'
 
 
 function enviarLogin() {
@@ -59,7 +60,8 @@ function login() {
     ${Button({ class: "primary-button", onClick: enviarLogin, title: 'ENVIAR',  })}
     
     <span class= "access">OU ACESSE COM</span>
-    <section class="auth">   
+    <section class="auth">
+    ${Button({ class: "auth-button", onClick: loginFacebook, title: '<i class="fab fa-facebook-square"></i>' })}   
     ${Button({ class: "auth-button", onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
     </section>       
    
