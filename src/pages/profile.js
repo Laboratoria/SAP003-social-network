@@ -20,12 +20,19 @@ function profile() {
   const template = `
     <header class= "header-home">
     ${Logo({ class: "logonav" })}         
-    </header>   
-    <nav></nav>
+    </header>
+    <nav>
+      <ul>
+        <li> 
+          <a href="#home.js" class ="button-home">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li>Perfil de ${firebase.auth().currentUser.displayName} </li>
+        <li>Sair ${Button({ class: "button-out", onClick: signOut, title:'<i class="fas fa-sign-out-alt"></i>' })}</li>
+      </ul>
+    </nav>
     <br>
-    <a href= "#home.js" class= "button-home"><i class="fas fa-home"></i></a>
-    <h1 class="id-user">Perfil de ${firebase.auth().currentUser.displayName}</h1>
-    ${Button({ class: "button-out", onClick: signOut, title:'<i class="fas fa-sign-out-alt"></i>' })}
     <div class= "post-area">
       <img class="img-user" src="./img/profile_girl.png"/>     
     </div>
