@@ -53,21 +53,22 @@ const profile = (props) => {
     <p class="text-profile">Insira seus dados pessoais aqui...</p>
     <form>
     <div class="container-form-profile">
-        ${Input({
+    ${Input({
     class: 'inp-name-profile',
     id: 'inp-name-profile',
     type: 'text',
     value: user.name || '',
     placeholder: 'Seu nome...',
+    maxlength: '15',
   })}
-        ${Input({
+    ${Input({
     class: 'inp-age-profile',
     id: 'inp-age-profile',
     type: 'number',
     value: user.age,
     placeholder: 'Sua idade...',
   })}
-        ${Input({
+    ${Input({
     class: 'inp-profession-profile',
     id: 'inp-profession-profile',
     type: 'text',
@@ -75,7 +76,7 @@ const profile = (props) => {
     placeholder: 'Sua profissão...',
     maxlength: '20',
   })}
-        ${Button({
+    ${Button({
     class: 'btn-profile',
     id: 'btn-profile',
     type: 'submit',
