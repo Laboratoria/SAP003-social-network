@@ -8,6 +8,7 @@ const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
 function deletarPost(e) {
   const postId = parseInt(e.target.parentElement.id, 10);
   const objUsuario = JSON.parse(localStorage.getItem('cadastro'));
+  const paragrafo = document.querySelector(`p[data-id='${postId}']`);
 
   let num = 0;
   objUsuario.forEach((usuario) => {
@@ -17,6 +18,7 @@ function deletarPost(e) {
   });
 
   localStorage.setItem('cadastro', JSON.stringify(objUsuario));
+  paragrafo.remove();
 }
 
 function editarPost(e) {
