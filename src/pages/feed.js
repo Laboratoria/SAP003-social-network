@@ -25,6 +25,9 @@ function editarPost(e) {
   const paragrafo = document.querySelector(`p[data-id='${postId}']`);
   paragrafo.contentEditable = 'true';
   paragrafo.focus();
+  paragrafo.onblur = () => {
+    paragrafo.contentEditable = 'false';
+  };
 
   paragrafo.addEventListener('keyup', () => {
     const indicePost = usuarioTotal[usuarioAtual].posts.findIndex(posts => posts.id === postId);
@@ -58,10 +61,17 @@ function postarPublicacao() {
   document.getElementById('post').innerHTML = posts.map(elem => templatePosts(elem.publicacao, elem.id)).join('');
 }
 
+function exibirPublicacao() {
+  const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
+  const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
+  const posts = usuarioTotal[usuarioAtual].posts;
+  document.querySelector('.post').value = '';
+  document.getElementById('post').innerHTML = posts.map(elem => templatePosts(elem.publicacao, elem.id)).join('');
+}
+
 function feed() {
   const template = `
     ${Textarea({ class: 'post' })}
-
     ${Button({ title: 'Compartilhar', onClick: postarPublicacao })}
     <p id='post'></p>
   `;
@@ -70,12 +80,6 @@ function feed() {
 
 window.templatePosts = templatePosts;
 window.postarPublicacao = postarPublicacao;
-
+window.exibirPublicacao = exibirPublicacao;
 
 export default feed;
-
-// function logout() {
-//   localStorage.removeItem('usuario');
-//   ${Button({ title: 'Login', onClick: logout })}
-//   window.location.reload();
-// }
