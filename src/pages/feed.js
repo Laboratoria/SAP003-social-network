@@ -15,13 +15,12 @@ function profile() {
 function AddPostToFirebase() {
   const dataBase = firebase.firestore();
   const id = firebase.auth().currentUser.uid;
-  const name = firebase.auth().currentUser.email;
+  const name = firebase.auth().currentUser.displayName;
   const textInput = document.querySelector('.textarea');
   const post = {
     timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
     name,
     text: textInput.value,
-    likes: 0,
     comments: [],
     user_id: id,
   };
@@ -32,7 +31,6 @@ function AddPostToFirebase() {
     <div class='postHeader'>${post.timestamp}</div>
     <div class='postHeader'>${post.name} disse:</div>
     <div id='post_${docRef.id}'>${post.text}</div>
-    ${post.likes}
     ${post.comments}
     ${window.button.component({
       dataId: docRef.id,
@@ -81,11 +79,10 @@ function loadFeed () {
   firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
   .then((querySnapshot) => {
     querySnapshot.forEach((post) => {
-      const postsFeed =  `<li data-id='${post.id}' class='postMessage'>
-      <div class='postHeader'>${post.data().timestamp}-</div>
-      <div class='postHeader'>${post.data().user_id} disse:</div>
-      <div id='post_${post.id}'>${post.data().text}</div>
-      ${post.data().likes}
+      const postsFeed =  `<ul data-id='${post.id}' class='postMessage'>
+      <li class='postHeader'>${post.data().timestamp} - ${post.data().name} disse: </li>
+      <li id='post_${post.id}'>
+      ${post.data().text} </li>
       ${Button({
         dataId: post.id,
         title: '🗑️',
@@ -100,7 +97,7 @@ function loadFeed () {
         onClick: editPost,
 
       })}
-      </li>`;
+      </ul>`;
       document.querySelector('.timeline').innerHTML += postsFeed;
     });
   });
@@ -110,13 +107,13 @@ function loadCard () {
   firebase.firestore().collection('persona').get()
     .then((querySnapshot) => {
       querySnapshot.forEach((persona) => {
-      const cardFeed =  `<li data-id='${persona.id}' class=''>
+      const cardFeed =  `<li data-id='${persona.id}' class='card'>
       ${persona.data().name} <br>
       ${persona.data().profession}
   </li>
     </div>
   `;
-  document.querySelector('.card').innerHTML = cardFeed;
+  document.querySelector('.cardProfile').innerHTML = cardFeed;
       });
     });
 }
@@ -130,7 +127,6 @@ function Feed(props) {
       ${post.name}
       ${post.timestamp}<br>
       ${post.text}<br>
-      ${post.likes}
       ${Button({  dataId: post.id, class: 'primary-button', title: '🗑️', onClick: deletePost,})}
       </li>
     `;
@@ -144,7 +140,7 @@ function Feed(props) {
     <h1><img class='logo-feed' src='logo1.png'/></a></h1>
     <nav>
         <li class="left">${Button({ class: 'left',
-        title: 'Encerrar Sessão',
+        title: '🚪Encerrar Sessão',
         onClick: signOut,
       })}</li>
       <li class="right">${Button({ class: 'right',
@@ -153,8 +149,6 @@ function Feed(props) {
       })}</li>
     </nav>
 </header>
-
-  <h2>Post</h2>
   <div class='post'>
   ${Post({
     class: 'textarea',
@@ -169,7 +163,7 @@ function Feed(props) {
   })}
   <div>
   <ul class= 'timeline'>${postsLayout}</ul>
-  <ul class= 'card'>${postsLayout}</ul>
+  <ul class= 'cardProfile'>${postsLayout}</ul>
   `;
 
   return template;

@@ -20,13 +20,13 @@ function salve() {
   };
   firebase.firestore().collection('persona').add(persona).then((docRef) => {
       document.querySelector('.display').insertAdjacentHTML('afterbegin', `
-      <ul data-id='${docRef.id}'>
-      ${persona.email}
-      ${persona.user_id}
-      ${persona.name}
-      ${persona.age}
-      ${persona.profession}
-      ${persona.interests}
+      <ul class= 'displayProfile' data-id='${docRef.id}'>
+      ${persona.email}<br>
+      ${persona.user_id}<br>
+      ${persona.name}<br>
+      ${persona.age}<br>
+      ${persona.profession}<br>
+      ${persona.interests}<br>
       <img src='${persona.photo}'/>
       </ul> `)
     });
@@ -65,7 +65,7 @@ function Profile() {
     <h1><img class='logo-feed' src='logo1.png'/></a></h1>
     <nav>
         <li class="left">${Button({ class: 'left',
-        title: 'Encerrar Sessão',
+        title: '🚪Encerrar Sessão',
         onClick: signOut,
       })}</li>
       <li class="right">${Button({ class: 'right',
@@ -74,8 +74,8 @@ function Profile() {
       })}</li>
     </nav>
 </header>
+  <form class='profile'>
   <h1>Perfil</h1>
-  <form>
   <label class='upload-photo'> Foto
   ${Input({
     class: 'js-photo-input',

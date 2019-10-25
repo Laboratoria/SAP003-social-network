@@ -33,8 +33,8 @@ function Google() {
 function Login() {
   const template = `
     <img class='logo' src='logo1.png'/>
-    <h2 id='h2' class='content'>Seja bem-vinda(o)!</h2>
     <form class='content'>
+    <h2>Seja bem-vinda(o)!</h2>
     ${Input({
     class: 'js-email-input',
     placeholder: 'E-mail',

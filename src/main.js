@@ -16,12 +16,10 @@ function locationHashChanged() {
               posts: querySnapshot,
             });
           });
-     } else if (window.location.hash === '#profile') {
+      } else if (location.hash === '#profile') {
         document.querySelector('main').innerHTML = Profile();
-      } 
-    } 
-       else if (window.location.hash === '#register') {
-         
+     } 
+    } else if (window.location.hash === '#register') {
         document.querySelector('main').innerHTML = Register();
       } else {
         document.querySelector('main').innerHTML = Login();
