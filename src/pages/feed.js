@@ -58,8 +58,22 @@ function postarPublicacao() {
   document.getElementById('post').innerHTML = posts.map(elem => templatePosts(elem.publicacao, elem.id)).join('');
 }
 
+function mostrarPublicacao() {
+  const usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
+  const usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
+  const posts = usuarioTotal[usuarioAtual].posts;
+  document.querySelector('.post').value = '';
+  document.getElementById('post').innerHTML = posts.map(elem => templatePosts(elem.publicacao, elem.id)).join('');
+}
+
+function logout() {
+  localStorage.removeItem('usuario');
+  window.location.hash='#home';
+}
+
 function feed() {
   const template = `
+    ${Button({ title: 'Sair', onClick: logout })}
     ${Textarea({ class: 'post' })}
 
     ${Button({ title: 'Compartilhar', onClick: postarPublicacao })}
@@ -70,12 +84,8 @@ function feed() {
 
 window.templatePosts = templatePosts;
 window.postarPublicacao = postarPublicacao;
+window.mostrarPublicacao = mostrarPublicacao;
 
 
 export default feed;
 
-// function logout() {
-//   localStorage.removeItem('usuario');
-//   ${Button({ title: 'Login', onClick: logout })}
-//   window.location.reload();
-// }
