@@ -7,7 +7,8 @@
   font-weight: 300;
   font-family: 'Chewy', cursive;
   font-family: 'Sansita', sans-serif;
-  font-family: 'Numans', sans-serif; }
+  font-family: 'Numans', sans-serif; 
+}
 
 body {
   background-color: #fffbad52; 
@@ -288,8 +289,12 @@ section {
   .phrase {
     font-size: 16px;
   }
+<<<<<<< HEAD
   .select{
     display: flex;
     justify-content: flex-end;
   }
 }
+=======
+}
+>>>>>>> ae6c0b46fda1716ab38b28fe706f6b681249c160

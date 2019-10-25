@@ -143,6 +143,11 @@ function filterPost() {
   })
 };
 
+function loadComments(post){
+  document.querySelector('.feed').innerHTML += `
+ 
+  ` 
+}
 
 function countLikes(event) {
   const id = event.target.dataset.id;  

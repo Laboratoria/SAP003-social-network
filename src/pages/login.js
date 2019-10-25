@@ -54,8 +54,8 @@ function login() {
     <br>
     <span class= "access">LOGIN</span>
     <br>
+    <form class="form-set">
     ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
-    ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}    
     <br>
     ${Button({ class: "primary-button", onClick: enviarLogin, title: 'ENVIAR',  })}
     
@@ -64,9 +64,10 @@ function login() {
     ${Button({ class: "auth-button", onClick: loginFacebook, title: '<i class="fab fa-facebook-square"></i>' })}   
     ${Button({ class: "auth-button", onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
     </section>       
-   
     <section class="register">Não tem uma conta? <a href="#register.js">REGISTRE-SE</a></section>
-  `;
+    </form>
+  
+    `;
 
   return template;
 }
