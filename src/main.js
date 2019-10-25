@@ -21,8 +21,8 @@ function init() {
       } else if (window.location.hash ==='#login'){
         document.querySelector('main').innerHTML = Login();
       } else {
-        window.location.hash ==='#register';
-        document.querySelector('main').innerHTML = Register();
+        window.location.hash ==='#login';
+        document.querySelector('main').innerHTML = Login();
       }
     } else {
       window.location.hash ==='#register';
