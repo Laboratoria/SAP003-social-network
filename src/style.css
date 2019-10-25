@@ -155,14 +155,14 @@ padding-top: 24px;
 width: 100%;
 }
 .bntentrar {
-  background-color: #C6005F;
+  background-color: rgb(198, 112, 0);
 }
 
-/* button {
+button {
   -webkit-appearance: button;
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
-  color: buttontext;
+  color: #C6005F;
   letter-spacing: normal;
   word-spacing: normal;
   text-transform: none;
@@ -172,16 +172,16 @@ width: 100%;
   text-align: center;
   align-items: flex-start;
   cursor: default;
-  background-color: buttonface;
+  background-color: aqua;
   box-sizing: border-box;
   margin: 0em;
   font: 400 13.3333px Arial;
   padding: 1px 6px;
   border-width: 2px;
   border-style: outset;
-  border-color: buttonface;
+  border-color: #e2cd0a;
   border-image: initial;
-} */
+}
 
   
 footer{
