@@ -42,4 +42,3 @@ function locationHashChanged() {
 
 }
 window.addEventListener('hashchange', locationHashChanged, false);
-

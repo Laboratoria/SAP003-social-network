@@ -28,7 +28,8 @@ function register(){
   function buttonRegister() {
     const email = document.querySelector('.js-email-input').value;
     const password = document.querySelector('.js-password-input').value;
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    const name = document.querySelector('.username').value;
+    firebase.auth().createUserWithEmailAndPassword(email, password, name)
     .then(function(firebaseUser) {
         window.location.hash = '#feed'
     })
