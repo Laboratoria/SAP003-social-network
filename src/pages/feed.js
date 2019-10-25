@@ -4,7 +4,7 @@ import Post from '../components/post.js';
 function signOut() {
   firebase.auth().signOut().then(() => {
     window.location.hash = '#login';
-    alert('Agora tu saiu.');
+    alert('Encerrada a Sessão');
   });
 }
 
@@ -162,7 +162,7 @@ function Feed(props) {
   })}
   <div>
   <ul class= 'timeline'>${postsLayout}</ul>
-  <ul class= 'cardProfile'>${postsLayout}</ul>
+  <ul class= 'cardProfile'></ul>
   `;
 
   return template;

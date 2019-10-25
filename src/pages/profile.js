@@ -1,4 +1,3 @@
-
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -40,8 +39,64 @@ function Prev() {
 function signOut() {
   firebase.auth().signOut().then(() => {
     window.location.hash = '#login';
-    alert('Agora tu saiu.');
+    alert('Encerrada a Sessão');
   });
+}
+
+function loadProfile () {
+  firebase.firestore().collection('persona').get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((persona) => {
+      const postProfile =  `<ul data-id='${persona.id}' class=''>
+      <li class=''> ${persona.data().name}</li>
+      <li id='persona_${persona.id}'>
+      Foto: ${persona.data().photo}
+      Idade: ${persona.data().age}
+      E-mail: ${persona.data().email}
+      Profissão: ${persona.data().profession}
+      Interesses: ${persona.data().interests}
+      </li>
+      ${Button({
+        dataId: persona.id,
+        title: '🗑️',
+        class: 'primary-button',
+        onClick: deleteProfile,
+      })}
+      ${Button({
+        id: 'edit-'+persona.id,
+        dataId: persona.id,
+        title: '✏️',
+        class: 'edit-btn primary-button',
+        onClick: editProfile,
+      })}
+      </ul>`;
+      document.querySelector('.display').innerHTML = postProfile;
+    });
+  });
+}
+
+function deleteProfile(event) {
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('persona').doc(id).delete();
+  event.target.parentElement.remove();
+}
+
+function editProfile(event) {
+  const id = event.target.dataset.id;
+  document.getElementById('persona_'+id).contentEditable = true;
+  document.getElementById('persona_'+id).style.border = '1px solid black';
+  document.querySelector('#edit-'+id).innerHTML = '✔️';
+  document.querySelector('#edit-'+id).addEventListener('click', window.profile.saveEdit);
+}
+
+function saveEdit () {
+  const id = event.target.dataset.id;
+  document.getElementById('persona_'+id).contentEditable = false;
+  document.getElementById('persona_'+id).style.border = '';
+  document.querySelector('#edit-'+id).innerHTML = '✏️';
+  const text = document.querySelector('#persona_'+id).textContent;
+  firebase.firestore().collection('persona').doc(id).update({text});
+  document.querySelector('#edit-'+id).removeEventListener('click', window.profile.saveEdit);
 }
 
 function Profile() {
@@ -60,8 +115,9 @@ function Profile() {
       });
     });
 
-
-  const template = `
+    window.profile.loadProfile();
+  
+    const template = `
   <header class='header'>
     <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
     <nav>
@@ -112,5 +168,12 @@ function Profile() {
 
   return template;
 }
+
+window.profile = {
+  loadProfile,
+  deleteProfile,
+  editProfile,
+  saveEdit
+};
 
 export default Profile;

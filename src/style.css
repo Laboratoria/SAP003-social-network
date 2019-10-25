@@ -131,7 +131,6 @@
 
 #h2{
   transform: translate(40%,-150%);
-
 }
 
 .textarea{
@@ -202,7 +201,8 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  transform: translate(450px, 10px);
+  margin-top: 50px;
+  transform: translate(400px, 80px);
   justify-content: center;
   border-radius: 30px;
   border-color: gray;
@@ -211,7 +211,7 @@
 
 .postMessage{
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   transform: translate(-40px, 10px);
   margin: 3px;
   padding: 3px;
@@ -231,8 +231,8 @@
   color: #fff;
   cursor: pointer;
   list-style: none;
-  transform: translate(145%, -200%);
-  width: 40%;
+  transform: translate(220%, -320%);
+  width: 30%;
   font-weight: bold;
 }
 
@@ -242,7 +242,8 @@
   color: #fff;
   cursor: pointer;
   list-style: none;
-  transform: translate(5%, -245%);
+  margin-top: -9.5%;
+  margin-left: 2%;
   width: 40%;
   font-weight: bold;
 }
@@ -250,74 +251,31 @@
 .header{
   background-color: #ffa05a;
   width: auto;
-  height: 75px;
-  margin-top: -5px;
+  height: 70px;
 }
 
 .logo-feed{
-  background-color: #fff;
+  width: 10%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-  transform: translate(600px, -10px);
-  margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  list-style: none;
-  max-width: 90px;
-  max-height: 90px;
-  width: auto;
-  height: auto;
+    justify-content: flex-end;
+    flex-direction: column;
+    transform: translate(-40px, 10px);
+    margin: 5px;
+    padding: 10px;
+    border: solid;
+    border-color: gray;
+    border-radius: 5px;
+    background-color: #ffffff;
+    list-style: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
 }
 
 .postHeader {
   overflow: hidden;
   background-color: #C3C7C1;
   padding: 10px 10px;
-}
-
-
-.card{
-  display: flex;
-  justify-content: flex-start;
-  padding: 3px;
-  border: solid;
-  border-color: gray;
-  border-radius: 5px;
-  background-color: #ffffff;
-  list-style: none;
-  color: #ffa05a;
-  width: 50%;
-  transform: translate(-110%, -2000%);
-}
-
-.profile{
-  transform: translate(40px, 10px);
-  margin: 3px;
-  padding: 3px;
-  border: solid;
-  border-color: gray;
-  border-radius: 5px;
-  background-color: #ffffff;
-  list-style: none;
-  color: black;
-  width: 40%;
-}
-
-.displayProfile{
-  display: flex;
-  justify-content: center;
-  transform: translate(600px, -278px);
-  margin: 3px;
-  padding: 7px;
-  margin: 3px;
-  border: solid;
-  border-color: gray;
-  border-radius: 5px;
-  background-color: #ffffff;
-  list-style: none;
-  width: 40%;
 }
 
 }
