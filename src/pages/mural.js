@@ -23,12 +23,14 @@ export const Mural = (props) => {
 	<section class="post-section">
 		<form id='post-form'>
 			${Post({ id: 'post', placeholder: "Qual a  bruxaria de hoje?", rows: '5', cols: '50' })}
-			${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: 'Post', onclick: sendAndRetrievePost })}
+			${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: '<img src="images/botaopost.png" class="icon-post" />', onclick: sendAndRetrievePost })}
 		</form>
 	</section>
 	<ul id='timeline'>
 	${props.postsLayout}
-	</ul>`;
+	<ul id='comment-icon'>
+	${props.postsLayout}
+	`
 
 	return template;
 }
