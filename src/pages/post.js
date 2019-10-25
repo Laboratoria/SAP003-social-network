@@ -55,10 +55,13 @@ function addPost(post) {
 function addPostPro(post) {
   const feed = document.querySelector('.feed');
   let privacity = post.data().privacidade;
+  console.log(privacity)
   if (privacity === 'publico'){
-    console.log(publicooooo)
+    console.log('publicooooo')
+    
   }else{
-    console.log(privadoooooo)
+    console.log('privadoooooo')
+    
   }
   
   const feedPost = `  
@@ -86,11 +89,12 @@ function addPostPro(post) {
 };
 
 function loadPost() {  
+  const uid = firebase.auth().currentUser.uid;
   db.collection('post').orderBy('timestamp', 'desc').get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {
-      if(post.data().uid == uid || post.data().privacidade == 'publico'){
+      if(post.data().uid == uid.uid || post.data().privacidade == 'publico'){
         addPost(post)
       }
     })
