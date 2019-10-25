@@ -7,61 +7,92 @@ window.app = {
 };
 
 function savePost() {
-
   const post = document.querySelector('.post').value;
   const uid = firebase.auth().currentUser.uid;
-  const privacityPost = document.querySelector('.privacidade').value;
+  const privacyPost = document.getElementsByName('privacy');
+  let optionPost = ''; 
 
-  db.collection('post').add({
-    post: post,
-    likes: 0,
-    uid: uid,
-    privacidade: privacityPost,
-    idname: firebase.auth().currentUser.displayName,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
-  })
-  .then(function (docRef) {    
-    app.loadPost()
-  })
-  document.querySelector('.post').value = '';  
+  
+  if (post === '') {    
+    alert('Ops! Você não disse o que quer trocar.')
+
+  } else {
+    if (privacyPost[0].checked) {
+      optionPost = 'public'
+    } else {
+      optionPost = 'privacy'
+    }
+
+    db.collection('post').add({
+      post: post,
+      likes: 0,    
+      uid: uid,
+      privacy: optionPost,
+      idname: firebase.auth().currentUser.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
+    })
+    .then(function (docRef) {    
+      app.loadPost()
+    })
+    document.querySelector('.post').value = '';  
+  }
+  
 };
 
 function addPost(post) {
   const feed = document.querySelector('.feed');
-  const feedPost = `  
-  <li data-id= '${post.id}' class="post-list">
-  <span class= "idname">${post.data().idname}:
-  </span>
-  <p class="border"></p>
-  <div class="text-post" data-id='${post.id}'>
-  ${post.data().post}
+  const privacy = post.data().privacy;  
   
-  </div>
-  <br>  
-  <br>
-  <p class="border"></p>
-  ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
-  ${post.data().likes}
-  ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'💬' })} 
-  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
-    <ul class="comments">    
-    </ul>   
-  </li>
-  <br>
-  `
-  feed.innerHTML += feedPost;
+  if (privacy === 'public') {
+    const feedPost = `  
+    <li data-id= '${post.id}' class="post-list">
+    <span class= "idname">${post.data().idname}:</span>
+    <p class="border"></p>
+    <div class="text-post" data-id='${post.id}'>
+    ${post.data().post}
+    </div>
+    <br>  
+    <br>
+    <p class="border"></p>
+    ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
+    ${post.data().likes}
+    ${Button({ dataId: post.id, class: "button-feed", onClick: showComments, title:'💬' })} 
+    <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+    <p class="border"></p>  
+    <textarea name="txtcom" class="txtcom hideComments" data-id= '${post.id}' placeholder="Comenta aqui! :)"></textarea>
+    ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
+    <div class="feedcom" data-id='${post.id}'></div>  
+    </li>  
+    <br>
+    `
+  
+    db.collection(`post/${post.id}/comments`).orderBy('timestamp', 'desc').get()
+    .then((snapcomments) => {
+      snapcomments.forEach((comment) => {      
+        const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
+        
+        feedcom.innerHTML += `${comment.data().timestamp.toDate().toLocaleString('pt-BR')} - 
+        ${comment.data().idname}:
+        ${comment.data().txtComment}
+        <br>
+        <br>
+        `          
+      })   
+    })
+  
+    feed.innerHTML += feedPost;
+  }
 };
+
 
 function addPostPro(post) {
   const feed = document.querySelector('.feed');
   let privacity = post.data().privacidade;
   console.log(privacity)
   if (privacity === 'publico'){
-    console.log('publicooooo')
-    
+       
   }else{
-    console.log('privadoooooo')
-    
+      
   }
   
   const feedPost = `  
@@ -76,21 +107,19 @@ function addPostPro(post) {
   <p class="border"></p>
   ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}    
   ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
-  ${Button({ dataId: post.id, class: "button-feed", onClick: savePost, title:'🔒' })}
+  ${Button({ dataId: post.id, class: "button-feed", onClick: changePrivacy, title:'🔓' })}
   ${Button({ dataId: post.id, class: "button-save", onClick: saveEdit, title:'✅' })}   
-  ${privacity}
-  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span> 
-    <ul class="comments">    
-    </ul> 
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>    
   </li>
   <br>
   `
   feed.innerHTML += feedPost;
 };
 
-function loadPost() {  
-  const uid = firebase.auth().currentUser.uid;
-  db.collection('post').orderBy('timestamp', 'desc').get()
+
+function loadPost() {     
+  db.collection('post').orderBy('timestamp', 'desc')  
+  .get()
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {
@@ -112,7 +141,8 @@ function filterPost() {
       addPostPro(post)
     })
   })
-}
+};
+
 
 function countLikes(event) {
   const id = event.target.dataset.id;  
@@ -124,7 +154,46 @@ function countLikes(event) {
     });
     app.loadPost();
   }))  
-}
+};
+
+function changePrivacy(event) {
+  const id = event.target.dataset.id;  
+  db.collection('post').doc(id).get()
+  .then((post => {
+    const upPrivacy = 'public';
+    db.collection('post').doc(id).update({
+      privacy: upPrivacy
+    });
+    app.loadPost();
+  }))  
+};
+
+
+function showComments(event){
+  const id = event.target.dataset.id;  
+  const comments = document.querySelector(`.txtcom[data-id='${id}']`);
+  comments.classList.remove('hideComments');
+  const saveButton = document.querySelector(`.button-save[data-id='${id}']`);
+  saveButton.classList.add('show');  
+};
+
+function saveComments(event) {    
+  const id = event.target.dataset.id;  
+  const txtComment = document.querySelector(`.txtcom[data-id='${id}']`).value;
+  const uid = firebase.auth().currentUser.uid;  
+  
+  db.collection(`post/${id}/comments`).add({
+    txtComment: txtComment,    
+    uid: uid,
+    idname: firebase.auth().currentUser.displayName,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
+  })
+  .then(() => {
+        
+    app.loadPost();
+    
+  })    
+}; 
 
 function editPost(event) {
   const id = event.target.dataset.id; 
@@ -133,20 +202,20 @@ function editPost(event) {
   saveButton.classList.add('show');
   postEdit.setAttribute('contenteditable', 'true');
   postEdit.focus()  
-}
+};
 
-function saveEdit() {
+function saveEdit(event) {
   const id = event.target.dataset.id;
   event.target.classList.remove('show');
   const post = document.querySelector(`.text-post[data-id='${id}']`).textContent.trim();
   db.collection('post').doc(id).update({post})  
-}
+};
 
 function deletePost(event) {
   const id = event.target.dataset.id;  
   db.collection('post').doc(id).delete();  
   event.target.parentElement.remove();
-}
+};
 
 
 
