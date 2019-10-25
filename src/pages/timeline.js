@@ -79,6 +79,7 @@ const timeline = (props) => {
   });
 
   const templateTimeLine = `
+  <section class='section-menu'>
     ${Input({
     class: 'navigation',
     id: 'navigation',
@@ -99,13 +100,14 @@ const timeline = (props) => {
   })}
       </ul>
     </nav>
-    <img class="back-timeline" src="images/back-timeline.png">
+  </section>
+
     <h1 class="title-timeline">Low Carb Style</h1>  
   ${Bio(props.user || {})}
   <form>
     <div class="container-publish">
       <div class="textarea-publish">
-      ${Textarea({
+  ${Textarea({
     class: 'post-text',
     id: 'post-text',
     placeholder: 'digite aqui...',
