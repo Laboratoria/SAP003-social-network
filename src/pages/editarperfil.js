@@ -1,27 +1,26 @@
-import Button from "../components/button.js";
-import Select from "../components/select.js";
+// import Button from "../components/button.js";
+// import Select from "../components/select.js";
 
-export const EditarPerfil = (props) => {
-	const template = `
-	<header>
-		<nav>
-			<li>
-				<select id="select" onchange="changeSelect()">
-					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural'})}
-					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar', selected:'selected'})}
-					${Select({name:'Logout', id:'logout', class:'class-logout', value:'logout'})}
-				</select>
-			</li>
-			<li>Logo</li>
-			<li>Logout</li>
-		</nav>
-	</header>
-	${props.template}
-	`;
+// export const EditarPerfil = (props) => {
+// 	const template = `
+// 	<header>
+// 		<nav>
+// 			<li>
+// 				<select id="select" onchange="changeSelect()">
+// 					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural'})}
+// 					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar', selected:'selected'})}
+// 				</select>
+// 			</li>
+// 			<li>Logo</li>
+// 			<li>Logout</li>
+// 		</nav>
+// 	</header>
+// 	${props.template}
+// 	`;
 
-	return template;
+// 	return template;
 
-}
+// }
 
 
 // const test = () => {

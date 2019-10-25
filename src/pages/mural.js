@@ -10,20 +10,20 @@ export const Mural = (props) => {
 			<ul class="nav-links">
 				<li class="dropdown-menu">
 					<select class="menu-dropdown" id="select" onchange="changeSelect()">
-						${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural', selected:"selected"})}
-						${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar'})}
+						${Select({ name: 'Mural', id: 'mural', class: 'class-mural', value: 'mural', selected: "selected" })}
+						${Select({ name: 'Editar Perfil', id: 'editar-perfil', class: 'class-editar-perfil', value: 'editar' })}
 					</select>
 				</li>
 				<li><img class="nav-logo" src="images/witchy-navbar.png" alt="navlogo"> </li>
-				<li>${Button({class:'btn-logout', id:'btn-logout', type:'submit', title:'Sair', onclick: logout})}</li>
+				<li>${Button({ class: 'btn-logout', id: 'btn-logout', type: 'submit', title: 'Sair', onclick: logout })}</li>
 			</ul>	
 		</nav>
 	</header>
 
 	<section class="post-section">
 		<form id='post-form'>
-			${Post({id:'post', placeholder:"Qual a  bruxaria de hoje?", rows:'5', cols:'50'})}
-			${Button({class:'btn-post', id:'btn-post-send', type:'submit', title:'Post', onclick: sendAndRetrievePost})}
+			${Post({ id: 'post', placeholder: "Qual a  bruxaria de hoje?", rows: '5', cols: '50' })}
+			${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: '<img src="images/botaopost.png" class="icon-post" />', onclick: sendAndRetrievePost })}
 		</form>
 	</section>
 	<ul id='timeline'>
@@ -56,7 +56,7 @@ const sendAndRetrievePost = () => {
 		text,
 		userID: user.uid,
 		date: new Date().toLocaleString('pt-BR'),
-		likes:0
+		likes: 0
 	}
 
 
@@ -69,11 +69,11 @@ const sendAndRetrievePost = () => {
 
 const logout = () => {
 
-	firebase.auth().signOut().then(function() {
+	firebase.auth().signOut().then(function () {
 		window.location.hash = 'home';
-	}).catch(function(error) {
+	}).catch(function (error) {
 	});
 }
 
 window.changeSelect
- = changeSelect;
+	= changeSelect;
