@@ -34,26 +34,28 @@ function cancelComment() {
 function AddComment(postId) {
 const commentArea = `
     ${Textarea({
-    class: 'textarea-comment',
+    class: 'textarea-comment edit-textarea',
     placeholder: 'Escreva um comentário',
     value:''
 })}
+  <div>
+  ${Button({
+  type: 'button',
+  class: 'btn',
+  id: 'btn-comment-cancel',
+  dataId: postId,
+  onclick: cancelComment,
+  title: 'Cancelar',
+})}
     ${Button({
     type: 'button',
-    class: 'btn',
+    class: 'btn btn-gray',
     id: 'btn-comment-post',
     dataId: postId,
     onclick: saveComment,
     title: 'Postar',
 })}
-    ${Button({
-    type: 'button',
-    class: 'btn',
-    id: 'btn-comment-cancel',
-    dataId: postId,
-    onclick: cancelComment,
-    title: 'Cancelar',
-})}
+</div>
 `;
 const createSection = document.getElementById(postId).querySelector('.comment-container');
 createSection.innerHTML = `${commentArea}`;
@@ -103,6 +105,7 @@ function saveEdit() {
       text: saveEdit,
     });
   document.getElementById(id).querySelector('.edit-button').innerHTML = '';
+  buttonPencil.style.display = 'block'; 
 }
 
 function cancelEdit() {
@@ -113,12 +116,14 @@ function cancelEdit() {
   <p class='post-text'>${text}</p>
   `;
   document.getElementById(id).querySelector('.edit-button').innerHTML = '';
+  buttonPencil.style.display = 'block';
 }
 
 function EditPost(postId) {
   const id = postId;
   const postText = document.getElementById(id).querySelector('.post-text');
   const button = document.getElementById(id).querySelector('.edit-button');
+  const buttonPencil = document.getElementById(id).querySelector('.edit-post');
   const text = postText.textContent;
   postText.innerHTML = `
   ${Textarea({
@@ -129,21 +134,22 @@ function EditPost(postId) {
   })}
   `;
   button.innerHTML = `
-    ${Button({
-    id: 'btn-save',
-    class: 'btn save-btn',
-    dataId: postId,
-    onclick: saveEdit,
-    title: 'Salvar',
-  })}
-    ${Button({
+  ${Button({
     id: 'btn-cancel',
     class: 'btn cancel-btn',
     dataId: postId,
     onclick: cancelEdit,
     title: 'Cancelar',
   })}
+  ${Button({
+  id: 'btn-save',
+  class: 'btn save-btn btn-gray',
+  dataId: postId,
+  onclick: saveEdit,
+  title: 'Salvar',
+})}
   `;
+    buttonPencil.style.display = 'none';
 }
 
 async function LikePost(postId) {

@@ -3,12 +3,11 @@ import Input from '../components/input.js';
 
 
 function newUser() {
-
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.password-input').value;
   const name = document.querySelector('.name-input').value;
   const errorMessageField = document.getElementById('errorMessageSignup');
-
+  
   if(email.length > 0 && password.length > 0 && name.length > 0) {
 
     auth
@@ -21,7 +20,7 @@ function newUser() {
             .then(() => {
               db.collection('users').doc(resp.user.uid).set({
                 name: name,
-                bio:'',
+                biography: 'Fale de você, seus gostos, plantas favoritas, etc.'
               })
                 .then(() => {
                   window.location = '#login';
@@ -30,12 +29,8 @@ function newUser() {
         }
       })
       .catch(error => {
-        
         const errorCode = error.code;
-        //const errorMessage = error.message;
-
         const errorMessage = errorCode === 'auth/invalid-email' ? 'Email inválido.' : errorCode === 'auth/weak-password' ? 'A senha deve conter 6 caracteres ou mais.' : 'Preencha os campos corretamente';
-      
         errorMessageField.textContent = errorMessage;
       });
   } else {
@@ -74,8 +69,8 @@ function Signup() {
     <header class="main-header">
       <h1>Bem vindo(a)!</h1>
     </header>
-    <img class='signup-img' src="./img/icon-pluto.png">
     <form class="form-content-signup">
+    <img class='signup-img' src="./img/woman.png">
       <main class="register-input">
         <p class="register-text">Para realizar o cadastro, preencha as informações abaixo:</p>
         ${userInfo}

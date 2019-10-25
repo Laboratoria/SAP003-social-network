@@ -23,12 +23,17 @@ function signInWithAccount(provider) {
     .signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
-      db.collection('users').doc(user.uid).set({
-        name: user.displayName,
+      db.collection('users').doc(user.uid).get().then((doc) =>{
+        if(doc.data()){
+          location.hash = '#feed';
+        } else {
+          db.collection('users').doc(user.uid).set({
+            name: user.displayName,
+            biography: 'Fale de você, seus gostos, plantas favoritas, etc.'
+          });
+          location.hash = '#feed';
+        }
       });
-      if (result) {
-        location.hash = '#feed';
-      }
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -71,7 +76,7 @@ function Login() {
   `;
   const template = `
   <article class='login-page'>
-  <img class='login-img' src="./img/pluto-floral-and-botanical-growth.png">
+  <img class='login-img' src="./img/logo.png">
   <form class="form-content-login">
     <h1>Horta Urbana</h1> 
     ${userLogin}
