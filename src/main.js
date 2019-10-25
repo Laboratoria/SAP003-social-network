@@ -2,14 +2,9 @@ import logar from './pages/home.js';
 import cadastrar from './pages/cadastro.js';
 import feed from './pages/feed.js';
 
-function init() {
-  document.querySelector('main').innerHTML = logar();
-}
-
-window.addEventListener('load', init);
-
 function locationHashChanged() {
-  switch (window.location.hash) {
+  const paginas = (window.location.hash) ? window.location.hash : '#home';
+  switch (paginas) {
     case '#cadastrar':
       document.querySelector('main').innerHTML = cadastrar();
       break;
@@ -20,10 +15,13 @@ function locationHashChanged() {
       document.querySelector('main').innerHTML = feed();
       window.exibirPublicacao();
       window.addEventListener('load', feed());
+      window.mostrarPublicacao();
+      // carregarPosts();
       break;
     default:
       document.querySelector('main').innerHTML = logar();
   }
 }
 
+window.addEventListener('load', locationHashChanged);
 window.addEventListener('hashchange', locationHashChanged, false);
