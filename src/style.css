@@ -123,7 +123,24 @@ h1, h2, h3{
 }
 
 /* <------------------LOGIN-----------------------> */
+<<<<<<< HEAD
 
+=======
+.primary-button {
+  /* background-color: #886BF2 ;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px; */
+  cursor: pointer;  
+  background-color: transparent;
+	border-color: transparent;
+}
+
+span{
+  font-size: 20px;
+}
+>>>>>>> master
 
 .fa-google, .fa-envelope{
   color:white;
@@ -149,6 +166,7 @@ h1, h2, h3{
   margin-top: 10px;
 }
 
+<<<<<<< HEAD
 /*----------TELA WEB SITE -----------*/
 
 
@@ -212,3 +230,55 @@ h1, h2, h3{
   
 }
 
+=======
+.form-container{
+  text-align:center;
+} 
+/* <--------------------FEED----------------------> */
+.section-post{
+  width: 300px;
+     height: 100px;
+     display: flex;
+  justify-content:space-around;
+  margin: 30px 50px 15px 100px;
+  background-color: #A894F2;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 15px 10px 15px 20px;
+}
+
+
+.div-post{
+  
+  display:flex;
+  justify-content:center;
+     width: 300px;
+     height: 100px;
+     padding: 0px;
+     background: white;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     border-radius: 10px;
+     resize: horizontal;
+     overflow: auto;
+     
+  }
+  
+
+  
+  .div-post:after{
+    content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 20px 20px 20px 0;
+      border-color: transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      left: -20px;
+      top: 40px;
+  }
+
+  
+>>>>>>> master

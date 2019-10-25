@@ -1,47 +1,65 @@
 /*import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Div from '../components/div.js';
+
 
 function Feed(props) {
-
-  let postsLayout = '';
+ let postsLayout = '';
   props.post.forEach((doc) => {
     console.log(props.post)
     postsLayout += `
-      <li data-id='${doc.id}'>
-        ${doc.data().text}
-     
-      </li>
+    <section class="section-post">
+      <div class="div-post">
+          <p data-id='${doc.id}'>
+              ${doc.data().text}
+          </p>
+        </div>
+        ${window.button.component({
+          //dataId: doc.likes,
+          title:'👍',
+           //onClick: window.Feed.myFunction
+     })}
+        ${window.button.component({
+             dataId: doc.id,
+             title:'🗑️',
+              onClick: window.Feed.deletePost
+        })}
+    </section>
     `});
+    
   const template = `
     <h1>Rede Social</h1>
+    <h2>Posts</h2>
     ${Input({
     class: 'post-input',
-    type: 'text',
-    placeholder: 'comente algo'
+    type: 'textarea',
+    placeholder: 'comente algo :)'
   }) +
     Button({
-      title: 'enviar',
+      title: '<span>&#128172;</span>',
       onClick: saveData
     })}
     <div class='insert-post'>${postsLayout}</div> `;
 
   return template;
-}
+  }
+
 
 export default Feed;
 
 /*function loadPost () {
   const postList = document.querySelector('.post-input');
   const postCollection = firebase.firestore().collection('post');
-  // postList.innerHTML = 'Carregando...'
-  postCollection.get().then(snap => {
+    postCollection.get().then(snap => {
     postList.innerHTML = ""
     snap.forEach(post => {
       addPost(post)
     })
   })
+<<<<<<< HEAD
 }
+=======
+} ok */
+>>>>>>> master
 
 function saveData() {
   
@@ -61,18 +79,21 @@ function saveData() {
   })
 }
 
+function deletePost() {
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('post').doc(id).delete();
+  event.target.parentElement.remove();
+  document.querySelector(`p[data-id='${doc.id}']`).remove();
+}
 
-/*function addPost(post) {
-    const postTemplate = `<li>
-    ${post.data().text}
-    ${post.data().likes}
-    </li>
-    `;
+
+/*function validateInput() {
+  const postlist = document.querySelector('.post-input').value;
+  if (postlist == "") {
+    alert('Por favor, preencha o campo para comentar.')
+  }
 }*/
 
-
-// import Button from '../components/button.js';
-// import Input from '../components/input.js';
 
 // function sendPost() {
 //   const text = document.querySelector('.js-text').value;
@@ -93,42 +114,12 @@ function saveData() {
 //     });
 // }
 
-// function deletePost(event) {
-//   const id = event.target.dataset.id;
-//   firebase.firestore().collection('post').doc(id).delete();
-//   event.target.parentElement.remove();
-//   document.querySelector(`li[data-id='${id}']`).remove();
-// }
-
-// function Feed(props) {
-//   let postsLayout = '';
-//   props.posts.forEach((doc) => {
-//     postsLayout += `
-//       <li data-id='${doc.id}'>
-//         ${doc.data().text}
-//         ${Button({ dataId: doc.id, title: 'Deletar', onClick: deletePost })}
-//       </li>
-//     `;
-//   });
-
-// const template = `
-//     <h1>Home Page</h1>
-//     <form>
-//      ${Input({ class: 'js-text', type: 'text', placeholder: 'Digite aqui'})}
-//       ${Button({ id: '🐠', title: 'Botão 🐠', onClick: sendPost })}
-//     </form>
-//     <ul>${postsLayout}</ul>
-// 	  `;
+window.Feed = {
+  deletePost,
+};
 
 
-//   return template;
-// }
-
-
-// window.feed = {
-//   deletePost,
-// };
-
+<<<<<<< HEAD
 //export default Feed;*/
 
 import Button from '../components/button.js';
@@ -260,3 +251,5 @@ function deletePost(event) {
 
 //export default Feed;
 
+=======
+>>>>>>> master
