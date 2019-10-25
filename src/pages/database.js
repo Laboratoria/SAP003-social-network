@@ -10,18 +10,26 @@ function signOut() {
 }
 
 function sendPost() {
+  const userEmail = firebase.auth().currentUser.email;
   const message = document.querySelector('.js-message-area').value;
   const userId = firebase.auth().currentUser.uid;
-  firebase.firestore().collection('feed').add({
+  
+  
+    firebase.firestore().collection('feed').add({
     text: message,
     user_id: userId,
-    likes: '',
-    comments: [],
+    user_email: userEmail,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    
   })
   .then((docRef) => {
-    document.querySelector('.post-area').insertAdjacentHTML('afterbegin', 
-    `<li class='linha-post' style=list-style-type:none data-id=>${message}
-    ${window.button.component({ 
+    document.querySelector('.js-message-area').value = '';
+    document.querySelector('.post-area').insertAdjacentHTML('afterbegin',
+    `<li class='linha-post' style=list-style-type:none 
+    data-id=>${userEmail}
+    <br>${firebase.firestore.FieldValue.serverTimestamp()}
+    <br>${message}
+      ${window.button.component({
       dataId: docRef.id,
       class: 'delete',
       title: '🗑',
@@ -43,7 +51,10 @@ function Database(props) {
   let postTemplate = "";
   props.feed.forEach((doc) => {
     postTemplate+=
-      `<li class='linha-post' style=list-style-type:none>${doc.data().text}
+      `<li class='linha-post' style=list-style-type:none>
+      ${doc.data().user_email}
+      <br>${doc.data().timestamp.toDate().toLocaleString('pt-BR')}
+      <br>${doc.data().text}
       ${Button({ 
         dataId: doc.id,
         class: 'delete',

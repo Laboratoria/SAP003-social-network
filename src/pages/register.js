@@ -2,8 +2,10 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function createUserWithEmailAndPassword() {
+  const name = document.querySelector('.js-email-input').value;
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
+  
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((registered) => {
@@ -22,7 +24,7 @@ function Register() {
     <form class = 'cadastro'>
     <h1 class="titulo title-size">Cadastro</h1>
     ${Input({ 
-      class: 'name', 
+      class: 'js-name-input', 
       placeholder: 'Nome', 
       type: 'Nome'
     })} 

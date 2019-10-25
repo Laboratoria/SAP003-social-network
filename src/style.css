@@ -139,7 +139,6 @@
 .footer{
 
   position:absolute;
-  bottom: 0;
   width: 100%;
   text-align: center;
   
@@ -175,8 +174,21 @@
   
 }
 
-/* .cadastro{
-display: flex;
-padding: 30%;
+.cadastro{
 
-} */
+padding-top: 70px;
+
+}
+
+@media (min-width: 908px){
+
+  .image{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 10px;
+    width: 220px;
+    height: 220px;
+    
+  }
+}

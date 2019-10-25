@@ -15,7 +15,7 @@ function pageRoute() {
           document.querySelector('main').innerHTML = Register();
           break;
         case '#database':
-          firebase.firestore().collection('feed').get()
+          firebase.firestore().collection('feed').orderBy('timestamp', 'desc').get()
             .then((querySnapshot) => {
               document.querySelector('main').innerHTML = Database({
                 feed:querySnapshot,
