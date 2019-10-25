@@ -12,5 +12,5 @@ window.button = {
     callback(event);
   },
 };
-
+ 
 export default Button;

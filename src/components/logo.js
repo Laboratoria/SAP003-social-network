@@ -1,9 +1,6 @@
 function Logo(props) {
   const logo = `
-  <header class="header">
-    <h1 class= "${props.class}"></h1>    
-  </header>
-  `;
+    <h1 class= "${props.class}"></h1>`;
   return logo;
 }
 export default Logo;
