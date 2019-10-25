@@ -24,6 +24,13 @@ const mural = () => {
 		let postsLayout = '';
 		//usuario logado
 		snap.forEach(post => {
+	//		firebase.firestore().collection('posts/${post.id}/comments')
+			post.ref.collection('comments').get()
+				.then(commentSnap => {
+					const comments = [];
+					commentSnap.forEach( comment => {
+						comments.push(comment.data());
+					});
 			if (post.data().userID === user.uid) {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
@@ -36,9 +43,12 @@ const mural = () => {
 					<span like-id='${post.id}' class="like">${post.data().likes}</span>
 					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					
+					<ul>
+						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
+					</ul>
 				</li>
 				`;
-
 				//usuario não logado
 			} else {
 				postsLayout += `
@@ -50,11 +60,20 @@ const mural = () => {
 					<p like-id="${post.id}" class="like">${post.data().likes}</p>
 					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
+					
+					<ul>
+						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
+					</ul>
 				</li>
 				`;
 			}
+					
+					document.querySelector("main").innerHTML = Mural({ postsLayout });
+		
+				})
+		
+			
 		})
-		document.querySelector("main").innerHTML = Mural({ postsLayout });
 	})
 }
 
