@@ -73,6 +73,7 @@ const profile = (props) => {
     type: 'text',
     value: user.profession || '',
     placeholder: 'Sua profissão...',
+    maxlength: '20',
   })}
         ${Button({
     class: 'btn-profile',
