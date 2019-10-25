@@ -6,6 +6,7 @@ const Input = (props) => {
     id='${props.id}'
     value='${props.value || ''}' 
     placeholder='${props.placeholder}'
+    maxlength='${props.maxlength}'
     type='${props.type}' required>
     `;
 
