@@ -21,7 +21,6 @@ function AddPostToFirebase() {
     timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
     name,
     text: textInput.value,
-    likes: 0,
     comments: [],
     user_id: id,
   };
@@ -32,7 +31,6 @@ function AddPostToFirebase() {
     <div class='postHeader'>${post.timestamp}</div>
     <div class='postHeader'>${post.name} disse:</div>
     <div id='post_${docRef.id}'>${post.text}</div>
-    ${post.likes}
     ${post.comments}
     ${window.button.component({
       dataId: docRef.id,
@@ -85,7 +83,6 @@ function loadFeed () {
       <div class='postHeader'>${post.data().timestamp}-</div>
       <div class='postHeader'>${post.data().user_id} disse:</div>
       <div id='post_${post.id}'>${post.data().text}</div>
-      ${post.data().likes}
       ${Button({
         dataId: post.id,
         title: '🗑️',
@@ -98,7 +95,6 @@ function loadFeed () {
         title: '✏️',
         class: 'edit-btn primary-button',
         onClick: editPost,
-
       })}
       </li>`;
       document.querySelector('.timeline').innerHTML += postsFeed;
@@ -109,7 +105,6 @@ function loadFeed () {
 function Feed() {
   window.feed.loadFeed();
   const template = `
-  <h1>Feed</h1>
   ${Button({
     title: 'Sair',
     class: 'primary-button',
@@ -120,8 +115,7 @@ function Feed() {
     class: 'primary-button',
     onClick: profile,
   })}
-  <h2>Post</h2>
-  <div class='post'>
+  <form class='post'>
   ${Post({
     class: 'textarea',
     id: 'post-textarea',
@@ -133,10 +127,9 @@ function Feed() {
     class: 'primary-button',
     onClick: AddPostToFirebase,
   })}
-  <div>
+  </form>
   <ul class= 'timeline'></ul>
   `;
-
   return template;
 }
 
