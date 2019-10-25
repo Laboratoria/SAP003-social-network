@@ -43,20 +43,23 @@ nav{
   transform: translateX(100%); */
 }
 
+
+
+
 .nav-links li{
   list-style: none;
   opacity: 0px;
 }
 
+
 .nav-links a{
-  color: #000;
+  color: #fff;
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 15px;
 }
-
-.nav-links
+ 
 
 .burger div{
   width: 20px;
@@ -111,47 +114,75 @@ h2 {
 }
 
 body{
-  background-color: white;
+  background-color: rgba(231, 231, 231, 0.884);
   font-family: arial;
   background-size: cover;
   background-repeat: no-repeat;
-  
+  /* overflow: hidden; */
 }
 
-/* .button{
-  display: flex;
-  border-radius:4px;
-  -moz-border-radius:4px;
-  -webkit-border-radius:5px;
-  box-shadow: 1px 1px 2px #333333;
-  -moz-box-shadow: 1px 1px 2px #333333;
-  -webkit-box-shadow: 1px 1px 2px #333333;
-  background: rgba(255,255,255,0.7);
-  border:1px solid #000000;
-  width:152px;
-  height: 33px;
-  position: relative;
-  left: 60%;
-  margin-left:-105px;
-  cursor: pointer;
+
+  .bntgoogle{
+    margin-top: 14px;
+    width: 128px;
+    height: 40px;
+    border: none;
+    background: #FF007A;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Lato;
+    color: #FFFFFF;
+  }
+  .bntentrar:focus {
+    outline: none;
+  }
+
+  .bntentrar:hover {
+    cursor: pointer;  
+  }
+
+  .bntentrar:active {
+    background-color: #C6005F;
+  }
+
+.register-link{
+font-size: 17px;
+text-align: center;
+min-height: 14vh;
+margin: 0;
+padding-top: 24px;
+width: 100%;
+}
+.bntentrar {
+  background-color: #C6005F;
+}
+
+/* button {
+  -webkit-appearance: button;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: buttontext;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
   text-align: center;
-  } */
+  align-items: flex-start;
+  cursor: default;
+  background-color: buttonface;
+  box-sizing: border-box;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+} */
 
-.bntentrar{
-
-
-}
-
-.bntgoogle{
-  display: flex;
-  border-radius:4px;
-  left: 50%;
-  margin-left:-100px;
-  cursor: pointer;
-  width:25px;
-  height: 20px;
-
-}
   
 footer{
 background-color: rgb(207, 206, 205);
@@ -164,6 +195,14 @@ width: 100%;
 }
 
 @media screen and (max-width:1400px){
+  .banner{
+    max-width:100%;
+    min-height:25vh;
+    background: url("img/m.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 34px;
+  }
   .nav-links{
     width:100%;
   } 
@@ -172,25 +211,30 @@ width: 100%;
   }
 }
 
-
 @media screen and (max-width:768px){
-  .body{
-    overflow-x: hidden;
+  body{
+  overflow-x: hidden;
+  cursor: pointer;
   }
+
   .burger{
     display: block;
   }
   .nav-links{
     position: absolute;  
     display: flex;
-    width: 20%;
+    width: 182%;
     right: 3%;
-    height: 12vh;
-    top: 0vh;
+    height: 23vh;
+    top: 2vh;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
   }
+}
+
+.nav-active{
+  transform: translateX(0%);
 }
 
 
@@ -198,39 +242,8 @@ width: 100%;
   
 
 
-/*Utiliza-se esse método para a retirada das setas no input do tipo number*/
-/*
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-                    -webkit-appearance: none;
-margin: 0;
-}
-label{
-color: black;
-text-align: center;
-display: block;
-font-size: 16px;
-line-height: 1.2em;
-border-radius: 10px;
-margin: 10px auto;
-margin-top: center;
-}
-button{
-  display: block;
-  border-radius:4px;
-  -moz-border-radius:4px;
-  -webkit-border-radius:4px;
-  box-shadow: 1px 1px 2px #333333;
-  -moz-box-shadow: 1px 1px 2px #333333;
-  -webkit-box-shadow: 1px 1px 2px #333333;
-  background: rgba(255,255,255,0.7);
-  border:1px solid #000000;
-  width:250px;
-  height: 20px;
-  position: relative;
-  left: 50%;
-  margin-left: -120px;
-}*/
+
+
 
 
 
