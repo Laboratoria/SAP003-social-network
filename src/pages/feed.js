@@ -17,16 +17,12 @@ function timeline(){
      <div class="line3"></div>
    </div>
 </nav>
-
 <h2> Ola, seja bem-vindo! </h2>
     <form><br>
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
     ${Button({id: 'postForm', title: 'postar', onClick: formSubmit})}<br>
-
     </form>
-
     <ul class='postdiv'></ul>
-
     ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
 
@@ -126,7 +122,3 @@ function likePost(event) {
 }
 
 window.load = load;
-
-   
-  
-  

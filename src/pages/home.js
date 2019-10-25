@@ -9,9 +9,7 @@ function Home() {
     <h4 class="text-center">ALCATEIA</h4>
   </div>
     <div class="banner"></div>
-
   <h2> Faça login na sua conta </h2>
-
   <form>
   ${Input({placeholder: 'Email', type: 'email', class: 'js-email-input'})}
   ${Input({placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
@@ -19,10 +17,7 @@ function Home() {
   
   ${Button({id:'google-btn', onClick:googleLogin, class:'bntgoogle' , title: '<img src= img/google.png width="36" height="15"> Registre-se usando Google'})}
   </form><br>
-
-
-  ${Button({id: 'cadastro', title: 'Cadastrar', onClick: goToRegister, class:'cadastro' })}
-
+  <p class="register-link">Não é cadastrado? <a class="register-hash" href="#register">Registre-se.</a></p>
   `
     return template;
 };
