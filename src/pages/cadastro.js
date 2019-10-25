@@ -42,7 +42,7 @@ export const Cadastro = () => {
 		${Input({ id:'pass', class:"pass-cadastro", placeholder:"Senha", type:"password"})}
 		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}
 	 </form>
-		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Back to Login", onclick: goHome})}
+		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Voltar para Login", onclick: goHome})}
 	</main>`;
 
 	return template;
