@@ -1,11 +1,11 @@
 const Bio = (user) => {
   const template = `
   <div class="users">
-  <img src="images/user-image.png" class="img-usuario">
+  <img src="${user.image}" class="img-usuario">
    <div class="bio">
-    <p>${user.name || 'Nome'}</p>
-    <p>${user.age || 'Idade'}</p>
-    <p>${user.profession || 'Profissão'}</p>
+    <p>Nome: ${user.name || 'Nome'}</p>
+    <p>Idade: ${user.age || 'Idade'} anos</p>
+    <p>Profissão: ${user.profession || 'Profissão'}</p>
     </div>
   </div>
   `;
