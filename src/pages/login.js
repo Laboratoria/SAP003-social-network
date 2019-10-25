@@ -32,9 +32,11 @@ function Google() {
 
 function Login() {
   const template = `
-  <img class='logo' src='logoredetech.png'/>    
-  <form class='content'>
-  <h2 class='bemvinda'>Seja bem-vinda(o)!</h2>
+
+    <img class='logo' src='logoredetech.png'/>    
+    <form class='content'>
+    <h2 class='bemvinda'>Seja bem-vinda(o)!</h2>
+
     ${Input({
     class: 'js-email-input',
     placeholder: 'E-mail',
@@ -46,17 +48,17 @@ function Login() {
     type: 'password',
   })}
     ${Button({
-    class: 'primary-button',
+    class: 'login',
     title: 'Log In',
     onClick: AuthEmailPassButton,
   })}
-    <p>Ou entre com sua conta...</p>
+    <p class='cadastro'>Ou entre com sua conta...</p>
     ${Button({
     class: 'google-btn',
     title: '',
     onClick: Google,
   })}
-    <p>Ainda não tem uma conta?</p>
+    <p class='cadastro'>Ainda não tem uma conta?</p>
     <a href='#register'>Registre-se!</a>
     </form>`;
 

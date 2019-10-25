@@ -1,6 +1,6 @@
 import Login from './pages/login.js';
 import Feed from './pages/feed.js';
-import Profile from './pages/profile.js';
+import Profile from './pages/profile';
 import Register from './pages/register.js';
 
 function locationHashChanged() {
@@ -28,4 +28,4 @@ function locationHashChanged() {
 }
 
 window.addEventListener('load', locationHashChanged);
-window.addEventListener('load', locationHashChanged);
+window.addEventListener('hashchange', locationHashChanged);
