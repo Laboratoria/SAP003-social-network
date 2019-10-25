@@ -70,12 +70,8 @@ body {
   margin-top: 20px;
 }
 
-.inp-age-profile{
-  width: 97%;
-}
-
 .primary-button, .btn-profile {
-  background: #EC6345;
+  background: #FF8F65;
   padding: 8px;
   font-size: 1.2rem;
   border-radius: 5px;
@@ -131,7 +127,7 @@ label[for="navigation"] {
   margin-left: -2%;
   margin-top: -2%;
   padding: 1%;
-  background-color: #EC6345;
+  background-color: #FF645A;
   color: #000000;
   font-family: sans-serif;
   text-align: center;
@@ -174,7 +170,7 @@ label[for="navigation"] {
 .menu li {
   display: block;
   text-align: center;
-  background-color: #ec7f45;
+  background-color: #FF645A;
   color: rgb(255, 255, 255);
 }
 
@@ -222,7 +218,7 @@ label[for="navigation"] {
   margin: 0 auto;
   width: 92%;
   margin-top: 10%;
-  background: #524D47;
+  background: #005374;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
@@ -255,7 +251,7 @@ select {
 .slc-privacy {
   margin-left: 3%;
   height: 79%;
-  background: #EC6345;
+  background: #FF8F65;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
@@ -264,7 +260,7 @@ select {
   display: block;
   margin-left: 49%;
   margin-top: -1%;
-  background: #EC6345;
+  background: #FF8F65;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 20px; 
 }
@@ -275,7 +271,7 @@ select {
   margin: 0 auto;
   width: 94%;
   margin-top: 10%;
-  background: #968B7D;
+  background: #9E958C;
   border-radius: 10px;
   font-family: sans-serif;
 }
@@ -311,7 +307,7 @@ select {
 
 .slc-privacy-post {
   margin-left: 70%;
-  background: #968B7D;
+  background: #9E958C;
   box-shadow: 2px 1px 0px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   width: 28%;
@@ -337,21 +333,21 @@ select {
 .edit-post {
   font-size: 15px;
   color: #FFFFFF;
-  background: #968B7D;
+  background: #9E958C;
   border: none;
 }
 
 .save-post {
   font-size: 15px;
   color: #FFFFFF;
-  background: #968B7D;
+  background: #9E958C;
   border: none;
 }
 
 .delete-post {
   font-size: 15px;
   color: #FFFFFF;
-  background: #968B7D;
+  background: #9E958C;
   border: none;
 }
 
@@ -423,7 +419,7 @@ body{
   }
 
   .menu li {
-    background-color: #8a2257;
+    background-color: #FF645A;
     border-radius: 60%;
   }
 
@@ -480,7 +476,7 @@ body{
   .slc-privacy {
     margin-left: 3%;
     height: 20px;
-    background: #ff467a;
+    background: #FF8F65;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     margin-top: -1%;
@@ -488,7 +484,7 @@ body{
 
   .btn-publicar{
     margin-left: 64%;
-    background: #ff467a;
+    background: #FF8F65;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
   }
@@ -499,7 +495,7 @@ body{
     margin-left: 37%;
     width: 45%;
     margin-top: 2%;
-    background: #968B7D;
+    background: #9E958C;
     border-radius: 10px;
     font-family: sans-serif;
   }

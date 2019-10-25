@@ -6,12 +6,12 @@ import Paragraph from './paragraph.js';
 const Post = (props) => {
   const userId = firebase.auth().currentUser.uid;
   let template = `
-  <div class="container-public">
-    <div class="data-date-public">
+  <div class='container-public'>
+    <div class='data-date-public'>
     ${Paragraph({
     class: 'name-user',
     dataId: props.id,
-    text: props.post.user ? `Publicado por ${props.post.user.name}` : 'Publicado por fulano',
+    text: props.post.user ? `Publicado por ${props.post.user.name}` : 'Publicado por ...',
   })}
     ${Paragraph({
     class: 'date-post',
@@ -19,7 +19,7 @@ const Post = (props) => {
     text: props.post.addedAt.slice(0, 16),
   })} 
     </div>
-    <div class="publication-public">
+    <div class='publication-public'>
     ${Paragraph({
     class: 'publication',
     dataId: `text-${props.id}`,
@@ -42,7 +42,7 @@ const Post = (props) => {
   template += ` 
       </div>  
     </div>
-    <div class="info-post">
+    <div class='info-post'>
     ${ButtonImage({
     class: 'like-post',
     dataId: props.id,
@@ -79,7 +79,7 @@ const Post = (props) => {
       onClick: props.deleteEvent,
     });
   }
-  
+
   template += `
   </div>
   </div>`;
