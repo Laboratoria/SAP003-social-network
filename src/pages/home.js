@@ -37,35 +37,36 @@ function logWithGoogle() {
     });
 }
 
-function logWithFacebook() {
-  const provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope('user_birthday');
-  provider.setCustomParameters({
-    display: 'popup',
-  }); firebase.auth().signInWithPopup(provider)
-    .then((result) => {
-      window.location.hash = '#database';
-      const token = result.credential.accessToken;
-      const user = result.user;
+// function logWithFacebook() {
+//   const provider = new firebase.auth.FacebookAuthProvider();
+//   provider.addScope('user_birthday');
+//   provider.setCustomParameters({
+//     display: 'popup',
+//   }); firebase.auth().signInWithPopup(provider)
+//     .then((result) => {
+//       window.location.hash = '#database';
+//       const token = result.credential.accessToken;
+//       const user = result.user;
       
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.email;
-      const credential = error.credential;
+//     }).catch((error) => {
+//       const errorCode = error.code;
+//       const errorMessage = error.message;
+//       const email = error.email;
+//       const credential = error.credential;
       
-    });
-}
+//     });
+// }
 
 function Home() {
   const template = `
-    <img class="image" src="Images/animals.jpg">
-    <h1 class="titulo">Amigo Pet</h1>
+  <div class="home-container">
+    <img class="home-image" src="Images/animals.jpg">
     <form>
+    <h1 class="home-title">Amigo Pet</h1>
       
       ${Input({
         class: 'js-email-input',
-        placeholder: 'Email',
+        placeholder: 'exemplo@exemplo.com.br',
         type: 'email',
       })}
       ${Input({
@@ -74,26 +75,21 @@ function Home() {
         type: 'password',
       })}
       ${Button({
-        class: 'Login-account',
+        class: 'btn-login-account',
         title: 'Entrar',
         onClick: signInWithEmailAndPassword,
       })}
       <p class="login-option">Ou entre com:<p>
-      <div class="btn-position">
+      <div class="btn-google-line">
       ${Button({ 
         class: 'google',
         title: 'G', 
-        onClick: logWithGoogle,
-         
-      })}
-      ${Button({ 
-        class: 'face', 
-        title: 'F', 
-        onClick: logWithFacebook 
+        onClick: logWithGoogle,        
       })}
       </div>
       <p class="login-option">Ainda não tem conta? <a href="#register"><strong>Registre-se!</strong></a></p>
     </form>
+  </div>
   `;
   
   return template;
