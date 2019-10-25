@@ -1,6 +1,6 @@
 function Card(props) {
   const template = `
-    <div class="card">${props.children}</div>
+    <div class="card" id=${props.id}>${props.children}</div>
   `;
   return template;
 }
