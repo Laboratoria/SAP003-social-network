@@ -1,6 +1,6 @@
 function Input(props) {
   const template = `
-      <input
+      <input ${props.required}
         class="${props.class} primary-input"
         placeholder="${props.placeholder}"
         type="${props.type}" />

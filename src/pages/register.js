@@ -10,7 +10,6 @@ function userRegister() {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
         window.location.href = '#feed';
     }).catch((error) => {
-        //lidar e inserir mensagem de erro 
         const errorCode = error.code;
         console.log(errorCode);
     });
@@ -21,8 +20,13 @@ function backPage() {
 }
 function Register() {
     const template = `
-        <h1> Preencha os campos para realizar o cadastro!</h1>
-        <form>
+        <header>
+        <img src = "/images/logo.png" alt="logo" class="logo">
+        </header>
+        <form class="form-register">
+        <h2 class="cad"> Cadastre-se!</h2>
+        <h1 class="top-banner">Você mais conectada(o) com a Astronomia! </h1>
+
             ${Input({
                 class: 'nome-input',
                 placeholder: 'Nome',
@@ -33,19 +37,19 @@ function Register() {
                 placeholder: 'E-mail',
                 type: 'text',
                 })}
-            ${Input({
+            ${Input({   
                 class: 'senha-input',
-                placeholder: 'password',
+                placeholder: 'Senha',
                 type: 'password',
                 })}
             ${Button({
-                id: 'cadastro',
+                id: 'btn-cadastro',
                 title: 'Criar conta',
                 onClick: userRegister,
                 })}
             ${Button({
-                id: 'voltar',
-                title: 'voltar',
+                id: 'btn-voltar',
+                title: 'Voltar',
                 onClick: backPage,
                 })}    
         </form>
