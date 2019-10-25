@@ -120,13 +120,6 @@ body {
   margin-top: 3%;
 }
 
-.text{
-  text-align: center;
-  font-size: 15px;
-  font-style: italic;
-  color: #ec5231;
-}
-
 /* ---------timeline------------------ */
 
 label[for="navigation"] {
