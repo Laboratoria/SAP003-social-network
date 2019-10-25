@@ -1,25 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
-.body {
+/* general settings */
+html{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
   background-color: #dcd6f7; 
   font-family: 'Quicksand', sans-serif;
 }
 
-.titulo{
+main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* home page */
+.home-container {
+  width: 100%;
+  display: flex; 
+  justify-content: space-evenly;
+  flex-basis: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-image{
+  width: 220px;
+  height: 220px;
+  border-radius: 180%;
+}
+
+.home-title{
   font-weight: bolder;
   color: #350f63;
   text-align: center;
   font-size: 35 px;
-}
-
-.image{
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  padding-top: 10px;
-  width: 220px;
-  height: 220px;
-  border-radius: 180%;
 }
 
 .message-area{
@@ -33,17 +56,7 @@
   text-align: center;
 }
 
-.message-post{
-  width: 250px;
-  height: 100px;
-}
-
-.login-option{
-  color: #350f63;
-  text-align: center;
-}
-
-.Login-account{
+.btn-login-account{
   display: flex;
   margin: auto;
   background-color: #f18805;;
@@ -55,7 +68,55 @@
   font-family: 'Quicksand', sans-serif;
   justify-content: center;
 }
-.post{
+
+.login-option{
+  color: #350f63;
+  text-align: center;
+}
+
+.btn-google-line{
+  display: flex;
+  width: 95px;
+  margin: auto;
+}
+
+/* .face{
+  display: flex;
+  margin: auto;
+  background-color: #2372a3;
+  border-radius: 100%; 
+  border: none;
+  height: 100%;
+  line-height: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #dcd6f7;
+  font-weight: bold;
+  cursor: pointer;
+} */
+
+.google{
+  display: flex;
+  margin: auto;
+  background-color: #dd4b39;
+  border-radius: 100%; 
+  border: none;
+  height: 100%;
+  line-height: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #dcd6f7;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* database page */
+.message-post{
+  width: 250px;
+  height: 100px;
+}
+
+.btn-post{
   display: flex;
   margin: auto;  
   background-color: #f18805;;
@@ -68,7 +129,7 @@
   justify-content: center;
 }
 
-.signout{
+.btn-signout{
   display: flex;
   margin: auto;  
   background-color: #f18805;;
@@ -87,43 +148,36 @@
   padding: 10px;
 }
 
-.btn-position{
-  display: flex;
-  width: 30%;
-  margin: auto;
-}
-
-.face{
-  display: flex;
-  margin: auto;
-  background-color: #2372a3;
-  border-radius: 100%; 
-  border: none;
-  height: 100%;
-  line-height: 100%;
-  padding: 20px;
-  text-transform: uppercase;
-  color: #dcd6f7;
-  font-weight: bold;
+.btn-delete{
+  padding: 5px;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
   cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  background-color: white;
 }
 
-.google{
+.btn-comments{
+
+}
+
+.post-template{
   display: flex;
-  margin: auto;
-  background-color: #dd4b39;
-  border-radius: 100%; 
-  border: none;
-  height: 100%;
-  line-height: 100%;
-  padding: 20px;
-  text-transform: uppercase;
-  color: #dcd6f7;
-  font-weight: bold;
-  cursor: pointer;
+  justify-content: space-between;
+  background-color: rgb(214, 217, 236);
+  margin: 10px;
+  word-break: break-all;
+  padding-left: 20px;
 }
 
-.create-account{
+/* register page */
+.form-register{
+  width: 100%;
+}
+
+.btn-create-account{
   display: flex;
   margin: auto;
   background-color: #f18805;;
@@ -136,59 +190,74 @@
   justify-content: center;
 }
 
-.footer{
-
-  position:absolute;
-  width: 100%;
-  text-align: center;
-  
- 
-}
-
-.title-size{
+.page-title{
   font-size: 30px;
-
-}
-.delete{
-  padding: 5px;
-  margin-left: 10px;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
-  background-color: white;;
-  
-
-
-}
-.linha-post{
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(214, 217, 236);
-  margin: 10px;
-  word-break: break-all;
-  padding-left: 20px;
- 
-  
-  
-}
-
-.cadastro{
-
-padding-top: 70px;
-
+  color: #350f63;
+  text-align: center;
 }
 
 @media (min-width: 908px){
+  body {
+    background-color: white; 
+  }
 
-  .image{
+  .home-image{
+    width: 50%;
+    height: 50%;
+    border-radius: 0px;
+    margin: 0%;
+    padding-top: 0px;
+  }
+
+  .home-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .home-title{
+    font-size: 50px;
+  }
+
+  .message-area{
+    height: 30px;
+    width: 300px;
+    font-size: 15px;
+    margin-top: 0px;
+  }
+
+  .btn-login-account{
+    width: 80px;
+  }
+
+  .login-option{
+  font-size: 18px;
+  padding-top: 20px;
+  }
+
+  form{
     display: flex;
-    justify-content: center;
-    margin: auto;
-    padding-top: 10px;
-    width: 220px;
-    height: 220px;
-    
+    flex-direction: column;
+  }
+
+  .btn-position{
+    justify-content: space-evenly;
+  }
+
+  .page-title{
+    font-size: 45px;
+  }
+
+  .form-register{
+    display: flex;
+    padding-top: 0px;
+    align-items: center;
+  }
+
+  .btn-create-account{
+    padding: 0px;
+    width: 150px;
+    height: 30px;
+    font-size: 17px;
   }
 }

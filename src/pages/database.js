@@ -27,7 +27,7 @@ function sendPost() {
     document.querySelector('.post-area').insertAdjacentHTML('afterbegin',
     `<li class='linha-post' style=list-style-type:none 
     data-id=>${userEmail}
-    <br>${firebase.firestore.FieldValue.serverTimestamp()}
+    <br>${new Date().toLocaleString('pt-BR')}
     <br>${message}
       ${window.button.component({
       dataId: docRef.id,
@@ -51,20 +51,20 @@ function Database(props) {
   let postTemplate = "";
   props.feed.forEach((doc) => {
     postTemplate+=
-      `<li class='linha-post' style=list-style-type:none>
+      `<li class='post-template' style=list-style-type:none>
       ${doc.data().user_email}
       <br>${doc.data().timestamp.toDate().toLocaleString('pt-BR')}
       <br>${doc.data().text}
       ${Button({ 
         dataId: doc.id,
-        class: 'delete',
+        class: 'btn-delete',
         title: '🗑',
         onClick: Delete,
       })}</li>`
   })
 
   const template = `
-  <h1 class="titulo">Timeline</h1>
+  <h1 class="page-title">Timeline</h1>
   <form>
   ${Textarea({
     class: 'js-message-area message-post',
@@ -72,13 +72,13 @@ function Database(props) {
     type: 'textarea',
   })}
   ${Button({
-    class: 'post',
+    class: 'btn-post',
     title: 'Postar',
     onClick: sendPost,
   })}
   <ul class="post-area">${postTemplate}</ul>
   ${Button({
-    class: 'signout',
+    class: 'btn-signout',
     title: 'Sair',
     onClick: signOut,
   })}
