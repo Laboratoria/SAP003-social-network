@@ -47,12 +47,15 @@ const googleLogin = () => {
 
 const login = () => {
   const template = `
-    <img class='img-logo' src='images/img-logo.png'>
-    <h1 class='text-title'>Low Carb Style</h1>
-    <h2 class='text-welcome'>Boas vindas...</h2>
+  <div class="container-login">
+  <div class="container-img-perfil">
+    <img class="img-logo" src="images/img-logo.png">
+  </div>
+  <div class="container-form-perfil">
+    <h1 class="text-title">Low Carb Style</h1>
+    <h2 class="text-welcome">Boas vindas...</h2>
     <p class='info-login'>Insira nos campos abaixo seu e-mail e senha para entrar ou cadastrar-se.</p>
-
-    <form class='form'>
+    <form class="form">
     ${Input({
     class: 'js-input-email',
     placeholder: 'email@exemplo.com',
@@ -60,7 +63,6 @@ const login = () => {
     id: 'js-input-email',
   })}
   <p class='error-email'></p>
-
     ${Input({
     class: 'js-input-password',
     placeholder: 'senha',
@@ -88,6 +90,8 @@ const login = () => {
     onClick: googleLogin,
   })}
     </form>
+</div>
+</div>
   `;
 
   return template;
