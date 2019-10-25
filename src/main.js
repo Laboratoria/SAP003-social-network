@@ -31,8 +31,6 @@ const mural = () => {
 					commentSnap.forEach( comment => {
 						comments.push(comment.data());
 					});
-					
-					
 					if (post.data().userID === user.uid) {
 						postsLayout += `
 						<li class='timeline-item' data-id='${post.data().userID}'>
@@ -48,7 +46,7 @@ const mural = () => {
 									${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
 									${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
 								</li>
-								${comments}
+								${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 							</ul>
 						</li>
 						`;
