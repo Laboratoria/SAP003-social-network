@@ -40,47 +40,50 @@ function savePost() {
 };
 
 function addPost(post) {
-  const feed = document.querySelector('.feed');
+  const feed = document.querySelector('.feed');   
   const privacy = post.data().privacy;  
   
   if (privacy === 'public') {
-    const feedPost = `  
-    <li data-id= '${post.id}' class="post-list">
-    <span class= "idname">${post.data().idname}:</span>
-    <p class="border"></p>
-    <div class="text-post" data-id='${post.id}'>
+  const feedPost = `  
+  <li data-id= '${post.id}' class="post-list">
+  Publicado por<span class= "idname"> ${post.data().idname}</span>
+  <br>
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+  <p class="border"></p>
+  <div class="text-post" data-id='${post.id}'>
     ${post.data().post}
-    </div>
-    <br>  
-    <br>
-    <p class="border"></p>
-    ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
-    ${post.data().likes}
-    ${Button({ dataId: post.id, class: "button-feed", onClick: showComments, title:'💬' })} 
-    <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
-    <p class="border"></p>  
-    <textarea name="txtcom" class="txtcom hideComments" data-id= '${post.id}' placeholder="Comenta aqui! :)"></textarea>
-    ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
-    <div class="feedcom" data-id='${post.id}'></div>  
-    </li>  
-    <br>
-    `
-  
-    db.collection(`post/${post.id}/comments`).orderBy('timestamp', 'desc').get()
-    .then((snapcomments) => {
-      snapcomments.forEach((comment) => {      
-        const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
-        
-        feedcom.innerHTML += `${comment.data().timestamp.toDate().toLocaleString('pt-BR')} - 
-        ${comment.data().idname}:
-        ${comment.data().txtComment}
-        <br>
-        <br>
-        `          
-      })   
-    })
-  
-    feed.innerHTML += feedPost;
+  </div>
+  <br>  
+  <br>
+  <p class="border"></p>
+  ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
+  ${post.data().likes}
+  ${Button({ dataId: post.id, class: "button-feed", onClick: showComments, title:'💬' })} 
+  <p class="border"></p>  
+  <textarea name="txtcom" class="txtcom hideComments" data-id= '${post.id}' placeholder="Comenta aqui! :)"></textarea>
+  ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
+  <br>
+  <div class="feedcom" data-id='${post.id}'></div>  
+  </li>  
+  <br>
+  `
+
+  db.collection(`post/${post.id}/comments`).orderBy('timestamp', 'desc').get()
+  .then((snapcomments) => {
+    snapcomments.forEach((comment) => {      
+      const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
+      
+      feedcom.innerHTML += `Comentado por ${comment.data().idname} em ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
+      <br>
+      ${comment.data().txtComment}
+      <p class="border"></p>
+      <br>
+      <br>
+      `          
+    })   
+  })
+
+  feed.innerHTML += feedPost;
   }
 };
 

@@ -114,3 +114,29 @@
 [debug] [2019-10-21T19:41:54.170Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-25T17:27:07.475Z] ----------------------------------------------------------------------
+[debug] [2019-10-25T17:27:07.477Z] Command:       /home/ericka/.nvm/versions/node/v10.16.3/bin/node /home/ericka/.nvm/versions/node/v10.16.3/bin/firebase serve
+[debug] [2019-10-25T17:27:07.478Z] CLI Version:   7.4.0
+[debug] [2019-10-25T17:27:07.478Z] Platform:      linux
+[debug] [2019-10-25T17:27:07.478Z] Node Version:  v10.16.3
+[debug] [2019-10-25T17:27:07.478Z] Time:          Fri Oct 25 2019 14:27:07 GMT-0300 (GMT-03:00)
+[debug] [2019-10-25T17:27:07.478Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-25T17:27:07.488Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-25T17:27:07.489Z] > authorizing via signed-in user
+[debug] [2019-10-25T17:27:07.489Z] [iam] checking project social-network-1e8dd for permissions ["firebase.projects.get"]
+[debug] [2019-10-25T17:27:07.491Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-1e8dd:testIamPermissions  
+
+[debug] [2019-10-25T17:27:08.718Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-25T17:27:08.723Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-1e8dd  
+ 
+[debug] [2019-10-25T17:27:09.229Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ericka/projetos/redesocial/SAP003-social-network'...
+[info] 
+[debug] [2019-10-25T17:27:09.234Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-1e8dd/webApps/-/config  
+ 
+[debug] [2019-10-25T17:27:10.469Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5005
