@@ -40,10 +40,9 @@ const mural = () => {
 					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
 					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
-					<span like-id='${post.id}' class="like">${post.data().likes}</span>
-					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
-					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
-					
+					<p like-id='${post.id}' class="like">${post.data().likes}</p>
+						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+						${Button({ class: 'btn-comment', id: post.id, title:'Comentar', onclick: commentarPost })}
 					<ul>
 						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 					</ul>
@@ -104,7 +103,7 @@ const deletar = (id, event) => {
 const commentarPost = (id, event) => {
 	const input = document.querySelector(`input[data-id='${id}']`);
 	firebase.firestore().collection(`posts/${id}/comments`).add({ text: input.value });
-	event.target.parentElement.innerHTML += `<p>${input.value}</p>`
+	event.target.parentElement.innerHTML += `<p class='ja'>${input.value}</p>`
 }
 
 
