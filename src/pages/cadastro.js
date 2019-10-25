@@ -39,15 +39,10 @@ function cadastrar() {
   return template;
 }
 
-function locationHashChanged() {
-  if (window.location.hash === '#cadastro') {
-    document.querySelector('main').innerHTML = cadastrar();
-  }
-}
 
 export default cadastrar;
 
-/* <div class= 'container-text'>
+/*  <div class= 'container-text'>
   <div  class='item'>
   <h1>Olá!<br> Eu sou a Mia e vou te contar o porquê precisamos do Base</h1>
   </div>
@@ -65,6 +60,6 @@ export default cadastrar;
   <div  class='item item-5'> 
   <p>Venha avaliar e ajudar a direcionar o dinheir dos consumidores para locais e produtos sustentáveis.</p>
   </div>
-    </div>*/
+    </div> */
   
 

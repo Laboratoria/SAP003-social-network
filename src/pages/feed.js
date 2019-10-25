@@ -1,4 +1,4 @@
-import Button from '../components/button.js';
+import ButtonFeed from '../components/button-feed.js';
 import Textarea from '../components/textarea.js';
 import Card from '../components/card.js';
 
@@ -35,8 +35,8 @@ function templatePosts(publicacao, id) {
   const template = `
     <article id='${id}'>
       <p data-id='${id}'>${publicacao}</p>
-      ${Button({ title: 'Deletar', onClick: deletarPost })}
-      ${Button({ title: 'Editar', onClick: editarPost })}
+      ${ButtonFeed({ title: 'Deletar', onClick: deletarPost })}
+      ${ButtonFeed({ title: 'Editar', onClick: editarPost })}
     </article>
   `;
   return `${Card({ children: template })}`;
@@ -59,12 +59,11 @@ function postarPublicacao() {
 }
 
 function feed() {
+  // retirar classe main do elemento main
   const template = `
     ${Textarea({ class: 'post' })}
-
-    ${Button({ title: 'Compartilhar', onClick: postarPublicacao })}
+    ${ButtonFeed({ title: 'Compartilhar', onClick: postarPublicacao })}
     <p id='post'></p>
-ster
   `;
   return template;
 }
@@ -72,7 +71,7 @@ ster
 window.templatePosts = templatePosts;
 window.postarPublicacao = postarPublicacao;
 window.usuarioTotal = JSON.parse(localStorage.getItem('cadastro'));
-Window.usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
+window.usuarioAtual = JSON.parse(localStorage.getItem('usuario'));
 
 
 export default feed;

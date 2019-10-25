@@ -4,8 +4,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: .7em;
   padding: 15px;
-  background: #dcdcdc url("fotos/logo-half-2.png") no-repeat fixed 50% 50% ;
+  background: #dcdcdc url("fotos/logo-half-2.png") no-repeat fixed 50% 50%;
+
 }
+
 
 /*para celular*/
 
@@ -32,7 +34,6 @@ img {
   display: flex;
   flex-direction: column;
   margin-top: 10%;
-  
 
 }
 
@@ -52,6 +53,10 @@ img {
   border: none;
   cursor: pointer;
   
+}
+.primary-button:focus {
+  outline: none;
+  border-bottom: 2px solid #FF007A;
 }
 
 a{
@@ -73,8 +78,4 @@ a{
   text-align: center;
 }
 
-/*Feed*/
-.card {          
-border: solid 1px black;         
-}
 }

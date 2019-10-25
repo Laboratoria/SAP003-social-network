@@ -1,16 +1,4 @@
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1em;
-  padding: 15px;
-  background: #dcdcdc url("fotos/logo-half-2.png") no-repeat fixed 50% 50%;
-
-  
-}
-
-@media screen and (max-width:780px) {
-  
-
   .container-cadastro { 
     display: flex;
     flex-direction: column;
@@ -32,4 +20,3 @@ body {
    
   }
   
-}
