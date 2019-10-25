@@ -45,7 +45,9 @@ const mural = () => {
 						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 						${Button({ class: 'btn-comment', id: post.id, title: '<img src="images/botaocomentar.png" class="icon-comment" />', onclick: commentarPost })}
 					</section>
-						${comments.map(comment => `<p>${comment.text}<p> <p>${user.email}</p>`).join("")}
+					<ul>
+						${comments.map(comment => `<li>${comment.text}<li> <li>${user.email}<li>`).join("")}
+					</ul>
 				</li>
 				`;
 				//usuario não logado
@@ -61,7 +63,9 @@ const mural = () => {
 						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 						${Button({ class: 'btn-comment', id: post.id, title: '<img src="images/botaocomentar.png" class="icon-comment" />', onclick: commentarPost })}
 					</section>
-						${comments.map(comment => `<p>${comment.text}<p> <p>${user.email}</p>`).join("")}
+					<ul>
+						${comments.map(comment => `<li>${comment.text}<li>`).join("")}
+					</ul>
 				</li>
 				`;
 			}

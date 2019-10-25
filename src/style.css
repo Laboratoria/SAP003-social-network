@@ -217,7 +217,7 @@ body {
 } 
 
 .nav-links li { 
-  display: inline-block;  
+  list-style: none;
 } 
 
 .dropdown-menu {
@@ -302,12 +302,6 @@ body {
   display: flex;
   padding-top: 30px;
   justify-content: center; 
-} 
-
-p {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .timeline-item{
@@ -372,7 +366,7 @@ p {
   outline: none;
   background-color: #282828;
   border: none;
-  font: whitesmoke;
+  color: #737373;
 }
 
 .btn-edit, .btn-likes, .post-comment, .btn-comment {
