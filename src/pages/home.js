@@ -23,8 +23,8 @@ function home() {
       <nav>
       <ul>
       <li> 
-        <a href="#home.js" class ="button-home">  
-        <i class="fas fa-home"></i> 
+        
+      <h1 class="id-user">Olá, ${firebase.auth().currentUser.displayName}</h1>        
         </a>
       </li>
       <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt"></i>' })}</li>
@@ -33,12 +33,15 @@ function home() {
     <br>
     <main class ="post-area">     
       <a href ='#profile.js'><img class="img-user" src="./img/profile_girl.png"/></a>
+      
+      <textarea name="post" class="post" placeholder="O que você quer trocar?"></textarea>
+      ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane"></i>' })}
+      <br>
       <input type="radio" name="privacy" class="privacy" checked>      
       <label for="public">🔓</label>
       <input type="radio" name="privacy" class="privacy">
       <label for="privacy">🔒</label>     
-      <textarea name="post" class="post" placeholder="O que você quer trocar?"></textarea>
-      ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane"></i>' })}
+    
       <br>
       <br>
     </div>

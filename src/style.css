@@ -289,7 +289,7 @@ section {
   .logo {
     width: 450px;
     height: 450px;
-    background: url(./img/logo1.png) center center/500px no-repeat; 
+    background: url(./img/logo1.png) center center/450px no-repeat; 
   }
 
   .js-namefull-input {
