@@ -22,9 +22,6 @@ function signInWithAccount(provider) {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      // if (result.credential) {
-      //   const token = result.credential.accessToken;
-      // };
       const user = result.user;
       db.collection('users').doc(user.uid).set({
         name: user.displayName,
@@ -51,23 +48,25 @@ function Login() {
     type: 'email',
     class: 'email-input',
     placeholder: 'Email',
+    value:''
   })}
   ${Input({
     type: 'password',
     class: 'password-input',
     placeholder: 'Senha',
+    value:''
   })}
   ${Button({
     class: 'btn btn-gray',
     id: 'btn-log-in',
     onclick: loginRegisteredUser,
-    title: 'Login',
+    title: 'Entrar',
   })}
   ${Button({
     id: 'authGoogleButton',
-    class: 'btn fa fa-google btn-gray',
+    class: 'btn-google',
     onclick: loginGoogleUser,
-    title: '',
+    title: '<span class="icon-google"></span><span class="button-text-google">Entrar com Google</span>',
   })}
   `;
   const template = `
@@ -76,9 +75,9 @@ function Login() {
   <form class="form-content-login">
     <h1>Horta Urbana</h1> 
     ${userLogin}
-    <div id="errorMessage"></div>
+    <div id="errorMessage" class="error-message"></div>
     <p>Ainda não é membro? 
-    <a href="#signup">Cadastre-se!</a>
+      <a href="#signup">Cadastre-se!</a>
     </p> 
   </form>
   </article>
