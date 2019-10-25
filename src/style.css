@@ -1,29 +1,45 @@
-body{
-  margin: 15px;
-  padding: 15px;
+
+body { 
+  
   font-family: 'Montserrat', sans-serif;
-  font-size: .6em;
-  background-color: #dcdcdc;
+  font-size: .7em;
+  padding: 15px;
+  background: #dcdcdc url("fotos/logo-half-2.png") no-repeat fixed 50% 50% ;
 }
-img { 
-  width:100%;
-  height: 25%;
- 
-}
+
+/*para celular*/
+
+@media (max-width:780px) {
 
 .container-login{
-
+  
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5%;
+  
+}
+
+img { 
+
+  align-items: center;
+  height: 25%;
+  width:80%;
+
+}
+
+.titulo{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  
 
 }
 
 .form{
+
   display: flex;
   flex-direction: column;
-  margin-top:10%;
   margin-bottom: 10%;
  
 }
@@ -40,7 +56,7 @@ img {
 
 a{
 
-  color:#69a79a;
+  color:#fdef4e;
 }
 
 .input {
@@ -49,36 +65,16 @@ a{
   border-radius: 25px;
   padding: 10px;
   margin-bottom: 20px;
+  width: 220px;
   
-}
-.card {
-  border: solid 1px black;
-}
-
-.img-footer img{
-  width: 100%;
-  opacity:.8;
-}
-
-.container-cadastro{
-  display: flex;
-  justify-content: center;
-}
-.cadastro{
-  display: flex;
-  flex-direction: column;
-  margin-top:10%;
-  margin-bottom: 10%;
-  width: 50%;
-  justify-content: space-around;
- 
-}
-.mia{
-  display: flex;
-  align-items: flex-start;
-  height: 25%;
 }
 .erro {
   color: red;
   text-align: center;
+}
+
+/*Feed*/
+.card {          
+border: solid 1px black;         
+}
 }

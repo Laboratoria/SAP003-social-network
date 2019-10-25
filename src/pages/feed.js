@@ -59,8 +59,10 @@ function postarPublicacao() {
 function feed() {
   const template = `
     ${Textarea({ class: 'post' })}
+
     ${Button({ title: 'Compartilhar', onClick: postarPublicacao })}
     <p id='post'></p>
+ster
   `;
   return template;
 }
