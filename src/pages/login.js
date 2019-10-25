@@ -54,17 +54,16 @@ function login() {
     <span class= "access">LOGIN</span>
     <br>
     <form class="form-set">
-    ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
-    <br>
-    ${Button({ class: "primary-button", onClick: enviarLogin, title: 'ENVIAR',  })}
-    
-    <span class= "access">OU ACESSE COM</span>
-    <section class="auth">   
-    ${Button({ class: "auth-button", onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
-    </section>       
-    <section class="register">Não tem uma conta? <a href="#register.js">REGISTRE-SE</a></section>
+      ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
+      <br>
+      ${Button({ class: "primary-button", onClick: enviarLogin, title: 'ENVIAR',  })}
+      <span class= "access">OU ACESSE COM</span>
+      <section class="auth">   
+       ${Button({ class: "auth-button", onClick: loginGoogle, title: '<i class="fab fa-google"></i>' })}
+      </section>       
     </form>
-  
+    <footer class="register">Não tem uma conta? <a href="#register.js">REGISTRE-SE</a></footer>
+      
     `;
 
   return template;
