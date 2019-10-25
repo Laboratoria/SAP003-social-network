@@ -4,12 +4,12 @@
 body {
   background: #F5F5F4;
 }
-.container-login{
+.container-login {
   display: flex;
   flex-direction: column;
   }
 
-.img-logo{
+.img-logo {
   display: block;
   width: 80%;
   margin-left: auto;
@@ -21,7 +21,7 @@ body {
   text-align: center;
 }
 
-.text{
+.text {
   color: #403B3A;
 }
 
@@ -33,7 +33,7 @@ body {
   color: #403B3A;
 }
 
-.info-login{
+.info-login {
   margin-left: 19%;
   width: 62%;
   text-align: center;
@@ -60,13 +60,8 @@ body {
   margin-top: 20px;
 }
 
-<<<<<<< HEAD
 .primary-button,  .btn-profile, .btn-publicar, .slc-privacy {
   color: white;
-=======
-.inp-age-profile{
-  width: 97%;
->>>>>>> master
 }
 
 .primary-button, .btn-profile {
@@ -80,7 +75,7 @@ body {
   margin-top: 10px;
 }
 
-.btn-profile{
+.btn-profile {
   background: #8C2920;
   margin-top: 10%;
 }
@@ -95,12 +90,12 @@ body {
   margin-bottom: 0;
 }
 
-.img-profile{
+.img-profile {
   margin-left: 24%;
   width: 47%;
 }
 
-.container-form-profile{
+.container-form-profile {
   background-color: #988a87;
   display: flex;
   width: 69%;
@@ -114,7 +109,7 @@ body {
 
 /* ---------timeline------------------ */
 
-.section-menu{
+.section-menu {
   height: 90px;
   background-size: cover;
   background-image: url(images/header-fruit.jpg);
@@ -174,7 +169,7 @@ label[for="navigation"] {
   display: none;
 }
   
-.img-timeline{
+.img-timeline {
   display: block;
   width: 23%;
   margin-left: 6%;
@@ -205,7 +200,7 @@ label[for="navigation"] {
   height: 5%;
 }
 
-.bio{
+.bio {
   font-size: 19px;
 }
 
@@ -243,6 +238,7 @@ select {
   color: white;
   border: 1px solid gray;
 }
+
 .slc-privacy {
   height: 79%;
   background: #7BA651;
@@ -343,63 +339,42 @@ select {
 @media (min-width: 1280px) {
 /* ----- login */
 
-  body{
+  body {
     margin: 0;
     padding: 0;
   }
 
-  .container-login{
+  .container-login {
     display: flex;
     flex-direction: row;
   }
     
-  .container-form-perfil{
+  .container-form-perfil {
     margin-top: 10%;
-<<<<<<< HEAD
   }
-=======
-    }
->>>>>>> master
 
-  .img-logo{
+  .img-logo {
     width: 65%;
     margin-top: 8%;
   }
 
-  .text-welcome, .info-login, .text, .text-profile{
+  .text-welcome, .info-login, .text, .text-profile {
     color: black;
   }
 
-  .text-title{
+  .text-title {
     font-weight: bold;
     font-size: 50px;
     line-height: 29px;
-<<<<<<< HEAD
   }  
-=======
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
->>>>>>> master
-  
-  .text-welcome{ 
+
+  .text-welcome { 
     margin-top: 2%;
     font-size: 20px;
     line-height: 38px;
-<<<<<<< HEAD
   }  
-=======
-  } 
 
-  .info-login{
-    margin-top: 3%;
-    margin-right: 6%;
-    text-align: center;
-    font-size: 18px;
-    font-style: italic;
-  }
->>>>>>> master
-  
-  .form{
+  .form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -410,6 +385,7 @@ select {
   label[for="navigation"] {
     display: none;
   }
+
   .menu {
     width: 18%;
     margin-left: 83%;
@@ -420,7 +396,7 @@ select {
     background-color: #7BA651;
   }
 
-  .section-menu{
+  .section-menu {
     height: 110px;
   }
 
@@ -433,8 +409,10 @@ select {
   .img-usuario {
     margin-left: 10%;
     margin-right: 2%;
+    margin-top: 0.5%;
     width: 10%;
   }
+
   .users {
     display: flex;
     justify-content: start;
@@ -442,7 +420,7 @@ select {
     margin-left: -5%;
   }
 
-  .bio{
+  .bio {
     font-size: 19px;
   }  
 
@@ -452,7 +430,7 @@ select {
     margin-left: 37%;
   }
 
-  .textarea-publish{
+  .textarea-publish {
     margin-top: -4%;
   }
 
@@ -461,7 +439,7 @@ select {
     height: 69px;
   }
 
-  .publication-public{
+  .publication-public {
     background: #ffffff;
     width: 100%;
   }
@@ -474,7 +452,7 @@ select {
     color: white;
   }
 
-  .btn-publicar{
+  .btn-publicar {
   margin-left: 1%;
   margin-right: 1%;
   background: #7BA651;
@@ -492,24 +470,24 @@ select {
     border-radius: 4px;
   }
 
-  .publication-public{
+  .publication-public {
     height: auto;
   }
 
-  .like-post{
+  .like-post {
     width: 5%;
     height: 28px;
     margin-left: -2%;
     margin-top: 2%;
   }
 
-  .slc-privacy-post{
+  .slc-privacy-post {
     margin-left: 82%;
     height: 24px;
     margin-top: 5%;
   }
 
-  .img-timeline{
+  .img-timeline {
     display: block;
     width: 23%;
     margin-left: 6%;
@@ -518,20 +496,20 @@ select {
 
   /* ----- profile */
 
-  .img-profile{
+  .img-profile {
     display: block;
     width: 23%;
     margin-top: 4%;
     margin-left: 0%;
   }
 
-  .text-profile{
+  .text-profile {
     text-align: center;
     margin-top: -22%;
     font-size: 19px;
   }
 
-  .container-form-profile{
+  .container-form-profile {
     background-color: #9FBE80;
     display: flex;
     width: 43%;
@@ -544,7 +522,7 @@ select {
     
   }
 
-  .inp-age-profile, .inp-name-profile, .inp-profession-profile, .inp-image-profile{
+  .inp-age-profile, .inp-name-profile, .inp-profession-profile, .inp-image-profile {
     background: #FFFFFF;
     box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
     border-radius: 9px;
