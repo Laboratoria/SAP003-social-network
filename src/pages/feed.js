@@ -164,7 +164,6 @@ function Feed(props) {
   <ul class= 'timeline'>${postsLayout}</ul>
   <ul class= 'cardProfile'></ul>
   `;
-
   return template;
 }
 

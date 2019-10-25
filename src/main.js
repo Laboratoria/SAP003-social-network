@@ -17,7 +17,7 @@ function locationHashChanged() {
           });
       } else if (window.location.hash === '#profile') {
         document.querySelector('main').innerHTML = Profile();
-      } 
+      }
     } else if (window.location.hash === '#register') {
         document.querySelector('main').innerHTML = Register();
       } else {
