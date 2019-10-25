@@ -22,29 +22,23 @@ const mural = () => {
 
 	allPosts.orderBy('date', 'desc').get().then(snap => {
 		let postsLayout = '';
-//usuario logado
+		//usuario logado
 		snap.forEach(post => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p post-id='${post.id}' contenteditable="true" class="post">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ id: post.id, title:'deletar',onclick: deletar})}
-					${Button({ id: post.id, title:'editar', onclick: editar})}
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
-					<ul>
-						<li>
-							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
-							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
-						</li>
-					</ul>
-					<p like-id='${post.id}'>${post.data().likes}</p>
-					${Post({id: post.id, placeholder: 'Comentários', rows: '2', cols: '15'  })}
-					${Button({id: post.id, title: 'comentar', onclick: commentarPost})}
+					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
+					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
+					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					<span like-id='${post.id}' class="like">${post.data().likes}</span>
+					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
 				</li>
 				`;
+
 				//usuario não logado
 			} else {
 				postsLayout += `
@@ -52,15 +46,10 @@ const mural = () => {
 					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
-					${Button({ class: 'btn-likes', id: post.id, title: 'like', onclick: like })}
-					<p id="${post.id}">${post.data().likes}</p>
-					<ul>
-						<li>
-							${Input({dataId: post.id, placeholder: 'Comente aqui', type: 'text'})}
-							${Button({id:post.id, title:'Commentar',onclick:commentarPost})}
-						</li>
-					</ul>
-					<p like-id="${post.id}">${post.data().likes}</p>
+					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					<p like-id="${post.id}" class="like">${post.data().likes}</p>
+					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
 				</li>
 				`;
 			}
@@ -68,13 +57,6 @@ const mural = () => {
 		document.querySelector("main").innerHTML = Mural({ postsLayout });
 	})
 }
-
-
-// const comment = (id, event) => {
-// 	const text = document.querySelector(`.txt-area[post-id='${post.id}']`).value;
-// 	firebase.firestore().collection(`posts/${id}/comments`).add({text, user: id})
-// 	console.log(text);
-// }
 
 
 const editar = (id, event) => {
@@ -88,11 +70,12 @@ const editar = (id, event) => {
 
 const like = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).get().then((post) => {
-		let like = (post.data().likes) +1 ;
-		firebase.firestore().collection('posts').doc(id).update({likes: like});
-
-		document.querySelector(`[like-id='${id}']`).innerHTML = like;
-})}
+		let like = (post.data().likes) + 1;
+		let likes = document.querySelector(`[like-id='${id}']`)
+		firebase.firestore().collection('posts').doc(id).update({ likes: like });
+		likes.innerHTML = like;
+	})
+}
 
 
 const deletar = (id, event) => {
@@ -102,9 +85,10 @@ const deletar = (id, event) => {
 
 const commentarPost = (id, event) => {
 	const input = document.querySelector(`input[data-id='${id}']`);
-	firebase.firestore().collection(`posts/${id}/comments`).add({text: input.value});
-	event.target.parentElement.innerHTML += `<li>${input.value}</li>`	
+	firebase.firestore().collection(`posts/${id}/comments`).add({ text: input.value });
+	event.target.parentElement.innerHTML += `<p>${input.value}</p>`
 }
+
 
 // const editarPerfil = () => {
 	
@@ -133,6 +117,7 @@ const commentarPost = (id, event) => {
 
 // 	document.querySelector("main").innerHTML = EditarPerfil({ template });
 // }
+
 
 const hash = () => {
 	if (location.hash === "#sign") {
