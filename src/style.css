@@ -294,19 +294,20 @@ section {
 
   .js-namefull-input {
     margin-top: 100px; 
-
+    
   }
 
   .js-email-input {
     margin-top: 5px; 
     border-color: black;
-    border-style: solid;
+    border-top-style: inset;
+  
   }
 
   .js-password-input {
     margin-top: 5px; 
     border-color: black;
-    border-style: solid;
+    border-top-style: inset;
   }
 
   .primary-button {  
