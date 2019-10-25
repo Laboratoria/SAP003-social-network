@@ -1,0 +1,53 @@
+@import url(auth.css);
+@import url(feed.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #04151F;
+  background-color: #c6e2ac;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.btn{
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em;
+  margin: 1em;
+  width: 80px; 
+  border-radius: 100px;
+  cursor: pointer;
+}
+.btn-gray{
+  background-color: #322F20;
+  color: #FCFCFC;
+  border: 1px solid #322F20;
+  transition: all .15s linear;
+}
+
+.btn-gray:hover{
+  background-color: transparent;
+  color:  #322F20;
+  border: 1px solid #322F20;
+  transition: all .15s linear;
+}
+
+
+
+
+
+
+
+
+
+

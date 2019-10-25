@@ -1,14 +1,14 @@
-function Profile(props) {
-  const templateProfile = `
-  <div class='srdosaneis'> ${postListProfile(props)}</div>
-  `;
-  return templateProfile;
-}
+import Feed from './feed.js';
 
-function postListProfile(props) {
-  props.posts.forEach((element) => {
-    console.log(element.data().text);
-  });
+function Profile() {
+  return Feed()
 }
 
 export default Profile;
+
+
+// function postListProfile(props) {
+//   props.posts.forEach((element) => {
+//     console.log(element.data().text);
+//   });
+//}

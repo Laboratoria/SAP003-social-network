@@ -57,7 +57,7 @@ function Signup() {
     <h1>Bem vindo(a)!</h1>
   </header>
   <form class="form-content-signup">
-  <img class='signup-img' src="./img/icon-pluto.png">
+  <img class='signup-img' src="./img/woman.png">
     <main class="register-input">
       <p class="register-text">Para realizar o cadastro, preencha as informações abaixo:</p>
       ${userInfo}

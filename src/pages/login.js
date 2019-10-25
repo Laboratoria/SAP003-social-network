@@ -72,7 +72,7 @@ function Login() {
   `;
   const template = `
   <article class='login-page'>
-  <img class='login-img' src="./img/pluto-floral-and-botanical-growth.png">
+  <img class='login-img' src="./img/logo.png">
   <form class="form-content-login">
     <h1>Horta Urbana</h1> 
     ${userLogin}
