@@ -29,6 +29,7 @@ const updateProfile = () => {
 const profile = (props) => {
   const user = props.user || {};
   const templateProfile = `
+  <section class='section-menu'>
     ${Input({
     class: 'navigation',
     id: 'navigation',
@@ -49,11 +50,11 @@ const profile = (props) => {
   })}
           </ul>
         </nav>
-        </nav>
+        </section>
     <h1 class="title-timeline">Low Carb Style</h1>
     <img class="img-profile" src="images/img-profile.png">
     <p class="text-profile">Insira seus dados pessoais aqui...</p>
-    <form>
+    <form> 
     <div class="container-form-profile">
     ${Input({
     class: 'inp-image-profile',

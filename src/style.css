@@ -1,3 +1,6 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+}
 body {
   background: #F5F5F4;
 }
@@ -21,19 +24,10 @@ body {
 .text-title {
   margin-top: 2%;
   text-align: center;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 29px;
-  color: #403B3A;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .text{
   color: #403B3A;
-}
-
-.text-welcome, .js-input-email, .js-input-password, .primary-button, .error-email, .error-password, .text, .text-profile {
-  font-family: sans-serif;
 }
 
 .text-welcome {
@@ -45,13 +39,9 @@ body {
 }
 
 .info-login{
-  margin-top: -4%;
-  margin-left: 13%;
-  margin-right: 18%;
+  margin-left: 19%;
+  width: 62%;
   text-align: center;
-  font-size: 15px;
-  font-style: italic;
-  color: #403B3A;
 }
 
 .logo {
@@ -75,20 +65,23 @@ body {
   margin-top: 20px;
 }
 
+.primary-button,  .btn-profile, .btn-publicar, .slc-privacy {
+  color: white;
+}
+
 .primary-button, .btn-profile {
-  background: #FF8F65;
+  background: #8C2920;
   padding: 8px;
-  font-size: 1.2rem;
-  border-radius: 5px;
+  font-size: 1rem;
+  border-radius: 4px;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
   margin-top: 10px;
 }
 
 .btn-profile{
+  background: #8C2920;
   margin-top: 10%;
 }
 
@@ -119,22 +112,21 @@ body {
   padding: 10%;
 }
 
-.text-profile{
-  text-align: center;
-  color: chocolate;
-  margin-top: 3%;
-}
-
 /* ---------timeline------------------ */
+
+.section-menu{
+  height: 90px;
+  background-size: cover;
+  background-image: url(images/header-fruit.jpg);
+  margin-left: -2%;
+}
 
 label[for="navigation"] {
   display: block;
-  margin-left: -2%;
   margin-top: -2%;
   padding: 1%;
-  background-color: #FF645A;
+  background-color: #7BA651;
   color: #000000;
-  font-family: sans-serif;
   text-align: center;
   font-size: 245%;
   cursor: pointer;
@@ -148,7 +140,6 @@ label[for="navigation"] {
 .menu {
   width: 100%;
   height: 50px;
-  font-family: sans-serif;
   margin-top: 5px;
   margin-left: -100%;
   transition: all .4s;
@@ -163,7 +154,7 @@ label[for="navigation"] {
 }
 
 .menu li:hover {
-  background-color: rgb(238, 164, 147);
+  background-color: #8C2920;
   color: rgb(255, 255, 255);
 }
 
@@ -191,13 +182,13 @@ label[for="navigation"] {
 }
 
 .title-timeline {
-  margin-top: -27%;
+  margin-top: -20%;
   margin-left: 15%;
   font-weight: normal;
   font-size: 36px;
-  color: #403B3A;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
   text-align: center;
+  font-weight: bold;
 }
 
 .users {
@@ -208,6 +199,7 @@ label[for="navigation"] {
 
 .img-usuario {
   margin-left: -8%;
+  margin-top: 8%;
   margin-right: 12%;
   width: 27%;
   height: 5%;
@@ -221,11 +213,8 @@ label[for="navigation"] {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 92%;
-  margin-top: 10%;
-  background: #005374;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  background: #BC2920;
+  border-radius: 4px;
 }
 
 .textarea-publish {
@@ -236,38 +225,36 @@ label[for="navigation"] {
 .post-text {
   margin-top: 8%;
   background: #FBFBFB;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+ }
+
 .images-publish {
+  width: 100%;
+  margin-top: 1%;
   display: flex;
-  width: 92%;
-  margin-top: 2%;
+  justify-content: flex-end;
 }
 
 select {
-  font-family: sans-serif;
   text-align-last: center;
 }
 
 .slc-privacy, .btn-publicar {
   font-weight: bold;
+  color: white;
+  border: 1px solid gray;
 }
 
 .slc-privacy {
-  margin-left: 3%;
   height: 79%;
-  background: #FF8F65;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  background: #7BA651;
+  border-radius: 4px;
 }
 
 .btn-publicar {
-  display: block;
-  margin-left: 49%;
-  margin-top: -1%;
-  background: #FF8F65;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 20px; 
+  margin-left: 1%;
+  margin-right: 1%;
+  background: #7BA651;
+  border-radius: 4px;
 }
 
 .container-public {
@@ -276,9 +263,8 @@ select {
   margin: 0 auto;
   width: 94%;
   margin-top: 10%;
-  background: #9E958C;
+  background: #9FBE80;
   border-radius: 10px;
-  font-family: sans-serif;
 }
 
 .name-user {
@@ -312,8 +298,7 @@ select {
 
 .slc-privacy-post {
   margin-left: 70%;
-  background: #9E958C;
-  box-shadow: 2px 1px 0px rgba(0, 0, 0, 0.25);
+  background: #9FBE80;
   border-radius: 6px;
   width: 28%;
   color: #FFFFFF;
@@ -338,21 +323,21 @@ select {
 .edit-post {
   font-size: 15px;
   color: #FFFFFF;
-  background: #9E958C;
+  background: #9FBE80;
   border: none;
 }
 
 .save-post {
   font-size: 15px;
   color: #FFFFFF;
-  background: #9E958C;
+  background: #9FBE80;
   border: none;
 }
 
 .delete-post {
   font-size: 15px;
   color: #FFFFFF;
-  background: #9E958C;
+  background: #9FBE80;
   border: none;
 }
 
@@ -365,7 +350,6 @@ body{
   padding: 0;
 }
 
-<<<<<<< HEAD
   .container-login{
     display: flex;
     flex-direction: row;
@@ -375,47 +359,26 @@ body{
     margin-top: 10%;
   }
 
-=======
-.container-login{
-  display: flex;
-  flex-direction: row;
-}
-
-.container-form-perfil{
-  margin-top: 10%;
-}
->>>>>>> e66fda21cbc1d847be4a03cb9353fba7e664c723
   .img-logo{
     width: 65%;
     margin-top: 8%;
   }
 
-  .text-welcome, .info-login, .text, .primary-button, .text-profile, .btn-profile, .btn-publicar, .slc-privacy {
-    color: rgb(61, 60, 60);
-    font-family: sans-serif;
+  .text-welcome, .info-login, .text, .text-profile{
+    color: black;
   }
 
   .text-title{
-    font-weight: normal;
+    font-weight: bold;
     font-size: 50px;
     line-height: 29px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-  }
+  }  
   
   .text-welcome{ 
     margin-top: 2%;
     font-size: 20px;
     line-height: 38px;
   }  
-
-  .info-login{
-    margin-top: 3%;
-    margin-right: 6%;
-    text-align: center;
-    font-size: 18px;
-    font-style: italic;
-  }
   
   .form{
     display: flex;
@@ -430,22 +393,20 @@ body{
   }
   .menu {
     width: 18%;
-    font-family: sans-serif;
     margin-left: 83%;
     transition: none;
   }
 
   .menu li {
-    background-color: #FF645A;
-    border-radius: 60%;
+    background-color: #7BA651;
   }
 
   .section-menu{
-    background-image: url("images/back-section.png");
+    height: 110px;
   }
 
   .title-timeline {
-    margin-top: -4%;
+    margin-top: -6%;
     margin-left: auto;
     font-size: 43px;
   }
@@ -458,7 +419,7 @@ body{
   .users {
     display: flex;
     justify-content: start;
-    margin-top: 2%;
+    margin-top: 6%;
     margin-left: -5%;
   }
 
@@ -468,7 +429,7 @@ body{
 
   .container-publish {
     width: 45%;
-    margin-top: -10.5%;
+    margin-top: -9.4%;
     margin-left: 37%;
   }
 
@@ -481,29 +442,25 @@ body{
     height: 69px;
   }
 
-  .images-publish{
-    width: 103%;
-    margin-top: 1%;
-  }
-
   .publication-public{
     background: #ffffff;
     width: 100%;
   }
+
   .slc-privacy {
     margin-left: 3%;
     height: 20px;
-    background: #FF8F65;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    margin-top: -1%;
+    background: #7BA651;
+    border-radius: 4px;
+    color: white;
   }
 
   .btn-publicar{
-    margin-left: 64%;
-    background: #FF8F65;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background: #7BA651;
+  border-radius: 4px;
+  color: white;
   }
 
   .container-public {
@@ -512,9 +469,8 @@ body{
     margin-left: 37%;
     width: 45%;
     margin-top: 2%;
-    background: #9E958C;
-    border-radius: 10px;
-    font-family: sans-serif;
+    background: #9FBE80;
+    border-radius: 4px;
   }
 
   .publication-public{
@@ -546,30 +502,30 @@ body{
   .img-profile{
     display: block;
     width: 23%;
-    margin-top: -5%;
+    margin-top: 4%;
     margin-left: 0%;
   }
 
   .text-profile{
     text-align: center;
-    color: chocolate;
-    margin-top: -15%;
+    margin-top: -22%;
     font-size: 19px;
   }
 
   .container-form-profile{
-    background-color: #988a87;
+    background-color: #9FBE80;
     display: flex;
     width: 43%;
     flex-direction: column;
     align-items: center;
-    margin-top: 7%;
+    margin-top: 2%;
     margin-left: 27%;
-    border-radius: 4%;
+    border-radius: 4px;
     padding: 2%;
+    
   }
 
-  .inp-age-profile, .inp-name-profile, .inp-profession-profile{
+  .inp-age-profile, .inp-name-profile, .inp-profession-profile, .inp-image-profile{
     background: #FFFFFF;
     box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
     border-radius: 9px;

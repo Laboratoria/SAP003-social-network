@@ -131,7 +131,6 @@ const timeline = (props) => {
     </div>
     <div class='posts'>
       ${layout}
-      <p class='comment-container'></p>
     </div>
   </form>
   `;
