@@ -4,23 +4,20 @@
   font-size: 100%;
   border: none;
   outline: none;
-  font-weight: 300;
-  font-family: 'Chewy', cursive;
-  font-family: 'Sansita', sans-serif;
-  font-family: 'Numans', sans-serif; 
+  font-weight: 300; 
 }
 
 body {
-  background-color: #fffbad52; 
+  background-color: whitesmoke; 
 }
 
 .logo {
   margin-left: auto;
   margin-right: auto;
-  width: 250px;
-  height: 250px;
-  background: url(./img/logo.png) center center/250px no-repeat;
-  display: block; 
+  width: 300px;
+  height: 180px;
+  background: url(./img/logo1.png) center center/300px no-repeat;
+  display: block;
 }
 
 .logonav {
@@ -28,12 +25,12 @@ body {
   margin-right: auto;
   width: 150px;
   height: 50px;
-  background: url(./img/logonav.png) center center/150px no-repeat;
+  background: url(./img/drawing.png) center center/150px no-repeat;
   display: block; 
 }
 
 nav {
-  background: #fff;
+  background: whitesmoke;
 }
 
 nav ul {
@@ -48,10 +45,6 @@ nav ul li {
   padding: 5px;
   text-align: left;
   white-space: nowrap;
-}
-
-nav ul li:hover {
-  color: #fce326;
 }
 
 nav ul li:last-child {
@@ -76,22 +69,21 @@ nav ul li:last-child {
 .js-email-input {
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
-  display: block;
-  box-shadow: 0 0 0.5em #fce326;
+  display: block;;
   font-family: 'Josefin Sans', sans-serif;  
 }
 
 .js-password-input {
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
   display: block;
-  box-shadow: 0 0 0.5em #fce326;
   font-family: 'Josefin Sans', sans-serif; 
 }
+
 
 .primary-button {
   margin-top: 10px;
@@ -102,7 +94,7 @@ nav ul li:last-child {
   padding: 5px;
   text-align: center;
   display: block;
-  background-color: #292122;
+  background-color: black;
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
   color: #c2c0ab; 
 }
@@ -142,7 +134,7 @@ section {
 }
 
 .header-home {
-  background: linear-gradient(to top, #fffbad52, #fad946);
+  background: black;
   text-align: center;
    
 }
@@ -160,10 +152,10 @@ section {
 
 .id-user {
   text-align: right;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 0;
   margin-right: 10px;
- 
+   
 }
 
 .post-area {
@@ -173,27 +165,24 @@ section {
 }
 
 .post {
-  margin-left: 10px;  
-  margin-top: 10px;
-  font-size: 10px;
+  font-size: 12px;
   width: 215px;
   height: 50px;
   resize: none;
   border-radius: 3px;
-  box-shadow: 0 0 0.5em #fce326;
-   
+     
 }
 
 .txtcom {
   margin-left: auto;
   margin-right: auto;   
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 12px;
   width: 100%;
   height: 50px;
   resize: none;
-  border-radius: 8px;
-  box-shadow: 0 0 0.5em #fce326;
+  border-radius: 3px;
+  box-shadow: 0 0 0.5em rgb(104, 212, 212);
    
 }
 
@@ -201,14 +190,14 @@ section {
   list-style: none;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-  border: double;  
-  border-color: #fce326;  
-  border-radius: 8px; 
+  width: 80%;
+  border: solid;  
+  border-color: white;  
+  border-radius: 3px; 
   align-items: center;
   text-align: left;  
   background-color: #fff;
-   
+  border-style: outset;;
 }
 
 .idname {
@@ -217,14 +206,12 @@ section {
 }
 
 .border {
-  border-bottom: double #fce326;
+  border-bottom: solid whitesmoke;
 }
 
 .date-hour {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
- 
+  flex-wrap: nowrap; 
 }
 
 .feed {
@@ -236,7 +223,7 @@ section {
 }
 .button-home {
   color: black;
-    font-size: 18px;
+  font-size: 16px;
   background-color: #fffbad00;
   margin-left: auto;
 }
@@ -244,7 +231,7 @@ section {
 
 .button-out {
   margin-right: auto;
-  font-size: 18px;
+  font-size: 12px;
   color: black;
   background-color: #fffbad00;
   cursor: pointer;
@@ -273,6 +260,7 @@ section {
   font-size: 18px;
   background-color: #fffbad00;  
   visibility: hidden;
+  align-content: flex-end;
 }
 
 .show {  
@@ -299,7 +287,7 @@ section {
   .logo {
     width: 450px;
     height: 450px;
-    background: url(./img/logo.png) center center/450px no-repeat; 
+    background: url(./img/logo1.png) center center/450px no-repeat; 
   }
 
   .js-namefull-input {

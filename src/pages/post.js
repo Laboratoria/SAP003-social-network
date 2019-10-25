@@ -33,7 +33,10 @@ function addPost(post) {
   const feed = document.querySelector('.feed');   
   const feedPost = `  
   <li data-id= '${post.id}' class="post-list">
-  <span class= "idname">${post.data().idname}:</span>
+  Publicado por<span class= "idname"> ${post.data().idname}</span>
+  <br>
+  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
+ 
   <p class="border"></p>
   <div class="text-post" data-id='${post.id}'>
   ${post.data().post}
@@ -44,10 +47,11 @@ function addPost(post) {
   ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
   ${post.data().likes}
   ${Button({ dataId: post.id, class: "button-feed", onClick: showComments, title:'💬' })} 
-  <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>
   <p class="border"></p>  
   <textarea name="txtcom" class="txtcom hideComments" data-id= '${post.id}' placeholder="Comenta aqui! :)"></textarea>
   ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
+  <br>
+  
   <div class="feedcom" data-id='${post.id}'></div>  
   </li>  
   <br>
@@ -58,9 +62,11 @@ function addPost(post) {
     snapcomments.forEach((comment) => {      
       const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
       
-      feedcom.innerHTML += `${comment.data().timestamp.toDate().toLocaleString('pt-BR')} - 
-      ${comment.data().idname}:
+      feedcom.innerHTML += `Comentado por ${comment.data().idname} em ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
+      <br>
       ${comment.data().txtComment}
+      <p class="border"></p>
+      <br>
       <br>
       <br>
       `          

@@ -25,17 +25,19 @@ function profile() {
       <ul>
         <li> 
           <a href="#home.js" class ="button-home">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-home"></i> 
           </a>
         </li>
-        <li>Perfil de ${firebase.auth().currentUser.displayName} </li>
-        <li>Sair ${Button({ class: "button-out", onClick: signOut, title:'<i class="fas fa-sign-out-alt"></i>' })}</li>
+        <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt"></i>' })}</li>
       </ul>
     </nav>
     <br>
     <div class= "post-area">
       <img class="img-user" src="./img/profile_girl.png"/>     
-    </div>
+      <br>     
+      <h1>Nome:${firebase.auth().currentUser.displayName}</h1>
+      <h2>E-mail: </h2>
+      </div>
     <br>    
     <ul class="feed">    
     </ul>   
