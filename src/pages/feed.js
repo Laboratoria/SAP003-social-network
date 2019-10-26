@@ -102,15 +102,15 @@ function loadFeed() {
         });
 }
 
-function loadCard() {
-    firebase.firestore().collection('persona').get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((persona) => {
-                const cardFeed = `<li data-id='${persona.id}' class='card'>
+function loadCard () {
+  firebase.firestore().collection('persona').get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((persona) => {
+      const cardFeed =  `<li data-id='${persona.id}' class='card'>
+      <img src='${persona.data().photo}' width='60px' height='60px'/><br>
       ${persona.data().name} <br>
-      ${persona.data().profession}
+      ${persona.data().profession}<br>
   </li>
-    </div>
   `;
                 document.querySelector('.cardProfile').innerHTML = cardFeed;
             });
@@ -143,7 +143,7 @@ function Feed(props) {
         onClick: signOut,
       })}</li>
       <li class="right">${Button({ class: 'right',
-          title: 'Perfil',
+          title: `${name}`,
           onClick: profile,
       })}</li>
     </nav>
@@ -173,7 +173,8 @@ window.feed = {
   loadFeed,
   AddPostToFirebase,
   loadCard,
-  saveEdit
+  saveEdit,
+  profile
 };
 
 export default Feed;

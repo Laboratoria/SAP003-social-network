@@ -144,7 +144,7 @@
   .logo-register {
     width: 30%;
     display: block;
-    justify-content: 50%;
+    /* justify-content: 50%; */
     margin-left: auto;
   }
   .reg {
