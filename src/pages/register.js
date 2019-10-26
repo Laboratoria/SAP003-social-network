@@ -1,4 +1,3 @@
-
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -24,20 +23,21 @@ function createLogin() {
         window.location.hash = '#login'
       }
 
-      function createProfile() {
-        const template = `<header class='header'>
-          <h1><img class='logo-feed' src='logobranco.png'/></a></h1>
-      </header>
-          <h1>Registre-se</h1>
-          <form class='register-form'>
-          ${Input({ class:'js-name-input', placeholder:'Como gostaria ser chamado?', type:'text', })}
-          ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
-          ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
-          ${Button({ class: 'primary-button', id: 'doing-login', title: 'Log In', onClick: createLogin})}
-          ${Button({ class: 'primary-button', id: 'come-back', title: 'Voltar', onClick: comeBack})}
-          </form>`;
+function createProfile() {
+    const template = `<header class='header'>
+    <h1><img class='logo-register' src='logobranco.png'/></a></h1>
+    </header>
 
-        return template;
-      }
+    <form class='register-form'>
+    <h1 class='reg'>Registre-se</h1>
+    ${Input({ class:'js-name-input', placeholder:'Como gostaria ser chamado?', type:'text', })}
+    ${Input({ class:'js-email-input', placeholder:'E-mail', type:'email', })}
+    ${Input({ class:'js-password-input', placeholder:'Senha', type:'password', })}
+    ${Button({ class: 'primary-button', id: 'doing-login', title: 'Log In', onClick: createLogin})}
+    ${Button({ class: 'primary-button', id: 'come-back', title: 'Voltar', onClick: comeBack})}
+    </form>`;
 
-export default createProfile;
+    return template;
+}
+
+export default createProfile
