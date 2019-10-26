@@ -1,4 +1,3 @@
-
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -7,24 +6,24 @@ function createLogin() {
     const password = document.querySelector('.js-password-input').value;
     const name = document.querySelector('.js-name-input').value;
     firebase.auth().createUserWithEmailAndPassword(email, password, name)
-    .then((user) => {
-      if (user) {
-        window.location.hash = '#feed';
-      }
-    })
-      .catch((error) => {
-        console.error(error.code);
-        console.error(error.message);
-        alert(`Falha ao cadastrar, verifique o e-mail e senha adicionado`)
-      });
-      }
+        .then((user) => {
+            if (user) {
+                window.location.hash = '#feed';
+            }
+        })
+        .catch((error) => {
+            console.error(error.code);
+            console.error(error.message);
+            alert(`Falha ao cadastrar, verifique o e-mail e senha adicionado`)
+        });
+}
 
-      function comeBack (){
-        window.location.hash = '#login'
-      }
+function comeBack() {
+    window.location.hash = '#login'
+}
 
-      function createProfile() {
-        const template = `
+function createProfile() {
+    const template = `
           <img class='logo' src='logoredetech.png'/>
           <h1>Login</h1>
           <form>
@@ -35,7 +34,7 @@ function createLogin() {
           ${Button({ class: 'primary-button', id: 'come-back', title: 'Voltar', onClick: comeBack})}
           </form>`;
 
-        return template;
-      }
+    return template;
+}
 
 export default createProfile;

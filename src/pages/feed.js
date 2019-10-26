@@ -2,31 +2,31 @@ import Button from '../components/button.js';
 import Post from '../components/post.js';
 
 function signOut() {
-  firebase.auth().signOut().then(() => {
-    window.location.hash = '#login';
-    alert('Agora tu saiu.');
-  });
+    firebase.auth().signOut().then(() => {
+        window.location.hash = '#login';
+        alert('Encerrada a Sessão');
+    });
 }
 
 function profile() {
-  window.location.hash = '#profile';
+    window.location.hash = '#profile';
 }
 
 function AddPostToFirebase() {
-  const dataBase = firebase.firestore();
-  const id = firebase.auth().currentUser.uid;
-  const name = firebase.auth().currentUser.displayName;
-  const textInput = document.querySelector('.textarea');
-  const post = {
-    timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
-    name,
-    text: textInput.value,
-    comments: [],
-    user_id: id,
-  };
-  dataBase.collection('posts').add(post)
-  .then((docRef) => {
-    document.querySelector('.timeline').insertAdjacentHTML('afterbegin', `
+    const dataBase = firebase.firestore();
+    const id = firebase.auth().currentUser.uid;
+    const name = firebase.auth().currentUser.displayName;
+    const textInput = document.querySelector('.textarea');
+    const post = {
+        timestamp: new Date().toLocaleDateString('pt-BR') + ' - ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
+        name,
+        text: textInput.value,
+        comments: [],
+        user_id: id,
+    };
+    dataBase.collection('posts').add(post)
+        .then((docRef) => {
+            document.querySelector('.timeline').insertAdjacentHTML('afterbegin', `
     <li class='postMessage' data-id='${docRef.id}'>
     <div class='postHeader'>${post.timestamp}</div>
     <div class='postHeader'>${post.name} disse:</div>
@@ -46,39 +46,39 @@ function AddPostToFirebase() {
       onClick: window.feed.editPost
     })}
     </li> `)
-    console.log(post)
-  });
+            console.log(post)
+        });
 }
 
 function deletePost(event) {
-  const id = event.target.dataset.id;
-  firebase.firestore().collection('posts').doc(id).delete();
-  event.target.parentElement.remove();
+    const id = event.target.dataset.id;
+    firebase.firestore().collection('posts').doc(id).delete();
+    event.target.parentElement.remove();
 }
 
 function editPost(event) {
-  const id = event.target.dataset.id;
-  document.getElementById('post_'+id).contentEditable = true;
-  document.getElementById('post_'+id).style.border = '1px solid black';
-  document.querySelector('#edit-'+id).innerHTML = '✔️';
-  document.querySelector('#edit-'+id).addEventListener('click', window.feed.saveEdit);
+    const id = event.target.dataset.id;
+    document.getElementById('post_' + id).contentEditable = true;
+    document.getElementById('post_' + id).style.border = '1px solid black';
+    document.querySelector('#edit-' + id).innerHTML = '✔️';
+    document.querySelector('#edit-' + id).addEventListener('click', window.feed.saveEdit);
 }
 
-function saveEdit () {
-  const id = event.target.dataset.id;
-  document.getElementById('post_'+id).contentEditable = false;
-  document.getElementById('post_'+id).style.border = '';
-  document.querySelector('#edit-'+id).innerHTML = '✏️';
-  const text = document.querySelector('#post_'+id).textContent;
-  firebase.firestore().collection('posts').doc(id).update({text});
-  document.querySelector('#edit-'+id).removeEventListener('click', window.feed.saveEdit);
+function saveEdit() {
+    const id = event.target.dataset.id;
+    document.getElementById('post_' + id).contentEditable = false;
+    document.getElementById('post_' + id).style.border = '';
+    document.querySelector('#edit-' + id).innerHTML = '✏️';
+    const text = document.querySelector('#post_' + id).textContent;
+    firebase.firestore().collection('posts').doc(id).update({ text });
+    document.querySelector('#edit-' + id).removeEventListener('click', window.feed.saveEdit);
 }
 
-function loadFeed () {
-  firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((post) => {
-      const postsFeed =  `<ul data-id='${post.id}' class='postMessage'>
+function loadFeed() {
+    firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((post) => {
+                const postsFeed = `<ul data-id='${post.id}' class='postMessage'>
       <li class='postHeader'>${post.data().timestamp} - ${post.data().name} disse: </li>
       <li id='post_${post.id}'>
       ${post.data().text} </li>
@@ -96,31 +96,31 @@ function loadFeed () {
         onClick: editPost,
       })}
       </ul>`;
-      document.querySelector('.timeline').innerHTML += postsFeed;
-    });
-  });
+                document.querySelector('.timeline').innerHTML += postsFeed;
+            });
+        });
 }
 
-function loadCard () {
-  firebase.firestore().collection('persona').get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((persona) => {
-      const cardFeed =  `<li data-id='${persona.id}' class='card'>
+function loadCard() {
+    firebase.firestore().collection('persona').get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((persona) => {
+                const cardFeed = `<li data-id='${persona.id}' class='card'>
       ${persona.data().name} <br>
       ${persona.data().profession}
   </li>
     </div>
   `;
-  document.querySelector('.cardProfile').innerHTML = cardFeed;
-      });
-    });
+                document.querySelector('.cardProfile').innerHTML = cardFeed;
+            });
+        });
 }
 
 function Feed(props) {
-  const name = firebase.auth().currentUser.displayName;
-  let postsLayout = '';
-  props.posts.forEach((post) => {
-    postsLayout += `
+    const name = firebase.auth().currentUser.displayName;
+    let postsLayout = '';
+    props.posts.forEach((post) => {
+        postsLayout += `
       <li  class='postMessage' data-id='${post.id}'>
       ${post.name}
       ${post.timestamp}<br>
@@ -128,12 +128,12 @@ function Feed(props) {
       ${Button({  dataId: post.id, class: 'primary-button', title: '🗑️', onClick: deletePost,})}
       </li>
     `;
-  });
+    });
 
-  window.feed.loadFeed();
-  window.feed.loadCard();
+    window.feed.loadFeed();
+    window.feed.loadCard();
 
-  const template = `
+    const template = `
   <header class='header'>
     <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
     <nav>
@@ -147,6 +147,7 @@ function Feed(props) {
       })}</li>
     </nav>
 </header>
+  <h2>Post</h2>
   <div class='post'>
   ${Post({
     class: 'textarea',
@@ -161,9 +162,8 @@ function Feed(props) {
   })}
   <div>
   <ul class= 'timeline'>${postsLayout}</ul>
-  <ul class= 'cardProfile'>${postsLayout}</ul>
+  <ul class= 'cardProfile'></ul>
   `;
-
   return template;
 }
 
