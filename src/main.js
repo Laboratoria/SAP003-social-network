@@ -27,7 +27,7 @@ function init() {
       }
     } else {
       window.location.hash ==='#register';;
-      document.querySelector('main').innerHTML = Register();
+      document.querySelector('main').innerHTML = Login();
     }
   });
 

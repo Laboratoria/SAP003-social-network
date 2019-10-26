@@ -1,8 +1,6 @@
 /* eslint-disable indent */
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Div from '../components/div.js';
-import Card from '../components/card.js';
 
 function changePg() {
   window.location.href = '#register';
@@ -36,46 +34,57 @@ function googleSignIn() {
 function enviarLogin() {
   const email = document.querySelector('.email-input').value;
   const password = document.querySelector('.senha-input').value;
-  
+
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      window.location.href = '#feed';
-      }).catch((error) => {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
+    window.location.href = '#feed';
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
   });
 }
 
 function Login() {
   const template = `
-    ${Input({
-      class: 'email-input',
-      placeholder: 'email',
-      type: 'text',
-    })}
-    ${Input({
-      class: 'senha-input',
-      placeholder: 'password',
-      type: 'password',
-    })}
+  
+ <header class="header-reg">
+        <img src = "./images/transparent.png" alt="logo" class="logo"> 
+        <h1 class="top-banner">Você mais conectada(o) com a Astronomia! </h1>
+  
+        </header>
+        <form class="form-register">
+        <p class="cad"> Bem vinda(o)!</p>
+            ${Input({
+    class: 'email-input',
+    placeholder: 'E-mail: henrietta@gmail.com',
+    type: 'text',
+  })}
+            ${Input({
+    class: 'senha-input',
+    placeholder: 'Senha',
+    type: 'password',
+  })}
+              ${Button({
+    id: 'enviar',
+    title: 'Login',
+    onClick: enviarLogin,
+
+  })}
     ${Button({
-      id: 'enviar',
-      title: 'Login',
-      onClick: enviarLogin,
-      
-    })}
+    id: 'google',
+    title: '<i class="fab fa-google"></i>',
+    onClick: googleSignIn,
+  })}
     ${Button({
-      id: 'google',
-      title: '<i class="fab fa-google"></i>',
-      onClick: googleSignIn,
-    })}
-    ${Button({
-      id: 'cadastrar',
-      title: 'Cadastrar',
-      onClick: changePg,
-    })}
-  `;    
+    id: 'cadastrar',
+    title: 'Cadastrar',
+    onClick: changePg,
+  })}
+   
+        </form>
+    `;
   return template;
 }
+
 export default Login;
