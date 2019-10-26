@@ -91,7 +91,6 @@ const like = (id, event) => {
 	})
 }
 
-
 const deletar = (id, event) => {
 	firebase.firestore().collection('posts').doc(id).delete();
 	document.getElementById(id).parentElement.remove();
@@ -141,8 +140,6 @@ const hash = () => {
 		return about();
 	}
 }
-//mudança de hash #
-
 
 window.mural = mural;
 

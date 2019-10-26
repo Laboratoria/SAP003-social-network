@@ -1,6 +1,14 @@
 import Button from "../components/button.js";
 import Input from "../components/input.js";
 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  	window.location.hash = 'mural';
+  } else {
+    // No user is signed in.
+  }
+});
+
 const login = (id, event) => {
 	event.preventDefault();
 
@@ -9,11 +17,11 @@ const login = (id, event) => {
 	const password = document.getElementById('pass-login').value;
 
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-  alert(errorMessage);
+  	// Handle Errors here.
+  	var errorCode = error.code;
+  	var errorMessage = error.message;
+  	// ...
+  	alert(errorMessage);
 	});
 }
 
@@ -41,13 +49,9 @@ const loginGoogle = (id, event) => {
 	});
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-  	window.location.hash = 'mural';
-  } else {
-    // No user is signed in.
-  }
-});
+const signUp = (id) => {
+	window.location.hash = id;
+}
 
 export function Home() {
 	const template = `
@@ -70,10 +74,6 @@ export function Home() {
 	window.location.hash = "home";
 
 	return template;
-}
-
-const signUp = (id) => {
-	window.location.hash = id;
 }
 
 export default Home;
