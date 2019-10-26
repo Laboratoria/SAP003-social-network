@@ -12,6 +12,8 @@
 
 Nesta aplicação web o usuário poderá interagir de forma criativa no clima de bruxaria. O projeto tem como objetivo integrar pessoas que compartilham da mesma ideia ou que estajam disponíveis a aprender novos feitiços ou curiosidades.
 
+Projeto: [Witchy](https://rede-social-ba65a.firebaseapp.com/)
+
 2. Funcionamento
 
 A aplicação *mobile first* dá ao usuário a possibilidade de se cadastrar, fazer login com conta Google e login via email e senha.
