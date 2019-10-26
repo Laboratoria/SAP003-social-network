@@ -106,10 +106,10 @@ function loadCard () {
     .then((querySnapshot) => {
       querySnapshot.forEach((persona) => {
       const cardFeed =  `<li data-id='${persona.id}' class='card'>
+      <img src='${persona.data().photo}' width='60px' height='60px'/><br>
       ${persona.data().name} <br>
-      ${persona.data().profession}
+      ${persona.data().profession}<br>
   </li>
-    </div>
   `;
   document.querySelector('.cardProfile').innerHTML = cardFeed;
       });

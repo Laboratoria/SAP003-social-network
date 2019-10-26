@@ -1,23 +1,21 @@
-
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function createLogin() {
     const email = document.querySelector('.js-email-input').value;
     const password = document.querySelector('.js-password-input').value;
-    const name = document.querySelector('.js-name-input').value;
-    firebase.auth().createUserWithEmailAndPassword(email, password, name)
-    .then((user) => {
-      if (user) {
-        window.location.hash = '#feed';
-      }
-    })
-      .catch((error) => {
+    const name = document.querySelector('.js-name-input').value;  
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
         console.error(error.code);
         console.error(error.message);
         alert(`Falha ao cadastrar, verifique o e-mail e senha adicionado`)
-      });
-      }
+      })
+      .then((cred) => {
+          cred.user.updateProfile({
+          displayName: name,
+        });
+      })
+    }
 
       function comeBack (){
         window.location.hash = '#login'
