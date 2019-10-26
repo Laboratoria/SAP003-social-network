@@ -30,7 +30,7 @@ function savePost() {
       idname: firebase.auth().currentUser.displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
     })
-    .then(function (docRef) {    
+    .then(function () {    
       app.loadPost()
     })
     document.querySelector('.post').value = '';  
@@ -69,10 +69,14 @@ function addPost(post) {
 
   db.collection(`post/${post.id}/comments`).orderBy('timestamp', 'desc').get()
   .then((snapcomments) => {
-    snapcomments.forEach((comment) => {      
+    snapcomments.forEach((comment) => {
+      
+
       const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
       
-      feedcom.innerHTML += `Comentado por ${comment.data().idname} em ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
+      feedcom.innerHTML += `Comentado por ${comment.data().idname} em 
+      ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
+      ${Button({ dataId: comment.id, dataId2: comment.postId, class: "button-feed", onClick: deleteCom, title:'🗑' })}      
       <br>
       ${comment.data().txtComment}
       <p class="border"></p>
@@ -178,7 +182,8 @@ function saveComments(event) {
   db.collection(`post/${id}/comments`).add({
     txtComment: txtComment,    
     uid: uid,
-    idname: firebase.auth().currentUser.displayName,
+    postId: id,
+    idname: firebase.auth().currentUser.displayName,    
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
   .then(() => {
@@ -208,6 +213,21 @@ function deletePost(event) {
   const id = event.target.dataset.id;  
   db.collection('post').doc(id).delete();  
   event.target.parentElement.remove();
+};
+
+function deleteCom(event) {
+  const id = event.target.parentElement.dataset.id;
+  const id2 = event.target.dataset.id;
+  /* const user = firebase.auth().currentUser.uid;
+  const uid = db.collection('comments').doc(id2).uid
+  console.log(uid)
+  console.log(user) */
+  
+  db.collection(`post/${id}/comments`).doc(id2).delete();
+  event.target.parentElement.remove();
+  
+  app.loadPost();
+
 };
 
 
