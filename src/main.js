@@ -1,21 +1,36 @@
 import { Home } from "../pages/home.js";
 import { Cadastro } from "../pages/cadastro.js";
 import { PaginaInicial } from "../pages/paginainicial.js"
-import { Mural } from "../pages/mural.js"
+import Mural from "../pages/mural.js"
 import { About } from "../pages/editarperfil.js"
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Input from '../components/input.js';
 
-function init() {
-	document.querySelector("main").innerHTML = Home();
+const init = () => {
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    window.location.hash = 'mural';
+    window.addEventListener('load', feed);
+  } else {
+    // No user is signed in.
+    window.location.hash = 'home';
+  }
+})
 }
+
+// const init = () => {
+
+// 			document.querySelector('main').innerHTML = Home();
+// }
 
 const cad = () => {
 	document.querySelector("main").innerHTML = Cadastro();
 }
 
-const mural = () => {
+const feed = () => {
 	const user = firebase.auth().currentUser;
 
 	const allPosts = firebase.firestore().collection('posts');
@@ -130,22 +145,19 @@ const about = () => {
 	document.querySelector("main").innerHTML = About({ template });
 }
 
-
 const hash = () => {
 	if (location.hash === "#sign") {
 		return cad();
 	} else if (location.hash === "#mural") {
 		return mural();
-	} else if (location.hash === "#home") {
+	}	else if (location.hash === "#home") {
 		return init();
 	}	else if (location.hash === "#editar") {
 		return about();
 	}
 }
-//mudança de hash #
 
-
-window.mural = mural;
+window.mural = feed;
 
 window.addEventListener("load", init);
 window.addEventListener("hashchange", hash, false);

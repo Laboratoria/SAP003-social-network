@@ -1,14 +1,6 @@
 import Button from "../components/button.js";
 import Input from "../components/input.js";
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-  	window.location.hash = 'mural';
-  } else {
-    // No user is signed in.
-  }
-});
-
 const login = (id, event) => {
 	event.preventDefault();
 

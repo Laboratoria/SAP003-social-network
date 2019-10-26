@@ -2,7 +2,7 @@ import Button from "../components/button.js";
 import Select from "../components/select.js";
 import Post from "../components/post.js";
 
-export const Mural = (props) => {
+const Mural = (props) => {
 
 	const template = `
 	<header class="navbar">
@@ -33,6 +33,8 @@ export const Mural = (props) => {
 	<ul id='comment-icon'>
 	${props.postsLayout}
 	`;
+
+	window.location.hash = 'mural';
 
 	return template;
 }
@@ -78,3 +80,5 @@ const logout = () => {
 
 window.changeSelect
 	= changeSelect;
+
+export default Mural;
