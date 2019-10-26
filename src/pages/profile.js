@@ -35,7 +35,7 @@ function profile() {
     <div class= "post-area">
       <img class="img-user" src="./img/profile_girl.png"/>     
       <br>     
-      <h1>Nome:${firebase.auth().currentUser.displayName}</h1>
+      <h1>Nome: ${firebase.auth().currentUser.displayName}</h1>
       <h2>E-mail: </h2>
       </div>
     <br>    
