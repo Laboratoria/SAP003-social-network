@@ -161,7 +161,7 @@ label[for="navigation"] {
 .menu li {
   display: block;
   text-align: center;
-  background-color: #FF645A;
+  background-color: #7BA651;
   color: rgb(255, 255, 255);
 }
 
@@ -334,6 +334,14 @@ select {
   color: #FFFFFF;
   background: #9FBE80;
   border: none;
+}
+
+.inp-image-profile {
+  background: #FFFFFF;
+  box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);
+  border-radius: 9px;
+  padding: 10px;
+  margin-top: 29px;
 }
 
 @media (min-width: 1280px) {
