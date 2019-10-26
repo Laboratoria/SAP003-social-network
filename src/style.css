@@ -14,7 +14,7 @@
 
 body {
   background-color: #897ac3;
-  background-image: linear-gradient(#897ac3, #897ac3, #897ac3, #897ac3, #897ac3, #A894F2, #D2BBF2, white);
+  background-image: linear-gradient(#897ac3, #897ac3, #897ac3, #A894F2, #D2BBF2, white);
   display: flex;
   align-items: center;
 }
@@ -89,7 +89,7 @@ h1, h2, h3 {
   font-size: 16px;
 }
 
-/*----------TELA WEB SITE -----------*/
+/*----------TELA DESKTOP-----------*/
 
 @media screen and (min-width: 500px) {
   * {
@@ -98,7 +98,7 @@ h1, h2, h3 {
   }
   body {
     background-color: #897ac3;
-    background-image: linear-gradient(to bottom right, #7a5daa, #886bb7, #8278cb, #897ac3, #897ac3, #A894F2, #D2BBF2, white);
+    background-image: linear-gradient(to bottom right, #7a5daa, #886bb7, #8278cb, #897ac3, #A894F2, #D2BBF2, white);
     align-items: center;
     padding-top: 50px;
   }
