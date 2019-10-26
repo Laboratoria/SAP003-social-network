@@ -54,15 +54,15 @@ export function Home() {
 	<container class="home">
 	 <img src = images/Witchy-logo.png class="logo"/>
 	 <section class="login">
-	  <h1 class="homepage-title">Share your spells...</h1>
+	  <h1 class="homepage-title">Compartilhe seus feitiços...</h1>
 	  <form class="login-form">
-	   ${Input ({ id:'email-login', placeholder:'Login', type:'email'})}
+	   ${Input ({ id:'email-login', placeholder:'E-mail', type:'email'})}
 	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})} <br>
-	   ${Button({ class:'btn-login', id:'login', title: 'Login', onclick: login})} <br>
+	   ${Button({ class:'btn-login', id:'login', title: 'Entrar', onclick: login})} <br>
 	  </form>
 	  <div class="buttons">
-	   ${Button({ class:'btn-google' , id:'google-login', title: '<img src="https://img.icons8.com/ios-glyphs/18/000000/google-logo.png" class="google-logo"> SIGN IN WITH GOOGLE', type:'submit', onclick: loginGoogle})} <br>
-	   ${Button({ class:'btn-sign-up', id:'sign', title: 'Sign Up', type:'submit', onclick: signUp})} 
+	   ${Button({ class:'btn-google' , id:'google-login', title: '<img src="https://img.icons8.com/ios-glyphs/18/000000/google-logo.png" class="google-logo"> ENTRAR COM GOOGLE', type:'submit', onclick: loginGoogle})} <br>
+	   ${Button({ class:'btn-sign-up', id:'sign', title: 'Ainda não é membro? Cadastre-se', type:'submit', onclick: signUp})} 
 	  </div>
 	  </section>
 	</container>`;

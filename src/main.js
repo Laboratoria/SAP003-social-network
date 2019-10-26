@@ -2,7 +2,7 @@ import { Home } from "../pages/home.js";
 import { Cadastro } from "../pages/cadastro.js";
 import { PaginaInicial } from "../pages/paginainicial.js"
 import { Mural } from "../pages/mural.js"
-//import { EditarPerfil } from "../pages/editarperfil.js"
+import { About } from "../pages/editarperfil.js"
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Input from '../components/input.js';
@@ -40,10 +40,9 @@ const mural = () => {
 					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
 					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
-					<span like-id='${post.id}' class="like">${post.data().likes}</span>
-					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
-					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
-					
+					<p like-id='${post.id}' class="like">${post.data().likes}</p>
+						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
+						${Button({ class: 'btn-comment', id: post.id, title:'Comentar', onclick: commentarPost })}
 					<ul>
 						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
 					</ul>
@@ -53,7 +52,7 @@ const mural = () => {
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true">${post.data().text}</p>
+					<p post-id='${post.id}'>${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
@@ -67,16 +66,12 @@ const mural = () => {
 				</li>
 				`;
 			}
-					
 					document.querySelector("main").innerHTML = Mural({ postsLayout });
 		
-				})
-		
-			
+				})	
 		})
 	})
 }
-
 
 const editar = (id, event) => {
 	const user = firebase.auth().currentUser;
@@ -105,37 +100,34 @@ const deletar = (id, event) => {
 const commentarPost = (id, event) => {
 	const input = document.querySelector(`input[data-id='${id}']`);
 	firebase.firestore().collection(`posts/${id}/comments`).add({ text: input.value });
-	event.target.parentElement.innerHTML += `<p>${input.value}</p>`
+	event.target.parentElement.innerHTML += `<p class='ja'>${input.value}</p>`
 }
 
+const about = () => {
 
-// const editarPerfil = () => {
-	
-// 	const user = firebase.auth().currentUser;
-// 	var name, email, phoneNumber, photoUrl, uid, emailVerified;
+	const template = `
+		<section class='texto'>
+			<h1 class='sobre-titulo'>Sobre</h1>
+			<p class='sobre-texto'>resumo do readme</p>
+		</section>
+		<section class='imagens-das-desenvolvedoras'>
+			<div class='dev'>
+				<img>
+				<p>Évora</p>
+			</div>
+			<div class='dev'>
+				<img>
+				<p>Jéssica</p>
+			</div>
+			<div class='dev'>
+				<img>
+				<p>Maria Carolina</p>
+			</div>
+		</section>
+	`;
 
-// 	if (user != null) {
-//   	name = user.displayName;
-//   	email = user.email;
-//   	phoneNumber = user.phoneNumber;
-//   	photoUrl = user.photoURL;
-//   	emailVerified = user.emailVerified;
-//   	uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-//                    // this value to authenticate with your backend server, if
-//                    // you have one. Use User.getToken() instead.
-// 	}	
-
-// 	console.log(user)
-
-// 	const template = `
-// 		<p>${name}</p>
-// 		<p>${email}</p>
-// 		<p>${phoneNumber}</p>
-// 		<p></p>
-// 	`;
-
-// 	document.querySelector("main").innerHTML = EditarPerfil({ template });
-// }
+	document.querySelector("main").innerHTML = About({ template });
+}
 
 
 const hash = () => {
@@ -145,10 +137,9 @@ const hash = () => {
 		return mural();
 	} else if (location.hash === "#home") {
 		return init();
-	} 
-	// else if (location.hash === "#editar") {
-	// 	return editarPerfil();
-	// }
+	}	else if (location.hash === "#editar") {
+		return about();
+	}
 }
 //mudança de hash #
 
