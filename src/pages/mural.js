@@ -11,7 +11,7 @@ export const Mural = (props) => {
 				<li class='dropdown-menu'>
 					<select class='menu-dropdown' id='select' onchange='changeSelect()'>
 						${Select({ name: 'Mural', id: 'mural', class: 'class-mural', value: 'mural', selected: 'selected' })}
-						${Select({ name: 'Editar Perfil', id: 'editar-perfil', class: 'class-editar-perfil', value: 'editar' })}
+						${Select({ name: 'Sobre', id: 'editar-perfil', class: 'class-editar-perfil', value: 'editar' })}
 					</select>
 				</li>
 				<li><img class='nav-logo' src='images/witchy-navbar.png' alt='navlogo'> </li>

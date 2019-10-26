@@ -44,16 +44,16 @@ const mural = () => {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
 					<p post-id='${post.id}' contenteditable='true' class='post'>${post.data().text}</p>
-					<p>${post.data().date}</p>
-					<p>${post.data().name}</p>
+					<p class='date'>${post.data().date}</p>
+					<p class='user'>${post.data().name}</p>
 					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
 					${Button({ class: 'btn-edit', id: post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
 					<p like-id='${post.id}' class="like">${post.data().likes}</p>
 						${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 						${Button({ class: 'btn-comment', id: post.id, title:'Comentar', onclick: commentarPost })}
-					<ul>
-						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
+					<ul class='comments'>
+						${comments.map(comment => `<li class='comment'>${comment.text}</li>`).join("")}
 					</ul>
 				</li>
 				`;
@@ -61,16 +61,16 @@ const mural = () => {
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}'>${post.data().text}</p>
-					<p>${post.data().date}</p>
-					<p>${post.data().name}</p>
+					<p post-id='${post.id}' class='post'>${post.data().text}</p>
+					<p class='date'>${post.data().date}</p>
+					<p class='user'>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
 					<p like-id='${post.id}' class='like'>${post.data().likes}</p>
 					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
 					
-					<ul>
-						${comments.map(comment => `<li>${comment.text}</li>`).join('')}
+					<ul class='comments'>
+						${comments.map(comment => `<li class='comment'>${comment.text}</li>`).join('')}
 					</ul>
 				</li>
 				`;
@@ -117,20 +117,20 @@ const about = () => {
 	const template = `
 		<section class='texto'>
 			<h1 class='sobre-titulo'>Sobre</h1>
-			<p class='sobre-texto'>resumo do readme</p>
+			<p class='sobre-texto'>Nesta aplicação web o usuário poderá interagir de forma criativa no clima de bruxaria. O projeto tem como objetivo integrar pessoas que compartilham da mesma ideia ou que estajam disponíveis a aprender novos feitiços ou curiosidades.</p>
 		</section>
 		<section class='imagens-das-desenvolvedoras'>
 			<div class='dev'>
-				<img>
-				<p>Évora</p>
+				<img class='imagem' src='../images/evora.png'>
+				<p class='nome'><a href='https://github.com/e-v-s' target='_blank'>Évora</a></p>
 			</div>
 			<div class='dev'>
-				<img>
-				<p>Jéssica</p>
+				<img class='imagem' src='../images/jessica.png'>
+				<p class='nome'><a href='https://github.com/jpbnascimento' target='_blank'>Jéssica</a></p>
 			</div>
 			<div class='dev'>
-				<img>
-				<p>Maria Carolina</p>
+				<img class='imagem' src='../images/maria.png'>
+				<p class='nome'><a href='https://github.com/jpbnascimento/' target='_blank'>Maria Carolina</a></p>
 			</div>
 		</section>
 	`;

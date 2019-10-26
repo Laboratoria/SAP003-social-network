@@ -41,13 +41,6 @@ const loginGoogle = (id, event) => {
 	});
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-  	window.location.hash = '#mural';
-  } else {
-    // No user is signed in.
-  }
-})
 
 export function Home() {
 	const template = `

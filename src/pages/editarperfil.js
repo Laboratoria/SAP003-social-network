@@ -9,7 +9,7 @@ export const About = (props) => {
 				<li class='dropdown-menu'>
 					<select class='menu-dropdown' id="select" onchange="changeSelect()">
 					${Select({name:'Mural', id:'mural', class:'class-mural', value:'mural'})}
-					${Select({name:'Editar Perfil', id:'editar-perfil', class:'class-editar-perfil', value:'editar', selected:'selected'})}
+					${Select({name:'Sobre', id:'editar-perfil', class:'class-editar-perfil', value:'editar', selected:'selected'})}
 					</select>
 				</li>
 				<li><img class='nav-logo' src='images/witchy-navbar.png' alt='navlogo'></li>

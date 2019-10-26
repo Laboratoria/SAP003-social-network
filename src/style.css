@@ -293,10 +293,26 @@ body {
   border: 20px;
   border-color: #737373;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .post {
-  font-size: 25px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.date, .user {
+  border: 1px solid #737373;
+}
+
+.date {
+  margin-top: 20px;
+}
+
+.user {
+  margin-bottom: 20px;
 }
 
 .class-mural {
@@ -344,6 +360,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 22px;
+  width: 600px;
 }
 
 .btn-delete, .btn-edit, .btn-likes {
@@ -359,6 +376,10 @@ body {
   justify-content: center; 
 }
 
+.btn-delete:hover, .btn-edit:hover, .btn-likes:hover, .btn-comment:hover, .btn-post:hover {
+  background: #292828;
+}
+
 .btn-comment {
   cursor: pointer; 
   width: 66px; 
@@ -371,10 +392,21 @@ body {
   justify-content: center; 
 }
 
-.comment {
+.comments {
+  margin: 20px 0;
   display: flex;
-  flex-direction: row;
+  align-content: center;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment {
+  margin: 20px 0;
+  border: 1px solid #737373;
+  padding: 10px 0;
+  text-align: left;
+  width: 300px;
 }
 
 .icon-like, .icon-edit {
@@ -403,6 +435,8 @@ body {
   border: none;
   color: #737373;
 }
+
+
 
 .btn-edit, .btn-likes, .post-comment, .btn-comment {
   outline: none;
@@ -437,6 +471,22 @@ body {
     align-self: center;
   } 
   /* Fim da Home */ 
+
+  /*MURAL*/
+  .comments {
+    margin: 20px 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .comment {
+    margin: 20px 0;
+    border: 1px solid #737373;
+    padding: 10px 0;
+    text-align: left;
+  }
 } 
   
    
@@ -571,8 +621,120 @@ body {
     border-radius: 10px 10px; 
     padding: 10px;
     margin: 10px;
+    width: 300px;
   }
  /*Fim de mural*/
   } 
 
 /*ABOUT*/
+
+.texto {
+  display: flex;
+  border: 1px solid white;
+  justify-content: center;
+  width: 700px;
+  align-items: baseline;
+  padding: 50px;
+  margin: 50px auto;
+}
+
+.sobre-titulo {
+  margin-right: 30px;
+}
+
+.sobre-texto {
+  width: 500px;
+  text-align: justify;
+}
+
+.imagens-das-desenvolvedoras {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dev {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagem {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.nome {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.nome>a {
+  color: #AA4528;  
+  text-decoration: none;
+  outline: none;
+}
+
+.nome>a:hover {
+  color: #292828;
+}
+
+@media screen and (max-width: 420px) {
+  .texto {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sobre-texto {
+    width: 200px;
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+
+  .imagens-das-desenvolvedoras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nome {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+
+
+@media screen and (max-width: 920px) {
+  .texto {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    align-items: baseline;
+    padding: 50px;
+    margin: 50px auto;
+  }
+
+  .sobre-titulo {
+    margin-right: 30px;
+  }
+  
+  .sobre-texto {
+    width: 400px;
+    text-align: justify;
+  }
+
+  .imagens-das-desenvolvedoras {
+    display: flex;
+    justify-content: space-around;
+    /*align-items: center;*/
+  }
+
+  .nome {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+
