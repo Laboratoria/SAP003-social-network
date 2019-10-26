@@ -138,7 +138,7 @@ function Feed(props) {
     <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
     <nav>
         <li class="left">${Button({ class: 'left',
-        title: '🚪Encerrar Sessão',
+        title: '🚪Sair',
         onClick: signOut,
       })}</li>
       <li class="right">${Button({ class: 'right',
@@ -161,6 +161,7 @@ function Feed(props) {
     onClick: AddPostToFirebase,
   })}
   <div>
+  <ul class= 'cardProfile'></ul>
   <ul class= 'timeline'>${postsLayout}</ul>
   <ul class= 'cardProfile'></ul>
   `;

@@ -118,16 +118,17 @@ function Profile() {
     window.profile.loadProfile();
 
     const template = `
-  <header class='header'>
-    <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
-    <nav>
-        <li class="left">${Button({ class: 'left',
-        title: '🚪Encerrar Sessão',
-        onClick: signOut,
-      })}</li>
-      <li class="right">${Button({ class: 'right',
-          title: 'Feed',
-          onClick: Prev,
+    <header class='header'>
+      <h1><img class='logo-feed' src='logobranco.png'/></a></h1>
+          ${Button({ class: 'left',
+          title: '🚪Sair',
+          onClick: signOut,
+        })}
+        ${Button({ class: 'right',
+            title: 'Feed',
+            onClick: Prev,
+        })}
+  </header>
       })}</li>
     </nav>
 </header>
