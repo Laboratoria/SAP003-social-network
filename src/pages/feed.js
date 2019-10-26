@@ -135,19 +135,18 @@ function Feed(props) {
 
   const template = `
   <header class='header'>
-    <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
+    <h1><img class='logo-feed' src='logobranco.png'/></a></h1>
     <nav>
         <li class="left">${Button({ class: 'left',
         title: '🚪Encerrar Sessão',
         onClick: signOut,
       })}</li>
       <li class="right">${Button({ class: 'right',
-          title: `${name}`,
+          title: 'Perfil',
           onClick: profile,
       })}</li>
     </nav>
 </header>
-  <h2>Post</h2>
   <div class='post'>
   ${Post({
     class: 'textarea',
@@ -161,8 +160,8 @@ function Feed(props) {
     onClick: AddPostToFirebase,
   })}
   <div>
-  <ul class= 'timeline'>${postsLayout}</ul>
   <ul class= 'cardProfile'></ul>
+  <ul class= 'timeline'>${postsLayout}</ul>
   `;
   return template;
 }
