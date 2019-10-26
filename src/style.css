@@ -4,7 +4,10 @@
   font-size: 100%;
   border: none;
   outline: none;
-  font-weight: 300; 
+  font-weight: 300;
+  font-family: 'Chewy', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-family: 'Numans', sans-serif; 
 }
 
 body {
@@ -35,10 +38,10 @@ nav {
 
 nav ul {
   margin: 0 auto;
+  margin-right: 10px;
   padding: 0;
   list-style-type: none;
   display: flex;
-
 }
 
 nav ul li {
@@ -138,18 +141,20 @@ section {
 
 .header-home {
   background: black;
-  text-align: center;
-   
+  text-align: center;   
 }
 
-.img-user{  
+.img-user {  
   width: 60px;
   height: 60px;
   background: url(./img/profile_girl.png) center center/60px no-repeat;
-  margin-left: 10px;
+  margin-left: 40px;
   margin-right: 10px;
-  border: none;
-  
+  border: none;  
+}
+
+.option { 
+  margin-left: 120px;    
 }
 
 
@@ -158,13 +163,13 @@ section {
   font-size: 14px;
   margin-top: 0;
   margin-right: 10px;
-   
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;  
 }
 
 .post-area {
   padding-top: 20px;
-  font-family: 'Josefin Sans', sans-serif;
-  
+  font-family: 'Josefin Sans', sans-serif;  
 }
 
 .post {
@@ -172,8 +177,7 @@ section {
   width: 215px;
   height: 50px;
   resize: none;
-  border-radius: 3px;
-     
+  border-radius: 3px;     
 }
 
 .txtcom {
@@ -185,8 +189,7 @@ section {
   height: 50px;
   resize: none;
   border-radius: 3px;
-  box-shadow: 0 0 0.5em rgb(104, 212, 212);
-   
+  box-shadow: 0 0 0.5em rgb(104, 212, 212);   
 }
 
 .post-list { 
@@ -204,7 +207,6 @@ section {
 
 .idname {
   font-weight: bold;
-
 }
 
 .border {
@@ -220,16 +222,15 @@ section {
   font-size: 12px;
   background-color: #fffbad00;
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column;  
 }
+
 .button-home {
   color: black;
   font-size: 16px;
   background-color: #fffbad00;
   margin-left: auto;
 }
-
 
 .button-out {
   margin-right: auto;
@@ -252,8 +253,7 @@ section {
   border: none;
   cursor: pointer;
   font-size: 18px;
-  background-color: #fffbad00;   
-
+  background-color: #fffbad00;
 }
 
 .button-save {
@@ -263,6 +263,14 @@ section {
   background-color: #fffbad00;  
   visibility: hidden;
   align-content: flex-end;
+}
+
+.button-delcom {
+  margin-right: auto;
+  font-size: 12px;
+  color: black;
+  background-color: #fffbad00;
+  cursor: pointer;
 }
 
 .show {  
@@ -277,15 +285,23 @@ section {
   display: none;
 }
 
+.profile-area {
+  padding-top: 0px;  
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 
 @media screen and (min-width: 768px) {
   .login {
     display: flex;
     margin: 0 auto;
   }
-  .login-form{
+
+  .login-form {
     width: 50%;
-  }
+  }  
+
   .logo {
     width: 450px;
     height: 450px;
@@ -293,22 +309,19 @@ section {
   }
 
   .js-namefull-input {
-    margin-top: 100px; 
-    
+    margin-top: 100px;    
   }
 
   .js-email-input {
     margin-top: 5px; 
     border-color: black;
-    border-top-style: inset;
-  
+    border-top-style: inset;  
   }
 
   .js-password-input {
     margin-top: 5px; 
     border-color: black;
-    border-top-style: inset;
-  
+    border-top-style: inset;  
   }
 
   .primary-button {  
@@ -317,5 +330,22 @@ section {
   
   .phrase {
     font-size: 16px;
+  }
+
+  .img-user {    
+    margin-left: 80px;    
+  }
+
+  .option { 
+    margin-left: 160px;      
+  }
+
+  .post {    
+    width: 415px;
+    height: 50px;       
+  }
+
+  .id-user {    
+    font-size: 16px;       
   }
 }
