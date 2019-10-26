@@ -1,3 +1,4 @@
+ 
 import Button from "../components/button.js";
 import Input from "../components/input.js";
 import Post from '../components/post.js';
@@ -51,5 +52,4 @@ export const Cadastro = () => {
 const goHome = () => {
 	window.location.hash = 'home';
 }
-
 

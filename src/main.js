@@ -1,19 +1,28 @@
-import { Home } from "../pages/home.js";
-import { Cadastro } from "../pages/cadastro.js";
-import { PaginaInicial } from "../pages/paginainicial.js"
-import { Mural } from "../pages/mural.js"
-import { About } from "../pages/editarperfil.js"
+import { Home } from '../pages/home.js';
+import { Cadastro } from '../pages/cadastro.js';
+import { PaginaInicial } from '../pages/paginainicial.js'
+import { Mural } from '../pages/mural.js'
+import { About } from '../pages/editarperfil.js'
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Input from '../components/input.js';
 
 function init() {
-	document.querySelector("main").innerHTML = Home();
+	document.querySelector('main').innerHTML = Home();
 }
 
 const cad = () => {
-	document.querySelector("main").innerHTML = Cadastro();
+	document.querySelector('main').innerHTML = Cadastro();
 }
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  	window.location.hash = '#mural'
+  } else if (window.location.hash === '#home'){
+    // No user is signed in.
+  }
+})
 
 const mural = () => {
 	const user = firebase.auth().currentUser;
@@ -34,7 +43,7 @@ const mural = () => {
 			if (post.data().userID === user.uid) {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
-					<p post-id='${post.id}' contenteditable="true" class="post">${post.data().text}</p>
+					<p post-id='${post.id}' contenteditable='true' class='post'>${post.data().text}</p>
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-delete', id: post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
@@ -56,19 +65,19 @@ const mural = () => {
 					<p>${post.data().date}</p>
 					<p>${post.data().name}</p>
 					${Button({ class: 'btn-likes', id: post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
-					<p like-id="${post.id}" class="like">${post.data().likes}</p>
+					<p like-id='${post.id}' class='like'>${post.data().likes}</p>
 					${Input({ class: 'input-comment', dataId: post.id, placeholder: 'Comentários', type: 'text' })}
 					${Button({ class: 'btn-comment', id: post.id, title: 'Comentar', onclick: commentarPost })}
 					
 					<ul>
-						${comments.map(comment => `<li>${comment.text}</li>`).join("")}
+						${comments.map(comment => `<li>${comment.text}</li>`).join('')}
 					</ul>
 				</li>
 				`;
 			}
-					document.querySelector("main").innerHTML = Mural({ postsLayout });
+				document.querySelector('main').innerHTML = Mural({ postsLayout });
 		
-				})	
+			})	
 		})
 	})
 }
@@ -126,25 +135,23 @@ const about = () => {
 		</section>
 	`;
 
-	document.querySelector("main").innerHTML = About({ template });
+	document.querySelector('main').innerHTML = About({ template });
 }
 
 
 const hash = () => {
-	if (location.hash === "#sign") {
+	if (location.hash === '#sign') {
 		return cad();
-	} else if (location.hash === "#mural") {
+	} else if (location.hash === '#mural') {
 		return mural();
-	} else if (location.hash === "#home") {
+	} else if (location.hash === '#home') {
 		return init();
-	}	else if (location.hash === "#editar") {
+	}	else if (location.hash === '#editar') {
 		return about();
 	}
 }
-//mudança de hash #
-
 
 window.mural = mural;
 
-window.addEventListener("load", init);
-window.addEventListener("hashchange", hash, false);
+window.addEventListener('load', init);
+window.addEventListener('hashchange', hash, false);
