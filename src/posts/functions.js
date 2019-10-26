@@ -80,20 +80,15 @@ function DeleteComment(postid) {
 
 function PrivacyPost(postId, option){
   const docPost = db.collection('posts').doc(postId);
-  if(option === 'fa-globe'){
     docPost.update({
-      privacy: "public"
+      privacy: option
     });
-  } else if(option === 'fa-lock') {
-    docPost.update({
-      privacy: "private"
-    });
-  }
 }
 
 function saveEdit() {
   const id = event.target.dataset.id;
   const postText = document.getElementById(id).querySelector('.post-text');
+  const buttonPencil = document.getElementById(id).querySelector('.edit-post');
   const saveEdit = document.querySelector('.edit-textarea').value;
   postText.innerHTML = `
   <p class='post-text'>${saveEdit}</p>
@@ -111,6 +106,7 @@ function saveEdit() {
 function cancelEdit() {
   const id = event.target.dataset.id;
   const postText = document.getElementById(id).querySelector('.post-text');
+  const buttonPencil = document.getElementById(id).querySelector('.edit-post'); 
   const text = postText.textContent.trim();
   postText.innerHTML = `
   <p class='post-text'>${text}</p>

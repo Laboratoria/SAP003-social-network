@@ -31,14 +31,14 @@ body {
 .btn-gray{
   background-color: #322F20;
   color: #FCFCFC;
-  border: 1px solid #322F20;
+  border: 2px solid #322F20;
   transition: all .15s linear;
 }
 
 .btn-gray:hover{
   background-color: transparent;
   color:  #322F20;
-  border: 1px solid #322F20;
+  border: 2px solid #322F20;
   transition: all .15s linear;
 }
 

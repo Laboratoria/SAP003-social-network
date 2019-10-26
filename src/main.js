@@ -84,6 +84,7 @@ function loadImage(){
 }
 
 
+
 //#login página de login
 //#signup href do "cadastre-se"
 //#feed página do feed

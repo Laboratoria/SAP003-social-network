@@ -1,6 +1,6 @@
 import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
-import { AddComment, DeleteComment, PrivacyPost, EditPost, LikePost, DeletePost } from '../posts/functions.js';
+import { AddComment, DeleteComment, PrivacyPost, EditPost, LikePost, DeletePost,} from '../posts/functions.js';
 import { UserInfo, AddBio, CreateBio } from '../posts/edit-profile.js';
 
 
@@ -30,6 +30,7 @@ function logOut() {
 function addPost(post, postId) {
   const imageTemplate = `<img class='preview-picture' src='${post.image_url}'>`
   const LoggedUserID = auth.currentUser.uid; 
+  const selectTemplate = `<select class="privacy"><option value="public" ${post.privacy === 'public' ? 'selected' : ''}>Público</option><option value="private" ${post.privacy === 'private' ? 'selected' : ''}> Privado</option></select>`
   const postTemplate = `
       <li class='post' id="${postId}">
         <p class='username'>Postado por <strong><span id='${post.user_id}'>${post.user_name}</span></strong></p> 
@@ -44,9 +45,8 @@ function addPost(post, postId) {
               <div class="like fa fa-heart"></div>
               ${post.likes}
             </div>
-            <div class='comment-icon fa fa-comments'>
-            ${LoggedUserID === post.user_id && location.hash == '#feed' ? '<select class="privacy"><option value="fa-globe">Público</option><option value="fa-lock"> Privado</option></select>' : ''}
-            </div>
+            <div class='comment-icon fa fa-comments'></div>
+            ${LoggedUserID === post.user_id  ? selectTemplate : ''}
           </div>
           <div class="comments">
             <div class="comment-container"></div>
@@ -93,7 +93,7 @@ function createPost() {
     });
 }
 
-function getFirstLetter(userName){
+function GetFirstLetter(userName){
   return userName[0]
 }
 
@@ -141,7 +141,7 @@ function printComments(arr, logged) {
   arr.forEach((text) => {
     template += `
     <li class='comments-list' data-userid='${text.id}'  data-ref='${text.idComment}'>
-      <div class='letterIcon'>${getFirstLetter(text.userName)}</div> 
+      <div class='letterIcon'>${GetFirstLetter(text.userName)}</div> 
       <div class= 'comment-area'>
       ${logged === text.id ? '<div class="delete-comment fa fa-trash"></div>':''}
       <div class='user'>${text.userName}:</div>
@@ -192,19 +192,20 @@ function loadPosts() {
       });
       document.querySelectorAll('.comment-icon').forEach((icon) => {
         icon.addEventListener('click', (event) => {
-          AddComment(event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id'));
+          AddComment(event.target.parentNode.parentNode.parentNode.getAttribute('id'));
         });
       });
       document.querySelectorAll('.privacy').forEach((selection) => {
         selection.addEventListener('change', (event) => {
-          let targetOption = document.querySelector('.privacy').options[document.querySelector('.privacy').selectedIndex].value
-          PrivacyPost(event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id'), targetOption);
+          const targetOption = document.querySelector('.privacy').options[document.querySelector('.privacy').selectedIndex].value
+          PrivacyPost(event.target.parentNode.parentNode.parentNode.getAttribute('id'), targetOption);
         });
       });
     });
 }
 
 function userDescription(){
+  if (checkIsProfile(false, true)) return ''
   const template =`
     <section class='user-profile'>
         <div class='profile-name'>
@@ -273,15 +274,16 @@ function Feed() {
   })}
     </div>
   </header>
-  
   ${userDescription()}
-    ${NewPostTemplate()}
-    <section id="printpost" class="print-post">
-      <ul class='post-list'>${loadPosts()}</ul>
-    </section>
+  ${NewPostTemplate()}
+  <section id="printpost" class="print-post">
+    <ul class='post-list'>${loadPosts()}</ul>
+  </section>
   `;
   return template;
 }
 
 export default Feed;
+
+
 

@@ -65,7 +65,7 @@
   }
 
   .icon-google{
-    background: url('img/btn_google2.png') transparent no-repeat;
+    background: url('../img/btn_google.png') transparent no-repeat;
     display: inline-block;
     vertical-align: middle;
     width: 34px;
