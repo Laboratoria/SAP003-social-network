@@ -15,6 +15,7 @@ firebase.auth().onAuthStateChanged((user) => {
       document.getElementsByTagName('body')[0].className = 'bg-profile'
     } else {
       document.querySelector('main').innerHTML = Feed();   
+      document.getElementsByTagName('body')[0].className = 'bg-feed'
     }
   } else {
     if (location.hash === '#register') {

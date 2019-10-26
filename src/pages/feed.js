@@ -4,21 +4,21 @@ import Textarea from '../components/textarea.js';
 function Feed() {
 loadPost()
   const template =`
-    <img class="logo" src="img/Logo.png"/>
+    <nav>
+    <img class="logo-feed" src="img/collectio-symbol.png"/>
+    <a href="#profile"><img class="profile-link" src="img/profile-btn.png"/></a>
+    ${Button({ class: 'btn-logout', onclick:logOut,title: 'SAIR' })}
+    </nav>
     <form id ="formPost">
-        ${Textarea({ class: 'post-textarea', 
-        placeholder: 'O que tem de novidadeW'
-        })}
-        <input type="file" name="arquivos" class="image-btn" accept="image/png, image/jpeg"  multiple />
+    <input type="file" name="arquivos" class="image-btn" accept="image/png, image/jpeg"  multiple />
+        ${Textarea({ class: 'post-textarea',  placeholder: 'O que tem de novidade?'})}
         ${Button({ class: 'send-btn', 
         onclick:formPost, 
-        title: 'ENVIAR' 
+        title:  `<img src="img/send-btn.png"/>` 
         })}
     </form>
     <div id="posts"></div>
-    ${Button({ class: 'btn-logout',
-     onclick:logOut,
-     title: 'SAIR' })}
+
     `
     return template;
   }
@@ -57,15 +57,16 @@ function formPost(){
             <div class='card-texts'>
             <p class='post-text'>${post.text}</p>
             <img class='post-img' src='${post.file}' onload='loadImg'/>
-            <p class='likes'>${post.likes}</p>
             <p class='date-time'>${post.time}</p>
-            ${Button.component({ class: 'btn-like', dataId: res.id, onclick:likePost, title: 'like' })}
+            <div class='likes'>${post.likes}</div>
+            
               <div class='post-buttons'>
+              ${Button.component({ class: 'btn-like', dataId: res.id, onclick:likePost, title: 'like' })}
                   ${Button.component({
                     dataId: res.id,
                     class: 'btn-delete',
                     onclick: deletePost,
-                    title: 'EXCLUIR'
+                    title: 'excluir', 
                   })}
                   ${Button.component({
                     dataId: res.id,
@@ -97,15 +98,16 @@ function addingPost(post){
     <div class='card-texts'>
       <p class='post-text' data-id='${post.id}'>${post.data().text}</p>
       <img class='post-img' src='${post.data().file}'/>
-      <p class='likes' data-id='${post.id}'>${post.data().likes}
       <p class='date-time'>${post.data().time}</p>
-      ${Button({ class: 'btn-like', dataId: post.id, onclick: likePost, title: 'like' })}
+      <div class='likes' data-id='${post.id}'>${post.data().likes}</div>
+
       <div class='post-buttons'>
+      ${Button({ class: 'btn-like', dataId: post.id, onclick: likePost, title: 'like' })}
           ${Button({
         dataId: post.id,
         class: 'btn-delete',
         onclick: deletePost,
-        title: 'EXCLUIR'
+        title: ''
         })}
           ${Button({
         dataId: post.id,
@@ -177,3 +179,13 @@ function logOut () {
 }
 
 export default Feed;
+
+
+
+/* .card-post{
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  width: 40%;
+  margin: 0;
+  box-shadow: 0px 3px 4px #263238;
+  } */

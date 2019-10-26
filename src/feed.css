@@ -1,0 +1,155 @@
+@media (max-width: 700px) {
+    *{
+            margin-left: 0%;
+            margin-top: 0%;
+            margin-right: 0%;
+        }
+    .bg-feed {
+        display: inline-block;
+        padding: 0px;
+        background-color: #ECEFF1;;
+         
+        }
+        main {
+            padding: 0px;
+        }
+        .logo-feed {
+            margin-top: 5%;
+            width: 49px;
+            height: 32px;
+            margin-left: 3%;
+        }
+        .profile-link {
+            margin-left: 35%;
+            margin-bottom: 2%;
+        }
+        .profile-link:focus{
+            background-color: #FFE2F0;
+        }
+        
+    nav {
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 64px;
+        margin-top: 0%;
+        }
+
+        .image-btn {
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+
+     .post-textarea {
+         margin-left: 10%;
+         margin-top: 3%;
+         width: 72%;
+         height: 52px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px rgba(118, 134, 192, 0.1);
+        border-radius: 5px;
+        border: none;
+        }
+
+    .post-textarea::placeholder {
+        width: 90%;
+        height: 20px;
+        font-family: Lato;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+        color: #455A64;
+        opacity: 0.5;
+        text-align: justify;
+        }
+
+        .post-textarea:focus{
+            outline: none;
+            opacity: 100;
+        }
+
+        .send-btn {
+            border: none;
+            background-color: transparent;
+            margin-left: 65%;
+        }
+
+        .send-btn:focus {
+            outline: none;
+            opacity: 100;
+
+        }
+
+        .card-texts {
+            width: 90%;
+            height: 300px;
+            margin-left: 4%;
+            background: #FFFFFF;
+            box-shadow: 0px 3px 4px rgba(118, 134, 192, 0.1);
+            border-radius: 10px;
+            
+        }
+
+        .post-text {
+            margin-top: 10%;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            margin-left: 5%;
+
+            letter-spacing: -0.03em;
+            color: #000000;
+
+        }
+        .post-img {
+            width: 90%;
+            height: auto;
+            margin-left: 5%;
+border-radius: 5px;
+
+        }
+        .date-time {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.03em;
+            margin-left: 5%;
+            color: #455A64;
+            opacity: 0.5;
+            margin-bottom: 0%;
+        }
+
+        .likes {
+            width: 2%;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.03em;
+            margin-left: 5%;
+            color: #455A64;
+            opacity: 0.5; 
+            margin-bottom: 0%;
+            margin-left: 5%;
+        }
+        .btn-like {
+            background-color: transparent;
+            border: none;
+
+ 
+        }
+
+        .like-btn:focus {
+            outline: none;
+            opacity: 100;
+        }
+        .post-buttons {
+            margin-bottom: 5%;
+            margin-left: 40%;
+        }
+    }

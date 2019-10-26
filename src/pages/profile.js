@@ -1,4 +1,3 @@
-
 function Profile (){
     loadPost()
     const template = `
@@ -14,6 +13,7 @@ function Profile (){
 
     return template
 }
+
 function loadPost() {
     const user = firebase.auth().currentUser;
     const collectionPost = firebase.firestore().collection('posts')
