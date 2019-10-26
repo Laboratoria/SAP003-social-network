@@ -1,416 +1,293 @@
+/*----------configuração CSS tela mobile----------*/
 
-*{
+/*--------------Register/Login-------------------*/
+
+* {
   margin: 0;
   padding: 0;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
 }
 
-::selection{
+::selection {
   background: #886BF2;
   color: white;
+}
+
+body {
+  background-color: #897ac3;
+  background-image: linear-gradient(#897ac3, #897ac3, #897ac3, #897ac3, #897ac3, #A894F2, #D2BBF2, white);
+  display: flex;
+  align-items: center;
+}
+
+.header-reg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 80%;
+  border-bottom: 1px solid #886BF2;
+}
+
+.top-banner {
+  display: none;
+}
+
+.cad {
+  padding-top: 20px;
+  font-size: 30px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+  color: #886BF2;
+  display: flex;
+  justify-content: center;
+}
+
+.form-register {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .primary-button {
   width: 150px;
   height: 40px;
   font-size: 18px;
-  background-color: #886BF2 ;
+  background-color: #886BF2;
   border-radius: 20px;
   border: none;
-  cursor: pointer;  
+  cursor: pointer;
   margin-top: 10px;
   color: white;
-  
 }
 
-.primary-button:hover{
-  background-color:white;
-  color: #886BF2;
-  border: 2px solid #886BF2;
+.primary-button:hover {
+  background-color: #654bc1;
+  ;
 }
 
-.primary-input{
+.primary-input {
   margin-top: 12px;
   width: 300px;
   height: 35px;
-  border-radius: 10px;
-  border: 2px solid #886BF2;
+  border-radius: 20px;
+  border: 1px solid #886BF2;
+  box-shadow: 2px 2px 0 #886BF2;
   font-size: 16px;
- }
-
-header{
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  height: 100px;
-  padding-bottom: 350px;
 }
 
-.logo{
-  width: 90%;
-  height: 400px;
-  border-bottom: 1px solid #886BF2;
-  padding-top: 20px;
-  
-}
-
-.top-banner{
-  display: none;
-}
-
-.cad{
-  padding-top: 10px;
-}
-
-main{
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-}
-
-body
-{
-  background-color: rgb(214, 197, 238);
-  background-attachment: fixed;
-  /*background-size: 100% 100%;*/
-  margin: 0;
-  padding: 0;
-  font-family: "Avenir Next", "Avenir", sans-serif;
-}
-
-.form-register{
-height: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between; 
-padding-top: 50px;
-
-}
-/* <------------------BASIC STYLE-----------------> */
- /*body{
-  background: rgba(255,255,255,1);
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(56%, rgba(237,237,237,1)), color-stop(100%, rgba(237,237,237,1)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
-background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
-background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
-} */
-
-h1, h2, h3{
-  font-family: 'Raleway', sans-serif;
-   color: #886BF2;
-   display: flex;
-   justify-content: center;
-}
-
-
-.card{
-    background-color: #F5F5F5;
-    border-radius: 15px;
-    flex-direction: row;
-    height: 40%;
-    width: 40%;
-    margin: auto;
-    margin-top: 30%;
-    box-shadow: 3px 3px 3px #886BF2 ;
-    position: relative;
-    padding: 10px 30px;
-}
-
-/* <------------------LOGIN-----------------------> */
-<<<<<<< HEAD
-
-=======
-.primary-button {
-  /* background-color: #886BF2 ;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  margin-top: 10px; */
-  cursor: pointer;  
-  background-color: transparent;
-	border-color: transparent;
-}
-
-span{
-  font-size: 20px;
-}
->>>>>>> master
-
-.fa-google, .fa-envelope{
-  color:white;
-}
-
-.fa-google :hover{
-  color:orange;
-}
-
-.fa-envelope :hover{
-  color:orange;
-}
-
-.register{
-  text-align: center;
-  color:gray;
-}
-/* <--------------------INPUTS-----------------------> */
-.js-email-input, .js-password-input{
-  border-radius: 8px;
-  display:flex;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-
-<<<<<<< HEAD
 /*----------TELA WEB SITE -----------*/
 
-
-@media screen and (min-width: 500px){
-  *{
-    margin: 5px;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
+@media screen and (min-width: 500px) {
+  * {
+    margin: auto;
+    padding: auto;
   }
-  .logo{
-    width: 100%;
+  body {
+    background-color: #897ac3;
+    background-image: linear-gradient(to bottom right, #7a5daa, #886bb7, #8278cb, #897ac3, #897ac3, #A894F2, #D2BBF2, white);
+    align-items: center;
+    padding-top: 50px;
+  }
+  .logo {
+    width: 80%;
     height: 500px;
     border-bottom: 0px solid #886BF2;
     padding-left: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
   }
-
-  main{
+  main {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between;  */
     align-items: center;
   }
-  
+
+  .top-banner {
+    font-size: 45px;
+    height: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    font-family: 'Dancing Script', cursive;
+    background: -webkit-linear-gradient( #db5498, #783154, #4d244a, #363076);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
  
-  .form-register{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-  }
 
-  header{
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    /* height: 400;
-    padding-bottom: 350px;  */
-  }  
-    
-  .top-banner{
-    display: flex;
-    padding-bottom: 40px;
-    padding-left: 80px;
-  }
-
-  .cad{
-    padding-top: 30px;
-    padding-left: 100px;
-    padding-bottom: 50px;
+  .cad {
+    height: 50px;
+    padding-bottom: 80px;
     font-size: 80px; 
   }
-
-  /* .btn-cadastro{
-    padding-top: 50px;
-  } */
-
-  
 }
 
-=======
-.form-container{
-  text-align:center;
-} 
+
 /* <--------------------FEED----------------------> */
-.section-post{
+
+.section-post {
   width: 300px;
-     height: 100px;
-     display: flex;
-  justify-content:space-around;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
   margin: 30px 50px 15px 100px;
   background-color: #A894F2;
   -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
   padding: 15px 10px 15px 20px;
 }
 
+.div-post {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  padding: 0px;
+  background: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  resize: horizontal;
+  overflow: auto;
+}
 
-.div-post{
-  
-  display:flex;
-  justify-content:center;
-     width: 300px;
-     height: 100px;
-     padding: 0px;
-     background: white;
-     -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-     border-radius: 10px;
-     resize: horizontal;
-     overflow: auto;
-     
-  }
-  
+.div-post:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 20px 20px 20px 0;
+  border-color: transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -20px;
+  top: 40px;
+}
 
-  
-  .div-post:after{
-    content: '';
-      position: absolute;
-      border-style: solid;
-      border-width: 20px 20px 20px 0;
-      border-color: transparent;
-      display: block;
-      width: 0;
-      z-index: 1;
-      left: -20px;
-      top: 40px;
-  }
-
-  
->>>>>>> master
-
+.card {
+  background-color: #F5F5F5;
+  border-radius: 15px;
+  flex-direction: row;
+  height: 40%;
+  width: 40%;
+  margin: auto;
+  margin-top: 30%;
+  box-shadow: 3px 3px 3px #886BF2;
+  position: relative;
+  padding: 10px 30px;
+}
 
 /* <-----------MENU---------> */
 
-a
-{
+a {
   text-decoration: none;
   color: #232323;
-  
   transition: color 0.3s ease;
 }
 
-a:hover
-{
+a:hover {
   color: #A894F2;
 }
 
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: relative;
   top: 10px;
   left: 10px;
-  
   z-index: 1;
-  
   -webkit-user-select: none;
   user-select: none;
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
   position: absolute;
   top: -7px;
   left: -5px;
-  
   cursor: pointer;
-  
-  opacity: 0; 
-  z-index: 2; 
-  
+  opacity: 0;
+  z-index: 2;
   -webkit-touch-callout: none;
 }
 
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  
   background: rgb(241, 240, 243);
   border-radius: 3px;
-  
   z-index: 1;
-  
   transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked~span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu
-{
+#menu {
   position: absolute;
   width: 30px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  
   background: rgb(251, 250, 251);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 15px;
 }
 
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked~ul {
   transform: none;
 }
 
-.avatar 
-{
+.avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }

@@ -26,7 +26,7 @@ function init() {
         document.querySelector('main').innerHTML = Register();
       }
     } else {
-      window.location.hash ==='#register';
+      window.location.hash ==='#register';;
       document.querySelector('main').innerHTML = Register();
     }
   });
