@@ -6,9 +6,9 @@ const cadastrar = (id, event) => {
 
 	event.preventDefault();
 
-	const email = document.querySelector('#mail').value;
+	const email = document.getElementById('mail').value;
 
-	const password = document.querySelector('#pass').value;
+	const password = document.getElementById('pass').value;
 
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
@@ -18,8 +18,8 @@ const cadastrar = (id, event) => {
   alert(errorMessage);
 	})
 
-	const name = document.querySelector('#name').value;	
-	const born = document.querySelector('#born').value;
+	const name = document.getElementById('name').value;	
+	const born = document.getElementById('born').value;
 
 	const user = {
 		name: name,
@@ -36,10 +36,10 @@ export const Cadastro = () => {
 	 <img src = images/Witchy-logo.png class="cad-logo"/>
 	 <h1 class="cadastre">Cadastre-se</h1>
 	 <form class="cad-form">
-		${Input({ id:'name', class:"name-cadastro",  placeholder:"Nome", type:"text"})}
-		${Input({ id:'born', class:'born-cadastro', type:'date'})}
-		${Input({ id:'mail', class:"mail-cadastro", placeholder:"Email", type:"email"})}
-		${Input({ id:'pass', class:"pass-cadastro", placeholder:"Senha", type:"password"})}
+		${Input({ id:"name",  placeholder:"Nome", type:"text"})}
+		${Input({ id:'born', type:'date'})}
+		${Input({ id:"mail", placeholder:"Email", type:"email"})}
+		${Input({ id:"pass", placeholder:"Senha", type:"password"})}
 		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}
 	 </form>
 		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Voltar para Login", onclick: goHome})}
