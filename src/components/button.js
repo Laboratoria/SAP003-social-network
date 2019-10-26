@@ -4,15 +4,15 @@ function Button(props) {
     ${props.title} </button>
   `;
 
-  return template;
+    return template;
 }
 
 window.button = {
-  handleClick: (event, callback) => {
-    event.preventDefault();
-    callback(event);
-  },
-  component: Button,
+    handleClick: (event, callback) => {
+        event.preventDefault();
+        callback(event);
+    },
+    component: Button,
 };
 
 export default Button;

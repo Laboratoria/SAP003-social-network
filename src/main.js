@@ -1,7 +1,7 @@
 import Login from './pages/login.js';
 import Feed from './pages/feed.js';
-import Profile from './pages/profile.js';
 import Register from './pages/register.js';
+import Profile from './pages/profile.js';
 
 function locationHashChanged() {
   firebase.auth().onAuthStateChanged((user) => {

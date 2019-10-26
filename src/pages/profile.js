@@ -47,14 +47,14 @@ function salve() {
 }
 
 function Prev() {
-  window.location.hash = '#feed';
+    window.location.hash = '#feed';
 }
 
 function signOut() {
-  firebase.auth().signOut().then(() => {
-    window.location.hash = '#login';
-    alert('Encerrada a Sessão');
-  });
+    firebase.auth().signOut().then(() => {
+        window.location.hash = '#login';
+        alert('Encerrada a Sessão');
+    });
 }
 
 function loadProfile () {
@@ -76,12 +76,12 @@ function loadProfile () {
         class: 'primary-button',
         onClick: window.profile.deleteProfile,
       })}</li>`
-    
+
       document.querySelector('.display').innerHTML = postProfile;
     });
   });
 }
-  
+
 function Profile() {
   let displayPersona = '';
   firebase.firestore().collection('persona').get()
@@ -95,25 +95,23 @@ function Profile() {
         Profisão: ${persona.profession}<br><br>
         Interesses: ${persona.interests}<br><br>
   </section>`;
-      });
-    });
+            });
+        });
 
     window.profile.loadProfile();
-  
+
     const template = `
-  <header class='header'>
-    <h1><img class='logo-feed' src='logoredetech.png'/></a></h1>
-    <nav>
-        <li class="left">${Button({ class: 'left',
-        title: '🚪Encerrar Sessão',
-        onClick: signOut,
-      })}</li>
-      <li class="right">${Button({ class: 'right',
-          title: 'Feed',
-          onClick: Prev,
-      })}</li>
-    </nav>
-</header>
+    <header class='header'>
+      <h1><img class='logo-feed' src='logobranco.png'/></a></h1>
+          ${Button({ class: 'left',
+          title: '🚪Sair',
+          onClick: signOut,
+        })}
+        ${Button({ class: 'right',
+            title: 'Feed',
+            onClick: Prev,
+        })}
+  </header>
   <form class='profile'>
   <h1>Perfil</h1>
   <br><br>
@@ -144,12 +142,14 @@ function Profile() {
   <li class='display'>${displayPersona}</li>
   `;
 
-  return template;
+    return template;
 }
 
 window.profile = {
   loadProfile,
-  deleteProfile
+  deleteProfile,
+  Prev,
+  signOut
 };
 
 export default Profile;
