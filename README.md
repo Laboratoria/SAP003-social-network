@@ -1,3 +1,26 @@
+#Título do projeto
+
+Witch: Compartilhe seus feitiços
+
+##Projeto
+
+Nesta aplicação web o usuário poderá interagir de forma criativa e fazer com sua imaginação siga no clima de bruxaria,  objetivando integrar pessoas que compartilham da mesma ideia ou que estajam disponíveis a aprender novos feitiços ou cururiosidades witch.
+
+##Funcionamento
+
+Ao fazer download da aplicação web/mobile no primeiro acesso o usuário será direcionado para home e deverá se autenticar através da conta do google ou cadastra-se com e-mail onde será direcionado à tela de cadastro, após autenticação/cadastro o mesmo terá acesso à pagina mural, podendo compartilhar suas bruxarias excluir-las, editar, curtir ou comentar seu post, também poderá interagir com as bruxarias dos outros usuarios da rede curtindo ou comentando, e haverá no menu navegação um ícone para voltar para home.
+
+##Autores
+
+    • Evora da Iberia - HTML5, CSS3, Firebase e JavaScript
+    • Maria Carolina Ferreira- HTML5, CSS3, Firebase e JavaScript
+    • Jéssica Nascimento - HTML5, CSS3, Firebase e JavaScript
+    • Laboratória SP
+
+
+
+
+
 # Criando uma Rede Social
 
 Neste projeto você construirá uma rede social, cuja temática deixaremos ao seu critério.
