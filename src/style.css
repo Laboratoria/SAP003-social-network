@@ -89,6 +89,7 @@ body {
   border-radius: 10px; 
   color: #cccccc;
   background: #121212;
+  margin-bottom: 20px;
 } 
 
 .btn-login { 
@@ -573,3 +574,5 @@ body {
   }
  /*Fim de mural*/
   } 
+
+/*ABOUT*/

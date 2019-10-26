@@ -2,7 +2,6 @@ import Button from "../components/button.js";
 import Select from "../components/select.js";
 
 export const About = (props) => {
-	
 	const template = `
 	<header class='navbar'>
 		<nav class='banner'>
@@ -31,6 +30,7 @@ const logout = () => {
 	}).catch(function (error) {
 	});
 }
+
 
 const test = () => {
 	if (document.getElementById('select').value === "mural") {
