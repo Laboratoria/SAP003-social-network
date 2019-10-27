@@ -5,25 +5,29 @@ import Input from '../components/input.js';
 
 function timeline(){
     const template = `
+    
     <nav>
     <ul class="nav-links">
-     <li><a href="#">HOME</a></li>
+     <li><a href="#postForm">HOME</a></li>
      <li><a href="#">ALCATEIA</a></li>
-     <li><a href="#">SAIR</a></li>          
+     <li><a href="#button1">SAIR</a></li>          
    </ul>
    <div class="burger">
      <div class="line1"></div>
      <div class="line2"></div>
-     <div class="line3"></div>
+     <div class="line3"></div>    
    </div>
 </nav>
-<h2> Ola, seja bem-vindo! </h2>
+
+<h2> Ola, seja bem-vindo!</h2>
     <form><br>
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
     ${Button({id: 'postForm', title: 'postar', onClick: formSubmit})}<br>
-    </form>
+      </form>
+
     <ul class='postdiv'></ul>
-    ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
+
+    ${Button({id:'button1', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
 
     load()
@@ -122,3 +126,7 @@ function likePost(event) {
 }
 
 window.load = load;
+
+   
+  
+  
