@@ -361,11 +361,6 @@ section {
     width: auto; 
   }
 
-  .post {
-    width: 50%;
-    height: 50%;
-  }
-  
   .phrase {
     font-size: 16px;
   }
