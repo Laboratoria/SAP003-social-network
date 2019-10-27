@@ -74,7 +74,6 @@
     color: #fff;
     cursor: pointer;
     list-style: none;
-    /* transform: translate(220%, -320%); */
     width: 30%;
     font-weight: bold;
   }
@@ -84,7 +83,6 @@
     color: #fff;
     cursor: pointer;
     list-style: none;
-    transform: translate(250%, -200%);
     width: 30%;
     font-weight: bold;
   }
@@ -110,10 +108,9 @@
     margin: 5px;
     padding: 5px;
     border: solid;
-    border-radius: 10px;
+    border-radius: 5px;
     list-style: none;
     border-color: orange;
-    border-radius: 2px;
     background-color: #ffffff;
     font-family: 'Ubuntu', sans-serif;
     color: black;
@@ -133,7 +130,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 30%;
+    margin-bottom: 10%;
+    justify-content: space-between;
   }
   .js-name-input {
     border-radius: 30px;
@@ -147,6 +145,11 @@
     /* justify-content: 50%; */
     margin-left: auto;
   }
+  .logo-feed {
+    width: 70px;
+    height: 70px;
+    display: block;
+  }
   .reg {
     padding: 5%;
   }
@@ -159,6 +162,14 @@
     list-style: none;
     font-family: 'Ubuntu', sans-serif;
     color: black;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .logo-mobile-perfil{
+    width: 70px;
+    height: 70px;
+    display: block;
   }
 }
 
@@ -267,7 +278,7 @@
     color: #fff;
     cursor: pointer;
     list-style: none;
-    transform: translate(250%, -200%);
+    /* transform: translate(250%, -200%); */
     width: 10%;
     font-weight: bold;
     align-self: center;
@@ -292,10 +303,8 @@
     flex-direction: row;
   }
   .logo-feed {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    width: 70px;
+    height: 70px;
   }
   .postHeader {
     overflow: hidden;
@@ -331,5 +340,14 @@
   }
   .reg {
     padding: 2%;
+  }
+  .logo-mobile-perfil{
+    width: 70px;
+    height: 70px;
+    display: block;
+  }
+  .info-persona{
+    margin-left: 10%;
+    margin-top: 2%;
   }
 }

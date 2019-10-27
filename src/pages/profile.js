@@ -61,7 +61,7 @@ function loadProfile () {
   firebase.firestore().collection('persona').get()
   .then((querySnapshot) => {
     querySnapshot.forEach((persona) => {
-      const postProfile = `<ul data-id='${persona.id}' class=''>
+      const postProfile = `<ul data-id='${persona.id}' class='info-persona'>
       <li class=''> ${persona.data().name}</li>
       <li id='persona_${persona.id}'><br>
       Foto: <img src='${persona.data().photo}' width='60px' height='60px'/><br>
@@ -102,14 +102,14 @@ function Profile() {
 
     const template = `
     <header class='header'>
-      <h1><img class='logo-feed' src='logobranco.png'/></a></h1>
-          ${Button({ class: 'left',
-          title: '🚪Sair',
-          onClick: signOut,
-        })}
         ${Button({ class: 'right',
             title: 'Feed',
             onClick: Prev,
+        })}
+        <img class='logo-mobile-perfil' src='logobranco.png'/>
+        ${Button({ class: 'left',
+        title: '🚪Sair',
+        onClick: signOut,
         })}
   </header>
   <form class='profile'>
