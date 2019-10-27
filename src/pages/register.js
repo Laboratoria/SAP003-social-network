@@ -13,7 +13,7 @@ function createLogin() {
       .then((cred) => {
         if(cred){
           alert('Registrado com sucesso! Seja Bem-Vindo')
-         window.location.hash = '#feed';
+         window.location.hash = '#profile';
         }
           cred.user.updateProfile({
           displayName: name,

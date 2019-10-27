@@ -29,11 +29,11 @@ function salve() {
       document.querySelector('.display').insertAdjacentHTML('afterbegin', `
       <ul class= 'displayProfile' data-id='${docRef.id}'>
       <img src='${persona.photo}' width='60px' height='60px'/>
-      ${persona.email}<br>
-      ${persona.name}<br>
-      ${persona.age}<br>
-      ${persona.profession}<br>
-      ${persona.interests}<br>
+      ${persona.email}
+      ${persona.name}
+      ${persona.age}
+      ${persona.profession}
+      ${persona.interests}
       ${window.button.component({
         dataId: persona.id,
         title: '🗑️',
@@ -62,13 +62,13 @@ function loadProfile () {
   .then((querySnapshot) => {
     querySnapshot.forEach((persona) => {
       const postProfile = `<ul data-id='${persona.id}' class='info-persona'>
-      <li class=''> ${persona.data().name}</li>
-      <li id='persona_${persona.id}'><br>
-      Foto: <img src='${persona.data().photo}' width='60px' height='60px'/><br>
-      <li id='age'>Idade: ${persona.data().age}</li><br>
-      E-mail: ${persona.data().email}<br>
-      <li id='profession'>Profissão: ${persona.data().profession}</li><br>
-      <li id='interests'>Interesses: ${persona.data().interests}</li><br>
+      <li> ${persona.data().name}</li>
+      <li id='persona_${persona.id}'>
+      Foto: <img src='${persona.data().photo}' width='60px' height='60px'/>
+      <li id='age'>Idade: ${persona.data().age}</li>
+      E-mail: ${persona.data().email}
+      <li id='profession'>Profissão: ${persona.data().profession}</li>
+      <li id='interests'>Interesses: ${persona.data().interests}</li>
       <li>
       ${window.button.component({
         dataId: persona.id,
@@ -114,31 +114,32 @@ function Profile() {
   </header>
   <form class='profile'>
   <h1>Perfil</h1>
-  <br><br>
    ${Input({
-    class: 'js-age-input',
+    class: 'profile-input',
     placeholder: 'Idade',
     type: 'text',
-  })}<br><br>
+  })}
   ${Input({
-    class: 'js-profession-input',
+    class: 'profile-input',
     placeholder: 'Profissão',
     type: 'text',
-  })}<br><br>
+  })}
   ${Input({
-    class: 'js-interests',
+    class: 'profile-input',
     name: 'interests',
     type: 'text',
     placeholder: 'Escreva seus interesses. Ex: Front-End, Back-End, Inteligência Artificial...',
   })}
-  <br>
   ${Button({
-    class: 'primary-button',
+    class: 'save-button',
     title: 'Salvar',
     disable: 'enable',
     onClick: salve,
   })}
+  <hr class='line' color='orange'>
+  <h3 class='users-title'>Usuários da RedeTech</h3>
   </form>
+
   <li class='display'>${displayPersona}</li>
   `;
 
