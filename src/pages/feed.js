@@ -152,7 +152,9 @@ function Feed(props) {
       onClick: signOut,
       })}
       </header>
+
   <div class='post'>
+  <ul class= 'cardProfile'></ul>
   ${Post({
     class: 'textarea',
     id: 'post-textarea',
@@ -165,7 +167,6 @@ function Feed(props) {
     onClick: AddPostToFirebase,
   })}
   <div>
-  <ul class= 'cardProfile'></ul>
   <ul class= 'timeline'>${postsLayout}</ul>
   `;
   return template;
