@@ -25,29 +25,26 @@ const Post = (props) => {
     dataId: `text-${props.id}`,
     text: props.post.text,
   })} 
-      <div class="info-like-privacy">
-    ${Paragraph({
-    class: 'likes',
-    dataId: `numbers-${props.id}`,
-    text: props.post.likes || '',
-  })} `;
+  </div>`;
   if (userId === props.post.userId) {
-    template += Select({
-      class: 'slc-privacy-post',
-      dataId: `privacy-${props.id}`,
-      selected: props.post.privacy,
-      options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
-    });
-  }
-  template += ` 
-      </div>  
+    template += `   
+     <div class="info-privacy">
+    ${Select({
+    class: 'slc-privacy-post',
+    dataId: `privacy-${props.id}`,
+    selected: props.post.privacy,
+    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+  })}
     </div>
-    <div class="info-post">
+    `;
+  }
+  template += `<div class="info-post">
+  <div class="info-like">
     ${ButtonImage({
     class: 'like-post',
     dataId: props.id,
     type: 'image',
-    src: 'images/curtir-heart.png',
+    src: 'images/curtir.png',
     onClick: props.likesEvent,
   })}
     ${Paragraph({
@@ -55,16 +52,19 @@ const Post = (props) => {
     dataId: `numbers-${props.id}`,
     text: props.post.likes || '',
   })} 
+  </div>
   `;
 
   if (userId === props.post.userId) {
-    template += Button({
-      class: 'edit-post',
-      dataId: props.id,
-      title: 'Editar',
-      onClick: props.enableEvent,
-    });
-
+    template += `  
+    <div class="info-change">
+     ${Button({
+    class: 'edit-post',
+    dataId: props.id,
+    title: 'Editar',
+    onClick: props.enableEvent,
+  })}  
+    `;
     template += Button({
       class: 'save-post',
       dataId: props.id,
@@ -81,6 +81,7 @@ const Post = (props) => {
   }
 
   template += `
+  </div>
   </div>
   </div>`;
 
