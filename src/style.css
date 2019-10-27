@@ -132,7 +132,6 @@ main{
 }
 
 .post-area {
-  max-width: 400px;
   text-align: center;
   background-color: #8a92dd;
   padding: 10px;
@@ -181,13 +180,12 @@ main{
 }
 
 .page-title {
-  font-size: 45px;
+  font-size: 30px;
   color: #350f63;
   text-align: center;
-  justify-content: center;
 }
 
-@media (min-width: 908px) {
+@media (min-width: 700px){
   body {
     background-color: white;
   }
@@ -212,8 +210,8 @@ main{
   }
 
   .message-area {
-    height: 100px;
-    width: 800px;
+    height: 30px;
+    width: 300px;
     font-size: 15px;
     margin-top: 0px;
   }
@@ -259,7 +257,7 @@ main{
     text-align: center;
     background-color:#8a92dd;
     padding: 10px;
-    width: 400px;
+    width: 60%;
     margin: auto;
   }
 
