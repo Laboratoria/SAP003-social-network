@@ -2,22 +2,17 @@
 
 /* general settings */
 html{
-  height: 100%;
   display: flex;
   justify-content: center;
 }
 
 body {
-  height: 100%;
-  width: 100%;
   display: flex;
   background-color: #dcd6f7; 
   font-family: 'Quicksand', sans-serif;
 }
 
 main{
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +20,7 @@ main{
 
 /* home page */
 .home-container {
+  margin-top: 25px;
   width: 100%;
   display: flex; 
   justify-content: space-evenly;
@@ -112,14 +108,11 @@ main{
 }
 
 /* database page */
-
 .form-timeline{
   display: flex;
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  overflow: auto;
 }
 
 .message-post{
@@ -171,23 +164,21 @@ main{
   background-color: white;
 }
 
-.btn-comments{
-
-}
-
 .post-template{
   display: flex;
   justify-content: space-between;
   background-color: rgb(214, 217, 236);
   margin: 10px;
-  word-break: break-all;
+  word-break: break-word;
   padding-left: 20px;
   border-radius: 5px;
+  text-align: justify;
 }
 
 /* register page */
 .form-register{
-  width: 100%;
+  align-items: center;
+  margin-top: 120px;
 }
 
 .btn-create-account{
@@ -226,6 +217,7 @@ main{
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 50px;
   }
   
   .home-title{
