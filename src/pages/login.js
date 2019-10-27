@@ -20,6 +20,14 @@ function enviarLogin() {
     }   
   }).catch(function(error) {     
     let errorCode = error.code;
+
+    // errorCode === 'auth/user-not-found'? (alert('Usuário não encontrado!'),
+    // window.location = '#home.js'):
+    // errorCode === 'auth/invalid-email'? (alert('Digite um e-mail válido!'),
+    // window.location = '#home.js'):
+    // errorCode === 'auth/wrong-password'? (alert('Email ou senha inválido!'),
+    // window.location = '#home.js')
+
     if (errorCode === 'auth/user-not-found') {
       alert('Usuário não encontrado!')
       window.location = '#home.js';     
@@ -33,14 +41,11 @@ function enviarLogin() {
   });
   
   firebase.auth().onAuthStateChanged(function (user) {
+    //user? window.location = '#home.js'
     if (user) {
-      
       window.location = '#home.js';
-
-    } else {
-
-    }    
-
+    }
+   
   });
     
 }

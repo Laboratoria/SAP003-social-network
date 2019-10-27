@@ -12,18 +12,10 @@ function savePost() {
   const privacyPost = document.getElementsByName('privacy');
   let optionPost = ''; 
 
+  post === ''? alert('Ops! Você não disse o que quer trocar.'):
+  privacyPost[0].checked ? optionPost = 'public': optionPost = 'privacy';
   
-  if (post === '') {    
-    alert('Ops! Você não disse o que quer trocar.')
-
-  } else {
-    if (privacyPost[0].checked) {
-      optionPost = 'public'
-    } else {
-      optionPost = 'privacy'
-    }
-
-    db.collection('post').add({
+     db.collection('post').add({
       post: post,
       likes: 0,    
       uid: uid,
@@ -31,14 +23,12 @@ function savePost() {
       idname: firebase.auth().currentUser.displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
     })
-    .then(function (docRef) {    
+    .then(function () {    
       app.loadPost()
     })
     document.querySelector('.post').value = '';  
   }
-  
-};
-
+ 
 function addPost(post) {
   const feed = document.querySelector('.feed');   
   const privacy = post.data().privacy;  
@@ -90,14 +80,6 @@ function addPost(post) {
 
 function addPostPro(post) {
   const feed = document.querySelector('.feed');
-  let privacity = post.data().privacidade;
-  console.log(privacity)
-  if (privacity === 'publico'){
-       
-  }else{
-      
-  }
-  
   const feedPost = `  
   <li data-id= '${post.id}' class="post-list">
   <span class= "idname">${post.data().idname}:</span>
@@ -126,12 +108,11 @@ function loadPost() {
   .then((snap) => {
     document.querySelector('.feed').innerHTML = '';
     snap.forEach(post => {
-      if(post.data().uid == uid.uid || post.data().privacidade == 'publico'){
-        addPost(post)
-      }
+      addPost(post)
+      })
     })
-  })
-};
+  };
+
 
 function filterPost() {
   const user = firebase.auth().currentUser.uid;  
@@ -145,12 +126,6 @@ function filterPost() {
     })
   })
 };
-
-function loadComments(post){
-  document.querySelector('.feed').innerHTML += `
- 
-  ` 
-}
 
 function countLikes(event) {
   const id = event.target.dataset.id;  

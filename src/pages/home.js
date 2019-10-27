@@ -33,15 +33,17 @@ function home() {
     <br>
     <main class ="post-area">     
       <a href ='#profile.js'><img class="img-user" src="./img/profile_girl.png"/></a>
-      <input type="radio" name="privacy" class="privacy" checked>      
-      <label for="public">🔓</label>
-      <input type="radio" name="privacy" class="privacy">
-      <label for="privacy">🔒</label>     
       <textarea name="post" class="post" placeholder="O que você quer trocar?"></textarea>
+      <div class="label"><fieldset class="radio">
+        <input type="radio" name="privacy" class="privacy" checked>        
+        <label for="public"class="public"></label>           
+        <input type="radio" name="privacy" class="privacy">
+        <label for="privacy" class="private"></label>    
+      </fieldset>
       ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane"></i>' })}
       <br>
-      <br>
-    </div>
+      <br> </div>
+    </main>
     <br>    
     <ul class="feed">    
     </ul>      

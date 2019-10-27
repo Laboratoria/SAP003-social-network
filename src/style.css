@@ -162,10 +162,19 @@ section {
 }
 
 .post-area {
+  margin:0 auto 20px auto;
+  width: 80%;
   padding-top: 20px;
   font-family: 'Josefin Sans', sans-serif;
-  
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px; 
+  align-items: center;
+  text-align: left;  
+  background-color: #fff;
+
+  }
 
 .post {
   font-size: 12px;
@@ -173,6 +182,8 @@ section {
   height: 50px;
   resize: none;
   border-radius: 3px;
+  /* background-color: rgba(238, 238, 222, 0.849); */
+  background-color: whitesmoke;
      
 }
 
@@ -199,7 +210,7 @@ section {
   align-items: center;
   text-align: left;  
   background-color: #fff;
-  border-style: outset;;
+  border-style: outset;
 }
 
 .idname {
@@ -240,12 +251,12 @@ section {
 }
 
 .button-send {
-  display: inline;
-  margin-left: 5px;
-  margin-right: 5px;
+  display: flex;
   font-size: 18px;
   background-color: #fffbad00;
-  cursor: pointer;    
+  cursor: pointer;  
+  margin-top: -10px;  
+  margin-right: 10px;
 }
 
 .button-feed {
@@ -263,6 +274,7 @@ section {
   background-color: #fffbad00;  
   visibility: hidden;
   align-content: flex-end;
+  
 }
 
 .show {  
@@ -277,8 +289,42 @@ section {
   display: none;
 }
 
+.radio{
+  display: inline;
+  width:100%; 
+  align-items: flex-start;
+  }
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  margin-top: 10px;
+  width: 215px;
+}
+
+.public {
+  
+  padding: 10px;
+  background-image: url(../img/open-padlock.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.private {
+  padding: 10px;
+  background-image: url(../img/padlock.svg);
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 @media screen and (min-width: 768px) {
+  body {
+    /* background-color: red; */
+  }
   .login {
     display: flex;
     margin: 0 auto;
@@ -314,16 +360,49 @@ section {
   .primary-button {  
     width: auto; 
   }
+
+  .post {
+    width: 50%;
+    height: 50%;
+  }
   
   .phrase {
     font-size: 16px;
   }
-<<<<<<< HEAD
-  .select{
+  .select { 
     display: flex;
     justify-content: flex-end;
   }
+  
+  .radio{
+    display: inline;
+    width:100%; 
+    align-items: flex-start;
+    }
+
+  .label {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    margin-top: 10px;
+    width: 215px;
+  }
+
+  .public {
+    
+    padding: 10px;
+    background-image: url(../img/open-padlock.svg);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+
+  .private {
+    padding: 10px;
+    background-image: url(../img/padlock.svg);
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+  } 
 }
-=======
-}
->>>>>>> ae6c0b46fda1716ab38b28fe706f6b681249c160
