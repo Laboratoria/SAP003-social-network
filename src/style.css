@@ -20,6 +20,7 @@ main {
   height: 100%;
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -149,6 +150,7 @@ main {
   text-align: center;
   background-color: #8a92dd;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .btn-delete {
@@ -162,8 +164,8 @@ main {
   background-color: white;
 }
 
-.btn-comments {
-}
+/* .btn-comments {
+} */
 
 .post-template {
   display: flex;
@@ -172,6 +174,7 @@ main {
   margin: 10px;
   word-break: break-all;
   padding-left: 20px;
+  border-radius: 5px;
 }
 
 /* register page */
@@ -270,4 +273,19 @@ main {
     height: 30px;
     font-size: 17px;
   }
+
+  .message-post{
+    width: 400px;
+    height: 100px;
+  }
+  
+  .post-area{
+    justify-content: center;
+    text-align: center;
+    background-color:#8a92dd;
+    padding: 10px;
+    width: 400px;
+    margin: auto;
+  }
+
 }
