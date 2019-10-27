@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 /* general settings */
 html{
@@ -8,8 +8,8 @@ html{
 
 body {
   display: flex;
-  background-color: #dcd6f7; 
-  font-family: 'Quicksand', sans-serif;
+  background-color: #dcd6f7;
+  font-family: "Quicksand", sans-serif;
 }
 
 main{
@@ -22,66 +22,66 @@ main{
 .home-container {
   margin-top: 25px;
   width: 100%;
-  display: flex; 
+  display: flex;
   justify-content: space-evenly;
   flex-basis: center;
   align-items: center;
   flex-direction: column;
 }
 
-.home-image{
+.home-image {
   width: 220px;
   height: 220px;
   border-radius: 180%;
 }
 
-.home-title{
+.home-title {
   font-weight: bolder;
   color: #350f63;
   text-align: center;
   font-size: 35 px;
 }
 
-.message-area{
+.message-area {
   display: flex;
   margin: auto;
   border-radius: 5px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin-bottom: 20px;
   height: 25px;
   width: 200px;
   text-align: center;
 }
 
-.btn-login-account{
+.btn-login-account {
   display: flex;
   margin: auto;
-  background-color: #f18805;;
+  background-color: #f18805;
   padding: 3px;
   width: 80px;
-  font-size: 1.0rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   justify-content: center;
 }
 
-.login-option{
+.login-option {
   color: #350f63;
   text-align: center;
 }
 
-.btn-google-line{
+.btn-google-line {
   display: flex;
   width: 95px;
   margin: auto;
 }
 
-.google{
+.google {
   display: flex;
   margin: auto;
   background-color: #dd4b39;
-  border-radius: 100%; 
+  border-radius: 100%;
   border: none;
   height: 100%;
   line-height: 100%;
@@ -105,51 +105,51 @@ main{
   height: 100px;
 }
 
-.btn-post{
+.btn-post {
   display: flex;
-  margin: auto;  
-  background-color: #f18805;;
+  margin: auto;
+  background-color: #f18805;
   padding: 3px;
   width: 80px;
-  font-size: 1.0rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   justify-content: center;
 }
 
-.btn-signout{
+.btn-signout {
   display: flex;
-  margin: auto;  
-  background-color: #f18805;;
+  margin: auto;
+  background-color: #f18805;
   padding: 3px;
   width: 80px;
-  font-size: 1.0rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   justify-content: center;
 }
 
-.post-area{
+.post-area {
   text-align: center;
-  background-color:#8a92dd;
+  background-color: #8a92dd;
   padding: 10px;
   border-radius: 5px;
 }
 
-.btn-delete{
+.btn-delete {
   padding: 5px;
   margin-left: 10px;
   width: 30px;
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   background-color: white;
 }
 
-.post-template{
+.post-template {
   display: flex;
   justify-content: space-between;
   background-color: rgb(214, 217, 236);
@@ -166,20 +166,20 @@ main{
   margin-top: 120px;
 }
 
-.btn-create-account{
+.btn-create-account {
   display: flex;
   margin: auto;
-  background-color: #f18805;;
+  background-color: #f18805;
   padding: 3px;
   width: 110px;
-  font-size: 1.0rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   justify-content: center;
 }
 
-.page-title{
+.page-title {
   font-size: 30px;
   color: #350f63;
   text-align: center;
@@ -187,10 +187,10 @@ main{
 
 @media (min-width: 700px){
   body {
-    background-color: white; 
+    background-color: white;
   }
 
-  .home-image{
+  .home-image {
     width: 50%;
     height: 50%;
     border-radius: 0px;
@@ -204,43 +204,43 @@ main{
     justify-content: space-between;
     margin-top: 50px;
   }
-  
-  .home-title{
+
+  .home-title {
     font-size: 50px;
   }
 
-  .message-area{
+  .message-area {
     height: 30px;
     width: 300px;
     font-size: 15px;
     margin-top: 0px;
   }
 
-  .btn-login-account{
+  .btn-login-account {
     width: 80px;
   }
 
-  .login-option{
-  font-size: 18px;
-  padding-top: 20px;
+  .login-option {
+    font-size: 18px;
+    padding-top: 20px;
   }
 
-  .btn-position{
+  .btn-position {
     justify-content: space-evenly;
   }
 
-  .page-title{
+  .page-title {
     font-size: 45px;
   }
 
-  .form-register{
+  .form-register {
     display: flex;
     padding-top: 0px;
     align-items: center;
     flex-direction: column;
   }
 
-  .btn-create-account{
+  .btn-create-account {
     padding: 0px;
     width: 150px;
     height: 30px;
