@@ -135,19 +135,17 @@ function Feed(props) {
     window.feed.loadCard();
 
     const template = `
-  <header class='header'>
-    <h1><img class='logo-feed' src='logobranco.png'/></a></h1>
-    <nav>
-        <li class="left">${Button({ class: 'left',
-        title: '🚪Sair',
-        onClick: signOut,
-      })}</li>
-      <li class="right">${Button({ class: 'right',
-          title: `${name}`,
-          onClick: profile,
-      })}</li>
-    </nav>
-</header>
+    <header class='header'>
+      ${Button({ class: 'right',
+      title: `${name}`,
+      onClick: profile,
+      })}
+      <img class='logo-feed' src='logobranco.png'/>
+      ${Button({ class: 'left',
+      title: '🚪Sair',
+      onClick: signOut,
+      })}  
+      </header>
   <div class='post'>
   ${Post({
     class: 'textarea',
