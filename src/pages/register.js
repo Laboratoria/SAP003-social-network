@@ -11,12 +11,15 @@ function createLogin() {
         alert(`Falha ao cadastrar, verifique o e-mail e senha adicionado`)
       })
       .then((cred) => {
-          alert('Resgistrado com sucesso! \n Volte para a página de login para entrar na RedeTech')
+        if(cred){
+          alert('Registrado com sucesso! Seja Bem-Vindo')
+         window.location.hash = '#feed';
+        }
           cred.user.updateProfile({
           displayName: name,
-        });
-      })
-    }
+      });
+    });
+  }
 
       function comeBack (){
         window.location.hash = '#login'
