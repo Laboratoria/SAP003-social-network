@@ -3,7 +3,7 @@ function Input(props) {
       <input
         class="${props.class} message-area"
         placeholder="${props.placeholder}"
-        type="${props.type}" ></>
+        type="${props.type}" />
 `;
 
   return template;
