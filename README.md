@@ -1,4 +1,4 @@
-# Rede Social - Animal Pet
+# Rede Social - Amigo Pet
 
 Animal Pet é uma rede social que tem por obejtivo atender as pessoas que querem realizar trocas de experiências ou doações de objetos e animais de estimação. Esta ferramenta proporcionará um aumento no número de contatos dos usuários, gerando mais facilidade para encontrar pessoas dispostas a realizar trocas ou interessadas em adotar. Os usuários terão este canal único para encontrar o que precisa, seja um novo amigo pet ou objetos tais como: Remédios, casinhas, coleiras, brinquedos e etc.
 
