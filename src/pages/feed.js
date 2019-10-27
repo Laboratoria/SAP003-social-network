@@ -46,7 +46,6 @@ function AddPostToFirebase() {
       onClick: window.feed.editPost
     })}
     </li> `)
-            console.log(post)
         });
 }
 
@@ -103,6 +102,7 @@ function loadFeed() {
 }
 
 function loadCard () {
+  const id = firebase.auth().currentUser.uid;
   firebase.firestore().collection('persona').get()
     .then((querySnapshot) => {
       querySnapshot.forEach((persona) => {
@@ -121,7 +121,7 @@ function Feed(props) {
     const name = firebase.auth().currentUser.displayName;
     let postsLayout = '';
     props.posts.forEach((post) => {
-        postsLayout += `
+        postsLayout = `
       <li  class='postMessage' data-id='${post.id}'>
       ${post.name}
       ${post.timestamp}<br>
@@ -144,7 +144,7 @@ function Feed(props) {
       ${Button({ class: 'left',
       title: '🚪Sair',
       onClick: signOut,
-      })}  
+      })}
       </header>
   <div class='post'>
   ${Post({

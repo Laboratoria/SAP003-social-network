@@ -28,17 +28,16 @@ function salve() {
   firebase.firestore().collection('persona').add(persona).then((docRef) => {
       document.querySelector('.display').insertAdjacentHTML('afterbegin', `
       <ul class= 'displayProfile' data-id='${docRef.id}'>
+      <li>${persona.name}</li>
       <img src='${persona.photo}' width='60px' height='60px'/>
-      ${persona.email}
-      ${persona.name}
-      ${persona.age}
-      ${persona.profession}
-      ${persona.interests}
+      <li>Idade: ${persona.age}</li>
+      <li>E-mail: ${persona.email}</li>
+      <li>Profissão: ${persona.profession}</li>
+      <li>Interesses: ${persona.interests}</li>
       ${window.button.component({
         dataId: persona.id,
         title: '🗑️',
         class: 'primary-button',
-        disabled: 'disabled',
         onClick: window.profile.deleteProfile,
       })}
       </ul>
@@ -77,7 +76,7 @@ function loadProfile () {
         onClick: window.profile.deleteProfile,
       })}</li>`
 
-      document.querySelector('.display').innerHTML = postProfile;
+      document.querySelector('.display').innerHTML += postProfile;
     });
   });
 }
@@ -115,17 +114,17 @@ function Profile() {
   <form class='profile'>
   <h1>Perfil</h1>
    ${Input({
-    class: 'profile-input',
+    class: 'js-age-input',
     placeholder: 'Idade',
     type: 'text',
   })}
   ${Input({
-    class: 'profile-input',
+    class: 'js-profession-input',
     placeholder: 'Profissão',
     type: 'text',
   })}
   ${Input({
-    class: 'profile-input',
+    class: 'js-interests',
     name: 'interests',
     type: 'text',
     placeholder: 'Escreva seus interesses. Ex: Front-End, Back-End, Inteligência Artificial...',
@@ -133,8 +132,7 @@ function Profile() {
   ${Button({
     class: 'save-button',
     title: 'Salvar',
-    disable: 'enable',
-    onClick: salve,
+    onClick: salve
   })}
   <hr class='line' color='orange'>
   <h3 class='users-title'>Usuários da RedeTech</h3>

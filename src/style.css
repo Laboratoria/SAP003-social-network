@@ -105,8 +105,8 @@
     margin: 15px;
   }
   .postMessage {
-    margin: 5px;
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
     border: solid;
     border-radius: 5px;
     list-style: none;
@@ -114,6 +114,7 @@
     background-color: #ffffff;
     font-family: 'Ubuntu', sans-serif;
     color: black;
+    word-wrap: break-word;
   }
   .bemvinda {
     padding: 15px;
@@ -140,9 +141,13 @@
     padding: 10px;
   }
   .logo-register {
-    width: 30%;
+    width: 70px;
+    height: 70px;
+    align-self: center;
+    position: relative;
     display: block;
-    margin-left: auto;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
   }
   .logo-feed {
     width: 70px;
@@ -153,15 +158,18 @@
     padding: 5%;
   }
   .register-form {
-    display: block;
-    margin-left: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
   }
   .card {
     border: 3px solid orange;
     list-style: none;
     font-family: 'Ubuntu', sans-serif;
     color: black;
-    margin: 5px;
+    margin: 10px;
     border-radius: 5px;
     padding: 10px;
   }
@@ -179,7 +187,17 @@
     justify-content: space-between;
     margin-bottom: 15px;
   }
-  .profile-input {
+  .js-age-input {
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .js-profession-input {
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .js-interests {
     margin: 10px;
     border-radius: 30px;
     padding: 10px;
@@ -197,6 +215,17 @@
   }
   .display {
     list-style: none;
+  }
+  .displayProfile{
+    margin: 5px;
+    padding: 5px;
+    border: solid;
+    border-radius: 5px;
+    list-style: none;
+    border-color: orange;
+    background-color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
   }
   .users-title {
     margin: 15px
@@ -243,8 +272,8 @@
     width: 20%;
   }
   .textarea {
-    width: 90%;
-    margin: 15px;
+    width: 95%;
+    margin: 10px;
   }
   .content {
     position: absolute;
@@ -314,6 +343,7 @@
     font-family: 'Ubuntu', sans-serif;
     color: black;
     list-style: none;
+    word-wrap: break-word;
   }
   .left {
     background-color: transparent;
@@ -363,11 +393,18 @@
     list-style: none;
     font-family: 'Ubuntu', sans-serif;
     color: black;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
   }
   .logo-register {
     width: 70px;
     height: 70px;
-margin-left: 850%;
+    align-self: center;
+    position: relative;
+    display: block;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
   }
   .register-form {
     display: flex;
@@ -397,7 +434,17 @@ margin-left: 850%;
     justify-content: space-between;
     margin-bottom: 15px;
   }
-  .profile-input {
+  .js-age-input {
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .js-profession-input {
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .js-interests {
     margin: 10px;
     border-radius: 30px;
     padding: 10px;
@@ -416,6 +463,21 @@ margin-left: 850%;
   }
   .display {
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .displayProfile{
+    margin: 5px;
+    padding: 5px;
+    border: solid;
+    border-radius: 5px;
+    list-style: none;
+    border-color: orange;
+    background-color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
   }
   .users-title {
     margin: 15px

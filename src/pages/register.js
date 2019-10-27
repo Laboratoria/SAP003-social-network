@@ -27,7 +27,7 @@ function createLogin() {
 
 function createProfile() {
     const template = `<header class='header'>
-    <h1><img class='logo-register' src='logobranco.png'/></a></h1>
+    <img class='logo-register' src='logobranco.png'/>
     </header>
 
     <form class='register-form'>
