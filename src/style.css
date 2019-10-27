@@ -119,6 +119,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .message-post{

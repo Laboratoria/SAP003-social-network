@@ -25,13 +25,13 @@ function sendPost() {
   .then((docRef) => {
     document.querySelector('.js-message-area').value = '';
     document.querySelector('.post-area').insertAdjacentHTML('afterbegin',
-    `<li class='linha-post' style=list-style-type:none 
+    `<li class='post-template' style=list-style-type:none 
     data-id=>${userEmail}
     <br>${new Date().toLocaleString('pt-BR')}
     <br>${message}
       ${window.button.component({
       dataId: docRef.id,
-      class: 'delete',
+      class: 'btn-delete',
       title: '🗑',
       onClick: window.Delete,
     })}
@@ -48,7 +48,7 @@ function Delete(event){
 }
 
 function Database(props) {
-  let postTemplate = "";
+  let postTemplate = '';
   props.feed.forEach((doc) => {
     postTemplate+=
       `<li class='post-template' style=list-style-type:none>
