@@ -47,6 +47,7 @@ function AddPostToFirebase() {
     })}
     </li> `)
         });
+        window.feed.cleanPost()
 }
 
 function deletePost(event) {
@@ -103,25 +104,30 @@ function loadFeed() {
 
 function loadCard () {
   const id = firebase.auth().currentUser.uid;
-  firebase.firestore().collection('persona').get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((persona) => {
-      const cardFeed =  `<li data-id='${persona.id}' class='card'>
-      <img src='${persona.data().photo}' width='60px' height='60px'/><br>
-      ${persona.data().name} <br>
-      ${persona.data().profession}<br>
-  </li>
-  `;
-                document.querySelector('.cardProfile').innerHTML = cardFeed;
-            });
-        });
+  firebase.firestore().collection('persona').get().then((querySnapshot) => {
+    querySnapshot.forEach((persona) => {
+      const user = `${persona.data().user_id}`;
+      if (user == id){
+        const cardFeed = `<li data-id='${persona.id}' class='card'>
+        <img src='${persona.data().photo}' width='60px' height='60px'/><br>
+        ${persona.data().name} <br>
+        ${persona.data().profession}<br>
+    </li>`
+    document.querySelector('.cardProfile').innerHTML = cardFeed;
+      }
+    });
+  });
+}
+
+function cleanPost (){
+  document.querySelector('.textarea').value = '';
 }
 
 function Feed(props) {
     const name = firebase.auth().currentUser.displayName;
     let postsLayout = '';
     props.posts.forEach((post) => {
-        postsLayout = `
+        postsLayout += `
       <li  class='postMessage' data-id='${post.id}'>
       ${post.name}
       ${post.timestamp}<br>
@@ -172,7 +178,8 @@ window.feed = {
   AddPostToFirebase,
   loadCard,
   saveEdit,
-  profile
+  profile,
+  cleanPost
 };
 
 export default Feed;

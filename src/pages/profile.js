@@ -3,9 +3,27 @@ import Input from '../components/input.js';
 
 function deleteProfile(event) {
   const id = event.target.dataset.id;
-  document.querySelector('.display').innerHTML = '';
+  document.querySelector('.card-persona').innerHTML = '';
   firebase.firestore().collection('persona').doc(id).delete();
   event.target.parentElement.remove();
+}
+
+function validateUser(event) {
+  const id = firebase.auth().currentUser.uid;
+  firebase.firestore().collection('persona').get().then((querySnapshot) => {
+    querySnapshot.forEach((persona) => {
+      const user = `${persona.data().user_id}`;
+      if (user == id){
+        window.profile.deleteProfile(event);
+     }
+     });
+    });
+}
+
+function cleanProfile (){
+  document.querySelector('.js-age-input').value = '';
+  document.querySelector('.js-profession-input').value = '';
+  document.querySelector('.js-interests').value = '';
 }
 
 function salve() {
@@ -38,11 +56,12 @@ function salve() {
         dataId: persona.id,
         title: '🗑️',
         class: 'primary-button',
-        onClick: window.profile.deleteProfile,
+        onClick: window.profile.validateUser,
       })}
       </ul>
       `)
     });
+     window.profile.cleanProfile()
 }
 
 function Prev() {
@@ -60,7 +79,7 @@ function loadProfile () {
   firebase.firestore().collection('persona').get()
   .then((querySnapshot) => {
     querySnapshot.forEach((persona) => {
-      const postProfile = `<ul data-id='${persona.id}' class='info-persona'>
+      const postProfile = `<section class='card-persona'><ul data-id='${persona.id}' class='info-persona'>
       <li> ${persona.data().name}</li>
       <li id='persona_${persona.id}'>
       Foto: <img src='${persona.data().photo}' width='60px' height='60px'/>
@@ -73,8 +92,10 @@ function loadProfile () {
         dataId: persona.id,
         title: '🗑️',
         class: 'primary-button',
-        onClick: window.profile.deleteProfile,
-      })}</li>`
+        onClick: window.profile.validateUser,
+      })}</li>
+      </ul>
+      </section>`
 
       document.querySelector('.display').innerHTML += postProfile;
     });
@@ -116,7 +137,7 @@ function Profile() {
    ${Input({
     class: 'js-age-input',
     placeholder: 'Idade',
-    type: 'text',
+    type: 'text', required:''
   })}
   ${Input({
     class: 'js-profession-input',
@@ -148,7 +169,9 @@ window.profile = {
   loadProfile,
   deleteProfile,
   Prev,
-  signOut
+  signOut,
+  validateUser,
+  cleanProfile
 };
 
 export default Profile;
