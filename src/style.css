@@ -77,21 +77,6 @@ main{
   margin: auto;
 }
 
-/* .face{
-  display: flex;
-  margin: auto;
-  background-color: #2372a3;
-  border-radius: 100%; 
-  border: none;
-  height: 100%;
-  line-height: 100%;
-  padding: 20px;
-  text-transform: uppercase;
-  color: #dcd6f7;
-  font-weight: bold;
-  cursor: pointer;
-} */
-
 .google{
   display: flex;
   margin: auto;
@@ -200,7 +185,7 @@ main{
   text-align: center;
 }
 
-@media (min-width: 908px){
+@media (min-width: 700px){
   body {
     background-color: white; 
   }

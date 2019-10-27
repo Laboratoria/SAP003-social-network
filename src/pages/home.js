@@ -37,26 +37,6 @@ function logWithGoogle() {
     });
 }
 
-// function logWithFacebook() {
-//   const provider = new firebase.auth.FacebookAuthProvider();
-//   provider.addScope('user_birthday');
-//   provider.setCustomParameters({
-//     display: 'popup',
-//   }); firebase.auth().signInWithPopup(provider)
-//     .then((result) => {
-//       window.location.hash = '#database';
-//       const token = result.credential.accessToken;
-//       const user = result.user;
-      
-//     }).catch((error) => {
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       const email = error.email;
-//       const credential = error.credential;
-      
-//     });
-// }
-
 function Home() {
   const template = `
   <div class="home-container">
