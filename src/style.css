@@ -1,24 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 /* general settings */
-html {
-  height: 100%;
+html{
   display: flex;
   justify-content: center;
 }
 
 body {
-  height: 100%;
-  width: 100%;
   display: flex;
   background-color: #dcd6f7;
   font-family: "Quicksand", sans-serif;
 }
 
-main {
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+main{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +20,7 @@ main {
 
 /* home page */
 .home-container {
+  margin-top: 25px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -82,21 +77,6 @@ main {
   margin: auto;
 }
 
-/* .face{
-  display: flex;
-  margin: auto;
-  background-color: #2372a3;
-  border-radius: 100%; 
-  border: none;
-  height: 100%;
-  line-height: 100%;
-  padding: 20px;
-  text-transform: uppercase;
-  color: #dcd6f7;
-  font-weight: bold;
-  cursor: pointer;
-} */
-
 .google {
   display: flex;
   margin: auto;
@@ -113,10 +93,16 @@ main {
 }
 
 /* database page */
-.message-post {
-  width: 400px;
+.form-timeline{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-post{
+  width: 250px;
   height: 100px;
-  resize: none;
 }
 
 .btn-post {
@@ -164,22 +150,21 @@ main {
   background-color: white;
 }
 
-/* .btn-comments {
-} */
-
 .post-template {
   display: flex;
   justify-content: space-between;
   background-color: rgb(214, 217, 236);
   margin: 10px;
-  word-break: break-all;
+  word-break: break-word;
   padding-left: 20px;
   border-radius: 5px;
+  text-align: justify;
 }
 
 /* register page */
-.form-register {
-  width: 100%;
+.form-register{
+  align-items: center;
+  margin-top: 120px;
 }
 
 .btn-create-account {
@@ -218,7 +203,8 @@ main {
   .home-container {
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-top: 50px;
   }
 
   .home-title {
@@ -232,13 +218,6 @@ main {
     margin-top: 0px;
   }
 
-  .post-area {
-    max-width: 800px;
-    text-align: center;
-    background-color: #8a92dd;
-    padding: 10px;
-  }
-
   .btn-login-account {
     width: 80px;
   }
@@ -246,11 +225,6 @@ main {
   .login-option {
     font-size: 18px;
     padding-top: 20px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
   }
 
   .btn-position {
@@ -265,6 +239,7 @@ main {
     display: flex;
     padding-top: 0px;
     align-items: center;
+    flex-direction: column;
   }
 
   .btn-create-account {

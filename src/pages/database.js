@@ -48,7 +48,7 @@ function Delete(event){
 }
 
 function Database(props) {
-  let postTemplate = "";
+  let postTemplate = '';
   props.feed.forEach((doc) => {
     postTemplate+=
       `<li class='post-template' style=list-style-type:none>
