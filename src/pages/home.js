@@ -21,20 +21,20 @@ function home() {
     <nav>
       <ul>
         <li><h1 class="id-user">Olá, ${firebase.auth().currentUser.displayName}</h1></li>
-        <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt"></i>' })}</li>
+        <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt" title="Sair"></i>' })}</li>
       </ul> 
     </nav>  
     <br>
     <main class ="post-area">     
-      <a href ='#profile.js'><img class="img-user" src="./img/profile_girl.png"/></a>
+      <a href ='#profile.js'><img class="img-user" src="./img/profile_girl.png" title="Profile"/></a>
       <textarea name="post" class="post" placeholder="O que você quer trocar?"></textarea>
       <div class="label"><fieldset class="radio">
-        <input type="radio" name="privacy" class="privacy" checked>        
+        <input type="radio" name="privacy" title="Público" class="privacy" checked>        
         <label for="public"class="public"></label>           
-        <input type="radio" name="privacy" class="privacy">
+        <input type="radio" name="privacy" title="Privado" class="privacy">
         <label for="privacy" class="private"></label>    
       </fieldset>
-      ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane"></i>' })}
+      ${Button({ class: "button-send", onClick: savePost, title:'<i class="fas fa-paper-plane" title="Enviar"></i>' })}
       <br>
       <br> </div>
     </main>

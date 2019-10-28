@@ -46,12 +46,17 @@ function addPost(post) {
   <br>  
   <br>
   <p class="border"></p>
-  ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
+  <span title="Curtir">
+    ${Button({ dataId: post.id, class: "button-feed", onClick: countLikes, title:'💛' })} 
+  </span>
   ${post.data().likes}
-  ${Button({ dataId: post.id, class: "button-feed", onClick: showComments, title:'💬' })} 
-  <p class="border"></p>  
+  <span title="Comentar">
+    ${Button({ dataId: post.id, class: "button-feed", onClick: showComments, title:'💬' })} 
+  </span><p class="border"></p>  
   <textarea name="txtcom" class="txtcom hideComments" data-id= '${post.id}' placeholder="Comenta aqui! :)"></textarea>
-  ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
+  <span title="Salvar">
+    ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
+  </span>
   <br>
   <div class="feedcom" data-id='${post.id}'>
   </div>  
@@ -94,10 +99,18 @@ function addPostPro(post) {
   <br>  
   <br>
   <p class="border"></p>
-  ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}    
+  <span title="Editar">
+  ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}  
+  </span>
+  <span title="Excluir">  
   ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
+  </span>
+  <span title="Tornar Público">
   ${Button({ dataId: post.id, class: "button-feed", onClick: changePrivacy, title:'🔓' })}
-  ${Button({ dataId: post.id, class: "button-save", onClick: saveEdit, title:'✅' })}   
+  </span>
+  <span title="Salvar">
+  ${Button({ dataId: post.id, class: "button-save", onClick: saveEdit, title:'✅' })} 
+  </span>  
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>    
   </li>
   <br>

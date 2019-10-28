@@ -19,8 +19,8 @@ function profile() {
     </header>
     <nav>
       <ul>
-        <li><a href="#home.js" class ="button-home"><i class="fas fa-home"></i></a></li>
-        <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt"></i>' })}</li>
+        <li><a href="#home.js" class ="button-home"><i class="fas fa-home" title="Página Inicial"></i></a></li>
+        <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt" title="Sair"></i>' })}</li>
       </ul>
     </nav>
     <br>
