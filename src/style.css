@@ -103,6 +103,7 @@ main{
 .message-post{
   width: 250px;
   height: 100px;
+  resize: none;
 }
 
 .btn-post {

@@ -1,17 +1,17 @@
 # Rede Social - Amigo Pet
 
-Animal Pet é uma rede social que tem por obejtivo atender as pessoas que querem realizar trocas de experiências ou doações de objetos e animais de estimação. Esta ferramenta proporcionará um aumento no número de contatos dos usuários, gerando mais facilidade para encontrar pessoas dispostas a realizar trocas ou interessadas em adotar. Os usuários terão este canal único para encontrar o que precisa, seja um novo amigo pet ou objetos tais como: Remédios, casinhas, coleiras, brinquedos e etc.
+Amigo Pet é uma rede social que tem por obejtivo atender as pessoas que querem realizar trocas de experiências ou doações de objetos e animais de estimação. Esta ferramenta proporcionará um aumento no número de contatos dos usuários, gerando mais facilidade para encontrar pessoas dispostas a realizar trocas ou interessadas em adotar. Os usuários terão este canal único para encontrar o que precisa, seja um novo amigo pet ou objetos tais como: Remédios, casinhas, coleiras, brinquedos e etc.
 
 
 ## Resumo do Projeto
 
-- Nesta aplicação temos uma página de logar com e-mail e senha.
-- O login também pode ser feito pelo Gmail.
-- Uma tela de cadastro para novos usuários.
-- Uma Timeline pública para que todos possam ter conhecimento dos eventos de trocas e doações.
-- Na Timeline o post é identificado com e-mail do usuário, (para que os interessados possam entrar em contato posterior) e data.
-- É possível deletar o post caso a troca ou doação tenha sido realizada.
-- Foi utilizado HTML5, Vanilla JS, CCS3 e Firebase.
+- Nesta aplicação temos uma página de logar com e-mail e senha;
+- O login também pode ser feito pelo Gmail;
+- Uma tela de cadastro para novos usuários;
+- Uma Timeline pública para que todos possam ter conhecimento dos eventos de trocas e doações;
+- Na Timeline o post é identificado com e-mail do usuário, (para que os interessados possam entrar em contato posterior) e data;
+- É possível deletar o post caso a troca ou doação tenha sido realizada;
+- Foi utilizado HTML5, Vanilla JS, CCS3 e Firebase;
 - Este projeto foi desenvolvido como uma Single-Page com enfoque em mobile first. É responsivo.
 
 
