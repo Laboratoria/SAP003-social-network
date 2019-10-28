@@ -143,12 +143,13 @@ padding-top: 24px;
 width: 100%;
 }
 
-/* button {
-  -webkit-appearance: button;
+
+button.delete, button.like {
+  /* -webkit-appearance: button;
   -webkit-writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  color: #C6005F;
-  letter-spacing: normal;
+  text-rendering: auto; */
+  
+  /* letter-spacing: normal;
   word-spacing: normal;
   text-transform: none;
   text-indent: 0px;
@@ -157,16 +158,14 @@ width: 100%;
   text-align: center;
   align-items: flex-start;
   cursor: default;
-  background-color: aqua;
+  background-color: whitesmoke;
   box-sizing: border-box;
   margin: 0em;
   font: 400 13.3333px Arial;
   padding: 1px 6px;
-  border-width: 2px;
-  border-style: outset;
-  border-color: #e2cd0a;
-  border-image: initial;
-} */
+  border: 2px outset #4c87df;
+  border-radius: 20px;
+}
 
   
 footer{
@@ -233,9 +232,38 @@ button.bntgoogle{
   transform: translateX(0%);
 }
 
-
-
+.postCard {
   
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin: 8px;  
+
+}
+
+.buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.postLikes {
+  display: flex;
+  justify-content: flex-end;
+ 
+}
+
+p.likes {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+p.text {
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+}
 
 
 
@@ -244,12 +272,4 @@ button.bntgoogle{
 
 
 
-/*.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}*/
+

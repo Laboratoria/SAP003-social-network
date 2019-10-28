@@ -26,10 +26,6 @@ function Home() {
 export default Home;
 
  
-function goToRegister () {
-  window.location.hash='#register';
-}
-
 function buttonLogin () {
   const email= document.querySelector('.js-email-input').value;
   const password= document.querySelector('.js-password-input').value;

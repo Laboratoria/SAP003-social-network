@@ -19,8 +19,9 @@ function timeline(){
    </div>
 </nav>
 
-<h2> Ola, seja bem-vindo!</h2>
-    <form><br>
+<h2> Ola, seja bem-vindo! </h2>
+    <form class='postForm'><br>
+
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
     ${Button({id: 'postForm', title: 'postar', onClick: formSubmit})}<br>
       </form>
@@ -60,13 +61,17 @@ function formSubmit(){
   .then((docRef) => {
     const printPost = document.querySelector('.postdiv');
     const template = `
-      <div>${id}</div>
-      <div>
-        ${post.text}  
-        <div id='gostei${docRef.id}'>${post.likes}</div>
-        ${window.button.component({dataId: docRef.id,class: 'like', title:'❤️', onClick: likePost})}
-        ${window.button.component({class: 'delete', title:'deletar', onClick: deleteButton})}
-      </div>
+    <div class='postCard'>
+    <div class'postLikes' id='gostei${postId}'>${id}    <p class='likes'>Likes:${post.data().likes}</p></div>
+    <div class='buttons'>
+    ${window.button.component({dataId: postId,  class: 'like', title:'❤️', onClick: likePost})}
+    ${window.button.component({dataId: postId, class: 'delete', title:'🗑️', onClick: deleteButton})}
+    </div>
+    <p class='text'>    
+    ${post.data().text}  
+    </p>
+    
+  </div>
       `
     printPost.innerHTML += template
   })
@@ -93,20 +98,39 @@ function addPost (post, postId) {
   const printPost = document.querySelector('.postdiv');
   const id= firebase.auth().currentUser.uid;
   const template = `
-    <div>${id}</div>
-    <div>
+   
+    <div class='postCard'>
+    ${Button({dataId: postId, class: 'delete', title:'🗑️', onClick: deleteButton})}
+    ${Button({dataId: postId,  class: 'like', title:'❤️', onClick: likePost})}  
+    <div class'postLikes' id='gostei${postId}'>${id}    <p class='likes'>Likes:${post.data().likes}</p></div>
+     
+      <p class='text'>    
       ${post.data().text}  
-      <div id='gostei${postId}'>${post.data().likes}</div>
-      ${Button({dataId: postId,  class: 'like', title:'❤️', onClick: likePost})}
-      ${Button({class: 'delete', title:'deletar', onClick: deleteButton})}
+      </p>
+      
     </div>
     `
   printPost.innerHTML += template
 }
 
+function profile() {
+  const user = firebase.auth().currentUser;
+    
+if (user != null) {
+  name = user.displayName;
+  const email = user.email;
+  photoUrl = user.photoURL;
+  emailVerified = user.emailVerified;
+  uid = user.uid;  
+  console.log(email)
+}
+}
+
+
 function deleteButton() {
   const id = event.target.dataset.id;
-  firebase.firestore().collection('posts').doc(id).delete();
+  firebase.firestore().collection('posts').doc(id).delete()
+  event.target.parentElement.remove();
   
 }
 
@@ -119,8 +143,8 @@ function likePost(event) {
     firebase.firestore().collection('posts').doc(id).update({
       likes: counter
     })  
-    // load();
-    likeButton.innerText = `Likes: ${counter}`;
+    
+    likeButton.innerText =`Likes:${counter}`;
   }))
   
 }
