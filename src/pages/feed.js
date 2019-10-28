@@ -109,7 +109,7 @@ function addPost (post, postId) {
   printPost.innerHTML += template
 }
 
-function profile() {
+/*function profile() {
   const user = firebase.auth().currentUser;
     
 if (user != null) {
@@ -120,7 +120,7 @@ if (user != null) {
   uid = user.uid;  
   console.log(email)
 }
-}
+}*/
 
 
 function deleteButton() {

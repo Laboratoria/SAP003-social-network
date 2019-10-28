@@ -241,22 +241,22 @@ p.text {
 }
 
 .register-link{
-font-size: 17px;
-text-align: center;
-min-height: 14vh;
-margin: 0;
-padding-top: 24px;
-width: 100%;
+  font-size: 17px;
+  text-align: center;
+  min-height: 14vh;
+  margin: 0;
+  padding-top: 24px;
+  width: 100%;
 }
 
 footer{
-background-color: rgb(207, 206, 205);
-font-size: 14px;
-text-align: center;
-min-height: 5vh;
-margin: 0;
-padding-top: 4px;
-width: 100%;
+  background-color: rgb(207, 206, 205);
+  font-size: 14px;
+  text-align: center;
+  min-height: 5vh;
+  margin: 0;
+  padding-top: 4px;
+  width: 100%;
 }
 
 @media screen and (max-width:1400px){
