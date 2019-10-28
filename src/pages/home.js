@@ -6,23 +6,20 @@ function Home() {
 
   const template= `
   <div class="logotipo">
-    <h4 class="text-center">ALCATEIA</h4>
+    <h1 class="text-center teste">ALCATEIA</h1>
   </div>
     <div class="banner"></div>
-
   <h2> Faça login na sua conta </h2>
-
   <form>
   ${Input({placeholder: 'Email', type: 'email', class: 'js-email-input'})}
   ${Input({placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
   ${Button({id: 'button',  title: 'Entrar', onClick: buttonLogin, class:'bntentrar'})}<br>
   
-  ${Button({id:'google-btn', onClick:googleLogin, class:'bntgoogle' , title: '<img src= img/google.png width="36" height="15"> Registre-se usando Google'})}
+  ${Button({id:'google-btn', onClick:googleLogin, class:'bntgoogle' , title: '<img src= img/google.png width="60" height="70"> '})}
+  
   </form><br>
-
-
-  ${Button({id: 'cadastro', title: 'Cadastrar', onClick: goToRegister, class:'cadastro' })}
-
+  
+  <p class="register-link">Não é cadastrado? <a class="register-hash" href="#register">Registre-se.</a></p>
   `
     return template;
 };
