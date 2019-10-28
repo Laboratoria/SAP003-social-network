@@ -24,7 +24,7 @@ function profile() {
       </ul>
     </nav>
     <br>
-    <div class= "post-area">
+    <div class= "post-area-profile">
       <img class="img-user" src="./img/profile_girl.png"/>     
       <br>
     </div>

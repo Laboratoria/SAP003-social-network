@@ -90,7 +90,6 @@ nav ul li:last-child {
   border-top-style: inset;
 }
 
-
 .primary-button {
   margin-top: 10px;
   margin-left: auto;
@@ -159,7 +158,6 @@ section {
   margin-left: 120px;    
 }
 
-
 .id-user {
   text-align: right;
   font-size: 14px;
@@ -172,7 +170,7 @@ section {
 .post-area {
   margin:0 auto 20px auto; 
   width: 80%; 
-   padding-top: 20px; 
+  padding-top: 20px; 
   font-family: 'Josefin Sans', sans-serif;
   display: flex; 
   flex-direction: column; 
@@ -190,7 +188,6 @@ section {
   resize: none; 
   border-radius: 3px; 
   background-color: whitesmoke;
-     
 }
 
 .txtcom {
@@ -258,7 +255,6 @@ section {
   font-size: 18px;
   background-color: #fffbad00;
   cursor: pointer;  
-  /* margin-top: 5px;   */
   margin-right: 10px;
 }
 
@@ -313,7 +309,6 @@ section {
 }
 
 .public {
-  
   padding: 10px;
   background-image: url(../img/open-padlock.svg);
   background-size: 20px;
@@ -329,10 +324,17 @@ section {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .profile-area {
   padding-top: 0px;  
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.post-area-profile {
+  display: flex;
+  justify-content: center;  
+ 
 }
 
 
@@ -376,6 +378,7 @@ section {
   .phrase {
     font-size: 16px;
   }
+
   .select { 
     display: flex;
     justify-content: flex-end;
@@ -412,11 +415,6 @@ section {
     background-repeat: no-repeat;
   } 
 
-
-  .img-user {    
-    margin-left: auto;    
-  }
-
   .option { 
     margin-left: 160px;      
   }
@@ -428,5 +426,11 @@ section {
 
   .id-user {    
     font-size: 16px;       
+  }
+  .post-area-profile {
+    
+    display: flex;
+    justify-content: center;  
+    
   }
 }
