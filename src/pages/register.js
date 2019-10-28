@@ -7,7 +7,8 @@ function userRegister() {
     const password = document.querySelector('.senha-input').value;
     console.log(nome, email, password);
    
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+        debugger
         window.location.href = '#feed';
     }).catch((error) => {
         const errorCode = error.code;

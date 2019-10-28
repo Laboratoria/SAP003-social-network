@@ -14,7 +14,7 @@
 
 body {
   background-color: #897ac3;
-  background-image: linear-gradient(#897ac3, #897ac3, #897ac3, #A894F2, #D2BBF2, white);
+  background-image: linear-gradient(#897ac3, #897ac3, #897ac3,#897ac3, #A894F2,#A894F2, #D2BBF2,#D2BBF2, white);
   display: flex;
   align-items: center;
 }
@@ -66,7 +66,7 @@ h1, h2, h3 {
   width: 150px;
   height: 40px;
   font-size: 18px;
-  background-color: #886BF2;
+  background-color: #654bc1;;
   border-radius: 20px;
   border: none;
   cursor: pointer;
@@ -75,7 +75,7 @@ h1, h2, h3 {
 }
 
 .primary-button:hover {
-  background-color: #654bc1;
+  background-color: #886BF2;
   ;
 }
 
@@ -125,13 +125,108 @@ h1, h2, h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
- 
-
   .cad {
     height: 50px;
     padding-bottom: 80px;
     font-size: 80px; 
   }
+
+/*---------------------------FEED-----------------------------*/
+
+
+section{
+  max-width: 95%;
+  }  
+  
+  .feed{
+   
+  }
+  
+  .header-feed{
+    /* padding-bottom: 20px; */
+    
+  }
+  
+  .title-feed{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    /* padding-right: 110px; */
+   
+  }
+  
+  .publication{
+    margin: 5%;
+    padding-left: 10px;
+  }
+  
+  .post-input{
+    margin-top: 12px;
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid #886BF2;
+    box-shadow: 2px 2px 0 #886BF2;
+    font-size: 16px;
+  }
+  .section-post {
+    width: 300px;
+    /* height: 100px;
+    display: flex; */
+    justify-content: space-around;
+    margin-left: 4%;
+    margin-top: 12px;
+    background-color: #6e5dac;
+    background-color:#654bc1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 15px 15px 15px 15px;
+  }
+  
+  .info-post{
+    color:white;
+  }
+  
+  .div-post {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 100px;
+    padding: 0px;
+    background: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    resize: horizontal;
+    overflow: auto;
+  }
+  
+  .div-post:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: -20px;
+    top: 40px;
+  }
+  
+  .card {
+    /* background-color: #F5F5F5; */
+    border-radius: 15px;
+    flex-direction: row;
+    height: 40%;
+    width: 40%;
+    margin: auto;
+    margin-top: 30%;
+    box-shadow: 3px 3px 3px #886BF2;
+    position: relative;
+    padding: 10px 30px;
+  }
+  
 }
 
 
@@ -139,15 +234,21 @@ h1, h2, h3 {
 
 .section-post {
   width: 300px;
-  height: 100px;
-  display: flex;
+  /* height: 100px;
+  display: flex; */
   justify-content: space-around;
-  margin: 30px 50px 15px 100px;
-  background-color: #A894F2;
+  margin-left: 4%;
+  margin-top: 12px;
+  background-color: #6e5dac;
+  background-color:#654bc1;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  padding: 15px 10px 15px 20px;
+  padding: 15px 15px 15px 15px;
+}
+
+.info-post{
+  color: white;
 }
 
 .div-post {
@@ -178,7 +279,7 @@ h1, h2, h3 {
 }
 
 .card {
-  background-color: #F5F5F5;
+  /* background-color: #F5F5F5; */
   border-radius: 15px;
   flex-direction: row;
   height: 40%;
@@ -188,6 +289,61 @@ h1, h2, h3 {
   box-shadow: 3px 3px 3px #886BF2;
   position: relative;
   padding: 10px 30px;
+}
+
+
+
+section{
+max-width: 95%;
+}  
+
+.feed{
+ 
+}
+
+.header-feed{
+  /* padding-bottom: 20px; */
+  
+}
+
+.title-feed{
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  /* padding-right: 110px; */
+ 
+}
+
+.publication{
+  margin: 5%;
+  padding-left: 10px;
+}
+
+.post-input{
+  margin-top: 12px;
+  width: 300px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid #886BF2;
+  box-shadow: 2px 2px 0 #886BF2;
+  font-size: 16px;
+}
+
+.button-input{
+  margin-left: 140px;
+ 
+}
+.btn-delete, .btn-like{
+  width: 30px;
+  height: 30px;
+}
+
+.btn-like:hover{
+  width: 30px;
+  height: 30px;
+}
+
+primary-button:hover {
+  background-color: #654bc1;
 }
 
 /* <-----------MENU---------> */

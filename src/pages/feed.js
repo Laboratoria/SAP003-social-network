@@ -1,37 +1,43 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-
-
 function Feed(props) {
- let postsLayout = '';
-  props.post.forEach((doc) => {
-    console.log(props.post)
-    postsLayout += `
-    <section class="section-post">
-      <div class="div-post">
-          <p data-id='${doc.id}'>
-              ${doc.data().text}
-              
-          </p>
-        </div>
-        ${window.button.component({
-          dataId: doc.id,
-          title:`👍${doc.data().likes}`,
-          onClick: window.Feed.addLikes
-     })}
-        ${window.button.component({
-             dataId: doc.id,
-             title:'🗑️',
-              onClick: window.Feed.deletePost
-        })}
-    </section>
-    `
-  });
-
-  console.log(postsLayout)
+  let postsLayout = '';
+   props.post.forEach((doc) => {
+     console.log(doc);
+     //._document.proto.fields.userID.stringValue
+ 
+     postsLayout += `
+     <section class='section-post'>      
+     <p class='info-post' data-id='${doc.id}'>
+     Postado por: ${doc.data().userEmail} | em ${doc.data().addeAt.toDate().toLocaleDateString()}
+     às ${doc.data().addeAt.toDate().toLocaleTimeString()}
+     </p>
+       <div class='div-post'>
+           <p data-id='${doc.id}'>
+               ${doc.data().text}
+           </p>
+         </div>
+         ${window.button.component({
+           id: (doc.id + `-like`),
+           dataId: doc.id,
+           class: 'btn-like',
+           title:`👍${doc.data().likes}`,
+           onClick: window.Feed.addLikes
+      })}
+         ${window.button.component({
+           dataId: doc.id,
+           class: 'btn-delete',
+           title:'🗑️',
+           onClick: window.Feed.deletePost
+         })}
     
+     </section>
+     `
+   });
+
   const template = `
-  <header>
+  <section>
+  <header class="header-feed">
       <nav role="navigation">
         <div id="menuToggle">
           <input type="checkbox"/> 
@@ -45,122 +51,99 @@ function Feed(props) {
           </ul>
         </div>
       </nav>
+    <h1 class="title-feed">Rede Social</h1>
     </header>
-
-    <h1>Rede Social</h1>
-    <h2>Posts</h2>
+    <div class="feed">
+    <div class="publication">
     ${Input({
     class: 'post-input',
     type: 'textarea',
     placeholder: 'comente algo :)',
-      }) +
+  }) +
     Button({
+      class: 'button-input',
       title: '<span>&#128172;</span>',
       onClick: saveData
     })}
-    <div class='insert-post'>${postsLayout}</div> `;
+    </div>
+    <div class='insert-post'>${postsLayout}</div> 
+    </div>
+    </section>`;
 
   return template;
-  }
-
+}
 
 export default Feed;
 
-/*function loadPost () {
-  const postList = document.querySelector('.post-input');
-  const postCollection = firebase.firestore().collection('post');
-    postCollection.get().then(snap => {
-    postList.innerHTML = ""
-    snap.forEach(post => {
-      addPost(post)
-    })
-  })
-} ok */
-
 function saveData() {
-  
-  const postlist = document.querySelector('.post-input').value;
-  
-  const post = {  
+  let postlist = document.querySelector('.post-input').value;
+  const userEmail = firebase.auth().currentUser.email;
+  const post = {
+    userEmail: userEmail,
     text: postlist,
     userID: firebase.auth().currentUser.uid,
     likes: 0,
-    addeAt: new Date().toISOString()
+    addeAt: new Date()
   }
   document.querySelector('.insert-post').value = '';
   firebase.firestore().collection('post').add(post).then(docRef => {
     console.log(docRef.id);
     document.querySelector('.insert-post').innerHTML +=`
     <section class='section-post'>
+    <p class='info-post' data-id='${docRef.id}'>
+    Postado por: ${post.userEmail} | em ${post.addeAt.toLocaleDateString()}
+    às ${post.addeAt.toLocaleTimeString()}
+      </p>
     <div class='div-post'>
-        <p data-id='${docRef.id}'>
-            ${post.text}
-        </p>
-      </div>
+    <p data-id='${docRef.id}'>
+    ${post.text}
+    </p>
+     </div>
       ${window.button.component({
-        /*dataId: post.likes,*/
-        dataId: docRef.likes,
-        title:'👍',
-         onClick: window.Feed.myFunction
+        id: (docRef.id + `-like`),
+        dataId: docRef.id,
+        class: 'btn-like',
+        title:`👍 ${post.likes}`,
+         onClick: window.Feed.addLikes
    })}
       ${window.button.component({
+        id: (docRef.id + `-delete`),
            dataId: docRef.id,
+           class: 'btn-delete',
            title:'🗑️',
             onClick: window.Feed.deletePost
       })}
   </section>` 
-
-    
-   
-  })
+  document.querySelector('.post-input').value=''
+ })
+ 
 }
 
-function addLikes(){
-  const id = event.target.dataset.id;
-  let likeFirebase = firebase.firestore().collection('post').doc(id).get();
-
-  /*likes ++;*/
-}
-
-
-function deletePost() {
+function deletePost(docRef) {
+  
   const id = event.target.dataset.id;
   firebase.firestore().collection('post').doc(id).delete();
   event.target.parentElement.remove();
-  document.querySelector(`p[data-id='${docRef.id}']`).remove();
+  document.getElementById(id+`-delete`).remove();
 }
 
+function addLikes(){
+  
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('post').doc(id).get().then(post => {
+    const postData = post.data();
+    
+    postData.likes++;
+    document.getElementById(id+`-like`).innerHTML = `👍`+  postData.likes;
 
-/*function validateInput() {
-  const postlist = document.querySelector('.post-input').value;
-  if (postlist == "") {
-    alert('Por favor, preencha o campo para comentar.')
-  }
-}*/
-
-
-// function sendPost() {
-//   const text = document.querySelector('.js-text').value;
-//   const id = firebase.auth().currentUser.uid;
-//   firebase.firestore().collection('post').add({ text, user: id })
-//     .then((docRef) => {
-//       document.querySelector('ul').insertAdjacentHTML('afterbegin', `
-//         <li data-id='${docRef.id}'>
-//         ${text}
-//         ${window.button.component({
-//             dataId: docRef.id,
-//             title: 'Deletar',
-//             onClick: window.home.deletePost,
-//           })}
-//         </li>
-//       `);
-//       console.log('Document written with ID: ', docRef.id);
-//     });
-// }
+    firebase.firestore().collection('post').doc(id).update(postData);
+  });
+}
 
 window.Feed = {
   deletePost,
-  addLikes,
+  // countLikes,
+  addLikes
 };
 
 
