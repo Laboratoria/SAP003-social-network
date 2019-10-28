@@ -7,7 +7,8 @@ function userRegister() {
     const password = document.querySelector('.senha-input').value;
     console.log(nome, email, password);
    
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+        debugger
         window.location.href = '#feed';
     }).catch((error) => {
         const errorCode = error.code;
@@ -20,21 +21,21 @@ function backPage() {
 }
 function Register() {
     const template = `
-        <header>
-        <img src = "/images/logo.png" alt="logo" class="logo">
-        </header>
-        <form class="form-register">
-        <h2 class="cad"> Cadastre-se!</h2>
+        <header class="header-reg">
+        <img src = "./images/transparent.png" alt="logo" class="logo">  
         <h1 class="top-banner">Você mais conectada(o) com a Astronomia! </h1>
 
+        </header>
+        <form class="form-register">
+        <p class="cad"> Cadastre-se!</p>
             ${Input({
                 class: 'nome-input',
-                placeholder: 'Nome',
+                placeholder: 'Nome: Henrietta Swan Leavitt',
                 type: 'text',
                 })}
             ${Input({
                 class: 'email-input',
-                placeholder: 'E-mail',
+                placeholder: 'E-mail: henrietta@gmail.com',
                 type: 'text',
                 })}
             ${Input({   

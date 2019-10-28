@@ -13,7 +13,7 @@ function init() {
         .where('userID', '==', user.uid)
         .get()
         .then((querySnapshot) => {
-          document.querySelector('main').innerHTML=Feed({
+          document.querySelector('body').innerHTML=Feed({
             post:querySnapshot,
           });
         });
@@ -26,8 +26,8 @@ function init() {
         document.querySelector('main').innerHTML = Register();
       }
     } else {
-      window.location.hash ==='#register';
-      document.querySelector('main').innerHTML = Register();
+      window.location.hash ==='#login';;
+      document.querySelector('main').innerHTML = Login();
     }
   });
 
