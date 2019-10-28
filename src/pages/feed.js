@@ -5,20 +5,21 @@ function Feed() {
 loadPost()
   const template =`
     <nav>
-    <img class="logo-feed" src="img/collectio-symbol.png"/>
-    <a href="#profile"><img class="profile-link" src="img/profile-btn.png"/></a>
-    ${Button({ class: 'btn-logout', onclick:logOut,title: 'SAIR' })}
+      <img class="logo-feed" src="img/collectio-symbol.png"/>
+      <a href="#profile"><img class="profile-link" src="img/user.png"/></a>
+      ${Button({ class: 'btn-logout', onclick:logOut,title: `<img src='img/logou.png'/>` })}
     </nav>
     <form id ="formPost">
-    <input type="file" name="arquivos" class="image-btn" accept="image/png, image/jpeg"  multiple />
+      <input type="file" name="arquivos" class="image-btn" accept="image/png, image/jpeg"  multiple />
+      <div>
         ${Textarea({ class: 'post-textarea',  placeholder: 'O que tem de novidade?'})}
         ${Button({ class: 'send-btn', 
         onclick:formPost, 
-        title:  `<img src="img/send-btn.png"/>` 
+        title: '',
         })}
+      <div>
     </form>
     <div id="posts"></div>
-
     `
     return template;
   }
@@ -54,38 +55,36 @@ function formPost(){
           .then(res => {
             document.querySelector('#posts').insertAdjacentHTML('afterbegin', `
             <section class='card-post'>
-            <div class='card-texts'>
-            <p class='post-text'>${post.text}</p>
-            <img class='post-img' src='${post.file}' onload='loadImg'/>
-            <p class='date-time'>${post.time}</p>
-            <div class='likes'>${post.likes}</div>
-            
-              <div class='post-buttons'>
-              ${Button.component({ class: 'btn-like', dataId: res.id, onclick:likePost, title: 'like' })}
-                  ${Button.component({
+              <div class='card-texts'>
+                <p class='post-text'>${post.text}</p>
+                <img class='post-img' src='${post.file}'/>
+                <p class='date-time'>${post.time}</p>
+                <div class='likes'>${post.likes}</div>
+                ${Button.component({ class: 'btn-like', dataId: res.id, onclick:likePost, title: '' })}
+                <div class='post-buttons'>
+                    ${Button.component({
                     dataId: res.id,
                     class: 'btn-delete',
                     onclick: deletePost,
-                    title: 'excluir', 
-                  })}
-                  ${Button.component({
+                    title: '', 
+                    })}
+                    ${Button.component({
                     dataId: res.id,
                     class: 'btn-edit',
                     onclick: editPost,
-                    title: 'EDITAR'
-                  })}
-                  ${Button.component({
+                    title: ''
+                    })}
+                    ${Button.component({
                     dataId: res.id,
                     class: 'btn-save',
                     onclick: saveEditPost,
-                    title: 'SALVAR'
-                  })}
-               </div>
-            </div>
+                    title: ''
+                    })}
+                </div>
+              </div>
             </section>
             `)
           });
-        console.log('File available at', downloadURL);
       });
     })
 
@@ -96,31 +95,30 @@ function addingPost(post){
   const templatePost = `
   <section class='card-post' data-id='${post.id}'>
     <div class='card-texts'>
-      <p class='post-text' data-id='${post.id}'>${post.data().text}</p>
-      <img class='post-img' src='${post.data().file}'/>
-      <p class='date-time'>${post.data().time}</p>
-      <div class='likes' data-id='${post.id}'>${post.data().likes}</div>
-
-      <div class='post-buttons'>
-      ${Button({ class: 'btn-like', dataId: post.id, onclick: likePost, title: 'like' })}
+        <p class='post-text' data-id='${post.id}'>${post.data().text}</p>
+        <img class='post-img' src='${post.data().file}'/>
+        <p class='date-time'>${post.data().time}</p>
+        <div class='likes' data-id='${post.id}'>${post.data().likes}</div>
+        ${Button({ class: 'btn-like', dataId: post.id, onclick: likePost, title: '' })}
+        <div class='post-buttons'>
           ${Button({
-        dataId: post.id,
-        class: 'btn-delete',
-        onclick: deletePost,
-        title: ''
-        })}
+          dataId: post.id,
+          class: 'btn-delete',
+          onclick: deletePost,
+          title: '',
+          })}
           ${Button({
-        dataId: post.id,
-        class: 'btn-edit',
-        onclick: editPost,
-        title: 'EDITAR'
-        })}
-        ${Button({
+          dataId: post.id,
+          class: 'btn-edit',
+          onclick: editPost,
+          title: '',
+          })}
+          ${Button({
           dataId: post.id,
           class: 'btn-save',
           onclick: saveEditPost,
-          title: 'SALVAR'
-        })}
+          title: '',
+          })}
       </div>
     </div>
   </section>
@@ -179,13 +177,3 @@ function logOut () {
 }
 
 export default Feed;
-
-
-
-/* .card-post{
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  width: 40%;
-  margin: 0;
-  box-shadow: 0px 3px 4px #263238;
-  } */

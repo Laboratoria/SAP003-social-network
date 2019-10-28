@@ -34,7 +34,6 @@ function emailAndPass() {
   window.name = userName;
 }
 
-
 export default Register;
 
 
