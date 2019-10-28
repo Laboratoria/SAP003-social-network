@@ -97,9 +97,9 @@ function addPost (post, postId) {
     <div class='postCard'>
     ${Button({dataId: postId, class: 'delete', title:'🗑️', onClick: deleteButton})}
     ${Button({dataId: postId,  class: 'like', title:'❤️', onClick: likePost})}  
+
     <div class'postLikes' id='gostei${postId}'>${id}    
-    <p class='likes'>Likes:${post.data().likes}</p></div>
-     
+      <p class='likes'>Likes:${post.data().likes}</p></div>
       <p class='text'>    
       ${post.data().text}  
       </p>
@@ -112,7 +112,7 @@ function addPost (post, postId) {
 /*function profile() {
   const user = firebase.auth().currentUser;
     
-if (user != null) {
+  if (user != null) {
   name = user.displayName;
   const email = user.email;
   photoUrl = user.photoURL;
@@ -121,7 +121,6 @@ if (user != null) {
   console.log(email)
 }
 }*/
-
 
 function deleteButton() {
   const id = event.target.dataset.id;

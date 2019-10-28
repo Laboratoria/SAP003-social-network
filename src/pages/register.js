@@ -40,6 +40,8 @@ function register(){
       console.log(errorMessage)
       // ...
     });
+
+    
 }
   export default register;
 
