@@ -3,6 +3,17 @@ body,html{
   padding: 0;
   }
 
+body{
+  background-color: rgba(231, 231, 231, 0.884);
+  font-family: arial;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav-bar {
+  overflow: hidden;
+}
+
 .banner{
 	max-width:100%;
   min-height:25vh;
@@ -43,9 +54,6 @@ nav{
   transform: translateX(100%); */
 }
 
-
-
-
 .nav-links li{
   list-style: none;
   opacity: 0px;
@@ -53,7 +61,7 @@ nav{
 
 
 .nav-links a{
-  color: #fff;
+  color:white;
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
@@ -113,38 +121,18 @@ h2 {
   margin-left: 173px;
 }
 
-body{
-  background-color: rgba(231, 231, 231, 0.884);
-  font-family: arial;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* overflow: hidden; */
-}
-
-
-  .bntgoogle{
-    margin-top: 14px;
-    width: 128px;
-    height: 40px;
-    border: none;
-    background: #FF007A;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: Lato;
-    color: #FFFFFF;
-  }
-  .bntentrar:focus {
-    outline: none;
+  button.bntgoogle{
+    margin-top: 32px;
+    margin-left: 49%;
+    border: -2px;
+    padding: 0%;
+    background:transparent;
+    border-radius:18px;
+    cursor: pointer;
   }
 
-  .bntentrar:hover {
-    cursor: pointer;  
-  }
 
-  .bntentrar:active {
-    background-color: #C6005F;
-  }
+  .bntentrar
 
 .register-link{
 font-size: 17px;
@@ -154,9 +142,7 @@ margin: 0;
 padding-top: 24px;
 width: 100%;
 }
-.bntentrar {
-  background-color: rgb(198, 112, 0);
-}
+
 
 button.delete, button.like {
   /* -webkit-appearance: button;
@@ -167,7 +153,7 @@ button.delete, button.like {
   word-spacing: normal;
   text-transform: none;
   text-indent: 0px;
-  text-shadow: none; */
+  text-shadow: none;
   display: flex;
   text-align: center;
   align-items: flex-start;
@@ -212,7 +198,6 @@ width: 100%;
 @media screen and (max-width:768px){
   body{
   overflow-x: hidden;
-  cursor: pointer;
   }
 
   .burger{
@@ -222,13 +207,25 @@ width: 100%;
     position: absolute;  
     display: flex;
     width: 182%;
-    right: 3%;
+    right: 194%;
     height: 23vh;
     top: 2vh;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
   }
+  .nav-links a{
+    color:transparent;
+}
+
+button.bntgoogle{
+  margin-top: 6px;
+  margin-left: 43%;
+  border: -2px;
+  padding: -10%;
+  background:transparent;
+  border-radius:18px;
+  cursor: pointer;
 }
 
 .nav-active{
