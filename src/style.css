@@ -45,13 +45,6 @@ nav{
   display: flex;
   justify-content: space-around;
   width: 20%;
-  /* position: absolute;
-  right: 3%;
-  height: 12vh;
-  top: 0vh;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(100%); */
 }
 
 .nav-links li{
@@ -131,8 +124,74 @@ h2 {
     cursor: pointer;
   }
 
+.bntentrar{
+  display: flex;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:8px;
+  box-shadow: 1px 1px 2px #333333;
+  -moz-box-shadow: 1px 1px 2px #333333;
+  -webkit-box-shadow: 1px 1px 2px #333333;
+  background: rgba(255,255,255,0.7);
+  border:1px solid #000000;
+  width:60px;
+  height: 30px;
+  position: relative;
+  left: 50%;
+  margin-left: -30px;
+  text-align: center;
+  }
 
-  .bntentrar
+.bntentrar:active {
+  color: white;
+  background-color:blue;
+  }
+
+.bntpost{
+  display: flex;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:8px;
+  box-shadow: 1px 1px 2px #333333;
+  -moz-box-shadow: 1px 1px 2px #333333;
+  -webkit-box-shadow: 1px 1px 2px #333333;
+  background: rgba(255,255,255,0.7);
+  border:1px solid #000000;
+  width:60px;
+  height: 30px;
+  position: relative;
+  left: 50%;
+  margin-left: -30px;
+  text-align: center;
+}
+
+.bntpost:active {
+  color: white;
+  background-color:blue;
+}
+
+.buttonlogout{
+  display: flex;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:8px;
+  box-shadow: 1px 1px 2px #333333;
+  -moz-box-shadow: 1px 1px 2px #333333;
+  -webkit-box-shadow: 1px 1px 2px #333333;
+  background: rgba(255,255,255,0.7);
+  border:1px solid #000000;
+  width:60px;
+  height: 30px;
+  position: relative;
+  left: 50%;
+  margin-left: -30px;
+  text-align: center;
+}
+
+.buttonlogout:active {
+  color: white;
+  background-color:blue;
+}
 
 .register-link{
 font-size: 17px;
@@ -145,15 +204,6 @@ width: 100%;
 
 
 button.delete, button.like {
-  /* -webkit-appearance: button;
-  -webkit-writing-mode: horizontal-tb !important;
-  text-rendering: auto; */
-  
-  /* letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
   display: flex;
   text-align: center;
   align-items: flex-start;
@@ -167,15 +217,47 @@ button.delete, button.like {
   border-radius: 20px;
 }
 
+.postCard {
   
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin: 8px;  
+
+}
+
+.buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.postLikes {
+  display: flex;
+  justify-content: flex-end;
+ 
+}
+
+p.likes {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+p.text {
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+}
+
 footer{
-background-color: rgb(207, 206, 205);
-font-size: 14px;
-text-align: center;
-min-height: 5vh;
-margin: 0;
-padding-top: 4px;
-width: 100%;
+  background-color: rgb(207, 206, 205);
+  font-size: 14px;
+  text-align: center;
+  min-height: 5vh;
+  margin: 0;
+  padding-top: 4px;
+  width: 100%;
 }
 
 @media screen and (max-width:1400px){
@@ -232,7 +314,7 @@ button.bntgoogle{
   transform: translateX(0%);
 }
 
-.postCard {
+  .postCard {
   
   border: 2px solid grey;
   border-radius: 10px;
@@ -264,12 +346,3 @@ p.text {
   text-align: center;
   justify-content: flex-start;
 }
-
-
-
-
-
-
-
-
-

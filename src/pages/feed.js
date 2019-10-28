@@ -5,7 +5,6 @@ import Input from '../components/input.js';
 
 function timeline(){
     const template = `
-    
     <nav>
     <ul class="nav-links">
      <li><a href="#">HOME</a></li>
@@ -15,19 +14,15 @@ function timeline(){
    <div class="burger">
      <div class="line1"></div>
      <div class="line2"></div>
-     <div class="line3"></div>    
+     <div class="line3"></div>
    </div>
 </nav>
-
 <h2> Ola, seja bem-vindo! </h2>
     <form class='postForm'><br>
-
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
-    ${Button({id: 'postForm', title: 'postar', onClick: formSubmit})}<br>
-      </form>
-
+    ${Button({id: 'postForm', class: 'bntpost', title: 'Postar', onClick: formSubmit})}<br>
+    </form>
     <ul class='postdiv'></ul>
-
     ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
 
@@ -102,8 +97,9 @@ function addPost (post, postId) {
     <div class='postCard'>
     ${Button({dataId: postId, class: 'delete', title:'🗑️', onClick: deleteButton})}
     ${Button({dataId: postId,  class: 'like', title:'❤️', onClick: likePost})}  
-    <div class'postLikes' id='gostei${postId}'>${id}    <p class='likes'>Likes:${post.data().likes}</p></div>
-     
+
+    <div class'postLikes' id='gostei${postId}'>${id}    
+      <p class='likes'>Likes:${post.data().likes}</p></div>
       <p class='text'>    
       ${post.data().text}  
       </p>
@@ -113,10 +109,10 @@ function addPost (post, postId) {
   printPost.innerHTML += template
 }
 
-function profile() {
+/*function profile() {
   const user = firebase.auth().currentUser;
     
-if (user != null) {
+  if (user != null) {
   name = user.displayName;
   const email = user.email;
   photoUrl = user.photoURL;
@@ -124,8 +120,7 @@ if (user != null) {
   uid = user.uid;  
   console.log(email)
 }
-}
-
+}*/
 
 function deleteButton() {
   const id = event.target.dataset.id;
@@ -150,7 +145,3 @@ function likePost(event) {
 }
 
 window.load = load;
-
-   
-  
-  
