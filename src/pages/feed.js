@@ -10,7 +10,7 @@ function timeline(){
     <ul class="nav-links">
      <li><a href="#">HOME</a></li>
      <li><a href="#">ALCATEIA</a></li>
-     <li><a href="#button1">SAIR</a></li>          
+     <li><a href="#">SAIR</a></li>          
    </ul>
    <div class="burger">
      <div class="line1"></div>
@@ -27,7 +27,7 @@ function timeline(){
 
     <ul class='postdiv'></ul>
 
-    ${Button({id:'button1', title:'Logout', class:'buttonlogout', onClick:logout})}
+    ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
 
     load()
