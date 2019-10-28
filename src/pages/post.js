@@ -4,6 +4,7 @@ import Button from '..//components/button.js';
 window.app = {
   loadPost: loadPost,
   filterPost: filterPost
+  
 };
 
 function savePost() {
@@ -73,9 +74,7 @@ function addPost(post) {
       <span>Comentado por <span class= "idname">${comment.data().idname}</span>
       <br> 
       ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
-      <span title="Excluir">
-        ${Button({ dataId: comment.id, dataId2: post.id, class: "button-delcom", onClick: deleteCom, title:'🗑' })}      
-      </span>
+      ${Button({ dataId: comment.id, dataId2: post.id, class: "button-delcom", onClick: deleteCom, title:'🗑' })}      
       <br>
       <br> 
       ${comment.data().txtComment}
@@ -101,18 +100,10 @@ function addPostPro(post) {
   <br>  
   <br>
   <p class="border"></p>
-  <span title="Editar">
   ${Button({ dataId: post.id, class: "button-feed", onClick: editPost, title:'🖍' })}  
-  </span>
-  <span title="Excluir">  
   ${Button({ dataId: post.id, class: "button-feed", onClick: deletePost, title:'🗑' })}
-  </span>
-  <span title="Tornar Público">
   ${Button({ dataId: post.id, class: "button-feed", onClick: changePrivacy, title:'🔓' })}
-  </span>
-  <span title="Salvar">
   ${Button({ dataId: post.id, class: "button-save", onClick: saveEdit, title:'✅' })} 
-  </span>  
   <span class="date-hour">${post.data().timestamp.toDate().toLocaleString('pt-BR')}</span>    
   </li>
   <br>
@@ -215,7 +206,8 @@ function deletePost(event) {
   const id = event.target.dataset.id;  
   db.collection('post').doc(id).delete();  
   event.target.parentElement.remove();
-};
+
+  };
 
 function deleteCom(event) {
   const id = event.target.parentElement.parentElement.getAttribute('data-id');  
