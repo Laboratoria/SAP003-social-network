@@ -47,7 +47,7 @@ function enviarLogin() {
 
 function Login() {
   const template = `
-  
+  <main classe="main-log-cad">
  <header class="header-reg">
         <img src = "./images/transparent.png" alt="logo" class="logo"> 
         <h1 class="top-banner">Você mais conectada(o) com a Astronomia! </h1>
@@ -73,7 +73,7 @@ function Login() {
   })}
     ${Button({
     id: 'google',
-    title: '<i class="fab fa-google"></i>',
+    title: '<img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google-mail" class="google-mail">',
     onClick: googleSignIn,
   })}
     ${Button({
@@ -83,6 +83,7 @@ function Login() {
   })}
    
         </form>
+        </main>
     `;
   return template;
 }

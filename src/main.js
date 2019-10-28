@@ -18,16 +18,16 @@ function init() {
           });
         });
       } else if (window.location.hash ==='#login'){
-        document.querySelector('main').innerHTML = Login();
+        document.querySelector('body').innerHTML = Login();
       } else if (window.location.hash ==='#profile'){
-        document.querySelector('main').innerHTML = Profile();
+        document.querySelector('body').innerHTML = Profile();
       } else {
         window.location.hash ==='#register';
-        document.querySelector('main').innerHTML = Register();
+        document.querySelector('body').innerHTML = Register();
       }
     } else {
       window.location.hash ==='#login';;
-      document.querySelector('main').innerHTML = Login();
+      document.querySelector('body').innerHTML = Login();
     }
   });
 
