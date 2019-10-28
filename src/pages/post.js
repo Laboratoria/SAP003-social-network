@@ -73,7 +73,9 @@ function addPost(post) {
       <span>Comentado por <span class= "idname">${comment.data().idname}</span>
       <br> 
       ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
-      ${Button({ dataId: comment.id, dataId2: post.id, class: "button-delcom", onClick: deleteCom, title:'🗑' })}      
+      <span title="Excluir">
+        ${Button({ dataId: comment.id, dataId2: post.id, class: "button-delcom", onClick: deleteCom, title:'🗑' })}      
+      </span>
       <br>
       <br> 
       ${comment.data().txtComment}
