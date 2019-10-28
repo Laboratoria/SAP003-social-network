@@ -21,6 +21,7 @@ function backPage() {
 }
 function Register() {
     const template = `
+        <main classe="main-log-cad">
         <header class="header-reg">
         <img src = "./images/transparent.png" alt="logo" class="logo">  
         <h1 class="top-banner">Você mais conectada(o) com a Astronomia! </h1>
@@ -54,6 +55,7 @@ function Register() {
                 onClick: backPage,
                 })}    
         </form>
+        </main>
     `;    
     return template;
 }

@@ -3,8 +3,8 @@
 /*--------------Register/Login-------------------*/
 
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 }
 
 ::selection {
@@ -62,6 +62,10 @@ h1, h2, h3 {
   justify-content: space-between;
 }
 
+.google-mail{
+  width: 38px;  
+}
+
 .primary-button {
   width: 150px;
   height: 40px;
@@ -88,149 +92,6 @@ h1, h2, h3 {
   box-shadow: 2px 2px 0 #886BF2;
   font-size: 16px;
 }
-
-/*----------TELA DESKTOP-----------*/
-
-@media screen and (min-width: 500px) {
-  * {
-    margin: auto;
-    padding: auto;
-  }
-  body {
-    background-color: #897ac3;
-    background-image: linear-gradient(to bottom right, #7a5daa, #886bb7, #8278cb, #897ac3, #A894F2, #D2BBF2, white);
-    align-items: center;
-    padding-top: 50px;
-  }
-  .logo {
-    width: 80%;
-    height: 500px;
-    border-bottom: 0px solid #886BF2;
-    padding-left: 10px;
-    padding-bottom: 0px;
-  }
-  main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .top-banner {
-    font-size: 45px;
-    height: 50px;
-    padding-bottom: 20px;
-    display: flex;
-    font-family: 'Dancing Script', cursive;
-    background: -webkit-linear-gradient( #db5498, #783154, #4d244a, #363076);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .cad {
-    height: 50px;
-    padding-bottom: 80px;
-    font-size: 80px; 
-  }
-
-/*---------------------------FEED-----------------------------*/
-
-
-section{
-  max-width: 95%;
-  }  
-  
-  .feed{
-   
-  }
-  
-  .header-feed{
-    /* padding-bottom: 20px; */
-    
-  }
-  
-  .title-feed{
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    /* padding-right: 110px; */
-   
-  }
-  
-  .publication{
-    margin: 5%;
-    padding-left: 10px;
-  }
-  
-  .post-input{
-    margin-top: 12px;
-    width: 300px;
-    height: 70px;
-    border-radius: 10px;
-    border: 1px solid #886BF2;
-    box-shadow: 2px 2px 0 #886BF2;
-    font-size: 16px;
-  }
-  .section-post {
-    width: 300px;
-    /* height: 100px;
-    display: flex; */
-    justify-content: space-around;
-    margin-left: 4%;
-    margin-top: 12px;
-    background-color: #6e5dac;
-    background-color:#654bc1;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    padding: 15px 15px 15px 15px;
-  }
-  
-  .info-post{
-    color:white;
-  }
-  
-  .div-post {
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    height: 100px;
-    padding: 0px;
-    background: white;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    resize: horizontal;
-    overflow: auto;
-  }
-  
-  .div-post:after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 20px 20px 20px 0;
-    border-color: transparent;
-    display: block;
-    width: 0;
-    z-index: 1;
-    left: -20px;
-    top: 40px;
-  }
-  
-  .card {
-    /* background-color: #F5F5F5; */
-    border-radius: 15px;
-    flex-direction: row;
-    height: 40%;
-    width: 40%;
-    margin: auto;
-    margin-top: 30%;
-    box-shadow: 3px 3px 3px #886BF2;
-    position: relative;
-    padding: 10px 30px;
-  }
-  
-}
-
-
-/* <--------------------FEED----------------------> */
 
 .section-post {
   width: 300px;
@@ -298,7 +159,7 @@ max-width: 95%;
 }  
 
 .feed{
- 
+  
 }
 
 .header-feed{
@@ -440,6 +301,10 @@ a:hover {
   transform: none;
 }
 
+.description {
+  margin-left: 10%;
+}
+
 .avatar {
   width: 50px;
   height: 50px;
@@ -447,3 +312,149 @@ a:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
+
+/*----------TELA DESKTOP-----------*/
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: #897ac3;
+    background-image: linear-gradient(to bottom right, #7a5daa, #886bb7, #8278cb, #897ac3, #A894F2, #D2BBF2, white);
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .main-log-cad{
+    margin: auto;
+    margin-left: 13%;
+    margin-top: 70px;
+  }
+
+
+  .logo {
+    width: 80%;
+    height: 500px;
+    border-bottom: 0px solid #886BF2;
+    padding-left: 10px;
+    padding-bottom: 0px;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5%;
+
+  }
+
+  .top-banner {
+    font-size: 45px;
+    height: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    font-family: 'Dancing Script', cursive;
+    background: -webkit-linear-gradient( #db5498, #783154, #4d244a, #363076);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cad {
+    height: 50px;
+    padding-bottom: 80px;
+    font-size: 80px; 
+  }
+
+/*---------------------------FEED-----------------------------*/
+
+
+section{
+  max-width: 95%;
+  }  
+  
+  .feed{
+    width: 400px;
+  }
+  
+  .header-feed{
+    /* padding-bottom: 20px; */
+    
+  }
+  
+  .title-feed{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    /* padding-right: 110px; */
+   
+  }
+  
+  .publication{
+    margin: 5%;
+    padding-left: 10px;
+  }
+  
+  .post-input{
+    margin-top: 12px;
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid #886BF2;
+    box-shadow: 2px 2px 0 #886BF2;
+    font-size: 16px;
+  }
+  .section-post {
+    width: 300px;
+    /* height: 100px;
+    display: flex; */
+    justify-content: space-around;
+    margin-left: 4%;
+    margin-top: 12px;
+    background-color: #6e5dac;
+    background-color:#654bc1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 15px 15px 15px 15px;
+  }
+  
+  .info-post{
+    color:white;
+  }
+  
+  .div-post {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 100px;
+    padding: 0px;
+    background: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    resize: horizontal;
+    overflow: auto;
+  }
+  
+  .div-post:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: -20px;
+    top: 40px;
+  }
+  
+  .card {
+    /* background-color: #F5F5F5; */
+    border-radius: 15px;
+    flex-direction: row;
+    height: 40%;
+    width: 40%;
+    margin: auto;
+    margin-top: 30%;
+    box-shadow: 3px 3px 3px #886BF2;
+    position: relative;
+    padding: 10px 30px;
+  }
+  
+} 

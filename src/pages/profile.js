@@ -22,7 +22,7 @@ function Profile(props) {
       </nav>
     </header>
     <div class="description">
-      <img class="avatar" src="./Images/images.jpeg">
+      <img class="avatar" src="./images/img-avatar.jpeg">
       <p class="email-display">${firebase.auth().currentUser.email}</p>
     <section class="box-profile">
       ${Button({class:'voltar', title: 'Voltar', onclick: changePg})}
