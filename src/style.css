@@ -124,17 +124,15 @@ h2 {
   button.bntgoogle{
     margin-top: 32px;
     margin-left: 49%;
-    border: none;
+    border: -2px;
     padding: 0%;
     background:transparent;
-
+    border-radius:18px;
+    cursor: pointer;
   }
 
 
-  /* .bntgoogle:hover{
-    background-color: #C6005F;
-    color:
-  } */
+  .bntentrar
 
 .register-link{
 font-size: 17px;
@@ -223,10 +221,12 @@ width: 100%;
 
 button.bntgoogle{
   margin-top: 6px;
-  margin-left: 36%;
-  border: none;
-  padding: 6%;
+  margin-left: 43%;
+  border: -2px;
+  padding: -10%;
   background:transparent;
+  border-radius:18px;
+  cursor: pointer;
 }
 
 .nav-active{
