@@ -53,26 +53,30 @@ function addPost(post) {
   <textarea name="txtcom" class="txtcom hideComments" data-id= '${post.id}' placeholder="Comenta aqui! :)"></textarea>
   ${Button({ dataId: post.id, class: "button-save", onClick: saveComments, title:'✅' })}
   <br>
-  <div class="feedcom" data-id='${post.id}'></div>  
+  <div class="feedcom" data-id='${post.id}'>
+  </div>  
   </li>  
   <br>
   `
 
   db.collection(`post/${post.id}/comments`).orderBy('timestamp', 'desc').get()
   .then((snapcomments) => {
-    snapcomments.forEach((comment) => {      
+    snapcomments.forEach((comment) => {
       const feedcom = document.querySelector(`.feedcom[data-id='${post.id}']`);
       
-      feedcom.innerHTML += `Comentado por ${comment.data().idname} em ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
+      feedcom.innerHTML += `
+      <span>Comentado por <span class= "idname">${comment.data().idname}</span>
+      <br> 
+      ${comment.data().timestamp.toDate().toLocaleString('pt-BR')}
+      ${Button({ dataId: comment.id, dataId2: post.id, class: "button-delcom", onClick: deleteCom, title:'🗑' })}      
       <br>
+      <br> 
       ${comment.data().txtComment}
-      <p class="border"></p>
-      <br>
+      <p class="border"></p>      
       <br>
       `          
     })   
   })
-
   feed.innerHTML += feedPost;
   }
 };
@@ -101,7 +105,6 @@ function addPostPro(post) {
   feed.innerHTML += feedPost;
 };
 
-
 function loadPost() {     
   db.collection('post').orderBy('timestamp', 'desc')  
   .get()
@@ -112,7 +115,6 @@ function loadPost() {
       })
     })
   };
-
 
 function filterPost() {
   const user = firebase.auth().currentUser.uid;  
@@ -151,7 +153,6 @@ function changePrivacy(event) {
   }))  
 };
 
-
 function showComments(event){
   const id = event.target.dataset.id;  
   const comments = document.querySelector(`.txtcom[data-id='${id}']`);
@@ -168,7 +169,8 @@ function saveComments(event) {
   db.collection(`post/${id}/comments`).add({
     txtComment: txtComment,    
     uid: uid,
-    idname: firebase.auth().currentUser.displayName,
+    postId: id,
+    idname: firebase.auth().currentUser.displayName,    
     timestamp: firebase.firestore.FieldValue.serverTimestamp(),    
   })
   .then(() => {
@@ -198,6 +200,16 @@ function deletePost(event) {
   const id = event.target.dataset.id;  
   db.collection('post').doc(id).delete();  
   event.target.parentElement.remove();
+};
+
+function deleteCom(event) {
+  const id = event.target.parentElement.parentElement.getAttribute('data-id');  
+  const id2 = event.target.dataset.id;    
+  db.collection(`post/${id}/comments`).doc(id2).delete();
+  event.target.parentElement.remove();
+  
+  app.loadPost();
+
 };
 
 

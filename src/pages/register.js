@@ -9,23 +9,19 @@ function criarLogin() {
   const password = document.querySelector('.js-password-input').value;
   
   firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then(function () {
-    
+  .then(function () {    
     firebase.auth().currentUser.updateProfile({
       displayName: name
     })
-    
-    uid = firebase.auth().currentUser.uid;
 
-    if (uid != null) {     
-      
-      window.location = '#home.js';
-      
+    uid = firebase.auth().currentUser.uid
+
+    if (uid != null) {      
+      window.location = '#home.js';      
       db.collection('users').add({
         name: name,
         email: email,
-        uid: uid    
-        
+        uid: uid        
       })      
     }   
   })  
@@ -49,9 +45,12 @@ function criarLogin() {
 }
 
 function register() {
-  const template = `   
-    ${Logo({ class: "logo"})}
-    <br>  
+  const template = `
+    <div class="login">   
+      ${Logo({ class: "logo"})}
+    <div class="login-form">
+    <br>
+    <form>    
     ${Input({ class: 'js-namefull-input', type: 'text', placeholder: 'Nome Completo' })}
     <br>  
     ${Input({ class: 'js-email-input', type: 'email', placeholder: 'Email' })}
@@ -59,10 +58,13 @@ function register() {
     ${Input({ class: 'js-password-input', type: 'password', placeholder: 'Senha' })}       
     <br>
     ${Button({ class: "primary-button", onClick: criarLogin, title: 'CADASTRAR' })}
+    </form>
+    </div>
+    </div>
     `;
 
   return template;
-}
+};
 
 export default register;
 

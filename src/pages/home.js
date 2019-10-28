@@ -2,8 +2,6 @@ import Button from '..//components/button.js';
 import savePost from '..//pages/post.js';
 import Logo from '../components/logo.js';
 
-
-
 function signOut() {  
   firebase.auth().signOut()
   .then(function () {
@@ -12,7 +10,7 @@ function signOut() {
   }).catch(function (error) {
     
   });
-}
+};
 
 function home() {
   window.app.loadPost();  
@@ -20,14 +18,10 @@ function home() {
     <header class= "header-home">
      ${Logo({ class: "logonav" })}         
     </header>
-      <nav>
+    <nav>
       <ul>
-      <li> 
-        <a href="#home.js" class ="button-home">  
-        <i class="fas fa-home"></i> 
-        </a>
-      </li>
-      <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt"></i>' })}</li>
+        <li><h1 class="id-user">Olá, ${firebase.auth().currentUser.displayName}</h1></li>
+        <li>${Button({ class: "button-out", onClick: signOut, title:'Log Out <i class="fas fa-sign-out-alt"></i>' })}</li>
       </ul> 
     </nav>  
     <br>
