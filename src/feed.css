@@ -1,0 +1,559 @@
+@media (max-width: 1900px) and (min-width: 700px){
+    *{
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-right: 0%;
+    }
+    .bg-feed {
+        display: inline-block;
+        padding: 0px;
+        background-color: #ECEFF1;;
+    }
+
+    main {
+        padding-left: 0px;
+    }
+
+    .logo-feed {
+        display: inline-block;
+        width: 49px;
+        height: 32px;
+        margin-left: 10%;
+        margin-top: 1%;
+    }
+
+    .profile-link {
+        display: inline-block;
+        margin-left: 750px;
+        margin-bottom: 0%;
+        margin-top: 1%;
+    }
+
+    .profile-link:focus{
+        background-color: #FFE2F0;
+    }
+
+    .btn-logout {
+        display: inline-block;
+        margin-top: 0%; 
+    }
+    
+    nav {
+        display: flex;
+        margin-left:0%;
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 50px;
+    }
+
+    .image-btn {
+        margin-top: 5%;
+        margin-left: 24%;
+    }
+
+    .post-textarea {
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px rgba(118, 134, 192, 0.1);
+        border-radius: 5px;
+        width: 43%;
+        height: 97px;
+        margin-left: 24%;
+        margin-top: 1%;
+    }
+
+    .post-textarea::placeholder {
+        margin-top: 20%;
+        width: 90%;
+        height: 20px;
+        font-family: Lato;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+        color: #455A64;
+        opacity: 0.5;
+        text-align: justify;
+    }
+
+    .post-textarea:focus{
+        outline: none;
+        opacity: 100;
+    }
+
+    .send-btn {
+        background-image: url(img/senddsk.png);
+        background-repeat: no-repeat;
+        width: 20%;
+        height: 52px;
+        border: none;
+        background-color: transparent;
+        margin-left: 57%;  
+    }
+
+    .send-btn:focus {
+        outline: none;
+        opacity: 100;
+    }
+
+    .card-post {
+        margin-top: 5%;
+        width: 55%;
+        height: auto;
+        margin-left: 5%;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+     #posts {
+         margin-left: 20%;
+     }
+
+    .post-text {
+        display: inline-block;
+        margin-top: 5%;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 17px;
+        margin-left: 5%;
+        letter-spacing: -0.01em;
+        color: #000000;
+    }
+
+    .post-img {
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        border-radius: 5px;
+        margin-top: 1%;
+        margin-bottom: 0%;
+    }
+
+    .date-time {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+        margin-left: 5%;
+        color: #455A64;
+        opacity: 0.5;
+        margin-bottom: 0%;
+    }
+
+    .likes {
+        margin-bottom: 2%;  
+        display: inline-block;
+        width: 2%;
+        font-family: Lato;
+        font-size: 20px;
+        margin-left: 20%;
+        color: rgb(33, 44, 48);
+        opacity: 0.5; 
+        margin-bottom: 0%;
+        margin-left: 5%;
+    }
+
+    .btn-like {
+        margin-bottom: 3%;
+        display: inline-block;
+        margin-left: 4%;
+        margin-top: 1%;
+        margin-right: 52%;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/like-btn.png);
+        background-color: transparent;
+        border: none;
+    }
+
+    .like-btn:focus {
+        outline: none;
+        opacity: 100;
+    }
+    .post-buttons {
+        margin-bottom: 3%;
+        display: inline-block;
+        margin-top: 5%;
+        width: 30%;
+    }
+
+    .btn-delete {
+        background-color: transparent;
+        border: none;
+        margin-left: 2%;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/delete.png);
+    }
+
+    .btn-delete:focus {
+        outline: none;
+        opacity: 100;
+    }
+
+    .btn-edit {
+        margin-left: 2%;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/edit.png);
+    }
+
+    .btn-edit:focus {
+        outline: none;
+        opacity: 100;
+    }
+
+    .btn-save {
+        margin-left: 2%;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/tick.png);
+    }
+
+    .btn-save:focus {
+        outline: none;
+        opacity: 100;
+    }
+
+    .btn-logout {
+        margin-left: 2%;
+        background-color: transparent;
+        border: none;
+    }
+
+    .btn-logout:focus {
+        outline: none;
+        opacity: 100;
+    }
+
+    /* PROFILE */
+    .bg-profile {
+        display: inline-block;
+        padding: 0px;
+        background-color: #ECEFF1;
+    }
+
+    .profile-card {
+        margin-top: 10%;
+        background-color: #FFFFFF;  
+        width: 40%;
+        height: 200px;
+        border-radius: 5%;
+        margin-left: 25%;
+
+    }
+    .profile-img{
+        width: 15%;
+        height: auto;
+        margin-left: 43%;
+        margin-top: 10%;
+    }
+
+    .profile-name {
+        width: 50%;
+        height: 15%;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.03em;
+        color: #263238;
+        margin-left: 35%;
+        margin-top: 5%;
+    }
+    #userpost {
+        margin-left: 20%;
+    }
+}
+
+
+
+
+
+@media (max-width: 700px) {
+    *{
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-right: 0%;
+        }
+
+    .bg-feed {
+        display: inline-block;
+        padding: 0px;
+        background-color: #ECEFF1;;
+        }
+
+    main {
+        padding: 0px;
+        }
+
+    .logo-feed {
+        display: inline-block;
+        width: 49px;
+        height: 32px;
+        margin-left: 3%;
+        margin-top: 2%;
+        }
+
+    .profile-link {
+        display: inline-block;
+        margin-left: 57%;
+        margin-bottom: 0%;
+        margin-top: 5%;
+        }
+
+    .profile-link:focus{
+        background-color: #FFE2F0;
+        }
+
+    .btn-logout {
+        margin-top: 2%;
+        display: inline-block;
+        }
+        
+    nav {
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 64px;
+        margin-top: 0%;
+        }
+
+    .image-btn {
+        margin-top: 10%;
+        margin-left: 5%;
+        }
+
+    .post-textarea {
+        margin-left: 6%;
+        margin-right: 0%;
+        margin-top: 3%;
+        width: 70%;
+        height: 52px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px rgba(118, 134, 192, 0.1);
+        border-radius: 5px;
+        border: none;
+        }
+
+    .post-textarea::placeholder {
+        width: 90%;
+        height: 20px;
+        font-family: Lato;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+        color: #455A64;
+        opacity: 0.5;
+        text-align: justify;
+        }
+
+    .post-textarea:focus{
+        outline: none;
+        opacity: 100;
+        }
+
+    .send-btn {
+        position: absolute;
+        background-image: url(img/send-btn.png);
+        background-repeat: no-repeat;    
+        width: 70px;
+        height: 70px;
+        border: none;
+        margin-left: 0%;
+        background-color: transparent;
+        top: 20%;  
+        }
+
+    .send-btn:focus {
+        outline: none;
+        opacity: 100;
+        }
+
+    .card-texts {
+        margin: 10%;
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 4px rgba(118, 134, 192, 0.1);
+        border-radius: 10px;
+        }
+
+    .post-text {
+        display: inline-block;
+        margin-top: 5%;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 17px;
+        margin-left: 5%;
+        letter-spacing: -0.01em;
+        color: #000000;
+        }
+
+    .post-img {
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        border-radius: 5px;
+        margin-top: 1%;
+        margin-bottom: 0%;
+        }
+
+    .date-time {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+        margin-left: 5%;
+        color: #455A64;
+        opacity: 0.5;
+        margin-bottom: 0%;
+        }
+
+    .likes {
+        margin-bottom: 2%;  
+        display: inline-block;
+        width: 2%;
+        font-family: Lato;
+        font-size: 20px;
+        margin-left: 20%;
+        color: rgb(33, 44, 48);
+        opacity: 0.5; 
+        margin-bottom: 0%;
+        margin-left: 5%;
+        }
+
+    .btn-like {
+        margin-bottom: 2%;
+        display: inline-block;
+        margin-left: 4%;
+        margin-top: 1%;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/like-btn.png);
+        background-color: transparent;
+        border: none;
+        }
+
+    .like-btn:focus {
+        outline: none;
+        opacity: 100;
+        }
+
+    .post-buttons {
+        display: inline-block;
+        margin-top: 5%;
+        margin-left: 50%;
+        width: 30%;
+        }
+
+    .btn-delete {
+        background-color: transparent;
+        border: none;
+        margin-left: 2%;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/delete.png);
+        }
+
+    .btn-delete:focus {
+        outline: none;
+        opacity: 100;
+        }
+
+    .btn-edit {
+        margin-left: 2%;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/edit.png);
+        }
+
+    .btn-edit:focus {
+        outline: none;
+        opacity: 100;
+        }
+
+    .btn-save {
+        margin-left: 2%;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        height: 24px;
+        background-image: url(img/tick.png);
+        }
+
+    .btn-save:focus {
+        outline: none;
+        opacity: 100;
+        }
+
+
+    .btn-logout {
+        margin-left: 2%;
+        background-color: transparent;
+        border: none;
+ 
+
+        }
+
+    .btn-logout:focus {
+        outline: none;
+        opacity: 100;
+        }
+
+    /* PROFILE */
+    .bg-profile {
+        display: inline-block;
+        padding: 0px;
+        background-color: #ECEFF1;
+        }
+
+    .profile-card {
+        margin-top: 10%;
+        background-color: #FFFFFF;  
+        width: 90%;
+        height: 200px;
+        border-radius: 5%;
+        margin-left: 5%;
+        }
+
+    .profile-img{
+        width: 25%;
+        height: auto;
+        margin-left: 40%;
+        margin-top: 10%;
+        }
+
+    .profile-name {
+        width: 50%;
+        height: 15%;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.03em;
+        color: #263238;
+        margin-left: 35%;
+        margin-top: 5%;
+        }
+
+
+    }
+
+ 
