@@ -182,6 +182,7 @@ section {
 }
 
 .post {
+  margin-top: 20px;
   font-size: auto;
   width: 70%;
   height: auto;
@@ -326,7 +327,7 @@ section {
 }
 
 .profile-area {
-  padding-top: 0px;  
+  padding-top: 10px;  
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
 }
@@ -334,8 +335,7 @@ section {
 .post-area-profile {
   display: flex;
   justify-content: center;  
- 
-}
+ }
 
 
 @media screen and (min-width: 768px) {
