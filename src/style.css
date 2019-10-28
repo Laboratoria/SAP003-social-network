@@ -61,7 +61,7 @@ nav{
 
 
 .nav-links a{
-  color: #fff;
+  color:white;
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
@@ -122,18 +122,14 @@ h2 {
 }
 
   button.bntgoogle{
-    margin-top: 6px;
-    margin-left: 45%;
+    margin-top: 32px;
+    margin-left: 49%;
     border: none;
     padding: 0%;
-    background-color:transparent;
-    height: 44px;
-    border-radius: 35px;
-    width:30px;
-    height: 15px;
-    position: relative;
+    background:transparent;
+
   }
- 
+
 
   /* .bntgoogle:hover{
     background-color: #C6005F;
@@ -149,7 +145,7 @@ padding-top: 24px;
 width: 100%;
 }
 
-button {
+/* button {
   -webkit-appearance: button;
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
@@ -172,7 +168,7 @@ button {
   border-style: outset;
   border-color: #e2cd0a;
   border-image: initial;
-}
+} */
 
   
 footer{
@@ -204,7 +200,7 @@ width: 100%;
 
 @media screen and (max-width:768px){
   body{
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   }
 
   .burger{
@@ -214,13 +210,23 @@ width: 100%;
     position: absolute;  
     display: flex;
     width: 182%;
-    right: 3%;
+    right: 194%;
     height: 23vh;
     top: 2vh;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
   }
+  .nav-links a{
+    color:transparent;
+}
+
+button.bntgoogle{
+  margin-top: 6px;
+  margin-left: 36%;
+  border: none;
+  padding: 6%;
+  background:transparent;
 }
 
 .nav-active{

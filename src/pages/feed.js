@@ -8,7 +8,7 @@ function timeline(){
     
     <nav>
     <ul class="nav-links">
-     <li><a href="#postForm">HOME</a></li>
+     <li><a href="#">HOME</a></li>
      <li><a href="#">ALCATEIA</a></li>
      <li><a href="#button1">SAIR</a></li>          
    </ul>
