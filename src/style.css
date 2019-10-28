@@ -1,9 +1,436 @@
-.primary-button {
-  background-color: #ffe521;
-  padding: 10px;
-  font-size: 1.5rem;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  font-family: 'Chewy', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-family: 'Numans', sans-serif; 
+}
+
+body {
+  background-color: whitesmoke; 
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 180px;
+  background: url(./img/logo1.png) center center/300px no-repeat;
+  display: block;
+}
+
+.logonav {
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 50px;
+  background: url(./img/drawing.png) center center/150px no-repeat;
+  display: block; 
+}
+
+nav {
+  background: whitesmoke;
+}
+
+nav ul {
+  margin: 0 auto;
+  margin-right: 10px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  padding: 5px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+nav ul li:last-child {
+  text-align: right;
+  width: 100%;
+}
+
+.form {
+  padding: 6px; 
+}
+
+.js-namefull-input {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  padding: 5px;
+  display: block;
+  border-top-style: inset;
+  border-color: black;
+  font-family: 'Josefin Sans', sans-serif;    
+}
+
+.js-email-input {
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 5px;
-  font-weight: bold;
+  padding: 5px;
+  display: block;;
+  font-family: 'Josefin Sans', sans-serif;  
+  border-top-style: inset;
+}
+
+.js-password-input {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  padding: 5px;
+  display: block;
+  font-family: 'Josefin Sans', sans-serif; 
+  border-top-style: inset;
+}
+
+.primary-button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  background-color: black;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+  color: #c2c0ab; 
+}
+
+.auth {
+  flex-flow: row wrap;
+  justify-content: space-around; 
+}
+
+.auth-button {
   border: none;
   cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background-color: #fffbad00;
+  font-size: 30px; 
+}
+
+.phrase {
+  padding-top: 20px;
+  text-align: center;
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center; 
+}
+
+.access {
+  padding-top: 20px;
+  text-align: center;
+  display: block; 
+}
+
+section {
+  padding-top: 20px;
+  text-align: center;
+  display: block; 
+}
+
+.header-home {
+  background: black;
+  text-align: center;   
+}
+
+.img-user {  
+  width: 60px;
+  height: 60px;
+  display:flex;
+  align-items: center;
+  background: url(./img/profile_girl.png) center center/60px no-repeat;
+  /* margin-left: 40px;
+  margin-right: 10px; */
+  border: none;  
+}
+
+.option { 
+  margin-left: 120px;    
+}
+
+.id-user {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 0;
+  margin-right: 10px;
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;  
+}
+
+.post-area {
+  margin:0 auto 20px auto; 
+  width: 80%; 
+  padding-top: 20px; 
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  border-radius: 3px; 
+  text-align: left;  
+  background-color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.post {
+  margin-top: 20px;
+  font-size: auto;
+  width: 70%;
+  height: auto;
+  resize: none; 
+  border-radius: 3px; 
+  background-color: whitesmoke;
+}
+
+.txtcom {
+  margin-left: auto;
+  margin-right: auto;   
+  margin-top: 10px;
+  font-size: 12px;
+  width: 100%;
+  height: 50px;
+  resize: none;
+  border-radius: 3px;
+  box-shadow: 0 0 0.5em rgb(104, 212, 212);   
+}
+
+.post-list { 
+  list-style: none;
+  margin:0 auto 20px auto;
+  width: 80%;
+  border: solid;  
+  border-color: white;  
+  border-radius: 3px; 
+  align-items: center;
+  text-align: left;  
+  background-color: #fff;
+  border-style: outset;
+}
+
+.idname {
+  font-weight: bold;
+}
+
+.border {
+  border-bottom: solid whitesmoke;
+}
+
+.date-hour {
+  display: flex;
+  flex-wrap: nowrap; 
+}
+
+.feed {
+  font-size: 12px;
+  background-color: #fffbad00;
+  display: flex;
+  flex-direction: column;  
+}
+
+.button-home {
+  color: black;
+  font-size: 16px;
+  background-color: #fffbad00;
+  margin-left: auto;
+}
+
+.button-out {
+  margin-right: auto;
+  font-size: 12px;
+  color: black;
+  background-color: #fffbad00;
+  cursor: pointer;
+}
+
+.button-send {
+  display: flex;
+  font-size: 18px;
+  background-color: #fffbad00;
+  cursor: pointer;  
+  margin-right: 10px;
+}
+
+.button-feed {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #fffbad00;
+}
+
+.button-save {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #fffbad00;  
+  visibility: hidden;
+  align-content: flex-end;
+  
+}
+
+.button-delcom {
+  margin-right: auto;
+  font-size: 12px;
+  color: black;
+  background-color: #fffbad00;
+  cursor: pointer;
+}
+
+.show {  
+  visibility: visible;
+}
+
+.showComments {
+  display: inline;
+}
+
+.hideComments {
+  display: none;
+}
+
+.radio{
+  width:100%; 
+  align-items: flex-start;
+  }
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  margin-top: 10px;
+  width: 215px;
+}
+
+.public {
+  padding: 10px;
+  background-image: url(../img/open-padlock.svg);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.private {
+  padding: 10px;
+  background-image: url(../img/padlock.svg);
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-area {
+  padding-top: 10px;  
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.post-area-profile {
+  display: flex;
+  justify-content: center;  
+ }
+
+
+@media screen and (min-width: 768px) {
+  
+  .login {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .login-form {
+    width: 50%;
+  }  
+
+  .logo {
+    width: 450px;
+    height: 450px;
+    background: url(./img/logo1.png) center center/450px no-repeat; 
+  }
+
+  .js-namefull-input {
+    margin-top: 100px;    
+  }
+
+  .js-email-input {
+    margin-top: 5px; 
+    border-color: black;
+    border-top-style: inset;  
+  }
+
+  .js-password-input {
+    margin-top: 5px; 
+    border-color: black;
+    border-top-style: inset;  
+  }
+
+  .primary-button {  
+    width: auto; 
+  }
+
+  .phrase {
+    font-size: 16px;
+  }
+
+  .select { 
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .radio{
+    width:100%; 
+    align-items: flex-start;
+    }
+
+  .label {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    margin-top: 10px;
+    width: 70%;
+  }
+
+  .public {
+    
+    padding: 10px;
+    background-image: url(../img/open-padlock.svg);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+
+  .private {
+    padding: 10px;
+    background-image: url(../img/padlock.svg);
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+  } 
+
+  .option { 
+    margin-left: 160px;      
+  }
+
+  .post {    
+    width: 70%;
+    height: 30%;       
+  }
+
+  .id-user {    
+    font-size: 16px;       
+  }
+  .post-area-profile {
+    
+    display: flex;
+    justify-content: center;  
+    
+  }
 }

@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Social Network</title>
+  <title>Laboratroca ♥</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Chewy|Numans|Sansita&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300&display=swap" rel="stylesheet">
 </head>
+
+
+
 <body>
-  <main></main>
-  <script type="module" src="./main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+  
+  <main>  
+    <script type="module" src="./main.js"></script>          
+  </main>
+  
+  <script>
+    // Your web app's Firebase configuration
+    let firebaseConfig = {
+      apiKey: "AIzaSyBb2i74aa_cnZcmxjP46Yr6Pb4r5Nsnubs",
+      authDomain: "social-network-1e8dd.firebaseapp.com",
+      databaseURL: "https://social-network-1e8dd.firebaseio.com",
+      projectId: "social-network-1e8dd",
+      storageBucket: "",
+      messagingSenderId: "73893706599",
+      appId: "1:73893706599:web:a68e8877808426c72c8dc2",
+      measurementId: "G-9QV799B537"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    let db = firebase.firestore();
+    
+  </script>
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
