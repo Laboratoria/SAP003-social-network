@@ -2,24 +2,19 @@ import Button from '../components/button.js';
 import Textarea from '../components/textarea.js';
 
 function Feed() {
-loadPost()
+  loadPost()
   const template =`
-    <nav>
-      <img class="logo-feed" src="img/collectio-symbol.png"/>
-      <a href="#profile"><img class="profile-link" src="img/user.png"/></a>
-      ${Button({ class: 'btn-logout', onclick:logOut,title: `<img src='img/logou.png'/>` })}
-    </nav>
-    <form id ="formPost">
-      <input type="file" name="arquivos" class="image-btn" accept="image/png, image/jpeg"  multiple />
-      <div>
-        ${Textarea({ class: 'post-textarea',  placeholder: 'O que tem de novidade?'})}
-        ${Button({ class: 'send-btn', 
-        onclick:formPost, 
-        title: '',
-        })}
-      <div>
-    </form>
-    <div id="posts"></div>
+  <nav>
+    <img class="logo-feed" src="img/collectio-symbol.png"/>
+    <a href="#profile"><img class="profile-link" src="img/user.png"/></a>
+    ${Button({ class: 'btn-logout', onclick:logOut,title: `<img src='img/logou.png'/>` })}
+  </nav>
+  <form id ="formPost">
+    <input type="file" name="arquivos" class="image-btn" accept="image/png, image/jpeg"  multiple />
+    ${Textarea({ class: 'post-textarea',  placeholder: 'O que tem de novidade?'})}
+    ${Button({ class: 'send-btn', onclick:formPost, title: '', })}
+  </form>
+  <div id="posts"></div>
     `
     return template;
   }
@@ -33,8 +28,7 @@ loadPost()
     })
   }) 
   }
-    
-  
+
 // essa função cria o objeto do post no banco de dados e adiciona o post atual no template
 function formPost(){
   const id = firebase.auth().currentUser.uid
@@ -62,24 +56,9 @@ function formPost(){
                 <div class='likes'>${post.likes}</div>
                 ${Button.component({ class: 'btn-like', dataId: res.id, onclick:likePost, title: '' })}
                 <div class='post-buttons'>
-                    ${Button.component({
-                    dataId: res.id,
-                    class: 'btn-delete',
-                    onclick: deletePost,
-                    title: '', 
-                    })}
-                    ${Button.component({
-                    dataId: res.id,
-                    class: 'btn-edit',
-                    onclick: editPost,
-                    title: ''
-                    })}
-                    ${Button.component({
-                    dataId: res.id,
-                    class: 'btn-save',
-                    onclick: saveEditPost,
-                    title: ''
-                    })}
+                    ${Button.component({dataId: res.id, class: 'btn-delete', onclick: deletePost, title: '',})}
+                    ${Button.component({dataId: res.id, class: 'btn-edit', onclick: editPost, title: '',})}
+                    ${Button.component({dataId: res.id, class: 'btn-save', onclick: saveEditPost, title: '',})}
                 </div>
               </div>
             </section>
@@ -101,46 +80,29 @@ function addingPost(post){
         <div class='likes' data-id='${post.id}'>${post.data().likes}</div>
         ${Button({ class: 'btn-like', dataId: post.id, onclick: likePost, title: '' })}
         <div class='post-buttons'>
-          ${Button({
-          dataId: post.id,
-          class: 'btn-delete',
-          onclick: deletePost,
-          title: '',
-          })}
-          ${Button({
-          dataId: post.id,
-          class: 'btn-edit',
-          onclick: editPost,
-          title: '',
-          })}
-          ${Button({
-          dataId: post.id,
-          class: 'btn-save',
-          onclick: saveEditPost,
-          title: '',
-          })}
+          ${Button({dataId: post.id, class: 'btn-delete', onclick: deletePost, title: '',})}
+          ${Button({dataId: post.id, class: 'btn-edit', onclick: editPost, title: '',})}
+          ${Button({ dataId: post.id, class: 'btn-save', onclick: saveEditPost, title: '',})}
       </div>
     </div>
   </section>
   `
   listPost.innerHTML += templatePost
 }
-
-
+//função likes
 function likePost (event) {
   const postId = event.target.dataset.id;
   const likeElem = document.querySelector(`.likes[data-id='${postId}']`);
   const likeCounter = parseInt(likeElem.textContent) + 1;
   likeElem.textContent = likeCounter
   firebase.firestore().collection('posts').doc(postId).update({likes: likeCounter});
-  let post = firebase.firestore().collection('posts').doc();
 } 
 
 // função de deletar 
 function deletePost(event) {
   const id = event.target.dataset.id;
   firebase.firestore().collection('posts').doc(id).delete();
-    document.querySelector(`.card-post[data-id='${id}']`).remove();
+  document.querySelector(`.card-post[data-id='${id}']`).remove();
 };
 
 // função de editar
@@ -163,7 +125,7 @@ function saveEditPost(event) {
     text: newText,
   });
   saveText.setAttribute('contentEditable', 'false');
-}
+};
 
 window.deletePost = deletePost;
 window.editPost = editPost;

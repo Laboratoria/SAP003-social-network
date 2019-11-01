@@ -5,29 +5,31 @@ import Profile from './pages/profile.js';
 
 
 function pagesChange() {
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    if (window.location.hash === '#feed'){
-      document.querySelector('main').innerHTML = Feed();   
-      document.getElementsByTagName('body')[0].className = 'bg-feed'
-    } else if (window.location.hash === '#profile'){
-      document.querySelector('main').innerHTML = Profile();   
-      document.getElementsByTagName('body')[0].className = 'bg-profile'
+  const hash = window.location.hash;
+  const query = document.querySelector('main');
+  const bodyClass = document.getElementsByTagName('body')[0]
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      if (hash === '#feed') {
+        query.innerHTML = Feed();
+        bodyClass.className = 'bg-feed'
+      } else if (hash === '#profile') {
+        query.innerHTML = Profile();
+        bodyClass.className = 'bg-profile'
+      } else {
+        query.innerHTML = Feed();
+        bodyClass.className = 'bg-feed'
+      }
     } else {
-      document.querySelector('main').innerHTML = Feed();   
-      document.getElementsByTagName('body')[0].className = 'bg-feed'
+      if (hash === '#register') {
+        query.innerHTML = Register();
+        bodyClass.className = 'bg-register'
+      } else if (hash === '#login') {
+        query.innerHTML = Login();
+        bodyClass.className = 'bg-login'
+      }
     }
-  } else {
-    if (location.hash === '#register') {
-      document.querySelector('main').innerHTML = Register();
-      document.getElementsByTagName('body')[0].className = 'bg-register'
-    } else {
-      location.hash === '#login'
-      document.querySelector('main').innerHTML = Login();
-      document.getElementsByTagName('body')[0].className = 'bg-login'
-    }
-  }
-}); 
+  });
 }
 
 window.addEventListener('hashchange', pagesChange);

@@ -1,7 +1,7 @@
 import Button from '../components/button.js';
 function Profile (){
   loadPost();
-    const template = `
+  const template = `
     <nav>
       <img class="logo-feed" src="img/collectio-symbol.png"/>
       <a href="#feed"><img class="profile-link" src="img/feed.png"/></a>
@@ -20,9 +20,7 @@ function loadPost() {
     const user = firebase.auth().currentUser;
     const collectionPost = firebase.firestore().collection('posts')
     collectionPost.orderBy('time', 'desc').get().then(snap => {
-
       snap.forEach(post => {
-
         if(post.data().user == user.uid){
           addingPost(post);
         }
@@ -41,25 +39,9 @@ function addingPost(post){
       <div class='likes' data-id='${post.id}'>${post.data().likes}</div>
       ${Button({ class: 'btn-like', dataId: post.id, onclick: likePost, title: '' })}
       <div class='post-buttons'>
-
-          ${Button({
-        dataId: post.id,
-        class: 'btn-delete',
-        onclick: deletePost,
-        title: '',
-        })}
-          ${Button({
-        dataId: post.id,
-        class: 'btn-edit',
-        onclick: editPost,
-        title: '',
-        })}
-        ${Button({
-          dataId: post.id,
-          class: 'btn-save',
-          onclick: saveEditPost,
-          title: '',
-        })}
+          ${Button({dataId: post.id, class: 'btn-delete', onclick: deletePost, title: '',})}
+          ${Button({dataId: post.id, class: 'btn-edit', onclick: editPost, title: '',})}
+          ${Button({dataId: post.id, class: 'btn-save', onclick: saveEditPost, title: '',})}
       </div>
     </div>
   </section>
