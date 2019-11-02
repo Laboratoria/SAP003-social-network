@@ -4,34 +4,24 @@ import Input from "../components/input.js";
 import Post from '../components/post.js';
 
 const cadastrar = (id, event) => {
-
 	event.preventDefault();
-
 	const email = document.querySelector('#mail').value;
-
 	const password = document.querySelector('#pass').value;
-
 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
+  const errorMessage = error.message;
   alert(errorMessage);
 	})
-
 	const name = document.querySelector('#name').value;	
 	const born = document.querySelector('#born').value;
-
 	const user = {
 		name: name,
 		email: email,
 		born: born,
 	}
-
 	firebase.firestore().collection('users').add(user);
 }
 
-export const Cadastro = () => {
+export const RegisterPage = () => {
 	const template = `
 	<main class="cadastro">
 	 <img src = images/Witchy-logo.png class="cad-logo"/>
@@ -45,7 +35,6 @@ export const Cadastro = () => {
 	 </form>
 		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Voltar para Login", onclick: goHome})}
 	</main>`;
-
 	return template;
 }
 

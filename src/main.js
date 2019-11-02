@@ -1,39 +1,26 @@
-import { Home } from '../pages/home.js';
-import { Cadastro } from '../pages/cadastro.js';
+import Home from '../pages/home.js';
+import { RegisterPage } from '../pages/cadastro.js';
 import { PaginaInicial } from '../pages/paginainicial.js'
-import { Mural } from '../pages/mural.js'
-import { About } from '../pages/editarperfil.js'
+import FeedPage from '../pages/mural.js'
+import About from '../pages/editarperfil.js'
 import Button from '../components/button.js';
 import Post from '../components/post.js';
 import Input from '../components/input.js';
 
-function init() {
+function homeMain() {
 	document.querySelector('main').innerHTML = Home();
 }
 
-const cad = () => {
-	document.querySelector('main').innerHTML = Cadastro();
-}
+const registerMain = () => {
+	document.querySelector('main').innerHTML = RegisterPage();
+}	
 
-
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-  	window.location.hash = '#mural'
-  } else if (window.location.hash === '#home'){
-    // No user is signed in.
-  }
-})
-
-const mural = () => {
+const feedMain = () => {
 	const user = firebase.auth().currentUser;
-
 	const allPosts = firebase.firestore().collection('posts');
-
 	allPosts.orderBy('date', 'desc').get().then(snap => {
 		let postsLayout = '';
-		//usuario logado
 		snap.forEach(post => {
-	//		firebase.firestore().collection('posts/${post.id}/comments')
 			post.ref.collection('comments').get()
 				.then(commentSnap => {
 					const comments = [];
@@ -57,7 +44,6 @@ const mural = () => {
 					</ul>
 				</li>
 				`;
-				//usuario não logado
 			} else {
 				postsLayout += `
 				<li class='timeline-item' data-id='${post.data().userID}'>
@@ -75,7 +61,7 @@ const mural = () => {
 				</li>
 				`;
 			}
-				document.querySelector('main').innerHTML = Mural({ postsLayout });
+				document.querySelector('main').innerHTML = FeedPage({ postsLayout });
 		
 			})	
 		})
@@ -113,7 +99,6 @@ const commentarPost = (id, event) => {
 }
 
 const about = () => {
-
 	const template = `
 		<section class='texto'>
 			<h1 class='sobre-titulo'>Sobre</h1>
@@ -140,18 +125,24 @@ const about = () => {
 
 
 const hash = () => {
-	if (location.hash === '#sign') {
-		return cad();
-	} else if (location.hash === '#mural') {
-		return mural();
-	} else if (location.hash === '#home') {
-		return init();
-	}	else if (location.hash === '#editar') {
-		return about();
-	}
+	firebase.auth().onAuthStateChanged(function(user) {
+  	if (user) {
+  		if (location.hash === '#feed') {	
+  			return feedMain();
+  		} else if (location.hash === '#edit') {
+  			return about();
+  		} 
+  	} else {
+  		if (location.hash === '#sign') {
+  			return registerMain();
+  		} else if (location.hash === '#home') {
+  			return homeMain();
+  		}
+  	}
+	})
 }
 
-window.mural = mural;
+window.feedMain = feedMain;
 
-window.addEventListener('load', init);
+window.addEventListener('load', hash);
 window.addEventListener('hashchange', hash, false);

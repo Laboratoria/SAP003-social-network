@@ -226,7 +226,7 @@ body {
 } 
 /*Fim do cadastro*/ 
 
-/* Início Mural */ 
+/* Início feed */ 
 
 .navbar { 
   align-items: center; 
@@ -315,12 +315,12 @@ body {
   margin-bottom: 20px;
 }
 
-.class-mural {
+.class-feed {
   color: #CCCCCC;
   background-color: #121212;
 }
 
-.class-editar-perfil {
+.class-edit-profile {
   color: #CCCCCC;
   background-color: #121212;
 }
@@ -442,7 +442,7 @@ body {
   outline: none;
 }
 
-/* Fim Mural */ 
+/* Fim feed */ 
 
  
 @media screen and (max-width: 992px) { 
@@ -472,7 +472,7 @@ body {
   } 
   /* Fim da Home */ 
 
-  /*MURAL*/
+  /*feed*/
   .comments {
     margin: 20px 0;
     display: flex;
@@ -582,7 +582,7 @@ body {
   } 
   /* Fim da Home */ 
   
-  /*Inicio de mural*/
+  /*Inicio de feed*/
   #post-form { 
     display: flex;  
     flex-direction: column;
@@ -623,7 +623,7 @@ body {
     margin: 10px;
     width: 300px;
   }
- /*Fim de mural*/
+ /*Fim de feed*/
   } 
 
 /*ABOUT*/
