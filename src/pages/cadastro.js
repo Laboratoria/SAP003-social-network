@@ -21,7 +21,7 @@ const cadastrar = (id, event) => {
 	firebase.firestore().collection('users').add(user);
 }
 
-export const RegisterPage = () => {
+const RegisterPage = () => {
 	const template = `
 	<main class="cadastro">
 	 <img src = images/Witchy-logo.png class="cad-logo"/>
@@ -42,3 +42,4 @@ const goHome = () => {
 	window.location.hash = 'home';
 }
 
+export default RegisterPage;

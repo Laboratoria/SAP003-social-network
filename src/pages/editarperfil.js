@@ -1,7 +1,21 @@
 import Button from "../components/button.js";
 import Select from "../components/select.js";
 
-const About = (props) => {
+const logout = () => {
+	firebase.auth().signOut().then(function () {
+		window.location.hash = 'home';
+	})
+}
+
+const changeSelect = () => {
+	if (document.getElementById('select').value === 'feed') {
+		window.location.hash = 'feed';
+	} else if (document.getElementById('select').value === 'edit') {
+		window.location.hash = 'edit';
+	}
+}
+
+const About = () => {
 	window.location.hash = 'edit';
 	const template = `
 	<header class='navbar'>
@@ -18,23 +32,26 @@ const About = (props) => {
 			</ul>
 		</nav>
 	</header>
-	${props.template}
+	<section class='texto'>
+		<h1 class='sobre-titulo'>Sobre</h1>
+		<p class='sobre-texto'>Nesta aplicação web o usuário poderá interagir de forma criativa no clima de bruxaria. O projeto tem como objetivo integrar pessoas que compartilham da mesma ideia ou que estajam disponíveis a aprender novos feitiços ou curiosidades.</p>
+	</section>
+	<section class='imagens-das-desenvolvedoras'>
+		<div class='dev'>
+			<img class='imagem' src='../images/evora.png'>
+			<p class='nome'><a href='https://github.com/e-v-s' target='_blank'>Évora</a></p>
+		</div>
+		<div class='dev'>
+			<img class='imagem' src='../images/jessica.png'>
+			<p class='nome'><a href='https://github.com/jpbnascimento' target='_blank'>Jéssica</a></p>
+		</div>
+		<div class='dev'>
+			<img class='imagem' src='../images/maria.png'>
+			<p class='nome'><a href='https://github.com/jpbnascimento/' target='_blank'>Maria Carolina</a></p>
+		</div>
+	</section>
 	`;
 	return template;
-}
-
-const logout = () => {
-	firebase.auth().signOut().then(function () {
-		window.location.hash = 'home';
-	})
-}
-
-const changeSelect = () => {
-	if (document.getElementById('select').value === 'feed') {
-		window.location.hash = 'feed';
-	} else if (document.getElementById('select').value === 'edit') {
-		window.location.hash = 'edit';
-	}
 }
 
 window.changeSelect

@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 const login = (event) => {
-	event.preventDefault();
+	//event.preventDefault();
 	const email = document.getElementById('email-login').value;
 	const password = document.getElementById('pass-login').value;
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -24,6 +24,7 @@ const loginGoogle = () => {
 }
 
 function Home() {
+	window.location.hash = 'home';
 	const template = `
 	<container class='home'>
 	 <img src = images/Witchy-logo.png class='logo'/>
@@ -40,7 +41,6 @@ function Home() {
 	  </div>
 	 </section>
 	</container>`;
-	window.location.hash = 'home';
 	return template;
 }
 

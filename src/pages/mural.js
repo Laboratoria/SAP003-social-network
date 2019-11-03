@@ -2,35 +2,6 @@ import Button from '../components/button.js';
 import Select from '../components/select.js';
 import Post from '../components/post.js';
 
-const FeedPage = (props) => {
-	const template = `
-	<header class='navbar'>
-		<nav class='banner'>
-			<ul class='nav-links'>
-				<li class='dropdown-menu'>
-					<select class='menu-dropdown' id='select' onchange='changeSelect()'>
-						${Select({ name: 'Feed', id: 'feed', class: 'class-feed', value: 'feed', selected: 'selected' })}
-						${Select({ name: 'Sobre', id: 'edit-profile', class: 'class-edit-profile', value: 'edit' })}
-					</select>
-				</li>
-				<li><img class='nav-logo' src='images/witchy-navbar.png' alt='navlogo'></li>
-				<li>${Button({ class: 'btn-logout', id: 'btn-logout', type: 'submit', title: 'Sair', onclick: logout })}</li>
-			</ul>	
-		</nav>
-	</header>
-	<section class='user-profile'></section>
-	<section class='post-section'>
-		<form id='post-form'>
-			${Post({ id: 'post', placeholder: 'Qual a  bruxaria de hoje?', rows: '5', cols: '50' })}
-			${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: '<img src="images/botaopost.png" class="icon-post" />', onclick: sendAndRetrievePost })}
-		</form>
-	</section>
-	<ul id='timeline'>
-	${props.postsLayout}
-	`;
-	return template;
-}
-
 const changeSelect = () => {
 	if (document.getElementById('select').value === 'feed') {
 		window.location.hash = 'feed';
@@ -59,6 +30,116 @@ const logout = () => {
 		window.location.hash = 'home';
 	}).catch(function (error) {
 	});
+}
+
+// const feedPageFixedTemplate = (template) => {
+// 	const fixedTemplate = `
+// 	<header class='navbar'>
+// 			<nav class='banner'>
+// 				<ul class='nav-links'>
+// 					<li class='dropdown-menu'>
+// 						<select class='menu-dropdown' id='select' onchange='changeSelect()'>
+// 							${Select({ name: 'Feed', id: 'feed', class: 'class-feed', value: 'feed', selected: 'selected' })}
+// 							${Select({ name: 'Sobre', id: 'edit-profile', class: 'class-edit-profile', value: 'edit' })}
+// 						</select>
+// 					</li>
+// 					<li><img class='nav-logo' src='images/witchy-navbar.png' alt='navlogo'></li>
+// 					<li>${Button({ class: 'btn-logout', id: 'btn-logout', type: 'submit', title: 'Sair', onclick: logout })}</li>
+// 				</ul>	
+// 			</nav>
+// 		</header>
+// 		<section class='user-profile'></section>
+// 		<section class='post-section'>
+// 			<form id='post-form'>
+// 				${Post({ id: 'post', placeholder: 'Qual a  bruxaria de hoje?', rows: '5', cols: '50' })}
+// 				${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: '<img src="images/botaopost.png" class="icon-post" />', onclick: sendAndRetrievePost })}
+// 			</form>
+// 		</section>
+// 		<ul id='timeline'>
+// 		${template}
+// 		`;
+// 		return fixedTemplate;
+// }
+
+const FeedPage = (props) => {
+	let template = '';
+	if (props.post.data().userID === props.user.uid) {
+		template += `
+			<li class='timeline-item' data-id='${props.post.data().userID}'>
+					<p post-id='${props.post.id}' contenteditable='true' class='post'>${props.post.data().text}</p>
+					<p class='date'>${props.post.data().date}</p>
+					<p class='user'>${props.post.data().name}</p>
+					${Button({ class: 'btn-delete', id: props.post.id, title: '<img src="images/botaodeletee.png" class="icon-delete" />', onclick: deletar })}
+					${Button({ class: 'btn-edit', id: props.post.id, title: '<img src="images/botaoeditar.png" class="icon-edit" />', onclick: editar })}
+					${Button({ class: 'btn-likes', id: props.post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					</li>`;		
+	} else {
+		template += `		
+			<li class='timeline-item' data-id='${props.post.data().userID}'>
+					<p post-id='${props.post.id}' contenteditable='true' class='post'>${props.post.data().text}</p>
+					<p class='date'>${props.post.data().date}</p>
+					<p class='user'>${props.post.data().name}</p>
+					${Button({ class: 'btn-likes', id: props.post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
+					</li>`;
+	}
+
+	const fixedTemplate = `
+	<header class='navbar'>
+			<nav class='banner'>
+				<ul class='nav-links'>
+					<li class='dropdown-menu'>
+						<select class='menu-dropdown' id='select' onchange='changeSelect()'>
+							${Select({ name: 'Feed', id: 'feed', class: 'class-feed', value: 'feed', selected: 'selected' })}
+							${Select({ name: 'Sobre', id: 'edit-profile', class: 'class-edit-profile', value: 'edit' })}
+						</select>
+					</li>
+					<li><img class='nav-logo' src='images/witchy-navbar.png' alt='navlogo'></li>
+					<li>${Button({ class: 'btn-logout', id: 'btn-logout', type: 'submit', title: 'Sair', onclick: logout })}</li>
+				</ul>	
+			</nav>
+		</header>
+		<section class='user-profile'></section>
+		<section class='post-section'>
+			<form id='post-form'>
+				${Post({ id: 'post', placeholder: 'Qual a  bruxaria de hoje?', rows: '5', cols: '50' })}
+				${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: '<img src="images/botaopost.png" class="icon-post" />', onclick: sendAndRetrievePost })}
+			</form>
+		</section>
+		<ul id='timeline'>
+		${template}
+		</ul>
+		`;
+
+	return fixedTemplate;
+}
+
+const editar = (id, event) => {
+	const user = firebase.auth().currentUser;
+	const postEdit = document.querySelector(`[post-id='${id}']`).innerText;
+	const post = firebase.firestore().collection('posts').doc(id);
+	post.update({
+		text: postEdit
+	})
+}
+
+const like = (id, event) => {
+	firebase.firestore().collection('posts').doc(id).get().then((post) => {
+		let like = (post.data().likes) + 1;
+		let likes = document.querySelector(`[like-id='${id}']`)
+		firebase.firestore().collection('posts').doc(id).update({ likes: like });
+		likes.innerHTML = like;
+	})
+}
+
+const deletar = (id, event) => {
+	firebase.firestore().collection('posts').doc(id).delete();
+	document.getElementById(id).parentElement.remove();
+}
+
+const commentarPost = (id, event) => {
+	const input = document.querySelector(`input[data-id='${id}']`);
+	firebase.firestore().collection(`posts/${id}/comments`).add({ text: input.value });
+	event.target.parentElement.innerHTML += `<p class='ja'>${input.value}</p>`
 }
 
 window.changeSelect
