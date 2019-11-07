@@ -32,35 +32,6 @@ const logout = () => {
 	});
 }
 
-// const feedPageFixedTemplate = (template) => {
-// 	const fixedTemplate = `
-// 	<header class='navbar'>
-// 			<nav class='banner'>
-// 				<ul class='nav-links'>
-// 					<li class='dropdown-menu'>
-// 						<select class='menu-dropdown' id='select' onchange='changeSelect()'>
-// 							${Select({ name: 'Feed', id: 'feed', class: 'class-feed', value: 'feed', selected: 'selected' })}
-// 							${Select({ name: 'Sobre', id: 'edit-profile', class: 'class-edit-profile', value: 'edit' })}
-// 						</select>
-// 					</li>
-// 					<li><img class='nav-logo' src='images/witchy-navbar.png' alt='navlogo'></li>
-// 					<li>${Button({ class: 'btn-logout', id: 'btn-logout', type: 'submit', title: 'Sair', onclick: logout })}</li>
-// 				</ul>	
-// 			</nav>
-// 		</header>
-// 		<section class='user-profile'></section>
-// 		<section class='post-section'>
-// 			<form id='post-form'>
-// 				${Post({ id: 'post', placeholder: 'Qual a  bruxaria de hoje?', rows: '5', cols: '50' })}
-// 				${Button({ class: 'btn-post', id: 'btn-post-send', type: 'submit', title: '<img src="images/botaopost.png" class="icon-post" />', onclick: sendAndRetrievePost })}
-// 			</form>
-// 		</section>
-// 		<ul id='timeline'>
-// 		${template}
-// 		`;
-// 		return fixedTemplate;
-// }
-
 const FeedPage = (props) => {
 	let template = '';
 	if (props.post.data().userID === props.user.uid) {
@@ -82,7 +53,6 @@ const FeedPage = (props) => {
 					${Button({ class: 'btn-likes', id: props.post.id, title: '<img src="images/botaolike.png" class="icon-like"/>', onclick: like })}
 					</li>`;
 	}
-
 	const fixedTemplate = `
 	<header class='navbar'>
 			<nav class='banner'>
@@ -109,11 +79,10 @@ const FeedPage = (props) => {
 		${template}
 		</ul>
 		`;
-
-	return fixedTemplate;
+	document.querySelector('main').innerHTML += fixedTemplate;
 }
 
-const editar = (id, event) => {
+const editar = (id) => {
 	const user = firebase.auth().currentUser;
 	const postEdit = document.querySelector(`[post-id='${id}']`).innerText;
 	const post = firebase.firestore().collection('posts').doc(id);
@@ -122,7 +91,7 @@ const editar = (id, event) => {
 	})
 }
 
-const like = (id, event) => {
+const like = (id) => {
 	firebase.firestore().collection('posts').doc(id).get().then((post) => {
 		let like = (post.data().likes) + 1;
 		let likes = document.querySelector(`[like-id='${id}']`)
@@ -131,16 +100,17 @@ const like = (id, event) => {
 	})
 }
 
-const deletar = (id, event) => {
+const deletar = (id) => {
 	firebase.firestore().collection('posts').doc(id).delete();
 	document.getElementById(id).parentElement.remove();
 }
 
-const commentarPost = (id, event) => {
+const commentarPost = (id) => {
 	const input = document.querySelector(`input[data-id='${id}']`);
 	firebase.firestore().collection(`posts/${id}/comments`).add({ text: input.value });
 	event.target.parentElement.innerHTML += `<p class='ja'>${input.value}</p>`
 }
+
 
 window.changeSelect
 	= changeSelect;

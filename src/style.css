@@ -127,21 +127,21 @@ body {
 /* Fim da Home */ 
 
 /*Inicio da tela de cadastro*/ 
-.cadastro { 
+.register { 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   margin-top: 28px; 
 }  
 
-.cad-form { 
+.register-form { 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   margin-top: 46px; 
 } 
 
-.cadastre { 
+.register-title { 
   font-size: 30px; 
   text-align: center; 
 } 
@@ -436,15 +436,10 @@ body {
   color: #737373;
 }
 
-
-
 .btn-edit, .btn-likes, .post-comment, .btn-comment {
   outline: none;
 }
-
 /* Fim feed */ 
-
- 
 @media screen and (max-width: 992px) { 
   /* Home */ 
   .home { 
@@ -454,7 +449,7 @@ body {
     align-content: center;
   } 
   
-  .cadastro { 
+  .register { 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -487,12 +482,10 @@ body {
     padding: 10px 0;
     text-align: left;
   }
-} 
-  
+}
    
 @media screen and (max-width: 420px) { 
-  /* Home */ 
-  
+  /* Home */   
   .homepage-title { 
     text-align: center; 
     color: wheat; 
@@ -581,7 +574,6 @@ body {
     box-sizing: border-box; 
   } 
   /* Fim da Home */ 
-  
   /*Inicio de feed*/
   #post-form { 
     display: flex;  
@@ -625,7 +617,6 @@ body {
   }
  /*Fim de feed*/
   } 
-
 /*ABOUT*/
 
 .texto {
@@ -703,8 +694,6 @@ body {
     margin-top: 10px;
   }
 }
-
-
 
 @media screen and (max-width: 920px) {
   .texto {

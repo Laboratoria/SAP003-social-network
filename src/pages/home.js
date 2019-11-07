@@ -1,14 +1,17 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-const login = (event) => {
-	//event.preventDefault();
+const login = () => {
 	const email = document.getElementById('email-login').value;
 	const password = document.getElementById('pass-login').value;
-	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  const errorMessage = error.message;
-  alert(errorMessage);
-	});
+	firebase.auth().signInWithEmailAndPassword(email, password)
+		.catch(function(error) {
+  		const errorMessage = error.message;
+  		document.querySelector('.error-message').innerHTML = 'Senha ou Email incorretos';
+			document.getElementById('email-login').addEventListener('click', deleteErrorMessage = () => {
+					document.querySelector('.error-message').innerHTML = '';
+			})
+		})
 }
 
 const loginGoogle = () => {
@@ -18,7 +21,6 @@ const loginGoogle = () => {
   	firebase.firestore().collection('users').add(user);
 }).catch(function(error) {
   	const errorMessage = error.message;
-  	const email = error.email;
   	alert(errorMessage);
 	});
 }
@@ -33,6 +35,7 @@ function Home() {
 	  <form class='login-form'>
 	   ${Input ({ id:'email-login', placeholder:'E-mail', type:'email'})}
 	   ${Input({ id:'pass-login', placeholder:'Senha', type:'password'})} <br>
+	   <p class='error-message'></p>
 	   ${Button({ class:'btn-login', id:'login', title: 'Entrar', onclick: login})} <br>
 	  </form>
 	  <div class='buttons'>

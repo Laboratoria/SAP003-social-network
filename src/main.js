@@ -1,18 +1,17 @@
 import Home from '../pages/home.js';
 import RegisterPage from '../pages/cadastro.js';
-import { PaginaInicial } from '../pages/paginainicial.js'
 import FeedPage from '../pages/mural.js';
 import About from '../pages/editarperfil.js';
-import Button from '../components/button.js';
-import Post from '../components/post.js';
-import Input from '../components/input.js';
+//import Timeline from '../components/timelinepost.js';
+
+const selectorMain = document.querySelector('main');
 
 function homeMain() {
-	document.querySelector('main').innerHTML = Home();
+	selectorMain.innerHTML = Home();
 }
 
 const registerMain = () => {
-	document.querySelector('main').innerHTML = RegisterPage();
+	selectorMain.innerHTML = RegisterPage();
 }
 
 const feedMain = () => {
@@ -58,14 +57,15 @@ const feedMain = () => {
 			// 	</li>
 			// 	`;
 			// 	}	
-			document.querySelector('main').innerHTML = FeedPage({ post, user });	
+			// document.querySelector('main').innerHTML += FeedPage({ post, user });	
+				FeedPage({post, user});
 			})	
 		})		
 	// })
 }
 
 const aboutMain = () => {
-	document.querySelector('main').innerHTML = About();
+	selectorMain.innerHTML = About();
 }
 
 const hash = () => {

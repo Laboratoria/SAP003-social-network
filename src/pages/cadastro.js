@@ -3,7 +3,7 @@ import Button from "../components/button.js";
 import Input from "../components/input.js";
 import Post from '../components/post.js';
 
-const cadastrar = (id, event) => {
+const register = (event) => {
 	event.preventDefault();
 	const email = document.querySelector('#mail').value;
 	const password = document.querySelector('#pass').value;
@@ -23,15 +23,15 @@ const cadastrar = (id, event) => {
 
 const RegisterPage = () => {
 	const template = `
-	<main class="cadastro">
+	<main class="register">
 	 <img src = images/Witchy-logo.png class="cad-logo"/>
-	 <h1 class="cadastre">Cadastre-se</h1>
-	 <form class="cad-form">
-		${Input({ id:'name', class:"name-cadastro",  placeholder:"Nome", type:"text"})}
-		${Input({ id:'born', class:'born-cadastro', type:'date'})}
-		${Input({ id:'mail', class:"mail-cadastro", placeholder:"Email", type:"email"})}
-		${Input({ id:'pass', class:"pass-cadastro", placeholder:"Senha", type:"password"})}
-		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: cadastrar})}
+	 <h1 class="register-title">Cadastre-se</h1>
+	 <form class="register-form">
+		${Input({ id:'name', class:"name-register",  placeholder:"Nome", type:"text"})}
+		${Input({ id:'born', class:'born-register', type:'date'})}
+		${Input({ id:'mail', class:"mail-register", placeholder:"Email", type:"email"})}
+		${Input({ id:'pass', class:"pass-register", placeholder:"Senha", type:"password"})}
+		${Button({ class:'btn btn-send-sign-up', id:"cad", title: "Cadastrar", type:"submit", value:"submit", onclick: register})}
 	 </form>
 		${Button({ class:'btn-go-home', id:"go-home", type:"button", title:"Voltar para Login", onclick: goHome})}
 	</main>`;
