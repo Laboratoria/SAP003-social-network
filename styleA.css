@@ -1,0 +1,123 @@
+/* <------------------BASIC STYLE-----------------> */
+/* body{
+  background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(56%, rgba(237,237,237,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 56%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+} */
+
+h1, h3{
+  font-family: 'Rochester', cursive;;
+  color: gray;
+   display: flex;
+   justify-content: center;
+}
+
+
+.card{
+    background-color: #F5F5F5;
+    border-radius: 15px;
+    flex-direction: row;
+    height: 40%;
+    width: 40%;
+    margin: auto;
+    margin-top: 30%;
+    box-shadow: 3px 3px 3px #642A80;
+    position: relative;
+    padding: 10px 30px;
+}
+
+/* <------------------LOGIN-----------------------> */
+.primary-button {
+  /* background-color: #886BF2 ;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px; */
+  cursor: pointer;  
+  background-color: transparent;
+	border-color: transparent;
+}
+
+span{
+  font-size: 20px;
+}
+
+.fa-google, .fa-envelope{
+  color:white;
+}
+
+.fa-google :hover{
+  color:orange;
+}
+
+.fa-envelope :hover{
+  color:orange;
+}
+
+.register{
+  text-align: center;
+  color:gray;
+}
+/* <--------------------INPUTS-----------------------> */
+.js-email-input, .js-password-input{
+  border-radius: 8px;
+  display:flex;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.form-container{
+  text-align:center;
+} 
+/* <--------------------FEED----------------------> */
+.section-post{
+  width: 300px;
+     height: 100px;
+     display: flex;
+  justify-content:space-around;
+  margin: 30px 50px 15px 100px;
+  background-color: black;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 15px 10px 15px 20px;
+}
+
+
+.div-post{
+  
+  display:flex;
+  justify-content:center;
+     width: 300px;
+     height: 100px;
+     padding: 0px;
+     background: white;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     border-radius: 10px;
+     resize: horizontal;
+     overflow: auto;
+     
+  }
+  
+
+  
+  .div-post:after{
+    content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 20px 20px 20px 0;
+      border-color: transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      left: -20px;
+      top: 40px;
+  }
+
+  
