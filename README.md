@@ -72,7 +72,7 @@ _Foto do layout mobile_
 
 Para desenvolver a aplicação, utilizamos as seguintes ferramentas:
 
-* Vanilla JavaScript
+* JavaScript
 * HTML
 * CSS
 * Firebase
