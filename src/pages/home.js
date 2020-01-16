@@ -26,7 +26,7 @@ const loginGoogle = () => {
 }
 
 function Home() {
-	window.location.hash = 'home';
+	window.location.hash = '';
 	const template = `
 	<container class='home'>
 	 <img src = images/Witchy-logo.png class='logo'/>
