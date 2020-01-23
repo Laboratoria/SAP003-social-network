@@ -106,6 +106,25 @@ h2 {
   text-align: center;
 }
 
+.box
+{
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width:450px;
+  padding: 30px;
+  background: rgba(0,0,0,.4);
+  box-sizing:border-box;
+  box-shadow: 0 35px 25px rgba(0,0,0,.2);
+  border-radius: 70px;
+}
+.box h1{
+    font-family: 'Franklin Gothic Medium', 'Bree Serif';
+    color: #fff;
+    background-color: #c91b05;
+    text-align: center;  
+  }
 /* web margin-left:483px */
 .text-centro{
   display: flex;
