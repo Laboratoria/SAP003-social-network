@@ -6,14 +6,13 @@ function Home() {
 
   const template= `
   <div class="logotipo">
-    <h1 class="text-center teste">ALCATEIA</h1>
+    <h1 class="text-center">ALCATEIA</h1>
   </div>
-    <div class="banner"></div>
 
   <div class="box"> 
       <h2> Faça login na sua conta </h2>
       <form>
-      ${Input({placeholder: 'Email000000', type: 'email', class: 'js-email-input'})}
+      ${Input({placeholder: 'Email', type: 'email', class: 'js-email-input'})}
       ${Input({placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
       ${Button({id: 'button',  title: 'Entrar', onClick: buttonLogin, class:'bntentrar'})}<br>
       
