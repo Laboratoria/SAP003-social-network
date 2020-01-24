@@ -6,6 +6,7 @@ function register(){
     <div class="logotipo">
        <h4 class="text-center">ALCATEIA</h4>
     </div>
+    
     <div class="banner"></div>
     ${Button({id:'voltar', title: 'Voltar', onClick: goToLogin})}
     
