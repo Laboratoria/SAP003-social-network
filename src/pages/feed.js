@@ -83,14 +83,17 @@ function load() {
   const postCollection = firebase.firestore().collection('posts')
   const user = firebase.auth().currentUser
   postCollection.where('user', '==', user.uid).get().then(snap => {
-  snap.forEach(post => {
-  addPost(post, post.id)
-    })
-   })
+    const printPost = document.querySelector('.postdiv');
+    const template = '';
+    snap.forEach(post => {
+      template += addPost(post, post.id)
+    });
+    printPost += template;
+  })
 }
 
 function addPost (post, postId) {
-  const printPost = document.querySelector('.postdiv');
+
   const id= firebase.auth().currentUser.uid;
   const template = `
    
@@ -106,7 +109,7 @@ function addPost (post, postId) {
       
     </div>
     `
-  printPost.innerHTML += template
+  return template
 }
 
 /*function profile() {
